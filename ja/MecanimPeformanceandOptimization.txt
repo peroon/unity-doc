@@ -1,35 +1,56 @@
-!Mecanim Performance and Optimization
+! メカニム パフォーマンスおよび最適化 / Mecanim Performance and Optimization
 
-This page contains some tips to help you obtain the best performance from [[MecanimAnimationSystem | Mecanim]], covering character setup, the animation system and runtime optimizations.
+!! プレイヤー キャラクターのボーンに要素をアタッチする場合、要素の数が多いことでフレームレートの問題を引き起こすことがありますか？
 
-!!Character Setup
+追加のボーンにアニメーションがない場合であればコストは無視出来ます。それ以外の場合は、Generic モードにおいて、追加したボーンの数に比例したコストがかかります（すなわち既に 30 のボーンがあるリグに 15 のボーンを追加すると 50% 余分に時間がかかります）。 ''Generic および Humanoid モードのいずれでも追加のボーンを保有することがあることに留意にして下さい。''
 
-:Number of Bones:In some cases you will need to create characters with a large number of bones, for example when you want a lot of customizable attachments. These extra bones will increase the size of the build, and you could expect to have a relative processing cost for each additional bone. For example, 15 additional bones on a rig that already has 30 bones will take 50% longer to solve in ``Generic`` mode. Note that you can have additional bones in [[GenericAnimations | Generic]] and in [[AvatarCreationandSetup | Humanoid]] mode. When you have no animations playing using the additional bones, the processing cost should be negligible. This cost will be even lower if their attachments are non existent or hidden.
+!! アニメータでの別レイヤーにかかるコストはどれぐらいですか？（同期または非同期）
 
-:Multiple Skinned Meshes:Combine skinned meshes whenever possible. Splitting a character into two [[class-SkinnedMeshRenderer | Skinned Mesh Renderers]] is a bad idea with regard to performance. It's better if your character has just one material, but there are some cases when you might require more materials.
+メカニムでかかる時間のほとんどはアニメーションの評価にかかります。レイヤー / ステートマシンによるオーバーヘッドは極力小さくなるように設計しています。このため、実際にはどういうアニメーションツリー / ブレンドツリーがレイヤー上で再生されるかに依存します。
 
-!!Animation System
+!! レイヤーのウェイトをゼロにしてもコストはかかりますか？
 
-:Controllers:The [[class-Animator | Animator]] doesn't spend time processing when a [[class-AnimatorController | Controller]] is not set to it.
+Unity が全ての演算をスキップするわけではありませんが、最も高価な演算はスキップします。
 
-:Simple Animation:Playing a single [[class-AnimationClip | Animation Clip]] with no blending can make ``Mecanim`` slower than the [[Animations40 | legacy animation system]]. The old system is very direct, sampling the curve and directly writing into the transform. ``Mecanim`` has temporary buffers it uses for blending, and there is additional copying of the sampled curve and other data. The ``Mecanim`` layout is optimized for animation blending and more complex setups.
+!! コントローラがセットされてない場合も アニメーターは CPU を消費しますか？
 
-:Scale Curves:Make sure that there is not a single ``scale curve`` on any ``animation clip``. You can write an asset post-processor to remove or warn about them. See the [[BuildingAssetBundles | Asset Bundles]] section for more information. 
+いえ、4.1以降は使用しません。
 
-:Layers:Most of the time ``Mecanim`` is evaluating animations, and the overhead for [[AnimationLayers]] and [[AnimationStateMachines]] is kept to the minimum. The cost of adding another layer to the animator, synchronized or not, depends on what ``animations`` and ``blend trees`` are played by the layer. When the weight of the layer is zero, the layer update will be skipped.
+!! メカニムを使ったシーンの最適化はどうすれば良いですか？
 
-:Humanoid vs. Generic Modes:These tips will help you decide between these modes:
- *When you have ``IK Pass`` enabled and ``Foot IK`` enabled on your ``animation states``, you will get better performance with ``Generic`` ``Mecanim`` mode.
- *When you use ``Generic``, using ``root motion`` is more expensive than not using it. If your animations don't use ``root motion``, make sure that you have no ``root bone`` selected.
- *On Android you will get worse performance since NEON is not currently supported on Android. ``Humanoid`` mode is particularly math heavy so it can easily be 2-2.5x slower without NEON.
+最適化の方法は様々ですが、便利なテクニックとしては:
 
-:Mecanim Scene:There are many optimizations that can be made, some useful tips include:
- *Use hashes instead of strings to query the ``Animator``.
- *Implement a small ``AI Layer`` to control the ``Animator``. You can make it provide simple callbacks for ``OnStateChange``, ``OnTransitionBegin``, etc.
- *Use ``State Tags`` to easily match your ``AI StateMachine`` to the ``Mecanim StateMachine``.
- *Use additional curves to simulate ``Events``.
- *Use additional curves to markup your animations, for example in conjunction with [[TargetMatching | target matching]].
+文字列の代わりにハッシュを使用してアニメーターにクエリをかけます。
 
-!!Runtime Optimizations
+* 小規模の AI レイヤーを実装してアニメーターを制御します。OnStateChange, OnTransitionBegin, その他で簡単なコールバックを提供させることが出来ます。
+* 'State Tags' を使用して自身の AI ステートマシンをメカニムのステートマシンと簡単に一致させることが出来ます。
+* イベントをシミュレートするための追加のカーブを使用します。
+* 追加のカーブを使用してアニメーションをマークアップします。 (例えばMatchTarget に対して http://docs.unity3d.com/Documentation/Manual/TargetMatching.html )
 
-:Visibility and Updates:Always optimize animations by setting the animators's ``Culling Mode`` to ``Based on Renderers``, and disable the skinned mesh renderer's ``Update When Offscreen`` property. This way animations won't be updated when the character is not visible. See the [[class-SkinnedMeshRenderer | skinned mesh renderer]] for further information.
+!! 簡単なアニメーションのパフォーマンス
+
+現時点では単独のブレンドのないアニメーションがクリップを再生する場合、メカニムのオーバーヘッドが原因で、メカニムは旧アニメーション システムより遅いことがあります。旧アニメーション システム は非常に直接的でカーブのサンプリングをして transform に直接書き込みをしていました。メカニムではブレンドに一時バッファがあり、現時点ではカーブデータのサンプリングその他にら追加のデータコピー作業があります。単独のアニメーションクリップでは旧アニメーションシステムが良く動作するという状況です。
+
+反対にメカニムレイアウトはアニメーションのブレンドおよび複雑な設定がある場合に最適化されています。
+
+単独のアニメーションクリップの再生でのメカニムの最適化はわれわれの今後の検討課題です。
+
+!! Humanoid 対 Generic パフォーマンス
+
+IK パスおよび Foot IK がアニメーション ステートで有効化されている前提: Generic メカニム モードがより良いパフォーマンスが得られます。
+
+Generic を使用するとき、root motion を 使用することは root motion を使用しない場合に比べて高価です。もしアニメーションが root motion を使用しない場合は root ボーンを全く選択してないことをチェックします。
+
+Android 上では、現時点ではさらにパフォーマンスが悪化し、これは NEON か行われないためです。特にHumanoid モードは数値計算が大量にあり、NEON なしでは 2 倍から 2.5 倍ほど遅くなる状況が容易に発生します。iOS / Androidで見られるパフォーマンスの差分はこれで説明がつきます。
+
+!! スケールしたカーブは使用しない
+
+アーティストは値を変化させないスケールしたカーブを使用することがあります。そういう状況がないことを二重チェックして下さい。どのアニメーションクリップでも単独のスケールしたカーブがないことを確認して下さい。
+
+最善の方法はアセットポストプロセッサにより取り除くか警告が出るようにすることです。
+
+!! スキンメッシュは可能なかぎりまとめる
+
+自身のキャラクターに二つのスキンメッシュ レンダラがあり、各々に3つのマテリアルごあるとします。キャラクターを二つのスキンメッシュ レンダラに分割するのはパフォーマンス観点では良くありません。もう一つ別のマテリアルがあったほうが良いです。
+
+1 つのマテリアルであるのがベストですが、アーティストからすると2 つのマテリアルが必要な場合が多いです。
