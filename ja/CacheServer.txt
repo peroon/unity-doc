@@ -1,7 +1,6 @@
-!Cache Server (Team License Only)
+! キャッシュサーバー (チームライセンスのみ) / Cache Server (Team License Only)
 
-[[http://blogs.unity3d.com/2012/10/26/in-depth-cache-server/|Why should I be using the Cache Server?]]
+[[http://blogs.unity3d.com/2012/10/26/in-depth-cache-server/|なぜキャッシュサーバーを使用すべきか？]]
 
 (:tocportion:)
-
 
