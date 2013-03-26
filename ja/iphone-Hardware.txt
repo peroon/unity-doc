@@ -13,6 +13,7 @@
 !!! オリジナル iPhone
 * 画面: 320x480 ピクセル、 LCD 163ppi
 * ARM11, 412 Mhz CPU
+
 * PowerVR MBX Lite 3D グラフィックス プロセッサ
 ** 遅い
 * 128MBのメモリ容量
@@ -37,13 +38,9 @@ iPhone 3G: 固定関数グラフィックス（高度なシェーダなし）、
 * ARM Cortex A8, 600 MHz CPU
 * PowerVR SGX535 グラフィックス プロセッサ
 ** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
-(:div style="margin-left:80px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:84px%Attach:bar.png
-(:divend:)
+   Attach:Bar1.png
 ** ロー シェーダ パフォーマンス、 iPad3と比較して: 
-(:div style="margin-left:80px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:23px%Attach:bar.png
-(:divend:)
+   Attach:Bar2.png
 * 256MBのメモリ容量
 * 3 メガピクセル カメラ with video capture capability
 * GPS 対応
@@ -59,13 +56,9 @@ iPhone 3GS: シェーダ対応したハードウェア、 ピクセル ライテ
 ** 1Ghz ARM Cortex-A8 CPU
 ** PowerVR SGX535 GPU
 *** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:36px%Attach:bar.png
-(:divend:)
+    Attach:Bar3.png
 *** ロー シェーダ パフォーマンス、 iPad3と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:23px%Attach:bar.png
-(:divend:)
+    Attach:Bar4.png
 * 512MBのメモリ容量
 * カメラ
 ** 後面 5.0 メガピクセル 裏面照射型CMOS イメージセンサー 720p HD video 30 fps および LED フラッシュ
@@ -73,20 +66,15 @@ iPhone 3GS: シェーダ対応したハードウェア、 ピクセル ライテ
 * GPS 対応
 * コンパスに対応
 
-
 !!! iPhone 4S
 * 画面: 960x640 ピクセル、 LCD 326 ppi, 800:1 コントラスト比。
 * Apple A5
 ** デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
 ** デュアルコア PowerVR SGX543MP2 GPU
 *** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:196px%Attach:bar.png
-(:divend:)
+    Attach:Bar5.png
 *** ロー シェーダ パフォーマンス、 iPad3と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:105px%Attach:bar.png
-(:divend:)
+    Attach:Bar6.png
 * 512MBのメモリ容量
 * カメラ
 ** 後面 5.0 メガピクセル 裏面照射型CMOS image sensor with 720p HD video at 30 fps and LED flash
@@ -101,11 +89,6 @@ iPhone 4S は 新しい A5 チップにより、複雑なシェーダをスク�
 !!![[http://en.wikipedia.org/wiki/IPod_Touch#Specifications| iPod Touch モデル]] 
 
 (:cellnr:)
-
-(:div style="float:right; padding:5px; color:#BBBBBB; font-size:10px; width:212px;":)
-%thumb width=200px float=right padding=5px%Attach:tripletown.jpg
-固定関数グラフィックス (高度なシェーダなし)、 非常に遅いCPUおよびGPU。
-(:divend:)
 
 !!! 第 1 世代 iPod Touch
 * 画面: 320x480 ピクセル、 LCD 163ppi
@@ -127,17 +110,14 @@ iPod Touch: 固定関数グラフィックス（高度なシェーダなし）�
 
 (:cellnr:)
 
-(:div style="float:right; padding:5px; color:#BBBBBB; font-size:10px; width:242px;":)
-%thumb width=230px float=right padding=5px%Attach:csrRacing.jpg
-シェーダ対応したハードウェア、 ピクセル ライティング (バンプマップ) は同時には画面の限られた領域のみ対応。
-複雑なゲームでスクリプティングの最適化が必要。2012年7月時点でのアプリマーケットの平均的なハードウェア。
-(:divend:)
+
 
 !!! 第 3 世代 iPod Touch
 * iPhone 3GS と同等レベル
 
 Attach:csrRacing.jpg\\
-第 3 世代iPod Touch 3rd: シェーダ対応のハードウェア、ピクセルライティング（バンプマップ）は同時にはスクリーンのわずかな一部でのみ実現。複雑なゲームではスクリプト最適化が必要。2012年7月時点においてアプリ マーケット の標準的なハードウェア。
+第 3 世代iPod Touch 3rd: シェーダ対応のハードウェア、ピクセルライティング（バンプマップ）は同時にはスクリーンのわずかな一部でのみ実現。
+複雑なゲームではスクリプト最適化が必要。2012年7月時点においてアプリ マーケット の標準的なハードウェア。
 
 !!! 第 4 世代 iPod Touch
 * iPhone 4 と同等レベル
@@ -146,24 +126,15 @@ Attach:csrRacing.jpg\\
 
 !!![[http://en.wikipedia.org/wiki/IPad#Technical_specifications | iPad モデル]] 
 
-(:div style="float:right; padding:5px; color:#BBBBBB; font-size:10px; width:250px;":)
-%thumb width=240px float=right padding=5px%Attach:airmail.jpg
-第 4 世代iPod TouchおよびiPhone4 と同等レベル
-(:divend:)
-
 !!! iPad
 * 画面: 1024x768 ピクセル、 LCD 132 ppi, LEDバックライト
 * Apple A4 
 ** 1Ghz MHz ARM Cortex-A8 CPU
 ** PowerVR SGX535 GPU
 *** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:30px%Attach:bar.png
-(:divend:)
+    Attach:Bar7.png
 *** ロー シェーダ パフォーマンス、 iPad3と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:23px%Attach:bar.png
-(:divend:)
+    Attach:Bar8.png
 * Wifi + Blueooth + (3G セルラー HSDPA, 3G バージョンでの 2G セルラー EDGE)
 * 加速度計、環境ライティングセンサー、磁力計（デジタルコンパス向け）
 * ボタン入力装置: ホーム、スリープ、画面回転ロック、ボリューム。
@@ -173,36 +144,22 @@ iPad: 第 4 世代iPod Touch および iPhone 4 と同様
 
 
 (:cellnr:)
-(:div style="float:right; padding:5px; color:#BBBBBB; font-size:10px; width:250px;":)
-%thumb width=240px float=right padding=5px%Attach:deadtrigger.jpg
-A5では、十分に簡単なシェーダであれば、フルスクリーン バンプマップが可能。しかし、重要なオブジェクトだけにバンプマップを絞ったほうがゲームのパフォーマンスが上がります。フルスクリーンのイメージエフェクトはできません。スクリプティング最適化の重要性はやや劣ります。
-(:divend:)
-
 !!! iPad 2
 * 画面: 1024x768 ピクセル、 LCD 132 ppi, LEDバックライト
 * Apple A5
 ** デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
 ** デュアルコア PowerVR SGX543MP2 GPU
 *** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:200px%Attach:bar.png
-(:divend:)
+    Attach:Bar9.png
 *** ロー シェーダ パフォーマンス、 iPad3と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:125px%Attach:bar.png
-(:divend:)
-
+    Attach:Bar10.png
 * 前述と同様
+
 Attach:deadtrigger.jpg\\
 iPad2: A5 では、シェーダが十分にシンプルなものであればフルクリーン バンプマップが実現出来ます。しかし、ゲームが重要なオブジェクトでのみバンプマップされていることでベストのパフォーマンスを発揮する傾向があります。フルスクリーンのイメージエフェクトはまだ手が届かないところです。スクリプト最適化の重要性はやや劣ります。
 
 
 (:cellnr:)
-
-(:div style="float:right; padding:5px; color:#BBBBBB; font-size:10px; width:250px;":)
-%thumb width=240px float=right padding=5px%Attach:bladeslinger.jpg
-iPad 3 はReflective Waterおよびフルスクリーンのイメージエフェクトといったテクスチャレンダリング エフェクトができます。ただしシェーダ最適化は依然として決定的に重要。しかしゲームがデバイス性能を限界まで使用していない場合、PCと同様にこの世代のデバイスでは、スクリプティングおよびゲームプレイの最適化は時間の無駄になります。
-(:divend:)
 
 !!! iPad 3
 * 画面: 2048 x 1536 ピクセル、 LCD 264 ppi, LEDバックライト
@@ -210,13 +167,9 @@ iPad 3 はReflective Waterおよびフルスクリーンのイメージエフェ
 ** デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
 ** Quad-Core PowerVR SGX543MP4 GPU
 *** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:174px%Attach:bar.png
-(:divend:)
+    Attach:Bar11.png
 *** ロー シェーダ パフォーマンス、 iPad3と比較して: 
-(:div style="margin-left:120px; padding:0px; background: #7bc94d; width:200px; height:12px; overflow:hidden; display:inline-block;":)
-%thumb width:200px padding-left:200px%Attach:bar.png
-(:divend:)
+    Attach:Bar12.png
 
 Attach:bladeslinger.jpg\\
 iPad 3 では Reflective Water および フルスクリーンのイメージエフェクトといったRender-To-Texture エフェクトを実現できます。しかし、シェーダ最適化は依然として決定的に重要です。もしゲームがデバイスをハードウェア性能の限界まで使用していない場合、スクリプトおよびゲームプレイの最適化はこの世代のデバイスにおいて、 PC デバイス同様に時間の無駄です。
