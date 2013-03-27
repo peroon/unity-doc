@@ -33,3 +33,113 @@ DLL をコンパイルするときの正確なオプションは使用される�
 
 Attach:DLLScreenshot.png\\
 ''クラス名が表示されている、展開された DLL''
+
+!! MonoDevelop および Visual Studio 手順ガイド
+
+このセクションでは 簡単な DLL でのサンプルをビルドして、.NET ライブラリを生成するメジャーな IDE である MonoDevelop および Visual Studio と統合する方法を学びます。このセクションではさらに DLL のデバッグ セッションを準備する方法も説明します。
+
+!!! DLL の記述およびビルド
+
+# MonoDevelop または Visual Studio を開きます
+
+# アプリケーションのメニューから新規のプロジェクトを作成します:
+
+**MonoDevelop:
+### メニューから menu File > New > Solution を開きます
+### C# > Library を選択します
+
+**Visual Studio:	
+### メニューから File > New > Project 開きます
+### Visual C# > Class Library を選択します
+
+# 新規ライブラリの情報を入力します:
+
+**__Name__ は名前空間であり、このサンプルでは "DLLTest" を使用します。
+**__Location__ はプロジェクトの親フォルダです。
+**__Solution name__ はプロジェクトフォルダです。
+
+# Unity API への参照を追加します:
+
+**MonoDevelop:
+### ソリューション ブラウザでコンテキストメニューを開き（右クリック）、 Edit references を選択します
+### .Net Assembly tab > File System > select file のオプションを選択します
+
+**Visual Studio:
+### ソリューション エクスプローラでコンテキストメニューを開き（右クリック）、 Add Reference を選択します
+### Browse > Browse > select file のオプションを選択します
+
+# 必要な Unity API ファイルを選択します:
+
+**MacOS:
+***<Applications>/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll
+
+**Windows:
+***<Program Files>\Unity\Editor\Data\Managed\UnityEngine.dll
+
+# このサンプルでは、ソリューション ブラウザ でクラスの名前を "MyUtilities" にリネームしたうえ、次のコードと置き換えます:
+ !!!C#
+ [@
+ using System;	
+ using UnityEngine;
+
+ namespace DLLTest {
+
+	public class MyUtilities {
+	
+		public int c;
+
+		public void AddValues(int a, int b) {
+			c = a + b;	
+		}
+	
+		public static int GenerateRandom(int min, int max) {
+			System.Random rand = new System.Random();
+			return rand.Next(min, max);
+		}
+	}
+ }
+ @]
+# 最後にプロジェクトをビルドして DLL ファイルおよびそのデバッグシンボルを生成します。
+
+!!! 新規作成した DLL を Unity で使用する
+
+# Unity を開き、新規のプロジェクトを作成します
+
+# ビルドされたファイル <project folder>/bin/Debug/DLLTest.dll を Assets またはサブフォルダにコピーします (例えば Plugins フォルダ)
+
+# このサンプルでは C# スクリプトとして "Test" を Assets フォルダに作成し、次のコードと置き換えます:
+
+ !!!C#
+ [@
+ using UnityEngine;
+ using System.Collections;
+ using DLLTest;
+	
+ void Start () {
+	MyUtilities utils = new MyUtilities();
+	utils.AddValues(2, 3);
+	print("2 + 3 = " + utils.c);
+ }
+	
+ void Update () {
+	print(MyUtilities.GenerateRandom(0, 100));
+ }
+ @]
+# 最後にスクリプトをシーン上のオブジェクトにアタッチして（すなわち Main Camera）、シーンを実行します。出力結果は $$Console$$ ウィンドウで見られます。
+
+!!! DLL のデバッグ セッションをセットアップ
+
+# DLL のデバッグシンボルを準備します:
+
+**MonoDevelop:
+*** ビルドされたファイル <project folder>/bin/Debug/DLLTest.dll.mdb を Assets フォルダにコピーします (すなわち Assets/Plugins/)
+
+**Visual Studio:
+### <Program Files>\Unity\Editor\Data\Mono\lib\mono\2.0\pdb2mdb.exe をコマンドプロンプトで実行し、 <project folder>\bin\Debug\DLLTest.pdb を引数として渡します
+### 変換されたファイル <project folder>\bin\Debug\DLLTest.dll.mdb を Assets フォルダにコピーします (すなわち Assets\Plugins\)
+
+# "Test" スクリプトを MonoDevelop で開き、 Tools メニュー（Windows）または MonoDevelop-Unity メニュー (MacOS)からUnity デバッガを有効化します:
+
+**Add-in Manager > Installed tab > Unity > select Mono Soft Debugger Support for Unity > Enable
+
+詳細については [[Debugger]] ページを参照して下さい。
