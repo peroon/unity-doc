@@ -3,7 +3,7 @@
 このページでは$$Directional$$ ライトによる [[Shadows|shadows]] について詳しく説明します。
 
 
-__モバイルプラットフォームにおける注意__: Directionalライトによるリアルタイムシャドウは__いつも__１つのシャドウカスケードを使います。''hard shadows''限定です。
+__注意__: モバイルプラットフォームにおけるDirectionalライトによるリアルタイムシャドウは__いつも__１つのシャドウカスケードを使い、かつ $$Hard Shadows$$ です。
 
 Directional ライトは多くの場合、屋外のゲームで主光線 (日光や月光) として使用されます。 特に一人称視点および三人称視点のゲームで、表示距離が大きい場合があり、シャドウを微調整して、状況に対して、画質とパフォーマンスの最適なバランスを得る必要がある場合が多くあります。
 
@@ -15,15 +15,15 @@ Attach:Shadow50-4hs.png\\
 ここでは、表示距離は、およそ 50 ゲーム単位であるため、''Shadow Distance''が [[class-QualitySettings|Quality Settings]] で 50 に設定しています。 また、''Shadow Cascades''を 4、''Shadow Resolution''を High、ライトとして、''Soft Shadows''を使用しています。
 
 以降の章では、Directional ライトのシャドウの各面について詳しく説明します。
-* [[#hardvssoft | Hard versus Soft shadows]]
+* [[#hardvssoft | Hard と Soft shadows 比較]]
 * [[#cascades | Shadow Cascade count]]
-* [[#distance | Shadow Distance is Important!]]
+* [[#distance | Shadow Distance は重要!]]
 
 
 [[#hardvssoft]]
-!! Hard versus Soft shadows
+!! Hard と Soft shadows 比較
 
-U同じライト設定を使用して、''Shadow Type''から''Hard Shadows''に切り替える場合、明るいエリアから影のエリアへの移行は''Hard''で、100% 影、または100% 明るいかのいずれかになります。 Hard shadows は、高速でレンダリングされますが、見た目が現実的でなくなります。
+U同じライト設定を使用して、''Shadow Type''から Hard Shadows に切り替える場合、明るいエリアから影のエリアへの移行は''Hard''で、100% 影、または100% 明るいかのいずれかになります。 Hard shadows は、高速でレンダリングされますが、見た目が現実的でなくなります。
 
 Attach:Shadow50-4hh.png\\
 ''距離が 50 で、4 つのカスケードのある Hard shadows。''
@@ -51,7 +51,7 @@ Attach:Cascades1.png\\
 Attach:Shadow50-2hh.png\\
 ''距離が 50 で、2 つのカスケードのあるハード シャドウ。''
 
-パフォーマンスと引き換えに、近づくに連れ、シャドウの解像度が上がります。
+パフォーマンスと引き換えに、近づくにつれ、シャドウの解像度が上がります。
 
 Attach:Cascades2.png\\
 ''カスケードが 2 つの場合、2 つのシャドウ テクスチャは、表示エリアの異なるサイズの部分を覆います。''
@@ -66,7 +66,7 @@ Attach:Cascades4.png\\
 
 
 [[#distance]]
-!!Shadow Distance は重要です!
+!!Shadow Distance は重要!
 
 ''Shadow Distance''は、Directional ライトのシャドウの画質およびパフォーマンスの両方にとって非常に重要です。 シャドウ カスケード カウントの数同様、シャドウ ディスタンスは、[[class-QualitySettings|Quality Settings]] で設定でき、少ないハードウェアのパフォーマンスで、簡単にシャドウを縮小できます。
 
