@@ -2,7 +2,7 @@
 
 これはUnity のライトマッピングの紹介文です。上級者向けトピックについては [[Main.LightmappingInDepth| Unity のライトマッピングに関する詳細説明]] を参照して下さい。
 
-Unity にはビルトインライトマッピングのエンジンがあります。Illuminate Labs社による __[[ http://www.illuminatelabs.com/products/beast | Beast]]__ です。つまり Beast はUnityでシーンがどう構成されているか、メッシュ、マテリアル、テクスチャ、およびライト、にもとづいてライトマップの焼き込みを行います。これは、ライトマッピングはレンダリング エンジンに統合されていることを意味します - 一回ライトマップを作成すれば他には何も行う必要がなく、オブジェクトにより自動的に対応されます。
+Unity にはシステムに完全に統合されたライトマッピングのエンジンがあります。 Illuminate Labs社による __[[ http://www.illuminatelabs.com/products/beast | Beast]]__ です。つまり Beast はUnityでシーンがどう構成されているか、メッシュ、マテリアル、テクスチャ、およびライト、にもとづいてライトマップの焼き込みを行います。これは、ライトマッピングがレンダリング エンジンに統合されていることを意味します - 一回ライトマップを作成すれば他には何も行う必要がなく、オブジェクトにより自動的に処理がなされます。
 
 Attach:LightmapEditor-ApartmentScene.png
 
@@ -10,8 +10,8 @@ Attach:LightmapEditor-ApartmentScene.png
 
 メニューから __^^Window^^ &ndash; ^^Lightmapping^^__ を選択することでLightmappingウィンドウを開きます。
 
-# ライトマップさせたいメッシュが全てライトマッピングのための適切な UV となっていることを確認します。もっとも簡単な方法は [[Main.class-Mesh | mesh import settings]] で __^^Generate Lightmap UVs^^__ オプションを選択することです。
-# __^^Object^^__ ペインで、全てのメッシュレンダラ、スキンメッシュレンダラ、または地形（Terrain）を __^^static^^__ &ndash;として選択します。これにより、オブジェクトが移動や変化しないためライトマッピングして良いことをUnityに伝えます。\\
+# ライトマップさせたいメッシュが全てライトマッピングのための適切な UV となっていることを確認します。もっとも簡単な方法は [[Main.FBXImporter-Model | メッシュの Import Settings]] で __^^Generate Lightmap UVs^^__ オプションを選択することです。
+# __^^Object^^__ ペインで、全てのメッシュレンダラ、スキンメッシュレンダラ、または地形（Terrain）を __^^static^^__ として選択します。これにより、オブジェクトが移動や変化しないためライトマッピングして良いことをUnityに伝えます。\\
 Attach:LightmapperObject40.png
 # ライトマップの解像度を制御するには、 __^^Bake^^__ に移動して __^^Resolution^^__ 値を調整します。（ライトマップテクセルをどのように使用すればよいかについては、^^Scene View^^ 内にある小さな __^^Lightmap Display^^__ ウィンドウをみて __^^Show Resolution^^__ を選択します）。\\
 Attach:LightmapperBakeAndShowResolution40.png
