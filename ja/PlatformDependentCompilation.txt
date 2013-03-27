@@ -136,3 +136,11 @@ class PlatformDefines (MonoBehaviour):
 #endif@]
 
 しかし、Boo は現在 ''ifdef'' ディレクティブのみサポートします。
+
+!! カスタム定義
+
+ビルトインのセレクションに自身のカスタム定義のを追加することが出来ます。 [[class-PlayerSettings|Player Settings]] の $$Other Settings$$ により、 Scripting Define Symbols テキストボックスが表示されています。
+
+Attach:ScriptDefines.png
+
+ここで特定プラットフォームで定義したいシンボルの名前を入力して、セミコロンで区切ることが出来ます。これらのシンボルは、ビルトインのものと同様に ''#if'' ディレクティブの条件として使用できます。
