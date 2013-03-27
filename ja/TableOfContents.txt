@@ -214,9 +214,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[HOWTO-ImportObjectModo]]
 ****[[HOWTO-importObjectLightwave]]
 ****[[HOWTO-ImportObjectBlender]]
->>u42<<
 ****[[BlenderAndRigify]]
->><<
 ***[[Workflow]]
 ****[[HOWTO-MonoDevelop]]
 ****[[HOWTO-exportpackage]]

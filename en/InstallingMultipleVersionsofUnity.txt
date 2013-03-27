@@ -16,17 +16,16 @@ Unity_4.0b7
 *When you install on PC it will select the previously installed directory - do not install here
 *Create a new directory named sensibly e.g. Unity_4
 *Name any shortcuts so you know which version you are launching
-*Hold alt when you launch the beta to force unity to let you choose which project to open (otherwise it will try and upgrade the last opened project)
-*Choose your  projectname_4 directory to open your backed up project
+*Hold Alt when you launch the beta to force unity to let you choose which project to open (otherwise it will try and upgrade the last opened project)
+*Choose your projectname_4 directory to open your backed up project
 
 __Do not__ rename each Editor folder inside a single Unity folder! You will overwrite the MonoDevelop folder and this will cause __serious__ stability problems and unexpected crashes.
 
 !!Mac
+The installer for Mac will always install Unity into a folder called @@/Applications/Unity@@.  This will overwrite any previous install in that folder.  On the Mac the folder name can be changed without it affecting Unity provided Unity is not running.
 
-*Find your existing Unity application folder and rename appropriately e.g Unity35 
-*Install the Unity 4.0 (www.unity3d.com/download)
+*Find your existing Unity application folder and rename appropriately e.g @@/Applications/Unity350@@. 
+*Install Unity 4.x (downloaded from www.unity3d.com/download).
 *Name any shortcuts so you know which version you are launching
-*Hold alt when you launch the beta to force unity to let you choose which project to open (otherwise it will try and upgrade the last opened project)
+*Hold Alt when you launch to force Unity to let you choose which project to open (otherwise Unity will load the last opened project and and upgrade it.)
 *Choose your projectname_4 directory to open your backed up project
-
-

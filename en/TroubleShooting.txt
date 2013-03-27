@@ -273,6 +273,13 @@ Enabling managed code stripping in [[Main.class-PlayerSettings|player settings]]
 !Android!
 >>android<<
 ! Troubleshooting Android development
+!! "No Platforms Found" error:
+
+#Uninstall the current Android SDK and make sure that you don't have more than one copy of it.
+#Update Java with a stable version. Bear in mind the latest version shouldn't have conflicts, but users have experienced problems in the past.
+#Download a fresh copy of the latest ADT Bundle and install it following the instructions.  This should configure the development tools correctly: http://developer.android.com/sdk/index.html
+#Configure Unity with the installed Android SDK.
+
 !! Unity fails to install your application to your device
 # Verify that your computer can actually see and communicate with the device. See the [[Main.PublishingBuilds | Publishing Builds]] page for further details.
 # Check the error message in the Unity console. This will often help diagnose the problem.
@@ -286,7 +293,7 @@ If you get an error saying "Unable to install APK, protocol failure" during a bu
 # Use $$adb logcat$$ to get the crash report from your device.
 
 !! Building DEX Failed
-This an error which will produce a message like the following:-
+This is an error which will produce a message similar to the following:-
 [@
 Building DEX Failed!
 G:\Unity\JavaPluginSample\Temp/StagingArea> java -Xmx1024M 

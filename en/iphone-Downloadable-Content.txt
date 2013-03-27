@@ -40,13 +40,13 @@ If the first two steps were done properly, then the ''Build AssetBundle From Sel
 
 __Note:__ Apple may change the folder locations where you are permitted to write data.  Always check Apple documentation to be sure your application will be compliant.  The following was correct advice in early 2013.
 
-# Asset bundles can be downloaded and loaded by using the [[ScriptRef:WWW-assetBundle.html|WWW class]] and instantiating a main asset. Code sample:\\
+# Asset bundles can be downloaded and loaded by using the [[ScriptRef:WWW-assetBundle.html|WWW class]] and instantiating a main asset. Most effective way to do it is [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload method]]. Code sample:\\
 [@
 	var download : WWW;
 	
 	var url = "http://somehost/somepath/someassetbundle.assetbundle";
 	
-	download = new WWW (url);
+	download = WWW.LoadFromCacheOrDownload (url, 0);
 	
 	yield download;
 	
@@ -63,33 +63,17 @@ __Note:__ Apple may change the folder locations where you are permitted to write
 	} else {
 		Debug.Log("Couldnt load resource");	
 	}
-@]
-# You can save required files to a Library folder next to your game's Data folder.\\
-[@
-        // c# example
-        public static string GetiPhoneDocumentsPath () { 
-                // Your game has read+write access to /var/mobile/Applications/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Library 
-                // Application.dataPath returns              
-                //   /var/mobile/Applications/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/myappname.app/Data 
-
-                // Strip "/Data" from path 
-                string path = Application.dataPath.Substring (0, Application.dataPath.Length - 5); 
-
-                // Strip application name 
-                path = path.Substring(0, path.LastIndexOf('/'));  
-
-                return path + "/Library"; 
-        }
-@]
-
-# Cache a downloaded asset bundle using the .NET file API and for reuse it in the future by loading it via [[ScriptRef:WWW.html|WWW class]] and __file:///pathtoyourapplication/Library/savedassetbundle.assetbundle__. Sample code for caching:\\
+@]\\
+These files are stored in Library folder of iOS application sandbox and have set ''No Backup'' flag on. This means OS won't delete these files accidentally and these files won't be backed up to iCloud. It is good idea to keep [[ScriptRef:Caching-maximumAvailableDiskSpace.html|cache size limit]] low, to prevent your app from grabbing all the device disk space.
+# If you need finer grain control on cached files you can use regular WWW download via [@ new WWW(url) @] and then store downloaded file on disk by using .NET file API. You can save required files to a [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath  (Library/Caches, cleaned by OS)]] folder or [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath (Documents, not cleaned by OS)]] folder. You should not forget to set ''No Backup'' flag on these files via [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]], to prevent them being backed up to iCloud. __Note:__ Not setting this flag may result in app rejection when submitted to the App Store. Reuse these files in the future by loading it via [[ScriptRef:WWW.html|WWW class]] and __file:///pathtoyourapplication/Library/savedassetbundle.assetbundle__. Sample code for caching:\\
 [@
 	// Code designed for caching on iPhone, cachedAssetBundle path must be different when running in Editor
-	// See code snippet above for getting the path to your Library folder
-	private var cachedAssetBundle : String = "path to your Library folder" + "/savedassetbundle.assetbundle"; 
+	// See code snippet above for getting the path to your Library/Caches folder
+	private var cachedAssetBundle : String = Application.temporaryCachePath + "/savedassetbundle.assetbundle"; 
 	var cache = new System.IO.FileStream(cachedAssetBundle, System.IO.FileMode.Create);
 	cache.Write(download.bytes, 0, download.bytes.Length);
 	cache.Close();
+        iPhone.SetNoBackupFlag(cachedAssetBundle);
 	Debug.Log("Cache saved: " + cachedAssetBundle);
 @]
 ->__Note:__ You can test reading files from the Documents folder if you enable file sharing.  Setting ``UIFileSharingEnabled`` to true in your ``Info.plist`` allows you to access the Documents folder from iTunes.  Note that the contents of Documents is cached to iCloud, so is not a location to store asset bundles in a shipping title.  See [[http://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html | File System Basics]].
