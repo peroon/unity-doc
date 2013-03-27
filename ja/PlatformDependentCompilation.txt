@@ -10,9 +10,10 @@ Unity がスクリプトでサポートしているプラットフォーム マ�
 ||PROPS
 ||``UNITY_EDITOR`` ||ゲームコードからUnity エディタ スクリプトをコールするプラットフォーム マクロ定義。||
 ||``UNITY_STANDALONE_OSX`` ||Mac OS （Univeral, PPC, およびIntel アーキテクチャ含む）特有でコードのコンパイル／実行のためのプラットフォーム マクロ定義。||
-||``UNITY_DASHBOARD_WIDGET`` ||Mac OS ダッシュボード ウィジェットのコードを作成するプラットフォーム マクロ定義。||
-||``UNITY_STANDALONE_WIN`` ||Windows スタンドアローン アプリケーションのコードを作成したいときに使用します。||
-||``UNITY_STANDALONE_LINUX`` ||Linux スタンドアローン アプリケーションのコードを作成したいときに使用します。||
+||``UNITY_DASHBOARD_WIDGET`` ||Mac OS ダッシュボード ウィジェットのコードのコンパイル／実行のためのプラットフォーム マクロ定義。||
+||``UNITY_STANDALONE_WIN`` ||Windows スタンドアローン アプリケーションのコードをコンパイル／実行したいときに使用します。||
+||``UNITY_STANDALONE_LINUX`` ||Linux スタンドアローン アプリケーションのコードをコンパイル／実行したいときに使用します。||
+||``UNITY_STANDALONE`` ||あらゆる スタンドアローン アプリケーション（Mac, Windows, または Linux）のコードをコンパイル／実行したいときに使用します。||
 ||``UNITY_WEBPLAYER`` ||Web Player コンテンツ（Windows および Mac Web Player実行ファイルを含みます）のプラットフォーム マクロ定義。||
 ||``UNITY_WII`` ||Wii コンソールでコードのコンパイル／実行のためのプラットフォーム マクロ定義。||
 ||``UNITY_IPHONE`` ||iPhone プラットフォームでコードのコンパイル／実行のためのプラットフォーム マクロ定義。||
