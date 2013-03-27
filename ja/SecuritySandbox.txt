@@ -2,21 +2,19 @@
 
 !Desktop!
 >>Desktop<<
-Unity3.0以降では、WebplayerはAdobe Flashplayerで使用されているものと類似したセキュリティモデルを実装しています。このセキュリティの制限はビルドターゲットをWebplayerに設定している時およびWebplayerに適応されます。
-セキュリティモデルは、いくつかの段階があります。
+Unity3.0以降では、WebplayerはAdobe Flashplayerで使用されているものと類似したセキュリティモデルを実装しています。このセキュリティの制限はビルドターゲットをWebplayerに設定している時およびWebplayerに適応されます。セキュリティモデルは、いくつかの段階があります。
 
 * unity3dをホストしているドメイン以外のドメイン上のデータへのアクセスを制限する
 * ソケットの使用にいくつかの制限がある
 * いくつかのメソッドを使用出来ない
 * あなたが記述していないクラスやメソッドに対するSystem.Reflection.*の使用を制限
 
-最初の二つの項目はエディタでエミュレートされます。メソッド/クラスがWebPlayerで利用出来る一覧は　[[ ScriptRef:MonoCompatibility.html | こちら ]] を参照してください。
+最初の二つの項目はエディタでエミュレートされます。
+メソッド/クラスがWebPlayerで利用出来る一覧は [[ ScriptRef:MonoCompatibility.html | こちら ]] を参照してください。
 
 Unityのマルチプレイヤーネットワーキングを実現する機能（@@UnityEngine.Network@@ や  @@UnityEngine.NetworkView@@ クラス等）は影響を受けません。
 
-!!このドキュメントはUnity Web Playeの動作を確認する方法について記述します
-* 参照 [[ ScriptRef:WWW.html | the Unity API reference for information about the WWW class]].
-
+!!このドキュメントはUnity Web Player バージョン3.0 での動作を確認する方法について記述します
 * WWWクラスについては、[[ ScriptRef:WWW.html | WWWクラスのAPIリファレンス]] を参照してください。
 * .NET Socketクラスについては、[[ http://msdn.microsoft.com/en-us/library/system.net.sockets.socket.aspx | .NET APIリファレンス ]] を参照してください。
 
@@ -24,14 +22,13 @@ WWWのクラスとソケットは、同じポリシー・スキーマを使用�
 
 Unityエディタは"Web Securityエミュレータ"機能が付属しています。これはWebPlayerにセキュリティモデルを課します。
 これにより比較的簡単に問題を検出することができます。この設定は、下の項目から見つける事が出来ます。
-__Edit->Project Settings->Editor__.
+__Edit->Project Settings->Editor__ 。 [[class-EditorManager | Editor settings]] も参照して下さい。
 
 
-!WWWクラスを使用する為の合意
+!WWWクラスを使用する際の考慮事項
 
-Unityのweb playerは "__crossdomain.xml__" といったhttpサーバープロキシファイルの提供を期待しています。
+Unity の web player は @@crossdomain.xml@@ という http でのポリシー ファイルが WWW クラスによりアクセスするドメイン上で利用可能であることが必要です。
 （ただしUnity3dファイルをホストしているのと同じドメインである場合は必要ありません）
-
 
 例えば、テトリスゲームを想像してください。次のURLをホストしている場合：
 
@@ -41,9 +38,10 @@ Unityのweb playerは "__crossdomain.xml__" といったhttpサーバープロ�
 
 ''http://highscoreprovider.net/gethighscore.php''
 
-このケースでは、''highscoreprovider.net'' や類似のドメインに' __crossdomain.xml__ を配置する必要があります：'http://highscoreprovider.net/crossdomain.xml''
+このケースでは、''highscoreprovider.net'' や類似のドメインに @@crossdomain.xml@@ を配置する必要があります：'http://highscoreprovider.net/crossdomain.xml''
 
-__crossdomain.xml__ ファイルの内容はFlash Playerで使用される形式になっています。 __crossdomain.xml__ ファイルは既に至る所に配置されています。以下のようなファイルです：
+@@crossdomain.xml__ ファイルの内容はFlash Playerで使用される形式になっています。 @@crossdomain.xml@@ ファイルは既に配置されている可能性が高いです。ファイルに記述されているポリシー以下のとおりです：
+
 [@
 <?xml version="1.0"?>
 <cross-domain-policy>
@@ -55,17 +53,52 @@ __crossdomain.xml__ ファイルの内容はFlash Playerで使用される形式
 UnityのWebplayerは @@<allow-http-request-headers-from domain>@@ と @@<site-control permitted-cross-domain-policies>@@ タグをサポ０?賭していません。 __crossdomain.xml__ はASCIIファイルでなければならないことに注意してください。
 
 
+!! デバッギング
+環境変数 @@ENABLE_CROSSDOMAIN_LOGGING@@ を @@1@@ にセットすると、 Unity ランタイムが @@crossdomain.xml@@ ファイルをフェッチしてデコードするにつれてコンソールメッセージが生成されます。Mac 上ではグローバル環境変数を @@/etc/launchd.conf@@ でセット出来ます。PC 上では @@Control Panel->System And Security->System->Advanced system settings->Environment Variables...@@ から変更します。
 
-!ソケットを使用する為の合意
+この環境変数をセットし、ウェブプレイヤーがリモートサーバから画像をフェッチを試みた際の出力例を次に示します:
 
+[@Determining crossdomain.xml location for request: http://www.remoteserver.com/image.jpg
+About to parse url: http://www.remoteserver.com/image.jpg
+Determining crossdomain.xml location for request: http://www.remoteserver.com/image.jpg
+About to parse url: http://www.remoteserver.com/crossdomain.xml
+About to parse url: http://www.remoteserver.com/image.jpg
+Determining crossdomain.xml location for request: http://www.remoteserver.com/image.jpg
+Download had OK statuscode
+Received the following crossdomain.xml
+----------
+<?xml version="1.0"?>
+<cross-domain-policy>
+<allow-access-from domain="*"/>
+</cross-domain-policy>
+----------
+received policy
+Parsing: cross-domain-policy
+cross-domain-policy
+Parsing: allow-access-from
+allow-access-from
+  domain: *
+done parsing policy
+crossdomain.xml was succesfully parsed
+About to parse url: http://www.remoteserver.com/image.jpg
+Checking if http://www.remoteserver.com/image.jpg is a valid domain
+Checking request-host: www.remoteserver.com against valid domain: *
+All requirements met, the request is approved
+@]
+エディタを実行するとき、これらのメッセージは Editor.log に書き込みされます。  @@utf16@@ の @@BOM@@ありで格納された @@crossdomain.xml@@ の読み込みが失敗すると XML のパースに失敗につながります:
+[@BuildFlashPolicy caught an exception while parsing http://www.remoteserver.com/crossdomain.xml: Expected element
+@]
+@@BOM@@ ありは予想されていないため失敗します。サポートされていない @@BOM@@ なし @@utf16@@ ファイルを使用すると次の結果となります:
+[@BuildFlashPolicy caught an exception while parsing http://www.remoteserver.com/crossdomain.xml: Policy can't be constructed from empty stream.
+@]
+これはファイルの最初のバイトがゼロであり、パーサーがファイルの終わりに到達したと考えてしまうためです。 @@Crossdomain.xml@@ は ASCII ファイルである必要があります。
+
+!ソケットを使用する際の考慮事項
 
 Unityのweb playerは特定のホストに接続する為に、ソケットサーバーポリシーを必要とします。このポリシーはデフォルトではポート __843__ のターゲット干すとによってホストされていますが、それは同様に他のポート上でホストすることができます。デフォルトとデフォルト以外の機能的な違いは、それを手動で取得する必要がある事です。 [[ScriptRef:Security.PrefetchSocketPolicy.html|Security.PrefetchSocketPolicy()]] APIを呼び出し、それが1024より大きいポート上でホストされている場合のみ、ポリシーが1024より大きい他のポートへのアクセスを与える事が出来ます。
 
-
-デフォルトのポートを使用する場合、以下のように動作します：
-Unity WebplayerはTCPソケットの接続を確立させようと干すとサーバーが接続を受け入れるか確認します。これは、新しい接続を介してソケットポリシーを受信する事を期待し、ポート843のTCPソケットを開く事で行います。
-Unityのweb playerはホストと接続を行い、エラー無しで接続され接続が許可されていることを確認します。
-このプロセスでは、ユーザーが意識してセキュリティモデルを変更する必要はありません。ソケットポリシーの例は次の通りです。
+デフォルトのポートを使用する場合、以下のように動作します：Unity WebplayerはTCPソケットの接続を確立させようとホストサーバーが接続を受け入れるか確認します。これは、新しい接続を介してソケットポリシーを受信する事を期待し、ポート843のTCPソケットを開く事で行います。
+Unityのweb playerはホストと接続を行い、エラー無しで接続され接続が許可されていることを確認します。このプロセスでは、ユーザーが意識してセキュリティモデルを変更する必要はありません。ソケットポリシーの例は次の通りです。
 [@
 <?xml version="1.0"?>
 <cross-domain-policy>
@@ -76,7 +109,6 @@ Unityのweb playerはホストと接続を行い、エラー無しで接続さ�
 このポリシーは事実上"任意のドメイン上のコンテンツは、ポート1200から1220間で自由にソケットを確立できる"と宣言しています。UnityのWebplayerはこれを尊重し、その範囲外のポートを使用する場合はソケットの接続を拒否します（SecurityExceptoinがスローされます）。
 
 UDP接続を使用する場合のポリシーは、TCPと同様の方法で実施することができます。違いはTCPは自動でフェッチされる点です（サーバーへの接続を許可されてることを保証します）。この違いは、TCPは接続した際に自動でフェッチされますがUDPはフェッチされない点です。UDPはコネクションレスの際もAPIが参照された時に送信もしくは受信を行います（送信及び受信を行うことを保証します）
-
 
 ソケットポリシーに使用される形式は、いくつかのタグがサポートされていない事を除き、Flash Playerと同じものです。Unityのwebplayerは"*"のみをサポートしており、ドメインの設定と"to-ports"の設定が必須です。
 [@
@@ -92,19 +124,13 @@ UDP接続を使用する場合のポリシーは、TCPと同様の方法で実�
 UDPとTCPトラフィックの双方が接続できるポリシーサーバーは、TCPとUDPの接続の両方に有効です。
 
 利便性のため、我々は843ポートで待機する小さなプログラムを提供し、それに接続した際にソケットポリシーに文字列を返信します。サーバーのコードは、Unityがインストールされているフォルダの、WindowsであればData/Tools/SocketPolicyServer、OSXであれば/Unity.app/Contents/Tools/SocketPolicyServerで見つける事が出来ます。事前に構築された実行可能ファイルはMac上で動作可能なことに注意してください。"mono sockpol.exe"と入力すると動作します。
-  
 このサンプルはソケットポリシーサーバー（socket policy server）の正しい振る舞いを表します。具体的にはサーバーが含まれているゼロ（0）で終わる文字列を受信することを想定し、 @@<policy-file-request/>@@ を含めます。この場合、クライアントはこの文字列を受信した際にsocket policy.xmlドキュメントを送信します。さらに、xmlヘッダーとxmlボディも要求され、シングルソケットより送信します。送信中にヘッダとボディをソケットの書込み中に壊すと、不完全なポリシーの受信によるセキュリティ例外を引き起こす可能性があります。もしサーバーでで問題が発生した場合、当社の提供するサンプルを用いて検討して下さい。これは問題がサーバーサイドかクライアントサイドか判断するのに役立ちます。
 
-
 一般的に、マルチプレイヤーネットワーキングに使用されるサードパーティ製のネットワークライブラリは、それらがP２P機能（下記参照）に依存しますが、専用サーバーを使用しない限りこれらの案件で動作する事が出来るはずです。これらの時には、型はずれのホスティングポリシーをサポートする場合があります。
-__注意_:_  @@crossdomain.xml@@ と ソケットポリシーファイルは両方ともxmlドキュメントで似ていますが、文章が提供されている方法は非常に異なっています。
 
+__注意_:_  @@crossdomain.xml@@ と ソケットポリシーファイルは両方ともxmlドキュメントで似ていますが、文章が提供されている方法は非常に異なっています。@@Crossdomain.xml@@ （HTTPリクエストに適応する）はポート80を利用して取り出され、ソケットポリシーがポート843を利用しているトライアルサーバーを経由し、 @@<policy-file-request/>@@ を実施しフェッチされます。　ソケットポリシーファイルを発行するには、Httpサーバーを使用する必要があり、また単純にポート843でソケットポリシーファイルを送信しソケットポリシーファイルを送信するサーバーをセットアップすることはできません。接続する各サーバーが独自のソケットポリシーサーバーを必要とする点にも注意して下さい。
 
-
- @@Crossdomain.xml@@ （HTTPリクエストに適応する）はポート80を利用して取り出され、ソケットポリシーがポート843を利用しているトライアルサーバーを経由し、 @@<policy-file-request/>@@ を実施しフェッチされます。　ソケットポリシーファイルを発行するには、Httpサーバーを使用する必要があり、また単純にポート843でソケットポリシーファイルを送信しソケットポリシーファイルを送信するサーバーをセットアップすることはできません。接続する各サーバーが独自のソケットポリシーサーバーを必要とする点にも注意して下さい。
-
-
-!!!デバッギング
+!!デバッギング
 
 ソケットポリシーサーバーは @@telnet@@ を使用して接続することができます。セッションの例を以下に示します。
 [@
@@ -120,33 +146,33 @@ Escape character is '^]'.
 host$@]
 この例のセッションではポート843からtelnetでlocalhostに接続しています。Telnet接続は最初の3行を使用して応答し、後はユーザーが入力するのを待っています。次にユーザーポリシー要求の文字列を @@<policy-file-request/>@@ を送信すると、ソケットポリシーを応答し、その後サーバーは接続が閉じられた為にTelnetを切断しています。
 
-!!Listening sockets
 !!リスニングソケット（Listening sockets）
 
 あなたはWebPlayerでリスニングソケットを作成 __できません__ し、それはサーバーとして機能させることも出来ません。従ってWebPlayerで相互に直接通信（P2P）する事はできません。TCPソケットを使用するときは、それがソケットポリシーシステムを通過することが許可され提供されるリモートエンドポイントにのみ接続することができます。UDPの場合も同様に動作しますが、それはコネクションレスのプロトコルとしてコンセプトが少し異なっているため、パケットを送受信するためにConnect/Listenする必要がないためです。これは最初に @@allow-access-from domain@@ タグが含まれている有効なポリシーを受信した場合のみ有効になります。
 
-!!なぜこんな仕組みが存在するのか？
+!なぜこんな仕組みが存在するのか？
 
-ソケットやWWWのセキュリティ機能は、Unity Web Playerをインストールした人を守るための機能です。
-これらの制限がない場合、下のようなストーリーが発生するかもしれません。
+ソケットやWWWのセキュリティ機能は、Unity Web Playerをインストールした人を守るための機能です。これらの制限がない場合、下のようなストーリーが発生するかもしれません。
 
 * ホワイトハウスで働いているボブと、極悪人のフランクが居ます。
-　フランクはホワイトハウスのhttp://internal.whitehouse.gov/LocationOfNuclearBombs.pdf（核爆弾の配置に関する資料）を狙っています。
-　http://internal.whitehouse.govは国家機密のためインターネット上からアクセス出来ませんが、ホワイトハウスで働くボブのワークステーションからならばアクセス出来ます。　
+ フランクはホワイトハウスのhttp://internal.whitehouse.gov/LocationOfNuclearBombs.pdf（核爆弾の配置に関する資料）を狙っています。 http://internal.whitehouse.govは国家機密のためインターネット上からアクセス出来ませんが、ホワイトハウスで働くボブのワークステーションからならばアクセス出来ます。
 * フランクはUnityのWebゲームを装う「バックグラウンドでhttp://internal.whitehouse.gov/LocationOfNuclearBombs.pdfをダウンロードするアプリ」を作成します。
-　このゲームがダウンロードしたPDFはhttp://frank.com/secretDataUploader.phpに送信されます。
+ このゲームがダウンロードしたPDFはhttp://frank.com/secretDataUploader.phpに送信されます。
 * フランクはhttp://www.frank.com/coolgame.unity3dにゲームを配置します。
 * フランクはボブを説得し、ボブはフランクの作ったゲームをプレイしてもらいます。
   ボブがプレイしている間にゲームはコッソリ国家機密をダウンロードし、フランクに送信します。
 
-
-WWWとScketはセキュリティを備えているためこの攻撃は失敗するでしょう。なぜなら、PDFをダウンロードする前にUnityはhttp://internal.whitehouse.gov/crossdomain.xmlにサーバーに「そのデータの所有者は貴方で、公的に利用することが出来るか？」と訪ねるためです。この場合、通例ではwebserverのcrossdomain.xmlは応答で見ることができます。このケースではinternal.whitehouse.govのシステムオペレーターがcrossdomain.xmlを配置していない場合、UnityはPDFのダウンロードや読込を行うことができません。
+WWWとSocketはセキュリティを備えているためこの攻撃は失敗するでしょう。なぜなら、PDFをダウンロードする前にUnityはhttp://internal.whitehouse.gov/crossdomain.xmlにサーバーに「そのデータの所有者は貴方で、公的に利用することが出来るか？」と訪ねるためです。この場合、通例ではwebserverのcrossdomain.xmlは応答で見ることができます。このケースではinternal.whitehouse.govのシステムオペレーターがcrossdomain.xmlを配置していない場合、UnityはPDFのダウンロードや読込を行うことができません。
 
 残念なことに、Unity Web Playerをインストールする人々を守るため、Unity開発者はこれらのセキュリティ対策を講じる必要があります。この制限はFlashやSilverlight、Shockwaveにも同様に存在します。
 
 
-!! 例外
+! 例外
 
 Web Playerのユーザーを保護しつつコンテンツ開発を容易にするため、上記のメカニズムに例外を設けています。
 
-- もしcrossdomain.xmlがない場合でも、サーバーからイメージのみダウンロードすることを許可しています。ただし、それらに対しgetPixel()を使用することは許可されておらず、また画像からbyteに戻すこともできません。このどちらかを行った際、UnityはSecurityExceptionをスローします。この制限がある限り、イメージをダウンロードしても他のサーバーにイメージを送信するといった事はできなくなっています。
+もしcrossdomain.xmlがない場合でも、サーバーから画像のみダウンロードすることを許可しています。しかし、この画像を使用して出来ることはシーン上でテクスチャとして使用することです。それらに対し [[ScriptRef:Texture2D.GetPixel.html|GetPixel()]] を使用することは許可されておらず、また画面から再度読み込むこともできません。このどちらかを行った際、UnityはSecurityExceptionをスローします。
+[@SecurityException: No read access to the texture data: 
+  at (wrapper managed-to-native) UnityEngine.Texture2D:GetPixel (int,int)
+@]
+この理由は、画像のダウンロードはコンテンツデベロッパーがアクセス権を許可するかぎり問題ありません。このためユーザに表示することは出来ますが、画像のバイトを別のサーバに送信することは出来ません。もしピクセルデータをアクセスする必要があれば、 @@crossdomain.xml@@ ファイルを画像のフェッチができる場所に配置して下さい。
