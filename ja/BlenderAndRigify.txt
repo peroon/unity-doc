@@ -1,101 +1,99 @@
-!Using Blender and Rigify
+! Blender と Rigify の使用 / Using Blender and Rigify
 
-Blender now comes with a free add-on called Rigify that provides your models with a biped rig that will work with Mecanim. This will prove very useful for new and casual game developers.
+現在 Blender にはフリーのアドオンである Rigify が同梱されていて、これにより自身のモデルに二足歩行キャラクターのリグ を作成してメカニム と連動させることができます。新しいゲームおよびカジュアルゲームの開発者にとって非常に便利です。
 
-This guide shows you how to get your 3D model rigged with Rigify and imported into Unity 4's Mecanim. Rigify generates a full rig for your model and by using the armature as a template you will be able to forge it into a nice simple rig for humanoid characters. You should start by enabling Rigify within Blender so you can use its features. From there you will import your 3d model and begin to set up your model and armature correctly to avoid any problems later down the line. Once everything is set-up you can position the bones and generate your main rig. The trickiest part is skinning the mesh to the bones you wish to use and ensuring they are parented correctly, and finally (after some testing and polishing) you can import into it into Unity.
+このガイドでは 3D モデルを Rigify を用いてリギングして Unity 4 のメカニムにインポートする方法を示します。 Rigify は自身のモデルに対して完全なリグを提供し、Armature をテンプレートとして使用することで、ヒューマノイド キャラクター向けの素晴らしくシンプルなリグを作り出すことが出来ます。始めるには Blender 上で Rigify 機能を使用できるように有効化します。次に 3D モデルをインポートして モデルおよび Armature をセットアップして後続で発生しうる問題をあらかじめ回避します。一回全てをセットアップした後はボーンを配置してメイン リグを生成できます。もっとも複雑なのはメッシュを使用したボーンに対してスキングしたうえで、正しく親子関係が設定されていることを確認し、最後に（いくつかのテストと微調整の後）Unity にインポート出来ます。
 
-!!Here is what you will need:
+!! 必要なソフトウェア:
 *[[http://unity3d.com/unity/download/ | Unity 4.x]]
 *[[http://www.blender.org/download/get-blender/ | Blender 2.64 ]]
-*3D Humanoid Model ([[http://www.makehuman.org/download|MakeHuman]] is very useful if you need help with modelling).
+*3D ヒューマノイド モデル ([[http://www.makehuman.org/content/download|MakeHuman]] はモデリングでのサポートが必要な場合に便利です)。
 
-!!Enable Rigify
+!! Rigify の有効化
 
-First you need to ensure that the Rigify add-on has been installed and enabled within Blender:
+最初に Rigify アドオンがインストールされ Blender で有効化されていることをチェックする必要があります:
 
-#Go to File > User preferences. 
-#Select the Addons tab, and then scroll to the bottom and click the check box next to �Rigify�
-#Click �Save as default�
+# File > User preferences に移動します。
+# Addons タブを選択し、最下部までスクロールして Rigifyの隣にあるチェックボックスをクリックしたうえでデフォルトとして保存します。
+これによりアドオンは有効化されボタンおよび必要な機能へのアクセスが出来るようになります。デフォルトに設定することで将来的に使用するプロジェクトであらかじめ有効化されます。
 
-This activates the add-on and allows you access to the buttons and features needed. Setting it to default will include it with all your future projects.
+!! Armature のセットアップ
 
-!!Setting up your Armature
+テンプレートとして Rigify で使用する基本的なヒューマノイド リグを入手します。このリグはとても基本的ですが Rigify が相対的なボーンの位置を囲うようにして構築できるようになります。
 
-Grab a basic humanoid rig that Rigify will use as a template. This rig is very basic but it allows Rigify to build itself around the relative bone positions.
-
-#Go to Add > Armature (Human)
-#Ensure both the armature and model are centred at 0,0,0
-#If you scale or move the model make sure to reset the scale and/or translation values of both the armature and model.
+# Add > Armature (Human) に移動します。
+# Armature およびモデルが両方とも（0,0,0）を中心としていることを確認します。
+# もしモデルをスケールまたは移動した場合、Armature およびモデルのスケール および/または Transform の値を確実にリセットしておきます。
  Attach:Rigify01.png
-#Go into edit mode (Press Tab)
+# Edit モードに入ります (Tab キーを押下)
  Attach:Rigify02.png
-#Begin positioning the bones in their respective place on the model
-#Use �X-Ray� to allow yourself to see the bones through the model
-#Once this is complete, go back into object mode.
-#Move the armature to the side so it is out of the way.
-''(If you are using Make Human, you may want to join the many different meshes into one complete mesh. Do this by selecting all the meshes and pressing CTRL + J)''
+# ボーンをモデル上のしかるべき位置に配置します。
+# X-Ray を使用して、モデルを透過してボーンが表示されるようにします。
+# 完了した後、 Object モードに戻します。
+# Armature を左右のどこか作業の邪魔にならない位置へとよけるために移動させます。
+''(もし Make Human を使用している場合、多くの異なるメッシュをひとつの完全なメッシュに Join したい場合があります。これをするためには全てのメッシュを選択して Ctrl + J を押下します)''
 
-!!Generating your Rig
+!! Rig の生成
 
-#While the armature is selected click the Object data tab on the far right.
-#Under �Rigify Buttons� click Generate.
+# Armature が選択されている時に、右端にある Object data タブをクリックします。
+# Rigify Buttons セクションを見つけ、下にある Generate をクリックします。
  Attach:Rigify03.png
  Attach:Rigify04.png
-#Switch to Pose mode and do the following:
-#Press the (A) key to select the rig and then press the (H) key to hide the unwanted layers.
-#Shift click on the Armature layer below.
+# Pose モードに切り替えて次の手順を実施します:
+# (A) キーを押下して、リグを選択し、(H) キーを押下して不必要なレイヤーを隠します。
+# 下にある Armature レイヤーを Shift を押しながらクリックします。
  Attach:Rigify05.png
 
- This will reveal the deformation bones, the deformation bones are what you will need to skin and weight paint your mesh to.
+これにより Deformation ボーンが表示されます。これらの Deformation ボーンはメッシュをスキニグしてウェイトペイントするのに必要です。
 
 
-!!Deleting WGT bones
+!! WGT ボーンの削除
 
-You will notice in the top right corner in the scene's hierarchy you have many WGT-bones.
+右上のシーンの階層上にたくさんの WGT と名前のついたボーンが出来ることに気が付くはずです。
 Attach:RigifyWGT.png
-As these bones will not be skinned to the mesh or used at all, we will need to delete them to avoid having unassigned meshes in our Unity project. Right click on the bone and select "Delete". Do this for each WGT-bone in the scene.
+これらのボーンはメッシュにスキングされずまったく使用されないものであるため、これらを削除することで Unity プロジェクトの中に割り当てされないメッシュが出来ることを回避する必要があります。ボーンを右クリックして "Delete" を選択します。これをシーン中の各ボーンに対して行います。
 
-!!Skinning the Rig to the Model
+!! リグをモデルに対してスキニングする
 
-#Skin the model to the deformation bones.
+# モデルを Deformation ボーンに対してスキニングする
  Attach:Rigify06.png
- Before you start, make sure you are in object mode and select the mesh, then hold shift and select the rig, press Ctrl + P and select Armature deform > With Automatic weights.\\
- This will assign the mesh to the bones creating vertex groups, this is what we will use for the skinning process.\\
- ''(If you have little or no knowledge of skinning in blender click [[http://www.youtube.com/watch?feature=player_detailpage&v=PPbSGUPj72w#t=410s|Here]] for a tutorial.)''\\
- Notice that the deformation bones will use two bones for each of the upper and lower limbs. Do not skin to the 2nd bone and ensure they are re-parented so that Mecanim will link them up correctly.
+始める前に、Object モードに入っていることを確認してメッシュを選択し、それから Shit を押しながらリグを選択し、Ctrl + P を押下して表示されるメニューで Armature deform > With Automatic weights を選択します\\
+これによりボーンに対してメッシュが割り当てられ Vertex Group が作成されます。これがスキニング プロセスで使用するものです。\\
+ ''(もし Blender でスキニングする知識がないか、ほとんど初めての場合は [[http://www.youtube.com/watch?feature=player_detailpage&v=PPbSGUPj72w#t=410s|ここ]] でチュートリアルを参照して下さい。)''\\
+Deformation ボーンは各々上部と下部の手足に二つのボーンを使用することに気が付くはずです。二つめのボーンはスキングせず、 正しくメカニムが正しくリンクできるように親子関係を確かめます。
 
-#Skin your Shoulders to  "DEF-shoulder.R" + "DEF-shoulder.L" and ensure their parent is "ORG-ribs"
-#Skin your Upper arms to "DEF-upper_arm.R.01" + "DEF-upper_arm.L.01" and ensure their parent is "DEF-shoulder.R" or "DEF-shoulder.L" respectively.
-#Skin your Forearms to "DEF-forearm.R.01" + "DEF-forearm.L.01" and ensure their parent is "DEF-upper_arm.R.01" or "DEF-upper_arm.L.01" respectively.
-#Skin your thighs to DEF-thigh.R.01 + DEF-thigh.L.01 and ensure their parent bone is "ORG-hips".
-#Skin your Shins to DEF-shin.R.01 + DEF-shin.L.01 and ensure their parent is "DEF-thigh.R.01" or "DEF-thigh.L.01" respectively.
- This will provide you with a rig that is skinned to the bones shown without an X through them. The spare bones should not be skinned to anything!
+# 肩を "DEF-shoulder.R" と "DEF-shoulder.L" にスキニングして、親が "ORG-ribs" であることを確認します。
+# 腕の上部を "DEF-upper_arm.R.01" と "DEF-upper_arm.L.01" にスキニングして、親が各々 "DEF-shoulder.R" と "DEF-shoulder.L" であることを確認します。
+# 腕の下部を "DEF-forearm.R.01" と "DEF-forearm.L.01" にスキニングして、親が各々 "DEF-upper_arm.R.01" と "DEF-upper_arm.L.01"  であることを確認します。
+# 脚の上部を DEF-thigh.R.01 と DEF-thigh.L.01 にスキニングして、親が  "ORG-hips" であることを確認します。
+# 脚の下部を DEF-shin.R.01 と DEF-shin.L.01 にスキニングして、親が各々  "DEF-thigh.R.01" と "DEF-thigh.L.01" であることを確認します。
+これにより X が表示されていないボーンにスキニングされたリグが得られます。余分なボーンは完全にスキングしないようにします。
  Attach:Rigify07.png
- Do the same thing to the hands, just remember Mecanim will only take the hand bone and three bones for each finger and thumb. This means you skin the model's hands to the bones without crosses through them as shown in the picture below.
- Attach:Rigify08.png
-#In the same way the hand must be parented to the correct bones. Skin your Hands to  "DEF-hand.R" + "DEF-hand.L" and ensure their parent is  "DEF-forearm.R.01" or "DEF-forearm.L.01" respectively.
+手に対して同じことを行いますが、メカニムは手のボーンと、各々の指と親指でそれぞれ 3 つのボーンしか使用しないことに留意して下さい。つまり下の図におけるモデルの手を X が表示されていないボーンに対してスキニングします。
+  Attach:Rigify08.png
+# 同様にして、手は正しいボーンを親とする必要があります。手を  "DEF-hand.R" と "DEF-hand.L" にスキニングして親が各々 "DEF-forearm.R.01" と "DEF-forearm.L.01" であることを確認します。
 
- For each finger and thumb you will be using the following (left hand as an example):
+各々の指と親指について、次のボーンを使用します（例は左手）:
 
-**Thumb: "DEF-thumb.01.L.02", "DEF-thumb.02.L", "DEF-thumb.03.L"
-**Index: "DEF-finger_index.01.L.02", "DEF-finger_index.02.L", "DEF-finger_index.03.L"
-**Middle: "DEF-finger_middle.01.L.02", "DEF-finger_middle.02.L", "DEF-finger_middle.03.L"
-**Ring: "DEF-finger_ring.01.L.02", "DEF-finger_ring.02.L", "DEF-finger_ring.03.L"
-**Pinky:  "DEF-finger_pinky.01.L.02", "DEF-finger_pinky.02.L", "DEF-finger_pinky.03.L"
+**親指: "DEF-thumb.01.L.02", "DEF-thumb.02.L", "DEF-thumb.03.L"
+**人差指: "DEF-finger_index.01.L.02", "DEF-finger_index.02.L", "DEF-finger_index.03.L"
+**中指: "DEF-finger_middle.01.L.02", "DEF-finger_middle.02.L", "DEF-finger_middle.03.L"
+**薬指: "DEF-finger_ring.01.L.02", "DEF-finger_ring.02.L", "DEF-finger_ring.03.L"
+**小指:  "DEF-finger_pinky.01.L.02", "DEF-finger_pinky.02.L", "DEF-finger_pinky.03.L"
 
- Remember that each finger bone should always be parented to the last and the first bone should be parented to the hand, providing a neat link for Mecanim to deal with.
+各々の指のボーンは常に一つ手前のボーンを親にして、最初の指のボーンは手のボーンを親にすることに留意することでメカニムがスムーズに正しくリンクできるようになります。
 
-!!Export and Import
+!!エクスポートおよびインポート
 
-Export the model as a .fbx and place it in a folder separate from your project. file > Export > AutoDesk FBX (.fbx) > Export. Once this is done you can begin to import it into Unity and get it linked up to Mecanim.
+モデルを .fbx としてエクスポートしてプロジェクトとは別のフォルダに配置します。メニュー上では file > Export > AutoDesk FBX (.fbx) > Export です。完了した後、 Unity にインポートしてメカニムとリンクされるように出来ます。
  
-#Open Unity 4 and create a new project called "Rigify Test" once it is open, simply drag and drop your model into the project window.
+# Unity 4 を開き、"Rigify Test" という新規のプロジェクトを作成します。開いた後にモデルを Project ウィンドウにドラッグ＆ドロップします。
  Attach:Rigify09.png\\
 
-#Select the model's prefab in the project window and click Rig in the inspector. Change Animation Type to Humanoid and click Configure.
+# モデルのプレハブを Project ウィンドウで選択してインスペクタ上で Rig をクリックします。 Animation Type を Humanoid に変更したうえで Configure をクリックします。
 
- All the bones should now link up nicely into Mecanim.
+これで全てのボーンは正しくメカニムでリンクされるはずです。
  Attach:Rigify10.png\\
 
-#Ensure all bones are in the right places and that there are no errors.
+# 全てのボーンが正しい位置にあることを確認してエラーがないことを確認します。
  Attach:Rigify11.png\\
