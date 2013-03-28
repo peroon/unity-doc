@@ -276,6 +276,13 @@ public class NewBehaviourScript : MonoBehaviour {
 !Android!
 >>android<<
 ! Android 開発トラブルシューティング
+!! "No Platforms Found" エラー:
+
+# 現在の Android SDK をアンインストールしたうえ、複数ないことを確認します。
+# Java を安定バージョンでアップデート。最新版はコンフリクトありませんが、過去はユーザがトラブルを経験したことがあることに留意して下さい。
+# 最新の ADT バンドルをダウンロードして、説明にしたがってインストールします。これにより正しくデベロッパー ツールがインストールされます: http://developer.android.com/sdk/index.html
+# インストールした Android SDK に対してUnity を設定します。
+
 !! Unity がデバイスへのアプリケーション インストールに失敗する
 # コンピュータから実際にデバイスがみれて通信できることをチェックして下さい。詳細については [[Main.PublishingBuilds | ビルドのパブリッシュ]] を参照下さい。
 # Unityコンソールでのエラーメッセージをチェックして下さい。通常、これにより問題の診断がしやすくなります。
