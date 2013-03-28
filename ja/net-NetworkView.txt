@@ -16,6 +16,6 @@
 Editorでのネットワークビューの詳細については[[class-NetworkView | Network View Component Reference page]] を参照下さい。
 
 
-ネットワークオブジェクトを作成するために[[ScriptRef:Network.Instantiate.html | Network.Instantiate()]] を使用する場合は、ネットワークビュー手動で適切に割り当てることを心配する必要がありません。バックグラウンドで自動的に処理されます。
+ネットワークオブジェクトを作成するために[[ScriptRef:Network.Instantiate.html | Network.Instantiate()]] を使用する場合は、ネットワークビューを手動で適切に割り当てることを心配する必要がありません。バックグラウンドで自動的に処理されます。
 
 しかし各ネットワークビューの``NetworkViewID``の値は[[ScriptRef:Network.AllocateViewID.html | Network.AllocateViewID]] を使って手動でセットすることが出来ます。スクリプティングリファレンスのドキュメントでRPC関数を持つ全てのクライアントでオブジェクトをインスタンス化し、NetworkViewIDを``AllocateViewID``で手動セットする例が示されています。
