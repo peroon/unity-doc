@@ -13,7 +13,6 @@ Appleの "StoreKit" ドキュメントにより四つの __製品__ を"アプ�
 * iOSからどのようにしてダウンロードしてキャッシュするか
 
 !! iOSで使用するためにエクスポートする
-
  ダウンロード可能コンテンツのためにプロジェクトを分けることは良いアイデアでメインアプリケーションと後からダウンロードするコンテンツを適切に分けられます。
 
 注意: ダウンロード可能コンテンツに含まれるゲーム スクリプトはメインの実行ファイルはメインの実行ファイルにも含まれる必要があります。
@@ -40,13 +39,13 @@ Attach:iPhoneAssetBundleExport.png\
 # 保存ダイアログが表示されろので、希望するアセットバンドルのファイルめいを入力します。__.assetbundle__ 拡張子が自動的に付加されます。Unity iOSのランタイムは同じバージョンのUnityエディタでビルドされたアセットバンドルのみ許可します。詳細については [[ScriptRef:BuildPipeline.BuildAssetBundle.html | BuildPipeline.BuildAssetBundle]] を参照下さい。
 
 !! iOSでアセットをダウンロードする
-# [[ScriptRef:WWW-assetBundle.html|WWW クラス]] の使用およびメインアセットをインスタンス化により、アセットバンドルをダウンロードおよびロード出来ます。コードでのサンプルは:\\
+# [[ScriptRef:WWW-assetBundle.html|WWW クラス]] の使用およびメインアセットをインスタンス化により、アセットバンドルをダウンロードおよびロード出来ます。もっとも効果的な方法は [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload メソッド]] です。コードでのサンプルは:\\
 [@
 	var download : WWW;
 	
 	var url = "http://somehost/somepath/someassetbundle.assetbundle";
 	
-	download = new WWW (url);
+	download = WWW.LoadFromCacheOrDownload (url, 0);
 	
 	yield download;
 	
@@ -64,29 +63,17 @@ Attach:iPhoneAssetBundleExport.png\
 	} else {
 		Debug.Log("Couldnt load resource");	
 	}
-@]
-# 必要なファイルをゲームのDataフォルダの隣にあるDocumentsフォルダに必要なファイルを保存出来ます。\\
-[@
-        public static string GetiPhoneDocumentsPath () { 
-                // ゲームは次のパスに読み取り/書き込み権限があります: /var/mobile/Applications/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/Documents 
-                // Application.dataPathの戻り値は              
-                // /var/mobile/Applications/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/myappname.app/Data 
-                // パスから"/Data" を除きます
-                string path = Application.dataPath.Substring (0, Application.dataPath.Length - 5); 
-                // アプリケーション名を除きます 
-                path = path.Substring(0, path.LastIndexOf('/'));  
-                return path + "/Documents"; 
-        }
-@]
-
-# .NETファイルAPIを使用してダウンロードされたアセットバンドルをキャッシュして、将来ロードするときは [[ScriptRef:WWW.html|WWW クラス]] および __file:///pathtoyourapplication/Documents/savedassetbundle.assetbundle__ を使用します。コードでのキャッシュのサンプルは:\\
-[@
+@]\\
+これらのファイルは iOS アプリケーション Sandbox の Library フォルダに格納されていて ''No Backup'' フラグが有効化されています。 これが意味することは OS はこれらのファイルを誤って削除せず、これらのファイルは iCloud にバックアップされないということです。 [[ScriptRef:Caching-maximumAvailableDiskSpace.html|キャッシュ サイズ のリミット]] を低く抑えることで、アプリがデバイスのディスクスペースの全てを確保してしまうことを防止すべきです。
+# もしより細かいところまでキャッシュファイルを制御しないといけない場合、 WWW ダウンロードを [@ new WWW(url) @] 経由で使用して、.NET ファイル API を使用してダウンロードされたファイルをディスク上で格納することが出来ます。必要なファイルを [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath  (OS によりクリーンされる Library/Caches)]] フォルダまたは [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath (OS によりクリーンされない Documents)]] に保存することが出来ます。これらのファイルの ''No Backup'' フラグを [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]] 経由で有効化すべきであり、 iCloud にバックアップされることを防止すべきです。 __注意:__ このフラグをセットしないことで App Store 提出時にアプリ審査がリジェクトされるかもしれません。これらのファイルを将来的に再利用するために [[ScriptRef:WWW.html|WWW クラス]] および __file:///pathtoyourapplication/Library/savedassetbundle.assetbundle__ 経由でロードして下さい。キャッシングのコードでのサンプルは:\\
 	// コードはiPhoneでのキャッシュとして設計されていて、エディタ実行時はcachedAssetBundleパスは異なるものにする必要があります。
-	// Documentsフォルダへのパス取得については上記の短いコードで確認出来ます
+	// Library/Cachesフォルダへのパス取得については上記の短いコードで確認出来ます
 	private var cachedAssetBundle : String = "Documents フォルダへのパス" + "/savedassetbundle.assetbundle"; 
+	private var cachedAssetBundle : String = Application.temporaryCachePath + "/savedassetbundle.assetbundle";
 	var cache = new System.IO.FileStream(cachedAssetBundle, System.IO.FileMode.Create);
 	cache.Write(download.bytes, 0, download.bytes.Length);
 	cache.Close();
-	Debug.Log("キャッシュはセーブされました: " + cachedAssetBundle);
+        iPhone.SetNoBackupFlag(cachedAssetBundle);
+	Debug.Log("Cache saved: " + cachedAssetBundle);
 @]
-->__注意:__ Documentsフォルダからファイル読込みのテストはファイル共有を行えば出来ます。``Info.plist`` で ``UIFileSharingEnabled`` をtrue にすることでiTunesからDocumentsフォルダにアクセス出来ます。
+->__注意:__ Documentsフォルダからファイル読込みのテストはファイル共有を行えば出来ます。``Info.plist`` で ``UIFileSharingEnabled`` をtrue にすることでiTunesからDocumentsフォルダにアクセス出来ます。Documents のコンテンツは iCloud にキャッシュされるため、出荷タイトルにおいてアセットバンドルを格納すべき場所ではありません。 [[http://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html | File System Basics]] を参照して下さい。
