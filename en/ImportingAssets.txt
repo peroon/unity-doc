@@ -20,6 +20,9 @@ When you are building a game and you want to add a new asset of any type, all yo
 
 Additionally, as you update and save your assets, the changes will be detected and the asset will be re-imported in Unity.  This allows you to focus on refining your assets without struggling to make them compatible with Unity.  Updating and saving your assets normally from its native application provides optimum, hassle-free workflow that feels natural.
 
+!! Default Values
+
+On some importers it is possible to specify default values for the field references or similar. To specify a default value open the object selector on the field you wish to set a default value for and select an value from the object selector.
 
 !! Asset Types
 
