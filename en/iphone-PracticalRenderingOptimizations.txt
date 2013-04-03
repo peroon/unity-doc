@@ -114,7 +114,7 @@ Attach:statuetex1.jpg
 
 !!! Render to Texel
 
-The real-time light is definitely higher quality, but the performance gain from the baked version is massive. So how was this done? An editor tool called [[http://u3d.as/content/forest-johnson/render-to-texel-baker/3fD | Render to Texel]] was created for this purpose. It bakes the light into the texture through the following process: 
+The real-time light is definitely higher quality, but the performance gain from the baked version is massive. So how was this done? An editor tool called [[http://u3d.as/content/forest-johnson/render-to-texel-baker/3fD | Render to Texel]] was created for this purpose. __Note__ that you will need to be running Unity PRO in order to use this tool.  It bakes the light into the texture through the following process: 
 
 * Transform the tangent space normal map to world space via script.
 
@@ -371,7 +371,7 @@ All Android devices with support for OpenGL ES 2.0 also support the [[Main.class
 If targeting a specific graphics architecture, such as the Nvidia Tegra or Qualcomm Snapdragon, it may be worth considering using the proprietary compression formats available on those architectures. The Android Market also allows filtering based on supported texture compression format, meaning a distribution archive (.apk) with for example [[Main.class-Texture2D | DXT compressed textures]] can be prevented for download on a device which doesn't support it.
 
 
-!!! An Exercise
+!!! An Exercise (Unity PRO only)
 
 * Download [[http://u3d.as/content/forest-johnson/render-to-texel-baker/3fD | Render to Texel]].
 * Bake lighting on your model.
