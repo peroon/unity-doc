@@ -20,9 +20,9 @@ Attach:ProjectBrowser.png\\
 
 さらにあ、アセットを更新してセーブすると、変更は反映されて Unity に再インポートされます。これによりUnityと互換性を持たせることに労をかけずにアセットを調整することが出来ます。アセットをネイティブのアプリケーションから更新して保存することによって、最適で、手間のかからない自然なワークフローとなります。
 
-!! Default Values
+!! デフォルト値
 
-On some importers it is possible to specify default values for the field references or similar. To specify a default value open the object selector on the field you wish to set a default value for and select an value from the object selector.
+インポータによってはフィールドの参照先などにデフォルト値を指定することが出来ます。デフォルト値を指定するにはデフォルト値を設定したいフィールドを開き、オブジェクト選択のウィンドウから値を選択します。
 
 !! アセットの種類
 
