@@ -2,20 +2,22 @@
 
 This chapter does __not__ aim to cover how to integrate your game with Apple's "StoreKit" API. It is assumed that you already have integration with "StoreKit" via a [[Main.Plugins|native code plugin]].
 
-Apple's "StoreKit" documentation defines four kinds of __Products__ that could be sold via the "In App Purchase" process: 
+The Apple "StoreKit" documentation defines four kinds of __Products__ that could be sold via the "In App Purchase" process: 
 * Content
 * Functionality
 * Services
 * Subscriptions
 
-This chapter covers the first case only and focuses mainly on the downloadable content concept. [[ScriptRef:AssetBundle.html | AssetBundles]] are ideal candidates for use as downloadable content, and two scenarios will be covered:
+This chapter covers the first case only and focuses mainly on the downloadable content concept. [[ScriptRef:AssetBundle.html | AssetBundles]] are recommended for use as downloadable content, and two scenarios will be covered:
 * How to export asset bundles for use on iOS
 * How download and cache them on iOS
+
+Note that AssetBundles are a Pro-only feature.  Users of the (basic) iOS Add-On will not be able to use Asset Bundles in their game code.
 
 !! Exporting your assets for use on iOS
 Having separate projects for downloadable content can be a good idea, allowing better separation between content that comes with your main application and content that is downloaded later.
 
-Please note: Any game scripts included in downloadable content must also be present in the main executable.
+Please note: Any game scripts included in downloadable content must also be present in the main executable.  (Recall that on iOS all game script is ahead-of-time compiled into Arm assembly and included in the XCode project.)
 
 # Create an ``Editor`` folder inside the Project View.
 # Create an ``ExportBundle.js`` script there and place the following code inside:\\
@@ -40,7 +42,7 @@ If the first two steps were done properly, then the ''Build AssetBundle From Sel
 
 __Note:__ Apple may change the folder locations where you are permitted to write data.  Always check Apple documentation to be sure your application will be compliant.  The following was correct advice in early 2013.
 
-# Asset bundles can be downloaded and loaded by using the [[ScriptRef:WWW-assetBundle.html|WWW class]] and instantiating a main asset. Most effective way to do it is [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload method]]. Code sample:\\
+# Asset bundles can be downloaded and loaded by using the [[ScriptRef:WWW-assetBundle.html|WWW class]] and instantiating a main asset. The recommended way to download the asset bundle is to use the  [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload]] method. The following code sample shows how to do this:\\
 [@
 	var download : WWW;
 	
@@ -59,13 +61,13 @@ __Note:__ Apple may change the folder locations where you are permitted to write
 		if (go != null)
 			instanced = Instantiate(go);
 		else
-			Debug.Log("Couldnt load resource");	
+			Debug.Log("Couldn't load resource");	
 	} else {
-		Debug.Log("Couldnt load resource");	
+		Debug.Log("Couldn't load resource");	
 	}
 @]\\
-These files are stored in Library folder of iOS application sandbox and have set ''No Backup'' flag on. This means OS won't delete these files accidentally and these files won't be backed up to iCloud. It is good idea to keep [[ScriptRef:Caching-maximumAvailableDiskSpace.html|cache size limit]] low, to prevent your app from grabbing all the device disk space.
-# If you need finer grain control on cached files you can use regular WWW download via [@ new WWW(url) @] and then store downloaded file on disk by using .NET file API. You can save required files to a [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath  (Library/Caches, cleaned by OS)]] folder or [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath (Documents, not cleaned by OS)]] folder. You should not forget to set ''No Backup'' flag on these files via [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]], to prevent them being backed up to iCloud. __Note:__ Not setting this flag may result in app rejection when submitted to the App Store. Reuse these files in the future by loading it via [[ScriptRef:WWW.html|WWW class]] and __file:///pathtoyourapplication/Library/savedassetbundle.assetbundle__. Sample code for caching:\\
+The downloaded asset bundle files are stored in the @@Library@@ folder of the iOS application sandbox and have the ''No Backup'' flag set  on them. This means OS won't delete these files accidentally and these files won't be backed up to iCloud. It is good idea to keep [[ScriptRef:Caching-maximumAvailableDiskSpace.html|cache size limit]] low, to prevent your app from grabbing all the device disk space.
+# If you need finer grain control on cached files you can use regular WWW download via [@ new WWW(url) @] and then store the downloaded file on disk by using .NET file API. You can save required files to a [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]] (Library/Caches, cleaned by OS) folder or [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (Documents, not cleaned by OS) folder. You should not forget to set ''No Backup'' flag on these files via [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]], to prevent them being backed up to iCloud. __Note:__ Not setting this flag may result in app rejection when submitted to the App Store. Reuse these files in the future by loading it via [[ScriptRef:WWW.html|WWW class]] and @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@. Sample code for caching:\\
 [@
 	// Code designed for caching on iPhone, cachedAssetBundle path must be different when running in Editor
 	// See code snippet above for getting the path to your Library/Caches folder
@@ -76,4 +78,4 @@ These files are stored in Library folder of iOS application sandbox and have set
         iPhone.SetNoBackupFlag(cachedAssetBundle);
 	Debug.Log("Cache saved: " + cachedAssetBundle);
 @]
-->__Note:__ You can test reading files from the Documents folder if you enable file sharing.  Setting ``UIFileSharingEnabled`` to true in your ``Info.plist`` allows you to access the Documents folder from iTunes.  Note that the contents of Documents is cached to iCloud, so is not a location to store asset bundles in a shipping title.  See [[http://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html | File System Basics]].
+->__Note:__ You can test reading files from the Documents folder if you enable file sharing.  Setting @@UIFileSharingEnabled@@ to true in your @@Info.plist@@ allows you to access the Documents folder from iTunes.  Note that the contents of Documents is cached to iCloud, so is not a location to store asset bundles in a shipping title.  See [[http://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html | File System Basics]] in the Apple iOS documentation.
