@@ -1,4 +1,4 @@
-Rigidbody のスリープ
+!Rigidbody のスリープ / Rigidbody Sleeping
 
 Rigidbody が休止すると (箱が床に接触して停止する)、スリープします。 スリープとは最適化のひとつで、これらの Rigidbody の物理エンジン処理が停止します。 これにより Rigidbody が通常動かないようにしている限り、シーン内に大量の Rigidbody を置くことができます。
 
