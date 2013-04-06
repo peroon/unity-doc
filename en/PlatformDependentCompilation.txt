@@ -22,7 +22,7 @@ The platform defines that Unity supports for your scripts are:
 ||``UNITY_XBOX360`` ||Platform define for executing Xbox 360 code.||
 ||``UNITY_NACL`` ||Platform define when compiling code for Google native client (this will be set additionally to ``UNITY_WEBPLAYER``).
 ||``UNITY_FLASH`` ||Platform define when compiling code for Adobe Flash. 
-
+||``UNITY_BLACKBERRY`` ||Platform define for a Blackberry10 device.||
 
 Also you can compile code selectively depending on the version of the engine you are working on. Currently the supported ones are:
 
