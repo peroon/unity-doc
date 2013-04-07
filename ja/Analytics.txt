@@ -11,12 +11,12 @@ __ビルド時間__ ビルド時間にどの程度の時間を取っているか
 
 __ライトマップのベイク__ 繰り返しになりますが、ライトマップをベイクするタイミングやレポートを提出してもらう事で、どの程度ライトマップを最適化するかを決める助けになります。
 
-!!AnalyticsをOFFにする
+!!エディタ情報の解析をオフにする
 
-匿名の情報を送信したくない場合、AnalyticsをOFFにすることができます。Unity Preferences GeneralタブのEditor Analyticsのチェックを外してください。
+匿名の情報を送信したくない場合、エディタ情報の解析をオフにすることができます。Unity Preferences の General タブの Editor Analytics のチェックを外してください。
 
 Attach:Editor-Analytics.png\\
-''Editor analytics in the preferences pane.''
+''Unity Preferences パネルにある Editor analytics''
 
 
 
