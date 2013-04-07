@@ -25,9 +25,7 @@ From here, select a tileable texture in the ``Splat`` property.  You can either 
 
 Now, set the ``Tile Size X`` and ``Tile Size Y`` properties.  The larger the number, the larger each "tile" of the texture will be scaled. Textures with large ``Tile Sizes`` will be repeated fewer times across the entire Terrain.  Smaller numbers will repeat the texture more often with smaller tiles.
 
->>u40<<
 In Unity 4, you can also assign a normal map texture. For the normal map to have any effect, the terrain must be using a normal map-capable shader; assign a material with normal mapped terrain shader in [[terrain-OtherSettings | Terrain Settings]] tab.
->><<
 
 Click the ^^Add^^ Button and you'll see your first Terrain Texture tile across the entire Terrain.
 

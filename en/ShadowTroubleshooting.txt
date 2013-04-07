@@ -7,9 +7,6 @@ This page lists solutions to common [[Shadows | shadow]] problems.
 * Shadows are a $$Unity Pro$$ only feature, so without Unity Pro you won't get shadows. Simpler shadow methods, like using a [[class-Projector | Projector]], are still possible of course.
 * Shadows also require certain graphics hardware support. See [[Shadows]] page for details.
 * Check if shadows are not completely disabled in [[class-QualitySettings | Quality Settings]].
->>u30<<
-* __Shadows are currently not supported for iOS and Android mobile platforms.__
->><<
 
 !!! Some of my objects do not cast or receive shadows
 
