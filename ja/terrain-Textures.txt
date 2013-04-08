@@ -26,9 +26,7 @@ Attach:TerrainGuide-AddTextureDialog1.png\\
 
 次に、``Tile Size X``および``Tile Size Y``プロパティを設定します。数値を大きくするほど、テクスチャの各々のテクスチャのタイルが大きく拡大されます。大きい``Tile Sizes``である場合、テクスチャが全体のTerrainで繰り返される数は少なくなります。数値を小さくするほどより多くの回数だけ、より小さいタイルで多くの回数繰り返すことになります。
 
->>u40<<
 Unity 4では、法線マップテクスチャを割り当てることができます。法線マップが効果を発揮するためには、Terrainは法線マップ対応のシェーダを使用している必要があり、法線マップTerrainシェーダつきのマテリアルを[[terrain-OtherSettings | Terrain Settings]] タブで割り当てます。
->><<
 
  ^^Add^^ボタンをクリックすると、最初のTerrainがTerrain全体にタイルとして表示されます。
 
