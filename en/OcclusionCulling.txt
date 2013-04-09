@@ -19,7 +19,7 @@ It is important to keep this in mind when creating your objects because you need
 
 In order to use Occlusion Culling, there is some manual setup involved.  First, your level geometry must be broken into sensibly sized pieces. It is also helpful to lay out your levels into small, well defined areas that are occluded from each other by large objects such as walls, buildings, etc.  The idea here is that each individual mesh will be turned on or off based on the occlusion data.  So if you have one object that contains all the furniture in your room then either all or none of the entire set of furniture will be culled.  This doesn't make nearly as much sense as making each piece of furniture its own mesh, so each can individually be culled based on the camera's view point.
 
-You need to tag all scene objects that you want to be part of the occlusion to ^^Occlusion Static^^ in the $$Inspector$$. The fastest way to do this is to multi-select the objects you want to be included in occlusion calculations, and mark them as ^^Occlusion Static^^ and ^^Occludee Static^^. 
+You need to tag all scene objects that you want to be part of the occlusion to ^^Occluder Static^^ in the $$Inspector$$. The fastest way to do this is to multi-select the objects you want to be included in occlusion calculations, and mark them as ^^Occluder Static^^ and ^^Occludee Static^^. 
 
 Attach:OcclusionStaticDropdown.png
 ''Marking an object for Occlusion''

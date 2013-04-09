@@ -1,6 +1,6 @@
 ! Reverb Zones.
 
-$$Reverb Zones$$ take an [[class-AudioClip | Audio Clip]] and distort it depending where the audio listener is located inside the reverb zone. They are used when you want to gradually change from a point where there is no ambient effect to a place where there is one, for example when you are entering a cavern.
+$$Reverb Zones$$ take an [[class-AudioClip | Audio Clip]] and distorts it depending where the audio listener is located inside the reverb zone. They are used when you want to gradually change from a point where there is no ambient effect to a place where there is one, for example when you are entering a cavern.
 
 Attach:AudioReverbZone.png\\
 ''The Audio Reverb Zone gizmo seen in the inspector.''
@@ -19,7 +19,7 @@ Attach:ReverbZoneExpl.png\\
 
 
 !! Adding a Reverb Zone
-To add a Reverb Zone to a given audio source just select the object in the inspector and then select ``Component->Audio->Audio Reverb Zone``.
+To add a Reverb Zone to a transform just select the object in the inspector and then select ``Component->Audio->Audio Reverb Zone``.
 
 !! Hints.
 * You can mix reverb zones to create combined effects

@@ -15,10 +15,9 @@ This can be tricky, especially under Windows based systems where drivers tend to
 --->Additional info can be found here: [[http://developer.android.com/sdk/win-usb.html|USB Drivers for Windows]]
 * For '''Mac''': If you're developing on Mac OSX then no additional drivers are usually required.
 
-__Note:__ Don't forget to turn on "USB Debugging" on your device. Go to Settings -> Developer options, then enable USB debugging. As of Jelly Bean the Developer options are hidden and it only appears when Settings -> About -> Build number has been tapped multiple times.
+__Note:__ Don't forget to turn on "USB Debugging" on your device. Go to ^^Settings -> Developer options^^, then enable USB debugging. As of Android Jelly Bean 4.2 the Developer options are hidden by default.  To enable them tap on ^^Settings -> About Phone -> Build Version^^ multiple times. Then you will be able to access the ^^Settings -> Developer options^^.
 
 If you are unsure whether your device is properly installed on your system, please read the [[TroubleShooting#AndroidTroubleShooting | trouble-shooting page]] for details.
 
 !! 4. Add the Android SDK path to Unity
 The first time you build a project for Android (or if Unity later fails to locate the SDK) you will be asked to locate the folder where you installed the Android SDK (you should select the root folder of the SDK installation). The location of the Android SDK can also be changed in the editor by selecting Unity > Preferences from the menu and then clicking on External Tools in the preferences window.
-

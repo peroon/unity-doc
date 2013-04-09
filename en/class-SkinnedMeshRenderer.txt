@@ -19,7 +19,7 @@ Attach:Inspector-SkinnedMeshRenderer.png\\
 
 !! Details
 
-Skinned Meshes are used for rendering characters. Characters are animated using bones, and every bone affects a part of the mesh. Multiple bones can affect the same vertex and are weighted.  The main advantage to using boned characters in Unity is you can enable the bones to be affected by physics, making your characters into ragdolls.  You can enable/disable bones via scripting, so your character instantly goes ragdoll when it is hit by an explosion.
+Skinned Meshes are used for rendering characters. Characters are animated using bones, and every bone affects a part of the mesh. Multiple bones can affect the same vertex and are weighted. Boned animation is the main technique used to deform the shape of a mesh so that limbs can bend at the joints and other similar effects can be achieved. Additionally, Rigidbody and Character Joint components can be attached to bones so that they move realistically under physics. This is how the well-known "ragdoll" effect is implemented.
 
 Attach:RagdollRobot.png\\
 ''A Skinned Mesh enabled as a Ragdoll''

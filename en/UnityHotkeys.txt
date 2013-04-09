@@ -41,6 +41,9 @@ This page gives an overview of the default Unity Hotkeys. You can also download 
 ||F||Frame (centre) selection||
 ||CTRL/CMD+F||Find||
 ||CTRL/CMD+A||Select All||
+||CTRL/CMD+P||Play||
+||CTRL/CMD+SHIFT+P||Pause||
+||CTRL/CMD+ALT+P||Step||
 || ||
 ||__Selection__||
 ||CTRL/CMD+SHIFT+1||Load Selection 1||

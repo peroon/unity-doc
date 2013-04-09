@@ -10,8 +10,8 @@ Attach:InspectorMeshRend35.png
 ||``Cast Shadows`` (Pro only) ||If enabled, this $$Mesh$$ will create shadows when a shadow-creating [[class-Light | Light]] shines on it ||
 ||``Receive Shadows`` (Pro only) ||If enabled, this Mesh will display any shadows being cast upon it ||
 ||``Materials`` ||A list of $$Materials$$ to render model with ||
-||``Use Light Probes``||Enable probe-based lighting for this mesh||
-||``Anchor Override``||A $$Transform$$ used to determine the interpolation position when the light probe system is used||
+||``Use Light Probes`` (Pro only)||Enable probe-based lighting for this mesh||
+||``Anchor Override`` (Pro only)||A $$Transform$$ used to determine the interpolation position when the light probe system is used||
 
 !!Details
 

@@ -56,7 +56,7 @@ The BuildAssetBundle function is the line that creates the AssetBundle and saves
 
 Building AssetBundles should be a pre-publish step which happens only once and with a single function call, for example, with a Menu Item that builds all the AssetBundles. As you develop your application you should write helper scripts that can build all your AssetBundles for a target platform with a single click or in batchmode without user intervention.
 
-There are also other function to create AssetBundles. You can read more about this here: http://docwiki.hq.unity3d.com/index.php?n=Main.BuildingAssetBundles
+There are also other function to create AssetBundles. You can read more about this [[BuildingAssetBundles|here]].
 (:showhideend:)
 >><<
 
@@ -224,4 +224,3 @@ You can use [[ScriptRef:AssetBundle.LoadAll.html|AssetBundle.LoadAll]] to retrie
 
 
 [[AssetBundlesIntro|back to AssetBundles Intro]]
-

@@ -138,7 +138,7 @@ In addition to the basic ''#if'' compiler directive, you can also use a multiway
 
 However, Boo currently supports only the ''ifdef'' directive.
 
-!!Custom defines
+!!Platform Custom Defines
 
 It is also possible to add to the built-in selection of defines by supplying your own. In the $$Other Settings$$ panel of the [[class-PlayerSettings|Player Settings]], you will see the Scripting Define Symbols textbox.
 
@@ -146,3 +146,19 @@ Attach:ScriptDefines.png
 
 Here, you can enter the names of the symbols you want to define for that particular platform, separated by semicolons. These symbols can then be used as the conditions for ''#if'' directives just like the built-in ones.
 
+!!Global Custom Defines
+
+You can define your own preprocessor directives to control which code gets included when compiling. To do this you must add a text file with the extra directives to the "Assets/" folder. The name of the file depends on the language you are using, and the extension is __.rsp__:
+
+||C#||@@<Project Path>/Assets/smcs.rsp@@||
+||C# - Editor Scripts||@@<Project Path>/Assets/gmcs.rsp@@||
+||UnityScript||@@<Project Path>/Assets/us.rsp@@||
+||Boo||@@<Project Path>/Assets/boo.rsp@@||
+
+As an example, if you include the single line "@@-define:UNITY_DEBUG@@" in your __smcs.rsp__ file the define @@UNITY_DEBUG@@ will exist as a global define for C# scripts, except for Editor scripts.
+
+Every time you make changes to .rsp files you will need to recompile for them to be effective. You can do this by updating or reimporting a single script (.js, .cs or .boo) file.
+
+If you want to modify only global defines, you should use $$Scripting Define Symbols$$ in [[class-PlayerSettings|Player Settings]], because this will cover all the compilers. If you choose the .rsp files instead, you'll have to provide one file for every compiler Unity uses, and you won't know when one or another compiler is used.
+
+The use of the .rsp files is described in the help section of the __smcs__ application which is included in the Editor installation folder. You can get more information by running "@@smcs -help@@". Also, bear in mind the .rsp file needs to match the compiler being invoked. For example, when targeting the web player, __smcs__ is used with smcs.rsp; when targeting standalone players, __gmcs__ is used with gmcs.rsp; when targeting MS compiler, __csc__ is used with csc.rsp; and so on.

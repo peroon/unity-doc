@@ -9,7 +9,7 @@ Attach:Inspector-MeshFilter.png\\
 !! Properties
 
 ||PROPS
-||``Mesh`` ||Reference to a [[class-Mesh | mesh]] that will be rendered. The ``Mesh`` is located in your Project Folder. ||
+||``Mesh`` ||Reference to a [[class-Mesh | mesh]] that will be rendered. The ``Mesh`` is located inside your Assets Directory. ||
 
 
 !! Details

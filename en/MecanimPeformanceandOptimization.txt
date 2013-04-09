@@ -14,12 +14,12 @@ This page contains some tips to help you obtain the best performance from [[Meca
 
 :Simple Animation:Playing a single [[class-AnimationClip | Animation Clip]] with no blending can make ``Mecanim`` slower than the [[Animations40 | legacy animation system]]. The old system is very direct, sampling the curve and directly writing into the transform. ``Mecanim`` has temporary buffers it uses for blending, and there is additional copying of the sampled curve and other data. The ``Mecanim`` layout is optimized for animation blending and more complex setups.
 
-:Scale Curves:Make sure that there is not a single ``scale curve`` on any ``animation clip``. You can write an asset post-processor to remove or warn about them. See the [[BuildingAssetBundles | Asset Bundles]] section for more information. 
+:Scale Curves:Make sure that there is not a single ``scale curve`` on any ``animation clip``. You can write an asset post-processor to remove or warn about them; see the [[ScriptRef:AssetPostprocessor.html | AssetPostprocessor]] reference for more information. 
 
 :Layers:Most of the time ``Mecanim`` is evaluating animations, and the overhead for [[AnimationLayers]] and [[AnimationStateMachines]] is kept to the minimum. The cost of adding another layer to the animator, synchronized or not, depends on what ``animations`` and ``blend trees`` are played by the layer. When the weight of the layer is zero, the layer update will be skipped.
 
 :Humanoid vs. Generic Modes:These tips will help you decide between these modes:
- *When you have ``IK Pass`` enabled and ``Foot IK`` enabled on your ``animation states``, you will get better performance with ``Generic`` ``Mecanim`` mode.
+ *When importing Humanoid animation use a BodyMask to remove IK Goals or fingers animation if they are not needed.
  *When you use ``Generic``, using ``root motion`` is more expensive than not using it. If your animations don't use ``root motion``, make sure that you have no ``root bone`` selected.
  *On Android you will get worse performance since NEON is not currently supported on Android. ``Humanoid`` mode is particularly math heavy so it can easily be 2-2.5x slower without NEON.
 

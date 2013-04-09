@@ -1,17 +1,17 @@
 !Quality Settings
 
-Unity allows you to set the level of graphical quality it will attempt to render. Generally speaking, quality comes at the expense of framerate and so it may be best not to aim for the highest quality on mobile devices or older hardware since it will have a detrimental effect on gameplay. The $$Quality Settings$$ inspector (menu: ^^Edit->Project Settings->Quality^^) is split into two main areas. At the top, there is the following matrix:-
+Unity allows you to set the level of graphical quality it will attempt to render. Generally speaking, quality comes at the expense of framerate and so it may be best not to aim for the highest quality on mobile devices or older hardware since it will have a detrimental effect on gameplay. The $$Quality Settings$$ inspector (menu: ^^Edit->Project Settings->Quality^^) is used to select the quality level in the editor for the chosen device. It is split into two main areas: at the top, there is the following matrix:
 
 Attach:QualSettingsTop.png
 
 Unity lets you assign a name to a given combination of quality options for easy reference. The rows of the matrix let you choose which of the different platforms each quality level will apply to. The Default row at the bottom of the matrix is not a quality level in itself but rather sets the default quality level used for each platform (a green checkbox in a column denotes the level currently chosen for that platform). Unity comes with six quality levels pre-enabled but you can add your own levels using the button below the matrix. You can use the trashcan icon (the rightmost column) to delete an unwanted quality level.
 
-You can click on the name of a quality level to select it for editing, which is done in the panel below the settings matrix:-
+You can click on the name of a quality level to select it for editing, which is done in the panel below the settings matrix:
 
 Attach:QualitySettingsBottom.png
 
 
-The quality options you can choose for a quality level are as follows:-
+The quality options you can choose for a quality level are as follows:
 ||PROPS
 ||Name||The name that will be used to refer to this quality level||
 ||``Pixel Light Count``||The maximum number of pixel lights when Forward Rendering is used.
