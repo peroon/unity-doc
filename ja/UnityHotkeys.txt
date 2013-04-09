@@ -41,6 +41,9 @@
 ||F||選択項目をフレームの中央に(Frame(center)selection)||
 ||CTRL/CMD+F||検索||
 ||CTRL/CMD+A||全ての項目を選択||
+||CTRL/CMD+P||再生（Play）||
+||CTRL/CMD+SHIFT+P||ポーズ（Pause）||
+||CTRL/CMD+ALT+P||ステップ実行（Step）||
 || ||
 ||__Selection__||
 ||CTRL/CMD+SHIFT+1||1から選択状況をロード(Load Selection 1)||
