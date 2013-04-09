@@ -138,10 +138,27 @@ class PlatformDefines (MonoBehaviour):
 
 しかし、Boo は現在 ''ifdef'' ディレクティブのみサポートします。
 
-!! カスタム定義
+!! プラットフォームのカスタム定義
 
 ビルトインのセレクションに自身のカスタム定義のを追加することが出来ます。 [[class-PlayerSettings|Player Settings]] の $$Other Settings$$ により、 Scripting Define Symbols テキストボックスが表示されています。
 
 Attach:ScriptDefines.png
 
 ここで特定プラットフォームで定義したいシンボルの名前を入力して、セミコロンで区切ることが出来ます。これらのシンボルは、ビルトインのものと同様に ''#if'' ディレクティブの条件として使用できます。
+
+!! グローバルのカスタム定義
+
+自身のカスタムのプリプロセッサ ディレクティブを定義して、コンパイル時にどのコードを include するか制御することが出来ます。これを行うためには追加のディレクティブを含んだテキストファイルを "Assets/" フォルダに追加します。ファイルの名前は使用している言語に依存し、拡張子は __.rsp__ です:
+
+||C#||@@<Project Path>/Assets/smcs.rsp@@||
+||C# - Editor Scripts||@@<Project Path>/Assets/gmcs.rsp@@||
+||UnityScript||@@<Project Path>/Assets/us.rsp@@||
+||Boo||@@<Project Path>/Assets/boo.rsp@@||
+
+例として、もし __smcs.rsp__ に "@@-define:UNITY_DEBUG@@" を一行含めれば、 @@UNITY_DEBUG@@ の定義は C# スクリプトにおいて、エディタスクリプトを除いてグローバルのカスタム定義として存在することになります。
+
+.rsp ファイルに変更を行うたびに、有効化するためには再コンパイルを行う必要があります。これを行うためには単独のスクリプトファイル（.js, .cs または .boo）を更新または再インポートします。
+
+グローバル定義のみ修正したい場合、全てのコンパイラをカバーするために [[class-PlayerSettings|Player Settings]] の  $$Scripting Define Symbols$$ を修正すべきです。もし代わりに .rsp の変更を選択した場合、Unityが使用するコンパイラごとにひとつのファイルを提供する必要があり、どれかのコンパイラがしようされているかどうか知ることができません。
+
+.rsp ファイルの使用方法についてはインストールした Editor フォルダに含まれる __smcs__ アプリケーションの help セクションに説明があります。詳細な説明については  "@@smcs -help@@" を実行して下さい。さらに .rsp ファイルは実行する前にコンパイラをマッチングする必要があることに留意して下さい。例えば、ウェブプレイヤーがターゲットである場合、 __smcs__ は smcs.rsp とともに使用され、スタンドアローンプレイヤーの場合は __gmcs__ は gmcs.rsp とともに使用され、MS コンパイラの場合は __csc__ は csc.rsp とともに使用する、などとします。
