@@ -33,5 +33,7 @@ The vertical scale of the timeline is managed automatically and will attempt to 
 
 The timeline consists of several areas: CPU Usage, Rendering and Memory. These areas can be removed by clicking the close button in the panel, and re-added again using the ''Add Area'' drop down in the Profile Controls bar.
 
+Note that the coloured squares in the label area can control whether the associated timeline is displayed or not.  To remove a sample from the display click on the colour key.  The key will dim and the data will be removed from the graph.  This can be useful to identify the cause of spikes in the CPU graph, for example.
+
 (:tocportion:)
 

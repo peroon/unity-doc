@@ -34,5 +34,7 @@ Attach:ProfilerTimeline.png
 
 タイムラインはいくつかのエリアからこうせいされます: CPU使用率、レンダリング、およびメモリです。これらのエリアを閉じるにはパネルの close ボタンをクリックし、もう一回追加するにはProfile Controls バーの、 ''Add Area'' ドロップダウンを使用します。
 
+Note that the coloured squares in the label area can control whether the associated timeline is displayed or not.  To remove a sample from the display click on the colour key.  The key will dim and the data will be removed from the graph.  This can be useful to identify the cause of spikes in the CPU graph, for example.
+
 (:tocportion:)
 

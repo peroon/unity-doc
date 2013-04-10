@@ -1,9 +1,12 @@
 ! Memory Area
 
+There are two modes in which you can inspect memory usage of your application. This is selected in the dropdown in the top of the bottom panel.
+
+!!Simple View
+The simple mode shows how memory is used through out unity on a higher level in realtime on a per frame basis.
+
 Attach:ProfilerMemorySimple.png
 
-There are two modes in which you can inspect memory usage of your application. This is selected in the dropdown in the top of the bottom panel.
-The simple mode shows how memory is used through out unity on a higher level in realtime on a per frame basis.
 Unity reserves memory pools for allocations in order to avoid asking the os for memory too often. This is displayed as a reserved amount and how much is used.
 The areas covered by this is:
 * __Unity__ The amount of memory tracked by allocations in native unity code
@@ -21,9 +24,13 @@ Memory stats are shown for some of the most common asset/object types and includ
 * __Audio__
 * __Object Count__ is the total number of Objects that are created. If this number rises over time then it means your game is creating some objects that are never destroyed.
 
+!! Detailed View
+The Detailed View, will let you take a snapshot of the current state. Use the "Take Sample" button to capture detailed memory usage. Obtaining this data takes some time, so the Detailed View should not be expected to give you real-time details.  After taking a sample the profiler window will be updated with a treeview where you can explored different memory usage.
+
 Attach:ProfilerMemoryDetailed.png
 
-The Detailed View, will let you take a snapshot of the current state. This will display individual asset and game object memory usage. It will also display a reason for an object to be in memory. The reasons can be of the following:
+
+This will display individual asset and game object memory usage. It will also display a reason for an object to be in memory. The reasons can be of the following:
 * __Referenced from native code__
 * __Scene object__
 * __Builtin Resources__
