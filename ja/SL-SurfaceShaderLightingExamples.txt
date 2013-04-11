@@ -1,6 +1,6 @@
 ! サーフェイスシェーダ ライティングの例 / Surface Shader Lighting Examples
 
-以下は [[SL-Surface Shaders | Surface Shaders]] の  [[SL-SurfaceShaderLighting | $$custom lighting models$$]] のサンプルです。 一般的なサーフェイスシェーダの例は、[[SL-SurfaceShaderExamples | this page]] にあります。
+以下は [[SL-Surface Shaders | Surface Shaders]] の  [[SL-SurfaceShaderLighting | $$Custom Lighting Model$$]] のサンプルです。 一般的なサーフェイスシェーダの例は、[[SL-SurfaceShaderExamples | このページ]] にあります。
 
 遅延ライティングは、カスタムのマテリアルごとのライティング モデルによってはうまく機能しないため、以下のほとんどの例では、シェーダにはフォワード レンダリングにのみコンパイルさせます。
 
@@ -33,7 +33,7 @@
 Attach:SurfaceShaderDiffuseTexture.png Attach:SurfaceShaderDiffuseNoTex.png
 
 
-まったく同じ事をしますが、組み込みのランバート ライティング モデルを使用する代わりに、''自身のライティング モデル''を記述します。 [[SL-SurfaceShaderLighting | Surface Shader Lighting Models]] は、記述する必要のある関数です。 以下は簡単なランバート ライティング モデルです。 ''シェーダ部分''自体は変わりませんでした (グレーアウトサれています):
+まったく同じ事をしますが、組み込みのランバート ライティング モデルを使用する代わりに、''自身のライティング モデル''を記述します。 [[SL-SurfaceShaderLighting | Surface Shader Lighting Models]] は、記述する必要のある関数です。 以下は簡単なランバート ライティング モデルです。 ''シェーダ部分'' 自体 (グレーの箇所) は変更されていないことに留意して下さい :
 
   %gray%Shader "Example/Diffuse Texture" {
   %gray%  Properties {
@@ -69,7 +69,7 @@ Attach:SurfaceShaderDiffuseTexture.png Attach:SurfaceShaderDiffuseNoTex.png
 
 !! デフューズ ラップ
 
-以下はラップされたデフューズ、デフューズ ライティングの変形で、照明がオブジェクトの端を''ラップ''します。 サブ表面散乱効果のフェークに便利です。 改めて言いますが、サーフェイスシェーダ自体はまったく変わっていません。別のライティング関数を使用しているだけです。
+以下はラップされたデフューズ、デフューズ ライティングの変形で、照明がオブジェクトの端を ''ラップ'' します。 サブ表面散乱効果のフェークに便利です。 改めて言いますが、サーフェイスシェーダ自体はまったく変わっていません。別のライティング関数を使用しているだけです。
 
   %gray%Shader "Example/Diffuse Wrapped" {
   %gray%  Properties {
@@ -107,7 +107,7 @@ Attach:SurfaceShaderDiffuseWrap.png Attach:SurfaceShaderDiffuseWrapNoTex.png
 
 !! トゥーン ランプ
 
-以下は、表面が光と法線間の角度にどのように対応するかを定義するためにテクスチャを使用する''Ramp''ライティング モデルです。 これは、トゥーン ライティングなどの各種効果に使用できます。
+以下は、表面が光と法線間の角度にどのように対応するかを定義するためにテクスチャを使用する ''Ramp'' ライティング モデルです。 これは、トゥーン ライティングなどの各種効果に使用できます。
 
   %gray%Shader "Example/Toon Ramp" {
   %gray%  Properties {
