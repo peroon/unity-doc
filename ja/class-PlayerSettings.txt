@@ -112,7 +112,7 @@ Attach:PlayerSetPCOther355.png
 ||``Static Batching``             ||Set this to use Static batching on your build (Inactive by default in webplayers). Unity Pro only.||
 ||``Dynamic Batching``            ||Set this to use Dynamic Batching on your build (Activated by default). ||
 ||__``Optimization``__||||
-||``API Compatibility Level``     ||||
+||``API Compatibility Level``     ||See below||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
@@ -120,6 +120,15 @@ Attach:PlayerSetPCOther355.png
 ||>>>``Disabled``||Don't output any debug data for UnloadUnusedAssets.||
 ||>>>``Overview only``||Minimal stats about UnloadUnusedAssets usage.||
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
+
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
+
 >><<
 
 [[#iOS]]
@@ -211,7 +220,7 @@ Attach:PlayerSetiOSOther355.png
 ||``UI Requires Persistent WiFi`` ||Specifies whether the application requires a Wi-Fi connection. iOS maintains the active Wi-Fi connection open while the application is running.||
 ||``Exit on Suspend`` ||Specifies whether the application should quit when suspended to background on iOS versions that support multitasking.||
 ||__''Optimization''__            ||||
-||``Api Compatibility Level``     ||Specifies active .NET API profile||
+||``Api Compatibility Level``     ||Specifies active .NET API profile. See below||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``AOT compilation options``     ||Additional AOT compiler options.||
@@ -256,6 +265,15 @@ Attach:PlayerSetiOSOther355.png
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
 
 __Note:__ If you build for example for iPhone OS 3.2, and then select Simulator 3.2 in Xcode you will get a ton of errors. So you __MUST__ be sure to select a proper Target SDK in Unity Editor.
+
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
+
 >><<
 [[#Android]]
 !Android!
@@ -312,7 +330,7 @@ Attach:PlayerSetAndroidOther355.png
 ||>>>``Force Internal``  ||Force app to be installed into internal memory. User will be unable to move the app to external storage.||
 ||``Internet Access``    ||When set to Require, will enable networking permissions even if your scripts are not using this. Automatically enabled for development builds.||
 ||``Write Access``    ||When set to External (SDCard), will enable write access to external storage such as the SD-Card. Automatically enabled for development builds.||
-||__''Optimization''__            ||||
+||__''Optimization''__            ||See below||
 ||``Api Compatibility Level``     ||Specifies active .NET API profile||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
@@ -327,6 +345,14 @@ Attach:PlayerSetAndroidOther355.png
 ||>>>``Disabled``||Don't output any debug data for UnloadUnusedAssets.||
 ||>>>``Overview only``||Minimal stats about UnloadUnusedAssets usage.||
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
+
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
 ||!Publishing Settings            ||||
 Attach:PlayerSettings-AndroidPublishingSettings.png\\

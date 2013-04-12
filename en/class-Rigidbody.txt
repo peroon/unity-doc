@@ -9,9 +9,9 @@ Attach:Inspector-Rigidbody.png\\
 !! Properties
 
 ||PROPS
-||``Mass`` ||The mass of the object (arbitrary units). It is recommended to make masses not more or less than 100 times that of other Rigidbodies. ||
+||``Mass`` ||The mass of the object (arbitrary units). You should not make masses more or less than 100 times that of other Rigidbodies. ||
 ||``Drag`` ||How much air resistance affects the object when moving from forces. 0 means no air resistance, and infinity makes the object stop moving immediately. ||
-||``Angular Drag`` ||How much air resistance affects the object when rotating from torque. 0 means no air resistance.  Note that setting it to infinity will not make the object stop rotating immediately. ||
+||``Angular Drag`` ||How much air resistance affects the object when rotating from torque. 0 means no air resistance.  Note that you cannot make the object stop rotating just by setting its Angular Drag to infinity. ||
 ||``Use Gravity`` ||If enabled, the object is affected by gravity. ||
 ||``Is Kinematic`` ||If enabled, the object will not be driven by the physics engine, and can only be manipulated by its $$Transform$$. This is useful for moving platforms or if you want to animate a Rigidbody that has a $$HingeJoint$$ attached. ||
 ||``Interpolate`` ||Try one of the options only if you are seeing jerkiness in your Rigidbody's movement. ||
@@ -91,3 +91,4 @@ If your game requires that your GameObject needs to be instantiated at different
 * A low ``Drag`` value makes an object seem heavy. A high one makes it seem light. Typical values for ``Drag`` are between .001 (solid block of metal) and 10 (feather).
 * If you are directly manipulating the Transform component of your object but still want physics, attach a Rigidbody and make it Kinematic.
 * If you are moving a GameObject through its Transform component but you want to receive Collision/Trigger messages, you must attach a Rigidbody to the object that is moving.
+* You cannot make an object stop rotating just by setting its Angular Drag to infinity.

@@ -119,10 +119,18 @@ Attach:PlayerSetPCOther4b7.png
 ||__''Configuration''__||||
 ||``Scripting Define Symbols``||Custom compilation flags (see the [[PlatformDependentCompilation|platform dependent compilation]] page for details).
 ||__''Optimization''__||||
-||``API Compatibility Level``     ||||
+||``API Compatibility Level``     ||See below||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
+
 >><<
 
 [[#iOS]]
@@ -217,7 +225,7 @@ Attach:PlayerSetiOSOther4b7.png
 ||``Exit on Suspend`` ||Specifies whether the application should quit when suspended to background on iOS versions that support multitasking.||
 ||``Scripting Define Symbols``||Custom compilation flags (see the [[PlatformDependentCompilation|platform dependent compilation]] page for details).
 ||__''Optimization''__            ||||
-||``Api Compatibility Level``     ||Specifies active .NET API profile||
+||``Api Compatibility Level``     ||Specifies active .NET API profile.  See below||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``AOT compilation options``     ||Additional AOT compiler options.||
@@ -236,6 +244,15 @@ Attach:PlayerSetiOSOther4b7.png
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
 
 __Note:__ If you build for example for iPhone OS 3.2, and then select Simulator 3.2 in Xcode you will get a ton of errors. So you __MUST__ be sure to select a proper Target SDK in Unity Editor.
+
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
+
 >><<
 [[#Android]]
 !Android!
@@ -290,7 +307,7 @@ Attach:PlayerSetAndroidOther4b7.png
 ||``Write Access``    ||When set to External (SDCard), will enable write access to external storage such as the SD-Card. Automatically enabled for development builds.||
 ||``Scripting Define Symbols``||Custom compilation flags (see the [[PlatformDependentCompilation|platform dependent compilation]] page for details).||
 ||__''Optimization''__            ||||
-||``Api Compatibility Level``     ||Specifies active .NET API profile||
+||``Api Compatibility Level``     ||Specifies active .NET API profile. See below.||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``Stripping Level (Pro-only feature)`` ||Options to strip out scripting features to reduce built player size(This setting is shared between iOS and Android Platforms)||
@@ -300,6 +317,14 @@ Attach:PlayerSetAndroidOther4b7.png
 ||>>>``Use micro mscorlib`` ||Level 3 size reduction (includes reductions from Levels 1 and 2).||
 ||``Enable "logcat" profiler``||Enable this if you want to get feedback from your device while testing your projects. So adb logcat prints logs from the device to the console (only available in development builds).||
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
+
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
 ||!Publishing Settings            ||||
 Attach:PlayerSetAndroidPublish40.png\\
@@ -316,6 +341,7 @@ Attach:PlayerSetAndroidPublish40.png\\
 ||>>>``Split Application Binary``||Flag to split the application into expansion files. Useful only with Google Play Store when the finished build exceeds 50MB.||
 
 Note that for security reasons, Unity will save neither the keystore password nor the key password. Also, note that the signing must be done from Unity's player settings - using jarsigner will not work.
+
 >><<
 
 !!Flash
@@ -370,11 +396,18 @@ Attach:PlayerSetNaClOther4b7.png
 ||__''Configuration''__||||
 ||``Scripting Define Symbols``||Custom compilation flags (see the [[PlatformDependentCompilation|platform dependent compilation]] page for details).
 ||__''Optimization''__||||
-||``API Compatibility Level``     ||||
+||``API Compatibility Level``     ||See below||
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``Strip Physics Code``||Remove physics engine code from the build when not required.||
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
+__''API Compatibility Level''__
+
+You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
+# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
+# Also drag in your 3rd party assembly. 
+# Right click your 3rd party assembly, and select "Analyze".  
+# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
 ! Details
 
