@@ -119,12 +119,21 @@ Attach:PlayerSetPCOther4b7.png
 ||``Static Batching``             ||ビルドでStatic Batchを使用する場合に設定（WebPlayerではデフォルトで無効））。Unity Proのみ。||
 ||``Dynamic Batching``            ||ビルドでDynamic Batchを使用する場合に設定（デフォルトで有効） 。||||
 ||__''Configuration''__||||
-||``Scripting Define Symbols``||カスタム　コンパイル　フラグ（詳細は[[PlatformDependentCompilation|platform dependent compilationのページ]] を参照）。||
+||``Scripting Define Symbols``||カスタム コンパイル フラグ（詳細は[[PlatformDependentCompilation|ブラットフォーム別コンパイルに関するページ]] を参照して下さい）。||
 ||__''Optimization''__||||
-||``API Compatibility Level``     ||||
+||``API Compatibility Level``     ||以下を参照のこと||
 ||>>>``.Net 2.0``                 ||.Net 2.0ライブラリ。.Net互換性が最大、ファイルサイズ最大。|| 
 ||>>>``.Net 2.0 Subset``          ||.NET互換性は全体の一部、ファイルサイズは小さく。||
 ||``Optimize Mesh Data``||メッシュについて、それが適用されたマテリアルが必要としていないデータを全て取り除く（接線、法線、色、UV）||||
+__''API 互換性レベル / API Compatibility Level''__
+
+ウェブプレイヤーを除く全てのターゲットにおいて、Mono の API 互換性レベル (API Compatibility Level) を選択できます。時にはサードパーティ製の .NET DLL が使用したい .NET 互換性レベル外のものを使用する場合があります。そういうケースで何が起きているか理解して、最大限の修正対応を行うためには、 Windows で Reflector を入手する必要があります。
+# 該当するAPI 互換性レベルの .NET アセンブリファイルを Reflector にドラッグ＆ドロップします。Frameworks/Mono/lib/mono/自身のサブセット名 のフォルダ内でこららは見つけることが出来ます。
+# サードパーティ製のアセンブリもドラッグ＆ドロップします。
+# サードパーティ製のアセンブリを右クリックして "Analyze" を選択します。
+# 分析レポート（Analysis Report） の中で、 "Depends on" セクションをチェックします。サードパーティ製品が依存しながらも、 .NET 互換性レベルに含まれないものは全てここで赤字でハイライトされます。
+
+
 >><<
 
 [[#iOS]]
