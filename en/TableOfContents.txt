@@ -241,7 +241,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[flash-debugging]]
 *** [[flash-whatssupported]]
 *** [[flash-embeddingapi]]
-*** [[flash-adobelicense]]
 *** [[flashexamples-supplyingdata]]
 *** [[flashexamples-callingflashfunctions]]
 *** [[flashexamples-browserjavascriptcommunication]]

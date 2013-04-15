@@ -7,12 +7,8 @@ A great way to add a lot of visual detail to your scenes is to use cookies - gra
 To create a light cookie for a spot light:
 
 # Paint a cookie texture in Photoshop. The image should be greyscale. White pixels means full lighting intensity, black pixels mean no lighting. The borders of the texture need to be completely black, otherwise the light will appear to leak outside of the spotlight.
-# In the $$Texture Inspector$$ change the ``Repeat`` Wrap mode to ``Clamp``
-# Select the Texture and edit the following $$Import Settings$$ in the $$Inspector$$.
-
-# Enable ``Border Mipmaps``
-# Enable ``Build Alpha From Grayscale`` (this way you can make a grayscale cookie and Unity converts it to an alpha map automatically)
-# Set the Texture Format to ``Alpha 8 Bit``
+# In the $$Texture Inspector$$ change the $$Texture Type$$ to ``Cookie``
+# Enable ``Alpha From Grayscale`` (this way you can make a grayscale cookie and Unity converts it to an alpha map automatically)
 
 Attach:SpotlightCookie.png
 
