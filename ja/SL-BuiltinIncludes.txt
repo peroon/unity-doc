@@ -44,7 +44,7 @@ Unityのシェーダincludeファイルは@@.cginc@@ 拡張子がつけられて
 * @@fixed3 DecodeLightmap (fixed4 color)@@ - Unityライトマップの色をデコードします（プラットフォームにより、RGBMあるいはdLDR）
 * @@float4 EncodeFloatRGBA (float v)@@ - 精度の低いレンダリングターゲットを格納するため、0～1の範囲の浮動小数点をRGBAcolorにエンコードします。
 * @@float DecodeFloatRGBA (float4 enc)@@ - RGBA colorをfloatにデコードします。
-* 同様に、@@float2 EncodeFloatRG (float v)@@ および@@float DecodeFloatRG (float2 enc)@@ は二つのカラーチャネルをしようします。
+* 上記と同様ですが、@@float2 EncodeFloatRG (float v)@@ および @@float DecodeFloatRG (float2 enc)@@ は二つのカラーチャネルを使用します。
 * @@float2 EncodeViewNormalStereo (float3 n)@@ - ビュー空間法線を0～1の範囲の二つの数字にエンコードします。
 * @@float3 DecodeViewNormalStereo (float4 enc4)@@ - enc4.xyからビュー空間法線をデコードします。
 
