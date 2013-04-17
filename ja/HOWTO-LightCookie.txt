@@ -6,13 +6,9 @@ Cookie を使用してシーンに数々の視覚的詳細を追加する便利�
 
 スポット ライトにライト Cookie を作成するには、
 
-# Photoshop でCookieテクスチャをペイントします。 画像はグレースケールにする必要があります。 白のピクセルは、完全な照明強度で、黒いピクセルは照明なしになります。 テクスチャの境界は完全に黒にする必要があります。そうでない場合、スポット ライトの外部から光が漏れているような見かけになります。
-# $$Texture Inspector$$ で、「Repeat」 ラップ モードを「Clamp」に設定する必要があります。
-テクスチャを選択し、$$Inspector$$ で次の $$Import Settings$$ を編集します。
-
-# 「Border Mipmaps」を有効にします。
-# 「Build Alpha From Grayscale」を有効にします (このように、グレースケール Cookie を作成でき、Unity がこの Cookie をアルファ マップに自動的に変換します)
-# テクスチャ形式を「Alpha 8 Bit」に設定します。
+# Photoshop でCookieテクスチャをペイントします。 画像はグレースケールにする必要があります。 白のピクセルは、完全なライティング強度で、黒いピクセルはライティングなしになります。 テクスチャの境界は完全に黒にする必要があります。そうでない場合、スポット ライトの外部まで光が漏れ出るような見映えになります。
+# $$Texture Inspector$$ で、$$Texture Type$$ を``Cookie``に変更します。
+# ``Alpha From Grayscale`` を有効にします (このように、グレースケール Cookie を作成でき、Unity がこの Cookie をアルファ マップに自動的に変換します)
 
 Attach:SpotlightCookie.png
 
