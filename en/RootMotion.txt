@@ -33,7 +33,7 @@ Only AnimationClips that have similar start and stop Root Orientation should use
 
 This uses the same concepts described in Root Transform Rotation.
 
-~~Bake Into Pose~~: The Y component of the motion will stay on the Body Transform (Pose). The Y component of the Root Transform will be constant and Delta Root Position Y will be 0. This means that this clip won’t change the Game Object Height. Again you have a Green Light telling you that a clip is a good candidate for baking Y motion into pose.
+~~Bake Into Pose~~: The Y component of the motion will stay on the Body Transform (Pose). The Y component of the Root Transform will be constant and Delta Root Position Y will be 0. This means that this clip won't change the Game Object Height. Again you have a Green Light telling you that a clip is a good candidate for baking Y motion into pose.
 
 Most of the $$AnimationClips$$ will enable this setting. Only clips that will change the $$GameObject$$ height should have this turned off, like jump up or down.
 
@@ -47,7 +47,7 @@ Note: the @@Animator.gravityWeight@@ is driven by Bake Into Pose position Y. Whe
 
 Again, this uses same concepts described in $$Root Transform Rotation$$ and $$Root Motion Position (Y).$$
 
-~~Bake Into Pose~~ will usually be used for “Idles” where you want to force the delta Position (XZ) to be 0. It will stop the accumulation of small deltas drifting after many evaluations. It can also be used for a Keyframed clip with ~~Based Upon~~ ^^Original^^ to force an authored position that was set by the artist.
+~~Bake Into Pose~~ will usually be used for "Idles" where you want to force the delta Position (XZ) to be 0. It will stop the accumulation of small deltas drifting after many evaluations. It can also be used for a Keyframed clip with ~~Based Upon~~ ^^Original^^ to force an authored position that was set by the artist.
 
 !!Loop Pose
 

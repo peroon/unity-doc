@@ -30,7 +30,7 @@ You can change the threshold value of a motion by clicking on its corresponding 
 
 Below the motion list is the checkbox ''Automate Thresholds''. Enabling it will distribute the thresholds of the motions evenly across the parameter range. For example, if there are five clips and the parameter ranges from -90 to +90, the thresholds will be set to -90, -45, 0, +45 and +90 in order.
 
-The ^^Compute Thresholds^^ drop-down will set the thresholds from data of your choice obtained from the root motions in the Animation Clips. The data that is available to choose from is speed, velocity x, y, or x, and angular speed in degrees or radians. If your ^^parameter^^ corresponds to one of these properties, you can compute the thresholds using the Compute Thresholds drop-down.
+The ^^Compute Thresholds^^ drop-down will set the thresholds from data of your choice obtained from the root motions in the Animation Clips. The data that is available to choose from is speed, velocity x, y, or z, and angular speed in degrees or radians. If your ^^parameter^^ corresponds to one of these properties, you can compute the thresholds using the Compute Thresholds drop-down.
 
 ||PROPS
 ||``Speed``               ||Sets the threshold of each motion according to its speed (the magnitude of the velocity).||
