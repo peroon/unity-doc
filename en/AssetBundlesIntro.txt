@@ -22,6 +22,7 @@ When working with AssetBundles, here's the typical workflow:
 
 # __Loading objects from AssetBundles__. Once the AssetBundle is downloaded, you might want to access its individual Assets from the Bundle. More on that in [[Loading Asset Bundles|Loading Resources from AssetBundles]]
 
+Please read this section of the documentation thoroughly to familiarize yourself with the workflow for using AssetBundles, discover the different features they provide and learn best practices that can save you time and effort during development.
 
 See also:
 * [[abfaq|Frequently Asked Questions]]

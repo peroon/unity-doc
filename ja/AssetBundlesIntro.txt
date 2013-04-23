@@ -23,6 +23,7 @@
 
 # __アセットバンドルからのオブジェクトのロード__ 。アセットバンドルがダウンロードされた後は、バンドルから個別のアセットにアクセスしたいことがあります。詳細については [[Loading Asset Bundles|アセットバンドルからリソースをロード]] を参照下さい。
 
+Please read this section of the documentation thoroughly to familiarize yourself with the workflow for using AssetBundles, discover the different features they provide and learn best practices that can save you time and effort during development.
 
 関連項目:
 * [[abfaq|アセットバンドル FAQ]]
