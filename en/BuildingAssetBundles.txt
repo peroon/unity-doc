@@ -102,7 +102,7 @@ public class TextureProcessor : AssetPostprocessor
 }
 @]
 
-You can also control how the asset is imported using the [[ScriptRef:AssetDatabase.ImportAssetOptions.html|AssetDatabase.ImportAssetOptions]].
+You can also control how the asset is imported using the [[ScriptRef:ImportAssetOptions.html|AssetDatabase.ImportAssetOptions]].
 
 
 !! Building AssetBundles in a production enviroment

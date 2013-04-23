@@ -11,7 +11,7 @@ To set up IK for a character, you typically have objects around the scene that a
 [[ScriptRef:Animator.SetIKRotationWeight.html|SetIKRotationWeight]],
 [[ScriptRef:Animator.SetIKPosition.html|SetIKPosition]],
 [[ScriptRef:Animator.SetIKRotation.html|SetIKRotation]],
-[[ScriptRef:Animator.SetIKLookAtPosition.html|SetLookAtPosition]],
+[[ScriptRef:Animator.SetLookAtPosition.html|SetLookAtPosition]],
 [[ScriptRef:Animator-bodyPosition.html|bodyPosition]],
 [[ScriptRef:Animator-bodyRotation.html|bodyRotation]]
 
