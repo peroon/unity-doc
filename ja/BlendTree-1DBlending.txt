@@ -28,7 +28,7 @@ Attach:MecanimBlendTreeParam.png
 
 モーション リスト の下には ''Automate Thresholds'' のチェックボックスがあります。これを有効にするとパラメータの値の範囲に渡って均等に複数の threshold (しきい値) を配置します。例えば、もし5つのクリップがあって、パラメータが -90 から +90 までの範囲に渡る場合、 thresholdは -90、 -45、 0、 +45、 +90 の順にセットされます。
 
-^^Compute Thresholds^^ ドロップダウンにより threshold を、アニメーションクリップのルートモーションから取得させることで、好きな順番にセットすることが出来ます。選択することが可能であるデータは speed、velocity、x、y、および 角度またはラジアン単位の Angular Speed です。もし ^^parameter^^ がこれらのプロパティのひとつに対応する場合、 Compute Thresholds ドロップダウンを使用して threshold を計算できます。
+^^Compute Thresholds^^ ドロップダウンにより threshold を、アニメーションクリップのルートモーションから取得させることで、好きな順番にセットすることが出来ます。選択することが可能であるデータは speed、velocityのx、y、z および 角度またはラジアン単位の Angular Speed です。もし ^^parameter^^ がこれらのプロパティのひとつに対応する場合、 Compute Thresholds ドロップダウンを使用して threshold を計算できます。
 
 ||PROPS
 ||``Speed``               ||各々のモーションを speed （速度の大きさ）に応じて Threshold をセットします。||
