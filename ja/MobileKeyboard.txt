@@ -10,51 +10,49 @@
 ユーザーが編集可能なGUI要素をタップしたときキーボードは自動表示されます。現在では[[ScriptRef:GUI.TextField.html | GUI.TextField]], [[ScriptRef:GUI.TextArea.html | GUI.TextArea]] および [[ScriptRef:GUI.PasswordField.html | GUI.PasswordField]] によりキーボードが表示されます。詳細については  [[ScriptRef:GUI.html | GUI クラス]] を参照下さい。
 
 !!! 手動でのキーボード ハンドリングManual Keyboard Handling
-``iPhoneKeyboard.Open`` 関数を使用してキーボードを開きます。この関数が使用する引数については [[ScriptRef:iPhoneKeyboard.html | iPhoneKeyboard]] スクリプティング リファレンスを参照下さい。
+``TouchScreenKeyboard.Open`` 関数を使用してキーボードを開きます。この関数が使用する引数については [[ScriptRef:TouchScreenKeyboard.html | TouchScreenKeyboard]] スクリプティング リファレンスを参照下さい。
 
 !! キーボード 種類のまとめ
 キーボードは次の種類をサポートします。
 ||PROPS
-||``iPhoneKeyboardType.Default`` ||文字列。数字と記号のキーボードに切り替え出来ます。||
-||``iPhoneKeyboardType.ASCIICapable`` ||文字列。数字と記号のキーボードに切り替え出来ます。||
-||``iPhoneKeyboardType.NumbersAndPunctuation`` ||数字と記号。文字列のキーボードに切り替え出来ます。||
-||``iPhoneKeyboardType.URL`` ||スラッシュ記号と.com ボタン のついた文字列。数字と記号のキーボードに切り替え出来ます。||
-||``iPhoneKeyboardType.NumberPad`` ||0 から 9 までの数字のみ。||
-||``iPhoneKeyboardType.PhonePad`` ||電話番号を入力するためのキーボード。||
-||``iPhoneKeyboardType.NamePhonePad`` ||文字列。電話番号を入力するためのキーボードに切り替え出来ます。||
-||``iPhoneKeyboardType.EmailAddress`` ||@ 記号のついた文字列。数字と記号のキーボードに切り替え出来ます。||
+||``TouchScreenKeyboardType.Default`` ||文字列。数字と記号のキーボードに切り替え出来ます。||
+||``TouchScreenKeyboardType.ASCIICapable`` ||文字列。数字と記号のキーボードに切り替え出来ます。||
+||``TouchScreenKeyboardType.NumbersAndPunctuation`` ||数字と記号。文字列のキーボードに切り替え出来ます。||
+||``TouchScreenKeyboardType.URL`` ||スラッシュ記号と.com ボタン のついた文字列。数字と記号のキーボードに切り替え出来ます。||
+||``TouchScreenKeyboardType.NumberPad`` ||0 から 9 までの数字のみ。||
+||``TouchScreenKeyboardType.PhonePad`` ||電話番号を入力するためのキーボード。||
+||``TouchScreenKeyboardType.NamePhonePad`` ||文字列。電話番号を入力するためのキーボードに切り替え出来ます。||
+||``TouchScreenKeyboardType.EmailAddress`` ||@ 記号のついた文字列。数字と記号のキーボードに切り替え出来ます。||
 
 !! テキスト プレビュー
-デフォルトでは、キーボードが表示された後に編集ボックスが作成されてキーボードの上に配置されます。ユーザが入力しているテキストのプレビューとして動作し、ユーザはテキストを常に見ることができます。しかし、テキスト プレビューを無効化するには ``iPhoneKeyboard.hideInput`` を true にします。特定のキーボードの種類および入力モードでのみ動作することに留意下さい。例えば、電話キーパッドや複数行テキスト入力では動作しません。そういったケースでは、編集ボックスは必ず表示されます。 ``iPhoneKeyboard.hideInput`` はグローバル変数で全てのキーボードに影響します。
+デフォルトでは、キーボードが表示された後に編集ボックスが作成されてキーボードの上に配置されます。ユーザが入力しているテキストのプレビューとして動作し、ユーザはテキストを常に見ることができます。しかし、テキスト プレビューを無効化するには ``TouchScreenKeyboard.hideInput`` を true にします。特定のキーボードの種類および入力モードでのみ動作することに留意下さい。例えば、電話キーパッドや複数行テキスト入力では動作しません。そういったケースでは、編集ボックスは必ず表示されます。 ``TouchScreenKeyboard.hideInput`` はグローバル変数で全てのキーボードに影響します。
 
 !! Visibility およびキーボードサイズ
-
-[[ScriptRef:iPhoneKeyboard.html | iPhoneKeyboard]] には3つのキーボード プロパティにより、キーボード のVisibilityステータスおよび画面上のサイズを決定します。
+[[ScriptRef:TouchScreenKeyboard.html | TouchScreenKeyboard]] には3つのキーボード プロパティにより、キーボード のVisibilityステータスおよび画面上のサイズを決定します。
 ||PROPS
 ||``visible`` ||キーボードが完全に画面に完全に表示されていて、かつ文字列が入力できる場合に``true`` を返します。||
 ||``area`` ||キーボードの位置と寸法を返します。||
 ||``active`` ||キーボードが有効化されている場合に``true`` を返します。このプロパティは static プロパティでありません。キーボードのインスタンスがないとこのプロパティを使用できません。||
 
-``iPhoneKeyboard.area`` は、キーボードが完全に画面で表示されるまで、位置およびサイズがゼロにセットされた rect を返すことに留意して下さい。 ``iPhoneKeyboard.Open`` の直後に値をクエリーすべきではありません。キーボードイベントのステップは次のとおりです:
+``TouchScreenKeyboard.area`` は、キーボードが完全に画面で表示されるまで、位置およびサイズがゼロにセットされた rect を返すことに留意して下さい。 ``TouchScreenKeyboard.Open`` の直後に値をクエリーすべきではありません。キーボードイベントのステップは次のとおりです:
 
-* ``iPhoneKeyboard.Open`` がコールされる。``iPhoneKeyboard.active`` が true を返す。``iPhoneKeyboard.visible`` が false を戻す。 ``iPhoneKeyboard.area`` が (0, 0, 0, 0) を戻す。
+* ``TouchScreenKeyboard.Open`` がコールされる。``TouchScreenKeyboard.active`` が true を返す。``TouchScreenKeyboard.visible`` が false を戻す。 ``TouchScreenKeyboard.area`` が (0, 0, 0, 0) を戻す。
 * キーボードが画面上にスライドしながら表示される。全てのプロパティは同じまま。
-* キーボードの画面上でのスライドが止まる。``iPhoneKeyboard.active`` が true を戻す。 ``iPhoneKeyboard.visible`` が true を戻す。 ``iPhoneKeyboard.area`` がキーボードの実際の位置とサイズを戻す。
+* キーボードの画面上でのスライドが止まる。``TouchScreenKeyboard.active`` が true を戻す。 ``TouchScreenKeyboard.visible`` が true を戻す。 ``TouchScreenKeyboard.area`` がキーボードの実際の位置とサイズを戻す。
 
 !! セキュリティのかかったテキスト入力
 キーボード入力が行われるときに入力した文字を隠すことが可能です。これはユーザがセンシティブ情報（パスワードなど）の入力を求められたときに便利です。キーボードをセキュリティのかかったテキスト入力を有効化して、手動でキーボードを開くためには、次のコードを使用します:
 [@
-iPhoneKeyboard.Open("", iPhoneKeyboardType.Default, false, false, true);
+TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true);
 @]
 
 Attach:KeyboardSecure.png
 ''テキスト入力の際にテキストを隠す''
 
 !! アラート キーボード
-
-キーボードで、通常の不透明な背景ではなく、部分的に透明で黒い背景としたい場合、次のように ``iPhoneKeyboard.Open`` をコールします:
+キーボードで、通常の不透明な背景ではなく、部分的に透明で黒い背景としたい場合、次のように ``TouchScreenKeyboard.Open`` をコールします:
 [@
-iPhoneKeyboard.Open("", iPhoneKeyboardType.Default, false, false, true, true);
+TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true, true);
 @]
 
 Attach:KeyboardClassic.png
@@ -69,8 +67,8 @@ Attach:KeyboardAlert.png
 [[#Android]]
 >>android<<
 Unity Android は  iOS API を再利用して、システムキーボードを表示します。 Unity Android が iPhone の同等機能をほとんどサポートしながらも、サポートしていないものが二つあります:
-* ``iPhoneKeyboard.hideInput``
-* ``iPhoneKeyboard.area``
+* ``TouchScreenKeyboard.hideInput``
+* ``TouchScreenKeyboard.area``
 
- `iPhoneKeyboardType`` のレイアウトがデバイスによりやや異なることに留意下さい。
+ `TouchScreenKeyboardType`` のレイアウトがデバイスによりやや異なることに留意下さい。
 >><<
