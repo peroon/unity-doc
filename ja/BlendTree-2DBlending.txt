@@ -37,7 +37,7 @@ Attach:MecanimBlendTree2DDiagram.png
 
 モーションのPositionを変更するには対応する青の点をクリックして周りでドラッグします。さらにモーションリストのモーションのPosition座標を変更するには、Pos X および Pos Y 列の数字フィールドに値を入力することも出来ます。
 
-^^Compute Thresholds^^ ドロップダウンにより threshold を、アニメーションクリップのルートモーションから取得させることで、好きな順番にセットすることが出来ます。選択することが可能であるデータは speed、velocity、x、y、および 角度またはラジアン単位の Angular Speed です。もし ^^parameter^^ のひとつまたは両方がこれらのプロパティに対応する場合、Compute Positionsドロップダウンを使用してPos X および/または Pos Y を計算出来ます。
+^^Compute Thresholds^^ ドロップダウンにより threshold を、アニメーションクリップのルートモーションから取得させることで、好きな順番にセットすることが出来ます。選択することが可能であるデータは speed、velocityの x、y、z および 角度またはラジアン単位の Angular Speed です。もし ^^parameter^^ のひとつまたは両方がこれらのプロパティに対応する場合、Compute Positionsドロップダウンを使用してPos X および/または Pos Y を計算出来ます。
 
 ||PROPS
 ||``Velocity XZ``             ||各々のモーションのPos X を自身の velocity.x 、 Pos Y を自身の velocity.z に基づいてセットします。||
