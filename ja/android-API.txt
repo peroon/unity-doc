@@ -1,10 +1,6 @@
 ! Android スクリプティング / Android Scripting
 
-Unity Androidは、iOS APIと統合されてハンドヘルド デバイス機能にアクセスする、複数のスクリプティングAPIを提供します。クロスプラットフォーム プロジェクトでは、UNITY_ANDROIDはAndroid特有のC#コードを条件つきコンパイルするために定義されてます。次のスクリプティングクラスはAndroid関連の変更を含みます（いくつかのAPIがAndroidとiOSで共有されてます）：
-||[[ScriptRef:Input.html | Input]] ||マルチタッチスクリーン、加速度センサー、デバイスの向きへのアクセス。
-||[[ScriptRef:iPhoneSettings.html | iPhoneSettings]] ||Androidの、画面の向き、明暗、デバイスハードウェに関する情報など、いくつかの設定。
-||[[ScriptRef:iPhoneKeyboard.html | iPhoneKeyboard]] ||ネイティブのオンスクリーン キーボードのサポート。
-||[[ScriptRef:iPhoneUtils.html | iPhoneUtils]] ||ムービープレイバック、海賊版対策、バイブレーションに便利な機能。
+Android デバイスのほとんどの機能は [[ScriptRef:Input.html | Input]] および [[ScriptRef:Handheld.html | Handheld]] クラスにより公開されています。クロスプラットフォーム プロジェクトについて、 Anrdoid デバイス向けの C# コードをコンパイルするために UNITY_ANDROID が定義されています。
 
 !!上級者向け
 (:tocportion:)
