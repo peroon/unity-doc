@@ -1,5 +1,5 @@
 !ムービー テクスチャ / Movie Texture
-__注意：__　__Unity Pro/ Advancedのみ__
+__注意：__ __Unity Pro/ Advancedのみ__
 !Desktop!
 >>desktop<<
 $$Movie Textures$$ は、ビデオファイルから作成され、アニメーション化された $$Texture$$ です。
@@ -59,29 +59,30 @@ Movie Texturesを再生する方法の詳細については、[[ScriptRef:MovieT
 Movie Texturesをインポートすると、映像とともにオーディオトラックもインポートされます。オーディオは、Movie Texturesの$$AudioClip$$を子オブジェクトとして表示されます。
 
 Attach:MovieTextureAudio.png\\
-ビデオのオーディオトラックは$$Project View$$にてMovie Texturesの子オブジェクトとして表示されます
+ビデオのオーディオトラックは $$Project View$$ にて Movie Textures の子オブジェクトとして表示されます
 
-このオーディオを再生するには、他のオーディオクリップのように、ゲームオブジェクトにアタッチする必要があります。Project Viewから、シーンビューか階層ビューの任意のゲームオブジェクトへドラッグします。
+このオーディオを再生するには、他のオーディオクリップのように、ゲームオブジェクトにアタッチする必要があります。 Project View から、シーンビューか階層ビューの任意のゲームオブジェクトへドラッグします。
 
-通常、ムービーを見せているのと同じゲームオブジェクトになります。次に [[ScriptRef: GameObject-audio.html|audio.Play()]] を使用し、映像に合わせてオーディオトラックを再生します。
+通常、ムービーを見せているのと同じゲームオブジェクトになります。次に [[ScriptRef:GameObject-audio.html|audio.Play()]] を使用し、映像に合わせてオーディオトラックを再生します。
 
 
 >><<
 !iOS!
 >>ios<<
-Movie Texturesは、iOS上ではサポートされません。代わりに、[[ScriptRef:Handheld.PlayFullScreenMovie.html|Handheld.PlayFullScreenMovie]] を使用してフルスクリーン　ストリーミング再生が提供される。
+Movie Texturesは、iOS上ではサポートされません。代わりに、[[ScriptRef:Handheld.PlayFullScreenMovie.html|Handheld.PlayFullScreenMovie]] を使用してフルスクリーン ストリーミング再生が提供される。
 
-!!!プロジェクト　ディレクトリのStreamingAssetsフォルダ内にビデオを格納する必要があります。
+!!!プロジェクト ディレクトリのStreamingAssetsフォルダ内にビデオを格納する必要があります。
 
 
 iOSデバイス上で正しく再生できるファイルタイプはUnityのiOSでサポートされるため、（__.mov__, __.mp4__, __.mpv__, and __.3gp__ ）の拡張子や、次の圧縮規格はサポートされます：
-* H.264 ベースライン　プロファイルレベル3.0　ビデオ
+* H.264 ベースライン プロファイルレベル3.0 ビデオ
 * MPEG-4 Part 2 ビデオ
 
 サポートされている圧縮規格の詳細については、iPhone SDKを参照してください。
 [[http://developer.apple.com/library/ios/#documentation/MediaPlayer/Reference/MPMoviePlayerController_Class/MPMoviePlayerController/MPMoviePlayerController.html | MPMoviePlayerController クラスリファレンス]] 
 
-[[ScriptRef:iPhoneUtils.PlayMovie.html | iPhoneUtils.PlayMovie]] あるいは [[ScriptRef:iPhoneUtils.PlayMovie.html | iPhoneUtils.PlayMovieURL]] をコールすると画面は現在のコンテンツから、指定された背景色にフェードアウトします。ムービーが再生できる状態になるまでに、少し時間がかかるかもしれませんが、その間プレイヤーは背景色が表示され続けるとともにムービーのロード時間の進行状況インジケータを表示することもできます。再生が終了すると、画面は元のコンテンツに戻るためにフェードバックします。
+[[ScriptRef:Handheld.PlayFullScreenMovie.html | Handheld.PlayFullScreenMovie]] をコールすると画面は現在のコンテンツから、指定された背景色にフェードアウトします。ムービーが再生できる状態になるまでに、少し時間がかかるかもしれませんが、当面はプレイヤーは背景色の表示を継続しており、ユーザがムービーがロードされているか時間がかかるかもしれませんが、プレイヤーは指定された背景色にフェードアウトします。再生が終了すると、画面は元のコンテンツに戻るためにフェードバックします。 
+
 
 !!! ビデオプレーヤーは、ビデオ再生時のミュート切替は無視します
 
