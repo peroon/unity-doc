@@ -2,7 +2,7 @@
 
 $$ShaderLab$$ shaders encompass more than just "hardware shaders". They do many things. They describe properties that are displayed in the Material Inspector, contain multiple shader implementations for different graphics hardware, configure fixed function hardware state and so on. The actual programmable shaders - like vertex and fragment programs - are just a part of the whole ShaderLab's "shader" concept. Take a look at [[ShaderTut2 | shader tutorial]] for a basic introduction. Here we'll call the low-level hardware shaders $$shader programs$$.
 
-__If you want to write shaders that interact with lighting, take a look at [[SL-SurfaceShaders | Surface Shaders]] documentation__. The rest of this page will assume shaders that do not interact with Unity lights (e.g. special effects, [[comp-ImageEffects | Image Effects]] etc.)
+__If you want to write shaders that interact with lighting, take a look at [[SL-SurfaceShaders | Surface Shaders]] documentation__. For some examples, take a look at [[SL-VertexFragmentShaderExamples | $$Vertex and Fragment Shader Examples$$]].  The rest of this page will assume shaders that do not interact with Unity lights (e.g. special effects, [[comp-ImageEffects | Image Effects]] etc.)
 
 Shader programs are written in Cg / HLSL language, by embedding "snippets" in the shader text, somewhere inside the [[SL-Pass|Pass]] command. They usually look like this:
 
