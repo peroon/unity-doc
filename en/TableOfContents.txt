@@ -201,6 +201,8 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 >><<
 >>wiiu<<
 ** [[wiiu-gettingstarted]]
+*** [[wiiu-API]]
+**** [[Input#wiiuInput |Wii U Input]]
 >><<
 >>wii<<
 ** [[wii-gettingstarted]]
