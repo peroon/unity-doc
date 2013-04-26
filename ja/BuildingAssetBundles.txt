@@ -1,6 +1,7 @@
 ! アセットバンドルのビルド / Building AssetBundles
 
 アセットバンドルのビルドに使用できるクラスメソッドは3つあります:
+
 * [[ScriptRef:BuildPipeline.BuildAssetBundle.html|BuildPipeline.BuildAssetBundle]] により、どんな種類のアセットでもアセットバンドルをビルドできます。
 
 * [[ScriptRef:BuildPipeline.BuildStreamedSceneAssetBundle.html|BuildPipeline.BuildStreamedSceneAssetBundle]] は、データが利用可能となったときにシーンのストリーミングおよびロードしたい場合に使用します。
@@ -35,8 +36,76 @@ Attach:AssetBundlesCube.png
 この時点で、アセットバンドルの ``Cube.unity3d``をローカルのストレージまたは好きなサーバにアップロードすることが出来ます。
 
 
+!! アセットバンドルをビルドする際にアセットのプロパティを変更するサンプル
+
+[ScriptRef:AssetDatabase.ImportAsset.html|AssetDatabase.ImportAsset]] を使用して、 [[ScriptRef:BuildPipeline.BuildAssetBundle.html|BuildPipeline.BuildAssetBundle]] をコールする直前にアセットの再インポートを強制的に行い、さらに [[ScriptRef:AssetPostprocessor.OnPreprocessTexture.html|AssetPostprocessor.OnPreprocessTexture]] を使用することで必要なプロパティをセットすることが出来ます。次にサンプルにより、アセットバンドルをビルドする際に、様々なテクスチャ圧縮方式をセットする方法を確認できます。
+
+!!!C#
+[@
+// プロジェクトビューの選択されたオブジェクトからアセットバンドルをビルドし、
+// アセット ポスト プロセッサを使用してテクスチャのフォーマットを変更します。
+
+using UnityEngine;
+using UnityEditor;
+
+public class ExportAssetBundles {
+    
+	// TextureProcessorの現在のテクスチャフォーマットを格納
+	public static TextureImporterFormat textureFormat;
+	
+	[MenuItem("Assets/Build AssetBundle From Selection - PVRTC_RGB2")]
+	static void ExportResourceRGB2 () {
+		textureFormat = TextureImporterFormat.PVRTC_RGB2;
+		ExportResource();		
+	}	
+    
+	[MenuItem("Assets/Build AssetBundle From Selection - PVRTC_RGB4")]
+	static void ExportResourceRGB4 () {
+		textureFormat = TextureImporterFormat.PVRTC_RGB4;
+		ExportResource();
+	}
+	
+	static void ExportResource () {
+		// 保存パネルのセットアップ
+		string path = EditorUtility.SaveFilePanel ("Save Resource", "", "New Resource", "unity3d");
+		
+		if (path.Length != 0) {
+			// アクティブなセレクションからリソースファイルをビルドする。
+			Build the resource file from the active selection.
+			Object[] selection = Selection.GetFiltered(typeof(Object), SelectionMode.DeepAssets);
+			
+			foreach (object asset in selection) {
+				string assetPath = AssetDatabase.GetAssetPath((UnityEngine.Object) asset);
+				if (asset is Texture2D) {
+					// TextureProcessorを通じて Force を際インポートする。
+				}
+			}
+            
+			BuildPipeline.BuildAssetBundle(Selection.activeObject, selection, path, BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets);
+			Selection.objects = selection;
+		}
+	}
+}
+@]
+
+!!!C#
+[@
+// アセットバンドルをビルドするときにテクスチャ フォーマットを変更
+
+using UnityEngine;
+using UnityEditor;
+
+public class TextureProcessor : AssetPostprocessor
+{   
+	void OnPreprocessTexture() {
+		TextureImporter importer = assetImporter as TextureImporter;
+		importer.textureFormat = ExportAssetBundles.textureFormat;
+	}
+}
+@]
+
 !! アセットバンドルを本番環境でビルドする
 
-アセットバンドルを初めて使用するとき、前述の例の通りにマニュアルでビルドするので十分に見えます。しかしプロジェクトサイズが大きくなり、アセットの数が増加すると、このプロセスは効果的ではありません。より良いアプローチは、プロジェクトの全てのアセットバンドルをビルドする関数を記述することです。たとえばアセットファイルをアセットバンドルのファイルにマッピングするテキストファイルを使用できます。
+アセットバンドルを初めて使用するとき、前述の例の通りにマニュアルでビルドするので十分に見えます。しかしプロジェクトサイズが大きくなり、アセットの数が増加すると、このプロセスは効率的ではありません。より良いアプローチは、プロジェクトの全てのアセットバンドルをビルドする関数を記述することです。たとえばアセットファイルをアセットバンドルのファイルにマッピングするテキストファイルを使用できます。
 
 [[AssetBundlesIntro|アセットバンドル入門]] に戻る
