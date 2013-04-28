@@ -216,11 +216,89 @@ Apple 入力 API ドキュメントは次の場所で見つけられます:
 
 __注意:__ 上記のリンクはローカルにインストールされたiPhone SDK Reference Documentation を参照していて、ネイティブのObjective C コードを含みます。 Unityを モバイル デバイスで視ようする場合にこれらを理解することは必要ありませんが、一部の人には役立つかもしれません。
 
+>>ios<<
 !iOS!
 [[#iPhoneInput]]
->>ios<<
 
 !! デバイス 位置情報
 デバイス 位置情報は [[ScriptRef:iPhoneInput-lastLocation.html|iPhoneInput.lastLocation]] プロパティを通じて取得できます。このプロパティをコールする前に [[ScriptRef:iPhoneSettings.StartLocationServiceUpdates.html|iPhoneSettings.StartLocationServiceUpdates()]] でLocation Service updates を起動してサービスのステータスを [[ScriptRef:iPhoneSettings-locationServiceStatus.html|iPhoneSettings.locationServiceStatus]] で確認すべきです。詳細については[[ScriptRef:iPhoneSettings.StartLocationServiceUpdates.html|scripting reference]] を参照下さい。
 >><<
 
+>>wiiu<<
+!WiiU
+[[#wiiuInput]]
+
+!! ジョイスティックのエイリアスと Axes
+
+WiiU 上ではひとつの顧客仕様の定義と、複数の事前定義されたジョイスティックがあり、エディタの Input Manager の Axes にアタッチできます。
+
+!!! ジョイスティック / Joystick
+
+これらのバーチャル ジョイスティックは、Axes のひとつに 'Type', 'Axis' および 'JoyNum' をセットすることで、エディタの Input Manager で使用することが出来ます。
+
+!!!! ジョイスティック 1 / Joystick 1
+
+このジョイスティックはデフォルトにおいてチャネル 1 のWiiU コントローラに対応しますが、同様にジョイスティックとして機能する、スクリプトのプロパティ 'WiiUInput.mouseController' により動的にセットすることが出来ます。
+WiiU コントローラに接続した、外部コントローラにあたるヌンチャクのアナログスティックは 'Joystick 1' の X 軸および Y 軸にマッピングされます。
+
+!!!! ジョイスティック 2 / Joystick 2
+
+このジョイスティックはゲームパッドコントローラと連動します。
+コントローラのボタンは次のとおりにジョイスティックのボタンに対応しています：
+||``1``||'B' ボタン||
+||``2``||'A' ボタン||
+||``3``||'Y' ボタン||
+||``4``||'X' ボタン||
+||``5``||'ZL' ボタン||
+||``6``||'ZR' ボタン||
+||``7``||'-' ボタン||
+||``8``||'+' ボタン||
+||``9``||ゲームパッドの'左'||
+||``10``||ゲームパッドの'右'||
+||``11``||ゲームパッドの'下'||
+||``12``||ゲームパッドの'上'||
+||``13``||'L' ボタン||
+||``14``||'R' ボタン||
+||``15``||左のスティック ボタン||
+||``16``||右のスティック ボタン||
+
+コントローラの左および右のアナログスティックは最初の 4 つのジョイスティック Axes にマッピングされます。
+
+||``axis 1 aka X``||左スティックの水平方向の動作。||
+||``axis 2 aka Y``||左スティックの垂直方向の動作。||
+||``axis 3``||右スティックのの水平方向の動作。||
+||``axis 4``||右スティックの垂直方向の動作。||
+
+!!!! ジョイスティック 3 とそれ以降 / Joystick 3 and subsequent
+
+全ての接続された WiiU PRO コントローラはジョイスティックとして追加されます。最初に接続された PRO コントローラが "Joystick 3" に対応します。
+ジョイスティックのボタンおよび Axes はデバイスのボタンおよびスティックはゲームパッドコントローラと全く同様にマッピングされます。
+
+
+!!!Axes
+
+これらのシンボル名は Input Manager の 'Negative Button', 'Postivite Button', 'Alt Negative Button' または 'Alt Positive Button' から直接使用できます。
+'WiiUInput.mouseController' を通してセットしたリモートコントローラのボタンは次のシンボル名を通じてアクセスできます。
+
+||``SDLK_UP``||ゲームパッドの'上' ボタン||
+||``SDLK_DOWN``||ゲームパッドの'下' ボタン||
+||``SDLK_LEFT``||ゲームパッドの'左' ボタン||
+||``SDLK_RIGHT``||ゲームパッドの'右' ボタン||
+||``SDLK_LCTRL``||'A' ボタン||
+||``SDLK_SPACE``||'B' ボタン||
+||``SDLK_LALT``||'1' ボタン||
+||``SDLK_LCTRL``||'2' ボタン||
+||``SDLK_LMETA``||'2' ボタン||
+||``SDLK_a``||'A' ボタン||
+||``SDLK_b``||'B' ボタン||
+||``SDLK_PLUS``||'+' ボタン||
+||``SDLK_MINUS``||'-' ボタン||
+||``SDLK_ボタン_1``||'1' ボタン||
+||``SDLK_ボタン_2``||'2' ボタン||
+
+さらに、接続されたヌンチャク外部コントローラのボタンは次のシンボル名がアサインされています。
+
+||``SDLK_z``||'Z' ボタン||
+||``SDLK_c``||'C' ボタン||
+||``SDLK_RSHIFT``||'Z' ボタン||
+||``SDLK_LSHIFT``||'C' ボタン||
