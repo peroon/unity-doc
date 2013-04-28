@@ -1,10 +1,10 @@
 ! 頂点シェーダとFragmentシェーダのプログラミング / Writing vertex and fragment shaders
 
-$$ShaderLab$$ は単なるハードウェアシェーダー以上の機能を含みます。たくさんのことができます。まず、Properties(プロパティ:属性)はマテリアルのインスペクターに表示するものや、違うグラフィックスハードで動けるように複数のシェーダを含んだり、ハードが用意した固定関数を調整したり、などなどです。実際のプログラマブルシェーダ（頂点シェーダーやFragmentシェーダのプログラムのような）はShaderLabのシェーダのコンセプトの単なる一部です。[[ShaderTut2 | shader tutorial]] で基本的な説明をします。 ここではローレベルなハードに近いシェーダを $$shader programs$$と呼ぶことにします。
+$$ShaderLab$$ は単なるハードウェアシェーダー以上の機能を含みます。たくさんのことができます。まず、Properties(プロパティ:属性)はマテリアルのインスペクターに表示するものや、違うグラフィックスハードで動けるように複数のシェーダを含んだり、ハードが用意した固定関数を調整したり、などなどです。実際のプログラマブルシェーダ（頂点シェーダーやFragmentシェーダのプログラムのような）はShaderLabのシェーダのコンセプトの単なる一部です。 [[ShaderTut2 | Shader Tutorial]] で基本的な説明をします。 ここではローレベルなハードに近いシェーダを $$shader programs$$と呼ぶことにします。
 
-__もしライティングに反応するシェーダを書きたいなら、 [[SL-SurfaceShaders | Surface Shaders]] ドキュメントを読んで下さい。__ ここでは、Unityのライトで反応しないシェーダについて言及します。（例：スペシャルエフェクト、[[comp-ImageEffects | Image Effects]] 等）
+__もしライティングに反応するシェーダを書きたいなら、 [[SL-SurfaceShaders | Surface Shaders]] ドキュメントを読んで下さい。__ またサンプルをお探しの場合は、 [[SL-VertexFragmentShaderExamples | $$Vertex and Fragment Shader Examples$$]] を参照して下さい。ここでは、Unityのライトで反応しないシェーダについて言及します。（例：スペシャルエフェクト、[[comp-ImageEffects | Image Effects]] 等）
 
-Shader programs は Cg / HLSL 言語で書かれています。シェーダーテキストの中に[[SL-Pass|Pass]] コマンドの中に「スニペット」が埋め込まれます。だいたい以下のような感じになります：
+Shader programs は Cg / HLSL 言語で書かれています。シェーダーテキストの中に [[SL-Pass|Pass]] コマンドの中に「スニペット」が埋め込まれます。だいたい以下のような感じになります：
 
   Pass {
       ''// ... いつものパスステートの設定 ...''
@@ -48,11 +48,9 @@ Cg プログラムスニペットは``CGPROGRAM`` と ``ENDCG``間に書かれ�
 デフォルトでは、Unityはシェーダをおおよそシェーダモデル2.0相当にコンパイルします。``#pragma target`` を使用することでシェーダは他のレベルにコンパイルすることが出来ます。現在は次のターゲットがサポートされています：
 * ``#pragma target 2.0`` ''(default)'' - おおよそシェーダモデル2.0相当
 ** Direct3D 9のシェーダモデル2.0
-** [[http://www.opengl.org/registry/specs/ARB/vertex_program.txt | ARB_vertex_program]] with 256 instruction limit and [[http://www.opengl.org/registry/specs/ARB/fragment_program.txt | ARB_fragment_program]] with 96 instruction limit (32 texture + 64 arithmetic), 16 temporary registers and 4 texture indirections.
 ** [[http://www.opengl.org/registry/specs/ARB/vertex_program.txt | ARB_vertex_program]] で256指示の制限、[[http://www.opengl.org/registry/specs/ARB/fragment_program.txt | ARB_fragment_program]] で96指示の制限（32テクスチャ+64演算）、16のテンポラリレジスタおよび4の間接テキスチャ（texture indirection）
 * ``#pragma target 3.0`` - ターゲットをのシェーダモデル3.0にコンパイル：
 ** Direct3D 9のシェーダモデル3.0
-** ARB_vertex_program with no instruction limit and ARB_fragment_program with 1024 instruction limit (512 texture + 512 arithmetic), 32 temporary registers and 4 texture indirections.
 ** ARB_vertex_program で指示制限なし、およびARB_fragment_programで1024指示の制限(512 テクスチャ + 512 演算), 32 テンポラリレジスタおよび 4間接テクスチャ。これらの制限を ``#pragma profileoption`` ディレクティブを使用してオーバーライドすることは出来ます。すなわち @@#pragma profileoption MaxTexIndirections=256@@ により間接テクスチャの制限を256に増加させます. いくつかのシェーダモデル3.0機能、たとえばデリバティブ指示などは、ARB_vertex_program/ARB_fragment_programでサポートされてないことに留意して下さい。``#pragma glsl`` を使用してGLSLに変換して制限がより少なくなります。
 
 3.0より大きいターゲット向けにコンパイルするとき、頂点／フラグメントプログラムともに必要です。
