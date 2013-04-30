@@ -58,7 +58,8 @@ The project can be found [[Attach:SimplestPluginExample-4.0.zip | here]] and inc
 
 !!! Rendering from C++ code
 An example multiplatform plugin that works with multithreaded rendering in Unity can be found on the [[Native Plugin Interface]] page.
-
+(:comment These examples seem to be missing in action:)
+(:if false:)
 !!! Midi Plugin
 A complete example of the Plugin interface can be found [[http://unity3d.com/tutorials/midiplugin.zip|here]].
 
@@ -66,4 +67,5 @@ This is a complete Midi plugin for OS X which uses Apple's CoreMidi API. It prov
 
 !!! Texture Plugin
 An example of how to assign image data to a texture directly in OpenGL (note that this will only work when Unity is using an OpenGL renderer). This example includes both XCode and Visual Studio project files. The plugin, along with an accompanying Unity project, can be found [[http://unity3d.com/support/resources/example-projects/texture-plugins|here]].
+(:ifend:)
 

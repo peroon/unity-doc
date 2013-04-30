@@ -17,7 +17,7 @@ You can use drag and drop simply by selecting the desired object in the Scene Vi
 
 If a reference property accepts a specific Component type (for example a Transform) then dragging a GameObject or a Prefab onto the reference property will work fine provided that the GameObject or Prefab contains a component of the correct type. The property will then reference the component in question, even though it was a GameObject or Prefab you dragged onto it.
 
-If you drag an object onto an reference property, and the object is not of the correct type, or does not contain the right component, then you won't be able to assign the object to the reference property.
+If you drag an object onto a reference property, and the object is not of the correct type, or does not contain the right component, then you won't be able to assign the object to the reference property.
 
 [[#ObjectPicker]]
 !! The Object Picker
