@@ -10,3 +10,6 @@ Attach:MeshExample40.png \\
 Unityのメッシュ インポーターはメッシュの生成を制御したり、テクスチャやマテリアルに関連付けるため、多くのオプションを用意しています。これらのオプションは、次のページで説明されています。
 
 (:tocportion:)
+
+(:include FBXImporter-Model:)
+

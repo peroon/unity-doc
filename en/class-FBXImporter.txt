@@ -1,4 +1,4 @@
-!Models
+!Meshes
 
 When a 3D model is imported, Unity represents it as many different objects, including a hierarchy of GameObjects, Meshes (can be skinned depending on import options), AnimationClips, etc. In the Project folder the main imported object is a Model Prefab. 
 
@@ -10,3 +10,6 @@ Attach:MeshExample40.png \\
 Unity's mesh importer provides many options for controlling the generation of the mesh and associating it with its textures and materials. These options are covered by the following pages:
 
 (:tocportion:)
+
+(:include FBXImporter-Model:)
+

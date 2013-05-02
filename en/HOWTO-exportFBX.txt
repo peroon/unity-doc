@@ -25,7 +25,8 @@ Unity supports FBX files which can be generated from many popular 3D application
 
 !!! '''Which''' version of FBX are you using? if in doubt use [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=18817399|2012.2]]
 
-*Autodesk update their FBX installer regularly and it can provide different results with different versions of their own software and other 3rd party 3D apps.
+*Autodesk update their FBX installer regularly and it can provide different results with different versions of their own software and other 3rd party 3D apps
+Check the [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775855|Autodesk FBX download page]] for latest version
 *'''''See Advanced Options >  FBX file format'''''
 
 !!! Will it work? - Verify your export
