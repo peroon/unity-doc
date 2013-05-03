@@ -341,8 +341,8 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[Using Web Player templates]]
 ****[[Web Player Streaming]]
 ****[[WebPlayerChannels]]
+****[[Using the Web Player Chain-of-Trust system]]
 >><<
-***[[Using the Web Player Chain-of-Trust system]]
 
 ----
 

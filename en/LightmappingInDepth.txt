@@ -21,7 +21,7 @@ __Mesh Renderers and Terrains:__
 
 ||PROPS
 ||``Lightmap Static``||Mesh Renderers and Terrains have to marked as static to be lightmapped.||
-||``Scale In Lightmap``||(Mesh Renderers only) Bigger value will result in more resolution to be dedicated to the give mesh renderer. The final resolution will be proportional (Scale in lightmap)*(Object's word-space surface area)*(Global bake settings Resolution value). A value of 0 will result in the object not being lightmapped (it will still affect other lightmapped objects). ||
+||``Scale In Lightmap``||(Mesh Renderers only) Bigger value will result in more resolution to be dedicated to the given mesh renderer. The final resolution will be proportional (Scale in lightmap)*(Object's word-space surface area)*(Global bake settings Resolution value). A value of 0 will result in the object not being lightmapped (it will still affect other lightmapped objects). ||
 ||``Lightmap Size``||(Terrains only) Lightmap size for this terrain instance. Terrains are not atlased as other objects - they get their individual lightmaps instead.||
 ||``Atlas``||Atlasing information &ndash; will be updated automatically, if $$Lock Atlas$$ is disabled. If $$Lock Atlas$$ is enabled, those parameters won't be modified automatically and can be edited manually. ||
 ||>>>``Lightmap Index``||An index into the lightmap array.||

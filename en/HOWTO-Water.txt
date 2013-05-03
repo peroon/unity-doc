@@ -43,7 +43,7 @@ These properties are used in Reflective & Refractive water shader. Most of them 
 ||``Reflection/refraction distort`` ||How much reflection/refraction is distorted by the waves normal map. ||
 ||``Refraction color`` ||Additional tint for refraction. ||
 ||``Environment reflection/refraction`` ||Render textures for real-time reflection and refraction. ||
-||``Normalmap`` ||Defines the shape of the waves. The final waves are produced by combining two these normal maps, each scrolling at different direction, scale and speed. The second normal map is half as large as the first one. ||
+||``Normalmap`` ||Defines the shape of the waves. The final waves are produced by combining these two normal maps, each scrolling at different direction, scale and speed. The second normal map is half as large as the first one. ||
 ||``Wave speed`` ||Scrolling speed for first normal map (1st and 2nd numbers) and the second normal map (3rd and 4th numbers). ||
 ||``Fresnel`` ||A texture with alpha channel controlling the Fresnel efffect - how much reflection vs. refraction is visible, based on viewing angle. ||
 

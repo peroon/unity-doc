@@ -37,7 +37,7 @@ which gives
 
 !!!Tag parameters
 
-Some tags have a simple all-or-nothing effect on the text but others might allow for variations. For example, the __color__ tag needs to know which colour to apply. Information like this is added to tags by the use of __parameters__:-
+Some tags have a simple all-or-nothing effect on the text but others might allow for variations. For example, the __color__ tag needs to know which color to apply. Information like this is added to tags by the use of __parameters__:-
 
 	We are <color=green>green</color> with envy
 
@@ -74,21 +74,21 @@ Sets the size of the text according to the parameter value, given in pixels.
 
 __color__
 
-Sets the colour of the text according to the parameter value. The colour can be specified in the traditional HTML format
+Sets the color of the text according to the parameter value. The color can be specified in the traditional HTML format
 
 	#rrggbbaa
 
-...where the letters correspond to pairs of hexadecimal digits denoting the red, green, blue and alpha (transparency) values for the colour. For example, cyan at full opacity would be specified by
+...where the letters correspond to pairs of hexadecimal digits denoting the red, green, blue and alpha (transparency) values for the color. For example, cyan at full opacity would be specified by
 
 	<color=#00ffffff>...
 
-Another option is to use the name of the colour. This is easier to understand but naturally, the range of colours is limited and full opacity is always assumed.
+Another option is to use the name of the color. This is easier to understand but naturally, the range of colors is limited and full opacity is always assumed.
 
 	<color=cyan>...
 
-The available colour names are given in the table below.
+The available color names are given in the table below.
 ||width=50%
-||!Colour name||!Hex value||!Swatch
+||!Color name||!Hex value||!Swatch
 ||aqua (same as cyan)||@@#00ffffff@@||Attach:CyanSwatch.png
 ||black||@@#000000ff@@||Attach:BlackSwatch.png
 ||blue||@@#0000ffff@@||Attach:BlueSwatch.png

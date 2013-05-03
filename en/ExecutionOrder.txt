@@ -4,7 +4,7 @@ In Unity scripting, there are a number of event functions that get executed in a
 !! First Scene Load
 These functions get called when a scene starts (once for each object in the scene). 
 * __Awake:__ This function is always called before any Start functions and also just after a prefab is instantiated. (If a GameObject is in-active during start up Awake is not called until it is made active, or a function in any script attached to it is called.)
-* __OnEnable:__ (only called if the Object is active): This function is called just after the object is enabled. This happens when a MonoBehaviour is instance is created, such as when a level is loaded or a GameObject with the script component is instantiated. 
+* __OnEnable:__ (only called if the Object is active): This function is called just after the object is enabled. This happens when a MonoBehaviour instance is created, such as when a level is loaded or a GameObject with the script component is instantiated. 
 
 !! Before the first frame update
 * __Start:__ Start is called before the first frame update only if the script instance is enabled.
@@ -34,7 +34,7 @@ When you're keeping track of game logic and interactions, animations, camera pos
 * __OnDrawGizmos__ Used for drawing Gizmos in the scene view for visualisation purposes.
 
 !! Coroutine
-Normal coroutine updates are run after the Update function returns. A coroutine is function that can suspend its execution (yield) until the given given YieldInstruction finishes.
+Normal coroutine updates are run after the Update function returns. A coroutine is a function that can suspend its execution (yield) until the given YieldInstruction finishes.
 Different uses of Coroutines:
 * __yield;__ The coroutine will continue after all Update functions have been called on the next frame.
 * __yield WaitForSeconds(2);__ Continue after a specified time delay, after all Update functions have been called for the frame

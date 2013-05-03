@@ -39,7 +39,7 @@ The method you use to construct objects can have a massive affect on the number 
 
 !Textures
 
-If you author your textures to a power of two (e.g. 512×512 or 256×1024), the textures will be more efficient and won't need rescaling at build time. You can use up to 4096x4096 pixels, (although 2048x2048 is the highest available on many graphics cards/platforms).  Search online for expert advice on creating good textures, but some of these guidelines can help you get the most efficient results from your project:
+If you author your textures to a power of two (e.g. 512x512 or 256x1024), the textures will be more efficient and won't need rescaling at build time. You can use up to 4096x4096 pixels, (although 2048x2048 is the highest available on many graphics cards/platforms).  Search online for expert advice on creating good textures, but some of these guidelines can help you get the most efficient results from your project:
 
 *Work with a high-resolution source file outside your unity project (such as a PSD or Gimp file).  You can always downsize from source but not the other way round.
 *Use the texture resolution output you require in your scene (save a copy, for example a 256x256 optimised PNG or a TGA file). You can make a judgement based on where the texture will be seen and where it is mapped.
@@ -64,7 +64,7 @@ Attach:BuildingWrongRight.png
 ''Do you need ALL those windows?''
 
 !Materials
-*Organise and name the materials in your scene. This way you can find and edit your materials in Unity more easily when they’ve imported
+*Organise and name the materials in your scene. This way you can find and edit your materials in Unity more easily when they've imported
 *You can choose to create materials in Unity from either:
 **<modelname>-< material name> or:
 **<texture name> -  make sure you are aware of which you want.

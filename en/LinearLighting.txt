@@ -1,5 +1,6 @@
 !Linear Lighting (Pro Only)
-!!overview
+
+!!Overview
 Linear lighting refers to the process of illuminating a scene with all inputs being linear. Normally textures exist with gamma pre-applied to them this means that when the textures are sampled in a material that they are non linear. If these textures are used in the standard lighting equations it will lead to the result from the equation being incorrect as they expect all input to be linearized before use.
 
 Linear lighting refers to the process of ensuring that both inputs and outputs of a shader are in the correct color space, this results in more correct lighting.
@@ -45,7 +46,7 @@ Even though these targets support linear lighting, it is not guaranteed that the
 When not using HDR a special framebuffer type is used that supports sRGB read and sRGB write (Degamma on read, Gamma on write). This means that just like a texture the values in the framebuffer are gamma corrected. When this framebuffer is used for blending or bound as texture the values have the gamma removed before being used. When these buffers are written to the value that is being written is converted from linear space to gamma space. If you are rendering in linear mode, all post process effects will have their source and target buffers created with sRGB read and write enabled so that post process and post process blending occurs in linear space.
 
 !!!Linear and HDR
-When using HDR, rendering is performed into floating point buffers. These buffers have enough resolution to not require conversion to an from gamma space whenever the buffer is accessed, this means that when rendering in linear mode the render targets you use will store the colors in linear space. This means that all blending and post process effects will implicitly be performed in linear space. When the the backbuffer is written to, gamma correction is applied. 
+When using HDR, rendering is performed into floating point buffers. These buffers have enough resolution to not require conversion to and from gamma space whenever the buffer is accessed, this means that when rendering in linear mode the render targets you use will store the colors in linear space. This means that all blending and post process effects will implicitly be performed in linear space. When the the backbuffer is written to, gamma correction is applied. 
 
 !!!GUI and Linear Authored Textures
 When rendering Unity GUI we do not perform the rendering in linear space. This means that GUI textures should not have their gamma removed on read. This can be achieved in two ways.
