@@ -26,6 +26,7 @@ Unityは多くの主要な3Dアプリケーションで生成されるFBXファ�
 !!! '''どの''' FBX バージョンを使用していますか？ 不明な場合は  [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=18817399|2012.2]]
  を使用して下さい。
 *Autodesk は FBX インストーラを定期的に更新し、複数の結果を、Autodeskの複数のソフトウェア バージョン、また他のサードパーティ3D製品向けに提供出来ます。
+最新バージョンは [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775855|Autodesk FBX ダウンロードのページ]] で確認して下さい。
 *'''''Advanced Options >  FBX file format を参照下さい'''''
 
 !!! 正しく動作するか？ - エクスポートを検証
