@@ -1,6 +1,13 @@
-! 3D アプリケーションからオブジェクトをどのようにインポートしますか? / How do I import objects from my 3D app?
+! 3D アプリケーションからモデルをどのようにインポートしますか? / How do I import Models from my 3D app?
 
-Unity では、最も一般的な 3D アプリケーションからのインポートをサポートします。 以下から作業しているアプリケーションを選択します。
+Unity に3D モデルをインポートするときは、ファイルをプロジェクト ウィンドウへドラッグします。
+
+Inspector の Model タブで：
+Unity は最も主要な 3D アプリケーションからのモデルのインポートをサポートします。
+
+(:include 3D-formats:)
+
+3D パッケージごとの特定のインポート方法に関する内容については、次のページを参照して下さい：
 
 * [[HOWTO-ImportObjectMaya|Maya]]
 * [[HOWTO-ImportObjectCinema4D|Cinema 4D]]
@@ -10,17 +17,17 @@ Unity では、最も一般的な 3D アプリケーションからのインポ�
 * [[HOWTO-importObjectLightwave|Lightwave]]
 * [[HOWTO-ImportObjectBlender|Blender]]
 
-!! その他のアプリケーション
+!! テクスチャ
 
-Unity は __.FBX__、__.dae、__.3DS__、__.dxf__ および __.obj__ ファイルを読み込めますが、プログラムでこれらの形式をエクスポートできるかどうかチェックしましょう。 一般的な 3D パッケージの FBX エクスポータは、[[http://autodesk.com/fbx|ここ]] にあります。 パッケージの多くで、Collada エクスポータを使用できます。
+* エクスポートされたメッシュの隣にある $$Textures$$ と呼ばれるフォルダにテクスチャを格納する。 これにより、Unity は常にテクスチャを検索し、そのテクスチャを生成されたマテリアルに自動的に接続できます。 詳細については、[[class-Texture2D|Textures]] を参照してください。
 
-!!ヒント
+(:include 3D-formats:)
 
-* エクスポートされたメッシュの隣にある $$Textures$$ と呼ばれるフォルダにテクスチャを格納する。 これにより、Unity は常にテクスチャを検索し、そのテクスチャをマテリアルに自動的に接続できます。 詳細については、[[class-Texture2D|Textures]] を参照してください。
+(:include FBXImporter-Model:)
 
 !!以下も併せて参照してください。
-* [[Modeling Optimized Characters]]
-* [[HOWTO-bumpmap | How do I use normal maps?]]
-* [[class-Mesh | Mesh Import Settings]]
-* [[HOWTO-FixZAxisIsUp | How do I fix the rotation of an imported model?]]
+* [[Modeling Optimized Characters | 最適なパフォーマンスのためのキャラクター モデリング]]
+* [[HOWTO-bumpmap | 法線マップをどのように使用しますか?]]
+* [[class-Mesh | メッシュ インポート設定]]
+* [[HOWTO-FixZAxisIsUp | インポートされたモデルの回転はどのように固定しますか?]]
 
