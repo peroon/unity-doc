@@ -56,7 +56,8 @@ private static extern float FooPluginFunction (); @]
 
 !!! C++のコードからレンダリング
 マルチスレッドレンダリングプラグインのマルチプラットフォーム動作例は、 [[Native Plugin Interface]] ページで見つけることができます。
-
+(:comment These examples seem to be missing in action:)
+(:if false:)
 !!! ミディプラグイン（Midi Plugin）
 完全なプラグインサンプルインターフェースは、 [[http://unity3d.com/tutorials/midiplugin.zip|ここ]] で見つけることができます。
 
@@ -64,4 +65,4 @@ private static extern float FooPluginFunction (); @]
 
 !!! テクスチャプラグイン
 直接OpenGLのテクスチャに画像を割り当てる方法の例です（UnityがOpenGLテクスチャを使用している場合のみ動作します）。この例では、XcodeやVisual Studioプロジェクトファイルの両方が含まれます。プラグインは添付のUnityプロジェクトと一緒に [[http://unity3d.com/support/resources/example-projects/texture-plugins|ここ]] で見つけることができます。
-
+(:ifend:)
