@@ -12,6 +12,13 @@ Unityプロファイラーはゲームの最適化に役立ちます。ゲーム
 
 * [[OptimizingGraphicsPerformance | グラフィックス パフォーマンス最適化]] ページ。
 
+
+!! WebPlayer
+For webPlayer profiling, follow these steps:
+# Check "Development Build" and "Autoconnect Profiler" checkboxes in Unity's build setting dialog and make a build.
+# When the game is running in webplayer, make sure that "Release Channel" is "Development" by clicking right mouse for open Context Menu.
+# Select the ''OSXWebPlayer(YOURCOMPUTERNAME)/windowsWebPlayer(YOURCOMPUTERNAME)'' from the Profiler Windows ``Active Profiler`` drop down menu.
+
 >>ios<<
 !! iOS
 リモートプロファイリング は 次の手順により iOS デバイスで有効化できます:

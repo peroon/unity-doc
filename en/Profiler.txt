@@ -12,6 +12,13 @@ Note that profiling has to ''instrument'' your code.  This instrumentation has a
 
 * [[OptimizingGraphicsPerformance | Optimizing Graphics Performance]] page.
 
+
+!! WebPlayer
+For webPlayer profiling, follow these steps:
+# Check "Development Build" and "Autoconnect Profiler" checkboxes in Unity's build setting dialog and make a build.
+# When the game is running in webplayer, make sure that "Release Channel" is "Development" by clicking right mouse for open Context Menu.
+# Select the ''OSXWebPlayer(YOURCOMPUTERNAME)/windowsWebPlayer(YOURCOMPUTERNAME)'' from the Profiler Windows ``Active Profiler`` drop down menu.
+
 >>ios<<
 !! iOS
 Remote profiling can be enabled on iOS devices by following these steps:
