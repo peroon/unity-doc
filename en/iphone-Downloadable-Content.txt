@@ -67,7 +67,13 @@ __Note:__ Apple may change the folder locations where you are permitted to write
 	}
 @]\\
 The downloaded asset bundle files are stored in the @@Library@@ folder of the iOS application sandbox and have the ''No Backup'' flag set  on them. This means OS won't delete these files accidentally and these files won't be backed up to iCloud. It is good idea to keep [[ScriptRef:Caching-maximumAvailableDiskSpace.html|cache size limit]] low, to prevent your app from grabbing all the device disk space.
-# If you need finer grain control on cached files you can use regular WWW download via [@ new WWW(url) @] and then store the downloaded file on disk by using .NET file API. You can save required files to a [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]] (Library/Caches, cleaned by OS) folder or [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (Documents, not cleaned by OS) folder. You should not forget to set ''No Backup'' flag on these files via [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]], to prevent them being backed up to iCloud. __Note:__ Not setting this flag may result in app rejection when submitted to the App Store. Reuse these files in the future by loading it via [[ScriptRef:WWW.html|WWW class]] and @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@. Sample code for caching:\\
+
+# If you need finer grain control on cached files you can use regular WWW download via [@ new WWW(url) @] and then store the downloaded file on disk by using .NET file API. You can save required files to a [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]] (Library/Caches, cleaned by OS) folder or [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (Documents, not cleaned by OS) folder. You should not forget to set ''No Backup'' flag on these files via [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]], to prevent them being backed up to iCloud. 
+
+
+->__Note:__ Not setting this flag may result in app rejection when submitted to the App Store. Reuse these files in the future by loading it via [[ScriptRef:WWW.html|WWW class]] and @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@. This method of caching AssetBundles is not recommended and we encourage you to use [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload]] to store your bundles.\\
+\\
+Sample code for caching:\\
 [@
 	// Code designed for caching on iPhone, cachedAssetBundle path must be different when running in Editor
 	// See code snippet above for getting the path to your Library/Caches folder

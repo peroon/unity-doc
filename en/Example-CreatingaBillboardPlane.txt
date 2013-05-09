@@ -1,6 +1,6 @@
 !Example - Creating a Billboard Plane
 
-Unity comes with a Plane primitive object but a simpler plane may be useful in 2D games or GUI, and in any case makes a good starting example. A minimal plane will consist of four vertices to define the corners along with two triangles.
+Unity comes with the $$Plane$$ and $$Quad$$ primitive objects to represent flat surfaces (see the [[PrimitiveObjects|Primitive Objects]] page for further details). However, it is useful to examine how a minimal plane mesh can be constructed, since this is probably the simplest useful example, with just four vertices for the corners and two triangles.
 
 The first thing is to set the vertices array. We'll assume that the plane lies in the X and Y axes and let its width and height be determined by parameter variables. We'll supply the vertices in the order bottom-left, bottom-right, top-left, top-right.
 
