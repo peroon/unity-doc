@@ -1,8 +1,10 @@
 !ストリーミングアセット / Streaming Assets
 
-Unityはビルド時に必要なアセットを結合します。ですが、時には標準的なファイルシステム上に配置し、パス名で参照したい場合もあるでしょう。例えばiOS上で動画を再生する場合、再生するムービーファイルを参照し利用可能にしなければなりません。
+Unityはビルド時に必要なアセットを結合します。ですが、時には標準的なファイルシステム上に配置し、パス名で参照したい場合もあるでしょう。例えばiOS上で動画を再生する場合、再生するムービーファイルを参照し PlayMovie 関数により利用可能にしなければなりません。
 
-UnityプロジェクトにおけるStreamingAssetsと呼ばれるフォルダに配置したファイルはビルド時そのまま保持されます。デスクトップコンピューター（OSXもしくはWindows）では、次のコードでファイルのパスを取得する事が出来ます。
+Unityプロジェクトにおける StreamingAssets と呼ばれるフォルダに配置したファイルはターゲットとするプラットフォームの特定のフォルダにそのまま保持されます。フォルダ名は [[ScriptRef:Application-streamingAssetsPath.html | Application.streamingAssetsPath ]] プロパティを取得することが出来ます。参考のため、プラットフォームにより、このファイルのパスは異なります：
+
+デスクトップコンピューター（OSXもしくはWindows）では、次のコードでファイルのパスを取得する事が出来ます。
 
   [@path = = Application.dataPath + "/StreamingAssets";@]
 
@@ -15,3 +17,5 @@ Androidの場合は、以下のコードを使用します:-
   [@path = "jar:file://" + Application.dataPath + "!/assets/";@]
 
 注意：Androidの場合、ファイルは圧縮した.jarファイル（実質zipファイル）に含まれます。このため中身を確認/取得するにはjarアーカイブの中身を確認し取得することのできる追加のソフトウェア用意するか、もしくはUnityのWWWクラスを使用します。
+
+ [[ScriptRef:Application-streamingAssetsPath.html | Application.streamingAssetsPath ]] プロパティにより StreamingAssets フォルダのパスを取得すべきであり、アプリケーションが実行されているプラットフォーム上の正しい位置がつねに参照されます。
