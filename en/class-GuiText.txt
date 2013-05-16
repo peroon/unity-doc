@@ -31,6 +31,8 @@ GUI Texts are used to print text onto the screen in 2D. The $$Camera$$ has to ha
 
 To import a font see the [[class-Font|Font page]].
 
+To use Rich Text see the [[StyledText |Rich Text page]].
+
 
 !!! Pixel Correct
 
