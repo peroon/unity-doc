@@ -170,6 +170,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **[[bb10-gettingstarted]]
 ***[[bb10-setup]]
 ***[[bb10-details]]
+***[[bb10-controller]]
 ***[[bb10-debugging]]
 ***[[bb10-faq]]
 >><<
