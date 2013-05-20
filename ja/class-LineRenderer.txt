@@ -24,7 +24,7 @@ Attach:Inspector-LineRenderer.png\\
 
 ライン レンダラを作成するには、次の手順に従います。
 # ^^GameObject->Create Empty^^ を選択します。
-# ^^Component->Miscellaneous->Line Renderer^^ を選択します。
+# ^^Component->Effects->Line Renderer^^ を選択します。
 # ライン レンダラにテクスチャか $$Material$$ をドラッグします。 マテリアルパーティクル シェーダを使用するのに最適です。
 
 !!ヒント
