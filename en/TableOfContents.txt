@@ -61,6 +61,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[CreateDestroyObjects]]
 *****[[Coroutines]]
 *****[[ScriptCompileOrderFolders]]
+*****[[Namespaces]]
 >><<
 ****[[Asset Store]]
 *****[[Asset Store Publisher Administration]]
@@ -175,14 +176,15 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ***[[bb10-faq]]
 >><<
 >>metro<<
-**[[metro-gettingstarted]]
-***[[metro-debugging]]
-***[[metro-commandlinearguments]]
-***[[metro-plugins]]
-***[[metro-projecttypes]]
-***[[metro-faq]]
-****[[metro-wack]]
-***[[metro-examples]]
+**[[windowsstore-gettingstarted]]
+***[[windowsstore-deployment]]
+***[[windowsstore-debugging]]
+***[[windowsstore-commandlinearguments]]
+***[[windowsstore-plugins]]
+***[[windowsstore-projecttypes]]
+***[[windowsstore-faq]]
+****[[windowsstore-wack]]
+***[[windowsstore-examples]]
 >><<
 >>xbox360<<
 ** [[xbox360-gettingstarted]]
