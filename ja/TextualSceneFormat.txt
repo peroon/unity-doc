@@ -5,4 +5,4 @@
 
 (:tocportion:)
 
-この機能を有効にするには [[class-EditorManager | Editor Settings]] ページを参考にして下さい。
+この機能を有効にするには [[class-EditorManager | エディタ設定]] ページを参考にして下さい。
