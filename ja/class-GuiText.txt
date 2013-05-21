@@ -31,6 +31,8 @@ GUI テキストは、2D の画面にテキストを印刷するために使用�
 
 フォントのインポートに関しては、[[class-Font|Font page]] を参照してください。
 
+To use Rich Text see the [[StyledText |Rich Text page]].
+
 
 !!! ピクセル コレクト
 

@@ -24,7 +24,7 @@ Attach:Inspector-LineRenderer.png\\
 
 To create a line renderer:
 # Choose ^^GameObject->Create Empty^^
-# Choose ^^Component->Miscellaneous->Line Renderer^^
+# Choose ^^Component->Effects->Line Renderer^^
 # Drag a texture or $$Material$$ on the Line Renderer. It looks best if you use a particle shader in the Material.
 
 !!Hints

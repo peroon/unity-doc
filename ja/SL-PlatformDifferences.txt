@@ -11,7 +11,7 @@ Unityは様々なプラットフォームで動作し、いくつかのケース
 
 ほとんどの場合に影響はありませんが、[[class-RenderTexture | Render Texture]] に対してレンダリングする場合は影響があります。この場合、UnityはDirect3Dでレンダリングするときに意図的にレンダリングを上下逆に反転するので、プラットフォーム間のルールは同じままです。
 
-この反転が行われないケースは、[[comp-ImageEffects | Image Effects]] およびアンチエイリアスが使用される場合です。In this case, Unity renders to screen to get anti-aliasing, and then "resolves" rendering into a RenderTexture for further processing with an Image Effect.この場合、Untyはアンチエイリアスして、後続のイメージエフェクトの処理のためにRender Textureに対してレンダリングを"溶かし込みます"。結果となるイメージエフェクトのソーステクスチャはDirect3Dで''上下逆ではありません'' （他のRender Textureと違って）。
+この反転が行われないケースは、[[comp-ImageEffects | Image Effects]] およびアンチエイリアスが使用される場合です。この場合、Untyはアンチエイリアスして、後続のイメージエフェクトの処理のためにRender Textureに対してレンダリングを"溶かし込みます"。結果となるイメージエフェクトのソーステクスチャはDirect3Dで''上下逆ではありません'' （他のRender Textureと違って）。
 
 もしイメージエフェクトがシンプルである（1回にテクスチャを1つのみ処理する）場合、[[ScriptRef:Graphics.Blit.html|Graphics.Blit]] が処理してくれるため、このことを気にする必要はありません。
 

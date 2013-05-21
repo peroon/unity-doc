@@ -67,7 +67,11 @@ Attach:iPhoneAssetBundleExport.png\
 	}
 @]\\
 ダウンロードされたアセットバンドル ファイルは iOS アプリケーション Sandbox の @@Library@@ フォルダに格納されていてファイルに ''No Backup'' フラグが有効化されています。 これが意味することは OS はこれらのファイルを誤って削除せず、これらのファイルは iCloud にバックアップされないということです。 [[ScriptRef:Caching-maximumAvailableDiskSpace.html|キャッシュ サイズ のリミット]] を低く抑えることで、アプリがデバイスのディスクスペースの全てを確保してしまうことを防止すべきです。
-# もしより細かいところまでキャッシュファイルを制御しないといけない場合、 WWW ダウンロードを [@ new WWW(url) @] 経由で使用して、.NET ファイル API を使用してダウンロードされたファイルをディスク上で格納することが出来ます。必要なファイルを [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]]  (OS によりクリーンされる Library/Caches) フォルダまたは [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (OS によりクリーンされない Documentsフォルダ) に保存することが出来ます。これらのファイルの ''No Backup'' フラグを [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]] 経由で有効化すべきであり、 iCloud にバックアップされることを防止すべきです。 __注意:__ このフラグをセットしないことで App Store 提出時にアプリ審査がリジェクトされるかもしれません。これらのファイルを将来的に再利用するために [[ScriptRef:WWW.html|WWW クラス]] および @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@ 経由でロードして下さい。キャッシングのコードでのサンプルは:\\
+# もしより細かいところまでキャッシュファイルを制御しないといけない場合、 WWW ダウンロードを [@ new WWW(url) @] 経由で使用して、.NET ファイル API を使用してダウンロードされたファイルをディスク上で格納することが出来ます。必要なファイルを [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]]  (OS によりクリーンされる Library/Caches) フォルダまたは [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (OS によりクリーンされない Documentsフォルダ) に保存することが出来ます。これらのファイルの ''No Backup'' フラグを [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]] 経由で有効化すべきであり、 iCloud にバックアップされることを防止すべきです。
+
+
+->__注意:__ このフラグをセットしないことで App Store 提出時にアプリ審査がリジェクトされるかもしれません。これらのファイルを将来的に再利用するために [[ScriptRef:WWW.html|WWW クラス]] および @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@ 経由でロードして下さい。このアセットバンドルをキャッシュする手法は推奨ではなく [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload]] を使用してバンドルを格納することをお勧めします。\\
+キャッシングのコードでのサンプルは:\\
 	// コードはiPhoneでのキャッシュとして設計されていて、エディタ実行時はcachedAssetBundleパスは異なるものにする必要があります。
 	// Library/Cachesフォルダへのパス取得については上記の短いコードで確認出来ます
 	private var cachedAssetBundle : String = "Documents フォルダへのパス" + "/savedassetbundle.assetbundle"; 

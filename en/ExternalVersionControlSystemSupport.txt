@@ -13,9 +13,9 @@ When creating new assets, make sure both the asset itself and the associated @@.
 First, let's assume that we have a subversion repository at @@svn://my.svn.server.com/@@ and want to create a project at @@svn://my.svn.server.com/MyUnityProject@@.
 Then follow these steps to create the initial import in the system:
 
-# Create a new project inside Unity and lets call it @@InitialUnityProject@@. You can add any initial assets here or add them later on.
+# Create a new project inside Unity and call it @@InitialUnityProject@@. You can add any initial assets here or add them later on.
 # Enable $$Meta files$$ in ^^Edit->Project Settings->Editor^^
-# Quit Unity (We do this to assure that all the files are saved).
+# Quit Unity (this ensures that all the files are saved).
 # Delete the @@Library@@ directory inside your project directory.
 # Import the project directory into Subversion. If you are using the command line client, this is done like this from the directory where your initial project is located:\\
 @@svn import -m"Initial project import" InitialUnityProject svn://my.svn.server.com/MyUnityProject@@\\
@@ -23,13 +23,10 @@ If successful, the project should now be imported into subversion and you can de
 # Check out the project back from subversion\\
 @@svn co svn://my.svn.server.com/MyUnityProject@@\\
 And check that the @@Assets@@ and @@ProjectSettings@@ directory are versioned.
-
 # Open the checked out project with Unity by launching it while holding down the $$Option$$ or the left $$Alt$$ key. Opening the project will recreate the @@Library@@ directory in step 4 above.
-
 # __Optional:__ Set up an ignore filter for the unversioned @@Library@@ directory:\\
 @@svn propedit svn:ignore MyUnityProject/@@\\
 Subversion will open a text editor. Add the Library directory.
-
 # Finally commit the changes. The project should now be set up and ready:\\
 @@svn ci -m"Finishing project import" MyUnityProject@@
 
