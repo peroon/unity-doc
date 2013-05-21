@@ -14,7 +14,6 @@ Unityはアドオン製品として [[Asset Server]] を提供し、プロジェ
 次の手順に従って、システムで初期インポートを作成して下さい:
 
 # Unity内で新規プロジェクトを作成し、 @@InitialUnityProject@@ と名前をつけます。ここで初期アセットを追加するか、後ほど追加することも出来ます。
-
 # ^^Edit->Project Settings->Editor^^ で $$Meta files$$ を有効化
 # Unityを終了（全てのファイルが保存されることを保証するため）
 # プロジェクト ディレクトリの @@Library@@ ディレクトリを削除
@@ -24,13 +23,10 @@ Unityはアドオン製品として [[Asset Server]] を提供し、プロジェ
 # プロジェクトを Subversion からチェックアウト
 @@svn co svn://my.svn.server.com/MyUnityProject@@\\
 @@Assets@@ および @@ProjectSettings@@ がバージョン管理されていることを確認
-
 # チェックアウトされたプロジェクトをUnityで開くために、起動する際に $$Option$$ または左 $$Alt$$ キーを押したままにします。プロジェクトを開くことで、上記の手順 4 の @@Library@@ ディレクトリが生成されます。
-
 # __オプションとして:__ バージョン管理をしない @@Library@@ ディレクトリに対して無視（igonre）するフィルタをセットアップ:\\
 @@svn propedit svn:ignore MyUnityProject/@@\\
 Subversion がエディタを開くため、 Library ディレクトリを追加。
-
 # 最後に、変更をコミット。プロジェクトはセットアップされ準備完了:\\
 @@svn ci -m"Finishing project import" MyUnityProject@@
 
