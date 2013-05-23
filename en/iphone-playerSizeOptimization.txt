@@ -58,8 +58,8 @@ __Note:__ it can sometimes be difficult to determine which classes are getting s
 # Don't use JS Arrays.
 # Avoid generic containers in combination with value types, including structs.
 
-!!!Can I produce apps of less than 20 megabytes with Unity?
-Yes. An empty project would take about 13 MB in the AppStore if all the size optimizations were turned off. This gives you a budget of about 7MB for compressed assets in your game. If you own an Advanced License (and therefore have access to the stripping option), the empty scene with just the main camera can be reduced to about 6 MB in the AppStore (zipped and DRM attached) and you will have about 14 MB available for compressed assets.  
+!!!How small can an app be made with Unity?
+An empty project would take about 20 MB in the AppStore if all the size optimizations were turned off. If you own an Advanced License (and therefore have access to the stripping option), the empty scene with just the main camera can be reduced to about 11 MB in the AppStore (zipped and DRM attached).  
 
 !!!Why did my app increase in size after being released to the AppStore?
 When they publish your app, Apple first encrypt the binary file and then compresses it via zip. Most often Apple's DRM increases the binary size by about 4 MB or so. As a general rule, you should expect the final size to be approximately equal to the size of the zip-compressed archive of all files (except the executable) plus the size of the uncompressed executable file.
