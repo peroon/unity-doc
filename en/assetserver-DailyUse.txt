@@ -161,6 +161,9 @@ This is a compilation of best practices and solutions to problems which will hel
 **OS X:
 ***/Library/UnityAssetServer/log
 
+# %item value=7%"The application failed to initialize properly (0xc0000135)" in Windows XP
+**In this case Service Pack 2 is required, and you should install .NET 2.0.
+
 
 !! Asset Server training complete
 
