@@ -30,11 +30,11 @@ using UnityEngine;
 using System.Collections;
 
 public class GUITest : MonoBehaviour {
-	
+
 	void OnGUI () {
 		// 固定レイアウト
 		GUI.Button (new Rect (25,25,100,30), "I am a Fixed Layout Button");
-	
+
 		// 自動レイアウト
 		GUILayout.Button ("I am an Automatic Layout Button");
 	}
@@ -45,7 +45,7 @@ public class GUITest : MonoBehaviour {
 
 !! コントロールの配置
 
-使用しているレイアウト モードに応じて、コントロールを配置する場所やグループ化する方法をコントロールするための各種仕掛けがあります。  固定レイアウトでは、各種コントロールを $$Groups$$ に分けることができます。  自動レイアウトでは、各種コントロールを Areas$$、$$Horizontal Groups$$ および $$Vertical Groups$$ に分けることができます。
+使用しているレイアウト モードに応じて、コントロールを配置する場所やグループ化する方法をコントロールするための各種仕掛けがあります。  固定レイアウトでは、各種コントロールを $$Groups$$ に分けることができます。  自動レイアウトでは、各種コントロールを $$Areas$$、$$Horizontal Groups$$ および $$Vertical Groups$$ に分けることができます。
 
 !!! 固定レイアウト - グループ
 
@@ -62,11 +62,11 @@ function OnGUI () {
 	// 画面中心にグループを配置します
 	GUI.BeginGroup (Rect (Screen.width / 2 - 50, Screen.height / 2 - 50, 100, 100));
 	// 今度は長方形がすべてグループに調整されます。 (0,0) はグループの左上です。
-	
+
 	// グループが画面上のどこにあるかが分かるよう、ボックスを作成します。
 	GUI.Box (Rect (0,0,100,100), "Group is here");
 	GUI.Button (Rect (10,40,80,30), "Click me");
-	
+
 	// 上で開始したグループを終了します。 これは覚えておいてください!
 	GUI.EndGroup ();
 }
@@ -77,16 +77,16 @@ using UnityEngine;
 using System.Collections;
 
 public class GUITest : MonoBehaviour {
-	
+
 	void OnGUI () {
 		// 画面中心にグループを配置します
 		GUI.BeginGroup (new Rect (Screen.width / 2 - 50, Screen.height / 2 - 50, 100, 100));
 		// 今度は長方形がすべてグループに調整されます。 (0,0) はグループの左上です。
-	
+
 		// グループが画面上のどこにあるかが分かるよう、ボックスを作成します。
 		GUI.Box (new Rect (0,0,100,100), "Group is here");
 		GUI.Button (new Rect (10,40,80,30), "Click me");
-	
+
 		// 上で開始したグループを終了します。 これは覚えておいてください!
 		GUI.EndGroup ();
 	}
@@ -115,7 +115,7 @@ function OnGUI () {
 
 	// 背景画像を描画します。
 	GUI.Box (Rect (0,0,256,32), bgImage);
-	
+
 	// 切り取られる 2 つ目のグループを作成します。
 	// 画像を切り取り、拡大したくないので、2 つ目のグループが必要になります。
 	GUI.BeginGroup (Rect (0,0,playerEnergy * 256, 32));
@@ -134,34 +134,34 @@ using UnityEngine;
 using System.Collections;
 
 public class GUITest : MonoBehaviour {
-	
+
 	// background image that is 256 x 32
-	public Texture2D bgImage; 
-	
+	public Texture2D bgImage;
+
 	// foreground image that is 256 x 32
-	public Texture2D fgImage; 
-	
+	public Texture2D fgImage;
+
 	// a float between 0.0 and 1.0
-	public float playerEnergy = 1.0f; 
-	
+	public float playerEnergy = 1.0f;
+
 	void OnGUI () {
 		// 両方の画像を含む 1 つのグループを作成します。
 		// 最初の 2 つの画像を調整して、画面上の任意の場所に置きます。
 		GUI.BeginGroup (new Rect (0,0,256,32));
-	
+
 		// 背景画像を描画します。
 		GUI.Box (new Rect (0,0,256,32), bgImage);
-	
+
 			// 切り取られる 2 つ目のグループを作成します。
 			// 画像を切り取り、拡大したくないので、2 つ目のグループが必要になります。
 			GUI.BeginGroup (new Rect (0,0,playerEnergy * 256, 32));
-		
+
 			// 両方のグループを終了します
 			GUI.Box (new Rect (0,0,256,32), fgImage);
-		
+
 			// 両方のグループを終了します
 			GUI.EndGroup ();
-		
+
 		GUI.EndGroup ();
 	}
 
@@ -196,7 +196,7 @@ using UnityEngine;
 using System.Collections;
 
 public class GUITest : MonoBehaviour {
-	
+
 	void OnGUI () {
 		GUILayout.Button ("I am not inside an Area");
 		GUILayout.BeginArea (new Rect (Screen.width/2, Screen.height/2, 300, 300));
@@ -257,29 +257,29 @@ using UnityEngine;
 using System.Collections;
 
 public class GUITest : MonoBehaviour {
-	
+
 	private float sliderValue = 1.0f;
 	private float maxSliderValue = 10.0f;
-	
+
 	void OnGUI()
 	{
 		// Wrap everything in the designated GUI Area
 		GUILayout.BeginArea (new Rect (0,0,200,60));
-	
+
 		// Begin the singular Horizontal Group
 		GUILayout.BeginHorizontal();
-	
+
 		// Place a Button normally
 		if (GUILayout.RepeatButton ("Increase max\nSlider Value"))
 		{
 			maxSliderValue += 3.0f * Time.deltaTime;
 		}
-	
+
 		// Arrange two more Controls vertically beside the Button
 		GUILayout.BeginVertical();
 		GUILayout.Box("Slider Value: " + Mathf.Round(sliderValue));
 		sliderValue = GUILayout.HorizontalSlider (sliderValue, 0.0f, maxSliderValue);
-	
+
 		// End the Groups and Area
 		GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
@@ -317,7 +317,7 @@ using UnityEngine;
 using System.Collections;
 
 public class GUITest : MonoBehaviour {
-		
+
 	void OnGUI () {
 		GUILayout.BeginArea (new Rect (100, 50, Screen.width-200, Screen.height-100));
 		GUILayout.Button ("I am a regular Automatic Layout Button");
