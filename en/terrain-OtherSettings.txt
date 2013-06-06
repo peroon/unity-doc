@@ -8,10 +8,9 @@ Attach:terrain-OtherSettings.png\\
 !! Base Terrain
 
 * ``Pixel Error`` controls the amount of allowable errors in the display of Terrain Geometry.  This is essentially a geometry LOD setting; the higher the value, the less dense terrain geometry will be.
-*  ``Base Map Dist.``: The distance that Terrain Textures will be displayed in high-resolution. After this distance, a low-resolution composited texture will be displayed.
+* ``Base Map Dist.``: The distance that Terrain Textures will be displayed in high-resolution. After this distance, a low-resolution composited texture will be displayed.
 * ``Cast Shadows``: Should terrain cast shadows?
-
-``Material`` slot allows assigning a custom material for the terrain. The material should be using a [[Shaders|shader]] that is capable of rendering terrain, for example ``Nature/Terrain/Diffuse`` (this shader is used if no material is assigned) or ``Nature/Terrain/Bumped Specular``.
+* ``Material``: Allows the assignment of a custom material for the terrain. The material should be using a [[Shaders|shader]] that is capable of rendering terrain, for example ``Nature/Terrain/Diffuse`` (this shader is used if no material is assigned) or ``Nature/Terrain/Bumped Specular``.  See [[terrain-Textures|Textures for Terrains]].
 
 !! Tree & Detail Settings
 
@@ -28,4 +27,3 @@ Attach:terrain-OtherSettings.png\\
 * ``Size``: the areas of grass that are affected by wind all at once.
 * ``Bending``: amount that grass will bend due to wind.
 * ``Grass Tint``: overall tint amount for all Grass and Detail Meshes.
-

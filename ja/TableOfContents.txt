@@ -81,6 +81,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Particle System Curve Editor]]
 *****[[Particle System Color Editor]]
 *****[[GradientEditor|Particle System Gradient Editor]]
+>>u42<<
+*****[[Preset Libraries]]
+>><<
 *****[[Particle System Inspector]]
 *****[[Particle System Modules Intro]]
 *****[[Particle System Modules40]]
@@ -319,6 +322,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ***[[Security Sandbox]]
 ***[[ScriptRef:MonoCompatibility.html | Overview of available .NET Class Libraries ]] 
 ***[[VisualStudioIntegration]]
+>>u42<<
+***[[Sourcecontrolintegration]]
+>><<
 ***[[ExternalVersionControlSystemSupport]]
 ***[[Analytics]]
 ***[[Version Check]]
