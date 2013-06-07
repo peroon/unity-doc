@@ -27,8 +27,8 @@ Attach:ColorPickerDescr.png\\
 
 Use the $$Eyedropper Tool$$ when you want to find a value just by putting your mouse over the color you want to grab.\\
 $$RGB / HSV Selector$$ lets you switch your values from ''Red, Green, Blue'' to ''Hue, Saturation and Value (Strength)'' of your color.\\
-Finally, the transparency of the Color selected can be controlled  by the $$Alpha Channel$$ value.
-
+The transparency of the Color selected can be controlled  by the $$Alpha Channel$$ value.\\
+Finally, the $$Preset Library$$ section can be used to save preset values.  See [[Preset Libraries]].
 
 !! Curve Editor
 Properties of the $$AnimationCurve$$ type will open up the $$Curve Editor$$. The Curve Editor lets you edit a curve or choose from one of the presets. For more information on editing curves, see the guide on [[EditingCurves| Editing Curves]].
@@ -66,3 +66,4 @@ var pickupColors : Color32[];
 (:codeend:)
 
 would result in an color picker editor for each element in the array.
+

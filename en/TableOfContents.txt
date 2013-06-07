@@ -28,6 +28,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[DeactivatingGameObjects]]
 ****[[Using The Inspector]]
 *****[[Editing Value Properties40]]
+>>u42<<
+******[[Preset Libraries]]
+>><<
 *****[[Editing Reference Properties]]
 *****[[Multi-Object Editing]]
 *****[[Inspector Options]]
@@ -81,9 +84,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Particle System Curve Editor]]
 *****[[Particle System Color Editor]]
 *****[[GradientEditor|Particle System Gradient Editor]]
->>u42<<
-*****[[Preset Libraries]]
->><<
 *****[[Particle System Inspector]]
 *****[[Particle System Modules Intro]]
 *****[[Particle System Modules40]]
