@@ -185,6 +185,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ***[[windowsstore-commandlinearguments]]
 ***[[windowsstore-plugins]]
 ***[[windowsstore-projecttypes]]
+****[[windowsstore-appcallbacks | AppCallbacks class]]
 ***[[windowsstore-faq]]
 ****[[windowsstore-wack]]
 ***[[windowsstore-examples]]
