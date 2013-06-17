@@ -396,7 +396,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ***[[ScriptRef:MonoCompatibility.html | Overview of available .NET Class Libraries ]] 
 ***[[VisualStudioIntegration]]
 >>u42<<
-***[[Sourcecontrolintegration]]
+***[[Versioncontrolintegration]]
 >><<
 ***[[ExternalVersionControlSystemSupport]]
 ***[[Analytics]]
