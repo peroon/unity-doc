@@ -12,7 +12,7 @@ $$Scenes$$ には、ゲームのオブジェクトが含まれています。  �
 
 コンポーネントの追加により、そのプレハブへの GameObject の接続が壊れる場合は、リンクを再構築するため、常にメニューから ^^GameObject->Apply Changes to Prefab^^ を使用できます。
 
-GameObject の設置
+!!GameObject の設置
 
 GameObject をシーン内に置くと、$$Transform Tools$$ を使用して、好きな時に配置できます。  さらに、インスペクタで「Transform」値を使用して、配置と回転を微調整できます。  GameObject の配置および回転の詳細については、[[class-Transform|トランスフォーム コンポーネント のリファレンス]] ページを参照してください。
 
