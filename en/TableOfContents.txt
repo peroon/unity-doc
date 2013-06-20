@@ -300,6 +300,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[MobileCrashes]]
 ****[[MobileProfiling]]
 ****[[MobileOptimisation]]
+***[[HOWTO-PortToAppleMacStore]]
 **[[Advanced]]
 ***[[Vector Cookbook]]
 ****[[UnderstandingVectorArithmetic]]
@@ -738,4 +739,3 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[LayerBasedCollision | Layer Based Collision detection]]
 *** [[Tags]]
 *** [[RigidbodySleeping]]
-

@@ -1,6 +1,6 @@
 !Rich Text
 
-The text for GUI elements and text meshes can incorporate multiple font styles and sizes. The GUIStyle, GUIText and TextMesh classes have a $$Rich Text$$ setting which instructs Unity to look for markup tags within the text. These tags are not displayed but indicate style changes to be applied to the text.
+The text for GUI elements and text meshes can incorporate multiple font styles and sizes. The GUIStyle, GUIText and TextMesh classes have a $$Rich Text$$ setting which instructs Unity to look for markup tags within the text. The [[ScriptRef:Debug.Log.html|Debug.Log]] function can also use these markup tags to enhance error reports from code. The tags are not displayed but indicate style changes to be applied to the text.
 
 
 !!Markup format
@@ -70,6 +70,7 @@ Sets the size of the text according to the parameter value, given in pixels.
 
 	We are <size=50>largely</size> unaffected
 
+Although this tag is available for Debug.Log, you will find that the line spacing in the window bar and Console looks strange if the size is set too large.
 
 
 __color__
@@ -128,4 +129,3 @@ This is only useful for text meshes and renders an image inline with the text. I
 	<quad material=1 size=20 x=0.1 y=0.1 width=0.5 height=0.5 />
 
 This selects the material at position in the renderer's material array and sets the height of the image to 20 pixels. The rectangular area of image starts at given by the x, y, width and height values, which are all given as a fraction of the unscaled width and height of the texture.
-
