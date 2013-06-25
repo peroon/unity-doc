@@ -103,7 +103,7 @@ Standalone players built with Unity also understand some command line arguments:
 
 :``-single-instance (Linux & Windows only)``:Allow only one instance of the game to run at the time. If another instance is already running then launching it again with @@-single-instance@@ will just focus the existing one.
 
-:``-nolog (Windows only)``:Do not produce output log. Normally @@output_log.txt@@ is written in the @@*_Data@@ folder next to the game executable, where [[ScriptRef:Debug.Log.html | Debug.Log]] output is printed.
+:``-nolog (Linux & Windows only)``:Do not produce output log. Normally @@output_log.txt@@ is written in the @@*_Data@@ folder next to the game executable, where [[ScriptRef:Debug.Log.html | Debug.Log]] output is printed.
 
 :``-force-d3d9-ref (Windows only)``:Make the game run using Direct3D's "Reference" software renderer. The [[http://msdn.microsoft.com/en-us/directx/default.aspx | DirectX SDK]] has to be installed for this to work. This is mostly useful for building automated test suites, where you want to ensure rendering is exactly the same no matter what graphics card is being used.
 
