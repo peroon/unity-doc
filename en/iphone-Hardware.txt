@@ -77,13 +77,29 @@ Requires scripting optimization for complex games. This is the average hardware 
     Attach:Bar6.png
 * 512MB of memory
 * Cameras
-** Rear 5.0 MP backside illuminated CMOS image sensor with 720p HD video at 30 fps and LED flash
+** Rear 8.0 MP backside illuminated CMOS image sensor with 1080p HD video at 30 fps, face detection and video stabilization.
 ** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
 * GPS support
 * Compass Support
 
 Attach:csrCar.jpg\\
 The iPhone 4S, with the new A5 chip, is capable of rendering complex shaders throughout the entire screen. Even image effects may be possible. However, optimizing your shaders is still crucial. But if your game isn't trying to push limits of the device, optimizing scripting and gameplay is probably as much of a waste of time on this generation of devices as it is on PC.
+
+!!! iPhone 5
+* Screen: 1136x640 pixels, LCD at 326 ppi.
+* Apple A6
+** Dual-Core 1.3Ghz Apple-designed ARMv7s CPU
+** Triple-Core PowerVR SGX543MP3 GPU
+*** Shader perfomance at native resolution, compared to iPad2: 
+    Attach:Bar5.png
+*** Raw shader perfomance, compared to iPad3:
+    Attach:Bar6.png
+* 1GB of memory
+* Cameras
+** Rear 8.0 MP infra-red cut-off filter, back-illuminated sensor available to take videos while shooting videos.
+** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
+* GPS support
+* Compass Support
 
 
 !!![[http://en.wikipedia.org/wiki/IPod_Touch#Specifications| iPod Touch Models]] 
@@ -121,6 +137,9 @@ Requires scripting optimization for complex games. This is the average hardware 
 
 !!! iPod Touch 4th generation
 * Comparable to iPhone 4
+
+!!! iPod Touch 5th generation
+* Comparable to iPhone 4s
 
 (:cellnr:)
 
@@ -161,7 +180,7 @@ iPad2: The A5 can do full screen bumpmapping, assuming the shader is simple enou
 
 (:cellnr:)
 
-!!! iPad 3
+!!! iPad (3rd generation)
 * Screen: 2048 × 1536 pixels, LCD at 264 ppi, LED-backlit.
 * Apple A5X
 ** Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
@@ -173,6 +192,18 @@ iPad2: The A5 can do full screen bumpmapping, assuming the shader is simple enou
 
 Attach:bladeslinger.jpg\\
 The iPad 3 has been shown to be capable of render-to-texture effects such as reflective water and fullscreen image effects. However, optimized shaders are still crucial. But if your game isn't trying to push limits of the device, optimizing scripting and gameplay is probably as much of a waste of time on this generation of devices as it is on PC.
+
+(:cellnr:)
+
+!!! iPad (4rd generation)
+* Screen: 2048 × 1536 pixels, LCD at 264 ppi, LED-backlit.
+* Apple A6X
+** Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
+** Quad-Core PowerVR SGX554MP4 GPU
+*** Shader perfomance at native resolution, compared to iPad2: 
+    Attach:Bar11.png
+*** Raw shader perfomance, compared to iPad3: 
+    Attach:Bar12.png
 
 
 (:tableend:)

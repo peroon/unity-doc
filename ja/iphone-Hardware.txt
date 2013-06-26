@@ -85,6 +85,22 @@ iPhone 3GS: シェーダ対応したハードウェア、 ピクセル ライテ
 Attach:csrCar.jpg\\
 iPhone 4S は 新しい A5 チップにより、複雑なシェーダをスクリーン全体にレンダリングすることが出来ます。イメージエフェクトであっても実現可能です。しかし、シェーダ最適化は依然として決定的に重要。しかしゲームがデバイス性能を限界まで使用していない場合、PCと同様にこの世代のデバイスでは、スクリプティングおよびゲームプレイの最適化は時間の無駄になります。
 
+!!! iPhone 5
+* Screen: 1136x640 pixels, LCD at 326 ppi.
+* Apple A6
+** Dual-Core 1.3Ghz Apple-designed ARMv7s CPU
+** Triple-Core PowerVR SGX543MP3 GPU
+*** Shader perfomance at native resolution, compared to iPad2: 
+    Attach:Bar5.png
+*** Raw shader perfomance, compared to iPad3:
+    Attach:Bar6.png
+* 1GB of memory
+* Cameras
+** Rear 8.0 MP infra-red cut-off filter, back-illuminated sensor available to take videos while shooting videos.
+** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
+* GPS support
+* Compass Support
+
 
 !!![[http://en.wikipedia.org/wiki/IPod_Touch#Specifications| iPod Touch モデル]] 
 
@@ -121,6 +137,9 @@ Attach:csrRacing.jpg\\
 
 !!! 第 4 世代 iPod Touch
 * iPhone 4 と同等レベル
+
+!!! iPod Touch 5th generation
+* Comparable to iPhone 4s
 
 (:cellnr:)
 
@@ -173,6 +192,18 @@ iPad2: A5 では、シェーダが十分にシンプルなものであればフ�
 
 Attach:bladeslinger.jpg\\
 iPad 3 では Reflective Water および フルスクリーンのイメージエフェクトといったRender-To-Texture エフェクトを実現できます。しかし、シェーダ最適化は依然として決定的に重要です。もしゲームがデバイスをハードウェア性能の限界まで使用していない場合、スクリプトおよびゲームプレイの最適化はこの世代のデバイスにおいて、 PC デバイス同様に時間の無駄です。
+
+(:cellnr:)
+
+!!! iPad (4rd generation)
+* Screen: 2048 � 1536 pixels, LCD at 264 ppi, LED-backlit.
+* Apple A6X
+** Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
+** Quad-Core PowerVR SGX554MP4 GPU
+*** Shader perfomance at native resolution, compared to iPad2: 
+    Attach:Bar11.png
+*** Raw shader perfomance, compared to iPad3: 
+    Attach:Bar12.png
 
 
 (:tableend:)
