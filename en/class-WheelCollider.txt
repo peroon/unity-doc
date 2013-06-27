@@ -35,6 +35,10 @@ You do not turn or roll WheelCollider objects to control the car - the objects t
 Attach:WheelsSetup.png\\
 ''Wheel Colliders are separate from visible Wheel Models''
 
+If you want to update the position of graphical wheel representations according to suspension position you may see the example which uses Script Reference: [[ScriptRef:WheelCollider.GetGroundHit.html | WheelCollider.GetGroundHit]] . Note that WheelCollider's gizmo does not update the wheel position:
+
+Attach:WheelColliderGizmo.png\\
+''Position of WheelCollider Gizmo in runtime using a suspension distance of 0.15''
 
 !!! Collision geometry
 

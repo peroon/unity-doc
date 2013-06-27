@@ -20,7 +20,13 @@ Once built, the shared library should be copied to the ^^Assets->Plugins->Androi
 private static extern float FooPluginFunction (); @]
 
 Please note that ``PluginName`` should not include the prefix ('lib') nor the extension ('.so') of the filename.
-It is advisable to wrap all native code methods with an additional C# code layer. This code should check [[ScriptRef:Application-platform.html | Application.platform]] and call native methods only when the app is running on the actual device; dummy values can be returned from the C# code when running in the Editor. You can also use [[http://docwiki.unity3d.com/index.php?n=Main.PlatformDependentCompilation | platform defines]] to control platform dependent code compilation.
+You should wrap all native code methods with an additional C# code layer. This code should check [[ScriptRef:Application-platform.html | Application.platform]] and call native methods only when the app is running on the actual device; dummy values can be returned from the C# code when running in the Editor. You can also use [[http://docwiki.unity3d.com/index.php?n=Main.PlatformDependentCompilation | platform defines]] to control platform dependent code compilation.
+
+!!Android Library Projects
+
+You can drop pre-compiled Android library projects into the ^^Assets->Plugins->Android^^ folder. Pre-compiled means all ''.java'' files must have been compiled into jar files located in either the ''bin/'' or the ''libs/'' folder of the project.
+
+See [[http://developer.android.com/tools/projects/index.html#LibraryProjects | Android Library Projects]] for more details.
 
 !! Deployment
 
@@ -265,3 +271,4 @@ The scene in the package displays a button which when clicked fetches the applic
 Please note that you will need both the JDK and the [[http://developer.android.com/sdk/ndk/index.html|Android NDK]] to compile the plugins.
 
 [[Attach:AndroidJavaPluginProject.zip | Here]] is a similar example but based on a prebuilt JNI library to wrap the native code into C#.
+
