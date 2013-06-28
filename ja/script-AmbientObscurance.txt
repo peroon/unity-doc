@@ -1,0 +1,29 @@
+!Screen Space Ambient Obscurance
+
+This image effect approximates [[http://en.wikipedia.org/wiki/Ambient_occlusion | Ambient Occlusion]] in realtime, as an image post-processing effect. It darkens creases, holes and surfaces that are close to each other. In real life, such areas tend to block out or ``occlude`` ambient light, hence they appear darker. It is an improvement to the existing [[script-SSAOEffect|SSAO effect]] in terms of quality and -- depending on settings and hardware -- speed. Additionally, it doesn't rely on a generated normals buffer as it is recreating them on the fly based on depth.
+
+As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
+
+The following two screenshots compare the results of a simple scene employing this occlusion effect.
+
+Attach:ImageEffects./WithoutAO.png\\
+''The high degree of ambient lighting basically removes all shading which makes objects hard to decipher.''
+
+Attach:ImageEffects./WithAO.png\\
+''With added ambient occlusion, the resulting shading makes objects visible.''
+
+The degree of darkening (in short: AO) is mostly controlled through the ``Intensity`` and ``Radius`` parameters. However, there is a post blur step performed to soften out the raw and noisy AO results. The following screenshot shows a result that performs a smaller blur.
+
+Attach:ImageEffects./AOBlurExplained.png\\
+''Frequency and strength of the occlusion can be controlled through the post blur step (``Blur Iterations`` and ``Blur Filter Distance``)''
+
+!! Properties
+
+||PROPS
+||``Intensity`` ||The degree of darkness produced by the effect.||
+||``Radius`` ||The maximum area taken into account when checking for possible occlusion.||
+||``Blur Iterations`` ||The blur passes to soften out the naturally noisy result. ||
+||``Blur Filter Distance`` ||The sample distance used during the blur passes. ||
+||``Downsampling`` ||The resolution at which calculations should be performed. Downsampling increases rendering speed at the cost of quality.||
+
+(:include imagefx-SM3Depth:)

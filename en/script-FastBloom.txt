@@ -1,0 +1,21 @@
+!FastBloom
+
+``Blooming`` is the optical effect where light from a bright source (such as a glint) appears to leak into surrounding objects. This image effect adds such a glow in a fast and optimized way. If you need more flexibility, try the more sophisticated [[script-Bloom|Bloom]] effect instead.
+
+This bloom effect works especially well with [[HDR]] enabled scenes.
+
+Attach:FxFastBloom.png\\
+Example of the bloom used in conjunction with HDR lighting
+
+!! Properties
+
+||PROPS
+||``Threshhold`` ||Min RGB values that will start blooming. ||
+||``Intensity`` ||Total bloom intensity. ||
+||``Blur Size`` ||Bloom size (screen size dependent). ||
+||``Resolution`` ||Internal bloom buffer size. The lower the faster the effect can execute. ||
+||``Blur Iterations`` ||The amount of blur iterations when producing the soft glow. The smaller the faster the effect can execute. ||
+
+As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
+
+(:include imagefx-SM2:)

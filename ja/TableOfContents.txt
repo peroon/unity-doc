@@ -28,9 +28,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[DeactivatingGameObjects]]
 ****[[Using The Inspector]]
 *****[[Editing Value Properties40]]
->>u42<<
 ******[[Preset Libraries]]
->><<
 *****[[Editing Reference Properties]]
 *****[[Multi-Object Editing]]
 *****[[Inspector Options]]
@@ -56,7 +54,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[Audio Files]]
 *****[[TrackerModules]]
 ****[[Scripting]]
->>u42<<
 ****[[Scripting42]]
 *****[[CreatingAndUsingScripts]]
 *****[[ControllingGameObjectsComponents]]
@@ -65,7 +62,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Coroutines]]
 *****[[ScriptCompileOrderFolders]]
 *****[[Namespaces]]
->><<
 ****[[Asset Store]]
 *****[[Asset Store Publisher Administration]]
 ****[[Asset Server]]
@@ -323,9 +319,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ***[[Security Sandbox]]
 ***[[ScriptRef:MonoCompatibility.html | Overview of available .NET Class Libraries ]] 
 ***[[VisualStudioIntegration]]
->>u42<<
 ***[[Versioncontrolintegration]]
->><<
 ***[[ExternalVersionControlSystemSupport]]
 ***[[Analytics]]
 ***[[Version Check]]
@@ -424,20 +418,14 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-WheelCollider]]
 ***[[comp-GameObjectGroup]]
 ****[[class-GameObject]]
->>u42<<
 ****[[class-ScriptableObject]]
->><<
 *** [[comp-ImageEffects]]
 **** [[script-AntialiasingAsPostEffect]]
 **** [[script-Bloom]]
->>u42<<
 **** [[script-FastBloom]]
->><<
 **** [[script-BloomAndLensFlares]]
 **** [[script-BlurEffect]]
->>u42<<
 **** [[script-Blur]]
->><<
 **** [[script-CameraMotionBlur]]
 **** [[script-ColorCorrectionCurves]]
 **** [[script-ColorCorrectionEffect]]
@@ -459,13 +447,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **** [[script-ScreenOverlay]]
 **** [[script-SepiaToneEffect]]
 **** [[script-SunShafts]]
->>u42<<
 **** [[script-AmbientObscurance]]
->><<
 **** [[script-SSAOEffect]]
->>u42<<
 **** [[script-TiltShiftHdr]]
->><<
 **** [[script-TiltShift]]
 **** [[script-Tonemapping]]
 **** [[script-TwirlEffect]]
@@ -642,9 +626,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ******[[SL-PassTags]]
 ******[[SL-Name]]
 ******[[SL-BindChannels]]
->>u42<<
 ******[[SL-Stencil]]
->><<
 *****[[SL-UsePass]]
 *****[[SL-GrabPass]]
 *****[[SL-SubshaderTags]]

@@ -23,7 +23,7 @@ Please see our EULA http://unity3d.com/company/legal/eula for further informatio
 \\
 __I need to use my license on another machine, but I get that message that my license has been 'Activated too many times'. What should I do?__
 
-You’ll need to 'Return' your license. This enables you to return the license on the machine you no longer require, which in turn enables you to reactivate on a new machine. Please refer to the 'Managing your Unity 4.0 License' link at the top of the page, for more information.
+You'll need to 'Return' your license. This enables you to return the license on the machine you no longer require, which in turn enables you to reactivate on a new machine. Please refer to the 'Managing your Unity 4.0 License' link at the top of the page, for more information.
 
 \\
 __My account credentials aren’t recognised when logging in during the Activation process?__

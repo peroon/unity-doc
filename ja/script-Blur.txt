@@ -1,0 +1,21 @@
+! Blur
+
+The optimized $$Blur$$ image effect blurs the rendered image by filtering in a number of passes using a gaussian filter curve.
+
+The following screenshots show posible blur results. 
+
+Attach:FxBlurOptimizedExample.png
+
+Attach:FxBlurOptimizedExample2.png
+
+
+As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
+
+!! Properties
+
+||PROPS
+||``Downsample`` ||The number of times the image will be downsampled before the blur is applied. Bigger blurs and faster speeds can be expected the more you downsample. ||
+||``Blur Size`` ||The spread used when filtering the image. Higher values produce bigger blurs. ||
+||``Blur Iterations`` ||The number of of times the filter operations will be repeated. ||
+
+(:include imagefx-SM2:)

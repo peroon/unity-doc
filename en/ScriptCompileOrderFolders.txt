@@ -1,0 +1,22 @@
+!Special Folders and Script Compilation Order
+
+For the most part, you can choose any names you like for the folders in your project but Unity reserves some names to indicate that the contents have a special purpose. Some of these folders have an effect on the order of script compilation. Essentially, there are four separate phases of script compilation and the phase where a script will be compiled is determined by its parent folder.
+
+This is significant in cases where a script must refer to classes defined in other scripts. The basic rule is that anything that will be compiled in a phase ''after'' the current one cannot be referenced. Anything that is compiled in the current phase or an earlier phase is fully available.
+
+Another situation occurs when a script written in one language must refer to a class defined in another language (say, a UnityScript file that declares variables of a class defined in a C# script). The rule here is that the class being referenced must have been compiled in a ''earlier'' phase.
+
+The phases of compilation are as follows:-
+
+__Phase 1:__ Runtime scripts in folders called __Standard Assets__, __Pro Standard Assets__ and __Plugins__.
+
+__Phase 2:__ Editor scripts in folders called __Standard Assets/Editor__, __Pro Standard Assets/Editor__ and __Plugins/Editor__.
+
+__Phase 3:__ All other scripts that are not inside a folder called __Editor__.
+
+__Phase 4:__ All remaining scripts (ie, the ones that ''are'' inside a folder called __Editor__).
+
+
+Additionally, any script inside a folder called __WebPlayerTemplates__ will not be compiled at all.
+
+A common example is where a UnityScript file needs to reference a class defined in a C# file. You can achieve this by placing the C# file inside a Plugins folder and the UnityScript file in a non-special folder. If you don't do this, you will get an error saying the C# class cannot be found.

@@ -1,0 +1,21 @@
+! Tilt Shift
+
+$$Tilt Shift$$ is a local blur effect that blurs the image based on distance to the center. It comes in two modes: ``TiltShift`` and ``Iris``. The following screenshots demonstrate the difference.
+
+Attach:ImageEffects./TiltShiftField.png\\
+''Tilt shift mode: vertical defocus''
+
+Attach:ImageEffects./TiltShiftIris.png\\
+''Iris mode: radial defocus''
+
+As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
+
+!! Properties
+||PROPS
+||``Mode`` ||Choose type of defocus (see above). ||
+||``Quality`` ||Amount of samples taken and thus responsible for performance. Choose ``Preview`` to just render blur areas. ||
+||``Max Blur Size`` ||Maximum blur distance allowed. ||
+||``Blur Area`` ||Size and strength of the blur (verify effect with Preview ``Quality``).||
+
+
+(:include imagefx-SM3:)

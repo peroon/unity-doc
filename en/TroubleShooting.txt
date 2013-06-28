@@ -115,7 +115,7 @@ This usually happens when an external library is compiled with the ARM Thumb ins
 If the library source is not available you should ask the supplier for a non-thumb version of the library.
 
 !! The Xcode console shows "WARNING -> applicationDidReceiveMemoryWarning()" and the application crashes immediately afterwards
-(Sometimes you might see a message like ''Program received signal:  “0”''.)
+(Sometimes you might see a message like ''Program received signal:  "0"''.)
 This warning message is often not fatal and merely indicates that iOS is low on memory and is asking applications to free up some memory. Typically, background processes like Mail will free some memory and your application can continue to run. However, if your application continues to use memory or ask for more, the OS will eventually start killing applications and yours could be one of them. Apple does not document what memory usage is safe, but empirical observations show that applications using less than 50% MB of all device RAM (like ~200-256 MB for 2nd generation ipad) do not have major memory usage problems.
 The main metric you should rely on is how much RAM your application uses. Your application memory usage consists of three major components:
 * application code (the OS needs to load and keep your application code in RAM, but some of it might be discarded if really needed)

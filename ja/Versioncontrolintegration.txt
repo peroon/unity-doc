@@ -1,0 +1,83 @@
+!Version control integration (Team license only)
+
+Unity supports version control integration with [[http://www.perforce.com/product/components/perforce_visual_client | Perforce]].
+
+To start working with Perforce in Unity, do the following:
+
+#Setup or sync a workspace on your computer using a standard Perforce client such as '''perforce p4v'''. Refer to [[http://www.perforce.com/perforce/doc.current/manuals/p4v-gs/01_p4v-gs.html | perforce documentation]] to learn how to do this.
+#Copy an existing project into the workspace or start Unity and create a new project in the workspace.
+#Open the project and go to the ^^Edit->Project Settings->Editor^^ menu.
+#Choose your ^^Mode^^ according to the version control system that you chose.
+ Attach:EditorVersionControlSettings.png
+#Fill out your version control settings, such as username / password / server / workspace.
+#Keep ^^Automatic add^^ checked if you want your files to be automatically added to version control when they're added to the project (or the folder on disk). Otherwise you will have to add new files manually. 
+#Offline mode checkbox should be left off. Only use this if you know [[http://www.perforce.com/perforce/doc.current/manuals/p4v/Offline.html | how to work offline in Perforce without a Sandbox]].
+#You should select ''Force Text'' as ^^Asset Serialization Mode^^, so you can compare and merge files visually.
+#Click connect and verify that "Connected" is displayed above the connect button after a short while.
+#Use your standard perforce client (p4v) to make sure that all files in the Assets and ProjectSettings folders (including files ending with ''.meta'') are added to Perforce.
+
+At this point you should be able to do most of the important version control operations directly on the assets in the project view, instead of going through the version control client. 
+
+[[Attach:Source control menu.png | Attach:Source control menu.png]]
+
+You should also be able to see the status that each asset has. An asset can be:
+* Unversioned (not in version control at all)
+* Deleted (pending for deletion in version control)
+* Added (pending for add in version control)
+* Checked out locally
+* Checked out by another user
+* Available in a later version (someone else has checked in a newer version)
+* Locked (by me) - cannot be modified by other users
+* Locked (by another user) - cannot be modified by me.
+
+You can overview the files in your changelist from the ``Version Control Window`` (^^Window->Version Control^^). It is shown here docked next to Inspector in the editor:
+
+Attach:VersionControlWindowOutgoingChanges.png
+
+By right clicking assets or changelists in this window you perform operations on them. To move assets between changelists just drag the assets from one changelist to the header of the target changelist.
+
+Things to note:
+* You will not be able to edit assets until they're marked as ''Checked out'' in version control (unless you have ^^Work offline^^ checked).
+* When saving changes to a .scene file it will automatically be checked out.
+* Project Settings inspectors have a '''checkout''' button in the bottom that allow you to checkout settings.
+
+!!Icons
+
+The following icons are displayed in Unity editor to visualize version control status for files/assets:
+
+|| border=0
+|| Attach:VersionControl_P4_AddedLocal.png ||File added locally ||
+|| Attach:VersionControl_P4_AddedRemote.png ||File added to version control by another user ||
+|| Attach:VersionControl_P4_CheckOutLocal.png ||File is checked out by you ||
+|| Attach:VersionControl_P4_CheckOutRemote.png ||File is checked out by another user ||
+|| Attach:VersionControl_P4_Conflicted.png ||There has been a conflict merging this file. Needs to be resolved ||
+|| Attach:VersionControl_P4_DeletedLocal.png ||File has been deleted by you ||
+|| Attach:VersionControl_P4_DeletedRemote.png ||File has been deleted by another user ||
+|| Attach:VersionControl_P4_Local.png ||File is not yet under version control ||
+|| Attach:VersionControl_P4_LockedLocal.png ||File is locked by you ||
+|| Attach:VersionControl_P4_LockedRemote.png ||File is locked by another user ||
+|| Attach:VersionControl_P4_OutOfSync.png ||Another user has checked in a new version of this file. Use "Apply Incoming Changes" to get latest version ||
+
+!!Automatic revert of unchanged files on submit
+
+When working with assets, Unity automatically checks out both the asset file as well as the associated .meta file. In most situations however, the .meta file is not modified, which might cause some extra work e.g. when merging branches at a later point. It's possible to configure Perforce to revert unchanged files on submit, which is done in P4V by selecting ^^Connection->Edit Current Workspace...^^, viewing the ^^Advanced^^ tab and setting the value of ''On submit'' to ^^Revert unchanged files^^: 
+
+Attach:VersionControl_P4V_RevertUnchangedFilesSetting.png
+
+!!Offline Mode
+
+Unity supports working in offline mode, e.g. to continue working without a network connection to your version control repository. Please refer to [[http://answers.perforce.com/articles/KB_Article/Working-Disconnected-From-The-Perforce-Server | Perforce documentation]] for further information on working in offline mode for Perforce.
+ 
+*Select ^^Work offline^^ from Version Control Settings if you want to be able to work disconnected from version control.
+
+!!Troubleshooting
+
+If Unity for some reason cannot commit your changes to Perforce, e.g. if server is down, license issues etc., your changes will be stored in a separate changeset. If the console doesn't list any info about the issue you can use the P4V client for Perforce to submit this changeset to see the exact error message.
+
+!!Working with the Asset Server
+
+For work with the Asset Server (Unity's internal Version Control System) refer to the [[Asset Server|Asset Server documentation]].
+
+!!Working with other version control systems 
+
+In order to work with a version control system unsupported by Unity, select ^^MetaData^^ as the ^^Mode^^ for Version Control in the [[class-EditorManager|Editor Settings]]. This allows you to manage the source assets and metadata for those assets with a version control system of your choice. For more on this, see the documentation for [[ExternalVersionControlSystemSupport|Exernal Version Control Systems]]
