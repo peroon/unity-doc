@@ -10,16 +10,16 @@
 
 !! 移動、回転および縮小拡大
 
-ツールバーのトランスフォーム ツールを使用して、個々の GameObject を移動、回転、縮小拡大します。  それぞれに、シーンビュー内で選択した GameObject 周辺に表示される対応するギズモがあります。  マウスを使用し、ギズモ軸を操作して、GameObject の $$Transform$$ コンポーネントを変更したり、またはインスペクタのトランスフォーム コンポーネントの数字フィールドに直接値を入力できます。Each of the three transform modes can be selected with a hotkey - __W__ for Translate, __E__ for Rotate and __R__ for Scale.
+ツールバーのトランスフォーム ツールを使用して、個々の GameObject を移動、回転、拡大縮小します。  それぞれに、シーンビュー内で選択した GameObject 周辺に表示される対応するギズモがあります。  マウスを使用し、ギズモ軸を操作して、GameObject の $$Transform$$ コンポーネントを変更したり、またはインスペクタのトランスフォーム コンポーネントの数字フィールドに直接値を入力できます。この 3 つのトランスフォーム モードのいずれもショートカット キーが対応していて、__W__ キーが移動, __E__ キーが回転、 __R__ キーが拡大縮小です。
 
 Attach:TransformGizmo35.png
 (:comment Source psd is TransformGizmo35.psd :)
 
 * クリックして、ギズモの中心でドラッグすると、オブジェクトをすべての軸で一度に操作することができます。
-* At the center of the Translate gizmo, there are three small squares that can be used to drag the object within a single plane (ie, two axes can be moved at once while the third is kept still).
+* 移動ギズモの中心には 3 つの箱があり、これを使えばオブジェクトを 1 つの平面ずつドラッグして操作できます（すなわち軸のひとつを固定したまま残りの二つの軸を同時に操作できます）。
 * 3 ボタン マウスの場合、中央ボタンをクリックして、最後に調整した軸 (黄色に変わります) を直接クリックせずに、調整できます。
 * スケーリング ツール使用時は、不均一なスケール (1、2、1 など) により子オブジェクトに対して、異常なスケーリングが発生する場合があります。
-* GameObject の変形の詳細については、[[class-Transform|Transform Component]] ページを参照してください。
+* GameObject の変形の詳細については、[[class-Transform|Transform コンポーネント]] ページを参照してください。
 
 
 !! Gizmo Display Toggles
