@@ -27,7 +27,8 @@ Attach:ColorPickerDescr.png\\
 
 $$Eyedropper Tool$$ は、欲しい色の上にマウスカーソルを持ってくることで、カラー値を知りたい時に使います。\\
 $$RGB / HSV Selector$$ は、カラー値を ''赤、緑、青（RGB）'' から ''色相、彩度、明度（HSV）'' に切り替えます。\\
-最後に、選択されているカラーの透明度は、 $$Alpha Channel$$ の値によって調整することができます。
+選択されているカラーの透明度は、 $$Alpha Channel$$ の値によって調整することができます。\\
+最後に、 $$Preset Library$$ セクションにより事前設定した値を使用できます。 [[Preset Libraries]] を参照して下さい。
 
 
 !! カーブエディタ（Curve Editor）
