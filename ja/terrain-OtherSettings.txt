@@ -3,15 +3,14 @@
 Terrainインスペクタでは^^Terrain Settings^^ボタンの下に、Attach:terrain-TerrainSettings.png いくつかのオプションが有ります。
 
 Attach:terrain-OtherSettings.png\\
-'全ての追加のTerrain設定''
+''全ての追加のTerrain設定''
 
 !! Base Terrain
 
 * ``Pixel Error``: Terrain形状表示の際に許容されるエラーの数を制御します。これは本質的にLOD形状の設定にあたり、値が大きいほどTerrain形状は密集度が低くなります。
-*  ``Base Map Dist.``:Terrainテクスチャが、高解像度で表示される距離。この距離より遠い場合は低解像度のテクスチャが表示されます。
+* ``Base Map Dist.``:Terrainテクスチャが、高解像度で表示される距離。この距離より遠い場合は低解像度のテクスチャが表示されます。
 * ``Cast Shadows``: 地形に影を投影するかどうか指定。
-
-マテリアル（``Material``）スロットにTerrainのカスタムマテリアルを割り当てることが出来ます。このマテリアルはTerrainのレンダリングが出来る[[Shaders|shader]] を使用すべきであり、例えば``Nature/Terrain/Diffuse`` (マテリアルの割り当てがない場合に使用されるシェーダ）あるいは``Nature/Terrain/Bumped Specular``です。
+* ``Material``: Terrainのカスタムマテリアルを割り当てることが出来ます。このマテリアルはTerrainのレンダリングが出来る[[Shaders|シェーダ]] を使用すべきであり、例えば``Nature/Terrain/Diffuse`` (マテリアルの割り当てがない場合に使用されるシェーダ）あるいは``Nature/Terrain/Bumped Specular``です。 [[terrain-Textures|Terrains 向けのテクスチャ]] を参照して下さい。
 
 !! Tree & Detail Settings
 
