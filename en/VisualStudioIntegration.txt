@@ -15,7 +15,7 @@ Unity's VisualStudio integration has two components:\\
 
 
 !!I've got Visual Studio Express, how do I use it?
-* In Unity, select from the menu ^^Assets->Sync VisualStudio Project^^
+* In Unity, select from the menu ^^Assets->Sync MonoDevelop Project^^
 * Find the newly created .sln file in your Unity project (one folder up from your Assets folder)
 * Open that file with Visual Studio Express.
 * You can now edit all your script files, and switch back to Unity to use them.
@@ -35,4 +35,4 @@ Unity's VisualStudio integration has two components:\\
 
 * Unity automatically creates and maintains a Visual Studio .sln and .csproj file. Whenever somebody adds/renames/moves/deletes a file from within Unity, Unity regenerates the .sln and .csproj files. You can add files to your solution from Visual Studio as well. Unity will then import those new files, and the next time Unity creates the project files again, it will create them with this new file included.
 
-* Unity does not regenerate the Visual Studio project files after an AssetServer update, or a SVN update. You can manually ask Unity to regenerate the Visual Studio project files trough the menu: ^^Assets->Sync VisualStudio Project^^
+* Unity does not regenerate the Visual Studio project files after an AssetServer update, or a SVN update. You can manually ask Unity to regenerate the Visual Studio project files trough the menu: ^^Assets->Sync MonoDevelop Project^^
