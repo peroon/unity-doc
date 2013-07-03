@@ -178,6 +178,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **[[windowsstore-gettingstarted]]
 ***[[windowsstore-deployment]]
 ***[[windowsstore-debugging]]
+***[[windowsstore-profiler]]
 ***[[windowsstore-commandlinearguments]]
 ***[[windowsstore-plugins]]
 ***[[windowsstore-projecttypes]]
