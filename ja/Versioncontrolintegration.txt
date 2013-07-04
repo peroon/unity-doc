@@ -80,4 +80,4 @@ For work with the Asset Server (Unity's internal Version Control System) refer t
 
 !!Working with other version control systems 
 
-In order to work with a version control system unsupported by Unity, select ^^MetaData^^ as the ^^Mode^^ for Version Control in the [[class-EditorManager|Editor Settings]]. This allows you to manage the source assets and metadata for those assets with a version control system of your choice. For more on this, see the documentation for [[ExternalVersionControlSystemSupport|Exernal Version Control Systems]]
+In order to work with a version control system unsupported by Unity, select ^^MetaData^^ as the ^^Mode^^ for Version Control in the [[class-EditorManager|Editor Settings]]. This allows you to manage the source assets and metadata for those assets with a version control system of your choice. For more on this, see the documentation for [[ExternalVersionControlSystemSupport|External Version Control Systems]]

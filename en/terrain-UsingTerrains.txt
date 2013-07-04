@@ -2,7 +2,7 @@
 
 !! Creating a new Terrain
 
-A new $$Terrain$$ can be created from ^^Terrain->Create Terrain^^.  This will add a Terrain to your $$Project$$ and $$Hierarchy Views$$.
+A new $$Terrain$$ can be created from ^^GameObject->Create Other->Terrain^^.  This will add a Terrain to your $$Project$$ and $$Hierarchy Views$$.
 
 Attach:CreateTerrainMenu.png
 
@@ -11,7 +11,7 @@ Your new Terrain will look like this in the $$Scene View$$:
 Attach:NewTerrain_SceneView.png\\
 ''A new Terrain in Scene View''
 
-If you would like a differently sized Terrain, choose ^^Terrain->Set Resolution^^ from the menu bar.  There are a number of settings that related to Terrain size which you can change from this dialog.\\
+If you would like a differently sized Terrain, choose the Options button Attach:TerrainOptions.png from the Terrain Inspector.  There are a number of settings related to Terrain size which you can change from here.\\
 \\
 Attach:TerrainResolutionDialog.png\\
 ''Setting the resolution of your terrain.''\\
@@ -28,13 +28,13 @@ These values are:
 
 !! Navigating the Terrain
 
-Terrains work a bit differently than other GameObjects. You can use $$Brushes$$ to paint and manipulate your Terrain.  If you want to reposition a Terrain, you can modify its ``Transform Position`` values in the $$Inspector$$.  This allows you to move your Terrain around, but you cannot rotate or scale it.
+Terrains work differently from other GameObjects. You can use $$Brushes$$ to paint and manipulate your Terrain.  If you want to reposition a Terrain, you can modify its ``Transform Position`` values in the $$Inspector$$.  This allows you to move your Terrain around, but you cannot rotate or scale it.
 
 While your Terrain is selected in the Hierarchy, you can gracefully navigate the terrain with the F (focus) key.  When you press F, wherever your mouse is positioned will be moved to the center of the Scene View.  This allows you to touch up an area, and quickly zoom over to a different area and change something else.  If your mouse is not hovering over an area of the Terrain when you press the F key, the entire Terrain will be centered in your Scene View.
 
 !! Editing the Terrain
 
-With the Terrain selected, you can look at the $$Inspector$$ to see some incredible new Terrain editing tools.
+With the Terrain selected, you can look at the $$Inspector$$ to see the incredible Terrain editing tools.
 
 Attach:TerrainEditingTools.png\\
 ''Terrain Editing Tools appear in the Inspector''
@@ -53,4 +53,3 @@ While Terrain Inspector is active, those keyboard shortcuts can be used for fast
 * Shift-Q to Shift-Y selects active terrain tool.
 * Comma (,) and dot (.) cycle through active brush.
 * Shift-comma (<) and Shift-dot (>) cycle through active tree/texture/detail object.
-

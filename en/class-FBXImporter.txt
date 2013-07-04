@@ -2,7 +2,7 @@
 
 When a 3D model is imported, Unity represents it as many different objects, including a hierarchy of GameObjects, Meshes (can be skinned depending on import options), AnimationClips, etc. In the Project folder the main imported object is a Model Prefab. 
 
-A Mesh must be attached to a GameObject using a [[class-MeshFilter|Mesh Filter]] component. For the mesh to be visible, the GameObject must also have a [[class-MeshRenderer|Mesh Renderer]] or other suitable rendering component attached. With these components in place, the mesh will be visible at the GameObject's position with its exact appearance dependent on the Material used by the renderer.
+Meshes are attached to a GameObject using a [[class-MeshFilter|Mesh Filter]] component. For the mesh to be visible, the GameObject must also have a [[class-MeshRenderer|Mesh Renderer]] or other suitable rendering component attached. With these components in place, the mesh will be visible at the GameObject's position with its exact appearance dependent on the Material used by the renderer.
 
 Attach:MeshExample40.png \\
 ''A [[class-MeshFilter | Mesh Filter]] together with [[class-MeshRenderer | Mesh Renderer]] makes the model appear on screen.''
