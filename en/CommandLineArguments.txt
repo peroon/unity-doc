@@ -23,29 +23,29 @@ As mentioned above, the editor and also built games can optionally be supplied w
 
 :``-quit``:Quit the Unity editor after other commands have finished executing.  Note that this can cause error messages to be hidden (but they will show up in the Editor.log file).
 
-:``-buildWindowsPlayer <pathname>``:Build a standalone Windows player (eg, -buildWindowsPlayer path/to/your/build.exe).
+:``-buildWindowsPlayer &lt;pathname&gt;``:Build a standalone Windows player (eg, -buildWindowsPlayer path/to/your/build.exe).
 
-:``-buildOSXPlayer <pathname>``:Build a standalone Mac OSX player (eg, -buildOSXPlayer path/to/your/build.app).
+:``-buildOSXPlayer &lt;pathname&gt;``:Build a standalone Mac OSX player (eg, -buildOSXPlayer path/to/your/build.app).
 
-:``-buildLinux32Player <pathname>``:Build a 32-bit standalone Linux player (eg, -buildLinux32Player path/to/your/build).
+:``-buildLinux32Player &lt;pathname&gt;``:Build a 32-bit standalone Linux player (eg, -buildLinux32Player path/to/your/build).
 
-:``-buildLinux64Player <pathname>``:Build a 64-bit standalone Linux player (eg, -buildLinux64Player path/to/your/build).
+:``-buildLinux64Player &lt;pathname&gt;``:Build a 64-bit standalone Linux player (eg, -buildLinux64Player path/to/your/build).
 
-:``-importPackage <pathname>``:Import the given [[HOWTO-exportpackage | package]]. No import dialog is shown.
+:``-importPackage &lt;pathname&gt;``:Import the given [[HOWTO-exportpackage | package]]. No import dialog is shown.
 
-:``-createProject <pathname>``:Create an empty project at the given path.
+:``-createProject &lt;pathname>``:Create an empty project at the given path.
 
-:``-projectPath <pathname>``:Open the project at the given path.
+:``-projectPath &lt;pathname>``:Open the project at the given path.
 
-:``-logFile <pathname>``:Specify where the Editor or Windows standalone log file will be written.
+:``-logFile &lt;pathname>``:Specify where the Editor or Windows standalone log file will be written.
 
-:``-assetServerUpdate <IP[[=:=]port] projectName username password [r <revision>]>``:Force an update of the project in the [[AssetServer | Asset Server]] given by ''IP:port''. The port is optional and if not given it is assumed to be the standard one (10733). It is advisable to use this command in conjunction with the ''-projectPath'' argument to ensure you are working with the correct project. If no project name is given then the last project opened by Unity is used. If no project exists at the path given by ''-projectPath'' then one is created automatically.
+:``-assetServerUpdate &lt;IP[[=:=]port] projectName username password [r &lt;revision>]>``:Force an update of the project in the [[AssetServer | Asset Server]] given by ''IP:port''. The port is optional and if not given it is assumed to be the standard one (10733). It is advisable to use this command in conjunction with the ''-projectPath'' argument to ensure you are working with the correct project. If no project name is given then the last project opened by Unity is used. If no project exists at the path given by ''-projectPath'' then one is created automatically.
 
-:``-exportPackage <exportAssetPath1 exportAssetPath2 ExportAssetPath3 exportFileName>``:Exports a package given a path (or set of given paths).  ``exportAssetPath`` is a folder (relative to to the Unity project root) to export from the Unity project and ``exportFileName`` is the package name. Currently, this option can only export whole folders at a time.  This command normally needs to be used with the ``-projectPath`` argument.
+:``-exportPackage &lt;exportAssetPath1 exportAssetPath2 ExportAssetPath3 exportFileName>``:Exports a package given a path (or set of given paths).  ``exportAssetPath`` is a folder (relative to to the Unity project root) to export from the Unity project and ``exportFileName`` is the package name. Currently, this option can only export whole folders at a time.  This command normally needs to be used with the ``-projectPath`` argument.
 
 :``-nographics (Windows & Linux only)``:When running in batch mode, do not initialize graphics device at all. This makes it possible to run your automated workflows on machines that don't even have a GPU (automated workflows only work, when you have a window in focus, otherwise you can't send simulated input commands). A standalone player generated with this option will not feature any graphics.
 
-:``-executeMethod <ClassName.MethodName>``:Execute the static method as soon as Unity is started, the project is open and after the optional asset server update has been performed. This can be used to do continous integration, perform Unit Tests, make builds, prepare some data, etc. If you want to return an error from the commandline process you can either throw an exception which will cause Unity to exit with 1 or else call [[ScriptRef:EditorApplication.Exit.html | EditorApplication.Exit]] with a non-zero code. If you want to pass parameters you can add them to the command line and retrieve them inside the method using System.Environment.GetCommandLineArgs. 
+:``-executeMethod &lt;ClassName.MethodName>``:Execute the static method as soon as Unity is started, the project is open and after the optional asset server update has been performed. This can be used to do continous integration, perform Unit Tests, make builds, prepare some data, etc. If you want to return an error from the commandline process you can either throw an exception which will cause Unity to exit with 1 or else call [[ScriptRef:EditorApplication.Exit.html | EditorApplication.Exit]] with a non-zero code. If you want to pass parameters you can add them to the command line and retrieve them inside the method using System.Environment.GetCommandLineArgs. 
 
 To use @@-executeMethod@@ __you need to have a script in an Editor folder and a static function in the class__. 
 

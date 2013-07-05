@@ -26,6 +26,9 @@ using System.Collections; class NonCachingLoadExample : MonoBehaviour {
 			   Instantiate(bundle.Load(AssetName));
                    // Unload the AssetBundles compressed contents to conserve memory
                    bundle.Unload(false);
+
+                   // Frees the memory from the web stream
+                   www.Dispose();
 	   }
    }
 }@]
@@ -62,6 +65,9 @@ public class CachingLoadExample : MonoBehaviour {
 				Instantiate(bundle.Load(AssetName));
                 	// Unload the AssetBundles compressed contents to conserve memory
                 	bundle.Unload(false);
+
+                       // Frees the memory from the web stream
+                       www.Dispose();
 		}
 	}
 }@]
@@ -116,6 +122,9 @@ class LoadAssetFromAssetBundle : MonoBehaviour
 			Obj = assetBundle.Load(asset, typeof(T));
 			// Unload the AssetBundles compressed contents to conserve memory
 			bundle.Unload(false);
+
+                        // Frees the memory from the web stream
+                        www.Dispose();
 		}
 #endif
 	}

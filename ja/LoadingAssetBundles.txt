@@ -38,6 +38,9 @@ IEnumerator Start () {
 
         // メモリ節約のため圧縮されたアセットバンドルのコンテンツをアンロード
         bundle.Unload(false);
+
+        // Frees the memory from the web stream
+        www.Dispose();
 }@]
 
 [[AssetBundlesIntro|アセットバンドル入門]] に戻る

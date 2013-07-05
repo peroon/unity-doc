@@ -3,7 +3,7 @@
 $$Audio Clips$$ contain the audio data used by [[class-AudioSource|Audio Sources]].  Unity supports mono, stereo and multichannel audio assets (up to eight channels). The audio file formats that Unity can import are __.aif__, __.wav__, __.mp3__, and __.ogg__. Unity can also import [[TrackerModules | tracker modules]] in the __.xm__, __.mod__, __.it__, and __.s3m__ formats. The tracker module assets behave the same way as any other audio assets in Unity although no waveform preview is available in the asset import inspector.
 
 Attach:AudioClipImporter35.png\\
-''The Audio Clip $$Inspector$$''
+''The Audio Clip inspector''
 
 !!Properties
 ||PROPS

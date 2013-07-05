@@ -39,6 +39,9 @@ IEnumerator Start () {
 
         // Unload the AssetBundles compressed contents to conserve memory
         bundle.Unload(false);
+
+        // Frees the memory from the web stream
+        www.Dispose();
 }@]
 
 [[AssetBundlesIntro|back to AssetBundles Intro]]
