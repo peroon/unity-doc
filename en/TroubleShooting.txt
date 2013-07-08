@@ -59,7 +59,7 @@ The problems are often related to code or content quality. This section describe
 There are a number of reasons why this may happen. Typical causes include:
 # Scripting errors such as using uninitialized variables, etc.
 # Using 3rd party Thumb compiled native libraries. Such libraries trigger a known problem in the iOS SDK linker and might cause random crashes.
-# Using generic types with value types as parameters (eg, List<int>, List<SomeStruct>, List<SomeEnum>, etc) for serializable script properties.
+# Using generic types with value types as parameters (eg, List&lt;int&gt;, List&lt;SomeStruct&gt;, List&lt;SomeEnum&gt;, etc) for serializable script properties.
 # Using reflection when managed code stripping is enabled.
 # Errors in the native plugin interface (the managed code method signature does not match the native code function signature).
 Information from the XCode Debugger console can often help detect these problems (Xcode menu: ``View > Debug Area > Activate Console``).

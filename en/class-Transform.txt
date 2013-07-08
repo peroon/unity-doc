@@ -3,7 +3,7 @@
 The $$Transform$$ $$Component$$ determines the ``Position``, ``Rotation``, and ``Scale`` of each object in the scene. Every object has a Transform.
 
 Attach:TransformExample1.png\\
-''The Transform Component is editable in the $$Scene View$$ and in the $$Inspector$$''
+''The Transform Component is editable in the Scene View and in the Inspector''
 
 
 !!Properties

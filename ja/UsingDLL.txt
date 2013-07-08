@@ -71,10 +71,10 @@ Attach:DLLScreenshot.png\\
 # 必要な Unity API ファイルを選択します:
 
 **MacOS:
-***<Applications>/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll
+***&lt;Applications&gt;/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll
 
 **Windows:
-***<Program Files>\Unity\Editor\Data\Managed\UnityEngine.dll
+***&lt;Program Files&gt;\Unity\Editor\Data\Managed\UnityEngine.dll
 
 # このサンプルでは、ソリューション ブラウザ でクラスの名前を "MyUtilities" にリネームしたうえ、次のコードと置き換えます:
  !!!C#

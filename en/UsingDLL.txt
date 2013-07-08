@@ -71,10 +71,10 @@ In this section you will learn how to build and integrate a simple DLL example w
 #Select the required Unity API file:
 
 **MacOS:
-***<Applications>/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll
+***&lt;Applications&gt;/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll
 
 **Windows:
-***<Program Files>\Unity\Editor\Data\Managed\UnityEngine.dll
+***&lt;Program Files&gt;\Unity\Editor\Data\Managed\UnityEngine.dll
 
 #For this example, in the Solution browser rename the class into "MyUtilities" and replace its code with this:
  !!!C#
@@ -132,11 +132,11 @@ In this section you will learn how to build and integrate a simple DLL example w
 #Prepare the debug symbols of the DLL:
 
 **MonoDevelop:
-***Copy built file <project folder>/bin/Debug/DLLTest.dll.mdb into Assets (ie. Assets/Plugins/)
+***Copy built file &lt;project folder&gt;/bin/Debug/DLLTest.dll.mdb into Assets (ie. Assets/Plugins/)
 
 **Visual Studio:
-###Execute <Program Files>\Unity\Editor\Data\Mono\lib\mono\2.0\pdb2mdb.exe in the command prompt, pass <project folder>\bin\Debug\DLLTest.pdb as parameter
-###Copy converted file <project folder>\bin\Debug\DLLTest.dll.mdb into Assets (ie. Assets\Plugins\)
+###Execute &lt;Program Files&gt;\Unity\Editor\Data\Mono\lib\mono\2.0\pdb2mdb.exe in the command prompt, pass &lt;project folder&gt;\bin\Debug\DLLTest.pdb as parameter
+###Copy converted file &lt;project folder&gt;\bin\Debug\DLLTest.dll.mdb into Assets (ie. Assets\Plugins\)
 
 #Open "Test" script in MonoDevelop, and make sure to enable the debugger for Unity from the Tools menu (Windows) or MonoDevelop-Unity menu (MacOS):
 

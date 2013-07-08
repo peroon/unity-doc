@@ -6,15 +6,6 @@ Making an animated character involves two things; ''moving'' it through the worl
 
 You can download [[http://unity3d.com/support/resources/example-projects/|example demos]] showing pre-setup animated characters. Once you have learned the basics on this page you can also see the [[ScriptRef:Animation.html|animation script interface]].
 
-This page contains the following sections:-
-
-*[[#AnimBlend | Animation Blending]]
-*[[#AnimLayers | Animation Layers]]
-*[[#AnimMixing | Animation Mixing]]
-*[[#Additive | Additive Animation]]
-*[[#Procedural | Procedural Animation]]
-*[[#Playback | Animation Playback and Sampling]]
-
 
 [[#AnimBlend]]
 

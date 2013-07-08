@@ -22,7 +22,7 @@ The recommended setup is to:
 *Put the model as a child of the GameObject, together with the Animator component
 ->Attach:MecanimRetargetingModel.png
 
-*Make sure scripts referencing the Animator are looking for the animator in the children instead of the root (use @@GetComponentInChildren<Animator>()@@ instead of @@GetComponent<Animator>()@@)
+*Make sure scripts referencing the Animator are looking for the animator in the children instead of the root (use @@GetComponentInChildren&lt;Animator&gt;()@@ instead of @@GetComponent&lt;Animator&gt;()@@)
 
 ->Attach:MecanimRetargetingKyle.png
 

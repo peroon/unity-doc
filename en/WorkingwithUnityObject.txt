@@ -9,7 +9,7 @@ You will need to create a new instance of the unityObject2 for each Unity conten
 
 ''Parameters:''
 
-* ``configuration`` - A object containing the configuration for this instance. Those are the available members:
+* ``configuration`` - An object containing the configuration for this instance. Those are the available members:
 ** ``width`` - Default: 100%, Width of Unity content. Can be specified in pixel values (i.e. 600, "450") or in percentage values (i.e. "50%", "100%"). Note that percentage values are relative to the parent element.
 ** ``height`` - Default: 100%, Height of Unity content. Can be specified in pixel values (i.e. 600, "450") or in percentage values (i.e. "50%", "100%"). Note that percentage values are relative to the parent element.
 ** ``fullInstall`` - Default: false, Installs the full Web Player if not available. Normally only a small part of the Web Player is installed and the remaining files are automatically downloaded later.
@@ -27,7 +27,7 @@ You will need to create a new instance of the unityObject2 for each Unity conten
 *** ``disableContextMenu`` - This parameter controls whether or not the Unity Web Player displays a context menu when the user right- or control-clicks on the content. Setting it to true prevents the context menu from appearing and allows content to utilize right-mouse behavior. To enable the context menu don't include this parameter.
 *** ``disableExternalCall`` - This parameter controls whether or not the Unity Web Player allows content to communicate with browser-based JavaScript. Setting it to true prevents browser communication and so content cannot call or execute JavaScript in the browser, the default is false.
 *** ``disableFullscreen`` - This parameter controls whether or not the Unity Web Player allows content to be viewed in fullscreen mode. Setting it to true prevents fullscreen viewing and removes the "Go Fullscreen" entry from the context menu, the default is false.
-** ``attributes`` - Default: {}, Object containing list of attributes. These will be added to underlying ``<object>`` or ``<embed>`` tag depending on the browser.
+** ``attributes`` - Default: {}, Object containing list of attributes. These will be added to underlying ``&lt;object&gt;`` or ``&lt;embed&gt;`` tag depending on the browser.
 ** ``debugLevel`` - Default: 0, Enables/Disables logging, useful when developing to be able to see the progress on the browser console. Set it greater to 0 to enable.
 
 ''Notes'':

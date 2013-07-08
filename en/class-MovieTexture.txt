@@ -57,7 +57,7 @@ For more information about playing Movie Textures, see the [[ScriptRef:MovieText
 When a Movie Texture is imported, the audio track accompanying the visuals are imported as well.  This audio appears as an $$AudioClip$$ child of the Movie Texture.
 
 Attach:MovieTextureAudio.png\\
-''The video's audio track appears as a child of the Movie Texture in the $$Project View$$''
+''The video's audio track appears as a child of the Movie Texture in the Project View''
 
 To play this audio, the Audio Clip must be attached to a GameObject, like any other Audio Clip.  Drag the Audio Clip from the Project View onto any GameObject in the Scene or Hierarchy View.  Usually, this will be the same GameObject that is showing the Movie.  Then use [[ScriptRef:GameObject-audio.html|audio.Play()]] to make the the movie's audio track play along with its video.
 >><<

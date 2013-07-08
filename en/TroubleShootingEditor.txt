@@ -45,9 +45,9 @@ If Unity crashes when starting, check the following:
 **Windows:
 ***Unity's installation folder
 ***C:\Documents and Settings\All Users\Application Data\Pace Anti-Piracy
-***C:\Users\<user>\AppData\Roaming\PACE Anti-Piracy
-***C:\Documents and Settings\<user>\Local Settings\Application Data\Unity
-***C:\Users\<user>\AppData\Local\Unity
+***C:\Users\&lt;user&gt;\AppData\Roaming\PACE Anti-Piracy
+***C:\Documents and Settings\&lt;user&gt;\Local Settings\Application Data\Unity
+***C:\Users\&lt;user&gt;\AppData\Local\Unity
 
 **MacOS:
 ***Package contents of Unity.app
@@ -97,7 +97,7 @@ Follow these steps to reinstall the editor:
 
 **Windows:
 ***C:\Documents and Settings\All Users\Application Data\Pace Anti-Piracy\License Files
-***C:\Users\<user>\AppData\Roaming\PACE Anti-Piracy\License Files
+***C:\Users\&lt;user&gt;\AppData\Roaming\PACE Anti-Piracy\License Files
 
 **MacOS:
 ***HD/Library/Application Support/PACE Anti-Piracy/License Files

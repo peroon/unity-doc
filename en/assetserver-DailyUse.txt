@@ -5,7 +5,7 @@ This section explains the common tasks, workflow and best practices for using th
 
 !! Getting Started
 
-If you are joining a team that has a lot of work stored on the Asset Server already, this is the quickest way to get up and running correctly.  If you are starting your own project from scratch, you can skip down to the [[#Fundamentals | Workflow Fundamentals]] section.
+If you are joining a team that has a lot of work stored on the Asset Server already, this is the quickest way to get up and running correctly.
 
 # Create a new empty Project with no packages imported
 # Go to ^^Edit->Project Settings->Editor^^ and select ^^Asset Server^^ as the version control mode
@@ -21,9 +21,6 @@ If you are joining a team that has a lot of work stored on the Asset Server alre
 # You are ready to go
 
 
-Continue reading for detailed information on how to use the Asset Server effectively every day.
-
-[[#Fundamentals]]
 !! Workflow Fundamentals
 
 When using the Asset Server with a multi-person team, it is generally good practice to Update all changed assets from the server when you begin working, and Commit your changes at the end of the day, or whenever you're done working.  You should also commit changes when you have made significant progress on something, even if it is in the middle of the day.  Committing your changes regularly and frequently is recommended.

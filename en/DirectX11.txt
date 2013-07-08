@@ -6,7 +6,7 @@ Unity 4 introduces ability to use DirectX 11 graphics API, with all the goodies 
 
 To enable DirectX 11 for your game builds and the editor, set "Use DX11" option in [[class-PlayerSettings | Player Settings]]. Unity editor needs to be restarted for this to take effect.
 
-Note that DX11 requires Windows Vista or later and at least a DX10-level GPU (preferably DX11-level). Unity editor window title has "<DX11>" at the end when it is actually running in DX11 mode.
+Note that DX11 requires Windows Vista or later and at least a DX10-level GPU (preferably DX11-level). Unity editor window title has "&lt;DX11&gt;" at the end when it is actually running in DX11 mode.
 
 
 
