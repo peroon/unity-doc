@@ -21,11 +21,11 @@ This will bring up the Add Terrain Texture dialog.
 Attach:TerrainGuide-AddTextureDialog1.png\\
 ''The Add Terrain Texture dialog''
 
-From here, select a tileable texture in the ``Splat`` property.  You can either drag a texture to the property from the Project View, or choose one from the drop-down.
+From here, select a tileable texture in the ``Texture`` property.  You can either drag a texture to the property from the Project View, or choose one from the drop-down.
 
-Now, set the ``Tile Size X`` and ``Tile Size Y`` properties.  The larger the number, the larger each "tile" of the texture will be scaled. Textures with large ``Tile Sizes`` will be repeated fewer times across the entire Terrain.  Smaller numbers will repeat the texture more often with smaller tiles.
+Now, set the ``Size X`` and ``Size Y`` properties.  The larger the number, the larger each "tile" of the texture will be scaled. Textures with large ``Tile Sizes`` will be repeated fewer times across the entire Terrain.  Smaller numbers will repeat the texture more often with smaller tiles.
 
-In Unity 4, you can also assign a normal map texture. For the normal map to have any effect, the terrain must be using a normal map-capable shader; assign a material with normal mapped terrain shader in [[terrain-OtherSettings | Terrain Settings]] tab.
+You can also assign a ''Normal Map'' texture. For the normal map to have any effect, the terrain must be using a normal map-capable shader.
 
 Click the ^^Add^^ Button and you'll see your first Terrain Texture tile across the entire Terrain.
 

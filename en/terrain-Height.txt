@@ -52,12 +52,11 @@ Attach:TerrainGuide-SmoothedSteps.png
 
 !! Working with Heightmaps
 
-If you like, you can import a greyscale Heightmap created in Photoshop, or from real-world geography data and apply it to your Terrain.  To do this, choose ^^Terrain->Import Heightmap - Raw...^^, then select the desired RAW file. You'll then see some import settings.  These will be set for you, but you have the option of changing the size of your Terrain from this dialog if you like. When you're ready, click the ^^Import^^ button. Once the Heightmap has been applied to the Terrain, you can edit it normally with all the Tools described above.
+If you like, you can import a greyscale Heightmap created in Photoshop, or from real-world geography data and apply it to your Terrain.  To do this, click the Options button Attach:TerrainOptions.png from the Terrain Inspector, choose ^^Import Raw...^^, then select the desired RAW file. You'll then see some import settings.  These will be set for you, but you have the option of changing the size of your Terrain from this dialog if you like. When you're ready, click the ^^Import^^ button. Once the Heightmap has been applied to the Terrain, you can edit it normally with all the Tools described above.
 Note that the Unity Heightmap importer can only import grayscale raw files. Thus you can't create a raw heightmap using RGB channels, you must use grayscale.
 
 Unity works with RAW files which make use of full 16-bit resolution. Any other heightmap editing application like Bryce, Terragen, or Photoshop can work with a Unity Heightmap at full resolution.
 
-You also have the option of exporting your Heightmap to RAW format.  Choose ^^Terrain->Export Heightmap - Raw...^^ and you'll see a export settings dialog.  Make any changes you like, and click ^^Export^^ to save your new Heightmap.  
+You also have the option of exporting your Heightmap to RAW format.  Click the Options button Attach:TerrainOptions.png from the Terrain Inspector, choose ^^Export - Raw...^^ and you'll see a export settings dialog.  Make any changes you like, and click ^^Export^^ to save your new Heightmap.  
 
-Unity also provides an easy way to flatten your terrain. Choose ^^Terrain->Flatten...^^.  This lets you flatten your terrain to a height you specify in the wizard.
-
+Unity also provides an easy way to flatten your terrain. Click the Paint Height button Attach:TerrainHeightButton.png from the Terrain Inspector and choose ^^Flatten^^.  This lets you flatten your terrain to a height you specify in the wizard.

@@ -23,6 +23,12 @@ As mentioned above, the editor and also built games can optionally be supplied w
 
 :``-quit``:Quit the Unity editor after other commands have finished executing.  Note that this can cause error messages to be hidden (but they will show up in the Editor.log file).
 
+:``-force-opengl (Windows only)``: Make the editor use OpenGL for rendering, even if Direct3D is available. Normally Direct3D is used but OpenGL is used if Direct3D 9.0c is not available.
+
+:``-force-d3d9 (Windows only)``: Make the editor use Direct3D 9 for rendering. This is the default, so normally there's no reason to pass it.
+
+:``-force-d3d11 (Windows only)``: Make the editor use Direct3D 11 for rendering. 
+
 :``-buildWindowsPlayer &lt;pathname&gt;``:Build a standalone Windows player (eg, -buildWindowsPlayer path/to/your/build.exe).
 
 :``-buildOSXPlayer &lt;pathname&gt;``:Build a standalone Mac OSX player (eg, -buildOSXPlayer path/to/your/build.app).

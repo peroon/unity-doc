@@ -104,6 +104,7 @@ public class TextureProcessor : AssetPostprocessor
 
 You can also control how the asset is imported using the [[ScriptRef:ImportAssetOptions.html|AssetDatabase.ImportAssetOptions]].
 
+If you are in a test environment, you need to test a change and AssetBundles will have to be rebuilt, it is advisable to use the option [[ScriptRef:BuildAssetBundleOptions.UncompressedAssetBundle.html|BuildAssetBundleOptions.UncompressedAssetBundle]] when you build the AssetBundles. This makes it faster to build and load the AssetBundles but since it is much bigger it will take longer to download.
 
 !! Building AssetBundles in a production enviroment
 
