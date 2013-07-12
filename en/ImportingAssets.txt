@@ -7,7 +7,7 @@ Attach:ProjectBrowser.png\\
 
 When you are organizing your Project View, there is one very important thing to remember:
 
-!!!%red% Never move any assets or organize this folder from the Explorer (Windows) or Finder (OS X).  Always use the Project View!%%
+__Never move any assets or organize this folder from the Explorer (Windows) or Finder (OS X).  Always use the Project View__
 
 There is a lot of meta data stored about relationships between asset files within Unity.  This data is all dependent on where Unity expects to find these assets.  If you move an asset from within the Project View, these relationships are maintained.  If you move them outside of Unity, these relationships are broken.  You'll then have to manually re-link lots of dependencies, which is something you probably don't want to do.
 

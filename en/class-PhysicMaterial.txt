@@ -5,7 +5,7 @@ The $$Physics Material$$ is used to adjust friction and bouncing effects of coll
 To create a Physics Material select ^^Assets->Create->Physics Material^^ from the menu bar.  Then drag the Physics Material from the Project View onto a $$Collider$$ in the scene.
 
 Attach:Inspector-PhysicMaterial.png\\
-''The Physics Material $$Inspector$$''
+''The Physics Material Inspector''
 
 
 !! Properties

@@ -1,7 +1,7 @@
 ! Animation
 
 Attach:AnimationInspector35.png\\
-''The Animation $$Inspector$$''
+''The Animation Inspector''
 
 !!Properties
 

@@ -3,7 +3,7 @@
 $$Lens Flares$$ simulate the effect of lights refracting inside camera lens. They are used to represent really bright lights or, more subtly, just to add a bit more atmosphere to your scene.
 
 Attach:Inspector-LensFlare.png\\
-''The Lens Flare $$Inspector$$''
+''The Lens Flare Inspector''
 
 The easiest way to setup a Lens Flare is just to assign the Flare property of the [[class-Light|Light]]. Unity contains a couple of pre-configured Flares in the [[HOWTO-InstallStandardAssets | Standard Assets package]].
 
@@ -12,7 +12,7 @@ Otherwise, create an empty $$GameObject$$ with ^^GameObject->Create Empty^^ from
 To see the effect of Lens Flare in the $$Scene View$$, check the ^^Fx^^ button in the Scene View toolbar:
 
 Attach:LensFlare-FXButton.png\\
-''Enable the ^^Fx^^ button to view Lens Flares in the Scene View''
+''Enable the Fx button to view Lens Flares in the Scene View''
 
 
 !!Properties

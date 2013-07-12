@@ -3,7 +3,7 @@
 The $$Particle Renderer$$ renders the $$Particle System$$ on screen.
 
 Attach:Inspector-ParticleRenderer.png\\
-''The Particle Renderer $$Inspector$$''
+''The Particle Renderer Inspector''
 
 
 !!Properties

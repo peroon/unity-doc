@@ -3,7 +3,7 @@
 The $$Audio Source$$ plays back an [[class-AudioClip | Audio Clip]] in the scene. If the Audio Clip is a 3D clip, the source is played back at a given position and will attenuate over distance. The audio can be spread out between speakers (stereo to 7.1) (''Spread'') and morphed between 3D and 2D (''PanLevel''). This can be controlled over distance with falloff curves. Also, if the [[ class-AudioListener | listener]] is within one or multiple [[ class-AudioReverbZone | Reverb Zones]], reverberations is applied to the source. (PRO only) Individual filters can be applied to each audio source for an even richer audio experience. See [[ class-AudioEffect | Audio Effects]] for more details.
 
 Attach:Editor-AudioSource.png\\
-''The Audio Source gizmo in the $$Scene View$$ and its settings in the $$inspector$$.''
+''The Audio Source gizmo in the Scene View and its settings in the inspector.''
 
 
 
@@ -42,10 +42,10 @@ Attach:TypesOfRollOff.png\\
 
 There are several properties of the audio that can be modified as a function of the distance between the audio source and the audio listener.
 
-%red%$$Volume$$%%: Amplitude(0.0 - 1.0) over distance.\\
-%green%$$Pan$$%%: Left(-1.0) to Right(1.0) over distance.\\
-%blue%$$Spread$$%%: Angle (degrees 0.0 - 360.0) over distance.\\
-%color=#B838CF define=purple%$$Low-Pass$$%% (only if LowPassFilter is attached to the AudioSource): Cutoff Frequency (22000.0-10.0) over distance.
+__Volume__: Amplitude(0.0 - 1.0) over distance.\\
+__Pan__: Left(-1.0) to Right(1.0) over distance.\\
+__Spread__: Angle (degrees 0.0 - 360.0) over distance.\\
+__Low-Pass__ (only if LowPassFilter is attached to the AudioSource): Cutoff Frequency (22000.0-10.0) over distance.
 
 Attach:AudioDistanceFunctions.png\\
 ''Distance functions for Volume, Pan, Spread and Low-Pass audio filter. The current distance to the Audio Listener is marked in the graph.''

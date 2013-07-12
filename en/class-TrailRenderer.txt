@@ -3,7 +3,7 @@
 The $$Trail Renderer$$ is used to make trails behind objects in the scene as they move about.
 
 Attach:Inspector-TrailRenderer.png\\
-''The Trail Renderer $$Inspector$$''
+''The Trail Renderer Inspector''
 
 
 !! Properties

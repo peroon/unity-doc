@@ -10,12 +10,12 @@ Attach:AnimationEditorMenu.png
 The $$Animation View$$ is tightly integrated with the $$Hierarchy View$$, the $$Scene View$$, and the $$Inspector$$. Like the Inspector, the Animation View will show whatever $$Game Object$$ is selected. You can select a Game Object to view using the $$Hierarchy View$$ or the $$Scene View$$. (If you select a Prefab in the $$Project View$$ you can inspect its animation curves as well, but you have to drag the Prefab into the Scene View in order to be able to edit the curves.)
 
 Attach:AnimationEditorShowsSelectedPP.png\\
-''The $$Animation View$$ shows the $$Game Object$$ selected in the $$Hierarchy View$$.''
+''The Animation View shows the Game Object selected in the Hierarchy View''
 
 At the left side of the $$Animation View$$ is a hierarchical list of the animatable properties of the selected $$Game Object$$. The list is ordered by the $$Components$$ and $$Materials$$ attached to the Game Object, just like in the $$Inspector$$. Components and Materials can be folded and unfolded by clicking the small triangles next to them. If the selected Game Object has any child Game Objects, these will be shown after all of the Components and Materials.
 
 Attach:AnimationEditorMatchesInspectorPP.png\\
-''The property list to the left in the $$Animation View$$ shows the Components and Materials of the selected $$Game Object$$, just like the $$Inspector$$.''
+''The property list to the left in the Animation View shows the Components and Materials of the selected Game Object, just like the Inspector''
 
 
 !! Creating a New Animation Clip
@@ -25,12 +25,12 @@ Animated $$Game Objects$$ in Unity need an $$Animation Component$$ that controls
 To create a new $$Animation Clip$$ for the selected $$Game Object$$, click the right of the two selection boxes at the upper right of the $$Animation View$$ and select ^^[Create New Clip]^^. You will then be prompted to save an Animation Clip somewhere in your $$Assets$$ folder. If the Game Object doesn't have an $$Animation Component$$ already, it will be automatically added at this point. The new $$Animation Clip$$ will automatically be added to the list of Animations in the Animation Component.
 
 Attach:AnimationEditorNewClip.png\\
-''Create a new $$Animation Clip$$.''
+''Create a new Animation Clip''
 
 In the $$Animation View$$ you can always see which $$Game Object$$ you are animating and which $$Animation Clip$$ you are editing. There are two selection boxes in the upper left of the Animation View. The left selection box shows the $$Game Object$$ with the $$Animation Component$$ attached, and the right selection box shows the $$Animation Clip$$ you are editing.
 
 Attach:AnimationEditorNewAnimationPP.png\\
-''The left selection box shows the $$Game Object$$ with the $$Animation Component$$ attached, and the right selection box shows the $$Animation Clip$$ you are editing.''
+''The left selection box shows the Game Object with the Animation Component attached, and the right selection box shows the Animation Clip you are editing.''
 
 
 !! Animating a Game Object
@@ -46,12 +46,12 @@ You can stop the $$Animation Mode$$ at any time by clicking the ^^Animation Mode
 You can animate any of the properties shown in the property list of the $$Animation View$$. To animate a property, click on the ^^Key Indicator^^ for that property and choose ^^Add Curve^^ from the menu. You can also select multiple properties and right click on the selection to add curves for all the selected properties at once. (``Transform`` properties are special in that the ``.x``, ``.y``, and ``.z`` properties are linked, so that curves are added three at a time.)
 
 Attach:AnimationEditorAddCurves.png  Attach:AnimationEditorAddMultipleCurves.png\\
-''Any property can be animated by clicking on its ^^Key Indicator^^ or by right clicking on its name. For ``Transform`` properties, curves for ^^.x^^, ^^.y^^, and ^^.z^^ are added together.''
+''Any property can be animated by clicking on its Key Indicator or by right clicking on its name''
 
 When in $$Animation Mode$$, a red vertical line will show which frame of the $$Animation Clip$$ is currently previewed. The $$Inspector$$ and $$Scene View$$ will show the Game Object at that frame of the Animation Clip. The values of the animated properties at that frame are also shown in a column to the right of the property names.
 
 Attach:AnimationEditorPreviewFramePP.png\\
-''In $$Animation Mode$$ a red vertical line shows the currently previewed frame. The animated values at that frame are previewed in the $$Inspector$$ and $$Scene View$$ and to the right of the property names in the $$Animation View$$.''
+''In Animation Mode a red vertical line shows the currently previewed frame''
 
 You can click anywhere on the ^^Time Line^^ to preview or modify that frame in the Animation Clip. The numbers in the ^^Time Line^^ are shown as seconds and frames, so 1:30 means 1 second and 30 frames.
 

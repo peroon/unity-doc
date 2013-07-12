@@ -35,7 +35,7 @@ Attach:AssetBundlesCube.png
 
 この時点で、アセットバンドルの ``Cube.unity3d``をローカルのストレージまたは好きなサーバにアップロードすることが出来ます。
 
-If you are in a test environment, you need to test a change and AssetBundles will have to be rebuilt, it is advisable to use the option [[ScriptRef:BuildAssetBundleOptions.UncompressedAssetBundle.html|BuildAssetBundleOptions.UncompressedAssetBundle]] when you build the AssetBundles. This makes it faster to build and load the AssetBundles but since it is much bigger it will take longer to download.
+In a test environment, you sometimes need to test a change that require AssetBundles to be rebuilt. In these cases, it is advisable to use the option [[ScriptRef:BuildAssetBundleOptions.UncompressedAssetBundle.html|BuildAssetBundleOptions.UncompressedAssetBundle]] when you build the AssetBundles. This makes it faster to build and load the AssetBundles but they will also be bigger and therefore take longer to download.
 
 !! アセットバンドルをビルドする際にアセットのプロパティを変更するサンプル
 

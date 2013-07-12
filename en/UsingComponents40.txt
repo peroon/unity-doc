@@ -40,7 +40,7 @@ Attach:AudioGO.png
 This Component contains a single Reference property, and seven Value properties.  ``Audio Clip`` is the Reference property.  When this Audio Source begins playing, it will attempt to play the audio file that is referenced in the ``Audio Clip`` property.  If no reference is made, an error will occur because there is no audio to be played.  You must reference the file within the Inspector.  This is as easy as dragging an audio file from the Project View onto the Reference Property or using the Object Selector.
 
 Attach:AudioReference.png
-''Now a sound effect file is referenced in the ``Audio Clip`` property''
+''Now a sound effect file is referenced in the Audio Clip property''
 
 Components can include references to any other type of Component, GameObjects, or Assets. You can read more about assigning references on the [[Editing Reference Properties | Assigning References]] page.
 

@@ -196,7 +196,7 @@ iPad 3 では Reflective Water および フルスクリーンのイメージエ
 (:cellnr:)
 
 !!! iPad (4rd generation)
-* Screen: 2048 � 1536 pixels, LCD at 264 ppi, LED-backlit.
+* Screen: 2048x1536 pixels, LCD at 264 ppi, LED-backlit.
 * Apple A6X
 ** Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
 ** Quad-Core PowerVR SGX554MP4 GPU

@@ -3,7 +3,7 @@
 $$Lights$$ will bring personality and flavor to your game. You use lights to illuminate the scenes and objects to create the perfect visual mood. Lights can be used to simulate the sun, burning match light, flashlights, gun-fire, or explosions, just to name a few.
 
 Attach:LightInspectorV3.png\\
-''The Light $$Inspector$$''
+''The Light Inspector''
 
 There are four types of lights in Unity:
 * $$Directional lights$$ are placed infinitely far away and affect everything in the scene, like the sun.

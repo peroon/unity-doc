@@ -11,7 +11,7 @@ Attach:Editor-InspectorDragDrop.png
 Click the question mark beside any Component name in the Inspector to load its Component Reference page. Please view the  [[Components|Component Reference]] for a complete and detailed guide to all of Unity's Components.
 
 Attach:componentsmenu.png\\
-''Add Components from the ^^Component^^ menu''
+''Add Components from the Component menu''
 
 You can click the tiny gear icon (or right-click the Component name) to bring up a context menu for the specific Component.
 
@@ -21,7 +21,7 @@ The Inspector will also show any Import Settings for a selected asset file.
 
 
 Attach:Inspector-ImportSettings.png\\
-''Click ^^Apply^^ to reimport your asset.''
+''Click Apply to reimport your asset.''
 
 Attach:Inspector-Layers_Tags.png
 

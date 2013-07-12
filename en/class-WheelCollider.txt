@@ -30,12 +30,12 @@ The Wheel Collider computes friction separately from the rest of physics engine,
 
 !!! Wheel collider setup
 
-You do not turn or roll WheelCollider objects to control the car - the objects that have WheelCollider attached should always be fixed relative to the car itself. However, you might want to turn and roll the graphical wheel representations. The best way to do this is to setup separate objects for Wheel Colliders and visible wheels:
+You do not turn or roll WheelCollider objects to control the car - the objects that have the WheelCollider attached should always be fixed relative to the car itself. However, you might want to turn and roll the graphical wheel representations. The best way to do this is to setup separate objects for Wheel Colliders and visible wheels:
 
 Attach:WheelsSetup.png\\
 ''Wheel Colliders are separate from visible Wheel Models''
 
-If you want to update the position of graphical wheel representations according to the suspension position you can use the example in the Scripting Reference: [[ScriptRef:WheelCollider.GetGroundHit.html | WheelCollider.GetGroundHit]] . Note that WheelCollider's gizmo's position is not updated in playmode:
+If you want to update the position of the graphical wheel representations according to the suspension position you can use the example for [[ScriptRef:WheelCollider.GetGroundHit.html | WheelCollider.GetGroundHit]] in the Scripting Reference. Note that the gizmo graphic for the WheelCollider's position is not updated in playmode:
 
 Attach:WheelColliderGizmo.png\\
 ''Position of WheelCollider Gizmo in runtime using a suspension distance of 0.15''

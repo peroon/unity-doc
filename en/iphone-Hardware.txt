@@ -181,7 +181,7 @@ iPad2: The A5 can do full screen bumpmapping, assuming the shader is simple enou
 (:cellnr:)
 
 !!! iPad (3rd generation)
-* Screen: 2048 × 1536 pixels, LCD at 264 ppi, LED-backlit.
+* Screen: 2048x1536 pixels, LCD at 264 ppi, LED-backlit.
 * Apple A5X
 ** Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
 ** Quad-Core PowerVR SGX543MP4 GPU
@@ -196,7 +196,7 @@ The iPad 3 has been shown to be capable of render-to-texture effects such as ref
 (:cellnr:)
 
 !!! iPad (4rd generation)
-* Screen: 2048 × 1536 pixels, LCD at 264 ppi, LED-backlit.
+* Screen: 2048x1536 pixels, LCD at 264 ppi, LED-backlit.
 * Apple A6X
 ** Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
 ** Quad-Core PowerVR SGX554MP4 GPU

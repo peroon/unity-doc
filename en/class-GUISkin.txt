@@ -3,7 +3,7 @@
 $$GUISkins$$ are a collection of $$GUIStyles$$ that can be applied to your GUI.  Each $$Control$$ type has its own Style definition.  Skins are intended to allow you to apply style to an entire UI, instead of a single Control by itself.
 
 Attach:Inspector-GUISkin.png\\
-''A GUI Skin as seen in the $$Inspector$$''
+''A GUI Skin as seen in the Inspector''
 
 To create a GUISkin, select ^^Assets->Create->GUI Skin^^ from the menubar.
 

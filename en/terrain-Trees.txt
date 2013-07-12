@@ -49,7 +49,7 @@ Attach:TerrainGuide-TreeBrushSize.png\\
 ''Different Brush sizes cover different area sizes''
 
 Attach:TerrainGuide-TreeSpacing.png\\
-''Adjust ``Tree Spacing`` to change the density of the trees you're painting''
+''Adjust Tree Spacing to change the density of the trees you're painting''
 
 
 !! Editing Trees

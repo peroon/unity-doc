@@ -3,7 +3,7 @@
 $$Fixed Joints$$ restricts an object's movement to be dependent upon another object.  This is somewhat similar to $$Parenting$$ but is implemented through physics rather than $$Transform$$ hierarchy.  The best scenarios for using them are when you have objects that you want to easily break apart from each other, or connect two object's movement without parenting.
 
 Attach:Inspector-FixedJoint.png\\
-''The Fixed Joint $$Inspector$$''
+''The Fixed Joint Inspector''
 
 
 !! Properties

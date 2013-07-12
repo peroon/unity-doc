@@ -2,7 +2,7 @@
 The $$Spring Joint$$ groups together two $$Rigidbodies$$, constraining them to move like they are connected by a spring.
 
 Attach:Inspector-SpringJoint.png\\
-''The Spring Joint $$Inspector$$''
+''The Spring Joint Inspector''
 
 !!Properties
 

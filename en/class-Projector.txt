@@ -3,7 +3,7 @@
 A $$Projector$$ allows you to project a $$Material$$ onto all objects that intersect its frustum. The material must use a special type of shader for the projection effect to work correctly - see the projector prefabs in Unity's standard assets for examples of how to use the supplied Projector/Light and Projector/Multiply shaders.
 
 Attach:Inspector-Projector.png\\
-''The Projector $$Inspector$$''
+''The Projector Inspector''
 
 !!Properties
 

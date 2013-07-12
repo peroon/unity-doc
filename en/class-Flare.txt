@@ -5,7 +5,7 @@ $$Flare$$ objects are the source assets that are used by [[class-LensFlare | Len
 There are some sample Flares in the [[HOWTO-InstallStandardAssets | Standard Assets]] package. If you want to add one of these to your scene, attach a [[class-LensFlare | Lens Flare]] Component to a GameObject, and drag the Flare you want to use into the ``Flare`` property of the Lens Flare, just like assigning a $$Material$$ to a $$Mesh Renderer$$.
 
 Attach:FlareInspector.png\\
-''The Flare $$Inspector$$''
+''The Flare Inspector''
 
 Flares work by containing several Flare ``Elements`` on a single $$Texture$$.  Within the Flare, you pick & choose which ``Elements`` you want to include from any of the Textures. 
 

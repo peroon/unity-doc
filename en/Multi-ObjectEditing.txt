@@ -10,19 +10,19 @@ When selecting multiple objects, a component is only shown in the $$Inspector$$ 
 When multiple objects are selected, each property shown in the Inspector represents that property on each of the selected objects. If the value of the property is the same for all the objects, the value will be shown as normal, just like when editing a single object. If the value of the property is not the same for all the selected objects, no value is shown and a dash or similar is shown instead, indicating that the values are different.
 
 Attach:MultiEditElectricBothWithLines.png
-->              ''Multi-edit of two objects''
+''Multi-edit of two objects''
 
 Regardless of whether a value is shown or a dash, the property value can be edited as usual and the changed value is applied to all the selected objects. If the values are different and a dash is thus shown, it's also possible to right-click on the label of the property. This brings up a menu that lets you choose from which of the objects to inherit the value. 
 
 Attach:MultiEditPullDown.png
-->              ''Selecting which object to get the value from''
+''Selecting which object to get the value from''
 
 !! Multi-Editing Prefab or Model Instances
 
 Prefabs can be multi-edited just like Game Objects in the scene. Instances of prefabs or of models can also be multi-edited; however certain restrictions apply: When editing a single prefab or model instance, any property that is different from the prefab or model will appear in bold, and when right clicking there's an option to revert the property to the value it has in the prefab or model. Furthermore, the Game Object has options to apply or revert all changes. None of these things are available when multi-object editing. Properties cannot be reverted or applied; nor will they appear in bold if different from the prefab or model. To remind you of this, the $$Inspector$$ will show a note with ''Instance Management Disabled'' where the ^^Select^^, ^^Revert^^, and ^^Apply^^ buttons would normally appear.
 
 Attach:MultiEditInstanceManagementDisabled.png
-->              ''Instance Managment Disabled for multi-edit of prefabs''
+''Instance Management Disabled for multi-edit of prefabs''
 
 !! Non-Supported Objects
 

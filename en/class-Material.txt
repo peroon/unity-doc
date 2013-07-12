@@ -23,7 +23,7 @@ Materials are used to place [[class-Texture2D|Textures]] onto your GameObjects. 
 After you create your material, the first thing you should decide is which Shader to use.  You choose it from the drop-down ``Shader`` menu.
 
 Attach:Material-ShaderMenu.png
-''The ``Shader`` drop-down menu''
+''The Shader drop-down menu''
 
 You can choose any Shader that exists in your project's assets folder or one of the built-in Shaders. You can also create your own Shaders.  For more information on using the built-in Shaders, view the [[Built-in Shader Guide]].  For information on writing your own shaders, take a look at the [[Shaders]] section of the Manual and [[SL-Reference | ShaderLab Reference]].
 
@@ -54,7 +54,7 @@ The different types of Shader properties are:
 The placement of the textures can be altered by changing the ``Offset`` and ``Tiling`` properties.
 
 Attach:Material-Placement.png\\
-''This texture is tiled 2x2 times by changing the ``Tiling`` properties''
+''This texture is tiled 2x2 times by changing the Tiling properties''
 
 ||PROPS
 ||``Offset`` ||Slides the Texture around. ||

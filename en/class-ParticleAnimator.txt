@@ -3,7 +3,7 @@
 $$Particle Animators$$ move your particles over time, you use them to apply wind, drag & color cycling to your particle systems.
 
 Attach:Inspector-ParticleAnimator.png\\
-''The Particle Animator $$Inspector$$''
+''The Particle Animator Inspector''
 
 
 !! Properties
@@ -31,7 +31,7 @@ If you would like your particles to change colors or fade in/out, enable them to
 If you want your particles to fade in rather than instantly appear, set your first or last color to have a low Alpha value.
 
 Attach:ParticleRainbow.png\\
-''An ``Animating Color`` Particle System''
+''An Animating Color Particle System''
 
 
 !!! Rotation Axes

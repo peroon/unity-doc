@@ -3,7 +3,7 @@
 The $$Hinge Joint$$ groups together two [[class-Rigidbody|Rigidbodies]], constraining them to move like they are connected by a hinge. It is perfect for doors, but can also be used to model chains, pendulums, etc.
 
 Attach:Inspector-HingeJoint.png\\
-''The Hinge Joint $$Inspector$$''
+''The Hinge Joint Inspector''
 
 !!Properties
 

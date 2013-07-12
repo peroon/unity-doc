@@ -3,7 +3,7 @@
 $$GUI Text$$ displays text of any font you import in screen coordinates.
 
 Attach:Inspector-GUIText.png\\
-''The GUI Text $$Inspector$$''
+''The GUI Text Inspector''
 
 __Please Note__: Unity 2.0 introduced $$UnityGUI$$, a GUI Scripting system.  You may prefer creating user interface elements with UnityGUI instead of GUI Texts.  Read more about how to use UnityGUI in the [[GUI Scripting Guide]].
 

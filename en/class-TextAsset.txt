@@ -9,7 +9,7 @@ $$Text Assets$$ are a format for imported text files.  When you drop a text file
 *__.bytes__
 
 Attach:TextAssetInspector.png\\
-''The Text Asset $$Inspector$$''
+''The Text Asset Inspector''
 
 
 !! Properties
