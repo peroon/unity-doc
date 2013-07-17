@@ -3,7 +3,7 @@
 The Inspector Lock and the Inspector Debug Mode are two useful options that can help you in your workflow.  
 
 !! Lock
-The Lock lets you maintain focus on a specific GameObject in the Inspector while selecting other GameObjects. To toggle the lock of an Inspector click on the ''lock/unlock'' (Attach:LockUnlock.png) icon above the Inspector or open the tab menu and select ^^Lock^^.
+The Lock lets you maintain focus on a specific GameObject in the Inspector while selecting other GameObjects. To toggle the lock of an Inspector click on the padlock icon at the top right of the Inspector or open the tab menu and select ^^Lock^^.
 
 Attach:LockUnlockInspector.png\\
 ''Locking the Inspector from the tab menu.''

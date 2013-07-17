@@ -25,7 +25,9 @@ Attach:MecanimRootMotionController.png
 *Drag ``RootMotionController`` onto the ``Controller`` property of the Animator
 *If you press play now, you should see the "Dude" running in place
 
-*Finally, to control the motion, we will need to create a script (RootMotionScript.cs), that implements the @@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ callback. 
+Finally, to control the motion, we will need to create a script (RootMotionScript.cs), that implements the @@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ callback:-
+
+
 [@
 using UnityEngine;
 using System.Collections;
@@ -47,9 +49,12 @@ public class RootMotionScript : MonoBehaviour {
 	}
 }
 @]
-*Attach RootMotionScript.cs to "Dude"
-*Note that the Animator component detects there is a script with @@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ and ``Apply Root Motion`` property shows up as ''Handled by Script''
+
+
+You should attach RootMotionScript.cs to the "Dude" object. When you do this, the Animator component will detect that the script has an @@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ function and show the ``Apply Root Motion`` property as ''Handled by Script''
+
 Attach:MecanimRootMotionDude.png
-*Now you should see that the character is moving at the speed specified. 
+
+
 
 (back to [[MecanimAnimationSystem|Mecanim introduction]])

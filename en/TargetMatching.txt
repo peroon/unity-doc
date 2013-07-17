@@ -2,15 +2,16 @@
 
 Often in games, a situation arises where a character must move in such a way that a hand or foot lands at a certain place at a certain time. For example, the character may need to jump across stepping stones or jump and grab an overhead beam.
 
-You can use the [[ScriptRef:Animator.MatchTarget|Animator.MatchTarget function]] to handle this kind of situation. Say, for example, you want to arrange an situation where the character jumps onto a platform and you already have an animation clip for it called ''Jump Up''. To do this, follow the steps below.
+You can use the [[ScriptRef:Animator.MatchTarget|Animator.MatchTarget function]] to handle this kind of situation. Imagine, for example, you want to arrange an situation where the character jumps onto a platform and you already have an animation clip for it called ''Jump Up''. Firstly, you need to find the place in the animation clip at which the character is beginning to get off the ground, note in this case it is 14.1% or 0.141 into the animation clip in normalized time:-
 
-*Find the place in the animation clip at which the character is beginning to get off the ground, note in this case it is 14.1% or 0.141 into the animation clip in normalized time.
 Attach:MecanimMatchTargetStart.png
 
-*Find the place in the animation clip at which the character is about to land on his feet, note in this case the value is 78.0% or 0.78. 
+You also need to find the place in the animation clip where the character is about to land on his feet, which in this case is at 78.0% or 0.78.
+
 Attach:MecanimMatchTargetEnd.png
 
-*Create a script (@@TargetCtrl.cs@@) that makes a call to [[ScriptRef:Animator.MatchTarget|MatchTarget]], like this: 
+With this information, you can create a script that calls [[ScriptRef:Animator.MatchTarget|MatchTarget]] which you can attach to the model:- 
+
 
 [@using UnityEngine;
 using System;
@@ -36,8 +37,6 @@ public class TargetCtrl : MonoBehaviour {
 }
 @]
 
-Attach that script onto the Mecanim model. 
-Attach:MecanimMatchTargetInspector.png
 
 The script will move the character so that it jumps from its current position and lands with its left foot at the target. Bear in mind that the result of using MatchTarget will generally only make sense if it is called at the right point in gameplay.
 

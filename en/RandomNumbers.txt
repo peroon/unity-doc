@@ -49,7 +49,7 @@ In the script, the paper strip is actually an array of floats that contain the d
 
 Note that the final return statement is necessary because Random.value can return a result of 1. In this case, the search will not find the random point anywhere. Changing the line
 
-[@if (randomPoint < probs[i])@]
+[@if (randomPoint &lt; probs[i])@]
 
 ...to a less-than-or-equal test would avoid the extra return statement but would also allow an item to be chosen occasionally even when its probability is zero.
 

@@ -16,20 +16,23 @@ Your project should also contain another character model with a valid Avatar.
 If in doubt about the terminology, consult the [[Animation Glossary]]
 
 The recommended setup is to:
+
 *Create a GameObject in the Hierarchy that contains Character-related components
 ->Attach:MecanimRetargetingTopLevel.png
 
 *Put the model as a child of the GameObject, together with the Animator component
 ->Attach:MecanimRetargetingModel.png
 
-*Make sure scripts referencing the Animator are looking for the animator in the children instead of the root (use @@GetComponentInChildren&lt;Animator&gt;()@@ instead of @@GetComponent&lt;Animator&gt;()@@)
+*Make sure scripts referencing the Animator are looking for the animator in the children instead of the root; use GetComponentInChildren&lt;Animator&gt;() instead of GetComponent&lt;Animator&gt;().
 
 ->Attach:MecanimRetargetingKyle.png
 
 Then in order to reuse the same animations on another model, you need to:
+
 *Disable the original model 
 *Drop in the desired model as another child of GameObject
-->Attach:MecanimRetargetingOtherModel.png
+
+Attach:MecanimRetargetingOtherModel.png
 
 *Make sure the Animator Controller property for the new model is referencing the same controller asset
 ->Attach:MecanimRetargetingOtherModelCorrectController.png

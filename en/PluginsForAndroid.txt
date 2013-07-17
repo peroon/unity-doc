@@ -71,10 +71,12 @@ You can choose whichever approach you prefer, be it raw JNI through $$AndroidJNI
 
 [[ScriptRef:AndroidJNI.html | UnityEngine.AndroidJNI]] is a wrapper for the JNI calls available in C (as described above). All methods in this class are static and have a 1:1 mapping to the Java Native Interface. [[ScriptRef:AndroidJNIHelper.html | UnityEngine.AndroidJNIHelper]] provides helper functionality used by the next level, but is exposed as public methods because they may be useful for some special cases.
 
-Instances of [[ScriptRef:AndroidJavaObject.html | UnityEngine.AndroidJavaObject]] and [[ScriptRef:AndroidJavaClass.html | UnityEngine.AndroidJavaClass]] have a 1:1 mapping to an instance of java.lang.Object and java.lang.Class (or subclasses thereof) on the Java side, respectively. They essentially provide 3 types of interaction with the Java side: 
+Instances of [[ScriptRef:AndroidJavaObject.html | UnityEngine.AndroidJavaObject]] and [[ScriptRef:AndroidJavaClass.html | UnityEngine.AndroidJavaClass]] have a one-to-one mapping to an instance of java.lang.Object and java.lang.Class (or subclasses thereof) on the Java side, respectively. They essentially provide 3 types of interaction with the Java side:-
+
 ** Call a method
 ** Get the value of a field
 ** Set the value of a field
+
 
 The $$Call$$ is separated into two categories: $$Call$$ to a 'void' method, and $$Call$$ to a method with non-void return type. A generic type is used to represent the return type of those methods which return a non-void type. The $$Get$$ and $$Set$$ always take a generic type representing the field type. 
 

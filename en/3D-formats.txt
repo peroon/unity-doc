@@ -32,5 +32,5 @@ __Disadvantages:__
 * A licensed copy of that software must be installed on all machines using the Unity project
 * Files can become bloated with unnecessary data
 * Big files can slow Unity updates
-* Less validation – harder to troubleshoot problems
+* Less validation, so it is harder to troubleshoot problems
 

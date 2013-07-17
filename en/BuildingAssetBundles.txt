@@ -27,7 +27,7 @@ Attach:AssetBundleMenuOptions.png
 For this example, you should create a new prefab. First create a new Cube by going to ^^GameObject -> Create Other -> Cube^^, which will create a new cube in the Hierarchy View. Then drag the Cube from the Hierarchy View into the Project View, which will create a prefab of that object.
 
 You should then right click the Cube prefab in the project window and select ^^Build AssetBundle From Selection - Track dependencies^^. 
-At this point you will be presented with a window to save the “bundled” asset. If you created a new folder called "AssetBundles" and saved the cube as ``Cube.unity3d``, your project window will now look something like this.
+At this point you will be presented with a window to save the "bundled" asset. If you created a new folder called "AssetBundles" and saved the cube as ``Cube.unity3d``, your project window will now look something like this.
 
 Attach:AssetBundlesCube.png
 

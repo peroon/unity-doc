@@ -6,7 +6,7 @@ The fist part to writing a custom material editor is defining a shader that requ
 
 To define a custom editor you extend from the MaterialEditor class and place the script below an Editor folder in the assets directory.
 
-(:code:)
+[@
 using UnityEditor;
 
 public class CustomMaterialInspector : MaterialEditor {
@@ -14,15 +14,14 @@ public class CustomMaterialInspector : MaterialEditor {
 		base.OnInspectorGUI ();
 	}
 }
-(:codeend:)
+@]
 
 Any shader that has a custom editor defined (__CustomEditor "CustomMaterialInspector"__) will find the editor listed above and execute the associated code. 
 
 !! A real example
 So we have a situation where we have a shader that can work in two modes; it renders standard diffuse lighting or it only renders the red components of the source texture. This is achieved using shader multi compilation.
 
-(:code:)
-Shader "Custom/Redify" {
+[@Shader "Custom/Redify" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 	}
@@ -54,11 +53,11 @@ Shader "Custom/Redify" {
 	FallBack "Diffuse"
 	CustomEditor "CustomMaterialInspector"
 }
-(:codeend:)
+@]
 
 As you can see the shader has two Keywords available for setting: REDIFY_ON and REDIFY_OFF. These can be changed be set on a per material basis by using the shaderKeywords property of the material. below is an editor that does this.
 
-(:code:)
+[@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -92,13 +91,13 @@ public class CustomMaterialInspector : MaterialEditor {
 		}
 	}
 }
-(:codeend:)
+@]
 
 
 !!How the default material editor works
 The default Unity editor renders all the properties that exist in a shader to the the material editor. Below is a custom material editor that behaves similar to the Unity material editor. Use this example if you wish to manually render the default fields.
 
-(:code:)
+[@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -180,6 +179,6 @@ public class CustomMatInspector : MaterialEditor {
 	}
 }
 
-(:codeend:)
+@]
 
 

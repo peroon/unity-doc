@@ -23,7 +23,7 @@ Garbage collection is automatic and invisible to the programmer but the collecti
 
 There are some infamous algorithms that can be GC nightmares even though they seem innocent at first sight. Repeated string concatenation is a classic example:-
 
-(:code:)
+[@
 function ConcatExample(intArray: int[]) {
 	var line = intArray[0].ToString();
 	
@@ -32,24 +32,26 @@ function ConcatExample(intArray: int[]) {
 	}
 	
 	return line;
-}(:codeend:)
+}
+@]
 
 The key detail here is that the new pieces don't get added to the string in place, one by one. What actually happens is that each time around the loop, the previous contents of the line variable become dead - a whole new string is allocated to contain the original piece plus the new part at the end. Since the string gets longer with increasing values of i, the amount of heap space being consumed also increases and so it is easy to use up hundreds of bytes of free heap space each time this function is called. If you need to concatenate many strings together then a much better option is the Mono library's [[http://msdn.microsoft.com/en-gb/library/system.text.stringbuilder.aspx|System.Text.StringBuilder]] class.
 
 However, even repeated concatenation won't cause too much trouble unless it is called frequently, and in Unity that usually implies the frame update. Something like:-
 
-(:code:)
+[@
 var scoreBoard: GUIText;
 var score: int;
 
 function Update() {
 	var scoreText: String = "Score: " + score.ToString();
 	scoreBoard.text = scoreText;
-}(:codeend:)
+}
+@]
 
 ...will allocate new strings each time Update is called and generate a constant trickle of new garbage. Most of that can be saved by updating the text only when the score changes:-
 
-(:code:)
+[@
 var scoreBoard: GUIText;
 var scoreText: String;
 var score: int;
@@ -61,12 +63,13 @@ function Update() {
 		scoreBoard.text = scoreText;
 		oldScore = score;
 	}
-}(:codeend:)
+}
+@]
 
 
 Another potential problem occurs when a function returns an array value:-
 
-(:code:)
+[@
 function RandomList(numElements: int) {
 	var result = new float[numElements];
 	
@@ -75,16 +78,18 @@ function RandomList(numElements: int) {
 	}
 	
 	return result;
-}(:codeend:)
+}
+@]
 
 This type of function is very elegant and convenient when creating a new array filled with values. However, if it is called repeatedly then fresh memory will be allocated each time. Since arrays can be very large, the free heap space could get used up rapidly, resulting in frequent garbage collections. One way to avoid this problem is to make use of the fact that an array is a reference type. An array passed into a function as a parameter can be modified within that function and the results will remain after the function returns. A function like the one above can often be replaced with something like:-
 
-(:code:)
+{@
 function RandomList(arrayToFill: float[]) {
 	for (i = 0; i < arrayToFill.Length; i++) {
 		arrayToFill[i] = Random.value;
 	}
-}(:codeend:)
+}
+@]
 
 This simply replaces the existing contents of the array with new values. Although this requires the initial allocation of the array to be done in the calling code (which looks slightly inelegant), the function will not generate any new garbage when it is called.
 
@@ -96,12 +101,12 @@ As mentioned above, it is best to avoid allocations as far as possible. However,
 
 This strategy is often best for games that have long periods of gameplay where a smooth framerate is the main concern. A game like this will typically allocate small blocks frequently but these blocks will be in use only briefly. The typical heap size when using this strategy on iOS is about 200KB and garbage collection will take about 5ms on an iPhone 3G. If the heap increases to 1MB, the collection will take about 7ms. It can therefore be advantageous sometimes to request a garbage collection at a regular frame interval. This will generally make collections happen more often than strictly necessary but they will be processed quickly and with minimal effect on gameplay:-
 
-(:code:)
+[@
 if (Time.frameCount % 30 == 0)
 {
    [[http://msdn.microsoft.com/en-gb/library/xe0c2357.aspx|System.GC.Collect]]();
 }
-(:codeend:)
+@]
 
 However, you should use this technique with caution and check the profiler statistics to make sure that it is really reducing collection time for your game.
 
@@ -109,7 +114,7 @@ However, you should use this technique with caution and check the profiler stati
 
 This strategy works best for games where allocations (and therefore collections) are relatively infrequent and can be handled during pauses in gameplay. It is useful for the heap to be as large as possible without being so large as to get your app killed by the OS due to low system memory. However, the Mono runtime avoids expanding the heap automatically if at all possible. You can expand the heap manually by preallocating some placeholder space during startup (ie, you instantiate a "useless" object that is allocated purely for its effect on the memory manager):-
 
-(:code:)
+[@
 function Start() {
 	var tmp = new System.Object[1024];
 
@@ -121,13 +126,13 @@ function Start() {
         tmp = null;
 }
 
-(:codeend:)
+@]
 
 A sufficiently large heap should not get completely filled up between those pauses in gameplay that would accommodate a collection. When such a pause occurs, you can request a collection explicitly:-
 
-(:code:)
-[[http://msdn.microsoft.com/en-gb/library/xe0c2357.aspx|System.GC.Collect]]();
-(:codeend:)
+[@
+System.GC.Collect();
+@]
 
 Again, you should take care when using this strategy and pay attention to the profiler statistics rather than just assuming it is having the desired effect.
 

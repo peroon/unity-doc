@@ -188,6 +188,7 @@ To build a wrecked airplane Prefab, the typical steps are:
 # Choose ^^Assets->Create Prefab^^
 # Drag the root GameObject containing all the airplane parts into the Prefab
 
+The following example shows how these steps are modelled in code.
 
 [@// JavaScript
 

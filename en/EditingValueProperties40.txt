@@ -61,9 +61,9 @@ The downward-pointing arrows above the gradient bar are also stops but they corr
 
 Scripts that you write can expose native .Net arrays to the Inspector.  When the Inspector encounters an array it will allow you to edit the length of the array.  The length defaults to zero.  When the size is set above zero the Inspector creates slots where you can enter values for the elements of the array.  If your Array stores data of a type that Unity knows it will insert the appropriate value editor.  For example:
 
-(:code:)
+[@
 var pickupColors : Color32[];
-(:codeend:)
+@]
 
 would result in an color picker editor for each element in the array.
 

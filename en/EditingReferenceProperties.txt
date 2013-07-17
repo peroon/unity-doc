@@ -3,9 +3,10 @@
 Reference properties are properties that reference other objects such as GameObjects, Components, or Assets. The reference slot will show what kind of objects can be used for this reference.
 
 Attach:AudioGO.png
-''The ``Audio Clip`` property slot shows that it accept references to objects of type ``Audio Clip``''
+''The Audio Clip property slot shows that it accept references to objects of type AudioClip''
+
 Attach:AudioReference.png
-''Now an ``Audio Clip`` file is referenced in the ``Audio Clip`` property.''
+''Now an Audio Clip file is referenced in the Audio Clip property.''
 
 This type of referencing is very quick and powerful, especially when using scripting. To learn more about using scripts and properties, see the Scripting Tutorial on the [[Main.Tutorials | Tutorials]] page.
 

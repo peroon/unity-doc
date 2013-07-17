@@ -192,6 +192,7 @@ void Update () {
 # ^^Assets->Create Prefab^^ を選択
 # 全ての飛行機のパーツを含むルートのゲームオブジェクトをプレハブにドラッグ＆ドロップ
 
+The following example shows how these steps are modelled in code.
 
 [@// JavaScript
 

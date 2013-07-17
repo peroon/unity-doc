@@ -56,7 +56,8 @@ The first part means that during post processing you cannot get the correct refe
 
 !!! Example of references being lost because they are not persistent yet
 Consider this small example:
-(:code:)
+
+[@
 public class ModelPostprocessor : AssetPostprocessor
 {
     public void OnPostprocessModel(GameObject go)
@@ -64,23 +65,24 @@ public class ModelPostprocessor : AssetPostprocessor
         PrefabUtility.CreatePrefab("Prefabs/" + go.name, go);
     }
 }
-(:codeend:)
+@]
 
 In Unity 3.5 this would create a prefab with all the correct references to the meshes and so on because all the meshes would already have been made persistent, but since this is not the case in Unity 4.0 the same post processor will create a prefab where all the references to the meshes are gone, simply because Unity 4.0 does not yet know how to resolve the references to objects in the original model prefab. To correctly copy a modelprefab in to prefab you should use ``OnPostProcessAllAssets`` to go through all imported assets, find the modelprefab and create new prefabs as above.
 
 
 !!! Example of references to previously imported assets being discarded
 The second example is a little more complex but is actually a use case we have seen in 3.5 that broke in 4.0. Here is a simple ``ScriptableObject`` with a references to a mesh.
-(:code:)
+
+[@
 public class Referencer : ScriptableObject
 {
     public Mesh myMesh;	
 }
-(:codeend:)
+@]
 
 We use this ``ScriptableObject`` to create an asset with references to a mesh inside a model, then in our post processor we take that reference and give it a different name, the end result being that when we have reimported the model the name of the mesh will be what the post processor determines.
 
-(:code:)
+[@
 public class Postprocess : AssetPostprocessor
 {
 	public void OnPostprocessModel(GameObject go)
@@ -89,7 +91,7 @@ public class Postprocess : AssetPostprocessor
 		myRef.myMesh.name = "AwesomeMesh";
 	}
 }
-(:codeend:)
+@]
 
 This worked fine in Unity 3.5 but in Unity 4.0 the already imported model will be completely replaced, so changing the name of the mesh from a previous import will have no effect. The Solution here is to find the mesh by some other means and change its name. What is most important to note is that in Unity 4.0 you should ONLY modify the given input to the post processor and not rely on the previously imported version of the same asset.
 

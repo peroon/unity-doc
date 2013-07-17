@@ -1,5 +1,9 @@
-Note: This is the documentation for the new particle system (Shuriken). For documentation on the legacy particle system go to [[comp-ParticlesLegacy|Legacy Particle System]].
+!Particle Systems
 
-(:include class-ParticleSystem:)
+Particle Systems in Unity are used to make clouds of smoke, steam, fire and other atmospheric effects. 
+
+Attach:ShurikenFrontPageFlare.png
+
+Unity's particle system engine is called $$Shuriken$$. This section explains how you can use Shuriken effects to enhance your game.
 
 (:tocportion:)

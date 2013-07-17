@@ -29,13 +29,13 @@ The $$Gizmo Display Toggles$$ are used to define the location of any Transform G
 Attach:HandlePositionButtons.png\\
 ''Gizmo Display Toggles''
 
-* Position:
-** ^^Center^^ will position the Gizmo at the center of the object's rendered bounds.
-** ^^Pivot^^ will position the Gizmo at the actual pivot point of a Mesh.
+For Position:
+* ^^Center^^ will position the Gizmo at the center of the object's rendered bounds.
+* ^^Pivot^^ will position the Gizmo at the actual pivot point of a Mesh.
 
-* Rotation:
-** ^^Local^^ will keep the Gizmo's rotation relative to the object's.
-** ^^Global^^ will clamp the Gizmo to world space orientation.
+For Rotation:
+* ^^Local^^ will keep the Gizmo's rotation relative to the object's.
+* ^^Global^^ will clamp the Gizmo to world space orientation.
 
 
 !! Unit Snapping

@@ -17,12 +17,10 @@ The GPU is used for shaders, drawcalls, image effects.
 *Use the internal profiler to detect the CPU and GPU ms
 
 !!!Pareto analysis 
-A large majority of problems (80%) are produced by a few key causes (20%).
+A large majority of problems (80%) are produced by a few key causes (20%). You can use the Editor profiler to identify the most processor-intensive function calls and optimize them first. Often, optimizing a few key functions can give a significant increase in overall execution speed.
 
-#Use the Editor profiler to get the most problematic function calls and optimize them first.
-#Make sure the scripts run only when necessary.
-##Use ''OnBecameVisible/OnBecameInvisible'' to disable inactive objects.
-##Use coroutines if you don’t need some scripts to run every frame.
+You should make sure that functions are only executed when really necessary. For example, you can use events like ''OnBecameVisible'' and ''OnBecameInvisible'' to detect when an object can't be seen and avoid updating it. Coroutines can be a useful way to call code that needs regular updates but doesn't need to run every frame:-
+
 [@
 // Do some stuff every frame:
 void Update () {
@@ -35,7 +33,8 @@ IEnumerator Start ()_ {
    }
 }
 @]
-##Use the ''.NET System.Threading.Thread'' class to put heavy calculations to the other thread. This allows you to run on multiple cores, but Unity API is not thread-safe. So buffer inputs and results and read and assign them on the main thread.
+
+You can use the .NET ''System.Threading.Thread'' class to run heavy calculations on a separate thread. This allows you to run on multiple cores but note that the Unity API is not thread-safe - you need to buffer inputs and results and read and assign them on the main thread in order to use Unity API calls.
 
 !!CPU Profiling
 
@@ -57,7 +56,7 @@ The Unity Editor profiler cannot show GPU data as of now. We’re working with har
 **“Device Utilization %” - GPU time spent on rendering in total. >95% means the app is GPU bound.
 **“Renderer Utilization %” - GPU time spent drawing pixels.
 **“Tiler Utilization %” - GPU time spent processing vertices.
-**“Split count” - the number of frame splits, where the vertex data didn’t fit into allocated buffers.
+**“Split count&#148; - the number of frame splits, where the vertex data didn’t fit into allocated buffers.
 
 PowerVR is tile based deferred renderer, so it&#146;s impossible to get GPU timings per draw call. However you can get GPU times for the whole scene using Unity’s built-in profiler (the one that prints results to Xcode output). Apple’s tools currently can only tell you how busy the GPU and its parts are, but do not give times in milliseconds.
 
@@ -156,27 +155,6 @@ No tools yet but you can use the following.
 ***Profile memory activity - when does the first memory page fill up?
 ***Do you really need so many gameobjects that a single memory page is not enough?
 **Use structs instead of classes for local data. Classes are stored on the heap; structs on the stack.
-	
-[@
-class MyClass {
-   public int a, b, c;
-}
-
-struct MyStruct {
-   public int a, b, c;
-}
-
-void Update () {
-   //BAD
-   // allocated on the heap, will be garbage collected later!
-   MyClass c = new MyClass();
-   
-   //GOOD
-   //allocated on the stack, no GC going to happen!
-   MyStruct s = new MyStruct();
-}
-@]
-
 *Read the relevant section in the manual Link to http://docs.unity3d.com/Documentation/Manual/UnderstandingAutomaticMemoryManagement.html
 
 !!!Out of memory crashes

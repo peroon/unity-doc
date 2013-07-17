@@ -150,10 +150,10 @@ Attach:ScriptDefines.png
 
 自身のカスタムのプリプロセッサ ディレクティブを定義して、コンパイル時にどのコードを include するか制御することが出来ます。これを行うためには追加のディレクティブを含んだテキストファイルを "Assets/" フォルダに追加します。ファイルの名前は使用している言語に依存し、拡張子は __.rsp__ です:
 
-||C#||@@<Project Path>/Assets/smcs.rsp@@||
-||C# - Editor Scripts||@@<Project Path>/Assets/gmcs.rsp@@||
-||UnityScript||@@<Project Path>/Assets/us.rsp@@||
-||Boo||@@<Project Path>/Assets/boo.rsp@@||
+||C#||@@&lt;Project Path&gt;/Assets/smcs.rsp@@||
+||C# - Editor Scripts||@@&lt;Project Path&gt;/Assets/gmcs.rsp@@||
+||UnityScript||@@&lt;Project Path&gt;/Assets/us.rsp@@||
+||Boo||@@&lt;Project Path&gt;/Assets/boo.rsp@@||
 
 例として、もし __smcs.rsp__ に "@@-define:UNITY_DEBUG@@" を一行含めれば、 @@UNITY_DEBUG@@ の定義は C# スクリプトにおいて、エディタスクリプトを除いてグローバルのカスタム定義として存在することになります。
 

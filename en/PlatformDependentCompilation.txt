@@ -52,10 +52,11 @@ Attach:BuildSettings.png\\
 
 Select the platform you want to test your precompiled code against and press the ^^Switch Editor^^ button to tell Unity which platform you are targeting.
 
-Create a script and copy/paste this code:
+Create a script and copy/paste this code:-
 
-JavaScript Example:
+
 [@
+// JS
 function Awake() {
   #if UNITY_EDITOR
     Debug.Log("Unity Editor");
@@ -73,11 +74,9 @@ function Awake() {
     Debug.Log("Stand Alone Windows");
   #endif	
 }
-@]
 
-C# Example:
 
-[@
+// C#
 using UnityEngine;
 using System.Collections;
 
@@ -102,10 +101,9 @@ public class PlatformDefines : MonoBehaviour {
 
   }			   
 }
-@]
-Boo Example:
 
-[@
+
+// Boo
 import UnityEngine
 
 class PlatformDefines (MonoBehaviour): 
@@ -124,17 +122,23 @@ class PlatformDefines (MonoBehaviour):
 			Debug.Log("not an iPhone")
 
 @]
+
+
 Then, depending on which platform you selected, one of the messages will get printed on the Unity console when you press play.
+
+Note that in c# you can use a @@CONDITIONAL@@ attribute which is a more clean, less error-prone way of stripping out functions, see [[http://msdn.microsoft.com/en-us/library/4xssyw96(v=vs.90).aspx]].
 
 In addition to the basic ''#if'' compiler directive, you can also use a multiway test in C# and JavaScript:-
 
-[@#if UNITY_EDITOR
+[@
+#if UNITY_EDITOR
     Debug.Log("Unity Editor");
 #elif UNITY_IPHONE
     Debug.Log("Unity iPhone");
 #else
     Debug.Log("Any other platform");
-#endif@]
+#endif
+@]
 
 However, Boo currently supports only the ''ifdef'' directive.
 
@@ -150,10 +154,10 @@ Here, you can enter the names of the symbols you want to define for that particu
 
 You can define your own preprocessor directives to control which code gets included when compiling. To do this you must add a text file with the extra directives to the "Assets/" folder. The name of the file depends on the language you are using, and the extension is __.rsp__:
 
-||C#||@@<Project Path>/Assets/smcs.rsp@@||
-||C# - Editor Scripts||@@<Project Path>/Assets/gmcs.rsp@@||
-||UnityScript||@@<Project Path>/Assets/us.rsp@@||
-||Boo||@@<Project Path>/Assets/boo.rsp@@||
+||C#||@@&lt;Project Path&gt;/Assets/smcs.rsp@@||
+||C# - Editor Scripts||@@&lt;Project Path&gt;/Assets/gmcs.rsp@@||
+||UnityScript||@@&lt;Project Path&gt;/Assets/us.rsp@@||
+||Boo||@@&lt;Project Path&gt;/Assets/boo.rsp@@||
 
 As an example, if you include the single line "@@-define:UNITY_DEBUG@@" in your __smcs.rsp__ file the define @@UNITY_DEBUG@@ will exist as a global define for C# scripts, except for Editor scripts.
 

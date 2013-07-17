@@ -37,7 +37,7 @@ In the [[Main.iphone-OptimizedGraphicsMethods | Graphics Methods page]] we used 
 (:showhide name="Shader code for Real-Time vs Baked Golden Statue":)
 (:table border=0:)
 (:cellnr:)
-(:code:)
+[@
 // This is the pixel shader code for drawing normal-mapped
 // specular highlights on static lightmapped geometry
 
@@ -80,9 +80,9 @@ half3 normalInRnmBasis = saturate (mul (unity_DirBasis, o.Normal));
 lm *= dot (normalInRnmBasis, scalePerBasisVector);
 
 return half4(lm, 1);
-(:codeend:)
+@]
 (:cell:)
-(:code:)
+[@
 // This is the pixel shader code for lighting which is
 // baked into the texture
 
@@ -93,7 +93,7 @@ fixed4 c = tex2D (_MainTex, i.uv.xy);
 c.xyz += texCUBE(_EnvTex,i.refl) * _ReflectionColor * c.a;
 			
 return c;
-(:codeend:)
+@]
 (:tableend:)
 (:showhideend:)
 
@@ -162,7 +162,7 @@ __Note__: Usually these decompositions refer to steps in a deferred renderer, bu
 
 
 (:showhide name="Lightmapped with Virtual Gloss Per-Vertex Additive":)
-(:code:)
+[@
 Shader "MADFINGER/Environment/Virtual Gloss Per-Vertex Additive (Supports Lightmap)" {
 Properties {
 	_MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
@@ -263,11 +263,11 @@ SubShader {
 	}	
 }
 }
-(:codeend:)
+@]
 (:showhideend:)
 
 (:showhide name="Lightprobes with Virtual Gloss Per-Vertex Additive":)
-(:code:)
+[@
 Shader "MADFINGER/Environment/Lightprobes with VirtualGloss Per-Vertex Additive" {
 Properties {
 	_MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
@@ -350,7 +350,7 @@ SubShader {
 	}	
 }
 }
-(:codeend:)
+@]
 (:showhideend:)
 
 !! Best Practices

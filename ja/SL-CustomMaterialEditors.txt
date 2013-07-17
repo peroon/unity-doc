@@ -6,7 +6,7 @@
 
 カスタム エディタを定義するには、MaterialEditor クラスを拡張し、スクリプトを Assets ディレクトリの中の Editor フォルダにスクリプトを配置します。
 
-(:code:)
+[@
 using UnityEditor;
 
 public class CustomMaterialInspector : MaterialEditor {
@@ -180,6 +180,6 @@ public class CustomMatInspector : MaterialEditor {
 	}
 }
 
-(:codeend:)
+@]
 
 

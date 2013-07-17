@@ -33,9 +33,9 @@ For extra efficiency, all of these controls can also be used regardless of which
 The most convenient controls depend on which mouse or track-pad you are using:
 
 ||!Action   ||!3-button mouse                                        ||!2-button mouse or track-pad         ||!Mac with only one mouse button or track-pad                 ||
-||$$Move$$  ||Hold ^^Alt^^ and middle click-drag.                    ||Hold ^^Alt-Control^^ and click-drag. ||Hold ^^Alt-Command^^ and click-drag.                         ||
-||$$Orbit$$ ||Hold ^^Alt^^ and click-drag.                           ||Hold ^^Alt^^ and click-drag.         ||Hold ^^Alt^^ and click-drag.                                 ||
-||$$Zoom$$  ||Hold ^^Alt^^ and right click-drag or use scroll-wheel. ||Hold ^^Alt^^ and right click-drag.   ||Hold ^^Alt-Control^^ and click-drag or use two-finger swipe. ||
+||Move  ||Hold ^^Alt^^ and middle click-drag.                    ||Hold ^^Alt-Control^^ and click-drag. ||Hold ^^Alt-Command^^ and click-drag.                         ||
+||Orbit ||Hold ^^Alt^^ and click-drag.                           ||Hold ^^Alt^^ and click-drag.         ||Hold ^^Alt^^ and click-drag.                                 ||
+||Zoom  ||Hold ^^Alt^^ and right click-drag or use scroll-wheel. ||Hold ^^Alt^^ and right click-drag.   ||Hold ^^Alt-Control^^ and click-drag or use two-finger swipe. ||
 
 
 !! Flythrough Mode 

@@ -31,7 +31,11 @@ You'll see a number of tabs. Below is a summary of each of these:
 
 *You can add a number of administrative users (teammates, employees, colleagues) to your master account via the "Users" tab.
 
-*In the "Payout" tab, you will specify how you would like to receive your earnings. You can amend your payout details for the Asset Store at any point. There are three options when receiving payouts from the Asset Store.\\
+*In the "Payout" tab, you will specify how you would like to receive your earnings. You can amend your payout details for the Asset Store at any point.
+
+!!Payouts
+
+There are three options when receiving payouts from the Asset Store.
 
 #Paypal - Free transactions. No minimum transfer. Monthly transfers.\\
 
@@ -39,22 +43,7 @@ You'll see a number of tabs. Below is a summary of each of these:
 
 #Check (US only) - $15 Transaction fee. Minimum transfer of $250. Quarterly transfers.\\
 
-Simply check the box and fill out your details.
+Simply check the appropriate box in the Payout tab and fill out your details.
 
 
-!!Q&A
 
-[=Q:=] What date will I receive my monthly or quarterly transfer?\\
-[=A:=] All payouts are scheduled for the 15th of each month
-
-[=Q:=] Why haven't I received my payout?\\
-[=A:=] Check your details are correct in the "Payout" tab in your Publisher Administration account. If everything looks correct and you still haven't received your funds, please contact: assetstore@unity3d.com
-
-[=Q:=] My package has shown as Pending for a while now, what should I do?\\
-[=A:=] Our Vetting Team receive a huge amount of submissions per week, please be patient when waiting for acceptance. If you feel there may be an issue with your submission, please contact assetstore@unity3d.com stating your Publisher and Package details.
-
-[=Q:=] Can I merge my account with my co workers/additional account/pets' account?\\
-[=A:=] Unfortunately not, once an account has been created and purchases have been made, we cannot swap, merge or edit these purchases to appear in another account.
-
-[=Q:=] Your Q&A sections sucks! Can I speak to a human about my issue?\\
-[=A:=] Of course you can, drop us an email at assetstore@unity3d.com, we aim to respond within 24 hours.

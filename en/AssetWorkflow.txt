@@ -46,14 +46,14 @@ To actually create a Prefab from a GameObject in your scene, simply drag the Gam
 !!Updating Assets
 
 You have imported, instantiated, and linked your asset to a Prefab.  Now when you want to edit your source asset, just double-click it from the Project View.  The appropriate application will launch, and you can make any changes you want.  When you're done updating it, just Save it.  Then, when you switch back to Unity, the update will be detected, and the asset will be re-imported.  The asset's link to the Prefab will also be maintained.  So the effect you will see is that your Prefab will update.  That's all you have to know to update assets.  Just open it and save!
+
 [[#AssetLabels]]
 !! Optional - Adding Labels to the Assets.
 Is always a good idea to add labels to your assets if you want to keep organized all your assets, with this you can search for the labels associated to each asset in the search field in the project view or in the object selector.
 
 Steps for adding a label to an asset:
 * Select the asset you want to add the label to (From the project view).
-* In the inspector click on the "Add Label" icon (Attach:AssetLabelAdd.png) if you dont have any Labels associated to that asset.
-** If you have a label associated to an asset then just click where the labels are.
+* In the inspector click on the "Add Label" icon (the "..." button in the Asset Labels section).
 * Start writing your labels.
 
 __Notes:__
