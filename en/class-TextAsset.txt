@@ -7,6 +7,12 @@ $$Text Assets$$ are a format for imported text files.  When you drop a text file
 *__.htm__
 *__.xml__
 *__.bytes__
+>>u43<<
+*__.json__
+*__.csv__
+*__.yaml__
+*__.fnt__
+>><<
 
 Attach:TextAssetInspector.png\\
 ''The Text Asset Inspector''

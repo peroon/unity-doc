@@ -27,5 +27,3 @@ The Blend Type drop-down is used to select one of the different blend types that
 
 (:tocportion:)
 
-
-(back to [[MecanimAnimationSystem|Mecanim introduction]])

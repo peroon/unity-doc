@@ -40,10 +40,10 @@ Here is the checklist for good practice:
 #Try to avoid situations where multiple lights illuminate any given object.
 #Try to reduce the overall number of shader passes (Shadows, pixel lights, reflections).
 #Rendering order is critical. In general case:
-##fully opaque objects roughly front-to-back.
-##alpha tested objects roughly front-to-back.
-##skybox.
-##alpha blended objects (back to front if needed).
+**fully opaque objects roughly front-to-back.
+**alpha tested objects roughly front-to-back.
+**skybox.
+**alpha blended objects (back to front if needed).
 #Post Processing is expensive on mobiles, use with care.
 #Particles: reduce overdraw, use the simplest possible shaders.
 #Double buffer for Meshes modified every frame:
@@ -88,9 +88,7 @@ Physics can be CPU heavy. It can be profiled via the Editor profiler. If Physics
 *Use as little Cloth objects as possible.
 *Use Rigidbodies only where necessary.
 *Use primitive colliders in preference mesh colliders.
-*Never ever move a static collider (ie a collider without a Rigidbody) as it causes a big performance hit.
-**Shows up in Profiler as “Static Collider.Move” but actual processing is in ''Physics.Simulate''
-**If necessary, add a RigidBody and set ''isKinematic'' to true.
+*Never ever move a static collider (ie a collider without a Rigidbody) as it causes a big performance hit. It shows up in Profiler as “Static Collider.Move” but actual processing is in ''Physics.Simulate''. If necessary, add a RigidBody and set ''isKinematic'' to true.
 *On Windows you can use NVidia’s AgPerfMon profiling tool set to get more details if needed.
 
 !Android!
@@ -150,18 +148,10 @@ And cons:
 
 *Asset Bundles are cached on a device to a certain limit
 *Create using the Editor API
-*Load
-**Using WWW API: WWW.LoadFromCacheOrDownload
-**As a resource: AssetBundle.CreateFromMemory or AssetBundle.CreateFromFile
-*Unload
-**AssetBundle.Unload
-***There is an option to unload the bundle, but keep the loaded asset from it
-***Also can kill all the loaded assets even if they’re referenced in the scene
-**Resources.UnloadUnusedAssets
-***Unloads all assets no longer referenced in the scene. So remember to kill references to the assets you don’t need.
-***Public and static variables are never garbage collected.
-**Resources.UnloadAsset
-***Unloads a specific asset from memory. It can be reloaded from disk if needed.
+*Load using WWW API: WWW.LoadFromCacheOrDownload or as a resource: AssetBundle.CreateFromMemory or AssetBundle.CreateFromFile
+*Unload using AssetBundle.Unload. There is an option to unload the bundle, but keep the loaded asset from it. Also can kill all the loaded assets even if they’re referenced in the scene
+*Resources.UnloadUnusedAssets unloads all assets no longer referenced in the scene. So remember to kill references to the assets you don’t need. Public and static variables are never garbage collected.
+*Resources.UnloadAsset unloads a specific asset from memory. It can be reloaded from disk if needed.
 
 
 !!!!Is there any limitation for download numbers of Assetbundle at the same time on iOS? (e.g Can we download over 10 assetbundles safely at the same time(or every frame)? )
@@ -182,20 +172,14 @@ Downloads are implemented via async API provided by OS, so OS decides how many t
 
 
 *Textures without proper compression
-**Different solutions for different cases, but be sure to compress textures unless you’re sure you should not.
-**ETC/RGBA16 - default for android
-***but can tweak depending on the GPU vendor
-***best approach is to use ETC where possible
-***alpha textures can use two ETC files with one channel being for alpha
-**PVRTC - default for iOS
-***good for most cases
+*Different solutions for different cases, but be sure to compress textures unless you’re sure you should not.
+*ETC/RGBA16 - default for android but can tweak depending on the GPU vendor. Best approach is to use ETC where possible. Alpha textures can use two ETC files with one channel being for alpha
+*PVRTC - default for iOS, good for most cases
 *Textures having Get/Set pixels enabled - doubles the footprint, uncheck unless Get/Set is needed
 *Textures loaded from JPEG/PNGs on the runtime will be uncompressed
 *Big mp3 files marked as decompress on load
 *Additive scene loading
-*Unused Assets that remain uncleaned in memory
-**Static fields
-**not unloaded asset bundles
+*Unused Assets that remain uncleaned in memory.
 *If it randomly crashes, try on a devkit or a device with 2 GB memory (like Ipad 3).
 Sometimes there’s nothing in the console, just a random crash
 *Fast script call and stripping may lead to random crashes on iOS. Try without them.

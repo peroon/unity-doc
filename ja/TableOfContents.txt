@@ -609,6 +609,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[SL-SurfaceShaderLightingExamples]]
 ****[[SL-SurfaceShaderTessellation]]
 ***[[SL-ShaderPrograms]]
+****[[SL-VertexFragmentShaderExamples]]
 ****[[SL-PropertiesInPrograms]]
 ****[[SL-VertexProgramInputs]]
 ****[[SL-BuiltinIncludes]]

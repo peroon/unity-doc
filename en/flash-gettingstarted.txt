@@ -8,10 +8,6 @@ Note that the Unity Flash build option exports SWF files for playback in your br
 !!Performance Comparison
 We do not currently have direct comparisons of Unity webplayer content vs Flash SWF content.  Much of our webplayer code is executed as native code, so for example, PhysX runs as native code.  By comparison, when building a SWF file all of the physics runtime code (collision detection, newtonian physics) is converted to ActionScript.  Typically you should expect the SWF version to run more slowly than the Unity webplayer version.  We are, of course, doing everything we can to optimize for Flash.
 
-!!Further reading:
-(:tocportion:)
-
-
 !!Other Examples:
 * [[http://forum.unity3d.com/threads/145294-Flash-Custom-Splash-Screen-Single-SWF | Custom Splash Screen in a Single SWF (Unity Forums)]]
 * [[http://forum.unity3d.com/threads/128057-Flash-Simple-AS3-Bridge-Demo-Loading-textures-from-web.?p=864642&viewfull=1#post864642 | Loading Textures from Web (Unity Forums)]]
@@ -21,3 +17,6 @@ We do not currently have direct comparisons of Unity webplayer content vs Flash 
 * [[http://forum.unity3d.com/forums/36-Flash-Development | Flash Development section (Unity Forums)]] 
 * [[http://answers.unity3d.com/questions/topics/flash.html | Flash questions (Unity Answers)]]
 
+!!Section Contents
+
+(:tocportion:)
