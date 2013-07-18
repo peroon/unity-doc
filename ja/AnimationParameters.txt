@@ -20,42 +20,42 @@ Attach:MecanimAnimatorAndScript.png
 
 [@
 public class AvatarCtrl : MonoBehaviour {
-	
+
 	protected Animator animator;
-	
+
 	public float DirectionDampTime = .25f;
-				
-	void Start () 
+
+	void Start ()
 	{
 		animator = GetComponent<Animator>();
 	}
-    
-	void Update () 
+
+	void Update ()
 	{
 		if(animator)
 		{
                         //現在のステートを取得
 			AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-			
+
                         //"Run" モードのときは、ジャンプのユーザ入力を可能にして、ジャンプのパラメータもあわせてセット
-        	        if(stateInfo.name == "Base Layer.RunBT")
+        	        if(stateInfo.nameHash == "Base Layer.RunBT")
 			{
-				if(Input.GetButton("Fire1")) 
+				if(Input.GetButton("Fire1"))
                                     animator.SetBool("Jump", true );
 			}
 			else
 			{
-            	                animator.SetBool("Jump", false);				
+            	                animator.SetBool("Jump", false);
 			}
-		
+
          		float h = Input.GetAxis("Horizontal");
                 	float v = Input.GetAxis("Vertical");
-			
+
                         //ユーザ入力にもとづいてイベントパラメータをセット
 			animator.SetFloat("Speed", h*h+v*v);
                         animator.SetFloat("Direction", h, DirectionDampTime, Time.deltaTime);
-		}		
-	}   		  
+		}
+	}
 }
 @]
 
