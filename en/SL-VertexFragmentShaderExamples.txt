@@ -114,7 +114,7 @@ The difference between vertex and fragment shaders is the process developed in t
 
 :return mul (UNITY_MATRIX_MVP, v.vertex);: This is the core of the vertex function, where a coordinate in 3D is projected into a 2D window. The process involves multiplying the 3D position with a matrix know as Model-View-Projection
 
-:fixed4 frag() &#58; COLOR: This line defines the function frag, which is going to be used by the fragment shader as its main function. In this lesson, there are no input parameters for the fragment function, and the output is defined as a COLOR value defined in a fixed4 variable that contains the RGBA (red, green, blue, alpha) of the color.
+:fixed4 frag() &#58; COLOR: This line defines the function frag, which is going to be used by the fragment shader as its main function. In this lesson, there are no input parameters for the fragment function, and the output is defined as a COLOR value defined in a fixed4 variable that contains the RGBA (red, green, blue, alpha) of the color. It's possible to use the color as a visualization of a float variable, or even to pass information between the vertex and fragment shaders. However the COLOR variable its clamped between the values 0 and 1 so Its expected a change of the values in the COLOR variable.
 
 :return fixed4(1.0,0.0,0.0,1.0);: Fragment function core functionality, where for each pixel processed in the fragment shader a color red is defined.
 
