@@ -74,4 +74,4 @@ public class ScriptBatch : MonoBehaviour
 
 !!PostProcessBuild Attribute
 
-You can also use the postprocessOrder parameter of the [[ScriptRef:PostProcessBuildAttribute.PostProcessBuildAttribute|PostProcessBuild Attribute]] to define the execution order for your build methods, and call your external scripts with the Process class from these methods as shown in the last section. This parameter is used to sort the build methods from lower to higher, and you can assign any negative or positive value to it.
+You can also use the postprocessOrder parameter of the [[ScriptRef:PostProcessBuildAttribute.html|PostProcessBuildAttribute]] to define the execution order for your build methods, and call your external scripts with the Process class from these methods as shown in the last section. This parameter is used to sort the build methods from lower to higher, and you can assign any negative or positive value to it.
