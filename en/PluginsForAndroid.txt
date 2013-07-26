@@ -73,9 +73,9 @@ You can choose whichever approach you prefer, be it raw JNI through $$AndroidJNI
 
 Instances of [[ScriptRef:AndroidJavaObject.html | UnityEngine.AndroidJavaObject]] and [[ScriptRef:AndroidJavaClass.html | UnityEngine.AndroidJavaClass]] have a one-to-one mapping to an instance of java.lang.Object and java.lang.Class (or subclasses thereof) on the Java side, respectively. They essentially provide 3 types of interaction with the Java side:-
 
-** Call a method
-** Get the value of a field
-** Set the value of a field
+* Call a method
+* Get the value of a field
+* Set the value of a field
 
 
 The $$Call$$ is separated into two categories: $$Call$$ to a 'void' method, and $$Call$$ to a method with non-void return type. A generic type is used to represent the return type of those methods which return a non-void type. The $$Get$$ and $$Set$$ always take a generic type representing the field type. 
