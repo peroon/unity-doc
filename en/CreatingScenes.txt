@@ -8,7 +8,7 @@ Use the method described in the last section to create a $$Prefab$$.  You can al
 
 !!Adding Component & Scripts
 
-When you have a Prefab or any $$GameObject$$ highlighted, you can add additional functionality to it by using $$Components$$.  Please view the [[Components|Component Reference]] for details about all the different Components.  $$Scripts$$ are a type of Component.  To add a Component, just highlight your GameObject and select a Component from the ^^Component^^ menu.  You will then see the Component appear in the $$Inspector$$ of the GameObject.  Scripts are also contained in the ^^Component^^ menu by default.
+When you have a Prefab or any $$GameObject$$ highlighted, you can add additional functionality to it by using $$Components$$.  $$Scripts$$ are a type of Component.  To add a Component, just highlight your GameObject and select a Component from the ^^Component^^ menu.  You will then see the Component appear in the $$Inspector$$ of the GameObject.  Scripts are also contained in the ^^Component^^ menu by default.
 
 If adding a Component breaks the GameObject's connection to its Prefab, you can always use ^^GameObject->Apply Changes to Prefab^^ from the menu to re-establish the link.
 

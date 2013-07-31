@@ -8,7 +8,7 @@ Attach:AudioGO.png
 Attach:AudioReference.png
 ''Now an Audio Clip file is referenced in the Audio Clip property.''
 
-This type of referencing is very quick and powerful, especially when using scripting. To learn more about using scripts and properties, see the Scripting Tutorial on the [[Main.Tutorials | Tutorials]] page.
+This type of referencing is very quick and powerful, especially when using scripting. 
 
 Object references can be assigned to a reference property either by drag and drop or by using the $$Object Picker$$.
 

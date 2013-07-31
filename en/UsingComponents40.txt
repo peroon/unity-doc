@@ -25,7 +25,7 @@ The browser lets you navigate the components conveniently by category and also h
 
 You can attach any number or combination of Components to a single GameObject.  Some Components work best in combination with others.  For example, the Rigidbody works with any Collider.  The Rigidbody controls the Transform through the $$NVIDIA PhysX$$ physics engine, and the Collider allows the Rigidbody to collide and interact with other Colliders.
 
-If you want to know more about using a particular Component, you can read about any of them in the [[Components|Component Reference]].  You can also access the reference page for a Component from Unity by clicking on the small __?__ on the Component's header in the Inspector.
+If you want to know more about using a particular Component, you can read about any of them in the relevant Component Reference page.  You can also access the reference page for a Component from Unity by clicking on the small __?__ on the Component's header in the Inspector.
 
 
 !! Editing Components

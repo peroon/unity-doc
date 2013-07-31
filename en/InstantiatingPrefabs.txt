@@ -239,9 +239,6 @@ void KillSelf () {
 } @]
 
 
-The First Person Shooter tutorial explains how to replace a character with a ragdoll version and also synchronize limbs with the last state of the animation. You can find that tutorial on the [[Tutorials]] page.
-
-
 !!! Placing a bunch of objects in a specific pattern
 
 Lets say you want to place a bunch of objects in a grid or circle pattern.  Traditionally this would be done by either:
