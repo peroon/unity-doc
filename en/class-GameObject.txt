@@ -1,6 +1,6 @@
 ! GameObject
 
-$$GameObjects$$ are containers for all other [[Components]]. All objects in your game are inherently GameObjects.
+$$GameObjects$$ are containers for all other Components. All objects in your game are inherently GameObjects.
 
 Attach:Inspector-GameObject.png\\
 ''An empty GameObject''

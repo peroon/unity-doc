@@ -1,4 +1,4 @@
-! Image Effect Scripts
+! Image Effect Reference
 
 This group handles all $$Render Texture$$-based fullscreen image postprocessing effects. They are only available with Unity Pro. They add a lot to the look and feel of your game without spending much time on artwork.
 

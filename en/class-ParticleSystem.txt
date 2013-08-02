@@ -1,4 +1,4 @@
-!Particle System (Shuriken)
+!Particle System Reference (Shuriken)
 
 Particle Systems in Unity are used to make clouds of smoke, steam, fire and other atmospheric effects. 
 
