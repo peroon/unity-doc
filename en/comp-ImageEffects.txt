@@ -6,8 +6,6 @@ All image effects make use of Unity's ``OnRenderImage`` function which any MonoB
 
 Image effects can be executed directly after the opaque pass or after opaque and transparent passes (default). The former behavior can very easily be acquired by adding the attribute ``ImageEffectOpaque`` to the OnRenderImage function of the effect in question. For an example of an effect doing this, have a look at the [[script-EdgeDetectEffectNormals|Edge Detection effect]].
 
-(:tocportion:)
-
 The scene used in above pages looks like this without any image effects applied:
 
 Attach:FxNone.png\\
@@ -17,3 +15,7 @@ Multiple image effects can be "stacked" on the same camera. Just add them and it
 
 Attach:FxBlurNoise.png\\
 ''Blur and Noise applied to the same camera.''
+
+This section describes the available image effects in greater detail.
+
+(:tocportion:)

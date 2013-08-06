@@ -49,7 +49,7 @@ Attach:Tearing.png\\
 
 It is possible to set Unity to switch frames only during the period where the display device is not updating, the so-called "vertical blank". The VSync option on the Quality Settings synchronises frame switches with the device's vertical blank or optionally with every other vertical blank. The latter may be useful if the game requires more than one device update to complete the rendering of a frame.
 
-[[#fsaa]]
+
 !!! Anti-aliasing
 
 Anti aliasing improves the appearance of polygon edges, so they are not "jagged", but smoothed out on the screen. However, it incurs a performance cost for the graphics card and uses more video memory (there's no cost on the CPU though). The level of anti-aliasing determines how smooth polygon edges are (and how much video memory does it consume).
@@ -61,7 +61,6 @@ Attach:AntiAliasing6x.png \\
 ''With 6x anti-aliasing, polygon edges are smoothed out.''
 
 
-[[#softparticles]]
 !!! Soft Particles
 
 Soft Particles fade out near intersections with other scene geometry. This looks much nicer, however it's more expensive to compute (more complex pixel shaders), and only works on platforms that support [[SL-DepthTextures | depth textures]]. Furthermore, you have to use [[RenderTech-DeferredLighting | Deferred Lighting]] rendering path, or make the camera render [[SL-CameraDepthTexture | depth textures]] from scripts.

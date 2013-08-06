@@ -32,7 +32,7 @@ This section explains practical usage for detail meshes like rocks, haystacks, v
 
 Attach:TerrainGuide-DetailMeshesSection.png
 
-[[#Lightmapping]]
+
 !! [[Main.Lightmapping | Lightmaps]]
 You can lightmap terrains just like any other objects using Unity's built-in lightmapper. See [[Main.Lightmapping | Lightmapping Quickstart]] for help.
 

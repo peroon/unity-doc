@@ -56,7 +56,6 @@ Attach:ParticleRendererExhaust.png\\
 ''Sorted Billboard''を使用して、すべてのパーティクルを深さで並び替えることができます。 これが必要な場合があります （殆どの場合は、^^Alpha Blended^^ パーティクルシェーダの使用時）。 これは高価なので、レンダリング時に画質に差を出したい時にのみ使用した方がよいでしょう。
 
 
-[[#AnimatedTextures]]
 
 !!! アニメート化テクスチャ
 

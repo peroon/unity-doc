@@ -17,9 +17,11 @@ At this point the empty object should contain both versions of the mesh and "kno
 You can preview the effect of this by dragging the camera icon left and right in the window for the ``LODGroup`` component.
 
 Attach:LOD0_demo.jpg 
-->''camera at LOD 0''
+''camera at LOD 0''
+
 Attach:LOD1_demo.jpg 
-->''camera at LOD 1''
+''camera at LOD 1''
+
 
 In the $$Scene View$$, you should be able to see
 * Percentage of the view this object occupies 

@@ -16,6 +16,4 @@ You can adjust the transition between the two animation clips by dragging the st
 
 Attach:MecanimTransitionInspector.png
 
-(See also [[AnimationSoloMute|Transition solo / mute]])
-
-(back to [[Animation State Machines]])
+See also [[AnimationSoloMute|Transition solo / mute]].

@@ -123,6 +123,8 @@ Attach:PlayerSetPCOther4b7.png
 ||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
+
+
 __API Compatibility Level__
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 

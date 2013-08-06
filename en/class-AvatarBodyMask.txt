@@ -19,4 +19,3 @@ The BodyMask assets can be reused in [[AnimationStateMachines|Animator Controlle
 
 A benefit of using body masks is that they tend to reduce memory overheads since body parts that are not active do not need their associated animation curves. Also, the unused curves need not be calculated during playback which will tend to reduce the CPU overhead of the animation.
 
-(back to [[MecanimAnimationSystem|Mecanim introduction]])

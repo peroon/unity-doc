@@ -36,7 +36,7 @@ If material generation is disabled (i.e. ``Import Materials`` is unchecked), the
 * Unity will try to find an existing material with that name. The scope of the Material search is defined by the ``Material Search`` setting.
 * If Unity succeeds in finding an existing material then it will use it for the imported scene, otherwise it will generate a new material
 
-[[#colliders]]
+
 !! Colliders
 
 Unity uses two main types of colliders: $$Mesh Colliders$$ and $$Primitive Colliders$$.  Mesh colliders are components that use imported mesh data and can be used for environment collision. When you enable $$Generate Colliders$$ in the Import Settings, a Mesh collider is automatically added when the mesh is added to the Scene.  It will be considered solid as far as the physics system is concerned.
@@ -75,8 +75,3 @@ If you want tangents on your BlendShapes then set ``Tangents`` import mode to ``
 !!!The Unity Editor shows too many vertices or triangles (compared to what my 3D app says)
 This is correct. What you are looking at is the number of vertices/triangles actually being sent to the GPU for rendering. In addition to the case where the material requires them to be sent twice, other things like hard-normals and non-contiguous UVs increase vertex/triangle counts significantly compared to what a modeling app tells you. Triangles need to be contiguous in both 3D and UV space to form a strip, so when you have UV seams, degenerate triangles have to be made to form strips - this bumps up the count.
 
-
-!!See Also
-* [[Modeling Optimized Characters]]
-* [[HOWTO-bumpmap | How do I use normal maps?]]
-* [[HOWTO-FixZAxisIsUp | How do I fix the rotation of an imported model?]]

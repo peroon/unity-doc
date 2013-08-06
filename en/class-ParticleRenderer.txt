@@ -23,7 +23,7 @@ Attach:Inspector-ParticleRenderer.png\\
 ||>>>``HorizontalBillboard`` ||All particles are aligned flat along the X/Y axes. ||
 ||``Length Scale`` ||If ``Stretch Particles`` is set to ``Stretched``, this value determines how long the particles are in their direction of motion. ||
 ||``Velocity Scale`` ||If ``Stretch Particles`` is set to ``Stretched``, this value determines the rate at which particles will be stretched, based on their movement speed. ||
-||``UV Animation`` ||If either of these are set, the UV coordinates of the particles will be generated for use with a tile animated texture. See the section on [[#AnimatedTextures|Animated Textures]] below. ||
+||``UV Animation`` ||If either of these are set, the UV coordinates of the particles will be generated for use with a tile animated texture. See the section on ''Animated Textures'' below. ||
 ||>>>``X Tile`` ||Number of frames located across the X axis. ||
 ||>>>``Y Tile`` ||Number of frames located across the Y axis. ||
 ||>>>``Cycles`` ||How many times to loop the animation sequence. ||
@@ -56,7 +56,6 @@ Particles can be made to either stretch with the velocity. This is useful for sp
 ``Sorted Billboard`` can be used to make all particles sort by depth. Sometimes this is necessary, mostly when using ^^Alpha Blended^^ particle shaders. This can be expensive and should only be used if it really makes a quality difference when rendering.
 
 
-[[#AnimatedTextures]]
 
 !!! Animated textures
 

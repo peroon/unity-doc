@@ -28,7 +28,7 @@ Unity supports both ''Compressed'' and ''Native'' Audio.  Any type of file (exce
 
 As a general rule of thumb, ''Compressed'' audio (or modules) are best for long files like background music or dialog, while ''Native'' is better for short sound effects. You should tweak the amount of Compression using the compression slider. Start with high compression and gradually reduce the setting to the point where the loss of sound quality is perceptible. Then, increase it again slightly until the perceived loss of quality disappears.
 
-[[#PositionalAudio]]
+
 !! Using 3D Audio
 If an audio clip is marked as a ``3D Sound`` then it will be played back so as to simulate its position in the game world's 3D space. 3D sounds emulate the distance and location of sounds by attenuating volume and panning across speakers. Both mono and multiple channel sounds can be positioned in 3D. For multiple channel audio, use the ''spread'' option on the [[class-AudioSource| Audio Source]] to spread and split out the discrete channels in speaker space. Unity offers a variety of options to control and fine-tune the audio behavior in 3D space - see the [[class-AudioSource| Audio Source]] component reference for further details.   
 >><<
@@ -43,6 +43,7 @@ Note that only one hardware audio stream can be decompressed at a time, includin
 
 If the hardware decoder is not available, the decompression will fall back on the software decoder (on iPhone 3GS or later, Apple's software decoder is used in preference to Unity's own decoder (FMOD)).
 >><<
+
 !Android!
 >>android<<
 On mobile platforms compressed audio is encoded as MP3 to take advantage of hardware decompression. 

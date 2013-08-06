@@ -4,7 +4,7 @@ The first option in the ~~Inspector~~ of a ``Blend Node`` is the The ``Blend Typ
 
 After setting the Blend Type, the first thing you need is to select the [[AnimationParameters|Animation Parameter]] that will control this Blend Tree. In this example, the parameter is ''direction'' which varies between -1.0 (left) and +1.0 (right), with 0.0 denoting a straight run without leaning.
 
-Then you can add individual animations by clicking ^^+ -> Add Motion Field^^ to add an Animation Clip to the blend tree. When you're done, it should look something like this:
+Then you can add individual animations by clicking the small "+" button and selecting  ^^Add Motion Field^^ from the popup menu. When you're done, it should look something like this:
 
 Attach:MecanimBlendTree1D.png
 ''A 1D Blend Node with three Animation Clips.''
@@ -42,4 +42,3 @@ The ^^Compute Thresholds^^ drop-down will set the thresholds from data of your c
 
 Say, for example, you had a walk animation that covered 1.5 units per second, a jog at 2.3 units per second, and a run at 4 units per second, choosing the ^^Speed^^ option from the drop-down would set the parameter range and thresholds for the three animations based on these values. So, if you set the speed parameter to 3.0, it would blend the jog and run with a slight bias toward the jog.
 
-(back to [[class-BlendTree|Blend Trees]])

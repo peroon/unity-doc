@@ -21,4 +21,3 @@ $$Any State$$ is a special state which is always present. It exists for the situ
 
 Attach:AnyState.png
 
-(back to [[Animation State Machines]])

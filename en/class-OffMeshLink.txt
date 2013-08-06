@@ -28,5 +28,3 @@ have immediate effect. All other properties require a Navmesh re-bake before the
 
 If the start or end transforms are unassigned when baking, or if the position of either the start or end transforms is too far away from the NavMesh to find valid positions, the off-mesh links will not be generated. In this case, an error is displayed in the Console window.
 
-
-(back to [[NavmeshandPathfinding|Navigation and Pathfinding]])
