@@ -27,9 +27,7 @@ using System.Collections; class NonCachingLoadExample : MonoBehaviour {
                    // メモリ節約のため圧縮されたアセットバンドルのコンテンツをアンロード
                    bundle.Unload(false);
 
-                   // Frees the memory from the web stream
-                   www.Dispose();
-	   }
+	   } // memory is freed from the web stream (www.Dispose() gets called implicitly)
    }
 }@]
 
@@ -66,9 +64,7 @@ public class CachingLoadExample : MonoBehaviour {
                 	// メモリ節約のため圧縮されたアセットバンドルのコンテンツをアンロード
                 	bundle.Unload(false);
 
-                       // Frees the memory from the web stream
-                       www.Dispose();
-		}
+		} // memory is freed from the web stream (www.Dispose() gets called implicitly)
 	}
 }@]
 
@@ -122,9 +118,7 @@ class LoadAssetFromAssetBundle : MonoBehaviour
 			// メモリ節約のため圧縮されたアセットバンドルのコンテンツをアンロード
 			bundle.Unload(false);
 
-                        // Frees the memory from the web stream
-                        www.Dispose();
-		}
+		} // memory is freed from the web stream (www.Dispose() gets called implicitly)
 #endif
 	}
 }@]

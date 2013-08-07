@@ -1,6 +1,7 @@
 ! Input
-!Desktop!
 >>desktop<<
+
+!Desktop!
 
 Unity supports keyboard, joystick and gamepad input.
 
@@ -216,88 +217,10 @@ You can find the Apple input API documentation here:
 __Note:__ The above links reference your locally installed iPhone SDK Reference Documentation and will contain native ObjectiveC code. It is not necessary to understand these documents for using Unity on mobile devices, but may be helpful to some!
 
 >>ios<<
-!iOS!
-[[#iPhoneInput]]
-
-!! Device geographical location
-Device geographical location can be obtained via the [[ScriptRef:iPhoneInput-lastLocation.html|iPhoneInput.lastLocation]] property. Before calling this property you should start location service updates using [[ScriptRef:iPhoneSettings.StartLocationServiceUpdates.html|iPhoneSettings.StartLocationServiceUpdates()]] and check the service status via [[ScriptRef:iPhoneSettings-locationServiceStatus.html|iPhoneSettings.locationServiceStatus]]. See the [[ScriptRef:iPhoneSettings.StartLocationServiceUpdates.html|scripting reference]] for details.
+(:include InputIPhone:)
 >><<
 
 >>wiiu<<
-!WiiU
-[[#wiiuInput]]
+(:include InputWiiU:)
+>><<
 
-!!Joystick Aliases and Axes
-
-On WiiU you have one customer defined and several pre-defined joysticks you can attach to axes in the Editor's InputManager.
-
-!!!Joysticks
-
-These virtual joysticks can be used in the Editor's InputManager by setting 'Type', 'Axis' and 'JoyNum' of one of the axes.
-
-!!!!Joystick 1
-
-This joystick defaults to the controller on channel 1 but can be dynamically set with the script property 'WiiUInput.mouseController' which also acts as a joystick.
-The analog stick of a Nunchuk extension controller attached to that controller will be mapped to x- and y-axis of 'Joystick 1'.
-
-!!!!Joystick 2
-
-This joystick is bound to the GamePad controller.
-The controller's buttons correspond to the joystick's buttons as follows:
-||``1``||'B' Button||
-||``2``||'A' Button||
-||``3``||'Y' Button||
-||``4``||'X' Button||
-||``5``||'ZL' Trigger||
-||``6``||'ZR' Trigger||
-||``7``||'-' Button||
-||``8``||'+' Button||
-||``9``||'left' on the d-pad||
-||``10``||'right' on the d-pad||
-||``11``||'down' on the d-pad||
-||``12``||'up' on the d-pad||
-||``13``||'L' Trigger||
-||``14``||'R' Trigger||
-||``15``||left stick's Button||
-||``16``||right stick's Button||
-
-The controller's left and right analog sticks are mapped to the first four joystick axes:
-
-||``axis 1 aka X``||left stick's horizontal movement.||
-||``axis 2 aka Y``||left stick's vertical movement.||
-||``axis 3``||right stick's horizontal movement.||
-||``axis 4``||right stick's vertical movement.||
-
-!!!!Joystick 3 and subsequent
-
-Every connected ProController is added as a Joystick. First connected ProController corresponds to "Joystick 3".
-Joystick's buttons and axes map exactly the same to the device's buttons and sticks as for the GamePad controller.
-
-
-!!!Axes
-
-These symbolic names can be used directly in the InputManager's fields 'Negative Button', 'Postivite Button', 'Alt Negative Button' or 'Alt Positive Button'.
-The Buttons of the RemoteController set via 'WiiUInput.mouseController' is accessible via following symbolic names:
-
-||``SDLK_UP``||'up' Button of the d-pad||
-||``SDLK_DOWN``||'down' Button of the d-pad||
-||``SDLK_LEFT``||'left' Button of the d-pad||
-||``SDLK_RIGHT``||'right' Button of the d-pad||
-||``SDLK_LCTRL``||'A' Button||
-||``SDLK_SPACE``||'B' Button||
-||``SDLK_LALT``||'1' Button||
-||``SDLK_LCTRL``||'2' Button||
-||``SDLK_LMETA``||'2' Button||
-||``SDLK_a``||'A' Button||
-||``SDLK_b``||'B' Button||
-||``SDLK_PLUS``||'+' Button||
-||``SDLK_MINUS``||'-' Button||
-||``SDLK_BUTTON_1``||'1' Button||
-||``SDLK_BUTTON_2``||'2' Button||
-
-Also buttons on an attached Nunchuk extension controller are assigned to symbolic names:
-
-||``SDLK_z``||'Z' Button||
-||``SDLK_c``||'C' Button||
-||``SDLK_RSHIFT``||'Z' Button||
-||``SDLK_LSHIFT``||'C' Button||

@@ -32,7 +32,6 @@
 
 [[terrain-DetailMeshes | Attach:TerrainGuide-DetailMeshesSection.png]]
 
-
 !! [[Main.Lightmapping | Lightmaps]]
 Unity内蔵のLightmapperにより他のどのようなオブジェクトとも同じようにTerrainにライトマップを適用することが出来ます。ヘルプが必要な場合は[[Main.Lightmapping | Lightmap クイックスタート]] を参照のこと。
 

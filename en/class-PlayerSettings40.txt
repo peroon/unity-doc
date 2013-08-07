@@ -125,7 +125,7 @@ Attach:PlayerSetPCOther4b7.png
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
 
 
-__API Compatibility Level__
+!!!!API Compatibility Level
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
 # Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
@@ -256,94 +256,7 @@ You can choose your mono api compatibility level for all targets except the webp
 # In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
 >><<
-[[#Android]]
-!Android!
->>android<<
-!!!!''Resolution And Presentation''
-Attach:PlayerSetAndroidResPres4b7.png\\
-''Resolution and presentation for your Android project builds.''
-||PROPS
-||__''Resolution''__              ||||
-||``Default Orientation``         ||(This setting is shared between iOS and Android devices)||
-||>>>``Portrait``                 ||The device is in portrait mode, with the device held upright and the home button at the bottom.||
-||>>>``Portrait Upside Down``     ||The device is in portrait mode but upside down, with the device held upright and the home button at the top (only available with Android OS 2.3 and later).||
-||>>>``Landscape Right``          ||The device is in landscape mode, with the device held upright and the home button on the __left__ side (only available with Android OS 2.3 and later).||
-||>>>``Landscape Left``           ||The device is in landscape mode, with the device held upright and the home button on the __right__ side.||
-||``Use 32-bit Display Buffer``        ||Specifies if Display Buffer should be created to hold 32-bit color values (16-bit by default). Use it if you see banding, or need alpha in your ImageEffects, as they will create RTs in same format as Display Buffer. Not supported on devices running pre-Gingerbread OS (will be forced to 16-bit).||
-||``Use 24-bit Depth Buffer``        ||If set Depth Buffer will be created to hold (at least) 24-bit depth values. Use it only if you see 'z-fighting' or other artifacts, as it may have performance implications.||
-||!                               ||!||
-||                                ||||
-||!Icon                           ||||
-Attach:PlayerSetAndroidIcon4b7.png\\
-''Different icons that your project will have when built.''
-||PROPS
-||``Override for Android``        ||Check if you want to assign a custom icon you would like to be used for your Android game. Different sizes of the icon should fill in the squares below.||
-||!                               ||!||
-||                                ||||
-||!Splash Image                    ||||
-Attach:PlayerSetAndroidSplash4b7.png\\
-''Splash image that is going to be displayed when your project is launched.''
-||PROPS
-||``Mobile Splash Screen (Pro-only feature)``||Specifies texture which should be used by the iOS Splash Screen. Standard Splash Screen size is 320x480.(This is shared between Android and iOS)||
-||``Splash Scaling``              ||Specifies how will be the splash image scaling on the device.||
-||!                               ||!||
-||                                ||||
-||!Other Settings                 ||||
-Attach:PlayerSetAndroidOther4b7.png
-
-||__''Rendering''__               ||||
-||``Static Batching``             ||Set this to use Static batching on your build (Activated by default). Pro-only feature.||
-||``Dynamic Batching``            ||Set this to use Dynamic Batching on your build (Activated by default). ||
-||__''Identification''__          ||||
-||``Bundle Identifier``           ||The string used in your provisioning certificate from your Apple Developer Network account(This is shared between iOS and Android) ||
-||``Bundle Version``              ||Specifies the build version number of the bundle, which identifies an iteration (released or unreleased) of the bundle. This is a monotonically increased string, comprised of one or more period-separated(This is shared between iOS and Android)||
-||``Bundle Version Code``         ||An internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This is not the version number shown to users; that number is set by the versionName attribute. The value must be set as an integer, such as "100". You can define it however you want, as long as each successive version has a higher number. For example, it could be a build number. Or you could translate a version number in "x.y" format to an integer by encoding the "x" and "y" separately in the lower and upper 16 bits. Or you could simply increase the number by one each time a new version is released.||
-||``Minimum API Level``||Minimum API version required to support the build.||
-||__''Configuration''__           ||
-||``Graphics Level``              ||Select either ES 1.1 ('fixed function') or ES 2.0 ('shader based') Open GL level. When using the AVD (emulator) only ES 1.x is supported.||
-||``Install Location``            ||Specifies application install location on the device (for detailed information, please refer to http://developer.android.com/guide/appendix/install-location.html).||
-||>>>``Automatic``       ||Let OS decide. User will be able to move the app back and forth.||
-||>>>``Prefer External`` ||Install app to external storage (SD-Card) if possible. OS does not guarantee that will be possible; if not, the app will be installed to internal memory.||
-||>>>``Force Internal``  ||Force app to be installed into internal memory. User will be unable to move the app to external storage.||
-||``Internet Access``    ||When set to Require, will enable networking permissions even if your scripts are not using this. Automatically enabled for development builds.||
-||``Write Access``    ||When set to External (SDCard), will enable write access to external storage such as the SD-Card. Automatically enabled for development builds.||
-||``Scripting Define Symbols``||Custom compilation flags (see the [[PlatformDependentCompilation|platform dependent compilation]] page for details).||
-||__''Optimization''__            ||||
-||``Api Compatibility Level``     ||Specifies active .NET API profile. See below.||
-||>>>``.Net 2.0``                 ||.Net 2.0 libraries. Maximum .net compatibility,  biggest file sizes||
-||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
-||``Stripping Level (Pro-only feature)`` ||Options to strip out scripting features to reduce built player size(This setting is shared between iOS and Android Platforms)||
-||>>>``Disabled``         ||No reduction is done.||
-||>>>``Strip Assemblies`` ||Level 1 size reduction.||
-||>>>``Strip ByteCode (iOS only)`` ||Level 2 size reduction (includes reductions from Level 1).||
-||>>>``Use micro mscorlib`` ||Level 3 size reduction (includes reductions from Levels 1 and 2).||
-||``Enable "logcat" profiler``||Enable this if you want to get feedback from your device while testing your projects. So adb logcat prints logs from the device to the console (only available in development builds).||
-||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
-
-__''API Compatibility Level''__
-
-You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
-# Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
-# Also drag in your 3rd party assembly. 
-# Right click your 3rd party assembly, and select "Analyze".  
-# In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
-
-||!Publishing Settings            ||||
-Attach:PlayerSetAndroidPublish40.png\\
-''Publishing settings for Android Market''
-||PROPS
-||__''Keystore''__                               ||||
-||>>>``Use Existing Keystore / Create New Keystore``||Use this to choose whether to create a new Keystore or use an existing one.||
-||>>>``Browse Keystore``                            ||Lets you select an existing Keystore.||
-||>>>``Keystore password``                       ||Password for the Keystore.||
-||>>>``Confirm password``                        ||Password confirmation, only enabled if the Create New Keystore option is chosen.||
-||__''Key''__                                    ||||
-||>>>``Alias``                                      ||Key alias||
-||>>>``Password``                                   ||Password for key alias||
-||>>>``Split Application Binary``||Flag to split the application into expansion files. Useful only with Google Play Store when the finished build exceeds 50MB.||
-
-Note that for security reasons, Unity will save neither the keystore password nor the key password. Also, note that the signing must be done from Unity's player settings - using jarsigner will not work.
-
+(:include AndroidPlayerSettings:)
 >><<
 
 !!Flash
