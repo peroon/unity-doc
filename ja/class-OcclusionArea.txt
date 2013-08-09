@@ -27,7 +27,7 @@ Attach:OcclusionCullingEditView.png\\
 
 !! 生成されたオクルージョンのテスト
 
-オクルージョンをセットアップした後、オクルージョンカリングプレビューパネル（ Occlusion Culling Preview Panel）上でOcclusion Cullingをオンにして、メインカメラをシーンビューのなかで移動することでテストを行うことが出来ます。
+オクルージョンをセットアップした後、Occlusion Cullingをオンにして（Visualize modeの$$Occlusion Culling Preview Panel$$上で）、$$メインカメラ$$をシーンビューのなかで移動することでテストを行うことが出来ます。
 
 Attach:OcclusionCullingVisualize.png\\
 シーンビューのオクルージョンカリング（Occlusion Culling）モード
