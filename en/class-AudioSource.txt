@@ -31,7 +31,7 @@ Attach:Editor-AudioSource.png\\
 ||``__2D Sound Settings__``||Settings that are applied to the audio source if the Audio clip is a 2D Sound.||
 ||``Pan 2D`` ||Sets how much the engine has an effect on the audio source. ||
 
-[[#rolloff]]
+
 !! Types of Rolloff
 There are three Rolloff modes: Logarithmic, Linear and Custom Rolloff. The Custom Rolloff can be modified by modifying the volume distance curve as described below. If you try to modify the volume distance function when it is set to Logarithmic or Linear, the type will automatically change to Custom Rolloff.
 

@@ -111,50 +111,49 @@ Use ''Profiler.usedHeapSize'' to get the total used Unity memory.
 No tools yet but you can use the following.
 
 *Unity Profiler - not perfect, skips stuff, but you can get an overview.  It works on the device!
-*Internal profiler
-**Shows Used heap and allocated heap - see mono memory.
-**Shows the number of mono allocations per frame.
+*Internal profiler. Shows Used heap and allocated heap - see mono memory. Shows the number of mono allocations per frame.
 *Xcode tools - iOS
-**Xcode Instruments Activity Monitor - Real Memory column.
-**Xcode Instruments Allocations - net allocations for created and living objects.
-**VM Tracker
-***textures usually get allocated with IOKit label.
-***meshes usually go into VM Allocate.
-*Make your own tool
-**''FindObjectsOfTypeAll (type : Type) : Object[]''
-**''FindObjectsOfType (type : Type): Object[]''
-**''GetRuntimeMemorySize (o : Object) : int	''
-**''GetMonoHeapSize''
-**''GetMonoUsedSize''
-**''Profiler.BeginSample/EndSample'' - profile your own code
-**''UnloadUnusedAssets () : AsyncOperation''
-**''System.GC.GetTotalMemory/Profiler.usedHeapSize''
-*References to the loaded objects - There is no way to figure this out.  A workaround is to “Find references in scene” for public variables.
+*Xcode Instruments Activity Monitor - Real Memory column.
+*Xcode Instruments Allocations - net allocations for created and living objects.
+*VM Tracker (textures usually get allocated with IOKit label and meshes usually go into VM Allocate).
 
-!!!Memory hiccups
+You can also make your own tool using Unity API calls:-
 
-*Garbage collector
-**This fires when the system cannot fit new data into the allocated heap block.
-**Don’t use ''OnGUI'' on mobiles
-***It shoots several times per frame
-***It completely redraws the view.
-***It creates tons of memory allocation calls that require Garbage Collection to be invoked.
-**Creating/removing too many objects too quickly?
-***This may lead to fragmentation.
-***Use the Editor profiler to track the memory activity.
-***The internal profiler can be used to track the mono memory activity.
-**''System.GC.Collect()'' You can use this ''.Net'' function when it’s ok to have a hiccup.
-*New memory allocations
-**Allocation hiccups
-***Use lists of preallocated, reusable class instances to implement your own memory management scheme.
-***Don’t make huge allocations per frame, cache, preallocate instead
-**Problems with fragmentation?
-***Preallocate the memory pool.
-***Keep a List of inactive GameObjects and reuse them instead of Instantiating and Destroying them.
-**Out of mono memory
-***Profile memory activity - when does the first memory page fill up?
-***Do you really need so many gameobjects that a single memory page is not enough?
-**Use structs instead of classes for local data. Classes are stored on the heap; structs on the stack.
+*''FindObjectsOfTypeAll (type : Type) : Object[]''
+*''FindObjectsOfType (type : Type): Object[]''
+*''GetRuntimeMemorySize (o : Object) : int	''
+*''GetMonoHeapSize''
+*''GetMonoUsedSize''
+*''Profiler.BeginSample/EndSample'' - profile your own code
+*''UnloadUnusedAssets () : AsyncOperation''
+*''System.GC.GetTotalMemory/Profiler.usedHeapSize''
+
+References to the loaded objects - There is no way to figure this out.  A workaround is to “Find references in scene” for public variables.
+
+!!!Garbage collector
+
+*This fires when the system cannot fit new data into the allocated heap block.
+*Don’t use ''OnGUI'' on mobiles: it shoots several times per frame, completely redraws the view and creates tons of memory allocation calls that require Garbage Collection to be invoked.
+
+!!!Creating/removing too many objects too quickly?
+*This may lead to fragmentation.
+*Use the Editor profiler to track the memory activity.
+*The internal profiler can be used to track the mono memory activity.
+*''System.GC.Collect()'' You can use this ''.Net'' function when it’s ok to have a hiccup.
+
+
+!!!Allocation hiccups
+*Use lists of preallocated, reusable class instances to implement your own memory management scheme.
+*Don’t make huge allocations per frame, cache, preallocate instead
+*Problems with fragmentation?
+
+!!!Preallocating a memory pool.
+*Keep a List of inactive GameObjects and reuse them instead of Instantiating and Destroying them.
+
+!!!Out of mono memory
+*Profile memory activity - when does the first memory page fill up?
+*Do you really need so many gameobjects that a single memory page is not enough?
+*Use structs instead of classes for local data. Classes are stored on the heap; structs on the stack.
 *Read the relevant section in the manual Link to http://docs.unity3d.com/Documentation/Manual/UnderstandingAutomaticMemoryManagement.html
 
 !!!Out of memory crashes
@@ -163,10 +162,9 @@ At some points a game may crash with "out of memory" though it in theory it shou
 *Two big scenes being loaded at the same time - use an empty scene between two bigger ones to fix this.
 *Additive scene loading - remove unused parts to maintain the memory size.
 *Huge asset bundles loaded to the memory
-*Loading via WWW or instantiating (a huge amount of) big objects like:
-**Textures without proper compression (a no go for mobiles).
-**Textures having Get/Set pixels enabled. This requires an uncompressed copy of the texture in memory.
-**Textures loaded from JPEG/PNGs at runtime are essentially uncompressed.
-**Big mp3 files marked as decompress on loading.
+*Textures without proper compression (a no go for mobiles).
+*Textures having Get/Set pixels enabled. This requires an uncompressed copy of the texture in memory.
+*Textures loaded from JPEG/PNGs at runtime are essentially uncompressed.
+*Big mp3 files marked as decompress on loading.
 *Keeping unused assets in weird caches like static monobehavior fields, which are not cleared when changing scenes.
 

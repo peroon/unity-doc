@@ -38,6 +38,3 @@ A very quick way to make a live arena-camera in your game:
 
 Attach:RenderTextureLiveCam.png\\
 ''Render Textures are set up as demonstrated above''
-
-!Hints
-* Unity renders everything in the texture assigned to RenderTexture.active.

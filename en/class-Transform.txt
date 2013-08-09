@@ -44,7 +44,7 @@ Around the centre of the Transform gizmo are three coloured squares. These allow
 Attach:TransformExample4.png\\
 ''Dragging in the XZ plane''
 
-[[#Parenting]]
+
 !! Parenting
 
 Parenting is one of the most important concepts to understand when using Unity. When a GameObject is a $$Parent$$ of another GameObject, the $$Child$$ GameObject will move, rotate, and scale exactly as its Parent does.  Just like your arms are attached to your body, when you turn your body, your arms move because they're attached. Any object can have multiple children, but only one parent.

@@ -181,7 +181,7 @@ Unityでは $$UnityPlayerActivity$$ クラス（iOSのAppController.mmのよう�
 アプリケーションはAndroid OSとUnity Android間で連携する処理の一部もしくは全部を書き換えることができます。これは新しいUnityPlayerActivityの [[ http://developer.android.com/reference/android/app/Activity.html | Activity ]] を作成する形で行います。（UnityPlayerActivity.javaは、MacOSXなら ^^/Applications/Unity/Unity.app/Contents/PlaybackEngines/AndroidPlayer/src/com/unity3d/player^^ 、Windowsなら ^^C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\src\com\unity3d\player^^ から取得することができます）
 
 これを行うには、まずUnity/Androidに付属している ^^classes.jar^^ を探します。このファイルはUnityをインストールしたフォルダ（Windowsであれば ^^C:\Program Files\Unity\Editor\Data^^ 、MacOSXであれば ^^/Applications/Unity^^ ）のサブフォルダ ^^PlaybackEngines/AndroidPlayer/bin^^ にあります。その後、新しいActivityからUnityの機能を使用するために、classpathに ^^classes.jar^^ を追加します。最終的にはクラスファイルを.jarに圧縮し、 ^^Assets->Plugins->Android^^ に配置する形になります。
-その後、起動するactivityを指定した[[ http://developer.android.com/guide/topics/manifest/manifest-intro.html | AndroidManifest.xml ]] を作成し、^^Assets->Plugins->Android^^ に配置剃る必要があります。
+その後、起動するactivityを指定した[[ http://developer.android.com/guide/topics/manifest/manifest-intro.html | AndroidManifest.xml ]] を作成し、^^Assets->Plugins->Android^^ に配置する必要があります。
 
 新しいactivityは、 __OverrideExample.java__　のようになります：
 [@package com.company.product;

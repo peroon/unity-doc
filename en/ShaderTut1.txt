@@ -153,12 +153,12 @@ The next command, ``[[SL-SetTexture|SetTexture]]``, is very important. These com
 Within this block we set a constant color value, namely the Color of the Material, ``_Color``. We'll use this constant color below.
 
 In the next command we specify how to mix the texture with the color values. We do this with the ``Combine`` command that specifies how to blend the texture with another one or with a color. Generally it looks like this:
-    ``Combine`` $$ColorPart$$, $$AlphaPart$$
+    ``Combine ColorPart, AlphaPart``
 
 Here ``ColorPart`` and ``AlphaPart`` define blending of color (RGB) and alpha (A) components respectively. If ``AlphaPart`` is omitted, then it uses the same blending as ``ColorPart``.
 
 In our VertexLit example:
-    ``Combine`` texture * primary DOUBLE__,__ texture * constant
+    ``Combine texture * primary DOUBLE, texture * constant``
 
 Here ``texture`` is the color coming from the current texture (here ``_MainTex``). It is multiplied (*) with the ``primary`` vertex color.  Primary color is the vertex lighting color, calculated from the Material values above. Finally, the result is multiplied by two to increase lighting intensity (``DOUBLE``). The alpha value (after the comma) is ``texture`` multiplied by ``constant`` value (set with ``constantColor`` above). Another often used combiner mode is called ``previous`` (not used in this shader). This is the result of any previous ``SetTexture`` step, and can be used to combine several textures and/or colors with each other.
 

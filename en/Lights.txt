@@ -31,4 +31,4 @@ For more info about rendering paths you can visit the [[RenderingPaths | Renderi
 
 
 !! More information
-For more information about using Lights, check the [[class-Light | Lights page]] in the [[Reference | Reference Manual]].
+For more information about using Lights, check the [[class-Light | Lights page]] in the Manual.

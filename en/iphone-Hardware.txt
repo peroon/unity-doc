@@ -2,10 +2,8 @@
 
 !! Hardware models
 
-The following table summarizes iOS hardware available in devices of various generations:
+The following list summarizes iOS hardware available in devices of various generations:
 
-(:table width=100%:)
-(:cellnr:)
 
 !!![[http://en.wikipedia.org/wiki/IPhone#Model_comparison | iPhone Models]] 
 
@@ -13,17 +11,14 @@ The following table summarizes iOS hardware available in devices of various gene
 !!! Original iPhone
 * Screen: 320x480 pixels, LCD at 163ppi
 * ARM11, 412 Mhz CPU
-
-* PowerVR MBX Lite 3D graphics processor
-** Slow
+* PowerVR MBX Lite 3D graphics processor (slow)
 * 128MB of memory
 * 2 megapixel camera
 
 !!! iPhone 3G
 * Screen: 320x480 pixels, LCD at 163ppi
 * ARM11, 412 Mhz CPU
-* PowerVR MBX Lite 3D graphics processor
-** Slow
+* PowerVR MBX Lite 3D graphics processor (slow)
 * 128MB of memory
 * 2 megapixel camera
 * GPS support
@@ -31,15 +26,15 @@ The following table summarizes iOS hardware available in devices of various gene
 Attach:skiSafari.jpg\\
 iPhone 3G: Fixed-function graphics (no fancy shaders), very slow CPU and GPU.
 
-(:cellnr:)
+
 
 !!! iPhone 3GS
 * Screen: 320x480 pixels, LCD at 163ppi
 * ARM Cortex A8, 600 MHz CPU
 * PowerVR SGX535 graphics processor
-** Shader perfomance at native resolution, compared to iPad2: 
+* Shader perfomance at native resolution, compared to iPad2: 
    Attach:Bar1.png
-** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
    Attach:Bar2.png
 * 256MB of memory
 * 3 megapixel camera with video capture capability
@@ -52,33 +47,29 @@ Requires scripting optimization for complex games. This is the average hardware 
 
 !!! iPhone 4
 * Screen: 960x640 pixels, LCD at 326 ppi, 800:1 contrast ratio.
-* Apple A4 
-** 1Ghz ARM Cortex-A8 CPU
-** PowerVR SGX535 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Apple A4 1Ghz ARM Cortex-A8 CPU
+* PowerVR SGX535 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar3.png
-*** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
     Attach:Bar4.png
 * 512MB of memory
-* Cameras
-** Rear 5.0 MP backside illuminated CMOS image sensor with 720p HD video at 30 fps and LED flash
-** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
+* Rear 5.0 MP backside illuminated CMOS image sensor with 720p HD video at 30 fps and LED flash
+* Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
 * GPS support
 * Compass Support
 
 !!! iPhone 4S
 * Screen: 960x640 pixels, LCD at 326 ppi, 800:1 contrast ratio.
-* Apple A5
-** Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
-** Dual-Core PowerVR SGX543MP2 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Apple A5 Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
+* Dual-Core PowerVR SGX543MP2 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar5.png
-*** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
     Attach:Bar6.png
 * 512MB of memory
-* Cameras
-** Rear 8.0 MP backside illuminated CMOS image sensor with 1080p HD video at 30 fps, face detection and video stabilization.
-** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
+* Rear 8.0 MP backside illuminated CMOS image sensor with 1080p HD video at 30 fps, face detection and video stabilization.
+* Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
 * GPS support
 * Compass Support
 
@@ -87,30 +78,27 @@ The iPhone 4S, with the new A5 chip, is capable of rendering complex shaders thr
 
 !!! iPhone 5
 * Screen: 1136x640 pixels, LCD at 326 ppi.
-* Apple A6
-** Dual-Core 1.3Ghz Apple-designed ARMv7s CPU
-** Triple-Core PowerVR SGX543MP3 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Apple A6 Dual-Core 1.3Ghz Apple-designed ARMv7s CPU
+* Triple-Core PowerVR SGX543MP3 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar5.png
-*** Raw shader perfomance, compared to iPad3:
+* Raw shader perfomance, compared to iPad3:
     Attach:Bar6.png
 * 1GB of memory
-* Cameras
-** Rear 8.0 MP infra-red cut-off filter, back-illuminated sensor available to take videos while shooting videos.
-** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
+* Rear 8.0 MP infra-red cut-off filter, back-illuminated sensor available to take videos while shooting videos.
+* Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
 * GPS support
 * Compass Support
 
 
 !!![[http://en.wikipedia.org/wiki/IPod_Touch#Specifications| iPod Touch Models]] 
 
-(:cellnr:)
+
 
 !!! iPod Touch 1st generation
 * Screen: 320x480 pixels, LCD at 163ppi
 * ARM11, 412 Mhz CPU
-* PowerVR MBX Lite 3D graphics processor
-** Slow
+* PowerVR MBX Lite 3D graphics processor (slow)
 * 128MB of memory
 
 Attach:tripletown.jpg\\
@@ -119,12 +107,9 @@ iPod Touch: Fixed-function graphics (no fancy shaders), very slow CPU and GPU.
 !!! iPod Touch 2nd generation
 * Screen: 320x480 pixels, LCD at 163ppi
 * ARM11, 533 Mhz CPU
-* PowerVR MBX Lite 3D graphics processor
-** Slow
+* PowerVR MBX Lite 3D graphics processor (slow)
 * 128MB of memory
 * Speaker and microphone
-
-(:cellnr:)
 
 
 
@@ -141,18 +126,17 @@ Requires scripting optimization for complex games. This is the average hardware 
 !!! iPod Touch 5th generation
 * Comparable to iPhone 4s
 
-(:cellnr:)
+
 
 !!![[http://en.wikipedia.org/wiki/IPad#Technical_specifications | iPad Models]] 
 
 !!! iPad
 * Screen: 1024x768 pixels, LCD at 132 ppi, LED-backlit.
-* Apple A4 
-** 1Ghz MHz ARM Cortex-A8 CPU
-** PowerVR SGX535 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Apple A4 1Ghz MHz ARM Cortex-A8 CPU
+* PowerVR SGX535 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar7.png
-*** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
     Attach:Bar8.png
 * Wifi + Blueooth + (3G Cellular HSDPA, 2G cellular EDGE on the 3G version)
 * Accelerometer, ambient light sensor, magnetometer (for digital compass)
@@ -162,15 +146,14 @@ Attach:airmail.jpg\\
 iPad: Similar to iPod Touch 4th Generation and iPhone 4.
 
 
-(:cellnr:)
+
 !!! iPad 2
 * Screen: 1024x768 pixels, LCD at 132 ppi, LED-backlit.
-* Apple A5
-** Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
-** Dual-Core PowerVR SGX543MP2 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Apple A5 Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
+* Dual-Core PowerVR SGX543MP2 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar9.png
-*** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
     Attach:Bar10.png
 * Same as Previous
 
@@ -178,35 +161,32 @@ Attach:deadtrigger.jpg\\
 iPad2: The A5 can do full screen bumpmapping, assuming the shader is simple enough. However, it is likely that your game will perform best with bumpmapping only on crucial objects. Full screen image effects still out of reach. Scripting optimization less important.
 
 
-(:cellnr:)
 
 !!! iPad (3rd generation)
 * Screen: 2048x1536 pixels, LCD at 264 ppi, LED-backlit.
 * Apple A5X
-** Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
-** Quad-Core PowerVR SGX543MP4 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Dual-Core 1Ghz ARM Cortex-A9 MPCore CPU
+* Quad-Core PowerVR SGX543MP4 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar11.png
-*** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
     Attach:Bar12.png
 
 Attach:bladeslinger.jpg\\
 The iPad 3 has been shown to be capable of render-to-texture effects such as reflective water and fullscreen image effects. However, optimized shaders are still crucial. But if your game isn't trying to push limits of the device, optimizing scripting and gameplay is probably as much of a waste of time on this generation of devices as it is on PC.
 
-(:cellnr:)
+
 
 !!! iPad (4rd generation)
 * Screen: 2048x1536 pixels, LCD at 264 ppi, LED-backlit.
-* Apple A6X
-** Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
-** Quad-Core PowerVR SGX554MP4 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+* Apple A6X Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
+* Quad-Core PowerVR SGX554MP4 GPU
+* Shader perfomance at native resolution, compared to iPad2: 
     Attach:Bar11.png
-*** Raw shader perfomance, compared to iPad3: 
+* Raw shader perfomance, compared to iPad3: 
     Attach:Bar12.png
 
 
-(:tableend:)
 
 !! Graphics Processing Unit and Hidden Surface Removal
 The iPhone/iPad graphics processing unit (GPU) is a Tile-Based Deferred Renderer. In contrast with most GPUs in desktop computers, the iPhone/iPad GPU focuses on minimizing the work required to render an image as early as possible in the processing of a scene.  That way, only the visible pixels will consume processing resources.

@@ -1,4 +1,4 @@
-! Terrain Engine Guide
+! Terrain Engine Overview
 
 This section will explain how to use the $$Terrain Engine$$.  It will cover creation, technical details, and other considerations.  It is broken into the following sections:
 
@@ -32,7 +32,6 @@ This section explains practical usage for detail meshes like rocks, haystacks, v
 
 Attach:TerrainGuide-DetailMeshesSection.png
 
-[[#Lightmapping]]
 !! [[Main.Lightmapping | Lightmaps]]
 You can lightmap terrains just like any other objects using Unity's built-in lightmapper. See [[Main.Lightmapping | Lightmapping Quickstart]] for help.
 
@@ -45,4 +44,3 @@ This section covers all the other settings associated with Terrains.
 !! Mobile performance note
 
 Rendering terrain is quite expensive, so terrain engine is not very practical on lower-end mobile devices.
-

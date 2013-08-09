@@ -14,7 +14,7 @@ The stencil buffer is usually an 8 bit integer per pixel. The value can be writt
 :Fail ''stencilOperation'': What to do with the contents of the buffer if the stencil test fails. Default: ''keep''.
 :ZFail ''stencilOperation'': What to do with the contents of the buffer if the stencil test passes, but the depth test fails. Default: ''keep''.
 
-Comp, Pass, Fail and ZFail will be applied to the front-facing geometry, unless ''Cull Front'' is specified, in which case it's back-facing geometry. You can also explicitly specify the two-sided stencil state by defining CompFront, PassFront, FailFront, ZFailFront, CompBack, PassBack, FailBack, ZFailBack.
+Comp, Pass, Fail and ZFail will be applied to the front-facing geometry, unless ''Cull Front'' is specified, in which case it's back-facing geometry. You can also explicitly specify the two-sided stencil state by defining CompFront, PassFront, FailFront, ZFailFront (for front-facing geometry), and CompBack, PassBack, FailBack, ZFailBack (for back-facing geometry).
 
 !!!Comparison Function
 Comparison function is one of the following:

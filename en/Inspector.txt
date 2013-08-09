@@ -8,7 +8,7 @@ Any property that is displayed in the Inspector can be directly modified.  Even 
 
 Attach:Editor-InspectorDragDrop.png
 
-Click the question mark beside any Component name in the Inspector to load its Component Reference page. Please view the  [[Components|Component Reference]] for a complete and detailed guide to all of Unity's Components.
+Click the question mark beside any Component name in the Inspector to load its Component Reference page. 
 
 Attach:componentsmenu.png\\
 ''Add Components from the Component menu''

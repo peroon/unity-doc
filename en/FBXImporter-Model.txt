@@ -1,3 +1,17 @@
+!Models
+
+Model files that are placed in the Assets folder in your Unity project are automatically imported and stored as Unity assets.
+
+A model file may contain a 3D model, such as a character, a building, or a piece of furniture. The model is imported as multiple assets. In the Project view the main imported object is a Model Prefab. Usually there are also up to several Mesh objects that are referenced by the Model Prefab.
+
+A model file may also contain animation data which can be used to animate this model or other models. The animation data is imported as one or more Animation Clips.
+
+
+Attach:MeshExample40.png \\
+''A [[class-MeshFilter | Mesh Filter]] together with [[class-MeshRenderer | Mesh Renderer]] makes the model appear on screen.''
+
+
+
 !Import settings for Meshes
 
 The $$Import Settings$$ for a model file will be displayed in the ~~Model~~ tab of the FBX importer inspector when the model is selected. These affect the __mesh__, it's __normals__ and imported __materials__. Settings are applied per asset on disk so if you need assets with different settings make (and rename accordingly) a duplicate file.

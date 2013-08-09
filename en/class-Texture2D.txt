@@ -1,6 +1,6 @@
 !Texture 2D
 
-$$Textures$$ bring your $$Meshes$$, $$Particles$$, and interfaces to life! They are image or movie files that you lay over or wrap around your objects. As they are so important, they have a lot of properties. If you are reading this for the first time, jump down to [[#details | Details]], and return to the actual settings when you need a reference.
+$$Textures$$ bring your $$Meshes$$, $$Particles$$, and interfaces to life! They are image or movie files that you lay over or wrap around your objects. As they are so important, they have a lot of properties.
 
 
 The shaders you use for your objects put specific requirements on which textures you need, but the basic principle is that you can put any image file inside your project. If it meets the size requirements (specified below), it will get imported and optimized for game use.  This extends to multi-layer Photoshop or TIFF files - they are flattened on import, so there is no size penalty for your game.  Note that this flattening happens internally to Unity, and is optional, so you can continue to save and import your PSD files with layers intact.  The PSD file is not flattened, in other words.
@@ -237,7 +237,7 @@ So in this case you lose time decompressing textures and lose memory storing the
 ||>>>``RGB 24-bit`` ||Uncompressed RGB image data, 8 bits per channel ||
 ||>>>``RGBA 32-bit`` ||Uncompressed RGBA image data, 8 bits per channel ||
 
-[[#details]]
+
 !! Details
 
 
@@ -245,7 +245,7 @@ So in this case you lose time decompressing textures and lose memory storing the
 Unity can read the following file formats: PSD, TIFF, JPG, TGA, PNG, GIF, BMP, IFF, PICT. It should be noted that Unity can import multi-layer PSD & TIFF files just fine. They are flattened automatically on import but the layers are maintained in the assets themselves, so you don't lose any of your work when using these file types natively. This is important as it allows you to just have one copy of your textures that you can use from Photoshop, through your 3D modelling app and into Unity.
 
 
-[[#texturesizes]]
+
 !!! Texture Sizes
 
 Ideally texture sizes should be powers of two on the sides. These sizes are as follows: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048 etc. pixels. The textures do not have to be square, i.e. width can be different from height.  Note that each platform may impose maximum texture sizes.
@@ -259,13 +259,13 @@ Non power of two texture assets can be scaled up at import time using the ``Non 
 When mapping a 2D texture onto a 3D model, some sort of wrapping is done. This is called $$UV mapping$$ and is done in your 3D modelling app. Inside Unity, you can scale and move the texture using [[class-Material|Materials]]. Scaling normal & detail maps is especially useful.
 
 
-[[#mipmaps]]
+
 !!! Mip Maps
 
 Mip Maps are a list of progressively smaller versions of an image, used to optimise performance on real-time 3D engines. Objects that are far away from the camera use the smaller texture versions. Using mip maps uses 33% more memory, but not using them can be a huge performance loss. You should always use mipmaps for in-game textures; the only exceptions are textures that will never be minified (e.g. GUI textures).
 
 
-[[#normalmaps]]
+
 !!! Normal Maps
 
 Normal maps are used by normal map shaders to make low-polygon models look as if they contain more detail. Unity uses normal maps encoded as RGB images. You also have the option to generate a normal map from a grayscale height map image.
@@ -282,7 +282,7 @@ When drawing detail textures, a neutral gray is invisible, white makes the main 
 
 If you want to use texture for reflection maps (e.g. use the ``Reflective`` builtin shaders), you need to use [[class-Cubemap|Cubemap Textures]].
 
-[[#anisotropy]]
+
 !!! Anisotropic filtering
 
 Anisotropic filtering increases texture quality when viewed from a grazing angle, at some expense of rendering cost (the cost is entirely on the graphics card). Increasing anisotropy level is usually a good idea for ground and floor textures. In [[class-QualitySettings | Quality Settings]] anisotropic filtering can be forced for all textures or disabled completely.

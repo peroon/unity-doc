@@ -51,7 +51,9 @@ The parameters string and parameters table are defined first. The table is a dic
 Build the project for the first time to generate an HTML file, and edit its FlashVars for IE and other browsers (two different lines).
 
 !!!HTML
-[@<param name="flashvars" value="unitydebug=false&amp;deeptrace=false&amp;scene=Scene1" />@]
+[@
+<param name="flashvars" value="unitydebug=false&amp;deeptrace=false&amp;scene=Scene1" />
+@]
 
 Finally open the HTML file in a browser to run the project.
 

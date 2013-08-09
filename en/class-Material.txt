@@ -1,6 +1,6 @@
 ! Material
 
-Materials are used in conjunction with [[class-MeshRenderer|Mesh]] or [[class-ParticleRenderer|Particle Renderers]] attached to the $$GameObject$$.  They play an essential part in defining how your object is displayed.  Materials include a reference to the $$Shader$$ used to render the $$Mesh$$ or $$Particles$$, so these Components can not be displayed without some kind of Material.
+Materials are used in conjunction with [[class-MeshRenderer|Mesh]] or [[class-ParticleSystem|Particle Systems]] attached to the $$GameObject$$.  They play an essential part in defining how your object is displayed.  Materials include a reference to the $$Shader$$ used to render the $$Mesh$$ or $$Particles$$, so these Components can not be displayed without some kind of Material.
 
 Attach:Inspector-MaterialSimple.png\\
 ''A Diffuse Shader Material has only two properties - a color and a texture.''
@@ -62,4 +62,3 @@ Attach:Material-Placement.png\\
 
 !!Hints
 * It is a good practice to share a single Material across as many GameObjects as possible.  This has great performance benefits.
-

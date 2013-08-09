@@ -1,4 +1,4 @@
-! Tree Creator Guide
+! Tree Creator Overview
 
 The $$Tree Creator$$ allows you to create and edit trees procedurally. The resulting trees can be used as normal $$GameObjects$$ or integrated into the Terrain Engine. With this tool, you can create great looking trees quickly and fine tune your trees using a number of design tools to achieve the perfect look in your game. The Tree Creator is very useful when you want to create a forest or a jungle where you need different tree forms.
 

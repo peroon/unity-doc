@@ -18,4 +18,3 @@ Attach:NavMeshAgent.png
 ||``Avoidance Priority`` ||Agents of lower priority will be ignored by this agent when performing avoidance. The value should be in the range 0..99 where lower numbers indicate higher priority. ||
 ||``NavMesh Walkable`` ||Specifies the types of [[class-NavMeshLayers|Navmesh layers]] that the agent can traverse.
 
-(back to [[NavmeshandPathfinding|Navigation and Pathfinding]])

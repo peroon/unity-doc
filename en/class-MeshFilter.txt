@@ -2,8 +2,9 @@
 
 The $$Mesh Filter$$ takes a mesh from your assets and passes it to the [[class-MeshRenderer|Mesh Renderer]] for rendering on the screen.
 
-Attach:Inspector-MeshFilter.png\\
-''A Mesh Filter combined with a Mesh Renderer makes the model appear on screen. ''
+Attach:Inspector-MeshFilter.png
+
+''A Mesh Filter combined with a Mesh Renderer makes the model appear on screen''
 
 
 !! Properties

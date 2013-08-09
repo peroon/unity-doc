@@ -51,7 +51,9 @@ foreach (string parameter in list) {
 最初にプロジェクトのビルドを行ってHTMLファイルを生成し、IEおよび他のブラウザ向けにFlashVarsを編集します(二つの異なる行)。
 
 !!!HTML
-[@<param name="flashvars" value="unitydebug=false&amp;deeptrace=false&amp;scene=Scene1" />@]
+[@
+<param name="flashvars" value="unitydebug=false&amp;deeptrace=false&amp;scene=Scene1" />
+@]
 
 最後にブラウザでHTMLファイルを開きプロジェクトを実行します。
 

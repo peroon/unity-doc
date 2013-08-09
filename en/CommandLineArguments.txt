@@ -37,6 +37,10 @@ As mentioned above, the editor and also built games can optionally be supplied w
 
 :``-buildLinux64Player &lt;pathname&gt;``:Build a 64-bit standalone Linux player (eg, -buildLinux64Player path/to/your/build).
 
+:``-buildWebPlayer &lt;pathname&gt;``:Build a WebPlayer (eg, -buildWebPlayer path/to/your/build).
+
+:``-buildWebPlayerStreamed &lt;pathname&gt;``:Build a streamed WebPlayer (eg, -buildWebPlayerStreamed path/to/your/build).
+
 :``-importPackage &lt;pathname&gt;``:Import the given [[HOWTO-exportpackage | package]]. No import dialog is shown.
 
 :``-createProject &lt;pathname&gt;``:Create an empty project at the given path.
@@ -113,7 +117,7 @@ Standalone players built with Unity also understand some command line arguments:
 
 :``-force-d3d9-ref (Windows only)``:Make the game run using Direct3D's "Reference" software renderer. The [[http://msdn.microsoft.com/en-us/directx/default.aspx | DirectX SDK]] has to be installed for this to work. This is mostly useful for building automated test suites, where you want to ensure rendering is exactly the same no matter what graphics card is being used.
 
-:``-adapter N (Windows only)``:Allows the game to run full-screen on another display, where N denotes the display number.
+:``-adapter N (Windows only)``:Allows the game to run full-screen on another display.  The N maps to a Direct3D display adaptor. In most cases there is a one-to-one relationship between adapters and video cards. On cards that support multi-head (they can drive multiple monitors from a single card) each "head" may be its own adapter. 
 
 :``-popupwindow (Windows only)``:The window will be created as a a pop-up window (without a frame).
 
