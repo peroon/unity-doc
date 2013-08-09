@@ -247,7 +247,7 @@ Attach:PlayerSetiOSOther4b7.png
 
 __Note:__ If you build for example for iPhone OS 3.2, and then select Simulator 3.2 in Xcode you will get a ton of errors. So you __MUST__ be sure to select a proper Target SDK in Unity Editor.
 
-__''API Compatibility Level''__
+!!!!API Compatibility Level
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
 # Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
@@ -316,7 +316,8 @@ Attach:PlayerSetNaClOther4b7.png
 ||>>>``.Net 2.0 Subset``          ||Subset of full .net compatibility,  smaller file sizes||
 ||``Strip Physics Code``||Remove physics engine code from the build when not required.||
 ||``Optimize Mesh Data``||Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).||
-__''API Compatibility Level''__
+
+!!!!API Compatibility Level
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
 # Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/

@@ -121,7 +121,7 @@ Attach:PlayerSetPCOther355.png
 ||>>>``Overview only``||Minimal stats about UnloadUnusedAssets usage.||
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
 
-__''API Compatibility Level''__
+!!!!API Compatibility Level
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
 # Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
@@ -266,7 +266,7 @@ Attach:PlayerSetiOSOther355.png
 
 __Note:__ If you build for example for iPhone OS 3.2, and then select Simulator 3.2 in Xcode you will get a ton of errors. So you __MUST__ be sure to select a proper Target SDK in Unity Editor.
 
-__''API Compatibility Level''__
+!!!!API Compatibility Level
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
 # Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
@@ -346,7 +346,7 @@ Attach:PlayerSetAndroidOther355.png
 ||>>>``Overview only``||Minimal stats about UnloadUnusedAssets usage.||
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
 
-__''API Compatibility Level''__
+!!!!API Compatibility Level
 
 You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get "Reflector" on windows. 
 # Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/
