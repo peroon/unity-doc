@@ -20,7 +20,7 @@ Attach:OcclusionCullingOcclusionArea.png\\
 ||>>>``Extremely High`` ||動くオブジェクトでほぼ完全に精緻なオクルージョンカリングが求められる場合に限り使用してください。注意：大量の処理時間を浪費します。||
 
 
-Occlusion Areaを作成した後、箱をセルに分割する方法を確認する必要があります。Occlusion Areaがどのように算出されたか確認するためにはEditを選択し、オクルージョンカリングプレビューパネル（ Occlusion Culling Preview Panel）でビュー（View）をトグルして選択して下さい。
+Occlusion Areaを作成した後、箱をセルに分割する方法を確認する必要があります。Occlusion Areaがどのように算出されたか確認するためにはEditを選択し、$$オクルージョンカリングプレビューパネル（ Occlusion Culling Preview Panel）$$で$$ビュー（View）$$をトグルして選択して下さい。
 
 
 Attach:OcclusionCullingEditView.png\\
