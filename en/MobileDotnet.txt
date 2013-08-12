@@ -2,7 +2,7 @@
 [[#iOS]]
 !iOS!
 >>ios<<
-Now Unity iOS supports two .NET API compatibility levels: .NET 2.0 and a subset of .NET 2.0 .You can select the appropriate level in the [[class-PlayerSettings | Player Settings]].
+Now Unity iOS supports two .NET API compatibility levels: .NET 2.0 and a subset of .NET 2.0 .You can select the appropriate level in the [[class-PlayerSettings40 | Player Settings]].
 
 !! .NET API 2.0
 Unity supports the ``.NET 2.0`` API profile. This is close to the full .NET 2.0 API and offers the best compatibility with pre-existing .NET code.  However, the application's build size and startup time will be relatively poor.
@@ -16,7 +16,7 @@ Unity also supports the ``.NET 2.0 Subset`` API profile. This is close to the Mo
 [[#Android]]
 !Android!
 >>android<<
-Unity Android supports two .NET API compatibility levels: .NET 2.0 and a subset of .NET 2.0 You can select the appropriate level in the [[class-PlayerSettings | Player Settings]].
+Unity Android supports two .NET API compatibility levels: .NET 2.0 and a subset of .NET 2.0 You can select the appropriate level in the [[class-PlayerSettings40 | Player Settings]].
 
 !! .NET API 2.0
 Unity supports the ``.NET 2.0`` API profile; It is close to the full .NET 2.0 API and offers the best compatibility with pre-existing .NET code. However, the application's build size and startup time will be relatively poor.

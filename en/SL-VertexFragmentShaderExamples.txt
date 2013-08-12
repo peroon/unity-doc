@@ -4,7 +4,7 @@ We start on how to setup a basic scene in Unity to work with. The initial exampl
 
 !! Configuring a Unity Project
 
-After starting Unity, you will probably be viewing an empty project. If not, you should create a new project by choosing '''File > New Project...''' from the menu. If you are not familiar with Unity's Scene View, Hierarchy View, Project View and Inspector View, now would be a good time to read the first two (or three) sections (''Unity Basics'' and ''Building Scenes'') of the [[UserGuide | Unity User Guide]].
+After starting Unity, you will probably be viewing an empty project. If not, you should create a new project by choosing '''File > New Project...''' from the menu. If you are not familiar with Unity's Scene View, Hierarchy View, Project View and Inspector View, now would be a good time to read the first two (or three) sections (''Unity Basics'' and ''Building Scenes'') of the [[UnityOverview]].
 
 
 !! Creating a Mesh

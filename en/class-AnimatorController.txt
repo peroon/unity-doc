@@ -2,4 +2,5 @@
 
 The $$Animator Controller$$ is the main component by which animation behaviour is added to an object. This section describes the component in detail.
 
-(:tocportion:)
+(:tocportion TableOfContentsNew:)
+

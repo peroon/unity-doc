@@ -4,7 +4,7 @@ Ports that the Unity profiler uses:
 	MulticastPort : 54998
 	ListenPorts : 55000 - 55511
 	Multicast(unittests) : 55512 - 56023
-They should be accessible from within the network node. That is, the devices that you’re trying to profile on should be able to see these ports on the machine with the Unity Editor with the Profiler on.
+They should be accessible from within the network node. That is, the devices that you're trying to profile on should be able to see these ports on the machine with the Unity Editor with the Profiler on.
 
 !!First steps
 
@@ -44,7 +44,7 @@ Not all of the user code is shown in the Profiler. But you can use ''Profiler.Be
 
 !!GPU Profiling
 
-The Unity Editor profiler cannot show GPU data as of now. We’re working with hardware manufacturers to make it happen with the Tegra devices being the first to appear in the Editor profiler.
+The Unity Editor profiler cannot show GPU data as of now. We're working with hardware manufacturers to make it happen with the Tegra devices being the first to appear in the Editor profiler.
 
 !iOS!
 >>ios<<
@@ -53,15 +53,15 @@ The Unity Editor profiler cannot show GPU data as of now. We’re working with har
 *Unity internal profiler (not the Editor profiler).  This shows the GPU time for the whole scene.
 *PowerVR PVRUniSCo shader analyzer.  See below.
 *iOS: Xcode OpenGL ES Driver Instruments can show only high-level info:
-**“Device Utilization %” - GPU time spent on rendering in total. >95% means the app is GPU bound.
-**“Renderer Utilization %” - GPU time spent drawing pixels.
-**“Tiler Utilization %” - GPU time spent processing vertices.
-**“Split count&#148; - the number of frame splits, where the vertex data didn’t fit into allocated buffers.
+**"Device Utilization %" - GPU time spent on rendering in total. >95% means the app is GPU bound.
+**"Renderer Utilization %" - GPU time spent drawing pixels.
+**"Tiler Utilization %" - GPU time spent processing vertices.
+**"Split count" - the number of frame splits, where the vertex data didn't fit into allocated buffers.
 
-PowerVR is tile based deferred renderer, so it&#146;s impossible to get GPU timings per draw call. However you can get GPU times for the whole scene using Unity’s built-in profiler (the one that prints results to Xcode output). Apple’s tools currently can only tell you how busy the GPU and its parts are, but do not give times in milliseconds.
+PowerVR is tile based deferred renderer, so it's impossible to get GPU timings per draw call. However you can get GPU times for the whole scene using Unity's built-in profiler (the one that prints results to Xcode output). Apple's tools currently can only tell you how busy the GPU and its parts are, but do not give times in milliseconds.
 
 PVRUniSCo gives cycles for the whole shader, and approximate cycles for each line in the 
-shader code. Windows & Mac! But it won’t match what Apple’s drivers are doing exactly anyway. Still, a good ballpark measure. 
+shader code. Windows & Mac! But it won't match what Apple's drivers are doing exactly anyway. Still, a good ballpark measure. 
 >><<
 
 !Android!
@@ -96,7 +96,7 @@ Memory is allocated in heap blocks. More can allocated if it cannot fit the data
 
 If the system cannot fit new data into the allocated heap block, the Mono calls a "GC" and can allocate a new heap block (for example, due to fragmentation).
 
-“Too many heap sections” means you’ve run out of Mono memory (because of fragmentation or heavy usage). 
+"Too many heap sections" means you've run out of Mono memory (because of fragmentation or heavy usage). 
 
 Use ''System.GC.GetTotalMemory'' to get the total used Mono memory.
 
@@ -128,23 +128,23 @@ You can also make your own tool using Unity API calls:-
 *''UnloadUnusedAssets () : AsyncOperation''
 *''System.GC.GetTotalMemory/Profiler.usedHeapSize''
 
-References to the loaded objects - There is no way to figure this out.  A workaround is to “Find references in scene” for public variables.
+References to the loaded objects - There is no way to figure this out.  A workaround is to "Find references in scene" for public variables.
 
 !!!Garbage collector
 
 *This fires when the system cannot fit new data into the allocated heap block.
-*Don’t use ''OnGUI'' on mobiles: it shoots several times per frame, completely redraws the view and creates tons of memory allocation calls that require Garbage Collection to be invoked.
+*Don't use ''OnGUI'' on mobiles: it shoots several times per frame, completely redraws the view and creates tons of memory allocation calls that require Garbage Collection to be invoked.
 
 !!!Creating/removing too many objects too quickly?
 *This may lead to fragmentation.
 *Use the Editor profiler to track the memory activity.
 *The internal profiler can be used to track the mono memory activity.
-*''System.GC.Collect()'' You can use this ''.Net'' function when it’s ok to have a hiccup.
+*''System.GC.Collect()'' You can use this ''.Net'' function when it's ok to have a hiccup.
 
 
 !!!Allocation hiccups
 *Use lists of preallocated, reusable class instances to implement your own memory management scheme.
-*Don’t make huge allocations per frame, cache, preallocate instead
+*Don't make huge allocations per frame, cache, preallocate instead
 *Problems with fragmentation?
 
 !!!Preallocating a memory pool.

@@ -43,11 +43,10 @@ Every choice you make about where and how to share data will affect the bandwidt
 
 !iOS!
 >>ios<<
-!! [[MobileNetworking | Special details about networking on iOS]]
 Boot up with Networking for iOS.
+(:include MobileNetworking:)
 >><<
 !Android!
 >>android<<
-!! [[MobileNetworking | Special details about networking on Android]]
+(:include MobileNetworking:)
 >><<
-

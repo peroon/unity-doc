@@ -143,8 +143,6 @@ By now, you have learned how to use Unity's interface, how to use assets, how to
 
 To learn more details about using Unity itself [[Building Scenes|continue reading the manual]].
 
-To learn more about Components, the nuts & bolts of game behaviors, please read the [[Components|Component Reference]].
-
 To learn more about Scripting, please read the [[ScriptRef:index.html|Scripting Reference]].
 
 To learn more about creating Art assets, please read the [[Asset Import and Creation | Assets section]] of the manual.

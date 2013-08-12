@@ -2,7 +2,7 @@
 
 Unity supports different $$Rendering Paths$$. You should choose which one you use depending on your game content and target platform / hardware. Different rendering paths have different features and performance characteristics that mostly affect Lights and Shadows.
 
-The rendering Path used by your project is chosen in [[class-PlayerSettings | Player Settings]]. Additionally, you can override it for each [[class-Camera | Camera]].
+The rendering Path used by your project is chosen in [[class-PlayerSettings40 | Player Settings]]. Additionally, you can override it for each [[class-Camera | Camera]].
 
 If the graphics card can't handle a selected rendering path, Unity will automatically use a lower fidelity one. So on a GPU that can't handle Deferred Lighting, Forward Rendering will be used. If Forward Rendering is not supported, Vertex Lit will be used.
 

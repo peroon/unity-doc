@@ -146,7 +146,7 @@ However, Boo currently supports only the ''ifdef'' directive.
 
 !!Platform Custom Defines
 
-It is also possible to add to the built-in selection of defines by supplying your own. In the $$Other Settings$$ panel of the [[class-PlayerSettings|Player Settings]], you will see the Scripting Define Symbols textbox.
+It is also possible to add to the built-in selection of defines by supplying your own. In the $$Other Settings$$ panel of the [[class-PlayerSettings40|Player Settings]], you will see the Scripting Define Symbols textbox.
 
 Attach:ScriptDefines.png
 
@@ -165,6 +165,6 @@ As an example, if you include the single line "@@-define:UNITY_DEBUG@@" in your 
 
 Every time you make changes to .rsp files you will need to recompile for them to be effective. You can do this by updating or reimporting a single script (.js, .cs or .boo) file.
 
-If you want to modify only global defines, you should use $$Scripting Define Symbols$$ in [[class-PlayerSettings|Player Settings]], because this will cover all the compilers. If you choose the .rsp files instead, you'll have to provide one file for every compiler Unity uses, and you won't know when one or another compiler is used.
+If you want to modify only global defines, you should use $$Scripting Define Symbols$$ in [[class-PlayerSettings40|Player Settings]], because this will cover all the compilers. If you choose the .rsp files instead, you'll have to provide one file for every compiler Unity uses, and you won't know when one or another compiler is used.
 
 The use of the .rsp files is described in the help section of the __smcs__ application which is included in the Editor installation folder. You can get more information by running "@@smcs -help@@". Also, bear in mind the .rsp file needs to match the compiler being invoked. For example, when targeting the web player, __smcs__ is used with smcs.rsp; when targeting standalone players, __gmcs__ is used with gmcs.rsp; when targeting MS compiler, __csc__ is used with csc.rsp; and so on.
