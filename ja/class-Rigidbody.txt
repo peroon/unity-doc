@@ -42,7 +42,7 @@ $$Rigidbody$$ により、GameObject が物理特性エンジンの制御下で�
 
 !!! スクリプティング
 
-リジッドボディをコントロールするため、最初にスクリプトを使用して、力またはトルクを追加します。 「[[ScriptRef:Rigidbody.AddForce.html|AddForce()]]」 と「[[ScriptRef:Rigidbody.AddTorque.html|AddTorque()]] 」をオブジェクトのリジッドボディで呼び出すことでこれを行います。  物理特性を使用する際は、オブジェクトのトランスフォームを直接買えないようにしてください。
+リジッドボディをコントロールするため、最初にスクリプトを使用して、力またはトルクを追加します。 「[[ScriptRef:Rigidbody.AddForce.html|AddForce()]] 」 と「[[ScriptRef:Rigidbody.AddTorque.html|AddTorque()]] 」をオブジェクトのリジッドボディで呼び出すことでこれを行います。  物理特性を使用する際は、オブジェクトのトランスフォームを直接買えないようにしてください。
 
 
 !!! アニメーション
