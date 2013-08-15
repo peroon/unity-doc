@@ -1,0 +1,78 @@
+! Custom Editors
+
+A key to increasing the speed of game creation is to create custom editors for commonly used components. For the sake of example, we'll use this very simple script that always keeps an object looking at a point.
+
+[@
+var lookAtPoint = Vector3.zero;
+
+function Update () {
+    transform.LookAt (lookAtPoint);
+}
+@]''LookAtPoint.js''
+
+This will keep an object oriented towards a world-space point. Let's make it cool!
+
+The first step to making it work nicely in the editor is to make the script run even when you're not testing the game. We do this by adding an ExecuteInEditMode attribute to it:
+
+[@
+@script ExecuteInEditMode()
+
+var lookAtPoint = Vector3.zero;
+
+function Update () {
+    transform.LookAt (lookAtPoint);
+}
+@]
+
+Try adding the script to your main camera and drag it around in the Scene view.
+
+!!! Making a Custom Editor
+
+This is all well and good, but we can make the editor for it a lot nicer by customizing it. To do that we need to create an ``Editor`` for it. Create a JavaScript called LookAtPointEditor in a folder called Editor.
+
+[@
+@CustomEditor (LookAtPoint)
+class LookAtPointEditor extends Editor {
+    function OnInspectorGUI () {
+        target.lookAtPoint = EditorGUILayout.Vector3Field ("Look At Point", target.lookAtPoint);
+        if (GUI.changed)
+            EditorUtility.SetDirty (target);
+    }
+}
+@]
+
+This class has to derive from Editor. The @CustomEditor attribute informs Unity which component it should act as an editor for.
+
+The code in OnInspectorGUI is executed whenever Unity displays the editor in the Inspector. You can put any GUI code in here - it works just like OnGUI does for games, but is run inside the Inspector. Editor defines the target property that you can use to access the object being inspected.
+
+The EditorUtility.SetDirty code is executed if the user has changed any of the values by checking GUI.changed.
+
+In this case, we make one of the Vector3 fields like is used in the Transform Editor - like so:
+Attach:CustomInspector.png\\
+''Yay for shiny editors''
+
+There's a lot more that can be done here, but this will do for now - We've got bigger fish to fry...
+
+!!! Scene View Additions
+You can add extra code to the Scene View by implementing an OnSceneGUI in your custom editor. In this case, we'll add a second set of position handles, letting users drag the look-at point around in the Scene view.
+
+[@
+@CustomEditor (LookAtPoint)
+class LookAtPointEditor extends Editor {
+    function OnInspectorGUI () {
+        target.lookAtPoint = EditorGUILayout.Vector3Field ("Look At Point", target.lookAtPoint);
+        if (GUI.changed)
+            EditorUtility.SetDirty (target);
+    }
+    
+    function OnSceneGUI () {
+        target.lookAtPoint = Handles.PositionHandle (target.lookAtPoint, Quaternion.identity);
+        if (GUI.changed)
+            EditorUtility.SetDirty (target);
+    }
+}
+@]
+
+OnSceneGUI works just like OnInspectorGUI - except it gets run in the scene view. To help you make your editing interface, you can use the functions defined in [[ScriptRef:Handles.html | Handles]] class. All functions in there are designed for working in 3D Scene views.
+
+If you want to put 2D GUI objects (GUI, EditorGUI and friends), you need to wrap them in calls to Handles.BeginGUI() and Handles.EndGUI().

@@ -172,6 +172,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **[[bb10-gettingstarted]]
 ***[[bb10-setup]]
 ***[[bb10-details]]
+***[[bb10-plugins]]
 ***[[bb10-controller]]
 ***[[bb10-debugging]]
 ***[[bb10-faq]]
@@ -470,6 +471,17 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-RenderTexture]]
 ****[[class-TextAsset]]
 ****[[class-Texture2D]]
+>>u43<<
+****[[class-Texture2D43]]
+>><<
+>>u43<<
+***[[comp-2DGroup]]
+****[[class-SpriteRenderer]]
+****[[class-Rigidbody2D]]
+****[[class-CircleCollider2D]]
+****[[class-BoxCollider2D]]
+****[[class-PolygonCollider2D]]
+>><<
 ***[[comp-AudioGroup]]
 ****[[class-AudioListener]]
 ****[[class-AudioSource]]
@@ -619,7 +631,10 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[gui-Customization]]
 *** [[gui-Layout]]
 *** [[gui-Extending]]
-*** [[gui-ExtendingEditor]]
+** [[Extending The Editor]]
+*** [[editor-EditorWindows]]
+*** [[editor-PropertyDrawers]]
+*** [[editor-CustomEditors]]
 ** [[Network Reference Guide]]
 >>ios<<
 ***[[MobileNetworking | Networking on iOS]]
