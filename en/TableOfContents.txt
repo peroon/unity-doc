@@ -481,6 +481,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-CircleCollider2D]]
 ****[[class-BoxCollider2D]]
 ****[[class-PolygonCollider2D]]
+****[[class-SpringJoint2D]]
+****[[class-DistanceJoint2D]]
+****[[class-HingeJoint2D]]
 >><<
 ***[[comp-AudioGroup]]
 ****[[class-AudioListener]]
@@ -563,6 +566,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **** [[class-RenderSettings]]
 **** [[class-ScriptExecution]]
 **** [[class-TagManager]]
+>>u43<<
+****[[class-TagManager43]]
+>><<
 **** [[class-TimeManager]]
 *** [[comp-MeshGroup]]
 **** [[class-MeshFilter]]
