@@ -83,7 +83,7 @@ function RandomList(numElements: int) {
 
 This type of function is very elegant and convenient when creating a new array filled with values. However, if it is called repeatedly then fresh memory will be allocated each time. Since arrays can be very large, the free heap space could get used up rapidly, resulting in frequent garbage collections. One way to avoid this problem is to make use of the fact that an array is a reference type. An array passed into a function as a parameter can be modified within that function and the results will remain after the function returns. A function like the one above can often be replaced with something like:-
 
-{@
+[@
 function RandomList(arrayToFill: float[]) {
 	for (i = 0; i < arrayToFill.Length; i++) {
 		arrayToFill[i] = Random.value;

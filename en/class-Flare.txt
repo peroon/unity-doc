@@ -73,3 +73,4 @@ A simple 4x4 grid.
 !! Hints
 * If you use many different Flares, using a single ``Flare Texture`` that contains all the ``Elements`` will give you best rendering performance.
 * Lens Flares are blocked by $$Colliders$$.  A Collider in-between the Flare GameObject and the Camera will hide the Flare, even if the Collider does not have a $$Mesh Renderer$$.
+* To override the shader used for Flares copy the Internal-Flare.shader shader from the [[http://unity3d.com/support/resources/assets/built-in-shaders|Built-in shaders]] into a folder named "Resources" in your "Assets" folder.
