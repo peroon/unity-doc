@@ -193,8 +193,12 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ***[[wp8-deployment]]
 ***[[wp8-debugging]]
 ***[[wp8-profiler]]
+***[[wp8-unity-interaction]]
 ***[[wp8-plugins]]
+****[[wp8-plugins-guide-csharp]]
+****[[wp8-plugins-guide-cplusplus]]
 ***[[wp8-faq]]
+***[[wp8-examples]]
 >><<
 >>xbox360<<
 ** [[xbox360-gettingstarted]]

@@ -6,7 +6,11 @@ To avoid such wastage, it is possible to separate shared dependencies out into a
 
 At runtime, you need to load a bundle containing dependencies before any other bundle that references them. For example, you would need to load a bundle of shared textures before loading a separate bundle of materials that reference those textures.
 
-Note that if you anticipate needing to rebuild asset bundles that are part of a dependency chain then you should build them with the [[ScriptRef:BuildAssetBundleOptions.DeterministicAssetBundle.html|BuildAssetBundleOptions.DeterministicAssetBundle]] option enabled. This guarantees that the internal ID values used to identify assets will be the same each time the bundle is rebuilt.
+!!Asset IDs
+
+If you anticipate needing to rebuild asset bundles that are part of a dependency chain then you should build them with the [[ScriptRef:BuildAssetBundleOptions.DeterministicAssetBundle.html|BuildAssetBundleOptions.DeterministicAssetBundle]] option enabled. This guarantees that the internal ID values used to identify assets will be the same each time the bundle is rebuilt.
+
+When building the asset bundle with this method, the objects in it are assigned a 32 bit hash code that is calculated using the name of the asset bundle file, the GUID of the asset and the local id of the object in the asset. For that reason make sure to use the same file name when rebuilding. Also note that having a lot of objects might cause hash collisions preventing Unity from building the asset bundle.
 
 !!Shaders dependencies
 

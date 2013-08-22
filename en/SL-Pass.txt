@@ -22,7 +22,7 @@ A pass sets up various states of the graphics hardware, for example should alpha
 :__Blend__ ''SourceBlendMode'' ''DestBlendMode'': Sets alpha blending mode.
 :__Color__ ''Color value'': Sets color to use if vertex lighting is turned off.
 :__ColorMask__ RGB | A | 0 | any combination of R, G, B, A: Set color writing mask. Writing ''ColorMask 0'' turns off rendering to all color channels.
-:__Offset__ ''OffsetFactor'' __,__ ''OffsetUnits'': Set depth offset. Note that this command intentionally only accepts constants (i.e., not shader parameters) as of Unity 3.0.
+:__Offset__ ''OffsetFactor'' __,__ ''OffsetUnits'': Set Z buffer depth offset.
 :__SeparateSpecular__ On | Off: Turns separate specular color for vertex lighting on or off. See [[SL-Material|material page]] for details.
 :__ColorMaterial__ AmbientAndDiffuse | Emission: Uses per-vertex color when computing vertex lighting. See [[SL-Material|material page]] for details.
 
