@@ -11,12 +11,40 @@ When graphics are rendered, after all shaders have executed and all textures hav
 :Blend Off: Turn off blending
 :Blend ''SrcFactor'' ''DstFactor'': Configure & enable blending. The generated color is multiplied by the __SrcFactor__. The color already on screen is multiplied by __DstFactor__ and the two are added together.
 :Blend ''SrcFactor'' ''DstFactor'', ''SrcFactorA'' ''DstFactorA'': Same as above, but use different factors for blending the alpha channel.
-:BlendOp ''Min | Max | Sub | RevSub'': Instead of adding blended colors together, do a different operation on them.
+:BlendOp ''BlendOp'': Instead of adding blended colors together, do a different operation on them.
 
 
-!! Properties
+!! Blend operations
 
-All following properties are valid for both SrcFactor & DstFactor. __Source__ refers to the calculated color, __Destination__ is the color already on the screen.
+The following blend operations can be used:
+
+||__Add__ ||Add source and destination together. ||
+||__Sub__ ||Subtract source from destination. ||
+||__RevSub__ ||Subtract destination from source. ||
+||__Min__ ||Use the smaller of source and destination. ||
+||__Max__ ||Use the larger of source and destination. ||
+>>u43<<
+||__LogicalClear__ ||Logical operation: Clear (0) __DX11.1 only__. ||
+||__LogicalSet__ ||Logical operation: Set (1) __DX11.1 only__. ||
+||__LogicalCopy__ ||Logical operation: Copy (s) __DX11.1 only__. ||
+||__LogicalCopyInverted__ ||Logical operation: Copy inverted (!s) __DX11.1 only__. ||
+||__LogicalNoop__ ||Logical operation: Noop (d) __DX11.1 only__. ||
+||__LogicalInvert__ ||Logical operation: Invert (!d) __DX11.1 only__. ||
+||__LogicalAnd__ ||Logical operation: And (s & d) __DX11.1 only__. ||
+||__LogicalNand__ ||Logical operation: Nand !(s & d) __DX11.1 only__. ||
+||__LogicalOr__ ||Logical operation: Or (s | d) __DX11.1 only__. ||
+||__LogicalNor__ ||Logical operation: Nor !(s | d) __DX11.1 only__. ||
+||__LogicalXor__ ||Logical operation: Xor (s ^ d) __DX11.1 only__. ||
+||__LogicalEquiv__ ||Logical operation: Equivalence !(s ^ d) __DX11.1 only__. ||
+||__LogicalAndReverse__ ||Logical operation: Reverse And (s & !d) __DX11.1 only__. ||
+||__LogicalAndInverted__ ||Logical operation: Inverted And (!s & d) __DX11.1 only__. ||
+||__LogicalOrReverse__ ||Logical operation: Reverse Or (s | !d) __DX11.1 only__. ||
+||__LogicalOrInverted__ ||Logical operation: Inverted Or (!s | d) __DX11.1 only__. ||
+>><<
+
+!! Blend factors
+
+All following properties are valid for both SrcFactor & DstFactor in the __Blend__ command. __Source__ refers to the calculated color, __Destination__ is the color already on the screen. The blend factors are ignored if __BlendOp__ is using logical operations.
 
 ||__One__ ||The value of one - use this to let either the source or the destination color come through fully. ||
 ||__Zero__ ||The value zero - use this to remove either the source or the destination values. ||
