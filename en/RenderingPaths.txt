@@ -10,7 +10,7 @@ If the graphics card can't handle a selected rendering path, Unity will automati
 [[#deferredlighting]]
 !! Deferred Lighting
 
-$$Deferred Lighting$$ is the rendering path with the most lighting and shadow fidelity. It is best used if you have many realtime lights. It requires a certain level of hardware support, is for __Unity Pro__ only and is not supported on $$Mobile Devices$$.
+$$Deferred Lighting$$ is the rendering path with the most lighting and shadow fidelity. It is best used if you have many realtime lights. It requires a certain level of hardware support, is for __Unity Pro__ only.
 
 For more details see the __[[RenderTech-DeferredLighting | Deferred Lighting page]]__.
 
@@ -48,6 +48,6 @@ For more details see the __[[RenderTech-VertexLit | Vertex Lit page]]__.
 ||Cost of a per-pixel Light                        || Number of pixels it illuminates || Number of pixels * Number of objects it illuminates || - ||
 ||''%gray%__Platform Support__'' || || || ||
 ||PC (Windows/Mac)                                 || Shader Model 3.0+ || Shader Model 2.0+   || Anything            ||
-||Mobile (iOS/Android)                             || -                 || OpenGL ES 2.0       || OpenGL ES 2.0 & 1.1 ||
+||Mobile (iOS/Android)                             || OpenGL ES 2.0     || OpenGL ES 2.0       || OpenGL ES 2.0 & 1.1 ||
 ||Consoles                                         || 360, PS3          || 360, PS3            || -                   ||
 

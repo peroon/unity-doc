@@ -10,7 +10,7 @@ On the downside, deferred lighting has no real support for anti-aliasing and can
 
 !! Requirements
 
-Deferred lighting is only available in __Unity Pro__. It requires a graphics card with Shader Model 3.0 (or later), support for Depth render textures and two-sided stencil buffers. Most graphics cards made after 2004 support deferred lighting, including GeForce FX and later, Radeon X1300 and later, Intel 965 / GMA X3100 and later. However, it is not currently available on mobile platforms nor Flash.
+Deferred lighting is only available in __Unity Pro__. It requires a graphics card with Shader Model 3.0 (or later), support for Depth render textures and two-sided stencil buffers. Most graphics cards made after 2004 support deferred lighting, including GeForce FX and later, Radeon X1300 and later, Intel 965 / GMA X3100 and later. However, it is not available on Flash.
 
 !! Performance Considerations
 

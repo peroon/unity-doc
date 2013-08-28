@@ -47,5 +47,5 @@ $$Vertex Lit$$ は一番軽いRendering Pathsで、リアルタイム影もサ�
 ||１ピクセルあたりのライトのコスト                        || Number of pixels it illuminates || Number of pixels * Number of objects it illuminates || - ||
 ||''%gray%__サポートしているプラットフォーム__'' || || || ||
 ||PC (Windows/Mac)                                 || Shader Model 3.0+ || Shader Model 2.0+   || Anything            ||
-||Mobile (iOS/Android)                             || -                 || OpenGL ES 2.0       || OpenGL ES 2.0 & 1.1 ||
+||Mobile (iOS/Android)                             || OpenGL ES 2.0     || OpenGL ES 2.0       || OpenGL ES 2.0 & 1.1 ||
 ||Consoles                                         || 360, PS3          || 360, PS3            || -                   ||
