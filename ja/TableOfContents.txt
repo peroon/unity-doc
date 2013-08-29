@@ -403,6 +403,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-SpringJoint2D]]
 ****[[class-DistanceJoint2D]]
 ****[[class-HingeJoint2D]]
+****[[class-SliderJoint2D]]
 >><<
 ***[[comp-AudioGroup]]
 ****[[class-AudioListener]]
