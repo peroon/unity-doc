@@ -1,0 +1,18 @@
+! Physics 2D Manager
+
+You can access the $$Physics 2D Manager$$ from the menu by selecting ^^Edit->Project Settings->Physics 2D^^.
+
+Attach:Physics2DSet.png
+
+!!Properties
+
+||PROPS
+||``Gravity`` ||The amount of gravity applied to all $$Rigidbody2D$$ objects. Generally, gravity is only set for the negative direction of the Y-axis. ||
+||``Default Material`` ||The default $$Physics Material 2D$$ that will be used if none has been assigned to an individual collider. ||
+||``Velocity iterations`` ||The number of iterations made by the physics engine to resolve velocity effects. Higher numbers result in more accurate physics but at the cost of CPU time. ||
+||``Position iterations`` ||The number of iterations made by the physics engine to resolve position changes. Higher numbers result in more accurate physics but at the cost of CPU time. ||
+||``Raycasts Hit Triggers`` ||If enabled, any Raycast that intersects with a Collider marked as a Trigger will return a hit.  If disabled, these intersections will not return a hit. ||
+||``Layer Collision Matrix`` ||Defines how the [[LayerBasedCollision | layer-based collision]] detection system will behave.||
+
+!!Details
+The Physics 2D manager contains the settings for 2D physics only. Any changes made here will not affect the behaviour of 3D physics.

@@ -3,7 +3,7 @@
 When you call a function, it runs to completion before returning. This effectively means that any action taking place in a function must happen within a single frame update; a function call can't be used to contain a procedural animation or a sequence of events over time. As an example, consider the task of gradually reducing an object's alpha (opacity) value until it becomes completely invisible.
 
 [@void Fade() {
-	for (float f = 1f; f <= 0; f -= 0.1f) {
+	for (float f = 1f; f >= 0; f -= 0.1f) {
 		Color c = renderer.material.color;
 		c.alpha = f;
 		renderer.material.color = c;
@@ -17,7 +17,7 @@ It is possible to handle situations like this by adding code to the Update funct
 A coroutine is like a function that has the ability to pause execution and return control to Unity but then to continue where it left off on the following frame. In C#, a coroutine is declared like this:-
 
 [@IEnumerator Fade() {
-	for (float f = 1f; f <= 0; f -= 0.1f) {
+	for (float f = 1f; f >= 0; f -= 0.1f) {
 		Color c = renderer.material.color;
 		c.alpha = f;
 		renderer.material.color = c;
