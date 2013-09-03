@@ -18,7 +18,7 @@ The C# language offers a feature called __namespaces__ that solves this problem 
 
 In code, these classes are referred to as [@Enemy.Controller1@] and [@Enemy.Controller2@], respectively. This is better than renaming the classes insofar as the namespace declaration can be bracketed around existing class declarations (ie, it is not necessary to change the names of all the classes individually). Furthermore, you can use multiple bracketed namespace sections around classes wherever they occur, even if those classes are in different source files.
 
-You can avoid having to type the namespace prefix repeatedly by adding a __using__ directive at the top of the file:-
+You can avoid having to type the namespace prefix repeatedly by adding a __using__ directive at the top of the file.
 
 [@using Enemy;@]
 
