@@ -122,7 +122,7 @@ Attach:ConfigurableJointImage.png\\
 ||>>>``Position Spring`` ||定義した方向に引っ張られるゴムバンドの強さ。 ''Mode''が''Position''を含む場合にのみ使用されます。||
 ||>>>``Position Damper`` ||''Position Spring''に対する抵抗の強さ。 ''Mode''が''Position''を含む場合にのみ使用されます。||
 ||>>>``Maximum Force`` ||定義した方向にオブジェクトを押すのに適用される力の量。 ''Mode''が''Velocity''を含む場合にのみ使用されます。||
-||``Projection Mode`` ||オブジェクトが||オブジェクトが停止しすぎている場合に、制限された位置にオブジェクトを戻して、追跡するプロパティ。
+||``Projection Mode`` ||オブジェクトが停止しすぎている場合に、制限された位置にオブジェクトを戻して、追跡するプロパティ。||
 ||``Projection Distance`` ||許容可能な位置にオブジェクトが跳ね返る前に超える必要がある''Connected Body''からの距離。||
 ||``Projection Angle`` ||許容可能な位置にオブジェクトが跳ね返る前に超える必要がある''Connected Body''からの角度の差。||
 ||``Congfigure in World Space`` |有効にすると、オブジェクトのローカル スペースでなく、ワールド スペースですべての Target 値が計算されます。
