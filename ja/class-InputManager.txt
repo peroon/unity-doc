@@ -6,7 +6,7 @@ $$Input Manager$$ では、プロジェクトに対して、全ての異なる�
 Attach:InputSetAll.png\\
 「入力マネージャ」
 
-入力マネージャは、 ^^Edit->Project Settings->Audio^^ を選択することで表示できます。
+入力マネージャは、 ^^Edit->Project Settings->Input^^ を選択することで表示できます。
 
 
 !!プロパティ
