@@ -86,4 +86,4 @@ Attach:AnimationEditorSelectedPropertyShown.png\\
 
 Attach:AnimationEditorPlayButton.png　^Play button^^をクリックして$$Animation Clip$$を再生
 
-再生のプレイバックはタイムライン（^^Time Line^^）で表示されている時間範囲内でループします。これにより$$Animation Clip$$全体の時間を再生しなくても、作業中の　の小さな部分を見直すことに注力できます。. $$Animation Clip$$全体をプレイバックするには、ズームアウトして時間範囲の全体を表示するか、キー（$$keys$$）が選択されてない状態で「^^F^^」キーを押します。^^Curve View^^のナビゲーションの詳細については[[animeditor-AnimationCurves| Editing Animation Curves]] を参照下さい。
+再生のプレイバックはタイムライン（^^Time Line^^）で表示されている時間範囲内でループします。これにより$$Animation Clip$$全体の時間を再生しなくても、作業中の小さな部分を見直すことに注力できます。. $$Animation Clip$$全体をプレイバックするには、ズームアウトして時間範囲の全体を表示するか、キー（$$keys$$）が選択されてない状態で「^^F^^」キーを押します。^^Curve View^^のナビゲーションの詳細については[[animeditor-AnimationCurves| Editing Animation Curves]] を参照下さい。
