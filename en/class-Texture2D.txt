@@ -280,7 +280,7 @@ When drawing detail textures, a neutral gray is invisible, white makes the main 
 
 !!! Reflections (Cube Maps)
 
-If you want to use texture for reflection maps (e.g. use the ``Reflective`` builtin shaders), you need to use [[class-Cubemap|Cubemap Textures]].
+If you want to use texture for reflection maps (e.g. use the ``Reflective`` built-in shaders), you need to use [[class-Cubemap|Cubemap Textures]].
 
 
 !!! Anisotropic filtering

@@ -10,7 +10,7 @@ Inserts all passes with a given name from a given shader. ''Shader/Name'' contai
 
 !! Details
 
-Some of the shaders could reuse existing passes from other shaders, reducing code duplication. For example, in most pixel lit shaders the ambient or vertex lighting passes are the same as in the corresponding VertexLit shaders. The UsePass command does just that - it includes a given pass from another shader. As an example the following command uses the pass with the name ''"BASE"'' from the builtin ''Specular'' shader:
+Some of the shaders could reuse existing passes from other shaders, reducing code duplication. For example, in most pixel lit shaders the ambient or vertex lighting passes are the same as in the corresponding VertexLit shaders. The UsePass command does just that - it includes a given pass from another shader. As an example the following command uses the pass with the name ''"BASE"'' from the built-in ''Specular'' shader:
 
     __UsePass__ "Specular/BASE"
 

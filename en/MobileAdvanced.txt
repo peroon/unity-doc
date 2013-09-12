@@ -15,7 +15,7 @@ __Note:__ [[ScriptRef:Application-genuineCheckAvailable.html | Application.genui
 You can trigger a vibration by calling [[ScriptRef:Handheld.Vibrate.html | Handheld.Vibrate]]. However, devices lacking vibration hardware will just ignore this call.
 
 !! Activity Indicator
-Mobile OSes have builtin activity indicators, that you can use during slow operations. Please check [[ScriptRef:Handheld.StartActivityIndicator.html | Handheld.StartActivityIndicator docs]] for usage sample.
+Mobile OSs have built-in activity indicators, that you can use during slow operations. Please check [[ScriptRef:Handheld.StartActivityIndicator.html | Handheld.StartActivityIndicator docs]] for usage sample.
 
 !! Screen Orientation
 Unity iOS/Android allows you to control current screen orientation. Detecting a change in orientation or forcing some specific orientation can be useful if you want to create game behaviors depending on how the user is holding the device.

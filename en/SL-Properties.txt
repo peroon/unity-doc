@@ -17,7 +17,7 @@ Shaders can define a list of parameters to be set by artists in Unity's [[Materi
 Each property inside the shader is referenced by __name__ (in Unity, it's common to start shader property names with underscore). The property will show up in material inspector as __display name__. For each property a default value is given after equals sign:
 * For ''Range'' and ''Float'' properties it's just a single number.
 * For ''Color'' and ''Vector'' properties it's four numbers in parentheses.
-* For texture (''2D'', ''Rect'', ''Cube'') the default value is either an empty string, or one of builtin default textures: "''white''", "''black''", "''gray''" or "''bump''".
+* For texture (''2D'', ''Rect'', ''Cube'') the default value is either an empty string, or one of built-in default textures: "''white''", "''black''", "''gray''" or "''bump''".
 
 Later on in the shader, property values are accessed using property name in square brackets: __[name]__.
 

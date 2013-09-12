@@ -33,7 +33,7 @@ Attach:ProfilerMemoryDetailed.png
 これにより個別のアセットおよびゲームオブジェクトによるメモリ使用量が表示されます。さらにオブジェクトがメモリを消費する理由も表示されます。表示される理由は次のいずれかとなります：
 * __Referenced from native code__
 * __Scene object__
-* __Builtin Resources__
+* __Built-in Resources__
 * __Marked as don't save__
 
 リスト内のオブジェクトをクリックすると、エディタのprojectビューまたはSceneビューにフォーカスを当てる事ができます。

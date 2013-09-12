@@ -36,7 +36,7 @@ It is essentially a function declared with a return type of IEnumerator and with
 In UnityScript, things are slightly simpler. Any function that includes the yield statement is understood to be a coroutine and the IEnumerator return type need not be explicitly declared:-
 
 [@function Fade() {
-	for (var f = 1.0; f <= 0; f -= 0.1) {
+	for (var f = 1.0; f >= 0; f -= 0.1) {
 		var c = renderer.material.color;
 		c.alpha = f;
 		renderer.material.color = c;
@@ -57,7 +57,7 @@ You will notice that the loop counter in the Fade function maintains its correct
 By default, a coroutine is resumed on the frame after it yields but it is also possible to introduce a time delay using [[ScriptRef:WaitForSeconds.html|WaitForSeconds]]:-
 
 [@IEnumerator Fade() {
-	for (float f = 1f; f <= 0; f -= 0.1f) {
+	for (float f = 1f; f >= 0; f -= 0.1f) {
 		Color c = renderer.material.color;
 		c.alpha = f;
 		renderer.material.color = c;
@@ -68,7 +68,7 @@ By default, a coroutine is resumed on the frame after it yields but it is also p
 ...on in UnityScript
 
 [@function Fade() {
-	for (var f = 1.0; f <= 0; f -= 0.1) {
+	for (var f = 1.0; f >= 0; f -= 0.1) {
 		var c = renderer.material.color;
 		c.alpha = f;
 		renderer.material.color = c;

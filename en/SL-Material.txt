@@ -32,7 +32,7 @@ The full color of lights hitting the object is:
 
 The light parts of the equation (within parenthesis) is repeated for all lights that hit the object.
 
-Typically you want to keep the Diffuse and Ambient colors the same (all builtin Unity shaders do this).
+Typically you want to keep the Diffuse and Ambient colors the same (all built-in Unity shaders do this).
 
 
 !!Examples

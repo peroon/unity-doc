@@ -33,7 +33,7 @@ Attach:ProfilerMemoryDetailed.png
 This will display individual asset and game object memory usage. It will also display a reason for an object to be in memory. The reasons can be of the following:
 * __Referenced from native code__
 * __Scene object__
-* __Builtin Resources__
+* __Built-in Resources__
 * __Marked as don't save__
 
 When in the editor, clicking on an object in the list, will take you to the object in either the project or the scene view.

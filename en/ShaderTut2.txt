@@ -119,7 +119,7 @@ The whole Cg snippet is written between ``CGPROGRAM`` and ``ENDCG`` keywords. At
 * ``#pragma vertex`` $$name$$ tells that the code contains a vertex program in the given function (``vert`` here).
 * ``#pragma fragment`` $$name$$ tells that the code contains a fragment program in the given function (``frag`` here).
 
-Following the compilation directives is just plain Cg code. We start by including a [[SL-BuiltinIncludes | builtin Cg file]]:
+Following the compilation directives is just plain Cg code. We start by including a [[SL-BuiltinIncludes | built-in Cg file]]:
     #include $$UnityCg.cginc$$
 
 The $$UnityCg.cginc$$ file contains commonly used declarations and functions so that the shaders can be kept smaller (see [[SL-BuiltinIncludes | shader include files]] page for details). Here we'll use ``appdata_base`` structure from that file. We could just define them directly in the shader and not include the file of course.

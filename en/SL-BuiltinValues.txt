@@ -1,6 +1,6 @@
-!ShaderLab builtin values
+!ShaderLab built-in values
 
-Unity provides a handful of builtin values for your shaders: things like current object's transformation matrices, time etc.
+Unity provides a handful of built-in values for your shaders: things like current object's transformation matrices, time etc.
 
 You just use them in ShaderLab like you'd use any other property, the only difference is that you don't have to declare it somewhere - they are "built in".
 
