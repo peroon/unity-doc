@@ -1,6 +1,6 @@
 !Sprite Editor
 
-Sometimes a sprite texture will contain just a single graphic element but it is often more convenient to combine several related graphics together into a single image; an image composed of separate small elements like this is known as an __atlas__. For example, an atlas could contain contain component parts of a single character, as with a car whose wheels move independently of the body. Unity makes it easy to extract elements from an atlas by providing a $$Sprite Editor$$ for the purpose.
+Sometimes a sprite texture will contain just a single graphic element but it is often more convenient to combine several related graphics together into a single image. For example, the image could contain contain component parts of a single character, as with a car whose wheels move independently of the body. Unity makes it easy to extract elements from an composite image by providing a $$Sprite Editor$$ for the purpose.
 
 
 !!Opening the Sprite Editor
@@ -9,12 +9,12 @@ To use the Sprite Editor, you will first need to ensure that your sprite texture
 
 Attach:SpriteEditor.png
 
-Along with the atlas image, you will see a number of controls in the bar at the top of the window. The slider at the top right controls the zoom, while the color bar button to its left chooses whether you view the image itself or its alpha levels. The most important control is the ^^Slice^^ menu at the top left, which gives you options for separating the elements of the atlas automatically. Finally, the ^^Apply^^ and ^^Revert^^ buttons allow you to keep or discard any changes you have made.
+Along with the composite image, you will see a number of controls in the bar at the top of the window. The slider at the top right controls the zoom, while the color bar button to its left chooses whether you view the image itself or its alpha levels. The most important control is the ^^Slice^^ menu at the top left, which gives you options for separating the elements of the image automatically. Finally, the ^^Apply^^ and ^^Revert^^ buttons allow you to keep or discard any changes you have made.
 
 
 !!Using the Editor
 
-The most direct way to use the editor is to identify the elements manually. If you click on the atlas image, you will see a rectangular selection area appear with handles in the corners. You can drag the handles or the edges of the rectangle to resize it around a specific element. Having isolated an element, you can add another by dragging a new rectangle in a separate part of the image. You'll notice that when you have a rectangle selected, a panel appears in the bottom left of the window:-
+The most direct way to use the editor is to identify the elements manually. If you click on the image, you will see a rectangular selection area appear with handles in the corners. You can drag the handles or the edges of the rectangle to resize it around a specific element. Having isolated an element, you can add another by dragging a new rectangle in a separate part of the image. You'll notice that when you have a rectangle selected, a panel appears in the bottom left of the window:-
 
 Attach:SpritePanel.png
 
