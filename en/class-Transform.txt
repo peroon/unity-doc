@@ -34,7 +34,7 @@ Attach:TransformGizmo35.png\\
 \\
 All three Gizmos can be directly edited in the Scene View.
 
-When you click and drag on one of the three gizmo axes, you will notice that its color changes.  As you drag the mouse, you will see the object translate, rotate, or scale along the selected axis.  When you release the mouse button, the axis remains selected.  You can click the middle mouse button and drag the mouse to manipulate the Transform along the selected axis.
+When you click and drag on one of the three gizmo axes, you will notice that its color changes.  As you drag the mouse, you will see the object translate, rotate, or scale along the selected axis.  When you release the mouse button, the axis remains selected.
 
 Attach:TransformExample3.png\\
 ''Any individual axis will become selected when you click on it''

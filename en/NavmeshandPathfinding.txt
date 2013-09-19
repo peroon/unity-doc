@@ -1,4 +1,4 @@
-!Navmesh and Pathfinding (Pro only)
+!Navmesh and Pathfinding
 
 A navigation mesh (also known as the ''Navmesh'') is a simplified representation of world geometry, which gameplay agents use to navigate the world. Typically an agent has a ''goal'', or a ''destination'', to which it is trying to find a path, and then navigate to that goal along the path. This process is called ''pathfinding''. Note that ''Navmesh generation'' (or ''baking'') is done by game developers inside the editor, while the ''pathfinding'' is done by agents at runtime based on that Navmesh.
 

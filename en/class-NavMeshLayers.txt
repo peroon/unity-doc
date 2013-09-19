@@ -4,7 +4,7 @@ The primary task of the navigation system is finding the ''optimal'' path betwee
 
 During pathfinding, instead of comparing lengths of potential path segments, the cost of each segment is evaluated. This is a done by scaling the length of each segment by the cost of the navmesh layer for that particular segment. Note that when all costs are set to 1, the optimal path is equivalent to the shortest path. 
 
-To define custom navmesh layers for a project, you should first go to ^^Edit^^->^^Project Settings^^->^^Navmesh Layers^^
+To define custom navmesh layers for a project, you should click on the ^^Layers^^ tab.
 Attach:NavMeshLayers.png
 
 You then need to open one of the ''User Layer'' foldouts, and set up the name and cost values. The name will be used throughout the editor and from scripts to identify the navmesh layer. The cost indicates how "difficult" it is to traverse the NavMesh layer; the difficulty can refer to the quality of terrain (eg, muddy ground is slower to cross than solid ground), the degree of danger (eg, exposed areas are more open to gunfire than covered areas) or various other concepts that affect AI behaviour. The default value for the cost is 1 and other values indicate the cost difference in proportion to the default.

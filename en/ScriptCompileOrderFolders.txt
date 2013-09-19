@@ -17,6 +17,6 @@ __Phase 3:__ All other scripts that are not inside a folder called __Editor__.
 __Phase 4:__ All remaining scripts (ie, the ones that ''are'' inside a folder called __Editor__).
 
 
-Additionally, any script inside a folder called __WebPlayerTemplates__ will not be compiled at all.
+Additionally, any script inside a folder called __WebPlayerTemplates__ at the top level of the Assets folder will not be compiled at all. This behaviour is slightly different from the other special folder names which also work within sub-folders (eg, Scripts/Editor works as an editor script folder but Scripts/WebPlayerTemplates does not prevent compilation).
 
 A common example is where a UnityScript file needs to reference a class defined in a C# file. You can achieve this by placing the C# file inside a Plugins folder and the UnityScript file in a non-special folder. If you don't do this, you will get an error saying the C# class cannot be found.

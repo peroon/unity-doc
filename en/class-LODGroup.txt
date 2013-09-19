@@ -23,10 +23,8 @@ Attach:LOD1_demo.jpg
 ''camera at LOD 1''
 
 
-In the $$Scene View$$, you should be able to see
-* Percentage of the view this object occupies 
-* What $$LOD$$ is currently being displayed 
-* The number of triangles
+The label in the Scene View shows which LOD level is currently being displayed while the numbers of triangles, materials and renderers are shown in the Inspector preview.
+
 
 !!LOD-based naming conventions in the asset import pipeline
 

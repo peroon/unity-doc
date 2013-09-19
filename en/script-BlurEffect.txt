@@ -1,5 +1,7 @@
 ! Blur Effect
 
+__This is now deprecated. Use [[script-Blur|Blur]] instead.__
+
 The $$Blur$$ image effect blurs the rendered image in real-time.
 
 As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
