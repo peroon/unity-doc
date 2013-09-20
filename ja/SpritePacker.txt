@@ -1,0 +1,14 @@
+!Sprite Packer
+
+When designing sprite graphics, it is convenient to work with a separate texture file for each character. However, a significant portion of a sprite texture will often be taken up by the empty space between the graphic elements and this space will result in wasted video memory at runtime. For optimal performance, it is best to pack graphics from several sprite textures tightly together within a single texture known as an atlas. Unity provides a $$Sprite Packer$$ utility to automate the process of generating atlases from the individual sprite textures.
+
+
+!!Using the Sprite Packer
+
+You can choose the set of textures that will be packed into a particular atlas using the $$Packing Tag$$ property in the texture importer.
+
+Attach:TexImporterSprite43.png
+
+All textures that share a packing tag name will be packed into an atlas with that same name. If you open the Sprite Packer window (menu: ^^Window > Sprite Packer^^) and click the ^^Repack^^ button in the top-left, you will see the arrangement of the textures packed within the atlas.
+
+Attach:SpritePackerMain.png

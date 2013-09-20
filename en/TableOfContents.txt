@@ -49,6 +49,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[Materials]]
 ****[[Textures]]
 ****[[SpriteEditor]]
+****[[SpritePacker]]
 ****[[Procedural Materials]]
 ****[[Video Files]]
 ****[[Audio Files]]

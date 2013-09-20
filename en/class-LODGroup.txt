@@ -42,5 +42,5 @@ You can tweak your LOD settings for each platform in [[class-QualitySettings|Qua
 Here are some options that help you work with LODs
 
 ||Recalculate Bounds ||If there is new geometry added to the LODGroup that is not reflected in the bounding volume then click this to update the bounds. One example where this is needed is when one of the geometries is part of a [[Prefabs|prefab]], and new geometry is added to that prefab. Geometry added directly to the LODGroup will automatically update the bounds. ||
-||Update Lightmaps ||Updates the ``Scale in Lightmap`` property in the [[Lightmapping|lightmaps]] based on the LOD level boundaries. ||
-||Upload to Importer ||Uploads the LOD level boundaries to the importer. ||
+||Recalculate Lightmap Scale ||Updates the ``Scale in Lightmap`` property in the [[Lightmapping|lightmaps]] based on the LOD level boundaries. ||
+
