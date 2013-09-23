@@ -9,7 +9,12 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[ProjectView40]]
 *****[[Hierarchy]]
 *****[[Toolbar]]
+>>u42<<
 *****[[SceneView40]]
+>><<
+>>u43<<
+*****[[SceneView43]]
+>><<
 *****[[GameView40]]
 *****[[Inspector]]
 *****[[Other Views]]
@@ -31,11 +36,20 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Editing Reference Properties]]
 *****[[Multi-Object Editing]]
 *****[[Inspector Options]]
+>>u42<<
 ****[[Using The Scene View]]
 *****[[Scene View Navigation]]
 *****[[Positioning GameObjects]]
 *****[[View Modes]]
 *****[[Gizmo and Icon Visibility]]
+>><<
+>>u43<<
+****[[Using The Scene View43]]
+*****[[Scene View Navigation43]]
+*****[[Positioning GameObjects43]]
+*****[[View Modes43]]
+*****[[Gizmo and Icon Visibility43]]
+>><<
 ****[[Searching]]
 ****[[Prefabs]]
 ****[[Lights]]
