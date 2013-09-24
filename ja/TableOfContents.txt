@@ -48,7 +48,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Scene View Navigation43]]
 *****[[Positioning GameObjects43]]
 *****[[View Modes43]]
-*****[[Gizmo and Icon Visibility43]]
 >><<
 ****[[Searching]]
 ****[[Prefabs]]

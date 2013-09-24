@@ -20,11 +20,17 @@ Attach:PrefsGeneral40.png
 Attach:PrefsExtTools.png
 
 ||``External Script Editor``||Which application should Unity use to open script files?||
+||``External Script Editor Args``||__Windows only__. What arguments to pass to external script editor. $(File) will be replaced with a path to a file being opened. $(Line) will be replaced with a line number that editor should jump to. See examples bellow.||
 ||``Editor Attaching``||Should Unity allow debugging to be controlled from the external script editor?||
 ||``Image Application``||Which application should Unity use to open image files?||
 ||``Asset Server Diff Tool``||Which application should Unity use to resolve file differences with the asset server?||
 ||``Android SDK Location``||Where in the filesystem is the Android SDK folder located?||
 ||``iOS Xcode 4.x support``||Should support for Xcode 4.x be enabled for iOS build targets?||
+Examples for script editor args:
+:__Gvim/Vim__:--remote-tab-silent +$(Line) "$File"
+:__Notepad2__:-g $(Line) "$(File)"
+:__Sublime Text 2__:"$(File)":$(Line)
+:__Notepad++__:-n$(Line) "$(File)"
 
 
 !!Colors
@@ -46,4 +52,5 @@ This panel allows you to set the keystrokes that activate the various commands i
 Attach:PrefsCacheServer35.png
 
 ||``Use Cache Server``||Should the cache server be enabled?||
-||``IP Address``||IP address of the cache server, if enabled||
+||``IP Address``||IP address of the cache server, if enabled||File"
+__Notepad2__ -g
