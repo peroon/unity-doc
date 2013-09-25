@@ -31,6 +31,18 @@ Use the ^^Layer^^ drop-down to assign a rendering Layer to the GameObject.  Use 
 
 If you have a Prefab selected, some additional buttons will be available in the Inspector.  For more information about Prefabs, please view the [[Prefabs | Prefab manual page]].
 
+!!Icons
+
+The inspector for all items in Unity is shown with a distinctive icon in the top left corner next to the name. For a GameObject or Prefab, a custom icon can be set to identify the object in the scene. If you click on the icon, a selection menu will appear:-
+
+Attach:InspectorIconMenu.png
+
+The large oblong icons at the top of the menu will show the object's name in the Scene View on a panel of the chosen color.
+
+Attach:InspectorIconSceneView.png
+
+The smaller icons in the lower part of the menu will not show the object's name but simply identify it with a small pip of the chosen shape and color. The ''Other'' button at the bottom of the menu lets you select any texture from the project to identify the object.
+
 !!Labels
 Unity allows assets to be marked with $$Labels$$ to make them easier to locate and categorise. The bottom item on the inspector is the ~~Asset Labels~~ panel.
 

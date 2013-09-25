@@ -405,6 +405,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-RenderTexture]]
 ****[[class-TextAsset]]
 ****[[class-Texture2D]]
+****[[class-TextureImporter]]
 >>u43<<
 ****[[class-Texture2D43]]
 >><<
