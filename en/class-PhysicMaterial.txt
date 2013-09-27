@@ -14,11 +14,12 @@ Attach:Inspector-PhysicMaterial.png\\
 ||``Dynamic Friction`` ||The friction used when already moving. Usually a value from 0 to 1. A value of zero feels like ice, a value of 1 will make it come to rest very quickly unless a lot of force or gravity pushes the object. ||
 ||``Static Friction`` ||The friction used when an object is laying still on a surface. Usually a value from 0 to 1. A value of zero feels like ice, a value of 1 will make it very hard to get the object moving. ||
 ||``Bounciness`` ||How bouncy is the surface? A value of 0 will not bounce. A value of 1 will bounce without any loss of energy. ||
-||``Friction Combine Mode`` ||How the friction of two colliding objects is combined. ||
+||``Friction Combine`` ||How the friction of two colliding objects is combined.||
 ||>>>``Average`` ||The two friction values are averaged. ||
-||>>>``Min`` ||The smallest of the two values is used. ||
-||>>>``Max`` ||The largest of the two values is used. ||
+||>>>``Minimum`` ||The smallest of the two values is used. ||
+||>>>``Maximum`` ||The largest of the two values is used. ||
 ||>>>``Multiply`` ||The friction values are multiplied with each other. ||
+|| ||When two bodies are in contact, bounciness and friction modes are applied individually to each agent. So, when body A has mode ``Average`` and body B has mode ``Multiply``, then A is going to behave according to average parameters and B according to multiplied parameters.||
 ||``Bounce Combine`` ||How the bounciness of two colliding objects is combined. It has the same modes as Friction Combine Mode ||
 ||``Friction Direction 2`` ||The direction of anisotropy. Anisotropic friction is enabled if this direction is not zero. Dynamic Friction 2 and Static Friction 2 will be applied along Friction Direction 2. ||
 ||``Dynamic Friction 2`` ||If anisotropic friction is enabled, DynamicFriction2 will be applied along Friction Direction 2. ||
