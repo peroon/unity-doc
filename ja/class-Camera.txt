@@ -13,7 +13,7 @@ Attach:InspectorCamera35.png\\
 ||``Projection`` ||景色をシミュレートするカメラの機能を切り替えます。 ||
 ||>>>``Perspective`` ||カメラがそのままの景色でオブジェクトをレンダリングします。 ||
 ||>>>``Orthographic`` ||カメラが景色感なしで、オブジェクトを均一にレンダリングします。 ||
-||``Size`` (Orthographic を選択しない場合) ||Orthographic に設定した場合のカメラのビューポイントのサイズ。 ||
+||``Size`` (Orthographic に設定した場合) ||Orthographic に設定した場合のカメラのビューポイントのサイズ。 ||
 ||``Field of view`` (Perspective 選択時) ||ローカルな Y 軸に沿って測定された、カメラのビュー角度の幅。（単位: °） ||
 ||``Clipping Planes`` ||レンダリングを開始および停止するカメラからの距離。 ||
 ||>>>``Near`` ||描画が行われるカメラに対して最も近い点。 ||
