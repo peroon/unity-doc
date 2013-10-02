@@ -75,6 +75,6 @@ The following example checks that the page embedding the web player content is f
 
 [@
 Application.ExternalEval(
-    "if(document.location.host != 'unity3d.com') { document.location='http://unity3d.com'; }"
+    "if(document.domain != 'unity3d.com') { document.location='http://unity3d.com'; }"
 );
 @]

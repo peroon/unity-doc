@@ -75,6 +75,6 @@ function SayHello( arg )
 
 [@
 Application.ExternalEval(
-    "if(document.location.host != 'unity3d.com') { document.location='http://unity3d.com'; }"
+    "if(document.domain != 'unity3d.com') { document.location='http://unity3d.com'; }"
 );
 @]
