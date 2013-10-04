@@ -1,0 +1,27 @@
+!Navigation Layers and Costs
+
+To create the appearance of "intelligent" agents, the pathfinding system is designed to search for the optimal path from the starting point to the destination. As a general rule the shortest path is considered optimal, but there are many situations in real life where the calculation is not quite so simple. For example, the shortest route between two points might be covered in thick snow and so it could be quicker to walk along a cleared footpath even if the journey was longer. There may be concerns other than time too. At night, you might prefer to avoid walking down a dark alleyway and take a longer but well-lit route for safety. You can understand both these situations by noting that each step along a path has a certain $$cost$$ associated with it. The cost could represent the difficulty of the terrain, risk or many other factors you might bear in mind when planning a route. The optimal route is therefore the one with the lowest overall cost and this will not always be the shortest.
+
+In Unity, each navmesh section can be set up with a cost value through the use of $$Navmesh Layers$$. If you select the ''Layers'' tab of the Navigation window, you will see a list of thirty-two available layers, three of which are "built-in" layers reserved by Unity. When you open a foldout for one of the User Layers, you will see that you can assign it with a name and a cost value.
+
+Attach:NavWindowLayerCost.png
+
+If you now go to the ''Object'' tab, and look on the ''Navigation Layer'' popup, you can see any user layers you have assigned on the menu. By choosing a layer for a navmesh object, you are also assigning the cost for each unit of distance an agent travels over it. This enables a level designer to divide a scene up into separate navmeshes representing differing traversal costs.
+
+Attach:NavMeshObjPanelLayerMenu.png
+
+
+!!Tips and Use Cases for Costs
+
+An important thing to bear in mind when using costs is that a long journey over low-cost ground can be more expensive than a short journey over high-cost ground. Sometimes this will give plausible behaviour, for example when a character risks a shortcut down a dark alleyway rather than a very long round trip. However, the behaviour might sometimes be "rational" but unrealistic. A car can be made to favour roads by assigning them a low cost, but it should never normally drive through somebody's garden just to avoid a hairpin bend. Careful choice and testing of costs is sometimes necessary and it might be easier to redesign a level slightly rather than juggle with a complex setup of different navmesh costs.
+
+In some situations, most of the ground will be "normal" but there might be some areas that are advantageous to cross. For example, it might be preferable to take a moving walkway or a slide rather than walk the same distance. It is fine to set the cost less than the default value of one for cases like this but you should not attempt to use negative costs to indicate advantages. Since the agent is trying to find the lowest-cost path, he might spend a long time wandering aimlessly around an area of negative cost given that each step actually reduces the cost of the path overall. If you want your game to have mostly normal areas but occasionally have advantageous ground then the best solution is to use a cost greater than one for the "normal" layer and a lower cost for the "advantage" layer.
+
+The cost of a path is a very abstract concept and could involve many different factors but some possible use cases include:-
+
+* __Difficulty or desirability of terrain:__ A character will favour a route over easier ground but might make a quick detour to avoid a long round trip. For example, you would usually step around a small puddle but you might risk a bit of wading if the puddle covers the footpath and the alternative route is much longer.
+* __Risk:__ It might be in the nature of your game that thieves lurk in dark alleyways and snakes live in long grass. An intelligent character would usually avoid places like this.
+* __Visibility:__ Characters escaping from prison would want to stay away from CCTV cameras and guards' patrol routes.
+* __Exposure:__ An attack force would tend to keep close to walls, cars and other large and substantial objects, breaking cover only when necessary.
+* __Damage:__ fire, electrified floors and pools of acid should normally be avoided but they may need to be braved if they are blocking the only escape route.
+

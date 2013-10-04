@@ -1,0 +1,20 @@
+!Navigation Meshes
+
+A pathfinding system needs a way to represent which parts of the game world can be reached by a character and also a way to determine the possible routes between any two points and choose the best. A mesh (similar to the ones used for 3D graphics) is a good solution to both problems. The reachable area is defined by the polygons of the mesh, while the possible paths through the mesh are conveniently broken down into hops between adjacent polygons. In theory, the same mesh that is used for the floor graphics can also be used for navigation. In practice, the graphical mesh is usually too detailed and consequently inefficient for navigation. For this and other reasons, an AI system usually supplements the floor mesh with a simpler, invisible mesh known as a $$navigation mesh$$ (or "navmesh" for short). Fortunately, there are techniques to generate an efficient navmesh automatically from a graphical floor mesh and a few numeric parameters. The process of computing a navmesh in this way is known as $$baking$$.
+
+In Unity, navmesh generation is handled from the ~~Navigation window~~ (menu: ^^Window > Navigation^^). If you select the ~~Object~~ tab in the window, you will see something like the following:-
+
+Attach:NavWindowObjectPanel.png
+
+The ''Scene Filter'' options simply restrict the selection of objects shown in the Scene view and Hierarchy panel. The other options apply to the selected scene object(s); broadly, they allow you to include or exclude an object within the walkable area of the navmesh. You should mark objects to be included in the navmesh as ''Navigation Static''. You can then set the ''Navigation Layer'' to ''Default'' if you want the area to be walkable or to ''Not Walkable'' otherwise. Typically, the walkable areas correspond to floors, ramps and bridges in the game world, while non-walkable areas correspond to walls and other impassable obstacles.
+
+The ''Bake'' button gives you further options for navmesh generation on a separate panel:-
+
+Attach:NavWindowBakePanel.png
+
+Of particular note are the ''General'' settings. The ''Radius'' determines how close a navigating character can get to a wall and consequently the width of the narrowest gap between two walls that can it can squeeze through. The ''Height'' refers to the height of the "ceiling" above the navmesh surface - an area may not be reachable simply because there is not enough headroom for the character. The ''Max Slope'' parameter sets the threshold of steepness where a ramp becomes a wall while the ''Step Height'' is the maximum height of bump or step in the floor surface that is ignored by the character (any step greater than this height results in a disconnected walkable area rather than a continuation of the same area).
+
+With these parameters set, you can click the ''Bake'' button to compute the navmesh. The baking usually takes place very quickly and the resulting navmesh will be shown in the Scene as an overlay on the underlying level geometry. You may need a few attempts based on what you see in the scene before you get the settings for the navmesh just right.
+
+Attach:NavMeshBaked.png
+

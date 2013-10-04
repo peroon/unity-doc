@@ -1,32 +1,7 @@
-!Navmesh and Pathfinding
+!Navigation and Pathfinding
 
-A navigation mesh (also known as the ''Navmesh'') is a simplified representation of world geometry, which gameplay agents use to navigate the world. Typically an agent has a ''goal'', or a ''destination'', to which it is trying to find a path, and then navigate to that goal along the path. This process is called ''pathfinding''. Note that ''Navmesh generation'' (or ''baking'') is done by game developers inside the editor, while the ''pathfinding'' is done by agents at runtime based on that Navmesh.
+In many games, a character needs to be able to travel automatically from its current position to a desired destination. For example, you might control a player character by clicking on a target point in the game world, or perhaps an NPC enemy might need to find a route to intercept the player. In some cases, this will be a simple matter of moving in a straight line or along a preset path but there are also game worlds based around buildings, forests or other settings where the route to the target is not so direct. In games like these, some control logic is needed to allow the character to make decisions at each point along its journey to choose its next step. The process of choosing a character's movements around the game world like this is known as navigation.
 
-In the complex world of games, there can be many agents, dynamic obstacles, and constantly changing accessibility levels for different areas in the world. Agents need to react dynamically to those changes. An agent's pathfinding task can be interrupted by or affected by things like collision avoidance with other characters, changing characteristics of the terrain, physical obstacles (such as closing doors), and an update to the actual destination. 
+There are various techniques that can be used to navigate a character to its destination, some of which involve an element of trial and error with mistakes and wrong turnings. Often though, the desired behaviour is to make the character appear to be planning its path intelligently, taking the most direct or advantageous route. This requires a bit of artificial intelligence (AI) to establish the best way to get from the starting point to the destination. This task in game AI is known as pathfinding and although it can be quite technical, Unity makes some common cases very easy using its built-in pathfinding system. This section describes Unity's navigation and pathfinding in detail.
 
-Here is a simple example of how to set up a navmesh, and an agent that will do pathfinding on it:
-
-*Create some geometry in the level, for example a $$Plane$$ or a $$Terrain$$.
-*In the Inspector Window's right hand corner click on ^^Static^^ and make sure that this geometry is marked up as ^^Navigation Static^^ 
-->Attach:NavmeshStaticPulldown.png
-
-*Pull up the Navigation Mesh window (^^Window^^->^^Navigation^^).
-*[[Navmeshbaking|Bake the mesh]]. This will generate the navmesh for all $$navigation-static$$ geometry.
-*Create some dynamic geometry in the scene (such as characters).
-*Set up an agent (or multiple agents), by adding a [[class-NavMeshAgent|NavMeshAgent]] component to a dynamic geometry in the scene.
-*Give the agent a destination (by setting the ''destination'' property) in a script attached to the agent.
-*Press play and watch the magic.
-
-Note that it is also possible to define custom [[class-NavMeshLayers|NavMesh layers]]. These are needed for situations where some parts of the environment are easier for agents to pass through than others. For parts of the mesh that are not directly connected, it is possible to create [[class-OffMeshLink|Off Mesh Links]].
-
-!!Automatic off-mesh links
-Navmesh geometry can also be marked up for automatic off-mesh link generation, like this:
-
-Attach:NavmeshStaticPlusOffmesh.png
-''Marking up geometry for automatic off-mesh link generation''
-
-Geometry marked up in this way will be checked during the [[Navmeshbaking|Navmesh Baking]] process for creating links to other Navmesh geometry. This way, we can control the auto-generation for each GameObject. Whether an off-mesh link will be auto-generated in the baking process is also determined by the ``Jump distance`` and the ``Drop height`` properties in the ^^Navigation Bake^^ settings. 
-
-The NavMeshLayer assigned to auto-generated off-mesh links, is the built-in layer ``Jump``. This allows for global control of the auto-generated off-mesh links costs (see [[class-NavMeshLayers|Navmesh layers]]).
-
-Note, that there is also a possibility for setting up ''manual'' off-mesh links (described [[class-OffMeshLink|here]]).
+(:tocportion:)
