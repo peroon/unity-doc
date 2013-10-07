@@ -659,6 +659,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[SL-BuiltinIncludes]]
 ****[[SL-BuiltinMacros]]
 ****[[SL-BuiltinStateInPrograms]]
+****[[SL-MultipleProgramVariants]]
 ****[[SL-GLSLShaderPrograms]]
 ***[[SL-Shader]]
 ****[[SL-Properties]]

@@ -37,8 +37,10 @@ Other compilation directives:
 * ``#pragma only_renderers ''space separated names''`` - compile shader only for given renderers. By default shaders are compiled for all renderers. See ''Renderers'' below for details.
 * ``#pragma exclude_renderers ''space separated names''`` - do not compile shader for given renderers. By default shaders are compiled for all renderers. See ''Renderers'' below for details.
 * ``#pragma glsl`` - when compiling shaders for desktop OpenGL platforms, convert Cg/HLSL into GLSL (instead of default setting which is ARB vertex/fragment programs). Use this to enable derivative instructions, texture sampling with explicit LOD levels, etc.
+* ``#pragma multi_compile ...`` - for working with [[SL-MultipleProgramVariants | multiple shader variants]].
 * ``#pragma glsl_no_auto_normalization`` - when compiling shaders for mobile GLSL (iOS/Android), turn off automatic normalization of normal & tangent vectors. By default, normals and tangents are normalized in the vertex shader on iOS/Android platforms.
 * ``#pragma fragmentoption ''option''`` - adds ''option'' to the compiled OpenGL fragment program. See the [[http://www.opengl.org/registry/specs/ARB/fragment_program.txt | ARB fragment program]] specification for a list of allowed options. This directive has no effect on vertex programs or programs that are compiled to non-OpenGL targets.
+* ``#pragma enable_d3d11_debug_symbols`` - generate debug information for shaders compiled for DirectX 11, this will allow you to debug shaders via Visual Studio 2012 (or later) Graphics debugger.
 
 Each snippet must contain a vertex program, a fragment program, or both. Thus a ``#pragma vertex`` or ``#pragma fragment`` directive is required, or both.
 

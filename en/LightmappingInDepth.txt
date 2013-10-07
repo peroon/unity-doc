@@ -103,6 +103,38 @@ Attach:DualLightmapsInAction.png
 
 Attach:DualLightmapsInActionDetail.png
 
+[[#DirectionalLightmaps]]
+!!! Directional Lightmaps
+
+Dual lightmaps allow for specular lighting and normal mapping, but only within shadow distance and in direct light. If you need these effects in areas lit mostly by indirect light or far away from the camera, or if you want to avoid the cost of rendering realtime lights necessary for dual lightmaps, you should use directional lightmaps instead.
+
+Directional lightmaps store information on light directionality in a second set of lightmaps. The first set of lightmaps (color) stores just the diffuse lighting, same as Single Lightmaps do. The second set of lightmaps (scale) stores the ratio of the desaturated incoming light per basis vector.
+
+Advantages:
+* Allows for normal mapping and specular without realtime lights.
+* Gives specular for indirect lighting, important in areas that are mostly in shadow, e.g. caves.
+* The &#64257;rst lightmap (color) is the same as the one in Single Lightmaps mode.
+** If an object doesn’t need normal mapping nor specular, the second lightmap is not sampled.
+
+Disadvantages:
+* The encoding is lossy, so when direct lighting from more than one light affects a certain area, the lighting from directional lightmaps might look differently than realtime lighting.
+* The scale lightmap does not compress very well.
+** Not a problem on &#64258;at areas.
+** Artifacts can be hidden by albedo textures.
+	
+Realtime lighting typically handles one light per pass. Directional lightmaps, on the other hand, handle an arbitrary amount of lights in one pass, as long as they are baked.
+
+The decoding of directional lightmaps is done in a space relative to tangent space. This space is defined by a basis consisting of three pairwise orthogonal vectors, which evenly cover the hemisphere in the direction of the surface normal.
+
+The three coefficients from the scale lightmap are combined depending on the normal from the normal map. This operation is done in the shader at runtime, so normal maps can be dynamically changed, if needed.
+The normal from the normal map is transformed into the directional lightmaps basis. It is then used to combine the three coefficients from the scale lightmap, with respect to each of the basis vectors, into a final scaling value that is applied to the color lightmap.
+
+The scale lightmap can be interpreted as the amount of light coming from each of the basis directions that contributed to the value stored in the color lightmap. The coefficients linearly combined with the basis vectors give a general light direction that can be used for specular calculations.
+
+Attach:DirectionalLightmapsStealthBus.png\\
+''The [[http://unity3d.com/learn/tutorials/projects/stealth|Stealth tutorial project]] uses directional lightmaps to show great surface detail even in the shadow.''
+
+
 !!! Single Lightmaps
 
 Single Lightmaps is a much simpler technique, but it can be used in any [[Main.RenderingPaths | rendering path]]. All static illumination (i.e. from baked only and auto lights, sky lights and emissive materials) gets baked into one set of lightmaps. These lightmaps are used on all lightmapped objects regardless of shadow distance.
