@@ -44,7 +44,7 @@ The ``player-detail`` section provides a detailed breakdown of what is happening
 ||``skinning`` ||Time spent applying animations to skinned meshes.
 ||``batching`` ||Time spent batching geometry. Batching dynamic geometry is considerably more expensive than batching static geometry.
 ||``render`` ||Time spent rendering visible objects.
-||``fixed-update-count`` ||Minimum and maximum number of FixedUpdates executed during this frame. Too many FixedUpdates will deteriorate performance considerably. There are some simple guidelines to set a good value for the fixed time delta [[#FixedDeltaTime|here]].
+||``fixed-update-count`` ||Minimum and maximum number of FixedUpdates executed during this frame. Too many FixedUpdates will deteriorate performance considerably.
 
 !! Detailed Scripts Statistics
 The ``mono-scripts`` section provides a detailed breakdown of the time spent executing code in the Mono runtime:

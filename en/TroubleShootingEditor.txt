@@ -74,7 +74,7 @@ If Unity crashes when starting, check the following:
 
 *Unity could try to open a project that is corrupt, this might include the default sample project. In such case rename or move the folder of the project. After Unity starts correctly you can restore the project's folder if wished.
 
-*In case of a corrupt installation reinstall Unity, see the [[TroubleShooting#EditorReinstallationTroubleShooting | instructions below]].
+*In the event of a corrupt installation, you may need to reinstall Unity - see the instructions below.
 
 *In Windows, there could be problems like installation errors, registry corruption, conflicts, etc. For example, error 0xC0000005 means the program has attempted to access memory that it shouldn't. If you added new hardware or drivers recently, remove and replace the hardware to determine if it's causing the problem. Run diagnostics software and check information on trouble-shooting the operating system.
 
@@ -86,7 +86,7 @@ If the editor runs slowly or crashes, particularly on builds, this might be caus
 
 There are many factors that can destroy a project, you should __constantly backup your projects__ to prevent unfortunate accidents. When in MacOS, activate the TimeMachine using an external hard disk reserved for this sole purpose. After a loss you can try any of the file recovery utilities that exist, but sometimes this is irreversible.
 
-[[#EditorReinstallationTroubleShooting]]
+
 !!Re-installation
 
 Follow these steps to reinstall the editor:

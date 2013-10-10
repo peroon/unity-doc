@@ -18,7 +18,7 @@ Attach:Inspector-WheelCollider2.png\\
 ||>>>``Damper`` ||Dampens the suspension velocity. A larger value makes the ``Suspension Spring`` move slower. ||
 ||>>>``Target Position`` ||The suspension's rest distance along Suspension Distance. 0 maps to fully extended suspension, and 1 maps to fully compressed suspension. Default value is zero, which matches the behavior of a regular car's suspension. ||
 ||``Mass`` ||The Mass of the wheel. ||
-||``Forward/Sideways Friction`` ||Properties of tire friction when the wheel is rolling forward and sideways. See [[#Friction|Wheel Friction Curves]] section below. ||
+||``Forward/Sideways Friction`` ||Properties of tire friction when the wheel is rolling forward and sideways. See the ''Wheel Friction Curves'' section below. ||
 
 
 !! Details
@@ -48,7 +48,6 @@ Attach:WheelGeometries.png\\
 ''Visible geometry (left) is much more complex than collision geometry (right)''
 
 
-[[#Friction|Wheel Friction Curves]]
 !!!Wheel Friction Curves
 
 Tire friction can be described by the ''Wheel Friction Curve'' shown below. There are separate curves for the wheel's forward (rolling) direction and sideways direction. In both directions it is first determined how much the tire is slipping (based on the speed difference between the tire's rubber and the road). Then this slip value is used to find out tire force exerted on the contact point.

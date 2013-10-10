@@ -27,4 +27,4 @@ All messages sent to the master server must contain version information which is
 
 !!! The Facilitator
 
-The facilitator uses the NAT punchthrough plugin from RakNet directly with no modifications. This is essentially just a peer listening on a port with the NAT punchthrough plugin loaded. When a server and a client with NAT addresses are both connected to this peer, they will be able to perform NAT punchthrough to connect to each other. When the [[ScriptRef:Network.InitializeServer|Network.InitializeServer]] uses NAT, the connection is set up automatically for you.
+The facilitator uses the NAT punchthrough plugin from RakNet directly with no modifications. This is essentially just a peer listening on a port with the NAT punchthrough plugin loaded. When a server and a client with NAT addresses are both connected to this peer, they will be able to perform NAT punchthrough to connect to each other. When the [[ScriptRef:Network.InitializeServer.html|Network.InitializeServer]] uses NAT, the connection is set up automatically for you.

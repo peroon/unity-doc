@@ -11,7 +11,6 @@ Attach:MeshExample40.png \\
 ''A [[class-MeshFilter | Mesh Filter]] together with [[class-MeshRenderer | Mesh Renderer]] makes the model appear on screen.''
 
 
-
 !Import settings for Meshes
 
 The $$Import Settings$$ for a model file will be displayed in the ~~Model~~ tab of the FBX importer inspector when the model is selected. These affect the __mesh__, it's __normals__ and imported __materials__. Settings are applied per asset on disk so if you need assets with different settings make (and rename accordingly) a duplicate file.
@@ -21,7 +20,7 @@ Although defaults can suffice initially, it is worth studying the settings gloss
 Some general adjustments to be made for example might be:
 
 * Scale - this scale factor is used for compensating difference in units between Unity and 3d modeling tool - it rescales whole file. Normally you can simply set it to 1. Note that Unity's Physics Engine is scaled as 1 unit equals 1 metre. It is important that if you want to have correct physical behaviour you should have the model correctly scaled in the original modeling application. If this cannot be done, or you do not have control over the modification of the mesh, the scale of the model can be adjusted here.
-* Generate colliders - this will generate a collison mesh to allow your model to collide with other objects - see notes below.
+* Generate colliders - this will generate a collison mesh to allow your model to collide with other objects.
 * Material Naming and Search - this will help you automatically setup your materials and locate textures
 
 Attach:Import_41.png\\
@@ -33,7 +32,7 @@ Attach:Import_41.png\\
 ||``Mesh Compression`` ||Increasing this value will reduce the file size of the mesh, but might introduce irregularities.  It's best to turn it up as high as possible without the mesh looking too different from the uncompressed version. This is useful for [[ReducingFilesize | optimizing game size]]. ||
 ||``Read/Write Enabled``||Enables the mesh to be written at runtime so you can modify the data; it makes a copy in memory. When this option is turned off, it saves memory since Unity can unload a copy of mesh data in the game. However, if you are scaling or instantiating meshes at runtime with a non-uniform scale, you may have to enable "Read/Write Enabled" in their import settings. The reason is that non-uniform scaling requires the mesh data to be kept in memory. Normally this is detected at build time, but when meshes are scaled or instantiated at runtime you need to set this manually. Otherwise they might not be rendered in game builds correctly.||
 ||``Optimize Mesh``||This option determines the order in which triangles will be listed in the mesh.||
-||``Generate Colliders`` ||If this is enabled, your meshes will be imported with Mesh Colliders automatically attached. This is useful for quickly generating a collision mesh for environment geometry, but should be avoided for geometry you will be moving. For more info see [[#colliders | Colliders]] below. ||
+||``Generate Colliders`` ||If this is enabled, your meshes will be imported with Mesh Colliders automatically attached. This is useful for quickly generating a collision mesh for environment geometry, but should be avoided for geometry you will be moving. ||
 ||``Swap UVs`` ||Use this if lightmapped objects pick up the wrong UV channels. This will swap your primary and secondary UV channels.||
 ||``Generate Lightmap`` ||Use this to create the second UV channel to be used for Lightmapping.||
 ||>>>``Advanced Options`` ||See [[Main.LightmappingUV | Lightmapping UVs document]].||

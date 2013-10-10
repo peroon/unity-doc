@@ -9,7 +9,7 @@ You will need to have your Android developer environment set up before you can t
 Unity Android provides scripting APIs to access various input data and settings. You can find out more about the available classes on the [[Main.android-API | Android scripting page]].
 
 !! Exposing Native C, C++ or Java Code to Scripts
-Unity Android allows you to call custom functions written in C/C++ directly from C# scripts (Java functions can be called indirectly). To find out how to make functions from native code accessible from Unity, visit the [[Main.Plugins#AndroidPlugins | plugins page]].
+Unity Android allows you to call custom functions written in C/C++ directly from C# scripts (Java functions can be called indirectly). To find out how to make functions from native code accessible from Unity, visit the [[PluginsForAndroid|Android plugins page]].
 
 !! Occlusion Culling
 Unity includes support for occlusion culling which is a particularly valuable optimization on mobile platforms. More information can be found on the [[OcclusionCulling | occlusion culling]] page.
@@ -33,5 +33,5 @@ It is also possible to create separate android distribution archives (.apk) for 
 !!! Movie Playback
 Movie textures are not supported on Android, but a full-screen streaming playback is provided via scripting functions. To learn about supported file formats and scripting API, consult the [[Main.VideoFiles | movie page]] or the [[ http://developer.android.com/guide/appendix/media-formats.html | Android supported media formats page ]].
 
-!!! Further Reading
+
 (:tocportion:)

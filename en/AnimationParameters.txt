@@ -11,7 +11,7 @@ Default parameter values can be set up using the Parameters widget in the bottom
 
 Attach:MecanimEvents.png
 
-Parameters can be assigned values from a script using functions in the Animator class: [[ScriptRef:Animator.SetVector.html|SetVector]], [[ScriptRef:Animator.SetFloat.html|SetFloat]], [[ScriptRef:Animator.SetInt.html|SetInt]], and [[ScriptRef:SetBool.html|SetBool]].
+Parameters can be assigned values from a script using functions in the Animator class: [[ScriptRef:Animator.SetFloat.html|SetFloat]], [[ScriptRef:Animator.SetInteger.html|SetInt]], and [[ScriptRef:Animator.SetBool.html|SetBool]].
 
 Here's an example of a script that modifies parameters based on user input
 

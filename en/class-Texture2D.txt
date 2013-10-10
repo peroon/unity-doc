@@ -22,7 +22,7 @@ The topmost item in the inspector is the ^^Texture Type^^ menu that allows you t
 ||PROPS
 ||``Texture Type`` ||Select this to set basic parameters depending on the purpose of your texture. ||
 ||>>>``Texture`` ||This is the most common setting used for all the textures in general. ||
-||>>>``Normal Map`` ||Select this to turn the color channels into a format suitable for real-time normal mapping. For more info, see [[#normalmaps|Normal Maps]] ||
+||>>>``Normal Map`` ||Select this to turn the color channels into a format suitable for real-time normal mapping. See the ''Details'' section at the end of the page. ||
 ||>>>``GUI`` ||Use this if your texture is going to be used on any HUD/GUI Controls. ||
 ||>>>``Reflection`` ||Also known as Cube Maps, used to create reflections on textures. check [[class-Cubemap|Cubemap Textures]] for more info.||
 ||>>>``Cookie`` ||This sets up your texture with the basic parameters used for the Cookies of your lights||
@@ -39,7 +39,7 @@ Attach:TexImporterTexture40.png\\
 ||>>>``Point`` ||The Texture becomes blocky up close ||
 ||>>>``Bilinear`` ||The Texture becomes blurry up close ||
 ||>>>``Trilinear`` ||Like Bilinear, but the Texture also blurs between the different mip levels ||
-||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures, see [[#anisotropy | below]]. ||
+||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the ''Details'' section at the end of the page. ||
 
 Attach:TexImporterNormalMap40.png\\
 ''Normal Map Settings in the Texture Importer''
@@ -56,7 +56,7 @@ Attach:TexImporterNormalMap40.png\\
 ||>>>``Point`` ||The Texture becomes blocky up close ||
 ||>>>``Bilinear`` ||The Texture becomes blurry up close ||
 ||>>>``Trilinear`` ||Like Bilinear, but the Texture also blurs between the different mip levels ||
-||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures, see [[#anisotropy | below]]. ||
+||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the ''Details'' section at the end of the page. ||
 
 Attach:TexImporterGUI40.png\\
 ''GUI Settings for the Texture Importer''
@@ -91,7 +91,7 @@ Attach:TexImporterReflection40.png\\
 ||>>>``Point`` ||The Texture becomes blocky up close ||
 ||>>>``Bilinear`` ||The Texture becomes blurry up close ||
 ||>>>``Trilinear`` ||Like Bilinear, but the Texture also blurs between the different mip levels ||
-||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures, see [[#anisotropy | below]]. ||
+||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the ''Details'' section at the end of the page. ||
 
 
 An interesting way to add a lot of visual detail to your scenes is to use $$Cookies$$ - greyscale textures you use to control the precise look of in-game lighting. This is fantastic for making moving clouds and giving an impression of dense foliage. The [[class-Light|Light]] page has more info on all this, but the main thing is that for textures to be usable for cookies you just need to set the ^^Texture Type^^ to Cookie.
@@ -116,13 +116,13 @@ Attach:TexImporterLightmap40.png\\
 ||>>>``Point`` ||The Texture becomes blocky up close ||
 ||>>>``Bilinear`` ||The Texture becomes blurry up close ||
 ||>>>``Trilinear`` ||Like Bilinear, but the Texture also blurs between the different mip levels ||
-||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures, see [[#anisotropy | below]]. ||
+||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the ''Details'' section at the end of the page. ||
 
 Attach:TexImporterAdvanced40.png\\
 ''The Advanced Texture Importer Settings dialog''
 
 
-||``Non Power of 2`` ||If texture has non-power-of-two size, this will define a scaling behavior at import time (for more info see the [[#texturesizes|Texture Sizes]] section below):||
+||``Non Power of 2`` ||If texture has non-power-of-two size, this will define a scaling behavior at import time. See the ''Details'' section at the end of the page.||
 ||>>>``None`` ||Texture size will be kept as-is. ||
 ||>>>``To nearest`` ||Texture will be scaled to the nearest power-of-two size at import time. For instance 257x511 texture will become 256x512. Note that PVRTC formats require textures to be square (width equal to height), therefore final size will be upscaled to 512x512. ||
 ||>>>``To larger`` ||Texture will be scaled to the next larger power-of-two size at import time. For instance 257x511 texture will become 512x512. ||
@@ -144,7 +144,7 @@ Attach:TexImporterAdvanced40.png\\
 ||``Alpha from grayscale`` ||(Default mode only) Generates the alpha channel from the luminance information in the image ||
 ||``Create from grayscale`` ||(Normal map mode only) Creates the map from the luminance information in the image ||
 ||``Bypass sRGB sampling`` ||(Default mode only) Use the exact colour values from the image rather than compensating for gamma (useful when the texture is for GUI or used as a way to encode non-image data) ||
-||``Generate Mip Maps`` ||Select this to enable mip-map generation. Mip maps are smaller versions of the texture that get used when the texture is very small on screen. For more info, see [[#mipmaps|Mip Maps]] below. ||
+||``Generate Mip Maps`` ||Select this to enable mip-map generation. Mip maps are smaller versions of the texture that get used when the texture is very small on screen. See the ''Details'' section at the end of the page. ||
 ||``In Linear Space`` ||Generate mipmaps in linear colour space. ||
 ||``Border Mip Maps`` ||Select this to avoid colors seeping out to the edge of the lower Mip levels. Used for light cookies (see below). ||
 ||``Mip Map Filtering`` ||Two ways of mip map filtering are available to optimize image quality: ||
@@ -158,7 +158,7 @@ Attach:TexImporterAdvanced40.png\\
 ||>>>``Point`` ||The Texture becomes blocky up close ||
 ||>>>``Bilinear`` ||The Texture becomes blurry up close ||
 ||>>>``Trilinear`` ||Like Bilinear, but the Texture also blurs between the different mip levels ||
-||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures, see [[#anisotropy | below]]. ||
+||``Aniso Level`` ||Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the ''Details'' section at the end of the page. ||
 
 
 !! Per-Platform Overrides

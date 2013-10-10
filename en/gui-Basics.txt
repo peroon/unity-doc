@@ -342,4 +342,4 @@ public class GUITest : MonoBehaviour {
 }
 @]
 
-The scripting reference page for [[ScriptRef:GUIContent.GUIContent.html | GUIContent's constructor]] for an extensive list of examples.
+The script reference page for the [[ScriptRef:GUIContent-ctor.html|GUIContent constructor]] has some examples of its use.

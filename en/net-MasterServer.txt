@@ -10,7 +10,7 @@ The NAT punchthrough duty of the Master Server is actually handled by a separate
 
 The $$Game Type$$ is an identifying name that should be unique for each game (although Unity does not offer any central registration system to guarantee this). It makes sense to choose a distinctive name that is unlikely to be used by anyone else. If there are several different versions of you game then you may need to warn a user that their client is not compatible with the running server version. The version information can be passed in the comment field (this is actually binary data and so the version can be passed in any desired form). The game name is simply the name of the particular game instance as supplied by whoever set it up.
 
-The comment field can be used in more advanced ways if the Master Server is suitably modified (see [[#advanced | below]] for further information on how to do this). For example, you could reserve the first ten bytes of the comment field for a password and then extract the password in the Master Server when it receives the host update. It can then reject the host update if a password check fails. 
+The comment field can be used in more advanced ways if the Master Server is suitably modified (see the ''Advanced'' section at the bottom of the page for further information on how to do this). For example, you could reserve the first ten bytes of the comment field for a password and then extract the password in the Master Server when it receives the host update. It can then reject the host update if a password check fails. 
 
 
 !! Registering a game

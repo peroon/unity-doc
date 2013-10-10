@@ -4,7 +4,7 @@
 
 Attach:FilterGraph1.png Attach:FilterGraph2.png\\
 
-Enabling/Disabling a filter component will ''bypass'' the filter. Though highly optimized, some filters are still CPU intensive. Audio CPU usage can monitored in the [[Profiler#Audio | profiler]] under the Audio Tab.
+Enabling/Disabling a filter component will ''bypass'' the filter. Though highly optimized, some filters are still CPU intensive. Audio CPU usage can monitored in the [[Profiler| profiler]] under the Audio Tab.
 
 
 See these pages for more information on each filter type:

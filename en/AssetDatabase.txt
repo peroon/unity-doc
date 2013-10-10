@@ -24,7 +24,7 @@ You can also pass an extra parameter of type [[ScriptRef:ImportAssetOptions.html
 
 !!Loading an Asset
 
-The editor loads assets only as needed, say if they are added to the scene or edited from the Inspector panel. However, you can load and access assets from a script using [[ScriptRef:AssetDatabase.LoadAssetAtPath.html|AssetDatabase.LoadAssetAtPath]], [[ScriptRef:AssetDatabase.LoadMainAssetAtPath.html|AssetDatabase.LoadMainAssetAtPath]],  [[ScriptRef:AssetDatabase.LoadAllAssetRepresentationsAtPath.html|AssetDatabase.LoadAllAssetRepresentationsAtPath]] and [[ScriptRef:AssetDatabase.LoadAllAssetsAtPath .html|AssetDatabase.LoadAllAssetsAtPath ]]. See the scripting documentation for further details.
+The editor loads assets only as needed, say if they are added to the scene or edited from the Inspector panel. However, you can load and access assets from a script using [[ScriptRef:AssetDatabase.LoadAssetAtPath.html|AssetDatabase.LoadAssetAtPath]], [[ScriptRef:AssetDatabase.LoadMainAssetAtPath.html|AssetDatabase.LoadMainAssetAtPath]],  [[ScriptRef:AssetDatabase.LoadAllAssetRepresentationsAtPath.html|AssetDatabase.LoadAllAssetRepresentationsAtPath]] and [[ScriptRef:AssetDatabase.LoadAllAssetsAtPath.html|AssetDatabase.LoadAllAssetsAtPath]]. See the scripting documentation for further details.
 
 [@using UnityEngine;
 using UnityEditor;

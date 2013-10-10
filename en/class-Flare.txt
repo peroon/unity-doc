@@ -13,7 +13,7 @@ Flares work by containing several Flare ``Elements`` on a single $$Texture$$.  W
 
 ||PROPS
 ||``Elements`` ||The number of Flare images included in the Flare. ||
-||>>>``Image Index`` ||Which Flare image to use from the ``Flare Texture`` for this Element.  See the [[#FlareTextures | Flare Textures]] section below for more information. ||
+||>>>``Image Index`` ||Which Flare image to use from the ``Flare Texture`` for this Element.  See the ''Flare Textures'' section below for more information. ||
 ||>>>``Position`` ||The Element's offset along a line running from the containing GameObject's position through the screen center. 0 = GameObject position, 1 = screen center. ||
 ||>>>``Size`` ||The size of the element. ||
 ||>>>``Color`` ||Color tint of the element. ||

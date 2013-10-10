@@ -18,6 +18,9 @@ This page gives an overview of the default Unity Hotkeys. You can also download 
 ||CTRL/CMD+SHIFT+N||New game object||
 ||CTRL/CMD+ALT+F||Move to view||
 ||CTRL/CMD+SHIFT+F||Align with view||
+>>u43<<
+||SHIFT+F or double-F||Locks the scene view camera to the selected GameObject||
+>><<
 || ||
 ||__Window__||
 ||CTRL/CMD+1||Scene||

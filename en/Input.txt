@@ -207,19 +207,6 @@ if (period > 0)
 return acc;
 @]
 
-!! Further Reading
-
-The Unity mobile input API is originally based on Apple's API. It may help to learn more about the native API to better understand Unity's Input API.
-You can find the Apple input API documentation here:
-*[[file:///Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiPhone2_0.iPhoneLibrary.docset/Contents/Resources/Documents/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/EventHandling/chapter_8_section_1.html | Programming Guide: Event Handling (Apple iPhone SDK documentation)]]
-*[[file:///Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiPhone2_0.iPhoneLibrary.docset/Contents/Resources/Documents/documentation/UIKit/Reference/UITouch_Class/Reference/Reference.html | UITouch Class Reference (Apple iOS SDK documentation)]]
-
-__Note:__ The above links reference your locally installed iPhone SDK Reference Documentation and will contain native ObjectiveC code. It is not necessary to understand these documents for using Unity on mobile devices, but may be helpful to some!
-
->>ios<<
-(:include InputIPhone:)
->><<
-
 >>wiiu<<
 (:include InputWiiU:)
 >><<

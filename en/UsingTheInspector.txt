@@ -2,7 +2,7 @@
 
 The $$Inspector$$ is used to view and edit $$Properties$$ of many different types.
 
-Games in Unity are made up of multiple $$GameObjects$$ that contain meshes, scripts, sounds, or other graphical elements like Lights. When you select a $$GameObject$$ in the Hierarchy or Scene View, the $$Inspector$$ will show and let you modify the $$Properties$$ of that GameObject and all the $$Components$$ and $$Materials$$ on it. The same will happen if you select a $$Prefab$$ in the Project View. This way you modify the functionality of GameObjects in your game. You can read more about the [[GameObjects#Relationship|GameObject-Component relationship]], as it is very important to understand.
+Games in Unity are made up of multiple $$GameObjects$$ that contain meshes, scripts, sounds, or other graphical elements like Lights. When you select a $$GameObject$$ in the Hierarchy or Scene View, the $$Inspector$$ will show and let you modify the $$Properties$$ of that GameObject and all the $$Components$$ and $$Materials$$ on it. The same will happen if you select a $$Prefab$$ in the Project View. This way you modify the functionality of GameObjects in your game. You can read more about the [[GameObjects|GameObject-Component relationship]], as it is very important to understand.
 
 Attach:GenericInspector.png\\
 ''Inspector shows the properties of a GameObject and the Components and Materials on it.''

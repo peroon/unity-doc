@@ -33,6 +33,6 @@ A ^^Grid^^ option is also available for the slicing type, which is very useful w
 
 Attach:SpriteSlicePanelGrid.png
 
-The ^^Tiles^^ values determine how many separate columns and rows will be used to divide up the image (the default is 1x1, indicating the whole image).
+The ^^Pixel Size^^ values determine the height and width of the tiles in pixels.
 
 Note that after either of the two automatic slicing methods has been used, the generated rectangles can still be edited manually. You can let Unity handle the rough definition of the sprite boundaries and pivots and then do any necessary fine tuning yourself.

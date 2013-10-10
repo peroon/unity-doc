@@ -147,8 +147,7 @@ public class NewBehaviourScript : MonoBehaviour {
 } 
 @]
 
-The Java class $$com.unity3d.player.UnityPlayer$$ now has a static method $$UnitySendMessage$$, equivalent to the iOS [[Main.Plugins#iPhonePlugins | UnitySendMessage]] on 
-the native side. It can be used in Java to pass data to script code. 
+The Java class $$com.unity3d.player.UnityPlayer$$ now has a static method $$UnitySendMessage$$, equivalent to the iOS [[PluginsForIOS|UnitySendMessage]] function on the native side. It can be used in Java to pass data to script code. 
 
 Here though, we call it directly from script code, which essentially relays the message on the Java side. This then calls back to the native/Unity code to deliver the message to the object named "Main Camera". This object has a script attached which contains a method called "JavaMessage". 
 
@@ -273,4 +272,3 @@ The scene in the package displays a button which when clicked fetches the applic
 Please note that you will need both the JDK and the [[http://developer.android.com/sdk/ndk/index.html|Android NDK]] to compile the plugins.
 
 [[Attach:AndroidJavaPluginProject.zip | Here]] is a similar example but based on a prebuilt JNI library to wrap the native code into C#.
-

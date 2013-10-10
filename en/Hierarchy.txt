@@ -14,5 +14,5 @@ Attach:Editor-PreParent.png\\
 Attach:Editor-PostParent.png\\
 ''One object parented to another''
 
-To learn more about Parenting, please review the Parenting section of the [[class-Transform#Parenting | Transform Component page]].
+To learn more about parenting, see the [[class-Transform|Transform Component page]].
 

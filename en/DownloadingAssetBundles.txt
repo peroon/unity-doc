@@ -3,8 +3,8 @@
 This section assumes you already learned how to build asset bundles. If you have not, please see [[BuildingAssetBundles|Building AssetBundles]]
 
 There are two ways to download an AssetBundle
-# __Non-caching:__ This is done using a creating a new [[ScriptRef:WWW.WWW.html|WWW object]]. The AssetBundles are not cached to Unity’s Cache folder in the local storage device. 
-# __Caching:__ This is done using the [[ScriptRef:WWW.LoadFromCacheOrDownload.html|WWW.LoadFromCacheOrDownload]] call. The AssetBundles are cached to Unity’s Cache folder in the local storage device. The WebPlayer shared cache allows up to 50 MB of cached AssetBundles. PC/Mac Standalone applications and iOS/Android applications have a limit of 4 GB. WebPlayer applications that make use of a dedicated cache are limited to the number of bytes specified in the caching license agreement. Please refer to the scripting documentation for other platforms.
+# __Non-caching:__ This is done using a creating a new [[ScriptRef:WWW.html|WWW object]]. The AssetBundles are not cached to Unity's Cache folder in the local storage device. 
+# __Caching:__ This is done using the [[ScriptRef:WWW.LoadFromCacheOrDownload.html|WWW.LoadFromCacheOrDownload]] call. The AssetBundles are cached to Unity's Cache folder in the local storage device. The WebPlayer shared cache allows up to 50 MB of cached AssetBundles. PC/Mac Standalone applications and iOS/Android applications have a limit of 4 GB. WebPlayer applications that make use of a dedicated cache are limited to the number of bytes specified in the caching license agreement. Please refer to the scripting documentation for other platforms.
 
 Here's an example of a non-caching download:
 

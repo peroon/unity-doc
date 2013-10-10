@@ -9,8 +9,7 @@ In Unity 3.0, the webplayer implements a security model very similar to the one 
 * Disallowing invocation of any method we deemed off limits. (things like File.Delete, etc).
 * Disallowing the usage of System.Reflection.* to call private/internal methods in classes you did not write yourself.
 
-Currently only the first two parts of the security model are emulated in the Editor. 
-Look here for [[ ScriptRef:MonoCompatibility.html | a detailed list of which methods / classes are available in the webplayer ]].
+Currently only the first two parts of the security model are emulated in the Editor.
 
 The built-in muti-player networking functionality of Unity (@@UnityEngine.Network@@, @@UnityEngine.NetworkView@@ classes etc) is not affected.
 
