@@ -487,11 +487,13 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-ProceduralMaterial]]
 ****[[class-RenderTexture]]
 ****[[class-TextAsset]]
+>>u42<<
 ****[[class-Texture2D]]
-****[[class-TextureImporter]]
+>><<
 >>u43<<
 ****[[class-Texture2D43]]
 >><<
+****[[class-TextureImporter]]
 >>u43<<
 ***[[comp-2DGroup]]
 ****[[class-SpriteRenderer]]
