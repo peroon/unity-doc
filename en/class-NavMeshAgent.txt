@@ -12,6 +12,7 @@ Attach:NavMeshAgent.png
 ||``Stopping distance`` ||Stopping distance. The agent will decelerate when within this distance to the destination.||
 ||``Auto Traverse OffMesh Link``	||Automate movement onto and off of OffMeshLinks.
 ||``Auto Repath`` ||Acquire new path if existing is partial or invalid.
+||``Auto Braking`` ||
 ||``Height``||The height of the agent (used in debug graphics).
 ||``Base offset`` ||Vertical offset of the collision geometry relative to the actual geometry.
 ||``Obstacle Avoidance Type`` ||The level of quality of avoidance.

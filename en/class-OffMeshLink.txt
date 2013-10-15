@@ -19,6 +19,7 @@ An off-mesh link is a component that can be placed on any object, and it has the
 ||``Cost Override``||If value is positive, use it when calculating path cost on processing a path request. Otherwise, we use the default cost (cost of the layer to which this game object belongs). If the Cost Override is set to the value 3.0, moving over the off-mesh link will be three times more expensive than moving the same distance on a default NavMesh area. 
 ||``Bi Directional``||If this is on, the link can be traversed both ways, if it's off, the link can only be traversed in the direction from Start to End.
 ||``Activated``   ||Specifies if this link is actually used by the pathfinder. When this property is false, the off-mesh link will be disregarded.
+||``Navigation Layer``   ||This can be set to ''Default'', ''Not Walkable'' or ''Jump''.
 
 
 !!Special notes on OffMeshLink properties

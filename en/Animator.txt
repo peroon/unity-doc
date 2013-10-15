@@ -1,7 +1,8 @@
-!Animator Component and Animator Controller
+!Animator and Animator Controller
 
-(:include class-Animator:)
+The avatar defines an object's skeletal structure but an $$Animator Controller$$ is also required to apply animations to the skeleton. An Animator Controller asset is created within Unity and allows you to maintain a set of animations for a character and switch between them when certain game conditions occur. For example, you could switch from a walk animation to a jump whenever the spacebar is pressed. The controller manages the transitions between animations using a so-called $$State Machine$$, a kind of simple program written in a visual programming language within Unity. More information about state machines can be found [[AnimationStateMachines|here]].
 
-(:include class-AnimatorController:)
+Attach:AnimControllerSmall.png\\
+''A simple Animator Controller''
 
-(back to [[MecanimAnimationSystem|Mecanim introduction]])
+The avatar and animator controller are finally applied to an object by attaching an $$Animator$$ component that references them. See the reference manual pages about the [[class-Animator]] component and [[class-AnimatorController]] for further details about their use.

@@ -26,7 +26,7 @@ Attach:LightMood3.png
 The lights you create this way are $$realtime$$ lights - their lighting is calculated each frame while the game is running. If you know the light will not change, you can make your game faster and look much better by using [[Lightmapping]].
 
 !!Rendering paths
-Unity supports different Rendering Paths, these paths affect mainly Lights and Shadows, so choosing the correct rendering path depending on your game requirements can improve your project's performance.
+Unity supports different $$Rendering Paths$$. These paths affect mainly Lights and Shadows, so choosing the correct rendering path depending on your game requirements can improve your project's performance.
 For more info about rendering paths you can visit the [[RenderingPaths | Rendering paths section]].
 
 

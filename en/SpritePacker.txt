@@ -2,13 +2,116 @@
 
 When designing sprite graphics, it is convenient to work with a separate texture file for each character. However, a significant portion of a sprite texture will often be taken up by the empty space between the graphic elements and this space will result in wasted video memory at runtime. For optimal performance, it is best to pack graphics from several sprite textures tightly together within a single texture known as an atlas. Unity provides a $$Sprite Packer$$ utility to automate the process of generating atlases from the individual sprite textures.
 
+Unity handles the generation and use of sprite atlas textures behind the scenes so that the user needs to do no manual assignment. The atlas can optionally be packed on entering Play mode or during a build and the graphics for a sprite object will be obtained from the atlas once it is generated.
 
 !!Using the Sprite Packer
 
-You can choose the set of textures that will be packed into a particular atlas using the $$Packing Tag$$ property in the texture importer.
-
-Attach:TexImporterSprite43.png
-
-All textures that share a packing tag name will be packed into an atlas with that same name. If you open the Sprite Packer window (menu: ^^Window > Sprite Packer^^) and click the ^^Repack^^ button in the top-left, you will see the arrangement of the textures packed within the atlas.
+If you open the Sprite Packer window (menu: ^^Window > Sprite Packer^^) and click the ^^Pack^^ button in the top-left corner, you will see the arrangement of the textures packed within the atlas.
 
 Attach:SpritePackerMain.png
+
+If you select a sprite in the Project panel, this will also be highlighted to show its position in the atlas. The outline is actually the render mesh outline and it also defines the area used for tight packing.
+
+The toolbar at the top of the Sprite Packer window has a number of controls that affect packing and viewing. The ''Pack'' buttons initiates the packing operation but will not force any update if the atlas hasn't changed since it was last packed. (A related ''Repack'' button will appear when you implement a custom packing policy as explained in ''Customizing the Sprite Packer'' below). The ''View Atlas'' and ''Page #'' menus allow you to choose which page of which atlas is shown in the window (a single atlas may be split into more than one "page" if there is not enough space for all sprites in the maximum texture size). The menu next to the page number selects which "packing policy" is used for the atlas (see below). At the right of the toolbar are two controls to zoom the view and to switch between color and alpha display for the atlas.
+
+You can configure the Sprite Packer from the Editor settings (menu: Edit > Project Settings > Editor). The sprite packing mode can be set to ``Disabled``, ``Enabled for Builds`` (ie, packing is used for builds but not Play mode) or ``Always Enabled`` (ie, packing is enabled for both Play mode and builds).
+
+!!Packing Policy
+
+The Sprite Packer uses a ''packing policy'' to decide how assign sprites into atlases. It is possible to create your own packing policies (see below) but the ''Default Packer Policy'' option is always available. With this policy, the ``Packing Tag`` property in the [[class-Texture2D|Texture Importer]] directly selects the name of the atlas where the sprite will be packed and so all sprites with the same packing tag will be packed in the same atlas. Atlases are then further sorted by the texture import settings so that they match whatever the user sets for the source textures.
+
+!!Customizing the Sprite Packer
+
+The ''DefaultPackerPolicy'' option is sufficient for most uses but you can also implement your own custom packing policy if you need to. To do this, you need to implement the UnityEditor.Sprites.IPackerPolicy interface for a class in an editor script. This interface requires the following methods:-
+
+* GetVersion - return the version value of your packer policy. Version should be bumped if modifications are done to the policy script and this policy is saved to version control.
+* OnGroupAtlases - implement your packing logic here. Define atlases on the PackerJob and assign Sprites from the given TextureImporters.
+
+DefaultPackerPolicy uses tight packing (see SpritePackingMode) by default. Custom policies can override this and instead use rectangle packing. This is useful if you're doing texture-space effects or would like to use a different mesh for rendering the Sprite.
+
+* Repack button is only enabled when a custom policy is selected.
+** OnGroupAtlases will not be called unless TextureImporter metadata or the selected PackerPolicy version values change.
+** Use Repack button when working on your custom policy.
+* Sprites can not be packed rotated.
+** SpritePackingRotation is a reserved type for future Unity versions.
+
+
+!!Other
+
+* Atlases are cached in Project\Library\AtlasCache.
+** Deleting this folder and then launching Unity will force atlases to be repacked.
+* Atlas cache is not loaded at start.
+** All textures must be checked when packing for the first time after Unity is restarted. This operation might take some time depending on the total number of textures in the project.
+** Only the required atlases are loaded.
+* Default maximum atlas size is 2048x2048.
+
+!!DefaultPackerPolicy
+[@
+class DefaultPackerPolicy : IPackerPolicy
+{
+	private class Entry
+	{
+		public Sprite        sprite;
+		public AtlasSettings settings;
+		public string        tag;
+	}
+
+	public int GetVersion()
+	{
+		return 1;
+	}
+
+	public void OnGroupAtlases(BuildTarget target, PackerJob job, TextureImporter[] textureImporters)
+	{
+		List<Entry> entries = new List<Entry>();
+
+		foreach (TextureImporter ti in textureImporters)
+		{
+			TextureImportInstructions ins = new TextureImportInstructions();
+			ti.ReadTextureImportInstructions(ins, target);
+
+			Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(ti.assetPath).Select(x => x as Sprite).Where(x => x != null).ToArray();
+			foreach (Sprite sprite in sprites)
+			{
+				Entry entry = new Entry();
+				entry.sprite = sprite;
+				entry.settings.format = ins.desiredFormat;
+				entry.settings.usageMode = ins.usageMode;
+				entry.settings.colorSpace = ins.colorSpace;
+				entry.settings.compressionQuality = ins.compressionQuality;
+				entry.settings.filterMode = ti.filterMode;
+				entry.settings.maxWidth = 2048;
+				entry.settings.maxHeight = 2048;
+				entry.tag = ti.spritePackingTag;
+
+				entries.Add(entry);
+			}
+		}
+		
+		// First split sprites into groups based on packing tag
+		var tagGroups =
+			from e in entries
+			group e by e.tag;
+		foreach (var tagGroup in tagGroups)
+		{
+			int page = 0;
+			// Then split those groups into smaller groups based on texture settings
+			var settingsGroups =
+				from t in tagGroup
+				group t by t.settings;
+			foreach (var settingsGroup in settingsGroups)
+			{
+				string atlasName = string.Format("{0}", tagGroup.Key);
+				if (settingsGroups.Count() > 1)
+					atlasName += string.Format(" (Group {0})", page);
+				
+				job.AddAtlas(atlasName, settingsGroup.Key);
+				foreach (Entry entry in settingsGroup)
+					job.AssignToAtlas(atlasName, entry.sprite, SpritePackingMode.Tight, SpritePackingRotation.None);
+				
+				++page;
+			}
+		}
+	}
+}
+@]

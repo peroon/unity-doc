@@ -19,7 +19,7 @@ There are two ways to apply a $$Texture$$ to a property.
 Two placement options are available for each $$Texture$$:
 
 ||PROPS
-||``Tiling``   ||Scales the texture along the different.||
+||``Tiling``   ||Scales the texture along the different axes.||
 ||``Offset``  ||Slides the texture around.||
 
 
