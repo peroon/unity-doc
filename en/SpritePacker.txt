@@ -44,6 +44,7 @@ DefaultPackerPolicy uses tight packing (see SpritePackingMode) by default. Custo
 ** All textures must be checked when packing for the first time after Unity is restarted. This operation might take some time depending on the total number of textures in the project.
 ** Only the required atlases are loaded.
 * Default maximum atlas size is 2048x2048.
+* When PackingTag is set, Texture will not be compressed so that the SpritePacker can grab original pixel values and then do compression on the atlas.
 
 !!DefaultPackerPolicy
 [@

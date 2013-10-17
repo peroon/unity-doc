@@ -586,6 +586,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **** [[class-Physics2DManager]]
 **** [[class-PlayerSettings40]]
 **** [[class-QualitySettings]]
+**** [[class-GraphicsSettings]]
 **** [[class-RenderSettings]]
 **** [[class-ScriptExecution]]
 **** [[class-TagManager]]

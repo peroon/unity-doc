@@ -14,9 +14,8 @@ Attach:PlayerSetInspTop.png\\
 ||``Default Icon`` ||Default icon the application will have on every platform (You can override this later for platform specific needs). ||
 
 !Per-Platform Settings
-!Desktop!
->>desktop<<
-!!Web-Player
+!!Desktop
+!!!Web-Player
 
 !!!!''Resolution And Presentation''
 
@@ -59,7 +58,7 @@ Attach:PlayerSetWebOther355.png
 ||>>>``Overview only``||Minimal stats about UnloadUnusedAssets usage.||
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
 
-!!Standalone
+!!!Standalone
 !!!!''Resolution And Presentation''
 
 Attach:PlayerSetPCResPres35.png
@@ -129,11 +128,8 @@ You can choose your mono api compatibility level for all targets except the webp
 # Right click your 3rd party assembly, and select "Analyze".  
 # In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
->><<
-
 [[#iOS]]
-!iOS!
->>ios<<
+!!!iOS
 !!!!''Resolution And Presentation''
 
 Attach:PlayerSetiOSResPres.png
@@ -274,10 +270,8 @@ You can choose your mono api compatibility level for all targets except the webp
 # Right click your 3rd party assembly, and select "Analyze".  
 # In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
->><<
 [[#Android]]
-!Android!
->>android<<
+!!Android
 !!!!''Resolution And Presentation''
 Attach:PlayerSettingsAndroidResolutionPresentation.png\\
 ''Resolution and presentation for your Android project builds.''
@@ -320,9 +314,7 @@ Attach:PlayerSetAndroidOther355.png
 ||__''Configuration''__           ||
 ||``Device Filter``               ||Specifies the target architecture you are going to build for.||
 ||>>>``ARMv7 only``     ||Application optimized for ARMv7 CPU architecture. It will also enable correct Android Market device filtering, thus recommended for publishing to the Android Market (only devices supporting Unity Android will list the application on the Android Market).||
->>u30<<
 ||>>>``ARMv6 with VFP``     ||Application optimized for ARMv6 CPU architecture (requires VFP support). Use runtime detection of hardware capabilities rather than relying on the Android Market filtering mechanism. It means the application when published to the Android Market will be visible also to devices not supporting Unity Android. Obviously this is not recommended, especially for paid applications (though can be combined with other means of filtering instead, like OpenGLES version).||
->><<
 ||``Graphics Level``              ||Select either ES 1.1 ('fixed function') or ES 2.0 ('shader based') Open GL level. When using the AVD (emulator) only ES 1.x is supported.||
 ||``Install Location``            ||Specifies application install location on the device (for detailed information, please refer to http://developer.android.com/guide/appendix/install-location.html).||
 ||>>>``Automatic``       ||Let OS decide. User will be able to move the app back and forth.||
@@ -354,7 +346,7 @@ You can choose your mono api compatibility level for all targets except the webp
 # Right click your 3rd party assembly, and select "Analyze".  
 # In the analysis report, inspect the "Depends on" section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.
 
-||!Publishing Settings            ||||
+||!!Publishing Settings            ||||
 Attach:PlayerSettings-AndroidPublishingSettings.png\\
 ''Publishing settings for Android Market''
 ||PROPS
@@ -395,55 +387,51 @@ Attach:PlayerSetFlashOther355.png
 ||>>>``Overview only``||Minimal stats about UnloadUnusedAssets usage.||
 ||>>>``Full (slow)``||Output overview stats along with stats for all affected objects. This option can slow down execution due to the amount of data being displayed.||
 
-! Details
+!! Details
 
-!Desktop!
->>desktop<<
+!!!Desktop
 The Player Settings window is where many technical preference defaults are set. See also [[class-QualitySettings|Quality Settings]] where the different graphics quality levels can be set up.
 
-!!! Publishing a web player
+!!!! Publishing a web player
 
 ``Default Web Screen Width`` and ``Default Web Screen Height`` determine the size used in the html file. You can modify the size in the html file later.
 
 ``Default Screen Width`` and ``Default Screen Height`` are used by the Web Player when entering fullscreen mode through the context menu in the Web Player at runtime.
 
 
-!!!Customizing your Resolution Dialog
+!!!!Customizing your Resolution Dialog
 
 Attach:Resolution-GameLauncher.png\\
 ''The Resolution Dialog, presented to end-users''
 
 You have the option of adding a custom banner image to the Screen Resolution Dialog in the Standalone Player. The maximum image size is 432 x 163 pixels. The image will not be scaled up to fit the screen selector. Instead it will be centered and cropped.
 
-!!! Publishing to Mac App Store
+!!!! Publishing to Mac App Store
 
 ``Use Player Log`` enables writing a log file with debugging information. This is useful to find out what happened if there are problems with your game. When publishing games for Apple's Mac App Store, it is recommended to turn this off, because Apple may reject your submission otherwise. See [[Log Files|this manual page]] for further information about log files.
 
 ``Use Mac App Store Validation`` enables receipt validation for the Mac App Store. If this is enabled, your game will only run when it contains a valid receipt from the Mac App Store. Use this when submitting games to Apple for publishing on the App Store. This prevents people from running the game on any computer then the one it was purchased on. Note that this feature does not implement any strong copy protection. In particular, any potential crack against one Unity game would work against any other Unity content. For this reason, it is recommended that you implement your own receipt validation code on top of this using Unity's plugin feature. However, since Apple requires plugin validation to initially happen before showing the screen setup dialog, you should still enable this check, or Apple might reject your submission. 
->><<
 
-!iOS!
->>ios<<
-!!! Bundle Identifier
+!!!iOS
+!!!! Bundle Identifier
 
 The ``Bundle Identifier`` string must match the provisioning profile of the game you are building.  The basic structure of the identifier is ``com.CompanyName.GameName``. This structure may vary internationally based on where you live, so always default to the string provided to you by Apple for your Developer Account.  Your GameName is set up in your provisioning certificates, that are manageable from the Apple iPhone Developer Center website.  Please refer to the [[http://developer.apple.com/iphone/ | Apple iPhone Developer Center website]] for more information on how this is performed.
 
-!!! Stripping Level (Pro-only)
+!!!! Stripping Level (Pro-only)
 
 Most games don't use all necessary dlls.  With this option, you can strip out unused parts to reduce the size of the built player on iOS devices.  If your game is using classes that would normally be stripped out by the option you currently have selected, you'll be presented with a Debug message when you make a build.
 
-!!! Script Call Optimization
+!!!! Script Call Optimization
 
 A good development practice on iOS is to never rely on exception handling (either internally or through the use of try/catch blocks).  When using the default ``Slow and Safe`` option, any exceptions that occur on the device will be caught and a stack trace will be provided.  When using the ``Fast but no Exceptions`` option, any exceptions that occur will crash the game, and no stack trace will be provided.  However, the game will run faster since the processor is not diverting power to handle exceptions.  When releasing your game to the world, it's best to publish with the ``Fast but no Exceptions`` option.
->><<
 
-!Android!
+!!!Android
 >>android<<
-!!! Bundle Identifier
+!!!! Bundle Identifier
 
 The ``Bundle Identifier`` string is the unique name of your application when published to the Android Market and installed on the device.  The basic structure of the identifier is ``com.CompanyName.GameName``, and can be chosen arbitrarily.  In Unity this field is shared with the iOS Player Settings for convenience.
 
-!!! Stripping Level (Pro-only)
+!!!! Stripping Level (Pro-only)
 
 Most games don't use all the functionality of the provided dlls.  With this option, you can strip out unused parts to reduce the size of the built player on Android devices.
->><<
+

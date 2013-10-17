@@ -1,6 +1,5 @@
 ! Input Manager
-!Desktop!
->>desktop<<
+!!Desktop
 The $$Input Manager$$ is where you define all the different input axes and game actions for your project.
 
 Attach:InputSetAll.png\\
@@ -9,7 +8,7 @@ Attach:InputSetAll.png\\
 To see the Input Manager choose: ^^Edit->Project Settings->Input^^.
 
 
-!!Properties
+!!!Properties
 
 ||PROPS
 ||``Axes`` ||Contains all the defined input axes for the current project: ``Size`` is the number of different input axes in this project, ``Element 0, 1, ...`` are the particular axes to modify. ||
@@ -30,7 +29,7 @@ To see the Input Manager choose: ^^Edit->Project Settings->Input^^.
 ||``Joy Num`` ||Which joystick should be used. By default this is set to retrieve the input from all joysticks. This is only used for input axes and not buttons. ||
 
 
-!! Details
+!!! Details
 
 All the axes that you set up in the Input Manager serve two purposes:
 
@@ -44,20 +43,16 @@ Attach:Input-GameLauncher.png\\
 
 See also: [[Input]].
 
-!!Hints
+!!!Hints
 * Axes are not the best place to define "hidden" or secret functions, as they will be displayed very clearly to the player in the game launcher.
->><<
 
-!iOS!
->>ios<<
+!!iOS
 This section is not supported on iOS devices.
 
 For more info on how to work with input on iOS devices, please refer to the [[Input#iPhoneInput | iOS Input]] page.
->><<
 
-!Android!
->>android<<
+!!Android
 This section is not supported on Android devices.
 
 For more info on how to work with input on Android devices, please refer to the [[Input#AndroidInput | Android Input]] page.
->><<
+

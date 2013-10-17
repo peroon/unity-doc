@@ -66,13 +66,11 @@ __Note:__ If you want to create an ``Audio Source`` just for one ``Audio Clip`` 
 
 
 !! Platform specific details
-!iOS!
->>ios<<
+!!!iOS
 On mobile platforms compressed audio is encoded as MP3 for speedier decompression. Beware that this compression can remove samples at the end of the clip and potentially break a "perfect-looping" clip. Make sure the clip is right on a specific MP3 sample boundary to avoid sample clipping - tools to perform this task are widely available.
 For performance reasons audio clips can be played back using the Apple hardware codec. To enable this, check the "Use Hardware" checkbox in the import settings. See the [[class-AudioClip | Audio Clip]] documentation for more details.
->><<
-!Android!
->>android<<
+
+!!!Android
 On mobile platforms compressed audio is encoded as MP3 for speedier decompression. Beware that this compression can remove samples at the end of the clip and potentially break a "perfect-looping" clip. Make sure the clip is right on a specific MP3 sample boundary to avoid sample clipping - tools to perform this task are widely available.
->><<
+
 

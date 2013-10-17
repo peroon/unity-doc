@@ -17,9 +17,7 @@ Attach:AudioClipImporter35.png\\
 ||>>>``Compressed in memory`` ||Keep sounds compressed in memory and decompress while playing. This option has a slight performance overhead (especially for Ogg/Vorbis compressed files) so only use it for bigger files where decompression on load would use a prohibitive amount of memory. Note that, due to technical limitations, this option will silently switch to ''Stream From Disc'' (see below) for Ogg Vorbis assets on platforms that use FMOD audio.
 ||>>>``Stream from disc`` ||Stream audio data directly from disc. The memory used by this option is typically a small fraction of the file size, so it is very useful for music or other very long tracks. For performance reasons, it is usually advisable to stream only one or two files from disc at a time but the number of streams that can comfortably be handled depends on the hardware.
 ||``Compression`` ||Amount of Compression to be applied to a ``Compressed`` clip. Statistics about the file size can be seen under the slider. A good approach to tuning this value is to drag the slider to a place that leaves the playback "good enough" while keeping the file small enough for your distribution requirements. ||
->>ios<<
 ||``Hardware Decoding`` ||(iOS only) On iOS devices, Apple's hardware decoder can be used resulting in lower CPU overhead during decompression. Check out platform specific details for more info.||
->><<
 ||``Gapless looping`` ||(Android/iOS only) Use this when compressing a seamless looping audio source file (in a non-compressed PCM format) to ensure perfect continuity is preserved at the seam. Standard MPEG encoders introduce a short silence at the loop point, which will be audible as a brief "click" or "pop".
 
 !! Importing Audio Assets
@@ -31,22 +29,17 @@ As a general rule of thumb, ''Compressed'' audio (or modules) are best for long 
 
 !! Using 3D Audio
 If an audio clip is marked as a ``3D Sound`` then it will be played back so as to simulate its position in the game world's 3D space. 3D sounds emulate the distance and location of sounds by attenuating volume and panning across speakers. Both mono and multiple channel sounds can be positioned in 3D. For multiple channel audio, use the ''spread'' option on the [[class-AudioSource| Audio Source]] to spread and split out the discrete channels in speaker space. Unity offers a variety of options to control and fine-tune the audio behavior in 3D space - see the [[class-AudioSource| Audio Source]] component reference for further details.   
->><<
 
 !! Platform specific details
-!iOS!
->>ios<<
+!!!iOS
 On mobile platforms compressed audio is encoded as MP3 to take advantage of hardware decompression. 
 
 To improve performance, audio clips can be played back using the Apple hardware codec. To enable this option, check the "Hardware Decoding" checkbox in the Audio Importer. 
 Note that only one hardware audio stream can be decompressed at a time, including the background iPod audio. 
 
 If the hardware decoder is not available, the decompression will fall back on the software decoder (on iPhone 3GS or later, Apple's software decoder is used in preference to Unity's own decoder (FMOD)).
->><<
 
-!Android!
->>android<<
+!!!Android
 On mobile platforms compressed audio is encoded as MP3 to take advantage of hardware decompression. 
 
->><<
 

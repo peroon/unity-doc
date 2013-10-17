@@ -61,7 +61,6 @@ Attach:WebContextMenuDebug.png\\
 * If you add a watch to the __''this''__ object, you can inspect the internal values (position, scale, rotation...) of the GameObject to which the script is attached.
 [[<<]]
 [[<<]]
->>ios<<
 !! iOS remote debugging instructions
 In addition to the instructions described above, Unity iOS applications require some additional steps for successful debugging:
 # Attach your iDevice to your WiFi network (the same requirement as for remote profiling). 
@@ -70,5 +69,5 @@ In addition to the instructions described above, Unity iOS applications require 
 # Manually find & launch your application on your iDevice. (__Note:__ if the application is launched via Xcode you won't be able to resume after reaching a breakpoint).
 # When the app is running on the device, switch to MonoDevelop and click on the attach icon in the debugging toolbar. Select your device from the available instances list (if there are several instances shown, then select the bottom one).
 [[<<]]
->><< 
+
 

@@ -3,11 +3,11 @@
 With Unity 4.0 you are now able to manage your license independently (no more contacting Support for migration to your shiny new machine). Below is a guide to how this new system works and performs.
 
 \\
-You will notice a new option under the 'Unity' drop-down on your toolbar that reads 'Manage License…'.  This is the unified place within the Editor for all your licensing needs.
+You will notice a new option under the 'Unity' drop-down on your toolbar that reads 'Manage License...'.  This is the unified place within the Editor for all your licensing needs.
 
 Attach:manageLicensedropdown.png
 
-Once you have clicked on the 'Manage License…' option you will be faced with the 'License Management' window. You then have four options (see image), explained below:
+Once you have clicked on the 'Manage License...' option you will be faced with the 'License Management' window. You then have four options (see image), explained below:
 
 Attach:licenseManagementwindow.png
 

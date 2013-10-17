@@ -22,8 +22,6 @@ Any Audio File imported into Unity is available from scripts as an $$Audio Clip$
 ||S3M            || - || - ||
 ||XM             || - || - ||
 
->><<
-
 
 See the [[Sound|Sound chapter]] in the [[Creating Gameplay]] section of this manual for more information on using sound in Unity.
 

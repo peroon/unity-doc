@@ -20,7 +20,7 @@ Attach:chooseAversion.png
 ->__c.__       To activate the Free version of Unity, check the 'Activating Unity Free' box.
 
 \\
-__4.__       Next, you will encounter the 'Unity Account' window. Here you will need to enter your Unity Developer Network account credentials. (If you don’t have an existing account or have forgotten your password, simply click the respective 'Create account' and 'Forgot your password?' button and links. Follow the onscreen prompts to create or retrieve your account.) Once your credentials are entered you can proceed by clicking 'OK'.
+__4.__       Next, you will encounter the 'Unity Account' window. Here you will need to enter your Unity Developer Network account credentials. (If you don't have an existing account or have forgotten your password, simply click the respective 'Create account' and 'Forgot your password?' button and links. Follow the onscreen prompts to create or retrieve your account.) Once your credentials are entered you can proceed by clicking 'OK'.
 
 Attach:activationSignin.png
 
@@ -30,7 +30,7 @@ __5.__       'Thank you for your time' you will now be able to proceed to the Un
 Attach:ActivationthankYouforYourtime.png
 
 \\
-__6.__       You’re all done!
+__6.__       You are all done!
 
 \\
 For any further assistance, please contact __support@unity3d.com__.

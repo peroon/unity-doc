@@ -333,7 +333,9 @@ Attach:SurfaceShaderNormalExtrusion.png
 
 Using a vertex modifier function it is also possible to compute custom data in a vertex shader, which then will be passed to the surface shader function per-pixel. The same compilation directive @@vertex:functionName@@ is used, but the function should take two parameters: @@inout appdata_full@@ and @@out Input@@. You can fill in any Input member that is not a built-in value there.
 
-Example below defines a custom @@float3 customColor@@ member, which is computed in a vertex function:
+__Note:__ Custom Input members used in this way must not have names beginning with 'uv' or they won't work properly.
+
+The example below defines a custom @@float3 customColor@@ member, which is computed in a vertex function:
 
   Shader "Example/Custom Vertex Data" {
     Properties {
@@ -496,5 +498,4 @@ Shader "Example/Linear Fog" {
   } 
   FallBack "Diffuse"
 }
-
 

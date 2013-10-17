@@ -6,9 +6,8 @@ An input method is an operating system component or program that allows users to
 
 The term input method generally refers to a particular way to use the keyboard to input a particular language, for example the [[http://en.wikipedia.org/wiki/Cangjie_input_method|Cangjie method]], the [[http://en.wikipedia.org/wiki/Pinyin_method|pinyin method]], or the use of dead keys.
 
-! IME and Unity
-!Desktop!
->>desktop<<
+!! IME and Unity
+!!!Desktop
 Attach:IMEMenu.png
 
 Unity provides IME support, which means that you can write non-ASCII characters in all your graphical user interfaces.
@@ -17,12 +16,10 @@ This Input Method is fully integrated with the engine so you do not need to do a
 For more info and optimization when writting non-ASCII characters, check the ''``character``'' option in the [[class-Font | font properties]].
 
 __Note:__ IME on Unity is not supported on mac webplayers at the moment.
->><<
-!iOS!
->>ios<<
+
+!!!iOS
 This feature is not supported on iOS devices yet.
->><<
-!Android!
->>android<<
+
+!!!Android
 This feature is not supported on Android devices yet.
->><<
+
