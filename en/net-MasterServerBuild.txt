@@ -1,6 +1,6 @@
 ! Building the Unity Networking Servers on your own
 
-The source code for all the individual networking servers can be downloaded from the [[http://www.unity3d.com/master-server/index.html|Unity website]]. This includes the connection tester, facilitator, master server and proxy server.
+The source code for all the individual networking servers can be downloaded from the [[http://www.unity3d.com/master-server/|Unity website]]. This includes the connection tester, facilitator, master server and proxy server.
 
 All source packages include the RakNet 3.732 networking library which handles the basic networking functions and provides plugins used by the networking servers.
 
