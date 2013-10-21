@@ -209,7 +209,7 @@ When you build AssetBundles the assets are identified internally by their filena
 
 !! [[#reusebundles]] Can I reuse my AssetBundles in another game?
 
-AssetBundles allow you to share content between different games. The requirement is that any Assets which are referenced by GameObjects in your AssetBundle must either be included in the AssetBundle or exist in the application (loaded in the current scene). To make sure the referenced Assets are included in the AssetBundle when they are built you can pass the [[ScriptRef:BuildAssetBundleOptions.CollectDependencies.html|BuildAssetBundleOptions.CollectDependencies]] option.
+AssetBundles allow you to share content between different games. The requirement is that any Assets which are referenced by GameObjects in your AssetBundle must be included in the AssetBundle. To make sure the referenced Assets are included in the AssetBundle when they are built you can pass the [[ScriptRef:BuildAssetBundleOptions.CollectDependencies.html|BuildAssetBundleOptions.CollectDependencies]] option.
 
 
 !! [[#futureplayer]] Will an AssetBundle built now be usable with future versions of Unity?
