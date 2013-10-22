@@ -40,4 +40,8 @@ Always keep the basic neutral lookup texture (lut) ready as this will be the bas
 
 * Assign new lut to the effect and hit ``Convert & Apply``
 
-(:include imagefx-SM3:)
+!!Hardware support
+
+This effect requires a graphics card with pixel shaders (3.0). PC: NVIDIA cards since 2004 (GeForce 6), AMD cards since 2005 (Radeon X1300), Intel cards since 2006 (GMA X3000); Consoles: Xbox 360, PS3.
+
+All image effects automatically disable themselves when they can not run on end-users graphics card.
