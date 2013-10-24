@@ -5,7 +5,7 @@ $$GUI Texture$$ は、2D での平坦画像として表示されます。 特に
 Attach:Inspector-GUITexture.png\\
 ''GUI テクスチャ $$Inspector$$''
 
-__注意__: Unity 2.0 は、GUI スクリプティング システムである $$UnityGUI$$ を採用しています。  GUI テクスチャの代わりに、UnityGUI でユーザー インタフェース要素を作成したい場合もあるでしょう。  [[GUI Scripting Guide]] のUnityGUI の使用法について続きを読んでください。
+__注意__: Unity 2.0 から、GUI スクリプティング システムである $$UnityGUI$$ を導入しています。  GUI テクスチャの代わりに、UnityGUI でユーザー インタフェース要素を作成したい場合もあるでしょう。  [[GUI Scripting Guide]] のUnityGUI の使用法について続きを読んでください。
 
 
 !!プロパティ
