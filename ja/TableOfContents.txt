@@ -75,6 +75,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Coroutines]]
 *****[[ScriptCompileOrderFolders]]
 *****[[Namespaces]]
+*****[[Attributes]]
 ****[[Asset Store]]
 *****[[AccessNavigation]]
 *****[[Asset Store Publisher Administration]]

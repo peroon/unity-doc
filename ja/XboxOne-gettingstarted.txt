@@ -1,0 +1,14 @@
+! Xbox One: Getting Started
+
+!! TODO
+
+Make nice table here:
+
+XDK Name August XDK QFE4
+Release Date  October 3rd
+XDK version  v6.2.9879.0 
+Flash version  6.2.10150.0 
+
+
+FAQ:
+
