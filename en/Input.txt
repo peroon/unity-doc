@@ -207,6 +207,9 @@ if (period > 0)
 return acc;
 @]
 
+>>ios<<
+(:include iOS.Joysticks:)
+>><<
 >>wiiu<<
 (:include InputWiiU:)
 >><<

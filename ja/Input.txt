@@ -224,6 +224,9 @@ __注意:__ 上記のリンクはローカルにインストールされたiPhon
 デバイス 位置情報は [[ScriptRef:iPhoneInput-lastLocation.html|iPhoneInput.lastLocation]] プロパティを通じて取得できます。このプロパティをコールする前に [[ScriptRef:iPhoneSettings.StartLocationServiceUpdates.html|iPhoneSettings.StartLocationServiceUpdates()]] でLocation Service updates を起動してサービスのステータスを [[ScriptRef:iPhoneSettings-locationServiceStatus.html|iPhoneSettings.locationServiceStatus]] で確認すべきです。詳細については[[ScriptRef:iPhoneSettings.StartLocationServiceUpdates.html|scripting reference]] を参照下さい。
 >><<
 
+>>ios<<
+(:include iOS.Joysticks:)
+>><<
 >>wiiu<<
 !WiiU
 [[#wiiuInput]]
