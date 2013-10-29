@@ -52,9 +52,10 @@ class DefaultPackerPolicy : IPackerPolicy
 {
 	private class Entry
 	{
-		public Sprite        sprite;
-		public AtlasSettings settings;
-		public string        tag;
+		public Sprite         sprite;
+		public AtlasSettings  settings;
+		public string         tag;
+		public SpriteMeshType meshType;
 	}
 
 	public int GetVersion()
@@ -71,6 +72,9 @@ class DefaultPackerPolicy : IPackerPolicy
 			TextureImportInstructions ins = new TextureImportInstructions();
 			ti.ReadTextureImportInstructions(ins, target);
 
+			TextureImporterSettings tis = new TextureImporterSettings();
+			ti.ReadTextureSettings(tis);
+
 			Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(ti.assetPath).Select(x => x as Sprite).Where(x => x != null).ToArray();
 			foreach (Sprite sprite in sprites)
 			{
@@ -84,6 +88,7 @@ class DefaultPackerPolicy : IPackerPolicy
 				entry.settings.maxWidth = 2048;
 				entry.settings.maxHeight = 2048;
 				entry.tag = ti.spritePackingTag;
+				entry.meshType = tis.spriteMeshType;
 
 				entries.Add(entry);
 			}
@@ -108,11 +113,15 @@ class DefaultPackerPolicy : IPackerPolicy
 				
 				job.AddAtlas(atlasName, settingsGroup.Key);
 				foreach (Entry entry in settingsGroup)
-					job.AssignToAtlas(atlasName, entry.sprite, SpritePackingMode.Tight, SpritePackingRotation.None);
+				{
+					SpritePackingMode packingMode = (entry.meshType == SpriteMeshType.Tight) ? SpritePackingMode.Tight : SpritePackingMode.Rectangle;
+					job.AssignToAtlas(atlasName, entry.sprite, packingMode, SpritePackingRotation.None);
+				}
 				
 				++page;
 			}
 		}
 	}
 }
+
 @]
