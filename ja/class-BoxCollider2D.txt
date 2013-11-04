@@ -1,0 +1,11 @@
+!Box Collider 2D
+
+The $$Box Collider 2D$$ component is a collider for use with 2D physics. The collider's shape is a rectangle with a given position, width and height in the local coordinate space of a $$Sprite$$. Note that the rectangle is axis-aligned, ie, its edges are parallel to the X or Y axes of local space.
+
+Attach:BoxCollider2DInspector.png
+
+||PROPS
+||``Material`` ||A physics material that determines properties of collisions, such as friction and bounce. ||
+||``Is Trigger`` ||Does the collider behave as a trigger? ||
+||``Size`` ||Width and height of the rectangle in local space units. ||
+||``Center`` ||Centre coordinate of the rectange in local space. ||

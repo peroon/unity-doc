@@ -1,0 +1,35 @@
+!Rigidbody 2D
+
+A $$Rigidbody 2D$$ component places an object under the control of the physics engine. Many concepts familiar from the standard [[class-Rigidbody|Rigidbody]] component carry over to  Rigidbody 2D, with the difference that in 2D, objects can only move in the XY plane and can only rotate on an axis perpendicular to that plane.
+
+Attach:Rigidbody2DInspector.png
+
+||PROPS
+||``Mass`` ||Mass of the rigidbody. ||
+||``Linear Drag`` ||Drag coefficient affecting positional movement. ||
+||``Angular Drag`` ||Drag coefficient affecting rotational movement. ||
+||``Gravity Scale`` ||Degree to which the object is affected by gravity. ||
+||``Fixed Angle`` ||Can the rigidbody rotate when forces are applied? ||
+||``Is Kinematic`` ||Is the rigidbody moved by forces and collisions? ||
+||``Interpolate`` ||How the object's movement is interpolated between physics updates (useful when motion tends to be jerky). ||
+||>>>``None`` ||No movement smoothing is applied. ||
+||>>>``Interpolate`` ||Movement is smoothed based on the object's positions in previous frames. ||
+||>>>``Extrapolate`` ||Movement is smoothed based on an estimate of its position in the next frame. ||
+||``Sleeping Mode`` ||How the object "sleeps" to save processor time when it is at rest. ||
+||>>>``Never Sleep`` ||Sleeping is disabled. ||
+||>>>``Start Awake`` ||Object is initially awake. ||
+||>>>``Start Asleep`` ||Object is initially asleep but can be woken by collisions. ||
+||``Collision Detection`` ||How collisions with other objects are detected. ||
+||>>>``Discrete`` ||A collision is registered only if the object's collider is in contact with another during a physics update. ||
+||>>>``Continuous`` ||A collision is registered if the object's collider appears to have contacted another between updates. ||
+
+!!Details
+
+Adding a Rigidbody 2D allows a sprite to be moved in a physically convincing way by applying forces from the scripting API. When the appropriate collider component is also attached to the sprite object, it will be affected by collisions with other moving objects. Using physics simplifies many common gameplay mechanics and allows for realistic, emergent behaviour with minimal coding.
+
+!!!Colliders
+Colliders define an approximate shape for an object that will be used by the physics engine to determine collisions with other objects. The collider types that can be used with Rigidbody 2D are the Circle Collider 2D, Box Collider 2D and Polygon Collider 2D - see the pages for these component for further details.
+
+!!!Kinematic Rigidbodies
+The ''Is Kinematic'' setting switches off the physical behaviour of the Rigidbody 2D so that it will not react to gravity and collisions. This is typically used to keep an object under non-physical script control most of the time but then switch to physics in a particular situation. For example, a player might normally move by walking (better handled without physics) but then get catapulted into the air by an explosion or strike. Physics can be used to create the catapulting effect if you switch off ''Is Kinematic" just before applying a large force to the object.
+

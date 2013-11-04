@@ -1,0 +1,16 @@
+!Distance Joint 2D
+
+The $$Distance Joint 2D$$ component allows two $$Sprite$$ objects controlled by rigidbody physics to be attached together to keep them a fixed distance apart. Note that unlike the $$Spring Joint 2D$$, the Distance Joint is rigid and does not allow the distance between the objects to vary.
+
+Attach:DistanceJoint2DInspector.png
+
+||PROPS
+||``Collide Connected`` ||Can the two connected objects collide with each other? ||
+||``Connected Rigidbody`` ||The other Rigidbody2D object that the one with the joint is connected to. If this is null then the othen end of the joint will be fixed at a point in space. ||
+||``Anchor`` ||Coordinate in local space where the end point of the joint is attached. ||
+||``Connected Anchor`` ||Coordinate in the other object's local space where its end of the joint is attached. ||
+||``Distance`` ||The distance that the joint keeps between the two objects. ||
+
+!!Details
+
+Both objects connected by the joint must have a $$Rigidbody 2D$$ component attached (or alternatively, the other end of the joint can be fixed in space by setting ''Connected Rigidbody'' to null). The ends of the joint can rotate relative to the objects but the distance between them will be kept constant.

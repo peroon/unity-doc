@@ -1,0 +1,11 @@
+!Circle Collider 2D
+
+The $$Circle Collider 2D$$ class is a collider for use with 2D physics. As its name implies, the collider's shape is a circle with a given position and radius in the local coordinate space of a $$Sprite$$.
+
+Attach:CircleCollider2DInspector.png
+
+||PROPS
+||``Material`` ||A physics material that determines properties of collisions, such as friction and bounce. ||
+||``Is Trigger`` ||Does the collider behave as a trigger? ||
+||``Radius`` ||Radius of the circle in local space units. ||
+||``Center`` ||Centre coordinate of the circle in local space. ||

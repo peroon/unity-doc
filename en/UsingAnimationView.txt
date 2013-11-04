@@ -1,0 +1,65 @@
+!Overview
+
+When you open the Animation View (menu: ~~Window > Animation~~), you will see a window similar to this:
+
+Attach:AnimWindowOverview.png
+
+The Animation View is tightly integrated with the Hierarchy View, the Scene View, and the Inspector. Like the Inspector, the Animation View will show whatever Game Object is selected. You can select a Game Object to view using the Hierarchy View or the Scene View. (If you select a Prefab in the Project View you can inspect its animations as well, but you have to drag the Prefab into the Scene View in order to be able to edit them.)
+
+At the left side of the Animation View is a list of the animated properties of the selected Game Object. Properties can be folded and unfolded by clicking the foldout triangles next to them.
+ 
+!!Creating a New Animation Clip
+
+Animated Game Objects in Unity need an Animator Component that controls the animations. If a Game Object doesn't already have an Animator Component, the Animation View will add one for you automatically when creating a new Animation Clip or when entering Animation Mode.
+To create a new Animation Clip for the selected Game Object, click the selection box at the upper left of the Animation View and select [Create New Clip]. You will then be prompted to save an Animation Clip somewhere in your Assets folder. If the Game Object doesn't have an Animator Component already, it will be automatically added at this point. The new Animation Clip will automatically be added to the Animator.
+
+Attach:AnimCreateNewClip.png
+
+To begin editing an Animation Clip for the selected Game Object, click on the Animation Mode button (the red "Record" button next to the "Play" button in the animation view toolbar).
+
+This will enter Animation Mode, where changes to the Game Object are stored into the Animation Clip. (If the Game Object doesn't have an Animator Component already, it will be automatically added at this point. If there is not an existing Animation Clip, you will be prompted to save one somewhere in your Assets folder.)
+
+You can stop the Animation Mode at any time by clicking the Animation Mode button again. This will revert the Game Object to the state it was in prior to entering the Animation Mode.
+
+To animate a property, click on the ~~Add Curve~~ button and choose the property from the popup list.
+
+Attach:AnimAddCurve.png
+
+Transform properties are special in that the .x, .y, and .z properties are linked, so those curves are added three at a time. See the section on [[UsingAnimCurves|Using Animation Curves]] for further information.
+
+When in Animation Mode, a red vertical line will show which frame of the Animation Clip is currently previewed. The Inspector and Scene View will show the Game Object at that frame of the Animation Clip. The values of the animated properties at that frame are also shown in a column to the right of the property names.
+
+You can click anywhere on the Time Line to preview or modify that frame in the Animation Clip. The numbers in the Time Line are shown as seconds and frames, so 1:30 means 1 second and 30 frames.
+
+You can go directly to a specific frame by typing it in, or use the buttons to go to the previous or next keyframe.
+ 
+You can also use the following keyboard shortcuts to navigate between frames:
+* Press Comma (,) to go to the previous frame.
+* Press Period (.) to go to the next frame.
+* Hold Alt and press Comma (,) to go to the previous keyframe.
+* Hold Alt and press Period (.) to go to the next keyframe.
+
+In Animation Mode you can move, rotate, or scale the Game Object in the Scene View. This will automatically create Animation Curves for the position, rotation and scale properties of the Animation Clip if they didn't already exist, and keys on those Animation Curves will automatically be created at the currently previewed frame to store the respective Transform values you changed.
+
+You can also use the Inspector to modify any of the animatable properties of the Game Object. This too will create Animation Curves as needed, and create keys on those Animation Curves at the currently previewed frame to store your changed values. Properties that are not animatable are grayed out in the Inspector while in Animation Mode.
+
+The Keyframe button creates a keyframe for the shown curves at the currently previewed frame (shortcut: K).
+
+You can also manually create a keyframe using the Keyframe button. This will create a key for all the curves that are currently selected in the Animation View.
+
+When you press the keyframe button, a new keyframe is added to the currently selected properties.
+
+
+!!Creating Sprite Animations
+
+There are several ways to create a sprite animation. The easiest is to drag and drop selected sprites from the Project View to the Hierarchy or Scene View in 2D mode. This will create a new Animation Clip and a Game Object with Sprite Renderer and Animator components added.
+
+You can also add a new Animation Clip to a Game Object with an Animation component. One Animator can contain multiple Animation Clips. See the section of the manual about the [[MecanimAnimationSystem|Mecanim animation system]] to see how to make transitions between different Animation Clips.
+
+A third way to create new sprite animations is to add new Sprite Frames to an existing Animation Clip. You can drag and drop Sprites from the Project View to the expanded ``SpriteRenderer.Sprite`` property in the Dopesheet View 
+
+For further details of how to slice existing sprite sheets into single Sprites see the [[SpriteEditor|Sprite Editor]] manual page.
+
+!!Playback
+
+The Animation Clip can be played back at anytime by clicking the Play button in the Animation View toolbar.

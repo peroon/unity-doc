@@ -1,0 +1,20 @@
+!Hinge Joint 2D
+
+The $$Hinge Joint 2D$$ component allows a $$Sprite$$ object controlled by rigidbody physics to be attached to a point in space around which it can rotate. The rotation can be left to happen passively (in response to a collision, say) or actively powered by a motor torque provided by the joint itself. The hinge can also be set up with limits to prevent it from making a full rotation.
+
+Attach:HingeJoint2DInspector.png
+
+||PROPS
+||``Collide Connected`` ||Can the two connected objects collide with each other? ||
+||``Connected Rigidbody`` ||The other Rigidbody2D object that the one with the joint is connected to. If this is null then the othen end of the joint will be fixed at a point in space. ||
+||``Anchor`` ||Coordinate in local space where the end point of the joint is attached. ||
+||``Connected Anchor`` ||Coordinate in the other object's local space where its end of the joint is attached. ||
+||``Use Motor`` ||Should the hinge motor be enabled? ||
+||``Use Limits`` ||Should the rotation angle be limited? ||
+||``Motor Speed`` ||Target motor speed (degrees/sec). ||
+||``Maximum Motor Force`` ||The maximum torque the motor can apply while attempting to reach the target speed. ||
+||``Lower Angle`` ||The lower end of the rotation arc allowed by the limit. ||
+||``Upper Angle`` ||The upper end of the rotation arc allowed by the limit. ||
+
+!!Details
+The hinge joint's name implies something like a door hinge (and it can certainly be used to implement that) but it refers more generally to anything that rotates around a particular point. It can be used for machine parts, powered wheels, pendulums and many other similar things.

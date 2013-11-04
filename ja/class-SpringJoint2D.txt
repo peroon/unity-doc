@@ -1,0 +1,18 @@
+!Spring Joint 2D
+
+The $$Spring Joint 2D$$ component allows two $$Sprite$$ objects controlled by rigidbody physics to be attached together as if by a spring. The spring will apply a force along its axis between the two objects, attempting to keep them a certain distance apart.
+
+Attach:SpringJoint2DInspector.png
+
+||PROPS
+||``Collide Connected`` ||Can the two connected objects collide with each other? ||
+||``Connected Rigidbody`` ||The other Rigidbody2D object that the one with the joint is connected to. If this is null then the othen end of the spring will be fixed at a point in space. ||
+||``Anchor`` ||Coordinate in local space where the end point of the spring is attached. ||
+||``Connected Anchor`` ||Coordinate in the other object's local space where its end of the spring is attached. ||
+||``Distance`` ||The distance that the spring should attempt to maintain between the two objects. ||
+||``Damping Ratio`` ||The degree to which spring oscillation is suppressed. ||
+||``Frequency`` ||The frequency at which the spring oscillates while the rigidbodies are approaching the desired separation distance (cycles per sec). ||
+
+!!Details
+
+Both objects connected by the spring must have a $$Rigidbody 2D$$ component attached (or alternatively, the other end of the spring can be fixed in space by setting ''Connected Rigidbody'' to null). When the spring applies its force between the objects, it will tend to overshoot the desired distance between them and then rebound repeatedly, resulting in a continuous oscillation. The ''damping'' parameter determines how quickly the oscillation will reduce and bring the objects to rest. The ''frequency'' is the rate at which the oscillates either side of the target distance; the higher the frequency, the stiffer the spring.

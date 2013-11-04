@@ -1,0 +1,5 @@
+!Using the Animation View
+
+The $$Animation View$$ lets you preview and edit $$Animation Clips$$ for animated Game Objects in Unity. This section gives full details of how to work with the view in your project.
+
+(:tocportion:)

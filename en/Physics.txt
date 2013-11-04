@@ -1,17 +1,59 @@
-! Physics
+!Physics
 
-(:include PhysicsBase:)
+To have convincing physical behaviour, an object in a game must accelerate correctly and be affected by collisions, gravity and other forces. Unity's built-in physics engines provide components that handle the physical simulation for you. With just a few parameter settings, you can create objects that behave passively in a realistic way (ie, they will be moved by collisions and falls but will not start moving by themselves). By controlling the physics from scripts, you can give an object the dynamics of a vehicle, a machine or even a moving piece of cloth. This page gives an overview of the main physics components in Unity with links for further reading.
 
-(:include class-Rigidbody:)
-(:include class-ConstantForce:)
-(:include class-SphereCollider:)
-(:include class-BoxCollider-Details:)
-(:include class-MeshCollider-Details:)
-(:include class-PhysicMaterial:)
-(:include class-HingeJoint:)
-(:include class-SpringJoint:)
+__Note:__ there are actually ''two'' separate physics engines in Unity, one for 3D physics and one for 2D physics. The main concepts are identical between the two engines (except for the extra dimension in 3D) but they are implemented with different components. So for example, there is $$Rigidbody$$ component for 3D physics and an analogous $$Rigidbody 2D$$ for 2D physics.
 
-!iOS!
->>ios<<
-iOS physics optimization hints can be found [[Main.iphone-Optimizing-Physics| here]]. 
->><<
+!!Rigidbodies
+
+A $$Rigidbody$$ is the main component that enables physical behaviour for an object. With a Rigidbody attached, the object will immediately respond to gravity. If one or more $$Collider$$ components are also added then the object will be moved by incoming collisions.
+
+Since a Rigidbody component takes over the movement of the object it is attached to, you shouldn't try to move it from a script by changing the [[class-Transform|Transform]] properties such as position and rotation. Instead, you should apply $$forces$$ to push the object and let the physics engine calculate the results.
+
+In some cases, you may want to switch physical behaviour off for a particular object. For example, you might have a character that is normally controlled by moving its Transform but then use physics briefly to throw it into the air from a springboard. You can give a Rigidbody ''kinematic'' behaviour (ie, non-physical) by setting its ``isKinematic`` property to true. Resetting this property will give the object its physics back again.
+
+See the [[class-Rigidbody|Rigidbody]] and [[class-Rigidbody2D|Rigidbody 2D]] reference pages for further details about the settings and scripting options for these components.
+
+!!Colliders
+
+$$Collider$$ components define the shape of an object for the purposes of physical collisions. A collider, which is invisible, need not be the exact same shape as the object's mesh and in fact, a rough approximation is often more efficient and indistinguishable in gameplay. The simplest (and least processor-intensive) colliders and the so-called ``primitive`` collider types. In 3D, these are the [[class-BoxCollider|Box Collider]], [[class-SphereCollider|Sphere Collider]] and [[class-CapsuleCollider|Capsule Collider]]. In 2D, you can use the [[class-BoxCollider2D|Box Collider 2D]] and [[class-CircleCollider2D|Circle Collider 2D]]. Any number of these can be combined using child objects of a main root object to create ``compound colliders``. With careful positioning and sizing, compound colliders can often approximate the shape of an object quite well while keeping a low processor overhead. Note that only one Rigidbody component should be present on a compound collider object's root rather than having one for each primitive collider.
+
+There are some cases, however, where even compound colliders are not accurate enough. In 3D, you can use [[class-MeshCollider|Mesh Colliders]] to match the shape of the object's mesh exactly. In 2D, the [[class-PolygonCollider2D|Polygon Collider 2D]] will generally not match the shape of the sprite graphic perfectly but you can refine the shape to any level of detail you like. These colliders are much more processor-intensive than primitive types, however, so use them sparingly to maintain good performance. Also, a mesh collider will normally be unable to collide with another mesh collider (ie, nothing will happen when they make contact). You can get around this in some cases by marking the mesh collider as ``Convex`` in the inspector. This will generate the collider shape as a "convex hull" which is like the original mesh but with any undercuts filled in. The benefit of this is that a convex mesh collider ''can'' collide with other mesh colliders so you may be able to use this feature when you have a moving character with a suitable shape. However, a good general rule is to use mesh colliders for scene geometry and approximate the shape of moving objects using compound primitive colliders.
+
+Colliders can be added to an object without a Rigidbody component to create floors, walls and other motionless elements of a scene. These are referred to as ``static`` colliders. To avoid confusing the physics engine, you should not, in general, reposition static colliders by changing the Transform position. Colliders on an object that ''does'' have a Rigidbody are known as ``dynamic`` colliders. Static colliders can interact with dynamic colliders but since they don't have a Rigidbody, they will not move in response to collisions.
+
+The reference pages for the various collider types linked above have further information about their properties and uses.
+
+!!!Physics Materials
+
+When colliders interact, their surfaces need to simulate the properties of the material they are supposed to represent. For example, a sheet of ice will be slippery while a rubber ball will offer a lot of friction and be very bouncy. Although the shape of colliders is not deformed during collisions, their friction and bounce can be configured using $$Physics Materials$$. Getting the parameters just right can involve a bit of trial and error but an ice material, for example will have zero (or very low) friction and a rubber material with have high friction and near-perfect bounciness. See the reference pages for [[class-PhysicMaterial|Physic Material]] and [[class-PhysicsMaterial2D|Physics Material 2D]] for further details on the available parameters. Note that for historical reasons, the 3D asset is actually called ``Physic Material`` (''without'' the S) but the 2D equivalent is called ``Physics Material 2D`` (''with'' the S).
+
+!!!Triggers
+
+The scripting system can detect when collisions occur and initiate actions using the @@OnCollisionEnter@@ function. However, you can also use the physics engine simply to detect when one collider enters the space of another without creating a collision. A collider configured as a $$Trigger$$ (using the ``Is Trigger`` property) does not behave as a solid object and will simply allow other colliders to pass through. When a collider enters its space, a trigger will call the @@OnTriggerEnter@@ function on the trigger object's scripts.
+
+!!!Script Actions Taken on Collision
+
+When collisions occur, the physics engine calls functions with specific names on any scripts attached to the objects involved. You can place any code you like in these functions to respond to the collision event. For example, you might play a crash sound effect when a car bumps into an obstacle.
+
+On the first physics update where the collision is detected, the @@OnCollisionEnter@@ function is called. During updates where contact is maintained, @@OnCollisionStay@@ is called and finally, @@OnCollisionExit@@ indicates that contact has been broken. Trigger colliders call the analogous @@OnTriggerEnter@@, @@OnTriggerStay@@ and @@OnTriggerExit@@ functions. Note that for 2D physics, there are equivalent functions with __2D__ appended to the name, eg, @@OnCollisionEnter2D@@. Full details of these functions and code samples can be found on the Script Reference page for the MonoBehaviour class.
+
+With normal, non-trigger collisions, there is an additional detail that at least one of the objects involved must have a non-kinematic Rigidbody (ie, ``Is Kinematic`` must be switched off). If both objects are kinematic Rigidbodies then @@OnCollisionEnter@@, etc, will not be called. With trigger collisions, this restriction doesn't apply and so both kinematic and non-kinematic Rigidbodies will prompt a call to @@OnTriggerEnter@@ when they enter a trigger collider.
+
+!!Joints
+
+You can attach one rigidbody object to another or to a fixed point in space using a $$Joint$$ component. Generally, you want a joint to allow at least ''some'' freedom of motion and so Unity provides different Joint components that enforce different restrictions. For example, a [[class-HingeJoint|Hinge Joint]] allows rotation around a specific point and axis while a [[class-SpringJoint|Spring Joint]] keeps the objects apart but lets the distance between them stretch slightly. As usual, the 2D components have __2D__ at the end of the name, eg, [[class-HingeJoint2D|Hinge Joint 2D]].
+
+Joints also have other options that can enabled for specific effects. For example, you can set a joint to break when the force applied to it exceeds a certain threshold. Some joints also allow a ``drive force`` to occur between the connected objects to set them in motion automatically.
+
+See the reference pages for the Joint classes to read further about their properties.
+
+!!Character Controllers
+
+The character in a first- or third-person game will often need some collision-based physics so that he doesn't fall through the floor or walk through walls. Usually, though, the character's acceleration and movement will not be physically realistic, so he may be able to accelerate, brake and change direction almost instantly without being affected by momentum.
+
+In 3D physics, this type of behaviour can be created using a $$Character Controller$$. This component gives the character a simple, capsule-shaped collider that is always upright. The controller has its own special functions to set the object's speed and direction but unlike true colliders, a rigidbody is not needed and the momentum effects are not realistic.
+
+A character controller cannot walk through static colliders in a scene, and so will follow floors and be obstructed by walls. It can push rigidbody objects aside while moving but will not be accelerated by incoming collisions. This means that you can use the standard 3D colliders to create a scene around which the controller will walk but you are not limited by realistic physical behaviour on the character itself.
+
+You can find out more about character controllers on the [[class-CharacterController|reference page]].

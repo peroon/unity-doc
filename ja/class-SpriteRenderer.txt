@@ -1,0 +1,37 @@
+!Sprite Renderer
+
+The $$Sprite Renderer$$ component lets you display $$Sprites$$ in both 2D and 3D scenes.
+
+Attach:SpriteRenderInspector.png
+
+||PROPS
+||``Sprite`` ||The Sprite object to render. Sprite objects can be generated from textures by using the Sprite setting on the [[class-Texture2D|Texture importer]]). ||
+||``Color`` ||Vertex color of the rendered mesh. ||
+||``Material`` ||Material used to render the sprite. ||
+||``Sorting Layer`` ||The [[Layers|layer]] used to define this sprite's overlay priority during rendering. ||
+||``Order In Layer`` ||The overlay priority of this sprite within its layer. Lower numbers are rendered first and subsequent numbers overlay those below. ||
+
+!!Details
+
+In 3D graphics, an object's appearance will vary according to lighting and the position from which it is viewed. In 2D, by contrast, an image is simply displayed onscreen with no transformations other than basic position, scale and rotation. A sprite's position is given by a 2D coordinate, so there is no concept of "depth" or distance from camera when rendering. However, it is still very important to have some way to determine the overlay priority of different sprites (ie, which sprites will obscure others when they cross paths). For example, in a driving game, a car should be seen to pass over flat objects on the road surface. Unity uses the concept of $$sorting layers$$ to allow you to divide sprites into groups for overlay priority. Sprites with a sorting layer lower in the order will be overlaid by those in a higher sorting layer. Sometimes, two or more objects in the same sorting layer can overlap (eg, two player characters in a side scrolling game). The ''order in layer'' property can be used to apply consistent priorities to sprites in the same layer. As with sorting layers, the rule is that lower numbers are rendered first and can be obscured by the higher numbers rendered later. See the [[Layers|layer manager page]] for details of editing sorting layers. If sorting layers are not used, standard depth-based sorting can be used.
+
+!!!Material
+
+SpriteRenderer uses the MaterialPropertyBlock of this Renderer to automatically set the Sprite texture. This means one Material can be used on multiple SpriteRenderers at once and doesn't need to have a texture assigned at all.
+
+!!!Batching
+
+SpriteRenderer is batched even when scaling is used.
+
+!!!Geometry
+
+SpriteRenderer uses a mesh combined of position, color and UV to render. Normal vector is not included.
+
+If normals are required, you can generate them in a vertex shader. See 'Custom data computed per-vertex' in [[SL-SurfaceShaderExamples | $$Surface Shader Examples$$]].
+[@
+v.normal = float3(0,0,-1);
+@]
+
+!!!Default shaders
+* Sprites/Default - Simple alpha blended shader. Does not interact with Unity lighting.
+* Sprites/Diffuse - Simple lit alpha blended surface shader. Interacts with Unity lighting. Generates a front-facing normal vector (0,0,-1).

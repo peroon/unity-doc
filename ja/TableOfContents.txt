@@ -9,12 +9,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[ProjectView40]]
 *****[[Hierarchy]]
 *****[[Toolbar]]
->>u42<<
-*****[[SceneView40]]
->><<
->>u43<<
 *****[[SceneView43]]
->><<
 *****[[GameView40]]
 *****[[Inspector]]
 *****[[Other Views]]
@@ -36,19 +31,10 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *****[[Editing Reference Properties]]
 *****[[Multi-Object Editing]]
 *****[[Inspector Options]]
->>u42<<
-****[[Using The Scene View]]
-*****[[Scene View Navigation]]
-*****[[Positioning GameObjects]]
-*****[[View Modes]]
-*****[[Gizmo and Icon Visibility]]
->><<
->>u43<<
 ****[[Using The Scene View43]]
 *****[[Scene View Navigation43]]
 *****[[Positioning GameObjects43]]
 *****[[View Modes43]]
->><<
 ****[[Searching]]
 ****[[Prefabs]]
 ****[[Lights]]
@@ -137,9 +123,11 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ********[[Scripting Root Motion]]
 *****[[Mecanim Peformance and Optimization]]
 *****[[Mecanim FAQ]]
-****[[Animations40|Legacy Animation system]]
-*****[[AnimationEditorGuide40|Animation Editor Guide (Legacy)]]
-*****[[Animation Scripting 40|Animation Scripting (Legacy)]]
+****[[AnimationView43]]
+*****[[UsingAnimationView]]
+*****[[UsingDopesheet]]
+*****[[UsingAnimEvents]]
+*****[[UsingAnimCurves]]
 ****[[Navmesh and Pathfinding]] 
 *****[[Navmeshes]]
 *****[[EnablingCharToNavigate]]
@@ -403,14 +391,8 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-ProceduralMaterial]]
 ****[[class-RenderTexture]]
 ****[[class-TextAsset]]
->>u42<<
 ****[[class-Texture2D]]
->><<
->>u43<<
-****[[class-Texture2D43]]
->><<
 ****[[class-TextureImporter]]
->>u43<<
 ***[[comp-2DGroup]]
 ****[[class-SpriteRenderer]]
 ****[[class-Rigidbody2D]]
@@ -422,7 +404,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-DistanceJoint2D]]
 ****[[class-HingeJoint2D]]
 ****[[class-SliderJoint2D]]
->><<
 ***[[comp-AudioGroup]]
 ****[[class-AudioListener]]
 ****[[class-AudioSource]]
@@ -506,9 +487,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **** [[class-RenderSettings]]
 **** [[class-ScriptExecution]]
 **** [[class-TagManager]]
->>u43<<
-****[[class-TagManager43]]
->><<
 **** [[class-TimeManager]]
 *** [[comp-MeshGroup]]
 **** [[class-MeshFilter]]

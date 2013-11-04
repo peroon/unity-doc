@@ -1,0 +1,32 @@
+!Editing Keys and Keyframes with the Dopesheet
+
+In the Animation View, animated properties will be shown with diamond shaped $$keys$$. These are control points that specify how the property should be animated. A frame that has a key is called a keyframe.
+
+Keyframes can be dragged around with the mouse. It is also possible to select multiple keyframes at once by dragging a rectangular selection around them all.
+
+You can add a keyframe by double clicking on the empty space in the dopesheet. Alternatively, you can use the context menu or click the keyframe button which will add keyframes to the currently previewed frame on the selected properties. Keyframes can be deleted by selecting them and pressing Delete or by right-clicking on them and selecting ~~Delete Keyframe~~ from the context menu.
+
+!!Navigating the Dopesheet
+
+When working with the Animation View you can easily zoom in on the details of the curves you want to work with or zoom out to get the full picture.
+
+You can always press F to zoom to the full clip or to selected keys.
+
+You can zoom the Dopesheet View using the scroll-wheel of your mouse, the zoom functionality of your trackpad, or by holding Alt while right-dragging with your mouse.
+You can zoom on only the horizontal axis. You can also drag the end caps of the scrollbars to shrink or expand the area shown in the Dopesheet View.
+
+You can pan the Curve View by middle-dragging with your mouse or by holding Alt while left-dragging with your mouse.
+
+!!Editing Tangents
+
+A key has two $$tangents$$ - one on the left for the ingoing slope and one on the right for the outgoing slope. The tangents control the shape of the curve between the keys. The Animation View have multiple tangent types that can be used to easily control the curve shape. The tangent types for a key can be chosen by right-clicking the key.
+
+Attach:AnimEditTangent.png
+
+!!Objects with Multiple Moving Parts
+
+You may want to animate Game Objects that have multiple moving parts, such as a gun turret with a moving barrel, or a character with many body parts. All the parts can be animated by a single Animator component on the parent.
+
+You can add animated properties for child objects from the ~~Add Curve~~ popup menu, or by changing the values from inspector while in record mode.
+
+In the Add Curve popup, you can access the properties of a child object by using the foldout triangle next to the object's name. The properties of child objects can be animated just like those of the parent.

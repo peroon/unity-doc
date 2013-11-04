@@ -1,0 +1,22 @@
+!Polygon Collider 2D
+
+The $$Polygon Collider 2D$$ component is a collider for use with 2D physics. The collider's shape is defined by a freeform edge made of line segments, so you can adjust it to fit the shape of the $$Sprite$$ graphic with great precision.
+
+Attach:PolygonCollider2DInspector.png
+
+||PROPS
+||``Material`` ||A physics material that determines properties of collisions, such as friction and bounce. ||
+||``Is Trigger`` ||Does the collider behave as a trigger? ||
+||``Edit Collider`` ||Enable the collider to be edited manually in the Scene view. ||
+||``Create From Sprite``||Settings affecting the way the collider is generated from the sprite graphic. ||
+||``Alpha Cutoff`` ||Threshold alpha value that determines which parts of the graphic are outside the collider (transparent) and which within (opaque). ||
+||``Detail`` ||Arbitrary parameter that controls how many vertices are used to define the shape of the polygon. ||
+||``Collider Info`` ||Non-editable information about the complexity of the generated collider. ||
+
+!!Details
+
+The collider can be edited manually but it is often more convenient to let Unity determine the shape automatically. You can do this by dragging a sprite asset from the Project view onto the Polygon Collider 2D component in the inspector.
+
+You can edit the polygon's shape directly by holding down the shift key as you move the mouse over an edge or vertex in the Scene view. You can move an existing vertex by shift-dragging when the mouse is over that vertex. If you shift-drag while the mouse is over an edge then a new vertex will be created at the mouse location. You can remove a vertex by holding down the ctrl/cmd key while clicking on it.
+
+Note that you can hide the outline of the 2D move gizmo while editing the collider - just click the foldout arrow on the Sprite Renderer component in the Inspector to collapse it.
