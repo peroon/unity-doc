@@ -79,7 +79,7 @@ Attach:PlayerSetPCResPres4b7.png
 ||``Mac App Store Validation``          ||Enable receipt validation for the Mac App Store. ||
 ||``Mac Fullscreen Mode``||Options for fullscreen mode on Mac builds||
 ||>>>``Capture Display``||Unity will take over the whole display (ie, GUI from other apps will not appear and the user cannot switch apps until fullscreen mode is exited).||
-||>>>``Fullscreen Window``||Unity runs in a window that covers the whole screen at desktop resolution. Other apps' GUI will display correctly and it is possible to switch apps with cmd + tab or trackpad gestures on OSX 10.7 and above.||
+||>>>``Fullscreen Window``||Unity runs in a window that covers the whole screen at desktop resolution. ||
 ||>>>``Fullscreen Window with Menu Bar and Dock``||As fullscreen window mode but the standard menu bar and dock will also be shown.||
 ||``Supported Aspect Ratios``  ||Aspect Ratios selectable in the Resolution Dialog will be monitor-supported resolutions of enabled items from this list.||
 

@@ -435,3 +435,44 @@ The ``Bundle Identifier`` string is the unique name of your application when pub
 
 Most games don't use all the functionality of the provided dlls.  With this option, you can strip out unused parts to reduce the size of the built player on Android devices.
 
+>><<
+>>metro<<
+!!!Windows Store Apps
+Attach:WindowsStoreAppsPlayerSettings.png
+
+Most of these settings are transferred to Package.appxmanifest when creating Visual Studio solution for the first time.
+
+__Note: If you build your project on top of the existing one, Unity won't overwrite Package.appxmanifest file if it's already present, that means if you change something in Player Settings be sure to check Package.appxmanifest, if you want Package.appxmanifest to be regenerated, simply delete it, and rebuild your project from Unity.__
+
+To read more about App package manifest, please visit [[http://msdn.microsoft.com/en-us/library/windows/apps/br211474.aspx]].
+
+Settings from __Packaging__, __Application UI__, __Tile__, __Splash screen__, __Capabilities__ directly transfer to settings in Package.appxmanifest file.
+
+
+!!!! Certificate
+Every Windows Store App needs a certificate which identifies a developer, Unity will create a default certificate, if you won't provide your own.
+
+!!!! Compilation
+As you know, Unity uses Mono when compiling script files, and you can use the API located in .NET 3.5. Compilation Overrides allows you to use .NET for Windows Store Apps (also known as .NET Core) in your C# files, the API is available here [[http://msdn.microsoft.com/en-us/library/windows/apps/br230232.aspx]].
+
+When Compilation Overrides is set to ''Use .NET Core'', Unity will compile *.cs (which are not located in Plugins, Standard Assets or Pro Standard Assets) files against .NET Core when building Windows Store Apps project.
+
+__Note: You won't be able to test .NET Core API in Unity Editor, because it doesn't have access to .NET Core, so you'll be able to test the API only when running Windows Store App.__
+
+__Note: You cannot use .NET Core API in JS or Boo scripts.__
+
+Here's a simple example how to use .NET Core API in scripts.
+[@
+	string GetTemporaryFolder()
+	{
+ #if NETFX_CORE
+		return Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
+ #else
+		return "LocalFolder";
+ #endif
+	}
+@]
+
+
+
+>><<
