@@ -44,6 +44,11 @@ When exporting a bone hierarchy with mesh and animations from 3ds Max to Unity, 
 
 If you prefer to have animation and mesh information in the same Unity GameObject, go to the Hierarchy view in 3ds Max, and parent the mesh node to a bone in the bone hierarchy. 
 
+!! Exporting morph targets (blend shapes) from Max
+
+# Ensure you have the Morpher Modifier applied to the export mesh with appropriate morph targets set up in the Channel List
+# Animate keyframes on the Export mesh/modifier only if you require animation
+# Check animation > Deformations, Skins if required and then Morphs in the FBX export dialogue
 
 [[#twouvs]]
 !! Exporting Two UV Sets for Lightmapping

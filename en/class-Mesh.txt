@@ -56,7 +56,7 @@ If you are converting a greyscale image into a normal map, you don't need to wor
 
 !! Blendshapes
 
-Unity has support for BlendShapes (also called morph-targets or vertex level animation). Unity can import BlendShapes from __.FBX__ (BlendShapes and controlling aninimation) and __.dae__ (only BlendShapes) exported 3D files. Unity BlendShapes support vertex level animation on vertices, normals and tangents. Mesh can be affected by skin and BlendShapes at the same time. All meshes imported with BlendShapes will use SkinnedMeshRenderer (no mater if it does have skin or not). BlendShape animation is imported as part of regular animation - it simply animates BlendShape weigts on SkinnedMeshRenderer. 
+Unity has support for BlendShapes (also called morph-targets or vertex level animation). Unity can import BlendShapes from __.FBX__ (BlendShapes and controlling aninimation) and __.dae__ (only BlendShapes) exported 3D files. Unity BlendShapes support vertex level animation on vertices, normals and tangents. Mesh can be affected by skin and BlendShapes at the same time. All meshes imported with BlendShapes will use SkinnedMeshRenderer (no mater if it does have skin or not). BlendShape animation is imported as part of regular animation - it simply animates BlendShape weights on SkinnedMeshRenderer. 
 
 There are two ways to import BlendShapes with normals:
 # Set ``Normals`` import mode to ``Calculate``, this way same logic will be used for calculating normals on a mesh and BlendShapes.

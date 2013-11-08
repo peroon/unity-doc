@@ -14,20 +14,23 @@ Unity supports FBX files which can be generated from many popular 3D application
 
 * Meshes - Remove construction history, Nurbs, Nurms, Subdiv surfaces must be converted to polygons - e.g. triangulate or quadrangulate
 * Animation - Select the correct rig, check frame rate, animation length etc.  
+* Blend Shapes / Morphing - Make sure your Blendshapes (Maya) or Morph targets (Max) are assigned / set up the export mesh appropriately
 * Textures - Make sure your textures are sourced already from your Unity project or copied into a folder called \textures in your project
 * Smoothing - Check if you want smoothing groups and/or smooth mesh
 
 !!! '''How''' do I include those elements? - check the FBX export settings
 
 * Be aware of your settings in the export dialogue so that you know what to expect and can match up the fbx settings In Unity - see figs 1, 2 & 3 below
-* Nodes, markers and their transforms can be exporte
+* Check Animation / Deformations / Skins / Morphs as appropriate
+* Nodes, markers and their transforms can be exported
 * Cameras and Lights are not currently imported in to Unity
 
-!!! '''Which''' version of FBX are you using? if in doubt use [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=18817399|2012.2]]
+!!! '''Which''' version of FBX are you using? use the [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775855|Latest Version of FBX]] where possible.  
 
 *Autodesk update their FBX installer regularly and it can provide different results with different versions of their own software and other 3rd party 3D apps
-Check the [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775855|Autodesk FBX download page]] for latest version
 *'''''See Advanced Options >  FBX file format'''''
+*If you have any issues you can revert to [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=18817399|2012.2]] if necessary
+
 
 !!! Will it work? - Verify your export
 

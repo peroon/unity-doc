@@ -11,17 +11,21 @@ To see your model in Unity, simply drag it from the $$Project View$$ into the $$
 # Materials with Texture and diffuse color. Multiple materials per mesh.
 # Animations FK & IK
 # Bone-based animations
-
-Unity does not import blend shapes. Use Bone-based animations instead. Unity automatically triangulates polygonal meshes when importing, thus there is no need to do this manually in Maya.
+# Blend Shapes
 
 If you are using IK to animate characters you have to select the imported .mb file in $$Project View$$ and choose ``Bake IK & Simulation`` in the $$Import Settings$$ dialog in the $$Inspector$$.
 
+!!Exporting Blend Shapes (morphing) from Maya
+
+# Ensure you have the Blendshape applied to the export mesh with it's targets in order
+# Animate keyframes on the blendshape node, if you require Maya animation keyframes
+# Check animation > Deformations, Skins if required and Morphs in the FBX export dialogue
 
 !! Requirements
 
 In order to import Maya __.mb__ and __.ma__ files, you need to have Maya installed on the machine you are using Unity to import the .mb/.ma file. Maya 8.0 and up is supported.
 
-->If you don't have Maya installed on your machine but want to import a Maya file from another machine, you can export [[Main.HOWTO-exportFBX|to fbx format]], which Unity imports natively.  Please Install ->[[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=15765120|2011.3]] for best results. To export see [[Main.HOWTO-exportFBX|HOWTO_exportFBX]].
+->If you don't have Maya installed on your machine but want to import a Maya file from another machine, you can export [[Main.HOWTO-exportFBX|to fbx format]], which Unity imports natively.  Please Install the [[http://usa.autodesk.com/adsk/servlet/pc/item?siteID=123112&id=10775855|Latest Version of FBX]] for best results. To for general export guidelines see [[Main.HOWTO-exportFBX|HOWTO_exportFBX]].
 
 
 ->Once exported Place the fbx file in the Unity project folder. Unity will now automatically import the fbx file. Check the FBX import setting in the inspector as mentioned in [[Main.HOWTO-exportFBX|HOWTO_exportFBX]]
