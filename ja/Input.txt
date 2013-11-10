@@ -214,7 +214,7 @@ Apple 入力 API ドキュメントは次の場所で見つけられます:
 *[[file:///Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiPhone2_0.iPhoneLibrary.docset/Contents/Resources/Documents/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/EventHandling/chapter_8_section_1.html | Programming Guide: Event Handling (Apple iPhone SDK documentation)]]
 *[[file:///Library/Developer/Shared/Documentation/DocSets/com.apple.adc.documentation.AppleiPhone2_0.iPhoneLibrary.docset/Contents/Resources/Documents/documentation/UIKit/Reference/UITouch_Class/Reference/Reference.html | UITouch Class Reference (Apple iOS SDK documentation)]]
 
-__注意:__ 上記のリンクはローカルにインストールされたiPhone SDK Reference Documentation を参照していて、ネイティブのObjective C コードを含みます。 Unityを モバイル デバイスで視ようする場合にこれらを理解することは必要ありませんが、一部の人には役立つかもしれません。
+__注意:__ 上記のリンクはローカルにインストールされたiPhone SDK Reference Documentation を参照していて、ネイティブのObjective C コードを含みます。 Unityを モバイル デバイスで使用する場合にこれらを理解することは必要ありませんが、一部の人には役立つかもしれません。
 
 >>ios<<
 !iOS!
