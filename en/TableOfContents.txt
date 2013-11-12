@@ -219,9 +219,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[xbox360-avatars]]
 *** [[xbox360-knownissues]]
 >><<
->>xboxone<<
-*** [[XboxOne-gettingstarted]]
->><<
 >>wiiu<<
 ** [[wiiu-gettingstarted]]
 *** [[wiiu-API]]
