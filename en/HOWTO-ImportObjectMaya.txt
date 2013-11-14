@@ -18,7 +18,7 @@ If you are using IK to animate characters you have to select the imported .mb fi
 !!Exporting Blend Shapes (morphing) from Maya
 
 # Ensure you have the Blendshape applied to the export mesh with it's targets in order
-# Animate keyframes on the blendshape node, if you require Maya animation keyframes
+# Optionally animate keyframes on the blendshape node, if you require Maya animation keyframes
 # Check animation > Deformations, Skins if required and Morphs in the FBX export dialogue
 
 !! Requirements

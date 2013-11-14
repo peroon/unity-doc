@@ -104,7 +104,7 @@ This strategy is often best for games that have long periods of gameplay where a
 [@
 if (Time.frameCount % 30 == 0)
 {
-   [[http://msdn.microsoft.com/en-gb/library/xe0c2357.aspx|System.GC.Collect]]();
+   System.GC.Collect();
 }
 @]
 

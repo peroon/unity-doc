@@ -99,7 +99,7 @@ function RandomList(arrayToFill: float[]) {
 [@
 if (Time.frameCount % 30 == 0)
 {
-   [[http://msdn.microsoft.com/en-gb/library/xe0c2357.aspx|System.GC.Collect]]();
+   System.GC.Collect();
 }
 @]
 

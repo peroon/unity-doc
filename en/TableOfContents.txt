@@ -484,6 +484,7 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-CircleCollider2D]]
 ****[[class-BoxCollider2D]]
 ****[[class-PolygonCollider2D]]
+****[[class-EdgeCollider2D]]
 ****[[class-PhysicsMaterial2D]]
 ****[[class-SpringJoint2D]]
 ****[[class-DistanceJoint2D]]

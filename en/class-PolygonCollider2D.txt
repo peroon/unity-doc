@@ -1,6 +1,6 @@
 !Polygon Collider 2D
 
-The $$Polygon Collider 2D$$ component is a collider for use with 2D physics. The collider's shape is defined by a freeform edge made of line segments, so you can adjust it to fit the shape of the $$Sprite$$ graphic with great precision.
+The $$Polygon Collider 2D$$ component is a collider for use with 2D physics. The collider's shape is defined by a freeform edge made of line segments, so you can adjust it to fit the shape of the $$Sprite$$ graphic with great precision. Note that this collider's edge ''must'' completely enclose an area (unlike the similar [[class-EdgeCollider2D|Edge Collider 2D]]).
 
 Attach:PolygonCollider2DInspector.png
 

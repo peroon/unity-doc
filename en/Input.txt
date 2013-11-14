@@ -208,9 +208,89 @@ return acc;
 @]
 
 >>ios<<
-(:include iOS.Joysticks:)
+!!iOS Game Controller support
+
+Starting with OS 7, a standardized Game Controller Input API is provided by Apple. Unity support for this API comes as part of the standard Unity Input API.
+
+!!!Detecting attached Game Controllers
+Calling @@Input.GetJoystickNames@@ will enumerate the names of all attached controllers. Names follow the pattern: "[$profile_type,$connection_type] joystick $number by $model". $profile_type might be either "basic" or "extended", $connection_type is either "wired" or "wireless". It could be used to detect the kind of connected controller. It is worth re-checking this list every few seconds to detect if controllers have been attached or detached. Here’s an example how of to do it in C#:
+
+[@
+    private bool connected = false;
+    IEnumerator CheckForControllers()
+    {
+        while(true)
+        {
+            var controllers = Input.GetJoystickNames();
+            if (!connected && controllers.Length > 0)
+            {
+                connected = true;
+                Debug.Log("Connected");
+            }
+            else if (connected && controllers.Length == 0)
+            {
+                connected = false;
+                Debug.Log("Disconnected");
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    void Awake()
+    {
+        StartCoroutine(CheckForControllers());
+    }
+@]
+
+When controllers are detected you can either hide on-screen touch controls or amend them to supplement controller input. The next task is to check for Game Controller input.
+
+!!!Handling input
+Actual input scheme is highly dependent on the type of game you are developing. But in any case it goes down to reading axes and button states. Let's take following 2D game stage as simple example:
+
+
+The player controls the bean character, which can move right or left, jump and fire at the bad guys. By default, the Unity Input "Horizontal" axis is mapped to basic profile game controller dpad and the left analog stick on extended profile controllers. So the code used to move the character back and forth is pretty simple:
+
+[@
+    float h = Input.GetAxis("Horizontal");
+    if(h * rigidbody2D.velocity.x < maxSpeed)
+        rigidbody2D.AddForce(Vector2.right * h * moveForce);
+@]
+
+You can set up jump and fire actions in Unity’s Input Manager. Access it from the Unity editor menu as follows: Edit > Project Settings > Input. Lets pick joystick button "A" for the "Jump" action and "X" for "Fire". Open the following actions in the Unity Input Manager and specify "joystick button 14" for "Jump" and "joystick button 15" for "Fire".
+
+
+The code handling them looks like this:
+
+[@
+    if(Input.GetButtonDown("Jump") && grounded)
+    {    
+        rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+    }
+    if(Input.GetButtonDown("Fire"))
+    {
+        Rigidbody2D bulletInstance = Instantiate(rocket, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody2D;
+        bulletInstance.velocity = new Vector2(speed, 0);
+    }
+@]
+
+The following cheatsheet should help you map controller input in the Unity Input Manager:
+
+||Name ||KeyCode ||Axis ||
+||A ||joystick button 14 ||N/A ||
+||B ||joystick button 13 ||N/A ||
+||X ||joystick button 15 ||N/A ||
+||Y ||joystick button 12 ||N/A ||
+||Left Stick ||N/A ||Axis 1 (X) – Horizontal, Axis 2 (Y) – Vertical ||
+||Right Stick ||N/A ||Axis 3 – Horizontal, Axis 4 – Vertical ||
+||Dpad ||joystick button 4 .. joystick button 7 ||Basic profile only: Axis 1 (X) – Horizontal, Axis 2 (Y) – Vertical ||
+||Pause ||joystick button 0 ||N/A ||
+||L1/R1 ||joystick button 8/joystick button 9 ||N/A ||
+||L2/R2 ||joystick button 10/joystick button 11 ||N/A ||
+
+!!!Final notes on Game Controller API support
+The Game Controller framework is loaded dynamically by Unity iOS runtime only if it is available. For older iOS versions it will just return an empty list of controllers.
+
+Apple documentation explicitly states that controller input must be optional and your game should be playable without them.
 >><<
 >>wiiu<<
 (:include InputWiiU:)
 >><<
-
