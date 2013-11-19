@@ -46,7 +46,11 @@ IEnumerator Start () {
     byte[] decryptedData = YourDecryptionMethod(encryptedData);
 
     // Create an AssetBundle from the bytes array
-    AssetBundle bundle = AssetBundle.CreateFromMemory(decryptedData);
+
+    AssetBundleCreateRequest acr = AssetBundle.CreateFromMemory(decryptedData);
+    yield return acr;
+
+    AssetBundle bundle = acr.assetBundle;
 
     // You can now use your AssetBundle. The AssetBundle is not cached.
 }@]
@@ -74,10 +78,10 @@ IEnumerator Start () {
     byte[] decryptedData = YourDecryptionMethod(encryptedData);
 
     // Create an AssetBundle from the bytes array
-    AssetBundle bundle = AssetBundle.CreateFromMemory(decryptedData);
+    AssetBundleCreateRequest acr = AssetBundle.CreateFromMemory(decryptedData);
+    yield return acr;
+
+    AssetBundle bundle = acr.assetBundle;
 
     // You can now use your AssetBundle. The wrapper AssetBundle is cached
 }@]
-
-
-[[AssetBundlesIntro|back to AssetBundles Intro]]
