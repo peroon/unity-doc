@@ -171,6 +171,9 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[PluginsForAndroid | Android-Plugins]]
 *** [[MobileCustomizeSplashScreen#Android | Android Splash Screen]]
 >><<
+>>psvita<<
+** [[psvita-gettingstarted|PSVita getting started]]
+>><<
 ** [[nacl-gettingstarted]]
 ** [[flash-gettingstarted]]
 *** [[flash-setup]]
@@ -392,7 +395,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 ****[[class-RenderTexture]]
 ****[[class-TextAsset]]
 ****[[class-Texture2D]]
-****[[class-TextureImporter]]
 ***[[comp-2DGroup]]
 ****[[class-SpriteRenderer]]
 ****[[class-Rigidbody2D]]
