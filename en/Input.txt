@@ -255,7 +255,7 @@ The player controls the bean character, which can move right or left, jump and f
         rigidbody2D.AddForce(Vector2.right * h * moveForce);
 @]
 
-You can set up jump and fire actions in Unity’s Input Manager. Access it from the Unity editor menu as follows: Edit > Project Settings > Input. Lets pick joystick button "A" for the "Jump" action and "X" for "Fire". Open the following actions in the Unity Input Manager and specify "joystick button 14" for "Jump" and "joystick button 15" for "Fire".
+You can set up jump and fire actions in Unity's Input Manager. Access it from the Unity editor menu as follows: Edit > Project Settings > Input. Lets pick joystick button "A" for the "Jump" action and "X" for "Fire". Open the following actions in the Unity Input Manager and specify "joystick button 14" for "Jump" and "joystick button 15" for "Fire".
 
 
 The code handling them looks like this:
@@ -279,9 +279,9 @@ The following cheatsheet should help you map controller input in the Unity Input
 ||B ||joystick button 13 ||N/A ||
 ||X ||joystick button 15 ||N/A ||
 ||Y ||joystick button 12 ||N/A ||
-||Left Stick ||N/A ||Axis 1 (X) – Horizontal, Axis 2 (Y) – Vertical ||
-||Right Stick ||N/A ||Axis 3 – Horizontal, Axis 4 – Vertical ||
-||Dpad ||joystick button 4 .. joystick button 7 ||Basic profile only: Axis 1 (X) – Horizontal, Axis 2 (Y) – Vertical ||
+||Left Stick ||N/A ||Axis 1 (X) - Horizontal, Axis 2 (Y) - Vertical ||
+||Right Stick ||N/A ||Axis 3 - Horizontal, Axis 4 - Vertical ||
+||Dpad ||joystick button 4 .. joystick button 7 ||Basic profile only: Axis 1 (X) - Horizontal, Axis 2 (Y) - Vertical ||
 ||Pause ||joystick button 0 ||N/A ||
 ||L1/R1 ||joystick button 8/joystick button 9 ||N/A ||
 ||L2/R2 ||joystick button 10/joystick button 11 ||N/A ||
