@@ -5,7 +5,7 @@ $$Font$$ [[class-GuiText|GUI Text]] または [[class-TextMesh|Text Mesh]] $$Com
 
 !! True Type Font ファイル (.ttf) のインポート
 
-プロジェクトにフォントを追加するには、Assets フォルダに __.ttf__ ファイルを置く必要があります。 Unity が、自動的にフォントをインポートします。 そのフォントに拡張子 __.ttf__ があるか確認してください。ない場合、Unity はフォントを認識しません。
+プロジェクトにフォントを追加するには、Assets フォルダに フォントファイルを置く必要があります。 Unity が、自動的にフォントをインポートします。 サポートしているフォント形式は TrueType Fonts __.ttf__　__.dfont__ 、OpenType Fonts __.otf__　です。 
 
 フォントの「サイズ」を変更するには、$$Project View$$ で強調表示すると、$$Inspector$$ の $$Import Settings$$ に多くのオプションが表示されます。
 
@@ -56,7 +56,7 @@ GUI　テキストまたはテキスト メッシュを使用して、フォン�
 UnityGUI スクリプティングを使用して、フォントする場合、異なる環境で、フォントの色をより制御できます。  フォントの色を変更するには、^^Assets->Create->GUI Skin^^ から $$GUISkin$$ を作成し、^^Label->Normal->Text Color^^ などから、特定の制御状態に色を定義します。  詳細については、[[class-GUISkin | GUI Skin page]] を参照してください。
 
 !!ヒント
-* インポートされたフォントｗを表示するには、フォントを選択し、^^GameObject->Create Other->3D Text^^ を選択します。
+* インポートされたフォントを表示するには、フォントを選択し、^^GameObject->Create Other->3D Text^^ を選択します。
 * 小文字または大文字のみ使用することで、生成されたテクスチャ サイズが小さくなります。
 * Unity が提供するデフォルトのフォントは、Arial になります。  このフォントは、常に使用可能で、プロジェクト ビューには表示されません。
 
