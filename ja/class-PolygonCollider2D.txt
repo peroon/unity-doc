@@ -7,10 +7,6 @@ Attach:PolygonCollider2DInspector.png
 ||PROPS
 ||``Material`` ||A physics material that determines properties of collisions, such as friction and bounce. ||
 ||``Is Trigger`` ||Does the collider behave as a trigger? ||
-||``Edit Collider`` ||Enable the collider to be edited manually in the Scene view. ||
-||``Create From Sprite``||Settings affecting the way the collider is generated from the sprite graphic. ||
-||``Alpha Cutoff`` ||Threshold alpha value that determines which parts of the graphic are outside the collider (transparent) and which within (opaque). ||
-||``Detail`` ||Arbitrary parameter that controls how many vertices are used to define the shape of the polygon. ||
 ||``Collider Info`` ||Non-editable information about the complexity of the generated collider. ||
 
 !!Details
