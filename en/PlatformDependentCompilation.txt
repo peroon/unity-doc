@@ -9,6 +9,8 @@ The platform defines that Unity supports for your scripts are:
 
 ||PROPS
 ||``UNITY_EDITOR`` ||Define for calling Unity Editor scripts from your game code.||
+||``UNITY_EDITOR_WIN`` ||Platform define for editor code on Windows. ||
+||``UNITY_EDITOR_OSX`` ||Platform define for editor code on Mac OSX. ||
 ||``UNITY_STANDALONE_OSX`` ||Platform define for compiling/executing code specifically for Mac OS (This includes Universal, PPC and Intel architectures).||
 ||``UNITY_DASHBOARD_WIDGET`` ||Platform define when creating code for Mac OS dashboard widgets.||
 ||``UNITY_STANDALONE_WIN`` ||Use this when you want to compile/execute code for Windows stand alone applications.||
