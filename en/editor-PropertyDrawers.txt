@@ -12,9 +12,9 @@ Property Drawers have two uses:
 If you have a custom ``Serializable`` class, you can use a ``Property Drawer`` to control how it looks in the ~~Inspector~~. Consider the Serializable class Ingredient in the script below:
 
 [@
-// Recipe.js
 // This is not an editor script
 
+// JS example.
 enum IngredientUnit { Spoon, Cup, Bowl, Piece }
 
 // Custom serializable class
@@ -30,6 +30,34 @@ var potionIngredients : Ingredient[];
 function Update () {
 	// Update logic here...
 }
+
+
+
+// C# example.
+using UnityEngine;
+using System.Collections;
+
+
+// This is not an editor script
+
+public enum IngredientUnit { Spoon, Cup, Bowl, Piece }
+
+// Custom serializable class
+[System.Serializable]
+public class Ingredient : System.Object {
+	string name;
+	int amount = 1;
+	IngredientUnit unit;
+}
+
+public class Recipe : MonoBehaviour {
+	Ingredient potionResult;
+	Ingredient[] potionIngredients;
+
+	void Update() {
+		// Update logic here...
+	}
+}
 @]
 
 Using a custom Property Drawer, every appearance of the Ingredient class in the Inspector can be changed. Compare the look of the Ingredient properties in the Inspector without and with a custom Property Drawer:
@@ -40,7 +68,7 @@ Attach:CustomPropertyDrawer_Class.png
 You can attach the Property Drawer to a Serializable class by using the ``CustomPropertyDrawer`` attribute and pass in the type of the Serializable class that it's a drawer for.
 
 [@
-// IngredientDrawer.js
+// JS example.
 @CustomPropertyDrawer (Ingredient)
 class IngredientDrawer extends PropertyDrawer {
 	
@@ -73,6 +101,45 @@ class IngredientDrawer extends PropertyDrawer {
 		EditorGUI.EndProperty ();
 	}
 }
+
+
+// C# example.
+using UnityEngine;
+using UnityEditor;
+using System.Collections;
+
+[CustomPropertyDrawer(typeof(Ingredient))]
+public class IngredientDrawer : PropertyDrawer {
+	
+	// Draw the property inside the given rect
+	void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+		// Using BeginProperty / EndProperty on the parent property means that
+		// prefab override logic works on the entire property.
+		EditorGUI.BeginProperty(position, label, property);
+		
+		// Draw label
+		position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+		
+		// Don't make child fields be indented
+		int indent = EditorGUI.indentLevel;
+		EditorGUI.indentLevel = 0;
+		
+		// Calculate rects
+		Rect amountRect = new Rect(position.x, position.y, 30, position.height);
+		Rect unitRect = new Rect(position.x+35, position.y, 50, position.height);
+		Rect nameRect = new Rect(position.x+90, position.y, position.width-90, position.height);
+		
+		// Draw fields - passs GUIContent.none to each so they are drawn without labels
+		EditorGUI.PropertyField(amountRect, property.FindPropertyRelative ("amount"), GUIContent.none);
+		EditorGUI.PropertyField(unitRect, property.FindPropertyRelative ("unit"), GUIContent.none);
+		EditorGUI.PropertyField(nameRect, property.FindPropertyRelative ("name"), GUIContent.none);
+		
+		// Set indent back to what it was
+		EditorGUI.indentLevel = indent;
+		
+		EditorGUI.EndProperty();
+	}
+}
 @]
 
 
@@ -82,19 +149,43 @@ The other use of ``Property Drawer`` is to alter the appearance of members in a 
 
 [@
 // Show this float in the Inspector as a slider between 0 and 10
+
+// JS example.
 @Range (0.0, 10.0)
 var myFloat = 0.0;
+
+//C# example.
+[Range(0.0f, 10.0f)]
+public float myFloat = 0.0f;
 @]
 
 You can make your own ``PropertyAttribute`` as well. We'll use the code for the ``RangeAttribute`` as an example. The attribute must extend the ``PropertyAttribute`` class. If you want, your property can take parameters and store them as public member variables.
 
 [@
 // This is not an editor script. The property attribute class should be placed in a regular script file.
+
+// JS example.
 class RangeAttribute extends PropertyAttribute {
 	var min : float;
 	var max : float;
 	
 	function RangeAttribute (min : float, max : float) {
+		this.min = min;
+		this.max = max;
+	}
+}
+
+
+// C# example.
+using UnityEngine;
+using System.Collections;
+
+
+public class RangeAttribute : PropertyAttribute {
+	public float min;
+	public float max;
+	
+	public RangeAttribute (float min, float max) {
 		this.min = min;
 		this.max = max;
 	}
@@ -105,6 +196,8 @@ Now that you have the attribute, you need to make a ``Property Drawer`` that dra
 
 [@
 // The property drawer class should be placed in an editor script, inside a folder called Editor.
+
+// JS example.
 
 // Tell the RangeDrawer that it is a drawer for properties with the RangeAttribute.
 @CustomPropertyDrawer (RangeAttribute)
@@ -123,6 +216,32 @@ class RangeDrawer extends PropertyDrawer {
 			EditorGUI.IntSlider (position, property, range.min, range.max, label);
 		else
 			EditorGUI.LabelField (position, label.text, "Use Range with float or int.");
+	}
+}
+
+
+// C# example.
+using UnityEngine;
+using UnityEditor;
+using System.Collections;
+
+// Tell the RangeDrawer that it is a drawer for properties with the RangeAttribute.
+[CustomPropertyDrawer(typeof(RangeAttribute))]
+public class RangeDrawer : PropertyDrawer {
+	
+	// Draw the property inside the given rect
+	void OnGUI (Rect position, SerializedProperty property, GUIContent label) {
+		
+		// First get the attribute since it contains the range for the slider
+		RangeAttribute range  = attribute as RangeAttribute;
+		
+		// Now draw the property as a Slider or an IntSlider based on whether it's a float or integer.
+		if (property.propertyType == SerializedPropertyType.Float)
+			EditorGUI.Slider(position, property, range.min, range.max, label);
+		else if (property.propertyType == SerializedPropertyType.Integer)
+			EditorGUI.IntSlider(position, property, (int) range.min, (int) range.max, label);
+		else
+			EditorGUI.LabelField(position, label.text, "Use Range with float or int.");
 	}
 }
 @]
