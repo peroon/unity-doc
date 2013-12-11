@@ -16,7 +16,7 @@ Unityプロファイラーはゲームの最適化に役立ちます。ゲーム
 !! Webplayer
 For webplayer profiling, follow these steps:
 # Check the ''Development Build'' and ''Autoconnect Profiler'' checkboxes in Unity's Build Settings dialog before starting the build.
-# When the game is running in the webplayer, make sure that ''Release Channel'' (on the context menu) is set to ''Development''.
+# When the game is running in the webplayer, make sure that ''Release Channel'' (open the context menu with alt+right-click) is set to ''Development''.
 # Select ''OSXWebPlayer(YOURCOMPUTERNAME)'' or ''WindowsWebPlayer(YOURCOMPUTERNAME)'' as appropriate from the Profiler Window's ''Active Profiler'' drop-down menu.
 
 >>ios<<

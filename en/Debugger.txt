@@ -26,7 +26,7 @@ On Windows, users must choose to install MonoDevelop as part of the Unity instal
 
 * Launch Unity or your player.
 ** Unity: Ensure you have "Editor Attaching" checked in the Preferences window.
-** Players: Ensure that you have built your player with the "Development build" and "Allow script debugging" options enabled. For webplayers, additionally check that the development release channel setting is enabled on the player's context menu (right click on Windows or cmd-click on Mac OSX)
+** Players: Ensure that you have built your player with the "Development build" and "Allow script debugging" options enabled. For webplayers, additionally check that the development release channel setting is enabled on the player's context menu (alt+right-click on Windows and Mac OSX)
 
 Attach:WebContextMenuDebug.png\\
 ''Enabling debugging in the webplayer''

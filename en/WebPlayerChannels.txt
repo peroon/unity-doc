@@ -9,7 +9,7 @@ To avoid problems like this, the plugin is designed to keep a number of differen
 Some time after a release, when the Release channel has been thoroughly tested for stability, it will be migrated to Stable status and it will be used as the default for all players from then on.
 
 !!Selecting a channel
-Although the channel system avoids problems with upgrading, it is still useful to be able to test your game with the latest runtime. The Unity browser plugin lets you select the desired channel from the context menu (right-click on the content area in the web page).
+Although the channel system avoids problems with upgrading, it is still useful to be able to test your game with the latest runtime. The Unity browser plugin lets you select the desired channel from the context menu (alt+right-click on the content area in the web page). Note that you must hold down ALT while right-clicking in order for the release channels to show up.
 
 Attach:ChannelMenu.png
 
