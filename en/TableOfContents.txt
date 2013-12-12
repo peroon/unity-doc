@@ -256,6 +256,12 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[ps3-nativeplugins|PS3 Native Plugins]]
 *** [[ps3-faq|PS3 FAQ]]
 >><<
+>>psvita<<
+** [[psvita-gettingstarted]]
+>><<
+>>ps4<<
+** [[ps4-gettingstarted]]
+>><<
 ** [[nacl-gettingstarted]]
 ** [[flash-gettingstarted]]
 *** [[flash-setup]]
