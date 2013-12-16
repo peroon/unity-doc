@@ -1,18 +1,18 @@
-!Webplayer �����[�X�`���l�� / Webplayer Release Channels
+!Webplayer リリースチャネル / Webplayer Release Channels
 
-Unity�̃��W���[�o�[�W�����������[�X�����Ƃ����A�u���E�U�� Webplayer �v���O�C�����܂��X�V����ŐV�̋@�\���g�p�o����悤�ɂ��܂��B�v���O�C���͋N�����ɐV�����o�[�W���������邩���`�F�b�N���ĕK�v�ȏꍇ�͎����I�ɃA�b�v�O���[�h���܂��B
+Unityのメジャーバージョンがリリースされるといつも、ブラウザの Webplayer プラグインもまた更新され最新の機能を使用出来るようにします。プラグインは起動時に新しいバージョンがあるかをチェックして必要な場合は自動的にアップグレードします。
 
-Unity�͉��ʌ݊����d�����Ă��܂����A����ł��V�����o�[�W�����ɂ�������Webplayer�Ńo�O����������\���͂���܂��B�v���O�C���͎����I�ɃA�b�v�f�[�g���邽�߁A���̂悤�ɔ��������o�O���C�������܂Ń��[�U�[���E�F�u�Q�[�����v���C�o���Ȃ��ꍇ������A���̎��ɐ��������삵�Ă��������^�C���ł���肷����@���Ȃ��ꍇ������܂��B
+Unityは下位互換を重視していますが、それでも新しいバージョンにより既存のWebplayerでバグが発生する可能性はあります。プラグインは自動的にアップデートするため、そのように発生したバグが修正されるまでユーザーがウェブゲームをプレイ出来ない場合があり、その時に正しく動作していたランタイム版を入手する方法ごない場合があります。
 
-���̂悤�Ȗ���������邽�߁A�v���O�C����Unity�����^�C���̕����o�[�W������ێ�����悤�ɐ݌v����Ă��� $$Release Channels$$ �ƌĂ΂�܂��B�����^�C���ւ̃A�b�v�f�[�g�������[�X�����Ƃ��A�v���O�C���͎����I�Ɏ擾����܂����A�O��o�[�W�����̃R�s�[��ێ����܂��B�ŐV�̃`���l���� __Release__ �Ɩ��t�����A�O�񕪂� __Stable__ �Ɩ��t�����܂��B�f�t�H���g�Ńv���O�C���́A�����webplayer�ɂ��K�v�ȋ@�\�̂��ׂĂ��T�|�[�g����ł��Â��`���l�����g�p���܂��B����ɂ��V�����Q�[���ŐV�@�\�����p���A�����Q�[�����_�E��������V�����o�O��������邱�Ƃ��o���܂��B
+このような問題を回避するため、プラグインはUnityランタイムの複数バージョンを保持するように設計されていて $$Release Channels$$ と呼ばれます。ランタイムへのアップデートがリリースされるとき、プラグインは自動的に取得されますが、前回バージョンのコピーを保持します。最新のチャネルは __Release__ と名付けられ、前回分は __Stable__ と名付けられます。デフォルトでプラグインは、特定のwebplayerにより必要な機能のすべてをサポートする最も古いチャネルを使用します。これにより新しいゲームで新機能を活用しつつ、既存ゲームをダウンさせる新しいバグを回避することご出来ます。
 
-�����[�X�̂��Ƃɂ��΂炭���Ԃ������Ă���ARelease �`���l�����\���Ɉ��萫���e�X�g���ꂽ��AStable �X�e�[�^�X�Ɉڍs����A����ȍ~�͑S�Ẵv���C���[�̃f�t�H���g�Ƃ��Ďg�p����܂��B
+リリースのあとにしばらく時間がたってから、Release チャネルが十分に安定性がテストされた後、Stable ステータスに移行され、それ以降は全てのプレイヤーのデフォルトとして使用されます。
 
-!!�`���l���̑I��
-�`���l�� �V�X�e���ɂ��A�b�v�O���[�h�̖��͉�������Ƃ͂����ŐV�̃����^�C���Ńe�X�g�o���邱�Ƃ͖𗧂��܂��BUnity �u���E�U �v���O�C���ɂ��R���e�L�X�g ���j���[�����]�̃`���l����I�����邱�Ƃ��o���܂�(�E�F�u �y�[�W�̃R���e���c�̈�ŉE�N���b�N)�B
+!!チャネルの選択
+チャネル システムによりアップグレードの問題は回避されるとはいえ最新のランタイムでテスト出来ることは役立ちます。Unity ブラウザ プラグインによりコンテキスト メニューから希望のチャネルを選択することご出来ます(ウェブ ページのコンテンツ領域で右クリック)。
 
 Attach:ChannelMenu.png
 
-�`���l���͏ォ�珇�ɁA���ŐV�̃`���l��������ł��܂��B�A�C�e�������j���[����I�������webplayer�R���e���c�����s���邽�߂ɍŒ���K�v�ȃo�[�W�����Ƃ��Ďg�p����܂�(����Release �`���l����I������ƌÂ� Stable �`���l���͎g�p����Ȃ��Ȃ�܂�)�B�ł��Â��o�[�W������I�����邱�ƂŃf�t�H���g�̃`���l���I���ɖ߂����Ƃ��o���܂��B�ʏ�� Release ����� Stable �`���l�������p�\�ł����V�X�e���̓I�[�v���G���h�Ȃ̂Ŏ��ɂ���Ă͑��̃`���l�� (�Ⴆ�΃x�[�^�e�X�g�Ƃ���) ���\�������ꍇ������܂��B
+チャネルは上から順に、より最新のチャネルが並んでいます。アイテムをメニューから選択するとwebplayerコンテンツを実行するために最低限必要なバージョンとして使用されます(もしRelease チャネルを選択すると古い Stable チャネルは使用されなくなります)。最も古いバージョンを選択することでデフォルトのチャネル選択に戻すことが出来ます。通常は Release および Stable チャネルが利用可能ですがシステムはオープンエンドなので時によっては他のチャネル (例えばベータテストとして) が表示される場合があります。
 
-����ɁA���j���[�ŊJ�����[�h (Development) �ɐ؂�ւ���I�v�V����������Awebplayer�� [[Debugging|�f�o�b�O]] ����� [[Profiler|�v���t�@�C�����O]] ��L�������A����Ƀv���C���[�̃R�[�h�ŗ�O�𓊂����ꍇ�ɂ��ł��G���[�R���\�[�����\�������@�\������܂��B
+さらに、メニューで開発モード (Development) に切り替えるオプションがあり、webplayerで [[Debugging|デバッグ]] および [[Profiler|プロファイリング]] を有効化し、さらにプレイヤーのコードで例外を投げた場合にいつでもエラーコンソールが表示される機能があります。
