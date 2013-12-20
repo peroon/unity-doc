@@ -129,3 +129,13 @@ This is only useful for text meshes and renders an image inline with the text. I
 	<quad material=1 size=20 x=0.1 y=0.1 width=0.5 height=0.5 />
 
 This selects the material at position in the renderer's material array and sets the height of the image to 20 pixels. The rectangular area of image starts at given by the x, y, width and height values, which are all given as a fraction of the unscaled width and height of the texture.
+
+!!Editor GUI
+
+Rich text is disabled by default in the editor GUI system but it can be enabled explicitly using a custom GUIStyle. The @@richText@@ property should be set to true and the style passed to the GUI function in question:-
+
+[@
+GUIStyle style = new GUIStyle ();
+style.richText = true;
+GUILayout.Label("<size=30>Some <color=yellow>RICH</color> text</size>",style);
+@]

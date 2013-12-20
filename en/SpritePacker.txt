@@ -48,7 +48,12 @@ DefaultPackerPolicy uses tight packing (see SpritePackingMode) by default. Custo
 
 !!DefaultPackerPolicy
 [@
-class DefaultPackerPolicy : IPackerPolicy
+using System;
+using System.Linq;
+using UnityEngine;
+using System.Collections.Generic;
+
+class DefaultPackerPolicy : UnityEngine.Sprites.IPackerPolicy
 {
 	private class Entry
 	{
