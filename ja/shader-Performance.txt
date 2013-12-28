@@ -4,7 +4,7 @@
 
 !! レンダリングパスとシェーダパフォーマンス
 
-Unityでサポートされているレンダリングパスのうち、[[RenderTech-DeferredLighting | Deferred Lighting]] と [[RenderTech-VertexLit | Vertex Lit]] もっともパフォーマンスを予見可能です。Deferred Lightingでは各オブジェクトは一般に
+Unityでサポートされているレンダリングパスのうち、[[RenderTech-DeferredLighting | Deferred Lighting]] と [[RenderTech-VertexLit | Vertex Lit]] はもっともパフォーマンスを予見可能です。Deferred Lightingでは各オブジェクトは一般に
 どのようなライトに影響を受けるかに関わらず2回描画されます。同様にVertex Litで各オブジェクトは1回だけ描画されます。すなわちシェーダのパフォーマンスの違いは使用してるテクスチャの数とどのような計算を行うかに依存します。
 
 
