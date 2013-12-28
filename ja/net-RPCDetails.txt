@@ -37,7 +37,7 @@ function PrintText (text : String)
 * Vector3
 * Quaternion
 
-例えば、次のコードによりひとのstring引数を持つRPCを実行します：
+例えば、次のコードによりひとつのstring引数を持つRPCを実行します：
 
 [@
 networkView.RPC ("PrintText", RPCMode.All, "Hello world");
