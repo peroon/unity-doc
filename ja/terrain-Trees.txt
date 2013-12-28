@@ -14,7 +14,7 @@ Treeを地形に追加する前に、使用可能なTreeのライブラリを追
 Attach:terrain-AddTreeDialog.png\\
 ''Add Treeダイアログ''
 
-Treeを$$Project View$$ーから選択し、``Tree``変数にドラッグします。また、``Bend Factor``を編集すると、"風になびく"アニメーション効果を樹木に追加できます。準備ができたら^^Add^^をクリックします。Treeが、インスペクタに選択された状態で現れます。
+Treeを $$Project View$$ から選択し、``Tree``変数にドラッグします。また、``Bend Factor``を編集すると、"風になびく"アニメーション効果を樹木に追加できます。準備ができたら^^Add^^をクリックします。Treeが、インスペクタに選択された状態で現れます。
 
 Attach:terrain-AddedTree.png\\
 新しく追加されたTreeが、インスペクタに選択された状態で現れます。
