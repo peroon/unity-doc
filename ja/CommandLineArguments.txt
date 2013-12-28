@@ -40,7 +40,7 @@ MacOSでTerminalからUnityを起動するには次の通りに入力します:-
 
 :``-logFile <pathname>``:エディタまたはWindowsスタンドアローンのログファイルが書き込みされる場所を指定。
 
-:``-assetServerUpdate <IP[[=:=]port] projectName ユーザ名 パスワード [r <revision>]>``:強制的に ''IP:port'' で指定された [[AssetServer | Asset Server]] の中のプロジェクト更新を行なう。ポート情報は任意であり、ない場合は標準のポート (10733)を使用。このコマンドは ''-projectPath'' 引数と組み合わせて正しいプロジェクトで作業していることを保証したうえで使用することを推奨します。もりプロジェクト名ごない場合、Unityで最も最近開かれたファイルが使用されます。もし ''-projectPath'' にプロジェクトが存在しない場合、プロジェクトが新たに作成されます。
+:``-assetServerUpdate <IP[[=:=]port] projectName ユーザ名 パスワード [r <revision>]>``:強制的に ''IP:port'' で指定された [[AssetServer | Asset Server]] の中のプロジェクト更新を行なう。ポート情報は任意であり、ない場合は標準のポート (10733)を使用。このコマンドは ''-projectPath'' 引数と組み合わせて正しいプロジェクトで作業していることを保証したうえで使用することを推奨します。もしプロジェクト名がない場合、Unityで最も最近開かれたファイルが使用されます。もし ''-projectPath'' にプロジェクトが存在しない場合、プロジェクトが新たに作成されます。
 
 :``-exportPackage <exportAssetPath1 exportAssetPath2 ExportAssetPath3 exportFileName>``:特定のパス（または複数のパス）にエクスポート。  ``exportAssetPath`` はUnityプロジェクトからエクスポートするフォルダ（Unityプロジェクトのルートディレクトリに対する相対パス指定）であり、``exportFileName`` はパッケージの名前です。現在、このオプションはフォルダ全体の単位でしかエクスポート出来ません。通常このコマンドは ``-projectPath`` 引数を使って使用する必要があります。
 
@@ -48,7 +48,7 @@ MacOSでTerminalからUnityを起動するには次の通りに入力します:-
 
 :``-executeMethod <ClassName.MethodName>``: このstaticメソッドをUnityのスタート直後に実行、すなわちプロジェクトが開かれて、オプションにあたるasset server更新が行われた直後です。これにより継続的インテグレーション、ユニットテストの実施、ビルド作成、データ準備等々に使用出来ます。もしコマンドライン処理のエラー結果がほしい場合は、例外を投げてUnityが戻り値 1 で終了するか、  [[ScriptRef:EditorApplication.Exit.html | EditorApplication.Exit]] をコールしてゼロ以外の戻り値のコードとします。もし引数を渡したい場合コマンドラインに追加してSystem.Environment.GetCommandLineArgs を使用して取得します。
 
-@@-executeMethod@@ を使用するためには __Editorフォルダにスクリプトごありクラスにstatic関数が存在する必要があります__ 。
+@@-executeMethod@@ を使用するためには __Editorフォルダにスクリプトがありクラスにstatic関数が存在する必要があります__ 。
 
 [@
 // C# サンプル
