@@ -4,7 +4,7 @@ There might be times during the development when you need to obtain information 
 
 On Mac the webplayer, player and editor logs can be accessed uniformly through the standard ^^Console.app^^ utility.
 
-On Windows the webplayer and editor logs are place in folders there are not shown in the Windows Explorer by default. Please see the [[AccessingHiddenFolders | Accessing hidden folders]] page to resolve that situation.
+On Windows the webplayer and editor logs are placed in folders which are not shown in Windows Explorer by default. Please see the [[AccessingHiddenFolders | Accessing hidden folders]] page to resolve that situation.
 
 !! Editor
 Editor log can be brought up through the ^^Open Editor Log^^ button in Unity's Console window.
@@ -32,10 +32,11 @@ On Windows the webplayer log is stored in a temporary folder:  ''&#37;TEMP&#37;'
 !! Player
 ||``Mac OS X``      ||~/Library/Logs/Unity/Player.log||
 ||``Windows ``     ||''EXECNAME_Data''\output_log.txt||
+||``Linux``     ||~/.config/unity3d/CompanyName/ProductName/Player.log||
 
 On Windows, ''EXECNAME_Data'' is a folder next to the executable with your game.
 
-Note that on Windows standalones the location of the log file can be changed (or logging suppressed.)  See the [[CommandLineArguments | command line]] page for further details.
+Note that on Windows and Linux standalones, the location of the log file can be changed (or logging suppressed.)  See the [[CommandLineArguments | command line]] page for further details.
 >><<
 
 !iOS!

@@ -49,7 +49,7 @@ As mentioned above, the editor and also built games can optionally be supplied w
 
 :``-projectPath &lt;pathname&gt;``:Open the project at the given path.
 
-:``-logFile &lt;pathname&gt;``:Specify where the Editor or Windows standalone log file will be written.
+:``-logFile &lt;pathname&gt;``:Specify where the Editor or Windows/Linux standalone log file will be written.
 
 :``-assetServerUpdate &lt;IP[[=:=]port] projectName username password [r &lt;revision&gt;]&gt;``:Force an update of the project in the [[AssetServer | Asset Server]] given by ''IP:port''. The port is optional and if not given it is assumed to be the standard one (10733). It is advisable to use this command in conjunction with the ''-projectPath'' argument to ensure you are working with the correct project. If no project name is given then the last project opened by Unity is used. If no project exists at the path given by ''-projectPath'' then one is created automatically.
 

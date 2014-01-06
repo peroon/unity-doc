@@ -4,6 +4,8 @@ When designing sprite graphics, it is convenient to work with a separate texture
 
 Unity handles the generation and use of sprite atlas textures behind the scenes so that the user needs to do no manual assignment. The atlas can optionally be packed on entering Play mode or during a build and the graphics for a sprite object will be obtained from the atlas once it is generated.
 
+Users are required to specify a Packing Tag in the Texture Importer to enable packing for Sprites of that Texture.
+
 !!Using the Sprite Packer
 
 If you open the Sprite Packer window (menu: ^^Window > Sprite Packer^^) and click the ^^Pack^^ button in the top-left corner, you will see the arrangement of the textures packed within the atlas.
