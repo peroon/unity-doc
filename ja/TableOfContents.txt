@@ -171,12 +171,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[PluginsForAndroid | Android-Plugins]]
 *** [[MobileCustomizeSplashScreen#Android | Android Splash Screen]]
 >><<
->>psvita<<
-** [[psvita-gettingstarted]]
->><<
->>ps4<<
-** [[ps4-gettingstarted]]
->><<
 ** [[nacl-gettingstarted]]
 ** [[flash-gettingstarted]]
 *** [[flash-setup]]
@@ -489,7 +483,6 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 **** [[class-Physics2DManager]]
 **** [[class-PlayerSettings40]]
 **** [[class-QualitySettings]]
-**** [[class-GraphicsSettings]]
 **** [[class-RenderSettings]]
 **** [[class-ScriptExecution]]
 **** [[class-TagManager]]
