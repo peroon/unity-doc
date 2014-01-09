@@ -1,3 +1,8 @@
+%block red%[@ 
+  Note, all 4.5 documentation should go in our new Markdown-based system!
+@]
+__See [[http://confluence.hq.unity3d.com/display/DEV/DocTools+Installation|this link]] for more info!__
+
 This is "the structure" of the docs. Simply a nested bulleted list; to make a page appear in the docs add it in appropriate place here. Please note that blank lines in the TOC structure are significant - make sure you do not add new blank lines in between TOC entries!
 
 ! Unity Manual TOC
