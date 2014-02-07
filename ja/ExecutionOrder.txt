@@ -3,14 +3,14 @@ Unity のスクリプティングには、スクリプトが実行される所�
 
 !! 最初のシーンロード
 これらの関数は、シーンが始まると呼び出されます (シーン内の各オブジェクトに対して一度)。
-* __Awake:__ この関数は常に Start 関数の前およびプレハブのインスタンス化直後に呼び出されます。 (If a GameObject is in-active during start up Awake is not called until it is made active, or a function in any script attached to it is called.)
-* __OnEnable:__ (オブジェクトがアクティブな場合にのみ呼び出されます): この関数は、オブジェクトを有効化した直後に呼び出されます。This happens when a MonoBehaviour is instance is created, such as when a level is loaded or a GameObject with the script component is instantiated. 
+* __Awake:__ この関数は常に Start 関数の前およびプレハブのインスタンス化直後に呼び出されます。 (もしゲームオブジェクトがスタートアップ時に無効である場合、 有効化されるかアタッチされたいずれかのスクリプトの関数が呼び出しされるまでは、Awake は呼び出しされません。)
+* __OnEnable:__ (オブジェクトがアクティブな場合にのみ呼び出されます): この関数は、オブジェクトを有効化した直後に呼び出されます。これは MonoBehaviour インスタンスが作成されたとき、例えばレベルロードあるいはスクリプトコンポーネントのアタッチされたゲームオブジェクトがインスタンス化されたときに発生します。 
 
 !! 最初のフレームのアップデート前
 * __Start:__ スクリプトのインスタンスが有効になると、最初のフレームのアップデート前に Start が呼び出されます。
 
 !! フレーム間
-* __OnApplicationPause:__ This is called at the end of the frame where the pause is detected, effectively between the normal frame updates. One extra frame will be issued after ``OnApplicationPause`` is called to allow the game to show graphics that indicate the paused state.
+* __OnApplicationPause:__ フレームの終わり、ポーズが検知されるとき、通常のフレーム間で、OnApplicationPause が呼び出しされます。``OnApplicationPause`` が呼び出しされてからひとつだけ追加のフレームが発行され、ポーズ状態を示すグラフィックスが表示されます。
 
 !! アップデート順
 ゲーム ロジック、インタラクション、アニメーション、カメラ位置などを追跡している場合、各種イベントを使用できます。  共通のパターンは、''Update()''関数内のほとんどのタスクを実行することですが、その他の関数も使用できます。
@@ -44,8 +44,7 @@ Unity のスクリプティングには、スクリプトが実行される所�
 
 !! オブジェクト破棄時
 
-* __OnDestroy:__ This function is called after all frame updates for the last frame of the object's existence (the object might be destroyed in response to Object.Destroy or at the closure of a scene).
-
+* __OnDestroy:__ オブジェクトの生存期間の最後のフレームのフレーム更新の後に OnDestroy が呼び出しされます。 (オブジェクトは Object.Destroy あるいはシーン終了時に破棄されます)
 
 !! 終了時
 これらの関数は、シーン内のすべてのアクティブなオブジェクトで呼び出されます。
