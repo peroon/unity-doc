@@ -42,7 +42,7 @@ iPhone 3G: 固定関数グラフィックス（高度なシェーダなし）、
 ** ロー シェーダ パフォーマンス、 iPad3と比較して: 
    Attach:Bar2.png
 * 256MBのメモリ容量
-* 3 メガピクセル カメラ with video capture capability
+* ビデオキャプチャ機能つきの 3 メガピクセル カメラ
 * GPS 対応
 * コンパスに対応
 
@@ -77,8 +77,8 @@ iPhone 3GS: シェーダ対応したハードウェア、 ピクセル ライテ
     Attach:Bar6.png
 * 512MBのメモリ容量
 * カメラ
-** 後面 5.0 メガピクセル 裏面照射型CMOS image sensor with 720p HD video at 30 fps and LED flash
-** 全面 0.3 メガピクセル（VGA） ジオタグつき、タップフォーカス機能、and 480p SD video at 30 fps
+** 後面 5.0 メガピクセル 裏面照射型CMOS イメージセンサー  720p HD video  30 fps および LED フラッシュ
+** 全面 0.3 メガピクセル（VGA） ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
 * GPS 対応
 * コンパスに対応
 
@@ -86,20 +86,20 @@ Attach:csrCar.jpg\\
 iPhone 4S は 新しい A5 チップにより、複雑なシェーダをスクリーン全体にレンダリングすることが出来ます。イメージエフェクトであっても実現可能です。しかし、シェーダ最適化は依然として決定的に重要。しかしゲームがデバイス性能を限界まで使用していない場合、PCと同様にこの世代のデバイスでは、スクリプティングおよびゲームプレイの最適化は時間の無駄になります。
 
 !!! iPhone 5
-* Screen: 1136x640 pixels, LCD at 326 ppi.
+* 画面: 1136x640 ピクセル, LCD at 326 ppi.
 * Apple A6
-** Dual-Core 1.3Ghz Apple-designed ARMv7s CPU
-** Triple-Core PowerVR SGX543MP3 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+** デュアルコア 1.3Ghz Apple デザイン ARMv7s CPU
+** トリプルコア PowerVR SGX543MP3 GPU
+*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar5.png
-*** Raw shader perfomance, compared to iPad3:
+*** ロー シェーダ パフォーマンス、 iPad3と比較して:
     Attach:Bar6.png
-* 1GB of memory
-* Cameras
-** Rear 8.0 MP infra-red cut-off filter, back-illuminated sensor available to take videos while shooting videos.
-** Front 0.3 MP (VGA) with geotagging, tap to focus, and 480p SD video at 30 fps
-* GPS support
-* Compass Support
+* 1GB メモリ
+* カメラ
+** 後面 8.0 メガピクセル 赤外線フィルタ, 裏面照射型センサーによりビデオ撮影時も利用可能
+** 前面 0.3 メガピクセル (VGA) ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
+* GPS 対応
+* コンパスに対応
 
 
 !!![[http://en.wikipedia.org/wiki/IPod_Touch#Specifications| iPod Touch モデル]] 
@@ -138,8 +138,8 @@ Attach:csrRacing.jpg\\
 !!! 第 4 世代 iPod Touch
 * iPhone 4 と同等レベル
 
-!!! iPod Touch 5th generation
-* Comparable to iPhone 4s
+!!! 第 5 世代 iPod Touch
+* iPhone 4S と同等レベル
 
 (:cellnr:)
 
@@ -196,13 +196,13 @@ iPad 3 では Reflective Water および フルスクリーンのイメージエ
 (:cellnr:)
 
 !!! iPad (4rd generation)
-* Screen: 2048x1536 pixels, LCD at 264 ppi, LED-backlit.
+* 画面: 2048x1536 ピクセル, LCD 264 ppi,バックライト
 * Apple A6X
-** Dual-Core 1.4Ghz ARM Cortex-A9 MPCore CPU
-** Quad-Core PowerVR SGX554MP4 GPU
-*** Shader perfomance at native resolution, compared to iPad2: 
+** デュアルコア 1.4Ghz ARM Cortex-A9 MPCore CPU
+** クワッドコア PowerVR SGX554MP4 GPU
+*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar11.png
-*** Raw shader perfomance, compared to iPad3: 
+*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar12.png
 
 
