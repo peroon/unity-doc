@@ -176,6 +176,15 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[PluginsForAndroid | Android-Plugins]]
 *** [[MobileCustomizeSplashScreen#Android | Android Splash Screen]]
 >><<
+>>psvita<<
+** [[psvita-gettingstarted]]
+*** [[PSVita Setup]]
+*** [[PSVita Project Structure]]
+*** [[PSVita Building & Running]]
+*** [[PSVita Profiling]]
+*** [[PSVita Project Settings]]
+*** [[PSVita Stripping Levels]]
+>><<
 ** [[nacl-gettingstarted]]
 ** [[flash-gettingstarted]]
 *** [[flash-setup]]
