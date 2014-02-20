@@ -20,7 +20,7 @@ Unity PS Vita provides a number of new scripting APIs to access PSN services, in
 * Limited  MSAA Support
 ** Unity for PS Vita supports hardware MSAA with 2 or 4 samples for the main render target and render target textures.
 * Video formats
-** Unity supports only MPEG4/AVC and DivX formats specially packaged into PAM or AVI containers. See the documentation on https://psvita.scedev.net/ for details on how to package video
+** Unity supports the MPEG-4 AVC/H.264 standard format. For more information see the documentation at https://psvita.scedev.net/docs/vita-en,Encoding-Users_Guide-vita,Overview/1/
 
 !!!Further reading:
 * [[PSVita Setup]]
@@ -29,4 +29,3 @@ Unity PS Vita provides a number of new scripting APIs to access PSN services, in
 * [[PSVita Profiling]]
 * [[PSVita Project Settings]]
 * [[PSVita Stripping Levels]]
-

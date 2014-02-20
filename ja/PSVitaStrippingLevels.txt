@@ -1,6 +1,6 @@
-! PSVita: Stipping Levels
+! PSVita: Stripping Levels
 
-Setting a Stipping Level in the Player Settings can potentially reduce your game’s memory footprint quite considerably. 
+Setting a Stripping Level in the Player Settings can potentially reduce your game's memory footprint quite considerably. 
 
 The available options are:
 * Disabled (default)
