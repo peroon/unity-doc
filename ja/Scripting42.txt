@@ -1,9 +1,9 @@
-!Scripting
+!スクリプティング / Scripting
 
-Scripting is an essential ingredient in all games. Even the simplest game will need scripts to respond to input from the player and arrange for events in the gameplay to happen when they should. Beyond that, scripts can be used to create graphical effects, control the physical behaviour of objects or even implement a custom AI system for characters in the game.
+スクリプティングはゲームの大事な要素です。簡単なゲームでもスクリプトはプレイヤーの入力操作やゲームのイベント発生に必要です。さらにスクリプトによりゲームでのグラフィック エフェクト、オブジェクトの物理挙動、キャラクターの AI システムの実装にも必要です。
 
 Attach:ScriptLandingPage.png
 
-Scripting is a skill that takes some time and effort to learn; the intention of this section is not to teach you how to write script code from scratch but rather to explain the main concepts that apply to scripting in Unity.
+スクリプティングは学習するのに時間と労力が必要です。このセクションではゼロからスクリプトの書き方を教えるのでなく Unity のスクリプティングに必要な基本的な概念を説明します。
 
 (:tocportion:)
