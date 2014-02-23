@@ -1,46 +1,48 @@
-!Scene View
+!シーンビュー / Scene View
 
 Attach:Editor-Scene43.png
 
+$$Scene View$$ はいわばインタラクティブなサンドボックスです。 シーンビューで環境要素、プレイヤー、カメラ、敵およびその他の $$GameObjects$$ を選択したり配置するのに使用します。 シーンビューで各オブジェクトを操作したり動かしたりすることは、Unityの機能の中でも特に重要ですから、素早くできることはとても大切です。そのためにUnityではよく使うオペレーションのキー操作を用意しています。
 
-The $$Scene View$$ is your interactive sandbox. You will use the Scene View to select and position environments, the player, the camera, enemies, and all other $$GameObjects$$. Maneuvering and manipulating objects within the Scene View are some of the most important functions in Unity, so it's important to be able to do them quickly. To this end, Unity provides keystrokes for the most common operations.
 
+!!シーンビューのナビゲーション
+詳細は [[Scene View Navigation43|シーンビューのナビゲーション]] を参照していただくことにして、ここではシーンビューを操作するにあたっての要点をまとめておきましょう。
 
-!!Scene View Navigation
-See [[Scene View Navigation43|Scene View Navigation]] for full details on navigating the scene view. Here's a brief overview of the essentials:
+* 右マウスボタンを押し続けて、 $$Flythrough$$ モードに移行しましょう。 フライスルーモードでは マウスと ^^WASD^^ キーで、1人称ビューで操作できるようになります（^^Q^^ と ^^E^^ キーで上下します）。
+* ゲームオブジェクトを選択して ^^F^^ キーを押すと、選択したオブジェクトのピボットポイントをシーンビューの中央に移動します。
+* 方向キーで、XZ 面を移動します。
+* ^^Alt^^ キーを押しながらクリック＆ドラッグすると、ピボットポイントを中心にカメラが旋回します
+* ^^Alt^^ キーを押したままミドルクリック＆ドラッグで、シーンビューを表示するカメラが移動できます
+* ^^Alt^^ キーを押しながら右クリック＆ドラッグすると、シーンビューをズームできます（マウスホイールでのスクロール操作と同様です）
 
-* Hold the right mouse button to enter $$Flythrough$$ mode.  This turns your mouse and ^^WASD^^ keys (plus ^^Q^^ and ^^E^^ for up and down) into quick first-person view navigation.
-* Select any GameObject and press the ^^F^^ key.  This will center the Scene View and pivot point on the selection.
-* Use the arrow keys to move around on the X/Z plane.
-* Hold ^^Alt^^ and click-drag to orbit the camera around the current pivot point.
-* Hold ^^Alt^^ and middle click-drag to drag the Scene View camera around.
-* Hold ^^Alt^^ and right click-drag to zoom the Scene View. This is the same as scrolling with your mouse wheel.
+1ボタンマウスを使用している場合には、 $$Hand Tool$$ （ショートカット: ^^Q^^ ）も便利です。ハンドツールを選択してクリック＆ドラッグでカメラを移動します
+Attach:UI-ViewTool.png クリック＆ドラッグで、カメラを旋回します。 \\
+Attach:Editor-EyeTool.png ^^Alt^^ キーを押しながらクリック＆ドラッグで、現在のピボットポイント周りでカメラを回転します。 \\
+Attach:Editor-ZoomTool.png ^^Control^^ キー（Macでは ^^Command^^ キー）を押したままマウスボタンクリック＆ドラッグで、カメラをズームします。
 
-You might also find use in the $$Hand Tool$$ (shortcut: ^^Q^^), especially if you are using a one-button mouse. With the Hand tool is selected,
-Attach:UI-ViewTool.png Click-drag to drag the camera around. \\
-Attach:Editor-EyeTool.png Hold ^^Alt^^ and click-drag to orbit the camera around the current pivot point. \\
-Attach:Editor-ZoomTool.png Hold ^^Control^^ (^^Command^^ on Mac) and click-drag to zoom the camera.
-
-In the upper-right corner of the Scene View is the $$Scene Gizmo$$.  This displays the Scene Camera's current orientation, and allows you to quickly modify the viewing angle.
+シーンビューの右上の角にあるのが $$Scene Gizmo$$ です。これはシーン内のカメラの向きを示しています。これを使って素早くカメラの視角を変えることができます。
 
 Attach:SceneGizmo40.png
 
-Each of the coloured "arms" of the gizmo represents a geometric axis. You can click on any of the arms to set the camera to an orthographic (i.e., perspective-free) view looking along the corresponding axis. You can click on the text underneath the gizmo to switch between the normal perspective view and an isometric view. While in isometric mode, you can right-click drag to orbit, and Alt + middle-click drag to pan.
-
-Note that the Scene Gizmo will be hidden when the view is in 2D mode, since the view is always directly at the XY plane.
+ギズモの色がついている各々の"アーム部分"は、座標軸を表しています。これらの腕のどれかをクリックすることで、対応する軸沿いの正射影ビュー（つまり、パースのかかっていないビュー）にカメラを切り替えることができます。またギズモの下に表示されている文字をクリックすると、通常のパースビューと等角ビューを切り替えることができます。等角ビューモード中では、マウス右ボタンクリック＆ドラッグで回転、マウス左ボタンクリック＆ドラッグでパンできます。
 
 
-!!Positioning GameObjects
-See [[Positioning GameObjects43]] for full details on positioning GameObjects in the scene. Here's a brief overview of the essentials:
+2D モードの場合は、常にビューが XY 面を向いているため、シーンギズモが非表示になるので注意して下さい。
 
-When building your games, you'll place lots of different objects in your game world.  To do this use the Transform Tools in the Toolbar to Translate, Rotate, and Scale individual GameObjects.  Each has a corresponding Gizmo that appears around the selected GameObject in the Scene View.  You can use the mouse and manipulate any Gizmo axis to alter the $$Transform$$ Component of the GameObject, or you can type values directly into the number fields of the Transform Component in the Inspector.
+
+!!ゲームオブジェクトの位置調整
+[[Positioning GameObjects|ゲームオブジェクトの位置調整]] を見ると、シーン中におけるゲームオブジェクトの位置調整の仕方について詳細がわかりますが、ここでは要点をまとめてご紹介します。
+
+
+ゲームを構築していくにあたり、ゲーム世界内にたくさんのオブジェクトを配置していくことになるでしょう。ツールバーにあるトランスフォームツールを使用し、各オブジェクトを Translate/移動 (W)、Rotate/回転 (E)、Scale/拡大縮小 (R) して使用します。各ツールは専用のギズモがあり、シーンビュー中で選択したゲームオブジェクトの周りに表示されます。それぞれに対応するギズモはシーンビューの中に表示されますので、マウスを使用してギズモの軸線を操作してゲームオブジェクトのトランスフォームコンポーネントを調整するか、直接インスペクタービューのトランスフォームコンポーネントの数値フィールドに入力するかしてください。
 
 Attach:TransformGizmo35.png
 (:comment Source psd is TransformGizmo35.psd :)
 
 
-!!Scene View Control Bar
+!!シーンビューコントロールバー
 
 Attach:SceneViewControlBar43.png
 
-The control bar lets you choose various options for the scene view. You can switch on or off the audio, lighting and 2D mode and also control how objects, image effects and gizmos will be displayed. See the [[View Modes43]] section for further details.
+シーンビューコントロールバーを使って、さまざまなビューモードでシーンを見ることができます。サウンド、ライティング、 2D モード、およびオブジェクト、イメージエフェクト、およびギズモの表示方法を制御できます。
+詳細は [[View Modes43|ビューモード]] で確認してください。
