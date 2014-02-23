@@ -1,5 +1,5 @@
-! Using the Scene View
+! シーンビューを使う / Using the Scene View
 
-The $$Scene View$$ is your interactive sandbox. You will use the Scene View to select and position environments, the player, the camera, enemies, and all other $$GameObjects$$. Maneuvering and manipulating objects within the Scene View are some of the most important functions in Unity, so it's important to be able to do them quickly.
+$$Scene View$$ はいわばインタラクティブなサンドボックスです。 シーンビューで環境要素、プレイヤー、カメラ、敵およびその他の $$GameObjects$$ を選択したり配置するのに使用します。 シーンビューで各オブジェクトを操作したり動かしたりすることは、Unityの機能の中でも特に重要ですから、素早くできることはとても大切です。
 
 (:tocportion:)

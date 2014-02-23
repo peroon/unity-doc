@@ -1,29 +1,30 @@
-!Preset Libraries
+!プリセット ライブラリ
 
-Preset Libraries contain user created data and persist between sessions.  They are integrated into the Color Picker, Gradient Editor and Curve Editors.
-*A preset is e.g a color, gradient or an animation curve that is saved by the user.
-*A preset library is a collection of presets saved into one file.
-*Preset libraries contain personal data or project data. They can be saved either in the user preferences folder or in a 'Editor' folder in the Assets folder. Project preset libraries can then be added to revision control for easy sharing between users on a project and added to Asset Store packages.
+プリセット ライブラリにはユーザが作成したデータがセッション間で永続するデータを格納します。カラー ピッカー、グラデーション エディタおよびカーブ エディタに統合されてます。
+
+*プリセットはユーザによって保存された、例えばカラー、グラデーションまたはアニメーションカーブです。
+*プリセット ライブラリとは一つのファイルに保存されたプリセットの一覧です。
+*プリセット ライブラリにはパーソナル データまたはプロジェクト データを含みます。保存場所は User Preferences フォルダ、または Assets フォルダ の中の Editor フォルダ 配下です。プロジェクトのプリセット ライブラリをリビジョン コントロールに追加して、プロジェクトでユーザ間で共有したりアセットストア パッケージに追加できます。
 
 Attach:PresetLibrary.png
 
-!!How to create a color preset:
-#Click on a color field. E.g select Main Camera in the Hierarchy, then click on Background Color
-#Adjust a color to your liking
-#At the bottom you will find the Presets section
-#Simply click the button to add the current color to the current preset library
+!!カラー プリセットの作成方法
+#カラー フィールドをクリック 例．階層ビューからメインカメラを選択し、 Background Color をクリック
+#好みの色に調整する
+#一番下にある Presets をみつける
+#ボタンをクリックして現在の色をプリセット ライブラリに追加
 
-*The context menu (the icon with the three lines)
-**You can switch view mode between List Mode and Grid Mode in the context menu (the three lines icon)
-**Select between available preset libraries
-**Create new library
-***In the Create New Library popup you can select whether to create a preset library in the Preferences folder or the Project folder
-**Show current library in the OS file explorer/finder
-*Presets can be reordered by dragging
-*Presets can be deleted by Alt + Left mouse button or by the right click menu
-*Preset can be renamed from the right  click menu (note names are only shown in List Mode)
+*コンテキスト メニュー（三本線のアイコン）
+**コンテキスト メニューで List モードと Grid モードを切替できる（三本線のアイコン）
+**利用可能なプリセットライブラリを選択
+**新規のライブラリを作成
+***Create New Library ポップアップ ウィンドウから Preferences folder または Project folder のどちらに作成するか選択
+**現在のライブラリを OS のファイルエクスプローラ / ファインダー から表示
+*プリセットの順序を変更するにはドラッグ
+*プリセットの削除は Alt + マウスクリックまたは右クリックの選択メニューから
+*プリセットの名前の変更は右クリックの選択メニューから（List モードでしか表示されないため注意）
 
 Attach:PresetLibraryList.png
 
-Selecting a preset library in the project browser will show its contents in the inspector. From here "Edit.." can be clicked to modify.
+プロジェクト ブラウザでプリセット ライブラリを選択することでインスペクタ上で内容が表示される。"Edit.." をクリックして修正できます
 
