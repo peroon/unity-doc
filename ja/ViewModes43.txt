@@ -1,70 +1,75 @@
-!Scene View Control Bar
+!シーンビュー コントロール バー / Scene View Control Bar
 
-The Scene View control bar lets you choose various options for viewing the scene and also control whether lighting and audio are enabled. These controls only affect the scene view during development and have no effect on the built game.
+シーンビューコントロールバーを使うことで、シーンを見る際の様々なオプションを選んだり、ライティングやオーディオを有効にするかどうかコントロールすることができます。 これらのコントロールは、開発中のシーンビューにのみ影響するもので、ゲームをビルドする際には影響しません。
 
 Attach:SceneViewControlBar43.png
 
 
-!! Draw Mode
+!! 描画モード
 
-The first drop-down menu selects which $$Draw Mode$$ will be used to depict the scene. The available options are:
+最初のドロップダウンメニューは、シーンを描画するのに使われる $$Draw Mode$$ を選択します。利用可能なオプションは：
 
-* __Textured__: show surfaces with their textures visible.
-* __Wireframe__: draw meshes with a wireframe representation.
-* __Textured Wire__: show meshes textured and with wireframes overlaid.
-* __Render Paths__: show the [[RenderingPaths | rendering path]] for each object using a color code: Green indicates [[RenderTech-DeferredLighting | deferred lighting]], yellow indicates [[RenderTech-ForwardRendering | forward rendering]] and red indicates [[RenderTech-VertexLit | vertex lit]].
-* __Lightmap Resolution__: overlay a checkered grid on the scene to show the resolution of the lightmaps.
-
-
-!! Render Mode
-
-The next drop-down along selects which of four $$Render Modes$$ will be used to render the scene:-
-
-* __RGB__: render the scene with objects normally colored.
-* __Alpha__: render colors with alpha.
-* __Overdraw__: render objects as transparent "silhouettes". The transparent colors accumulate, making it easy to spot places where one object is drawn over another. 
-* __Mipmaps:__ show ideal texture sizes using a color code: red indicates that the texture is larger than necessary (at the current distance and resolution); blue indicates that the texture could be larger. Naturally, ideal texture sizes depend on the resolution at which the game will run and how close the camera can get to particular surfaces.
+* __Textured__: テクスチャを有効にしてサーフェイスを表示します。
+* __Wireframe__: ワイヤフレーム表示でメッシュを描画します。
+* __Tex-Wire__: ワイヤーフレームを上書きして、テクスチャ付きメッシュを表示します。
+* __Render Paths__: 各オブジェクトの [[RenderingPaths | rendering path]] をカラーコードを使って表示します: 緑は [[RenderTech-DeferredLighting | deferred lighting]] 、黄は [[RenderTech-ForwardRendering | forward rendering]] 、赤は [[RenderTech-VertexLit | vertex lit]] を示しています。
+* __Lightmap Resolution__: ライトマップの解像度を表示するために、シーンにチェッカー付きグリッドをオーバーレイします。
 
 
-!!2D, Lighting and Audio Switches
+!! レンダリング モード
 
-To the right of the render mode menu are three buttons that switch certain scene view options on or off:-
+その次に続くドロップダウンメニューは、シーンをレンダリングするのに使われる４つの $$Render Modes$$ のどれかを選択します。
 
-*__2D__: switches between 2D and 3D view for the scene.
-*__Lighting__: turns scene view lighting (lights, object shading, etc) on or off.
-*__Audio__: turns scene view audio effects on or off.
+* __RGB__: 通常に彩色されたオブジェクトでシーンをレンダリングします。
+* __Alpha__: カラーをアルファ値でレンダリングします。
+* __Overdraw__: オブジェクトを透明な "シルエット" でレンダリングします。 透明カラーが重なることで、あるオブジェクトの上に別のオブジェクトが重ね描きされている部分を見分けやすくします。
+* __Mipmaps:__ カラーコードを使って最適なサイズのテクスチャを示します: 赤は、テクスチャが（現在の距離および解像度を考慮すると）必要とされるサイズよりも大きいことを示します; 青は、テクスチャが大きい可能性があることを示しています。 当然のことながら、理想的なテクスチャサイズは、ゲームが実際に走る解像度と、特定のサーフェイスに対してどれだけ近くまでカメラが寄ることになるかに依存して決まります。
 
-!!Effects Button and Menu
 
-The menu (activated by the small arrow to the right of the word "Effects") has options to enable or disable rendering effects in the scene view.
 
-*__Skybox__: a skybox texture rendered in the scene's background
-*__Fog__: gradual fading of the view to a flat color with distance from the camera.
-*__Flares__: lens flares on lights.
-*__Animated Materials__: should animated materials show the animation?
+!!2D, ライティング および オーディオ の切替
 
-The Effects button itself acts as a switch that enables or disables all the effects at once.
+レンダリング モード メニューの右のほうには、３つのボタンがあって、シーンビュー のオプションのオンオフを切替ます：
 
-!!Gizmos Menu
+*__2D__: シーンを 2D および 3D ビュー間で切り替える
+*__Lighting__: シーンビュー のライティングのオンオフを切り替える（ライティング、オブジェクトのシェーディング、等）
+*__Audio__: シーンのオーディオ エフェクトのオンオフを切り替える
 
-''Gizmos'' are graphics added to the scene (either by Unity itself or from your own scripts) that help with visualisation and identification of items in the game world. For example, you can add icons to help identify your game objects and use simple wireframe graphics to show otherwise invisible paths and positioning elements. See the Script Reference page for the [[ScriptRef:MonoBehaviour.OnDrawGizmos.html|OnDrawGizmos]] function for further information about implementing custom gizmos in your scripts.
+!!エフェクト ボタンおよびメニュー
 
-Clicking the Gizmos popup will show a menu with a number of options:-
+メニュー（Effects の右にある小さな矢印により有効化）からシーンビューでのレンダリング エフェクトを有効化または無効化できます。
+
+*__Skybox__: シーン背景にレンダリングされる Skybox テクスチャ
+*__Fog__: カメラからの距離に応じてビューを平坦な色に段階的にフェードする
+*__Flares__: ライトのレンズフレア
+*__Animated Materials__: アニメーション付きのマテリアルがアニメーションすべきか
+
+Effects ボタン自身ですべてのエフェクトを同時に有効化または無効化するか切り替え出来ます。
+
+!!Gizmos メニュー
+
+''Gizmos'' はシーンにグラフィックを追加（Unity あるいはカスタムのスクリプトから）することでゲーム世界のアイテムの可視化および識別を容易にします。例えば、アイコンを追加してゲームオブジェクトを識別させて、簡易なワイヤーフレームのグラフィックを使用して、通常は透明な経路および配置要素を表示できます。スクリプトからカスタム ギズモを実装する方法の詳細はスクリプトリファレンスの [[ScriptRef:MonoBehaviour.OnDrawGizmos.html|OnDrawGizmos] を参照して下さい。
+
+Gizmo ポップアップ
+Gizmo ポップアップをクリックするとオプションつきのメニューが表示されます：
+
 
 Attach:GizmosMenu.png
 
-The ''3D Gizmos'' checkbox determines whether gizmos are shown in true 3D (with correct obscuration and perspective) or as a simple overlay on top of other scene graphics. The slider to its right adjusts the scale of gizmo icons relative to other objects. The ''Show Grid'' checkbox below switches the standard scene measurement grid on and off.
+''3D Gizmos'' チェックボックスによりギズモが正しく 3D で表示するか（正しい遮光およびパース）、あるいは他のシーン グラフィックス の上に簡易にオーバーレイするか決定します。右にあるスライダーで他のオブジェクトと相対的なスケールでギズモ アイコンの大きさを調整します。スイッチのしたの ''Show Grid'' チェックボックスにより標準のグリッド線のオンオフを切り替えます。
 
-Beneath these options is a table of component names with ''Icon'' and ''Gizmo'' columns to the right. The list is subdivided into user scripts and built-in components and will also maintain a section of recently changed items as you make modifications.
 
-The ''Icon'' column lets you select the gizmo icon displayed for particular component types. For built-in components, the only options are to have no icon (as with Colliders, where only a wireframe gizmo is shown) or simply to switch the standard icon on and off (as with Cameras, Lights and Audio Sources, among others). For user scripts, clicking the icon column will bring up a menu to select the desired icon:-
+このオプションを選択するとコンポーネントの一覧が右端に ''Icon'' および ''Gizmo'' カラム付きで表示されます。この一覧はユーザ スクリプトおよびビルトイン コンポーネントに分けることが出来て、修正を加えると最近に変更したアイテムを保持します。
+
+''Icon'' カラムにより特定のコンポーネントの種類ごとのギズモ アイコンを表示されます。ビルトイン コンポーネントでは、アイコンなしにするオプションのみであり（コライダーも同様でワイヤーフレーム ギズモのみ）、あるいは標準アイコンのオンオフを切り替えます（カメラ、ライト、およびオーディオ ソース、等と同様）。ユーザスクリプトでは、アイコン カラムをクリックすることで使用したいアイコンを選択するメニューが表示されます。
+
 
 Attach:GizmoIconMenu.png
 
-This lets you select from a variety of simple standard icon shapes in different colors that you can use to identify particular script types. The ''Other'' button will bring up a texture selector from which you can choose any texture you like to use as the icon for your script.
+シンプルな標準アイコン形状をさまざまな色で選択できて、特定のスクリプトの種類の識別に使用できます。''Other'' ボタンによりテクスチャ選択ツールを表示してスクリプトで使用したいテクスチャをアイコンとして選択できます。
 
-The ''Gizmo'' column in the table contains a checkbox that lets you choose whether gizmo graphics will be drawn for a particular Component type. For example, Colliders have a predefined wireframe gizmo to show their shape while user scripts can draw custom gizmos appropriate to their purpose; these gizmos can be turned on or off by clicking in this column.
+一覧の ''Gizmo'' カラムにはギズモのグラフィックが特定のコンポーネントの種類で描画するか選択できるチェックボックスがあります。例えば、コライダーには事前定義されたワイヤーフレームギズモで形状が表示され、ユーザスクリプトでは目的に応じたカスタムのギズモに出来ます。これらのギズモのオンオフを切り替えるのには、このカラムをクリックします。
 
-!!Search Box
+!!検索ボックス
 
-The rightmost item on the control bar is a search box that lets you filter items in the scene view by their names and/or types (you can select which with the small menu at the left of the search box). The set of items that match the search filter will also be shown in the Hierarchy view which, by default, is located to the left of the Scene view.
+コントロールバーの最も右端にあるのがシーンビューのアイテムを名前や種類（検索ボックスの左にある小さなメニューで選択）によってフィルタするのに使用できる検索ボックスです。フィルタ条件に合致したアイテム一覧は階層ビューでも表示され、デフォルトではシーンビューの左に配置されます。
