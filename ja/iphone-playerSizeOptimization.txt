@@ -52,7 +52,7 @@ __注意:__ どのクラスが誤ってアプリケーションに必要とさ�
 # iOSストリッピングレベルを $$Use micro mscorlib$$ に設定します。
 # スクリプト コール最適化を $$Fast but no exceptions$$ に設定します。
 # コードの中でSystem.dll または System.Xml.dll に存在するものは一切使用しないで下さい。これらのライブラリはmicro mscorlibと互換性が __ありません__ 。
-# 不要なコードを取り除
+# 不要なコード依存性を取り除く
 # API Compatibility Level に $$.Net 2.0 subset$$ をセットします。.Net 2.0 subsetは他のライブラリと限られた互換性しかないことに留意下さい。
 # Target Platform を $$armv6 (OpenGL ES1.1)$$ にセットします。
 # JS配列は使用しないで下さい。
