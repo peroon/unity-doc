@@ -1,38 +1,38 @@
-!Sprite Editor
+!スプライト エディタ / Sprite Editor
 
-Sometimes a sprite texture will contain just a single graphic element but it is often more convenient to combine several related graphics together into a single image. For example, the image could contain contain component parts of a single character, as with a car whose wheels move independently of the body. Unity makes it easy to extract elements from an composite image by providing a $$Sprite Editor$$ for the purpose.
+スプライト テクスチャはひとつのグラフィック要素しか含まない場合もありますが、複数のグラフィックをひとつの画像に含めたほうが一般に便利です。例えば画像にはひとつのキャラクターの様々なコンポーネントを含めたり、車とタイヤのパーツをボディと別に含むことが出来ます。Unity では $$Sprite Editor$$ を使用して複合した画像から要素を取り出すことができます。
 
 
-!!Opening the Sprite Editor
+!!スプライト エディタを開く
 
-To use the Sprite Editor, you will first need to ensure that your sprite texture has the Sprite Mode set to ``Manual`` in the texture importer (and also remember to click the ^^Apply^^ button after the change). When you do this, a button to open the Sprite Editor will appear in the inspector. You can also open the editor by selecting a sprite texture from the Project panel and selecting ^^Window > Sprite Editor^^ from the menu. The window will look something like the following:-
+スプライト エディタを使用するにはまずスプライト テクスチャのテクスチャ インポータで Sprite Mode を ``Multiple`` に設定します（変更した後に必ず ^^Apply^^ ボタンをクリック）。その後スプライト エディタを開くボタンがインスペクタで表示されます。エディタを開く別の方法はプロジェクト パネルのメニューから ^^Window > Sprite Editor^^ と選択することです。ウィンドウは次のように表示されます：
 
 Attach:SpriteEditor.png
 
-Along with the composite image, you will see a number of controls in the bar at the top of the window. The slider at the top right controls the zoom, while the color bar button to its left chooses whether you view the image itself or its alpha levels. The most important control is the ^^Slice^^ menu at the top left, which gives you options for separating the elements of the image automatically. Finally, the ^^Apply^^ and ^^Revert^^ buttons allow you to keep or discard any changes you have made.
+複合した画像とともにウィンドウ上部のバーにいくつかのコントロールがあります。右上のスライダーでズームして、すぐ左のカラーバーのボタンで画像とアルファーの表示を切り替えます。最も重要なのは左上の Slice メニューで、画像を自動的に分割するオプションを指定します。最後に ^^Apply^^ と ^^Revert^^ ボタンで変更を保持するかやめることが出来ます。
 
 
-!!Using the Editor
+!!エディタの使用
 
-The most direct way to use the editor is to identify the elements manually. If you click on the image, you will see a rectangular selection area appear with handles in the corners. You can drag the handles or the edges of the rectangle to resize it around a specific element. Having isolated an element, you can add another by dragging a new rectangle in a separate part of the image. You'll notice that when you have a rectangle selected, a panel appears in the bottom left of the window:-
+手動で要素を識別するのが最も直接エディタを使用する方法です。画像をクリックすると隅にハンドルが表示された矩形領域が表示されます。ハンドルまたは矩形の端をドラッグして特定の要素のまわりにサイズ調整できます。要素を分割したら、別のものを追加するには画像の別の部分の矩形をドラッグします。矩形を選択すると、ウィンドウの左下にパネルが表示されます：
 
 Attach:SpritePanel.png
 
-The controls in the panel let you choose a name for the sprite graphic and set the position and size of the rectangle by its coordinates. The ^^Trim^^ button next to the position settings will resize the rectangle so that it fits tightly around the edge of the graphic based on transparency. There are also settings for the sprite's pivot, which Unity uses as the coordinate origin and main "anchor point" of the graphic. You can choose from a number of default rectangle-relative positions (eg, Center, Top Right, etc) or use custom coordinates.
+パネルのコントロールでスプライト画像の名前を選択して座標位置により矩形の位置およびサイズを指定します。位置情報の隣にある ^^Trim^^ ボタンでグラフィックの透明部分の端に合致するように矩形をサイズ変更します。スプライトのピボット情報は Unity がグラフィックの原点および "アンカー地点" として使用します。デフォルトの位置（例．中央、右上、等）から選択するか Custom としてカスタム座標を使用できます。
 
 
-!!Automatic slicing
+!!自動スライス
 
-Isolating the sprite rectangles manually works well but in many cases, Unity can save you work by detecting the graphic elements and extracting them for you automatically. If you click on the ^^Slice^^ menu in the control bar, you will see this panel:-
+矩形スプライトの分割は手動でも十分ですが、Unity がグラフィック要素の自動検知と抽出で作業の手間が省力化できます。コントロールバーの ^^Slice^^ メニューをクリックすると次のパネルを表示します：
 
 Attach:SpriteSlicePanelAuto.png
 
-With the slicing type set to ^^Automatic^^, the editor will attempt to guess the boundaries of sprite elements by transparency. You can set a minimum size for any rectangle to prevent tiny details ending up in their own separate sprites. You can also set a default pivot for each identified sprite. The ^^Method^^ menu lets you choose how to deal with existing selections in the window. The ^^Delete existing^^ option will simply replace whatever is already selected, ^^Smart^^ will attempt to create new rectangles while retaining or adjusting existing ones, and ^^Safe^^ will add new rectangles without changing anything already in place.
+Type を ^^Automatic^^ にすると、透明部分の端をエディタが自動検知を試みます。矩形の最小サイズを指定することで小さな部分として検知、分割されることを避けられます。各々の識別されたスプライトでデフォルトのピボットを指定できます。^^Method^^ によりウィンドウ上で選択済みの部分の扱いを決定します。 ^^Delete existing^^ とすると選択済みの部分をすべて置き換えます。^^Smart^^ とすると既存のものを保持または調整しつつ新規の矩形を作成して、^^Safe^^ とすると既存のものは一切変更せずに新規の矩形を作成します。
 
-A ^^Grid^^ option is also available for the slicing type, which is very useful when the sprites have already been laid out in a regular pattern during creation:-
+Type を ^^Grid^^ にすると、スプライトがあらかじめ均等なパターンでレイアウトされた場合に便利なオプションです。
 
 Attach:SpriteSlicePanelGrid.png
 
-The ^^Pixel Size^^ values determine the height and width of the tiles in pixels.
+^^Pixel Size^^ の値によりタイルの幅と高さをピクセル単位で指定します。
 
-Note that after either of the two automatic slicing methods has been used, the generated rectangles can still be edited manually. You can let Unity handle the rough definition of the sprite boundaries and pivots and then do any necessary fine tuning yourself.
+Type を 2 つのいずれとした場合も、生成された矩形を手動変更できます。Unity にスプライトの境界をおおよそハンドリングさせて、後から自分で細かく調整できます。
