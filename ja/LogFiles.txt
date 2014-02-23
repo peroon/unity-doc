@@ -31,11 +31,12 @@ Mac 上では、全てのログは共通して標準的な ^^Console.app^^ ユ�
 
 !! プレイヤー
 ||``Mac OS X``      ||~/Library/Logs/Unity/Player.log||
-||``Windows `` *    ||''EXECNAME_Data''\output_log.txt||
+||``Windows ``      ||''EXECNAME_Data''\output_log.txt||
+||``Linux``     ||~/.config/unity3d/CompanyName/ProductName/Player.log||
 
-(*) ''EXECNAME_Data'' はゲームの実行ファイルの隣にあるフォルダです。
+Windows では ''EXECNAME_Data'' はゲームの実行ファイルの隣にあるフォルダです。
 
-Windowsスタンドアローンではログファイルの場所は変更が可能である（またはログ出力を止めることが出来る）ことに留意して下さい。詳細は [[CommandLineArguments | command line]] を参照下さい。
+Windows および Linux スタンドアローンではログファイルの場所は変更が可能である（またはログ出力を止めることが出来る）ことに留意して下さい。詳細は [[CommandLineArguments | command line]] を参照下さい。
 >><<
 
 !iOS!
