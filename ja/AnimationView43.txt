@@ -1,5 +1,5 @@
-!Using the Animation View
+!アニメーション ビューの使用 / Using the Animation View
 
-The $$Animation View$$ lets you preview and edit $$Animation Clips$$ for animated Game Objects in Unity. This section gives full details of how to work with the view in your project.
+$$Animation View$$ により Unity でアニメーション付きゲームオブジェクトの $$Animation Clips$$ のプレビューおよび編集ができます。このセクションではプロジェクトのビューでの作業の詳細を取り扱います。
 
 (:tocportion:)
