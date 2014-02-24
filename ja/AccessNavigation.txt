@@ -1,36 +1,37 @@
-! Asset Store Access and Navigation
+! アセットストアへのアクセスと操作
 
-You can open the Asset Store window by selecting ^^Window->AssetStore^^ from the main menu. On your first visit, you will be prompted to create a free user account which you will use to access the Store subsequently.
+アセットストア ウィンドウを開くにはメインメニューから ^^Window->AssetStore^^ を選択します。最初に訪れるとその後にアクセスするユーザアカウントを無料で作成するようにプロンプト表示されます。
 
 Attach:AssetStore-floating.png\\
-''The Asset Store front page.''
+''アセットストア トップページ''
 
-The Store provides a browser-like interface which allows you to navigate either by free text search or by browsing packages and categories. To the left of the main tool bar are the familiar browsing buttons for navigating through the history of viewed items:- 
+アセットストアにはブラウザ風のインタフェースにより自由にワード検索かパッケージやカテゴリでブラウズできます。メインのツールバーの左には参照履歴など見慣れたブラウザ ボタンが並んでます。
 
 Attach:AssetStore-Navigation.png
 
-To the right of these are buttons for viewing the Download Manager and for viewing the current contents of your shopping cart.
+この右側にダウンロードマネージャおよびショッピングカートの現在のコンテンツを表示するボタンがあります。
 
 Attach:AssetStore-ToolButtons.png
 
-The Download Manager allows you to view the packages you have already bought and also to find and install any updates. Additionally, the standard packages supplied with Unity can be viewed and added to your project with the same interface.
+ダウンロード マネージャにより購入済みのパッケージを表示し更新内容を見つけてインストールできます。さらに Unity 標準パッケージも同様に表示してプロジェクトに同じ方法で追加できます。
 
 Attach:AssetStore-download.png\\
-''The Download Manager.''
+''ダウンロード マネージャ''
 
 
-!!Location of Downloaded Asset Files
+!!ダウンロード済みのアセットファイルの場所
 
-You will rarely, if ever, need to access the files downloaded from the Asset Store directly. However, if you do need to, you can find them in
+アセットストアからダウンロードされたファイルを直接アクセスすることは極めて稀です。万一、必要な場合は次の場所にあります：
+
 
 [@  
 ~/Library/Unity/Asset Store
 @]
 
-...on the Mac and in
+...が Mac 上の保存場所であり、
 
 [@
   C:\Users\accountName\AppData\Roaming\Unity\Asset Store
 @]
 
-...on Windows. These folders contain subfolders that correspond to particular Asset Store vendors - the actual asset files are contained in the appropriate subfolders.
+...が Windows 上の保存場所です。これらのフォルダには特定のアセット ストア 販売者に対応するサブフォルダを含みます。実際のアセットファイルはサブフォルダにあります。
