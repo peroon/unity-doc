@@ -1,7 +1,6 @@
-!Creating and Destroying GameObjects
+!ゲームオブジェクトの作成および削除 / Creating and Destroying GameObjects
 
-Some games keep a constant number of objects in the scene, but it is very common for characters, treasures and other object to be created and removed during gameplay. In Unity, a GameObject can be created using the [[ScriptRef:Object.Instantiate.html|Instantiate]] function which makes a new copy of an existing object:-
-
+シーンでオブジェクトを一定数にすることもありますが、キャラクター、アイテム、および他のオブジェクトをゲーム中に作成および削除することは頻繁にあります。Unity ではゲームオブジェクトの作成に [[ScriptRef:Object.Instantiate.html|Instantiate]] 関数を使用して既存オブジェクトを複製します：
 [@public GameObject enemy;
 
 void Start() {
@@ -10,9 +9,9 @@ void Start() {
 	}
 }@]
 
-Note that the object from which the copy is made doesn't have to be present in the scene. It is more common to use a prefab dragged to a public variable from the Project panel in the editor. Also, instantiating a GameObject will copy all the Components present on the original.
+複製するオブジェクトはシーンにすでにあるものに限られます。エディタ上ではプロジェクト パネルのパブリック変数にプレハブをドラッグする方法も頻繁に使用されます。さらにゲームオブジェクトをインスタンス化すると元のコンポーネント全てを複製します。
 
-There is also a [[ScriptRef:Object.Destroy.html|Destroy]] function that will destroy an object after the frame update has finished or optionally after a short time delay:-
+さらに [[ScriptRef:Object.Destroy.html|Destroy]] 関数を使用してオブジェクトを削除します。フレーム更新の完了後かオプションで一定時間後に遅れて削除するか選べます：
 
 [@void OnCollisionEnter(otherObj: Collision) {
 	if (otherObj == "Missile") {
@@ -20,8 +19,10 @@ There is also a [[ScriptRef:Object.Destroy.html|Destroy]] function that will des
 	}
 }@]
 
-Note that the Destroy function can destroy individual components without affecting the GameObject itself. A common mistake is to write something like:-
+Destroy 関数によりゲームオブジェクトそのものに影響を与えずに個別コンポーネントを削除できることに留意して下さい。よくある間違いは次のように記述することです：
+
 
 [@Destroy(this);@]
 
-...which will actually just destroy the script component that calls it rather than destroying the GameObject the script is attached to.
+...これでは呼び出し元のスクリプト コンポーネントが削除され、スクリプトがアタッチされているゲームオブジェクトが削除されます。
+which will actually just destroy the script component that calls it rather than destroying the GameObject the script is attached to.
