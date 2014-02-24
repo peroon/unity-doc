@@ -1,20 +1,21 @@
-!Asset Store FAQ
+!アセットストア FAQ / Asset Store FAQ
 
-!!What date will I receive my monthly or quarterly transfer?
+!!月次または四半期の送金は何日ですか？
 
-All payouts are scheduled for the 15th of each month
+全ての支払いは毎月 15 日に予定されてます。
 
-!!Why haven't I received my payout?
-Check your details are correct in the "Payout" tab in your Publisher Administration account. If everything looks correct and you still haven't received your funds, please contact: __assetstore@unity3d.com__
+!!支払いを受け取ってないのは何故ですか？
 
-!!My package has shown as Pending for a while now, what should I do?
+パブリッシャー管理アカウントの Payout タブの情報が正しいことを確認して下さい。もし全て正しくまた支払いを受けてない場合は次の窓口に連絡して下さい: __assetstore@unity3d.com__
 
-Our Vetting Team receive a huge amount of submissions per week, please be patient when waiting for acceptance. If you feel there may be an issue with your submission, please contact __assetstore@unity3d.com__ stating your Publisher and Package details.
+!!パッケージが長い間 Pending と表示されてますが、どうすれば良いでしょうか？
 
-!!Can I merge my account with my co-workers' account or another additional account?
+審査チームで毎週にたくさんの申請を受けていますので、大変お手数ですがお時間いただけますようお願いいたします。もし申請に何か問題があると感じた場合はパブリッシャーおよびパッケージの情報を明記したうえ次の窓口に連絡して下さい： __assetstore@unity3d.com__ 
 
-Unfortunately not, once an account has been created and purchases have been made, we cannot swap, merge or edit these purchases to appear in another account.
+!!現在のアカウントを同僚のアカウントや他の追加アカウントと統合して良いでしょうか？
 
-!!I can't find my answer here. Can I speak to a human about my issue?
+残念ながら出来ません。ひとつのアカウントが作成されて購入が行なわれると、これらの購入を別のアカウントで表示されるように入れ替え、統合、または変更することが出来ません。
 
-Of course you can, drop us an email at __assetstore@unity3d.com__. We aim to respond within 24 hours.
+!!上記の回答では不十分なのですが、どちらに問い合わせれば良いでしょうか。
+
+はい、お手数をおかけしております。 __assetstore@unity3d.com__ にメールを頂ければ 24 時間以内に対応いたします。
