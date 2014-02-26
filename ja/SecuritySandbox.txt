@@ -1,4 +1,4 @@
-!Webplayerのセキュリティサンドボックス / Security Sandbox of the Webplayer
+!ウェブプレイヤーのセキュリティサンドボックス / Security Sandbox of the Webplayer
 
 !Desktop!
 >>Desktop<<
