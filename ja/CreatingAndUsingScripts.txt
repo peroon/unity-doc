@@ -1,36 +1,36 @@
-!Creating and Using Scripts
-
-The behavior of GameObjects is controlled by the $$Components$$ that are attached to them. Although Unity's built-in Components can be very versatile, you will soon find you need to go beyond what they can provide to implement your own gameplay features. Unity allows you to create your own Components using $$scripts$$. These allow you to trigger game events, modify Component properties over time and respond to user input in any way you like.
-
-Unity supports three programming languages natively:
-
-* __C#__ (pronounced C-sharp), an industry-standard language similar to Java or C++;
-* __UnityScript__, a language designed specifically for use with Unity and modelled after JavaScript;
-* __Boo__, a .NET language with similar syntax to Python.
-
-In addition to these, many other .NET languages can be used with Unity if they can compile a compatible DLL - see [[UsingDLL|this page]] for further details.
-
-Learning the art of programming and the use of these particular languages is beyond the scope of this introduction. However, there are many books, tutorials and other resources for learning how to program with Unity. See the [[http://unity3d.com/learn|Learning section]] of our website for further details.
+!スクリプトの作成と使用
 
 
-!!Creating Scripts
+ゲームオブジェクトの動作はアタッチされた $$Components$$ により制御されます。 Unity ビルトインのコンポーネントは多目的で使用できるものの、カスタムのゲーム機能を実装するには十分でない場合が多いです。Unity により $$Script$$ を使用してカスタムのコンポーネントを作成し、ゲーム中のイベント開始、時間の経過に伴ったコンポーネント プロパティの修正、ユーザ入力操作への反応が出来ます。
 
-Unlike most other assets, scripts are usually created within Unity directly. You can create a new script from the Create menu at the top left of the Project panel or by selecting ^^Assets > Create > C# Script^^ (or JavaScript/Boo script) from the main menu.
+Unity は 3 つのプログラミング言語をネイティブ対応しています：
+
+* __C#__ (シーシャープと発音), Java や C++ に相当する、業界標準の言語* __UnityScript__, JavaScript をもとにモデル化された Unity 独自設計の言語
+* __Boo__, Python に近い文法の .NET 言語
+
+さらに互換 DLL コンパイルが出来る .NET 言語も使用できます。詳細は [[UsingDLL|このページ]] を参照して下さい。
+
+プログラミング技術および個々の言語の使用法をマスターすることは入門編の範疇を超えます。しかし Unity でプログラミングを学ぶために多くの本、チュートリアル、および他のリソースがあります。詳細は Unity ウェブサイトにある [[http://unity3d.com/learn|Learning セクション]] を参照して下さい。
+
+
+!!スクリプトの作成
+
+他のアセットと違って、Unity の中ですくrぷとファイルを作成することが出来ます。新規のスクリプトを作成するには、メニューから ^^Assets > Create > C# Script^^ (または JavaScript/Boo script) を開きます。
 
 Attach:CreateScriptMenu.png
 
-The new script will be created in whichever folder you have selected in the Project panel. The new script file's name will be selected, prompting you to enter a new name.
+新規のスクリプトスクリプトはプロジェクト パネルで選択した任意のフォルダに作成されます。新規のスクリプトのファイル名が選択状態となり、新規の名前を入力するように促されます。
 
 Attach:NewScriptIcon.png
 
-It is a good idea to enter the name of the new script at this point rather than editing it later. The name that you enter will be used to create the initial text inside the file, as described below.
+新規スクリプトに名前をつけるのは後まわしにせず、この時点で行なうと良いです。後で説明するように、ここでつけた名前は初回のテキスト作成に使用されます。
 
 
-!!Anatomy of a Script file
+!!スクリプト ファイルの構造
 
-When you double-click a script asset in Unity, it will be opened in a text editor. By default, Unity will use MonoDevelop, but you can select any editor you like from the External Tools panel in Unity's preferences.
+Unity でスクリプト アセットをダブルクリックするとテキストエディタで開かれます。デフォルトで Unity は MonoDevelop を使用するものの、Unity の Preferences の External Tools パネルで変更できます。
 
-The initial contents of the file will look something like this:
+新規作成後、ファイルは次のように表示されてます：
 
 
 [@using UnityEngine;
@@ -49,13 +49,13 @@ public class MainPlayer : MonoBehaviour {
 	}
 }@]
 
-A script makes its connection with the internal workings of Unity by implementing a class which derives from the built-in class called $$MonoBehaviour$$. You can think of a class as a kind of blueprint for creating a new Component type that can be attached to GameObjects. Each time you attach a script component to a GameObject, it creates a new instance of the object defined by the blueprint. The name of the class is taken from the name you supplied when the file was created. The class name and file name must be the same to enable the script component to be attached to a GameObject.
+スクリプトは Unity 内部処理と連携するため、$$MonoBehaviour$$ と呼ばれるビルトイン クラスの派生クラスを実装します。クラスはゲームオブジェクトにアタッチできる新たな種類のコンポーネントを作成するための青写真と捉えることが出来ます。青写真にもとづいてオブジェクトの新規インスタンスを作成します。作成ファイル名と一致するようクラス名がつけられます。クラス名とファイル名が一致しないとゲームオブジェクトにアタッチされたスクリプト コンポーネントは無効となります。
 
-The main things to note, however, are the two functions defined inside the class. The __Update__ function is the place to put code that will handle the frame update for the GameObject. This might include movement, triggering actions and responding to user input, basically anything that needs to be handled over time during gameplay. To enable the Update function to do its work, it is often useful to be able to set up variables, read preferences and make connections with other GameObjects before any game action takes place. The __Start__ function will be called by Unity before gameplay begins (ie, before the Update function is called for the first time) and is an ideal place to do any initialization.
+クラスで定義された二つの関数に注目して下さい。__Update__ 関数はゲームオブジェクトのフレーム更新をハンドリングするコードを配置する場所です。何か動作させたり、何かを起動させたり、あるいはユーザ入力操作に反応したり、時間の経過とともにハンドリングされるゲーム中のあるゆるものを含みます。Update 関数で必要な処理を行なうためには変数のセットアップ、設定を読み取ったうえでゲーム中のアクションが行なわれる前に他のゲームオブジェクトとの結びつけを行ないます。__Start__ 関数はゲームプレイのt直前に Unity により呼び出しされ、任意の初期化を行なうのに良い場所です。
 
-Note to experienced programmers: you may be surprised that initialization of an object is not done using a constructor function. This is because the construction of objects is handled by the editor and does not take place at the start of gameplay as you might expect. If you attempt to define a constructor for a script component, it will interfere with the normal operation of Unity and can cause major problems with the project.
+プログラミング上級者への注意：オブジェクトの初期化がコンストラクタ関数でないことが意外かもしれません。この理由はオブジェクトの作成はエディタによりハンドリングされて意外にもゲーム開始直後に行なわれないためです。スクリプトコンポーネントでコンストラクタを定義しようとすると、Unity の通常処理と干渉するため、プロジェクトで問題を発生させます。
 
-A Boo script follows roughly the same layout as a C# script but UnityScript works a bit differently:-
+Boo スクリプトは大体において C# スクリプトと同じレイアウトですが、UnityScript はやや異なる動作をします：
 
 [@#pragma strict
 
@@ -67,28 +67,27 @@ function Update () {
 
 }@]
 
-Here, the Start and Update functions have the same meaning but the class is not explicitly declared. The script itself is assumed to define the class; it will implicitly derive from MonoBehaviour and take its name from the filename of the script asset.
+Start および Update 関数の役割はすでに述べたものどおりですが、クラス名が明示的に宣言されてません。スクリプト自身がクラスを定義する前提となっています。MonoBehaviour から明示的に派生して、スクリプト アセットのファイル名と名称が一致するようになります。
 
 
-!!Controlling a GameObject
+!!ゲームオブジェクトの呼び出し
 
-As noted above, a script only defines a blueprint for a Component and so none of its code will be activated until an instance of the script is attached to a GameObject. You can attach a script by dragging the script asset to a GameObject in the hierarchy panel or to the inspector of the GameObject that is currently selected. There is also a Scripts submenu on the Component menu which will contain all the scripts available in the project, including those you have created yourself. The script instance looks much like any other Component in the Inspector:-
+すでに述べたように、スクリプトはコンポーネントの青写真であり、ゲームオブジェクトにスクリプトがアタッチされるまではコード実行されません。階層ビューでスクリプト アセットをゲームオブジェクト上へドラッグするか、現在選択されているゲームオブジェクトのインスペクタ上へドラッグすることで、スクリプトをアタッチできます。コンポーネント メニューのスクリプト サブメニューがあり、プロジェクトで利用可能な全てのスクリプトを含みます。スクリプトのインスタンスは、インスペクタ上の他のコンポーネントと見た目は同じです：
 
 Attach:ScriptInInspector.png
-
-Once attached, the script will start working when you press Play and run the game. You can check this by adding the following code in the Start function:-
+一回アタッチした後、Play ボタンを押してゲームを起動するとスクリプトが動作します。試すには次のコードを Start 関数に足します：
 
 [@// Use this for initialization
 void Start () {
 	Debug.Log("I am alive!");
 }@]
 
-__Debug.Log__ is a simple command that just prints a message to Unity's console output. If you press Play now, you should see the message at the bottom of the main Unity editor window and in the Console window (menu: ^^Window > Console^^).
+__Debug.Log__ は Unity コンソール出力にメッセージを書き込みます。もし Play ボタンを押すとメインの Unity エディタ ウィンドウおよびコンソールの最下部 (メニュー: ^^Window > Console^^) にメッセージが表示されます。
 
 
-!!Variables
+!!変数
 
-A script works much like any other component for the most part but you will notice that the Inspector item for the script looks a bit next to the other Components with their editable properties. You can allow values in the script to be edited from the Inspector using variables:-
+スクリプトは大部分において他のスクリプトと同じ動作ですが、スクリプトのインスペクタは他のコンポーネントと編集可能なプロパティが隣あわせになっています。変数によりスクリプトをインスペクタ上で値の編集をすることが出来ます：
 
 [@using UnityEngine;
 using System.Collections;
@@ -107,15 +106,15 @@ public class MainPlayer : MonoBehaviour {
 	}
 }@]
 
-This code creates an item in the Inspector labelled "My Name".
+このコードは "My Name" というラベルのアイテムをインスペクタ上で作成します。
 
 Attach:EditingVarInspector.png
 
-Unity creates the Inspector label by introducing a space wherever a capital letter occurs in the variable name. However, this is purely for display purposes and you should always use the variable name within your code. If you edit the name and then press Play, you will see that the message includes the text you entered.
+Unity では大文字あるところはスペースを足してインスペクタ上で表示します。これは表示目的だけなので、コード中は必ず変数名を使用するべきです。名称を変更して Play ボタンを押すと、入力したテキストを含むメッセージが表示されます。
 
 Attach:DebugLogMessage.png
 
-In C# and Boo, you must declare a variable as public to see it in the Inspector. In UnityScript, variables are public by default unless you specify that they should be private:-
+C# および Boo ではインスペクタ上で変数を public と宣言する必要があります。UnityScript で変数は明示的に privateと指定しないかぎりデフォルトで public になります。
 
 [@#pragma strict
 
@@ -125,4 +124,5 @@ function Start () {
 
 }@]
 
-Unity will actually let you change the value of a script's variables while the game is running. This is very useful for seeing the effects of changes directly without having to stop and restart. When gameplay ends, the values of the variables will be reset to whatever they were before you pressed Play. This ensures that you are free to tweak your object's settings without fear of doing any permanent damage.
+Unity ではゲームの実行中にスクリプト変数の値を変更出来ます。これは停止、再起動せずにエフェクトをすぐ見れるという意味で便利です。ゲームプレイが終わったとき変数の値は Play を押す前の値にリセットされます。これにより、後への影響を残さずにオブジェクト設定の調整ができます。
+
