@@ -1,18 +1,18 @@
-!State Machine Basics
+!ステートマシンの基本
 
-The basic idea is that a character is engaged in some particular kind of action at any given time. The actions available will depend on the type of gameplay but typical actions include things like idling, walking, running, jumping, etc. These actions are referred to as $$states$$, in the sense that the character is in a "state" where it is walking, idling or whatever. In general, the character will have restrictions on the next state it can go to rather than being able to switch immediately from any state to any other. For example, a running jump can only be taken when the character is already running and not when it is at a standstill, so it should never switch straight from the idle state to the running jump state. The options for the next state that a character can enter from its current state are referred to as $$state transitions$$. Taken together, the set of states, the set of transitions and the variable to remember the current state form a $$state machine$$.
+ステートマシンの基本は、キャラクターがある時間行なう何かのアクションです。利用可能なアクションはゲームのタイプに依存しますが、典型的なアクションはアイドル、歩行、走行、ジャンプ、等です。これらは $$State$$ と呼ばれるアクションでキャラクターの状態を表します。一般的にキャラクターの次の状態には制約があり、どの状態からでも別へ遷移できるわけではありません。例えばランニング ジャンプは立っては出来ず、走っている必要があります。つまりアイドルからランニング ジャンプへと遷移することはありません。次の状態へと遷移する選択肢を $$State Transition$$ と呼ばれます。状態の一覧、遷移の一覧、さらに現在の状態を格納する変数を合わせて $$State Machine$$ を構成します。
 
-The states and transitions of a state machine can be represented using a graph diagram, where the nodes represent the states and the arcs (arrows between nodes) represent the transitions. You can think of the current state as being a marker or highlight that is placed on one of the nodes and can then only jump to another node along one of the arrows.
+ステートマシンの状態および遷移はグラフ ダイアグラムで表すことが出来て、ノードがステートを表し、弧（ノード間の矢印）が遷移を表します。現在の状態とはノードのどれかに印をつけたものと考えられ、次のノードへ移れるのは矢印に沿ってしか移動できません。
 
 Attach:StateMachineDiagram.png
 
-The importance of state machines for animation is that they can be designed and updated quite easily with relatively little coding. Each state has a Motion associated with it that will play whenever the machine is in that state. This enables an animator or designer to define the possible sequences of character actions and animations without being concerned about how the code will work.
+アニメーションのステートマシンで重要なことは設計および更新に伴うコーディングが僅かであることです。各々の状態にはモーションが紐付けられていて、マシンがその状態にあるときに再生されます。アニメータまたはデザイナーはキャラクターはコードを気にせずに、必要なアクションおよびアニメーションの順番を定義できます。
 
-!!Mecanim State Machines
-Mecanim's Animation State Machines provide a way to overview all of the animation clips related to a particular character and allow various events in the game (for example user input) to trigger different animations.  
+!!メカニム ステート マシン
+メカニム のアニメーション ステート マシンにより特定キャラクターに関連したアニメーション クリップの全体像をみてゲームのイベント（例えばユーザ入力）により違うアニメーションをトリガーできます。
 
-Animation State Machines can be set up from the [[Animator|Animator Controller Window]], and they look something like this:
+アニメーション ステート マシンは [[Animator|Animator Controller Window]] からセットアップすると次のように表示されます：
 
 Attach:MecanimStateMachine.png
 
-State Machines consist of $$States$$, $$Transitions$$ and $$Events$$ and smaller Sub-State Machines can be used as components in larger machines.
+ステートマシンは $$State$$, $$Transition$$ および $$Event$$ から構成されて小さなサブ ステートマシンはさらに規模の大きなステートマシンで使用できます。
