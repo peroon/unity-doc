@@ -19,3 +19,12 @@ You can manually attach the Unity profiler to a running development build versio
 
 More information about the Unity Profiler is available in the [[http://docwiki.hq.unity3d.com/index.php?n=Main.Profiler|Profiler documentation]] .
 
+!!Problems Connecting?
+
+If you are having problems connecting the profiler to your device it's worth checking the following points:
+
+#Make sure the host pc and the devkit are on the same subnet (wifi)
+#Make sure multicast packets are allowed between wifi peers (no wifi peer isolation enabled)
+#In the devkit TTY locate the output regarding player connection for possibly helpful information
+#Verify IP address/port can be reached from hostpc (e.g. telnet <ip> <port>)
+
