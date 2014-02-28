@@ -1,6 +1,6 @@
-! Constant Force （一定力） / Constant Force
+! 一定力 / Constant Force
 
-$$Constant Force$$ は、$$Rigidbody$$ に一定力を素早く加えるためのユーティリティです。  これは、初速を大きくせずに、加速を重視する場合、例えばロケットのようなワンショットのオブジェクトに最適です。
+$$Constant Force$$ は、$$Rigidbody$$ に一定の力を素早く加えるためのユーティリティです。  これは、初速を大きくせずに、加速を重視する場合、例えばロケットのようなワンショットのオブジェクトに最適です。
 
 Attach:Inspector-ConstantForce.png\\
 ''一定の力で前進するロケット''
