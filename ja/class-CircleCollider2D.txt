@@ -1,11 +1,11 @@
-!Circle Collider 2D
+!サークル コライダー 2D / Circle Collider 2D
 
-The $$Circle Collider 2D$$ class is a collider for use with 2D physics. As its name implies, the collider's shape is a circle with a given position and radius in the local coordinate space of a $$Sprite$$.
+$$Circle Collider 2D$$ クラスは 2D 物理挙動で使います。名前のとおりコライダーの形状は円で、位置および半径を $$Sprite$$ のローカル座標空間上で持ちます。。
 
 Attach:CircleCollider2DInspector.png
 
 ||PROPS
-||``Material`` ||A physics material that determines properties of collisions, such as friction and bounce. ||
-||``Is Trigger`` ||Does the collider behave as a trigger? ||
-||``Radius`` ||Radius of the circle in local space units. ||
-||``Center`` ||Centre coordinate of the circle in local space. ||
+||``Material`` ||摩擦や弾性など衝突の種類を定義する Physics Material||
+||``Is Trigger`` ||コライダーをトリガーにする||
+||``Radius`` ||ローカル座標単位での円の半径||
+||``Center`` ||ローカル空間での円の中心座標||
