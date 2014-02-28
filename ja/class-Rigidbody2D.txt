@@ -1,35 +1,34 @@
-!Rigidbody 2D
+! リジッドボディ 2D / Rigidbody 2D
 
-A $$Rigidbody 2D$$ component places an object under the control of the physics engine. Many concepts familiar from the standard [[class-Rigidbody|Rigidbody]] component carry over to  Rigidbody 2D, with the difference that in 2D, objects can only move in the XY plane and can only rotate on an axis perpendicular to that plane.
+$$Rigidbody 2D$$ コンポーネントによりオブジェクトに物理挙動を作用させます。標準の [[class-Rigidbody|Rigidbody]] コンポーネントの多くの概念は Rigidbody 2D に引き継がれるものの、オブジェクトは XY 平面でのみ移動し、この平面に垂直な軸でのみ回転します。
 
 Attach:Rigidbody2DInspector.png
 
 ||PROPS
-||``Mass`` ||Mass of the rigidbody. ||
-||``Linear Drag`` ||Drag coefficient affecting positional movement. ||
-||``Angular Drag`` ||Drag coefficient affecting rotational movement. ||
-||``Gravity Scale`` ||Degree to which the object is affected by gravity. ||
-||``Fixed Angle`` ||Can the rigidbody rotate when forces are applied? ||
-||``Is Kinematic`` ||Is the rigidbody moved by forces and collisions? ||
-||``Interpolate`` ||How the object's movement is interpolated between physics updates (useful when motion tends to be jerky). ||
-||>>>``None`` ||No movement smoothing is applied. ||
-||>>>``Interpolate`` ||Movement is smoothed based on the object's positions in previous frames. ||
-||>>>``Extrapolate`` ||Movement is smoothed based on an estimate of its position in the next frame. ||
-||``Sleeping Mode`` ||How the object "sleeps" to save processor time when it is at rest. ||
-||>>>``Never Sleep`` ||Sleeping is disabled. ||
-||>>>``Start Awake`` ||Object is initially awake. ||
-||>>>``Start Asleep`` ||Object is initially asleep but can be woken by collisions. ||
-||``Collision Detection`` ||How collisions with other objects are detected. ||
-||>>>``Discrete`` ||A collision is registered only if the object's collider is in contact with another during a physics update. ||
-||>>>``Continuous`` ||A collision is registered if the object's collider appears to have contacted another between updates. ||
+||``Mass`` ||リジッドボディの質量||
+||``Linear Drag`` ||位置移動の減衰係数 ||
+||``Angular Drag`` ||回転動作の減衰係数||
+||``Gravity Scale`` ||重力の影響度合い||
+||``Fixed Angle`` ||力を適用したときにリジッドボディを回転させるか||
+||``Is Kinematic`` ||リジッドボディが力や衝突で移動するか||
+||``Interpolate`` ||オブジェクト動作の Physics Update 間での補間方法（動きがぎこちないときに役に立ちます）||
+||>>>``None`` ||スムージングを適用しない||
+||>>>``Interpolate`` ||前フレームでのオブジェクト位置にもとづき動作はスムージングされる||
+||>>>``Extrapolate`` ||次フレームでのオブジェクト位置の予測にもとづき動作はスムージングされる||
+||``Sleeping Mode`` ||プロセッサー負荷を抑えるためのオブジェクトのスリープ方法||
+||>>>``Never Sleep`` ||スリープを無効化||
+||>>>``Start Awake`` ||初期でオブジェクトはスリープしていない||
+||>>>``Start Asleep`` ||初期でオブジェクトはスリープしているが衝突によりスリープ解除される||
+||``Collision Detection`` ||他のオブジェクトとの衝突検知の方法||
+||>>>``Discrete`` ||Physics Update のタイミングで他のオブジェクト コライダと重なってる場合のみ衝突とみなす||
+||>>>``Continuous`` ||Update の間のタイミングで他のオブジェクト コライダと重なってる場合も衝突とみなす||
 
-!!Details
+!!詳細
 
-Adding a Rigidbody 2D allows a sprite to be moved in a physically convincing way by applying forces from the scripting API. When the appropriate collider component is also attached to the sprite object, it will be affected by collisions with other moving objects. Using physics simplifies many common gameplay mechanics and allows for realistic, emergent behaviour with minimal coding.
+Rigidbody 2D の追加によりスクリプティング API から力を加えてスプライトの動作を見映えの良い物理挙動にできます。スプライト オブジェクトに適切なコライダー コンポーネントをアタッチすると、他の移動オブジェクトとの衝突も検知します。物理挙動を使用すればよくあるゲーム動作の多くを単純化するのみならず、リアルで迫力ある動作を最小限のコーディングで実現できます。
 
-!!!Colliders
-Colliders define an approximate shape for an object that will be used by the physics engine to determine collisions with other objects. The collider types that can be used with Rigidbody 2D are the Circle Collider 2D, Box Collider 2D and Polygon Collider 2D - see the pages for these component for further details.
+!!!コライダー
+コライダーは他のオブジェクトとの衝突を物理エンジンが判定するのに使用するオブジェクトの形状を近似したものです。Rigidbody 2D で使用できるコライダーの種類は Circle Collider 2D, Box Collider 2D および Polygon Collider 2D であり、詳細は各々のコンポネーント のページを参照して下さい。
 
-!!!Kinematic Rigidbodies
-The ''Is Kinematic'' setting switches off the physical behaviour of the Rigidbody 2D so that it will not react to gravity and collisions. This is typically used to keep an object under non-physical script control most of the time but then switch to physics in a particular situation. For example, a player might normally move by walking (better handled without physics) but then get catapulted into the air by an explosion or strike. Physics can be used to create the catapulting effect if you switch off ''Is Kinematic" just before applying a large force to the object.
-
+!!! Kinematic Rigidbody
+''Is Kinematic'' 設定により Rigidbody 2D の物理挙動を無効にして、重力や衝突に反応しないようにします。オブジェクトを物理挙動でないスクリプトで制御するために主に使用しつつ、特定の状況では物理挙動に切り替えます。例えば、プレイヤーは歩くことにより普通に移動しつつ（物理挙動により上手くハンドリング）、爆発やヒットがあったときに上空に投げ出すことが出来ます。物理挙動を使用して投げ出す効果を実現するためには、オブジェクトに大きな力を適用する直前に ''Is Kinematic'' を無効にします。
