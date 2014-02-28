@@ -1,5 +1,5 @@
-!2D Components
+!2D コンポーネント / 2D Components
 
-This group contains the components for implementing 2D graphics and physics in Unity.
+Unity で 2D グラフィックスおよび 2D 物理挙動を実装するコンポーネントのグループです。 
 
 (:tocportion:)
