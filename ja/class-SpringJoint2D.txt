@@ -1,18 +1,18 @@
-!Spring Joint 2D
+!スプリング ジョイント 2D / Spring Joint 2D
 
-The $$Spring Joint 2D$$ component allows two $$Sprite$$ objects controlled by rigidbody physics to be attached together as if by a spring. The spring will apply a force along its axis between the two objects, attempting to keep them a certain distance apart.
+$$Spring Joint 2D$$ コンポーネントにより二つの $$Sprite$$ オブジェクトがバネでつながったような物理挙動に制御されます。スプリングは二つのオブジェクトの軸に沿って力を加えて、その間の距離を一定に保ちます。
 
 Attach:SpringJoint2DInspector.png
 
 ||PROPS
-||``Collide Connected`` ||Can the two connected objects collide with each other? ||
-||``Connected Rigidbody`` ||The other Rigidbody2D object that the one with the joint is connected to. If this is null then the othen end of the spring will be fixed at a point in space. ||
-||``Anchor`` ||Coordinate in local space where the end point of the spring is attached. ||
-||``Connected Anchor`` ||Coordinate in the other object's local space where its end of the spring is attached. ||
-||``Distance`` ||The distance that the spring should attempt to maintain between the two objects. ||
-||``Damping Ratio`` ||The degree to which spring oscillation is suppressed. ||
-||``Frequency`` ||The frequency at which the spring oscillates while the rigidbodies are approaching the desired separation distance (cycles per sec). ||
+||``Collide Connected`` ||つながった二つのオブジェクトが互いに衝突できるか||
+||``Connected Rigidbody`` ||ジョイントの接続先の Rigidbody2D オブジェクト。null の場合、スプリングの端は固定||
+||``Anchor`` ||スプリングがアタッチされた端のローカル座標||
+||``Connected Anchor`` ||スプリングの端がアタッチされた他方のオブジェクトのローカル座標||
+||``Distance`` ||二つのオブジェクト間でバネが保持すべき距離||
+||``Damping Ratio`` ||バネの振動に対する減衰率||
+||``Frequency`` ||Rigidoby 同士が保持すべき距離へ向かう頻度（周期ごとの秒数）||
 
-!!Details
+!!詳細
 
-Both objects connected by the spring must have a $$Rigidbody 2D$$ component attached (or alternatively, the other end of the spring can be fixed in space by setting ''Connected Rigidbody'' to null). When the spring applies its force between the objects, it will tend to overshoot the desired distance between them and then rebound repeatedly, resulting in a continuous oscillation. The ''damping'' parameter determines how quickly the oscillation will reduce and bring the objects to rest. The ''frequency'' is the rate at which the oscillates either side of the target distance; the higher the frequency, the stiffer the spring.
+バネでつながったオブジェクトは両方とも $$Rigidbody 2D$$ コンポーネントをアタッチする必要があります（あるいは、バネの他方の端を固定するには Connected Rigidbody を null にします）。バネがオブジェクト間で力を適用するとき、一定距離のさらに先までを往復する振動を繰り返します。Damping パラメータにより振動の減衰率を決定し、オブジェクトをいずれ停止させます。Frequency は一定距離の端を振動する周期であり、大きい値であるほど硬くて動きの遅いバネになります。

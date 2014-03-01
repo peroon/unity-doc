@@ -1,20 +1,22 @@
-!Hinge Joint 2D
+!ヒンジ ジョイント 2D / Hinge Joint 2D
 
-The $$Hinge Joint 2D$$ component allows a $$Sprite$$ object controlled by rigidbody physics to be attached to a point in space around which it can rotate. The rotation can be left to happen passively (in response to a collision, say) or actively powered by a motor torque provided by the joint itself. The hinge can also be set up with limits to prevent it from making a full rotation.
+$$Spring Joint 2D$$ コンポーネントにより二つの $$Sprite$$ オブジェクトがバネでつながったような物理挙動に制御されます。スプリングは二つのオブジェクトの軸に沿って力を加えて、その間の距離を一定に保ちます。
+
+$$Hinge Joint 2D$$ コンポーネントにより二つの $$Sprite$$ オブジェクトが支点の位置を中心に回転できるような物理挙動に制御されます。回転させるのを受動的とする（例えば、衝突への反応）か、能動的にジョイント自身によるモーターのトルクのような動力とするか選べます。ヒンジが完全に回転しないように制限することも出来ます。
 
 Attach:HingeJoint2DInspector.png
 
 ||PROPS
-||``Collide Connected`` ||Can the two connected objects collide with each other? ||
-||``Connected Rigidbody`` ||The other Rigidbody2D object that the one with the joint is connected to. If this is null then the othen end of the joint will be fixed at a point in space. ||
-||``Anchor`` ||Coordinate in local space where the end point of the joint is attached. ||
-||``Connected Anchor`` ||Coordinate in the other object's local space where its end of the joint is attached. ||
-||``Use Motor`` ||Should the hinge motor be enabled? ||
-||``Use Limits`` ||Should the rotation angle be limited? ||
-||``Motor Speed`` ||Target motor speed (degrees/sec). ||
-||``Maximum Motor Force`` ||The maximum torque the motor can apply while attempting to reach the target speed. ||
-||``Lower Angle`` ||The lower end of the rotation arc allowed by the limit. ||
-||``Upper Angle`` ||The upper end of the rotation arc allowed by the limit. ||
+||``Collide Connected`` ||つながった二つのオブジェクトが互いに衝突できるか||
+||``Connected Rigidbody`` ||ジョイントの接続先の Rigidbody2D オブジェクト。null の場合、ジョイントの端は固定||
+||``Anchor`` ||ジョイントがアタッチされた端のローカル座標||
+||``Connected Anchor`` ||スプリングの端がアタッチされた他方のオブジェクトのローカル座標||
+||``Use Motor`` ||ヒンジモーターを有効にするか||
+||``Use Limits`` ||回転角を制限するか||
+||``Motor Speed`` ||ターゲットのモーター速度 (角度/秒)||
+||``Maximum Motor Force`` ||ターゲット速度に到達するまでにモーターが適用する最大トルク||
+||``Lower Angle`` ||制限による回転角の最小値 ||
+||``Upper Angle`` ||制限による回転角の最大値||
 
-!!Details
-The hinge joint's name implies something like a door hinge (and it can certainly be used to implement that) but it refers more generally to anything that rotates around a particular point. It can be used for machine parts, powered wheels, pendulums and many other similar things.
+!!詳細
+ヒンジ ジョイントの名前はドアのヒンジのようですが（その実装もできますが）、実際にはより広い意味で特定の支点を回りに回転するものを指します。機械部品、動力付きのタイヤ、振り子など幅広く使用できます。
