@@ -1,20 +1,19 @@
-!Slider Joint 2D
+!スライダー ジョイント 2D / Slider Joint 2D
 
-The $$Slider Joint 2D$$ component allows a $$Sprite$$ object controlled by rigidbody physics to slide along a line in space. The object can optionally be left free to move anywhere along the line in response to collisions or forces. It can also be moved along by a motor force and have limits applied to keep its position within a certain section of the line.
+$$Slider Joint 2D$$ コンポーネントにより $$Sprite$$ オブジェクトが空間上で直線上をスライドする物理挙動に制御されます。オプションによりオブジェクトは受動的に衝突や力の作用によって線上を動くように出来ます。さらに能動的にモーターの力によって動かし、直線の一部に位置を制限することも出来ます。
 
 Attach:SliderJoint2DInspector.png
 
 ||PROPS
-||``Collide Connected`` ||Can the two connected objects collide with each other? ||
-||``Connected Rigidbody`` ||The other Rigidbody2D object that the one with the joint is connected to. If this is null then the othen end of the joint will be fixed at a point in space. ||
-||``Anchor`` ||Coordinate in local space where the end point of the joint is attached. ||
-||``Connected Anchor`` ||Coordinate in the other object's local space where its end of the joint is attached. ||
-||``Angle`` ||The angle of the line relative to the other rigidbody (or world space). ||
-||``Use Motor`` ||Should the sliding motor be enabled? ||
-||``Motor Speed`` ||Target motor speed (units/sec). ||
-||``Maximum Motor Force`` ||The maximum force the motor can apply while attempting to reach the target speed. ||
-||``Lower Translation`` ||The minimum distance the rigidbody object can be from the connected anchor point. ||
-||``Upper Translation`` ||The maximum distance the rigidbody object can be from the connected anchor point. ||
+||``Collide Connected`` ||つながった二つのオブジェクトが互いに衝突できるか||
+||``Connected Rigidbody`` ||ジョイントの接続先の Rigidbody2D オブジェクト。null の場合、ジョイントの端は固定||
+||``Anchor`` ||ジョイントがアタッチされた端のローカル座標||
+||``Connected Anchor`` ||スプリングの端がアタッチされた他方のオブジェクトのローカル座標||
+||``Use Motor`` ||スライドのモーターを有効にするか||
+||``Motor Speed`` ||ターゲットのモーター速度 (単位距離/秒)||
+||``Maximum Motor Force`` ||ターゲット速度に到達するまでにモーターが適用する最大トルク||
+||``Lower Translation`` ||Rigidobody オブジェクトの制限による、接続されたアンカー地点からの最小距離||
+||``Upper Translation`` ||Rigidobody オブジェクトの制限による、接続されたアンカー地点からの最大距離||
 
-!!Details
-The Slider Joint can be used for sliding objects such as doors but also for any objects that follow a simple, straight path. Such objects might include simple characters, obstacles that rise or fall from their surroundings, projectiles and many other common game elements.
+!!詳細
+スライダー ジョイントはドアなどスライドするオブジェクトで使用できますが、他でもシンプルで直線的な軌跡を辿るオブジェクトでも使用できます。単純なキャラクター、周囲で上下する障害物、発射物やその他で良くあるゲーム要素も含められるかもしれません。
