@@ -1,11 +1,11 @@
-!Box Collider 2D
+!ボックス コライダー 2D / Box Collider 2D
 
-The $$Box Collider 2D$$ component is a collider for use with 2D physics. The collider's shape is a rectangle with a given position, width and height in the local coordinate space of a $$Sprite$$. Note that the rectangle is axis-aligned, ie, its edges are parallel to the X or Y axes of local space.
+$$Box Collider 2D$$ コンポーネントは 2D 物理挙動で使用するコライダーです。コライダーの形状は四角形であり $$Sprite$$ の位置、幅、高さをローカル座標で指定します。四角形の辺はローカル座標の X 軸 と Y 軸に対して平行です。
 
 Attach:BoxCollider2DInspector.png
 
 ||PROPS
-||``Material`` ||A physics material that determines properties of collisions, such as friction and bounce. ||
-||``Is Trigger`` ||Does the collider behave as a trigger? ||
-||``Size`` ||Width and height of the rectangle in local space units. ||
-||``Center`` ||Centre coordinate of the rectange in local space. ||
+||``Material`` ||摩擦や弾性など衝突の種類を定義する Physics Material||
+||``Is Trigger`` ||コライダーをトリガーにする||
+||``Size`` ||ローカル空間での四角形の幅および高さ||
+||``Center`` ||ローカル空間での四角形の中心座標||
