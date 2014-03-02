@@ -1,12 +1,12 @@
-! Extending the Editor
+! エディタ拡張 / Extending the Editor
 
-You can create your own custom design tools inside Unity through $$Editor Windows$$.  Scripts that derive from [[ScriptRef:EditorWindow.html | EditorWindow]] instead of [[ScriptRef:MonoBehaviour.html | MonoBehaviour]] can leverage both [[ScriptRef:EditorGUI.html | GUI]]/[[ScriptRef:GUI.html | GUILayout]] and [[ScriptRef:GUILayout.html | EditorGUI]]/[[ScriptRef:EditorGUILayout.html | EditorGUILayout]] controls. Alternatively, you can use $$Custom Inspectors$$ to expose these GUI controls in your GameObject Inspector.
+Unity の中でカスタムのデザイン ツールを作成するには $$Editor Window$$ が使用できます。[[ScriptRef:MonoBehaviour.html | MonoBehaviour]] の代わりに [[ScriptRef:EditorWindow.html | EditorWindow]] から派生したスクリプトは [[ScriptRef:EditorGUI.html | GUI]] / [[ScriptRef:GUI.html | GUILayout]] および [[ScriptRef:GUILayout.html | EditorGUI]] / [[ScriptRef:EditorGUILayout.html | EditorGUILayout]] のコントロールを両方とも利用できます。また別の方法として $$Custom Inspector$$ を使用してゲームオブジェクトのインスペクタ上でこれらの GUI コントロールを公開できます。
 
-!! [[editor-EditorWindows | Editor Windows]]
-You can create your own custom windows in Unity that you can use to edit and author your game more efficiently.
+!! [[editor-EditorWindows | エディタ ウィンドウ]]
+Unity でカスタムウィンドウを作成してゲームをより効率的に編集およびオーソリングできます。
 
-!! [[editor-PropertyDrawers | Property Drawers]]
-PropertyDrawers can be used to customize the look of certain controls in the Inspector, by using attributes on your scripts, or by controlling how a specific Serializable class should look.
+!! [[editor-PropertyDrawers | PropertyDrawer]]
+PropertyDrawer を使用してインスペクタ上で特定のコントロールの外見をカスタマイズするために、スクリプト上の属性を使用するか、または特定の Serializable クラスの外見を制御できます。 
 
-!! [[editor-CustomEditors | Custom Editors]]
-Custom editors can be used to customize what a component looks like in the Inspector and in the Scene View.
+!! [[editor-CustomEditors | Custom Editor]]
+Custom Editor を使用してインスペクタ上およびシーンビューでのコンポーネントの外見をカスタマイズできます。

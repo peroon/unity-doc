@@ -1,43 +1,43 @@
-! Editor Windows
+! エディタ ウィンドウ / Editor Windows
 
-You can create any number of custom windows in your app. These behave just like the Inspector, Scene or any other built-in ones. This is a great way to add a user interface to a sub-system for your game.
+アプリケーションの中でカスタム ウィンドウを作成する数に制限はありません。インスペクタ、シーン、あるいは他のビルトインと同様に動作します。ゲームのサブシステムにユーザ インタフェースを追加するにはとても良い方法です。
 
 Attach:CustomEditorWindow.png\\
-''Custom Editor Interface by Serious Games Interactive used for scripting cutscene actions''
+''Serious Games Interactive 社による提供のカットシーンのアクションをスクリプティングするのに使用 カスタム エディタ インタフェース''
 
-Making a custom Editor Window involves the following simple steps:
-* Create a script that derives from EditorWindow.
-* Use code to trigger the window to display itself.
-* Implement the GUI code for your tool.
+次の簡単な手順でカスタム エディタ ウィンドウを作成します：
+* エディタ ウィンドウから派生したスクリプトを作成する
+* ウィンドウ自身を表示するコードをトリガーする
+* 自身のツールで GUI コードを実装
 
-!!! Derive From EditorWindow
-In order to make your Editor Window, your script must be stored inside a folder called "Editor".  Make a class in this script that derives from EditorWindow. Then write your GUI controls in the inner OnGUI function.
+!!! Derive From EditorWindow から派生
+エディタ ウィンドウを作成するためにはスクリプトが "Editor" という名前のフォルダに格納されている必要があります。スクリプトの中に EditorWindow から派生したクラスを作成します。次に内部の OnGUI 関数を制御する GUI コントロールを記述します。
 
 [@
-// JS example.
+// JavaScript サンプル
 class MyWindow extends EditorWindow {
     function OnGUI () {
-        // The actual window code goes here
+        // 実際のウィンドウ コードをここに記述
     }
 }
 
 
-// C# example.
+// C# サンプル
 public class MyWindow : EditorWindow {
 	void OnGUI() {
-		// The actual window code goes here
+        // 実際のウィンドウ コードをここに記述
 	}
 }
 @]
 
 
-!!! Showing the window
-In order to show the window on screen, make a menu item that displays it. This is done by creating a function which is activated by the 
-$$MenuItem$$ property. 
+!!! ウィンドウの表示
+画面上でウィンドウを表示するには、表示するためのメニュー アイテムを作成します。これは $$MenuItem$$ プロパティにより起動される関数を
+作成します。
 
-The default behavior in Unity is to recycle windows (so selecting the menu item again would show existing windows. This is done by using the function [[ScriptRef:EditorWindow.GetWindow.html | EditorWindow.GetWindow]] Like this:
+Unity でのデフォルトの動作ではウィンドウを再利用することです（つまりメニュー アイテムを再選択すると既存ウィンドウを表示します。これは [[ScriptRef:EditorWindow.GetWindow.html | EditorWindow.GetWindow]] を使用します）。次のとおりに実現できます：
 [@
-// JS example.
+// JavaScript サンプル
 class MyWindow extends EditorWindow {
     @MenuItem ("Window/My Window")
     static function ShowWindow () {
@@ -45,12 +45,12 @@ class MyWindow extends EditorWindow {
     }
 
     function OnGUI () {
-        // The actual window code goes here
+        // 実際のウィンドウ コードをここに記述
     }
 }
 
 
-// C# example.
+// C# サンプル
 public class MyWindow : EditorWindow {
 	[MenuItem("Window/My Window")]
 	static void ShowWindow() {
@@ -58,21 +58,21 @@ public class MyWindow : EditorWindow {
 	}
 	
 	void OnGUI () {
-		// The actual window code goes here
+        // 実際のウィンドウ コードをここに記述
 	}
 }
 @]
 
 
-This will create a standard, dockable editor window that saves its position between invocations, can be used in custom layouts, etc. To have more control over what gets created, you can use [[ScriptRef:EditorWindow.GetWindowWithRect.html | GetWindowWithRect]]
+これにより標準的でドッキング可能、かつ実行されるたびに位置を保存するエディタウィンドウが作成され、カスタムレイアウト等に使用できます。作成する内容をさらに制御するには [[ScriptRef:EditorWindow.GetWindowWithRect.html | GetWindowWithRect]] を使用できます。
 
-!!! Implementing Your Window's GUI
+!!! ウィンドウの GUI を実装する
 
-The actual contents of the window are rendered by implementing the OnGUI function. You can use the same UnityGUI classes you use for your ingame GUI (``GUI`` and ``GUILayout``). In addition we provide some additional GUI controls, located in the editor-only classes ``EditorGUI`` and ``EditorGUILayout``. These classes add to the controls already available in the normal classes, so you can mix and match at will.
+ウィンドウの実際の内容は OnGUI 関数を実装することでレンダリングされます。ゲーム内の GUI  (``GUI`` および ``GUILayout``)が使用するものと同じ UnityGUI クラスを使用します。それに加えてさらに追加できる GUI コントロールがあり、エディタのみの クラス ``EditorGUI`` および ``EditorGUILayout`` に含まれます。通常のクラスの既存コントロールに新たなクラスを追加することで、自由に組み合わせることができます。
 
-The following code shows how you can add GUI elements to your custom EditorWindow:
+次のコードにより GUI 要素をカスタム エディタ ウィンドウに追加する方法を示します：
 [@
-// JS example.
+// JavaScript サンプル
 
 class MyWindow extends EditorWindow {
 	var myString = "Hello World";
@@ -80,10 +80,10 @@ class MyWindow extends EditorWindow {
 	var myBool = true;
 	var myFloat = 1.23;
 	
-	// Add menu item named "My Window" to the Window menu
+	// "My Window" というメニューアイテムをウィンドウ メニューに追加
 	@MenuItem("Window/My Window")
 	static function ShowWindow() {
-		//Show existing window instance. If one doesn't exist, make one.
+		//既存のウィンドウ インスタンスを表示。ない場合は新たに作成
 		EditorWindow.GetWindow(MyWindow);
 	}
 	
@@ -99,7 +99,7 @@ class MyWindow extends EditorWindow {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEditor;
 using UnityEngine;
 
@@ -110,11 +110,11 @@ public class MyWindow : EditorWindow
 	bool myBool = true;
 	float myFloat = 1.23f;
 	
-	// Add menu item named "My Window" to the Window menu
+	// "My Window" というメニューアイテムをウィンドウ メニューに追加
 	[MenuItem("Window/My Window")]
 	public static void ShowWindow()
 	{
-		//Show existing window instance. If one doesn't exist, make one.
+		//既存のウィンドウ インスタンスを表示。ない場合は新たに作成
 		EditorWindow.GetWindow(typeof(MyWindow));
 	}
 	
@@ -131,9 +131,9 @@ public class MyWindow : EditorWindow
 }
 @]
 
-This example results in a window which looks like this:
+このサンプルの結果として次のようなウィンドウが表示されます：
 Attach:ExampleEditorWindow.png\\
-''Custom Editor Window created using supplied example.''
+''サンプルにより作成されたカスタム エディタ ウィンドウ''
 
 
-For more info, take a look at the example and documentation on the [[ScriptRef:EditorWindow.html | EditorWindow page]].
+詳細については、 [[ScriptRef:EditorWindow.html | エディタ ウィンドウのページ]] にあるサンプルとドキュメンテーションを参照して下さい。
