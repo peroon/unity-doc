@@ -2,8 +2,7 @@
 
 This image effect approximates [[http://en.wikipedia.org/wiki/Ambient_occlusion | Ambient Occlusion]] in realtime, as an image post-processing effect. It darkens creases, holes and surfaces that are close to each other. In real life, such areas tend to block out or ``occlude`` ambient light, hence they appear darker. It is an improvement to the existing [[script-SSAOEffect|SSAO effect]] in terms of quality and -- depending on settings and hardware -- speed. Additionally, it doesn't rely on a generated normals buffer as it is recreating them on the fly based on depth.
 
-As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
-
+他の [[comp-ImageEffects|イメージ エフェクト]] と同様、このエフェクトは Unity Pro でのみ提供されており、利用する前に [[HOWTO-InstallStandardAssets|Pro Standard Assets]] をインストールしておく必要があります。
 The following two screenshots compare the results of a simple scene employing this occlusion effect.
 
 Attach:ImageEffects./WithoutAO.png\\

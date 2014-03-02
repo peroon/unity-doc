@@ -9,8 +9,7 @@ Attach:FxBlurOptimizedExample.png
 Attach:FxBlurOptimizedExample2.png
 
 
-As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
-
+他の [[comp-ImageEffects|イメージ エフェクト]] と同様、このエフェクトは Unity Pro でのみ提供されており、利用する前に [[HOWTO-InstallStandardAssets|Pro Standard Assets]] をインストールしておく必要があります。
 !! Properties
 
 ||PROPS

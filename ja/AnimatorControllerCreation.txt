@@ -1,21 +1,21 @@
-!Creating an AnimatorController
+!アニメータ コントローラの作成 / Creating an AnimatorController
 
-You can view and set up character behavior from the ~~Animator Controller~~ view (Menu: ^^Window > Animator Controller^^).
+~~Animator Controller~~ ビューからキャラクターのビヘイビアを表示、セットアップできます(メニューから: ^^Window > Animator Controller^^)。
 
-An ``Animator Controller`` can be created from the ~~Project View~~ (Menu: ^^Create > Animator Controller^^).
-This creates a @@.controller@@ asset on disk, which looks like this in the ~~Project Browser~~
+``Animator Controller`` の作成は ~~Project View~~ から作成できます (メニューから: ^^Create > Animator Controller^^)。
+ディスク上に @@.controller@@ アセットを作成し、 ~~Project Browser~~ 上で次のように表示されます。
 
 Attach:MecanimAnimatorControllerIcon.png
-''Animator Controller asset on disk''
+''ディスク上の Animator Controller アセット''
 
-After the state machine setup has been made, you can drop the controller onto the Animator component of any character with an Avatar in the ~~Hierarchy View~~. 
+ステートマシンをセットアップした後は、 ~~Hierarchy View~~ 上のアバター付きの任意のキャラクターのアニメータ コンポーネント上にコントローラをドロップできます。
 
 Attach:MecanimAnimatorControllerWindow.png
-''The Animator Controller Window''
+''Animator Controller ウィンドウ''
 
-The Animator Controller window will contain 
-*The ~~Animation Layer Widget~~ (top-left corner, see [[Animation Layers]])
-*The ~~Event Parameters Widget~~ (bottom-left, see [[Animation Parameters]])
-*The visualization of the [[AnimationStateMachines|State Machine itself]].
+Animator Controller ウィンドウに次が含まれます。
+*~~Animation Layer Widget~~ (左上隅, [[Animation Layers]] を参照して下さい)
+*~~Event Parameters Widget~~ (左下隅, [[Animation Parameters]] を参照して下さい)
+* [[AnimationStateMachines|ステートマシン自身]] の表示。
 
-Note that the Animator Controller Window will always display the state machine from the most recently selected @@.controller@@ asset, regardless of what scene is currently loaded.
+Animator Controller ウィンドウは現在ロードされているシーンが何であるかに関わらず、最も最近選択された @@.controller@@ アセットのステートマシンを表示します。

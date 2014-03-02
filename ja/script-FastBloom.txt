@@ -1,21 +1,20 @@
-!FastBloom
+! ファストブルーム / FastBloom
 
-``Blooming`` is the optical effect where light from a bright source (such as a glint) appears to leak into surrounding objects. This image effect adds such a glow in a fast and optimized way. If you need more flexibility, try the more sophisticated [[script-Bloom|Bloom]] effect instead.
+``Blooming`` （ブルーム）とは明るい光源（例えば、閃光のような）からの光が周囲の物体に漏れるように見える光学効果である。このイメージエフェクトにより効率的に最適な方法でグローを加えます。 より柔軟性が必要な場合は代わりにより洗練された [[script-Bloom|ブルーム]] エフェクトを使用して下さい。
 
-This bloom effect works especially well with [[HDR]] enabled scenes.
+ブルーム エフェクトは [[HDR]] を有効にしたシーンで特に効果的です。
 
 Attach:FxFastBloom.png\\
-Example of the bloom used in conjunction with HDR lighting
+HDR ライティングとブルームを合わせて使用した例
 
-!! Properties
+!! プロパティ
 
 ||PROPS
-||``Threshhold`` ||Min RGB values that will start blooming. ||
-||``Intensity`` ||Total bloom intensity. ||
-||``Blur Size`` ||Bloom size (screen size dependent). ||
-||``Resolution`` ||Internal bloom buffer size. The lower the faster the effect can execute. ||
-||``Blur Iterations`` ||The amount of blur iterations when producing the soft glow. The smaller the faster the effect can execute. ||
+||``Threshhold`` ||ブルーム開始の条件となる最小 RGB 値||
+||``Intensity`` ||全体のブルーム強度||
+||``Blur Size`` ||ブルームの大きさ (画面の大きさに依存) ||
+||``Resolution`` ||内部ブルーム バッファ サイズ。値が小さいほどエフェクトが速く実行される||
+||``Blur Iterations`` ||ソフト グロー を生成する際のブラー反復回数。値が小さいほどエフェクトが速く実行される||
 
-As with the other [[comp-ImageEffects|image effects]], this effect is only available in Unity Pro and you must have the [[HOWTO-InstallStandardAssets|Pro Standard Assets]] installed before it becomes available.
-
+他の [[comp-ImageEffects|イメージ エフェクト]] と同様、このエフェクトは Unity Pro でのみ提供されており、利用する前に [[HOWTO-InstallStandardAssets|Pro Standard Assets]] をインストールしておく必要があります。
 (:include imagefx-SM2:)
