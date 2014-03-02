@@ -1,16 +1,16 @@
-! Physics Material 2D
+! 物理マテリアル 2D / Physics Material 2D
 
-A $$Physics Material 2D$$ is used to adjust the friction and bounce that occurs between 2D physics objects when they collide. You can create a Physics Material 2D from the Assets menu (^^Assets > Create > Physics Material 2D^^ ).
+$$Physics Material 2D$$ を使用して 2D 物理オブジェクト間の衝突時の摩擦や弾性を調整します。アセット メニューから 物理マテリアル 2D を作成できます(^^Assets > Create > Physics Material 2D^^ )。
 
 Attach:Inspector-PhysicsMaterial2D.png
 
 
-!!Properties
+!!プロパティ
 
 ||PROPS
-||``Friction`` ||Coefficient of friction for this collider. ||
-||``Bounciness`` ||The degree to which collisions rebound from the surface. A value of 0 indicates no bounce while a value of 1 indicates a perfect bounce with no loss of energy. ||
+||``Friction`` ||コライダーの摩擦係数||
+||``Bounciness`` ||衝突が表面から弾むときの強さ。値が 0 の場合は完全に弾まず、値が 1 の場合はエネルギー損失なく完全に弾みます。||
 
 
-!! Details
-To use a Physics Material 2D, simply drag it onto an object with a 2D collider attached or drag it to the collider component in the inspector. Note that for 3D physics, the equivalent asset is referred to as a ''Physic Material'' (ie, no S at the end of ''physic'') - it is important in scripting not to get the two spellings confused.
+!! 詳細
+物理マテリアル 2D を使用するには、2D コライダーがアタッチされたオブジェクト上にドラッグするか、インスペクター上のコライダー コンポーネント上にドラッグします。3D 物理挙動の ''Physic Material'' （''Physic'' の最後に s がつかない）に相当するアセットであり、スクリプティングにおいてスペルミスのないように注意して下さい。
