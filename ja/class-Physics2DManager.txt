@@ -1,18 +1,18 @@
-! Physics 2D Manager
+! 物理 2D マネージャ / Physics 2D Manager
 
-You can access the $$Physics 2D Manager$$ from the menu by selecting ^^Edit->Project Settings->Physics 2D^^.
+$$Physics 2D Manager$$ にアクセスするにはメニューから ^^Edit->Project Settings->Physics 2D^^ を選択します。
 
 Attach:Physics2DSet.png
 
-!!Properties
+!!プロパティ
 
 ||PROPS
-||``Gravity`` ||The amount of gravity applied to all $$Rigidbody2D$$ objects. Generally, gravity is only set for the negative direction of the Y-axis. ||
-||``Default Material`` ||The default $$Physics Material 2D$$ that will be used if none has been assigned to an individual collider. ||
-||``Velocity iterations`` ||The number of iterations made by the physics engine to resolve velocity effects. Higher numbers result in more accurate physics but at the cost of CPU time. ||
-||``Position iterations`` ||The number of iterations made by the physics engine to resolve position changes. Higher numbers result in more accurate physics but at the cost of CPU time. ||
-||``Raycasts Hit Triggers`` ||If enabled, any Raycast that intersects with a Collider marked as a Trigger will return a hit.  If disabled, these intersections will not return a hit. ||
-||``Layer Collision Matrix`` ||Defines how the [[LayerBasedCollision | layer-based collision]] detection system will behave.||
+||``Gravity`` ||全ての $$Rigidbody2D$$ オブジェクトに適用される重力の強さ。一般的に重力は Y 軸の負の方向のみにセットされます。||
+||``Default Material`` ||個々のコライダーに割り当てされてない場合に使用されるデフォルトの $$Physics Material 2D$$||
+||``Velocity iterations`` ||物理エンジンが速度を計算するのに反復する回数。大きくするほど正確な物理計算がなされるが CPU 時間を消費する||
+||``Position iterations`` ||物理エンジンが位置の変更を計算するのに反復する回数。大きくするほど正確な物理計算がなされるが CPU 時間を消費する||
+||``Raycasts Hit Triggers`` ||オンにすると、トリガーに設定したコライダーと交差した Raycast はヒットを返す。オフにすると、交差はヒットを返さない||
+||``Layer Collision Matrix`` ||[[LayerBasedCollision | レイヤー 毎の衝突]] の動作を定義する||
 
-!!Details
-The Physics 2D manager contains the settings for 2D physics only. Any changes made here will not affect the behaviour of 3D physics.
+!!詳細
+物理 2D マネージャは 2D 物理挙動むけの設定のみ含みます。変更したとしても 3D 物理挙動には影響しません。
