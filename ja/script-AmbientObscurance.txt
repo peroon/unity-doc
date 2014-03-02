@@ -1,28 +1,28 @@
-!Screen Space Ambient Obscurance
+!スクリーン スペース アンビエント オブスキュアランス / Screen Space Ambient Obscurance
 
-This image effect approximates [[http://en.wikipedia.org/wiki/Ambient_occlusion | Ambient Occlusion]] in realtime, as an image post-processing effect. It darkens creases, holes and surfaces that are close to each other. In real life, such areas tend to block out or ``occlude`` ambient light, hence they appear darker. It is an improvement to the existing [[script-SSAOEffect|SSAO effect]] in terms of quality and -- depending on settings and hardware -- speed. Additionally, it doesn't rely on a generated normals buffer as it is recreating them on the fly based on depth.
+[[http://en.wikipedia.org/wiki/Ambient_occlusion | Ambient Occlusion]] エフェクトはアンビエントオクルージョン(Ambient Occlusion) をリアルタイムで擬似的に後処理イメージ効果として再現するものです。互いに接近している折り目、穴、地表を暗くする効果があります。現実世界においては、環境光（Ambient light）を遮られ光効果を ''オクルージョン'' (無視)するため暗く見えます。既存の [[script-SSAOEffect|SSAO エフェクト]] を品質面で改善したものであり、設定やハードウェアによっては速度も改善されます。さらに生成された法線バッファには依存せず、デプスにもとづいてリアルタイムでそれらを再生成します。
 
 他の [[comp-ImageEffects|イメージ エフェクト]] と同様、このエフェクトは Unity Pro でのみ提供されており、利用する前に [[HOWTO-InstallStandardAssets|Pro Standard Assets]] をインストールしておく必要があります。
-The following two screenshots compare the results of a simple scene employing this occlusion effect.
+次の二つのスクリーンショットによりシンプルなシーンでオクルージョン エフェクトを比較します。
 
 Attach:ImageEffects./WithoutAO.png\\
-''The high degree of ambient lighting basically removes all shading which makes objects hard to decipher.''
+''環境光によりにより全てのシェーディングが取り除かれオブジェクトの差が見分けにくくなる''
 
 Attach:ImageEffects./WithAO.png\\
-''With added ambient occlusion, the resulting shading makes objects visible.''
+''アンビエント オクルージョンの追加でオブジェクトの境界が明確になる''
 
-The degree of darkening (in short: AO) is mostly controlled through the ``Intensity`` and ``Radius`` parameters. However, there is a post blur step performed to soften out the raw and noisy AO results. The following screenshot shows a result that performs a smaller blur.
+暗がりの度合い (略して AO) は、おおよそ ``Intensity`` および ``Radius`` 引数により制御されます。しかし粗くてノイズの入る AO 結果をやわらげるために後処理にブラーがかかります。次のスクリーンショットにより、より小さいブラーをかける効果を示します。
 
 Attach:ImageEffects./AOBlurExplained.png\\
-''Frequency and strength of the occlusion can be controlled through the post blur step (``Blur Iterations`` and ``Blur Filter Distance``)''
+''オクルージョンの頻度および強度は後処理のブラーにより制御できる（``Blur Iterations`` および ``Blur Filter Distance``）''
 
-!! Properties
+!! プロパティ
 
 ||PROPS
-||``Intensity`` ||The degree of darkness produced by the effect.||
-||``Radius`` ||The maximum area taken into account when checking for possible occlusion.||
-||``Blur Iterations`` ||The blur passes to soften out the naturally noisy result. ||
-||``Blur Filter Distance`` ||The sample distance used during the blur passes. ||
-||``Downsampling`` ||The resolution at which calculations should be performed. Downsampling increases rendering speed at the cost of quality.||
+||``Intensity`` ||エフェクトがかける暗さの度合い||
+||``Radius`` ||オクルージョンをかけうる最大範囲||
+||``Blur Iterations`` ||通常のままだとノイズの多い結果をやわらげるブラー||
+||``Blur Filter Distance`` ||ブラーに使用するサンプリング距離||
+||``Downsampling`` ||計算を行う際の解像度。より大きな値にすることでレンダリング処理の時間を短縮、ただし品質は低下する||
 
 (:include imagefx-SM3Depth:)
