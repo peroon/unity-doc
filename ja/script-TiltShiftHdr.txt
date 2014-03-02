@@ -1,21 +1,21 @@
-! Tilt Shift
+! ティルト シフト / Tilt Shift
 
-$$Tilt Shift$$ is a local blur effect that blurs the image based on distance to the center. It comes in two modes: ``TiltShift`` and ``Iris``. The following screenshots demonstrate the difference.
+$$Tilt Shift$$ は中心からの位置にもとづいてブラーをかけるエフェクトです。モードが二つあります：  ``TiltShift`` 、 ``Iris`` 。次の二つのスクリーンショットでその違いを示します。
 
 Attach:ImageEffects./TiltShiftField.png\\
-''Tilt shift mode: vertical defocus''
+''Tilt shift モード: 垂直方向にブラーをかける''
 
 Attach:ImageEffects./TiltShiftIris.png\\
-''Iris mode: radial defocus''
+''Iris モード: 放射状にブラーをかける''
 
 他の [[comp-ImageEffects|イメージ エフェクト]] と同様、このエフェクトは Unity Pro でのみ提供されており、利用する前に [[HOWTO-InstallStandardAssets|Pro Standard Assets]] をインストールしておく必要があります。
 
 !! Properties
 ||PROPS
-||``Mode`` ||Choose type of defocus (see above). ||
-||``Quality`` ||Amount of samples taken and thus responsible for performance. Choose ``Preview`` to just render blur areas. ||
-||``Max Blur Size`` ||Maximum blur distance allowed. ||
-||``Blur Area`` ||Size and strength of the blur (verify effect with Preview ``Quality``).||
+||``Mode`` ||ブラーをかける方法を選択 (上記を参照). ||
+||``Quality`` ||サンプリング回数。パフォーマンスに影響する。 ``Preview`` を選択した場合 ブラー領域のみレンダリング||
+||``Max Blur Size`` ||最大のブラー距離||
+||``Blur Area`` ||ブラーの大きさおよび強度 (``Quality`` を Preview にしてエフェクトを確認できる)||
 
 
 (:include imagefx-SM3:)
