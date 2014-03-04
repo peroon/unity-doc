@@ -1,9 +1,9 @@
-! Custom Editors
+! カスタム エディタ / Custom Editors
 
-A key to increasing the speed of game creation is to create custom editors for commonly used components. For the sake of example, we'll use this very simple script that always keeps an object looking at a point.
+ゲーム開発を高速化するうえでカギとなるのは頻繁に使用されるコンポーネントにカスタム エディタを 作成することです。これを例示するためにスクリプトを用意し、あるオブジェクトが 1 つの点を見続けるようにします。
 
 [@
-// JS example.
+// JavaScript サンプル
 var lookAtPoint = Vector3.zero;
 
 function Update () {
@@ -11,7 +11,7 @@ function Update () {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEngine;
 using System.Collections;
 
@@ -25,12 +25,12 @@ public class LookAtPoint : MonoBehaviour {
 }
 @]
 
-This will keep an object oriented towards a world-space point.
+これによりオブジェクトはワールド座標上の 1 つの地点を見続けます。
 
-The first step to making it work nicely in the editor is to make the script run even when you're not testing the game. We do this by adding an ExecuteInEditMode attribute to it:
+エディタ上で上手に動作させるための最初のステップはスクリプトがゲームを再生してないときもスクリプトが動作するようにすることです。ExecuteInEditMode 属性の追加により、これは実現できます。
 
 [@
-// JS example.
+// JavaScript サンプル
 @script ExecuteInEditMode()
 
 var lookAtPoint = Vector3.zero;
@@ -40,7 +40,7 @@ function Update () {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEngine;
 using System.Collections;
 
@@ -54,14 +54,15 @@ public class LookAtPoint : MonoBehaviour {
 }
 @]
 
-Try adding the script to your main camera and drag it around in the Scene view.
+スクリプトをメインカメラにアタッチしてシーンビューで動かします。
 
-!!! Making a Custom Editor
+!!! カスタム エディタの作成
 
-This is all well and good, but we can make the editor for it a lot nicer by customizing it. To do that we need to create an ``Editor`` for it. Create a script called LookAtPointEditor in a folder called Editor.
+これでも良いのですが、カスタマイズすることでさらにエディタをより良く出来ます。そのためには ``Editor`` を作成する必要があります。Editor と名前のついたフォルダに 
+LookAtPointEditor というスクリプトを作成します。
 
 [@
-// JS example.
+// JavaScript サンプル
 @CustomEditor (LookAtPoint)
 class LookAtPointEditor extends Editor {
     function OnInspectorGUI () {
@@ -72,7 +73,7 @@ class LookAtPointEditor extends Editor {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
@@ -90,21 +91,21 @@ public class LookAtPointEditor : Editor {
 }
 @]
 
-This class has to derive from Editor. The @CustomEditor attribute informs Unity which component it should act as an editor for.
+このクラスは Editor から派生する必要があります。 @CustomEditor 属性により Unity はどのコンポーネントに対する Editor とするべきか判断します。
 
-The code in OnInspectorGUI is executed whenever Unity displays the editor in the Inspector. You can put any GUI code in here - it works just like OnGUI does for games, but is run inside the Inspector. Editor defines the target property that you can use to access the object being inspected.
+OnInspectorGUI のコードは Unity がインスペクタ上でエディタを表示している間はつねに実行されます。任意の GUI コードを入れることができます。ゲームの OnGUI と同様に動作しますが インスペクタの中で実行されます。エディタはインスペクタで表示されているオブジェクトにアクセスするためのターゲットプロパティを定義します。
 
-The EditorUtility.SetDirty code is executed if the user has changed any of the values by checking GUI.changed.
+EditorUtility.SetDirty コードは GUI.changed をチェックし、ユーザが何かの値を変更した場合に実行します。
 
-In this case, we make one of the Vector3 fields like is used in the Transform Editor - like so:
+このケースでは Vector3 のようなフィールド を Transform エディタで次のように使用します：
 Attach:CustomInspector.png\\
 
 
-!!! Scene View Additions
-You can add extra code to the Scene View by implementing an OnSceneGUI in your custom editor. In this case, we'll add a second set of position handles, letting users drag the look-at point around in the Scene view.
+!!! シーンビュー追加Scene View Additions
+シーンビューにコードを追加するにはカスタム エディタで OnSceneGUI を実装します。このケースでは、二つの位置ハンドルのセットを追加し、シーンビュー上で LookAt 地点をドラッグできます。
 
 [@
-// JS example.
+// JavaScript サンプル
 @CustomEditor (LookAtPoint)
 class LookAtPointEditor extends Editor {
     function OnInspectorGUI () {
@@ -121,7 +122,7 @@ class LookAtPointEditor extends Editor {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
@@ -147,6 +148,6 @@ public class LookAtPointEditor : Editor {
 }
 @]
 
-OnSceneGUI works just like OnInspectorGUI - except it gets run in the scene view. To help you make your editing interface, you can use the functions defined in [[ScriptRef:Handles.html | Handles]] class. All functions in there are designed for working in 3D Scene views.
+OnSceneGUI は OnInspectorGUI と同様に動作します - 違いはシーンビューで実行されることです。エディタ の インタフェースの作成しやすくするため [[ScriptRef:Handles.html | Handles]] クラスに定義されている関数を使用できます。そこにある全ての関数は 3D シーンビューで動作するように設計されています。
 
-If you want to put 2D GUI objects (GUI, EditorGUI and friends), you need to wrap them in calls to Handles.BeginGUI() and Handles.EndGUI().
+もし 2D GUI オブジェクト（GUI, EditorGUI, 等）を配置したい場合、 Handles.BeginGUI() および Handles.EndGUI() でラップする必要があります。
