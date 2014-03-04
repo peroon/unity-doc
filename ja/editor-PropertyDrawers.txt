@@ -149,23 +149,23 @@ public class IngredientDrawer : PropertyDrawer {
 ``Property Drawer`` の他の使用場面はカスタムの ``Property Attributes`` を持つスクリプトのメンバーの外見を変更することです。float または integer をある数値の範囲に制限してスライダーとして ~~Inspector~~ として使用したいとします。その場合はビルトインの ``RangeAttribute`` と呼ばれる ``PropertyAttribute`` を使用して実現ができます：
 
 [@
-// Show this float in the Inspector as a slider between 0 and 10
+// インスペクタ上で 0 から 10 までのスライダーで float を表示
 
-// JS example.
+// JavaScript サンプル
 @Range (0.0, 10.0)
 var myFloat = 0.0;
 
-//C# example.
+//C# サンプル
 [Range(0.0f, 10.0f)]
 public float myFloat = 0.0f;
 @]
 
-You can make your own ``PropertyAttribute`` as well. We'll use the code for the ``RangeAttribute`` as an example. The attribute must extend the ``PropertyAttribute`` class. If you want, your property can take parameters and store them as public member variables.
+``PropertyAttribute`` を自身で作成できます。例として ``RangeAttribute`` のコードを見てみます。属性は ``PropertyAttribute`` クラスを拡張する必要があります。必要であればプロパティに引数を持たせてパブリック メンバー変数として格納できます。
 
 [@
-// This is not an editor script. The property attribute class should be placed in a regular script file.
+// エディタ スクリプトではありません。PropertyAttribute クラスは通常のスクリプト ファイルに記述すべきです。
 
-// JS example.
+// JavaScript サンプル
 class RangeAttribute extends PropertyAttribute {
 	var min : float;
 	var max : float;
@@ -177,7 +177,7 @@ class RangeAttribute extends PropertyAttribute {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEngine;
 using System.Collections;
 
@@ -193,24 +193,24 @@ public class RangeAttribute : PropertyAttribute {
 }
 @]
 
-Now that you have the attribute, you need to make a ``Property Drawer`` that draws properties that have that attribute. The drawer must extend the ``PropertyDrawer`` class, and it must have a ``CustomPropertyDrawer`` attribute to tell it which attribute it's a drawer for.
+属性ができた後は ``Property Drawer`` を作成してその属性を持つプロパティを描画します。Drawer は ``PropertyDrawer`` クラスを継承し、 何に対する Drawer であるかを示す ``CustomPropertyDrawer`` 属性を持つ必要があります。
 
 [@
-// The property drawer class should be placed in an editor script, inside a folder called Editor.
+// PropertyAttribute クラスは通常のエディタ スクリプトに記述したうえで Editor という名前のフォルダに配置する必要があります。
 
-// JS example.
+// JavaScript サンプル
 
-// Tell the RangeDrawer that it is a drawer for properties with the RangeAttribute.
+// RangeDrawer が RangeAttribute を持つプロパティの Drawer であることを明示
 @CustomPropertyDrawer (RangeAttribute)
 class RangeDrawer extends PropertyDrawer {
 	
-	// Draw the property inside the given rect
+	// プロパティを指定した rect の中に描画
 	function OnGUI (position : Rect, property : SerializedProperty, label : GUIContent) {
 		
-		// First get the attribute since it contains the range for the slider
+		// スライダーの範囲を含む attribute を取得
 		var range : RangeAttribute = attribute as RangeAttribute;
 		
-		// Now draw the property as a Slider or an IntSlider based on whether it's a float or integer.
+		// float か integer であるかにより、プロパティを 各々 Slider か IntSlider として描画
 		if (property.propertyType == SerializedPropertyType.Float)
 			EditorGUI.Slider (position, property, range.min, range.max, label);
 		else if (property.propertyType == SerializedPropertyType.Integer)
@@ -221,22 +221,22 @@ class RangeDrawer extends PropertyDrawer {
 }
 
 
-// C# example.
+// C# サンプル
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
-// Tell the RangeDrawer that it is a drawer for properties with the RangeAttribute.
+// RangeDrawer が RangeAttribute を持つプロパティの Drawer であることを明示
 [CustomPropertyDrawer(typeof(RangeAttribute))]
 public class RangeDrawer : PropertyDrawer {
 	
-	// Draw the property inside the given rect
+	// プロパティを指定した rect の中に描画
 	void OnGUI (Rect position, SerializedProperty property, GUIContent label) {
 		
-		// First get the attribute since it contains the range for the slider
+		// スライダーの範囲を含む attribute を取得
 		RangeAttribute range  = attribute as RangeAttribute;
 		
-		// Now draw the property as a Slider or an IntSlider based on whether it's a float or integer.
+		// float か integer であるかにより、プロパティを 各々 Slider か IntSlider として描画
 		if (property.propertyType == SerializedPropertyType.Float)
 			EditorGUI.Slider(position, property, range.min, range.max, label);
 		else if (property.propertyType == SerializedPropertyType.Integer)
