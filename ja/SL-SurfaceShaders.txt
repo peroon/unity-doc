@@ -1,8 +1,8 @@
-! Surface Shadersの記述 / Writing Surface Shaders
+! サーフェイスシェーダの記述 / Writing Surface Shaders
 
 ライティングと相互作用するシェーダの記述は複雑です。 各種ライト、各種シャドウ オプション、各種レンダリング パス (フォワードおよび遅延レンダリング) があり、シェーダはその複雑さを処理する必要があります。
 
-Unity の $$Surface Shaders$$ は、低いレベルの [[SL-ShaderPrograms | vertex/pixel shader programs]] を使用した場合よりも、lit シェーダの記述を、コード生成によって遥かに簡単にする手法です。 Surface Shadersにはカスタム言語はありませんし、魔法や忍術というわけでもありません。手動で記述する必要なる繰り返しコードをすべて生成しているだけです。 それでも、Cg/HLSL でシェーダ コードを記述します。
+Unity の $$Surface Shader$$ は、低いレベルの [[SL-ShaderPrograms | 頂点/ピクセル シェーダ プログラム]] を使用した場合よりも、lit シェーダの記述を、コード生成によって遥かに簡単にする手法です。 Surface Shaderにはカスタム言語はありませんし、魔法や忍術というわけでもありません。手動で記述する必要なる繰り返しコードをすべて生成しているだけです。 それでも、Cg/HLSL でシェーダ コードを記述します。
 
 サンプルが必要な場合は、[[SL-SurfaceShaderExamples | $$Surface Shader Examples$$]] および [[SL-SurfaceShaderLightingExamples | $$Surface Shader Custom Lighting Examples$$]] を参照してください。
 
@@ -12,9 +12,9 @@ Unity の $$Surface Shaders$$ は、低いレベルの [[SL-ShaderPrograms | ver
 
 まずは入力用のUVや他の必要なデータと、出力用の構造体 @@SurfaceOutput@@ が記述されている ''surface function''を定義します。 SurfaceOutput は基本的に、''表面のプロパティ''を記述します (アルベド、色、法線など)。 Cg/HLSL で、このコードを記述します。
 
-Surface Shaders コンパイラは、どんな入力が必要で、どんな出力を出すかということを決定し、[[SL-ShaderPrograms | vertex&pixel shaders]] を生成します。もちろん、Forward レンダリングやDeferred レンダリングを処理するレンダリングパスもここで生成します。
+Surface Shaders コンパイラは、どんな入力が必要で、どんな出力を出すかということを決定し、[[SL-ShaderPrograms | 頂点/ピクセルシェーダ]] を生成します。もちろん、Forward レンダリングやDeferred レンダリングを処理するレンダリングパスもここで生成します。
 
-Surface Shadersが出力する標準的な構造体は次のようになります。
+Surface Shaderが出力する標準的な構造体は次のようになります。
 [@
 struct SurfaceOutput {
     half3 Albedo;
@@ -34,8 +34,8 @@ struct SurfaceOutput {
 
 !! Surface Shaders コンパイル 命令
 
-その他のシェーダ同様、Surface Shadersは @@CGPROGRAM..ENDCG@@ ブロック内に置かれます。 違いは以下のようになります。
-* [[SL-Pass|Pass]] ではなく、[[SL-SubShader | SubShader]] ブロック内に配置される必要があります。 Surface Shadersは複数のパスでコンパイルされます。
+その他のシェーダ同様、Surface Shaderは @@CGPROGRAM..ENDCG@@ ブロック内に置かれます。 違いは以下のようになります。
+* [[SL-Pass|Pass]] ではなく、[[SL-SubShader | SubShader]] ブロック内に配置される必要があります。 Surface Shaderは複数のパスでコンパイルされます。
 * @@#pragma surface ...@@ 命令を使用して、これがSurface Shadersであることを示しています。
 
 @@#pragma surface@@ 命令は次のようになります。
@@ -43,7 +43,7 @@ struct SurfaceOutput {
     #pragma surface __surfaceFunction__ __lightModel__ ''[optionalparams]''
 
 必要なパラメータ:
-* surfaceFunction - Cg で記述されたSurface Shaders の関数です。 これは、@@void surf (Input IN、inout SurfaceOutput o)@@ という関数を持つことを意味します。ここのInputは前もって定義した構造体になります。 Inputは、surface 関数が必要とするテクスチャ座標と追加の自動変数を含む必要があります。
+* surfaceFunction - Cg で記述されたSurface Shader の関数です。 これは、@@void surf (Input IN、inout SurfaceOutput o)@@ という関数を持つことを意味します。ここのInputは前もって定義した構造体になります。 Inputは、surface 関数が必要とするテクスチャ座標と追加の自動変数を含む必要があります。
 * lightModel - 使用するライティング モデル。 組み込みライティング モデルは、@@Lambert@@ (デフューズ) と @@BlinnPhong@@ (スペキュラ) です。 自前のライティング モデルを記述する方法に関しては、[[SL-SurfaceShaderLighting | Custom Lighting Models]] ページを参照してください。
 
 
@@ -58,7 +58,7 @@ struct SurfaceOutput {
 * @@fullforwardshadows@@ - [[RenderTech-ForwardRendering | Forward]] レンダリング パスで、すべてのタイプのシャドウをサポートします。
 * @@decal:add@@ - 追加のデカール シェーダ (例: 地形 AddPass)。
 * @@decal:blend@@ - 半透明のデカール シェーダ。
-* @@softvegetation@@ - Soft Vegetation をオンにすると、Surface Shadersのみレンダリングするようにします。
+* @@softvegetation@@ - Soft Vegetation をオンにすると、Surface Shaderのみレンダリングするようにします。
 * @@noambient@@ - アンビエントや球面調和関数ライトを適用しません。
 * @@novertexlights@@ - Forward レンダリングで、球面調和関数または頂点ごとのライトを適用しません。
 * @@nolightmap@@ - このシェーダでライトマップのサポートを無効にします（シェーダをより小さくします）。
@@ -68,10 +68,10 @@ struct SurfaceOutput {
 * @@halfasview@@ - 半分方向のベクトルを、ビュー方向ではなくｍライティング関数に渡します。 半距離は頂点ごとに計算および標準化されます。 これはより高速ですが、全体的に正しくりません。
 * @@tessellate:TessFunction@@ - DX11 GPUテッセレーションを使います。詳しくは [[SL-SurfaceShaderTessellation | Surface Shader Tessellation]] をご覧ください。
 
-また、CGPROGRAM　ブロック内に @@#pragma debug@@ を記述することで、Surface コンパイラは、生成されたコードの中に多くのコメントを付加できます。 シェーダのインスペクタで「Open Compiled Shader」をすることで閲覧できます。
+また、CGPROGRAM ブロック内に @@#pragma debug@@ を記述することで、Surface コンパイラは、生成されたコードの中に多くのコメントを付加できます。 シェーダのインスペクタで「Open Compiled Shader」をすることで閲覧できます。
 
 
-!! Surface Shaders入力構造
+!! Surface Shader 入力構造
 
 入力の構造体 @@Input@@ には一般に、シェーダによって必要とされるテクスチャ座標があります。 テクスチャ座標の名前は、''@@uv@@''の後にテクスチャ名が来る形にする必要があります (第 2 のテクスチャ座標セットを使用するには、''@@uv2@@''で始めます)。
 
@@ -80,10 +80,10 @@ struct SurfaceOutput {
 * @@float4@@ with @@COLOR@@ セマンティック - 補間された頂点ごとの色を含みます。
 * @@float4 screenPos@@ - 反射効果の画面空間位置を含みます。 例えば、Dark Unity では、WetStreet シェーダによって使用されます。
 * @@float3 worldPos@@ - 世界空間の位置を含みます。
-* @@float3 worldRefl@@ - ''Surface Shadersが o.Normal に書き込まない場合''の世界反射ベクトルを含みます。 例については、反射 - デフューズ シェーダを参照。
-* @@float3 worldNormal@@ -  ''Surface Shadersが o.Normal に書き込まない場合''の世界法線ベクトルを含みます。
-* @@float3 worldRefl; INTERNAL_DATA@@ -  ''Surface Shadersが o.Normal に書き込む場合''の世界反射ベクトルを含みます。 ピクセルごとの法線マップに基づいて、反射ベクトルを取得するには、@@WorldReflectionVector (IN, o.Normal)@@ を使用します。 例については、反射 - バンプ型 シェーダを参照。
-* @@float3 worldNormal; INTERNAL_DATA@@ - ''Surface Shadersが o.Normal に書き込む場合''の世界反射ベクトルを含みます。 ピクセルごとの法線マップに基づいて、法線ベクトルを取得するには、@@WorldNormalVector (IN, o.Normal)@@ を使用します。
+* @@float3 worldRefl@@ - ''Surface Shaderが o.Normal に書き込まない場合''の世界反射ベクトルを含みます。 例については、反射 - デフューズ シェーダを参照。
+* @@float3 worldNormal@@ -  ''Surface Shaderが o.Normal に書き込まない場合''の世界法線ベクトルを含みます。
+* @@float3 worldRefl; INTERNAL_DATA@@ -  ''Surface Shaderが o.Normal に書き込む場合''の世界反射ベクトルを含みます。 ピクセルごとの法線マップに基づいて、反射ベクトルを取得するには、@@WorldReflectionVector (IN, o.Normal)@@ を使用します。 例については、反射 - バンプ型 シェーダを参照。
+* @@float3 worldNormal; INTERNAL_DATA@@ - ''Surface Shaderが o.Normal に書き込む場合''の世界反射ベクトルを含みます。 ピクセルごとの法線マップに基づいて、法線ベクトルを取得するには、@@WorldNormalVector (IN, o.Normal)@@ を使用します。
 
 !! サーフェイスシェーダおよび DirectX 11
 
