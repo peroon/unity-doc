@@ -1,65 +1,66 @@
-!Overview
+! 概要 / Overview
 
-When you open the Animation View (menu: ~~Window > Animation~~), you will see a window similar to this:
+アニメーション ビューを開く(メニュー: ~~Window > Animation~~)と、次のウィンドウが表示されます：
 
 Attach:AnimWindowOverview.png
 
-The Animation View is tightly integrated with the Hierarchy View, the Scene View, and the Inspector. Like the Inspector, the Animation View will show whatever Game Object is selected. You can select a Game Object to view using the Hierarchy View or the Scene View. (If you select a Prefab in the Project View you can inspect its animations as well, but you have to drag the Prefab into the Scene View in order to be able to edit them.)
+アニメーション ビューは階層ビュー、シーンビュー、およびインスペクタと密接に連携しています。インスペクタと同様にアニメーション ビューは選択したゲームオブジェクトを表示します。表示するゲームオブジェクトを選ぶのに、階層ビューまたはシーンビューどちらも使用できます。（もしプロジェクトビューでプレハブを選択するとアニメーションもインスペクタで見られますが、シーンビュー上にプレハブをドラッグしないと編集できません。）
 
-At the left side of the Animation View is a list of the animated properties of the selected Game Object. Properties can be folded and unfolded by clicking the foldout triangles next to them.
+アニメーション ビューの左側に選択されがゲームオブジェクトのアニメーション付きプロパティの一覧があります。プロパティの折りたたみ、展開をするには隣にある三角記号をクリックします。
  
-!!Creating a New Animation Clip
+!!アニメーション ビューの新規作成
 
-Animated Game Objects in Unity need an Animator Component that controls the animations. If a Game Object doesn't already have an Animator Component, the Animation View will add one for you automatically when creating a new Animation Clip or when entering Animation Mode.
-To create a new Animation Clip for the selected Game Object, click the selection box at the upper left of the Animation View and select [Create New Clip]. You will then be prompted to save an Animation Clip somewhere in your Assets folder. If the Game Object doesn't have an Animator Component already, it will be automatically added at this point. The new Animation Clip will automatically be added to the Animator.
+Unity でアニメーション付きゲームオブジェクトでアニメーションを制御するのにアニメータ コンポーネントが必要です。もしゲームオブジェクトにアニメータ コンポーネントがすでにない場合、アニメーション ビューは新規のアニメーション クリップの作成またはアニメーション モードに入るときに自動作成します。
+選択したゲームオブジェクトに新規のアニメーション クリップを作成するにはアニメーション ビューの左上にある選択ボックスをクリックして [Create New Clip] を選択します。Assets フォルダのどこかにアニメーション クリップを保存するようにプロンプト表示されます。もしゲームオブジェクトがすでにアニメータ コンポーネントがない場合、この時点で自動的に追加されます。新規のアニメーション クリップがアニメータに追加されます。
 
 Attach:AnimCreateNewClip.png
 
-To begin editing an Animation Clip for the selected Game Object, click on the Animation Mode button (the red "Record" button next to the "Play" button in the animation view toolbar).
+選択ゲームオブジェクトのアニメーション クリップの編集を開始するにはアニメーション モードのボタン（アニメーション ビュー ツールバーにある Play ボタンの隣にある Record ボタン）をクリックします。
 
-This will enter Animation Mode, where changes to the Game Object are stored into the Animation Clip. (If the Game Object doesn't have an Animator Component already, it will be automatically added at this point. If there is not an existing Animation Clip, you will be prompted to save one somewhere in your Assets folder.)
+これによりアニメーション モードに入り、ゲームオブジェクトへの変更はアニメーション クリップに格納されます。（もしゲームオブジェクトがアニメータ コンポーネントを持たない場合、この時点で自動的に追加されます。もし既存のアニメーション クリップがない場合、 Assets フォルダのどこかに保存するようプロンプト表示されます。）
 
-You can stop the Animation Mode at any time by clicking the Animation Mode button again. This will revert the Game Object to the state it was in prior to entering the Animation Mode.
+アニメーション モードを停止するには、いつでもアニメーション モードボタンを再度クリックします。これでアニメーションモードに入る前のゲームオブジェクトの状態に戻せます。
 
-To animate a property, click on the ~~Add Curve~~ button and choose the property from the popup list.
+プロパティにアニメーションをつけるには ~~Add Curve~~ ボタンをクリックしてポップアップ リストからプロパティを選択します。
 
 Attach:AnimAddCurve.png
 
-Transform properties are special in that the .x, .y, and .z properties are linked, so those curves are added three at a time. See the section on [[UsingAnimCurves|Using Animation Curves]] for further information.
+トランスフォーム プロパティは .x, .y, .z プロパティが連動する特徴があり、カーブは同時に 3 つ追加されます。詳細については [[UsingAnimCurves|アニメーション カーブの使用]] を参照して下さい。
 
-When in Animation Mode, a red vertical line will show which frame of the Animation Clip is currently previewed. The Inspector and Scene View will show the Game Object at that frame of the Animation Clip. The values of the animated properties at that frame are also shown in a column to the right of the property names.
+アニメーションモードにいるとき、赤い縦線により現在プレビューされているアニメーション クリップが示されます。インスペクタおよびシーンビューによりアニメーション クリップのそのフレームでのゲームオブジェクトを表示します。そのフレームのアニメーション付きプロパティはプロパティ名の右にあるカラムにも表示されます。
 
-You can click anywhere on the Time Line to preview or modify that frame in the Animation Clip. The numbers in the Time Line are shown as seconds and frames, so 1:30 means 1 second and 30 frames.
+タイムラインの任意の場所をクリックしてアニメーションクリップのそのフレームをプレビューまたは修正できます。タイムラインの数字は秒とフレーム数で示され、1:30 は 1 秒と 30 フレームを意味します。
 
-You can go directly to a specific frame by typing it in, or use the buttons to go to the previous or next keyframe.
- 
-You can also use the following keyboard shortcuts to navigate between frames:
-* Press Comma (,) to go to the previous frame.
-* Press Period (.) to go to the next frame.
-* Hold Alt and press Comma (,) to go to the previous keyframe.
-* Hold Alt and press Period (.) to go to the next keyframe.
+特定のフレームに飛ぶにはタイプ入力するか、ボタンを使用して前後のキーフレームに移動します。
 
-In Animation Mode you can move, rotate, or scale the Game Object in the Scene View. This will automatically create Animation Curves for the position, rotation and scale properties of the Animation Clip if they didn't already exist, and keys on those Animation Curves will automatically be created at the currently previewed frame to store the respective Transform values you changed.
+次のキーボード ショートカットでもフレーム間の移動ができます：
+* カンマ (,) を押下して前のフレームに移動
+* ピリオド (.) を押下して次のフレームに移動
+* Alt およびカンマ (,) を押下して前のキーフレームに移動
+* Alt およびピリオド (.) を押下して次のキーフレームに移動
 
-You can also use the Inspector to modify any of the animatable properties of the Game Object. This too will create Animation Curves as needed, and create keys on those Animation Curves at the currently previewed frame to store your changed values. Properties that are not animatable are grayed out in the Inspector while in Animation Mode.
+アニメーションモードではゲームオブジェクトの移動、回転、スケールがシーンビュー上で出来ます。すでに存在しない場合、アニメーションクリップの位置、回転、スケールのプロパティにもとづきアニメーション カーブが自動的に作成され、それらアニメーション カーブのキーは現在プレビューされているフレームで作成されて変更したトランスフォームの値を格納します。
 
-The Keyframe button creates a keyframe for the shown curves at the currently previewed frame (shortcut: K).
+インスペクタを使用してゲームオブジェクトのアニメーション化できる任意のプロパティを修正できます。これもまたアニメーション カーブを必要に応じて作成し、変更した値を現在プレビューされているフレームに格納するためにキーをアニメーション カーブに作成します。アニメーション化できないプロパティはアニメーション モードに入ったときにインスペクタ上でグレーアウトされます。
 
-You can also manually create a keyframe using the Keyframe button. This will create a key for all the curves that are currently selected in the Animation View.
+キーフレーム ボタンにより、現在プレビュー中のフレームで表示されているカーブでキーフレームが作成されます。（ショートカット: K キー）
 
-When you press the keyframe button, a new keyframe is added to the currently selected properties.
+キーフレームを手動作成するにはキーフレーム ボタンを使用します。これによりアニメーション ビューで現在選択されている全てのカーブにキーを作成します。
+
+キーフレーム ボタンを押すと、現在選択されているプロパティに新規のキーフレームが追加されます。
 
 
-!!Creating Sprite Animations
+!!スプライト アニメーションの作成
 
-There are several ways to create a sprite animation. The easiest is to drag and drop selected sprites from the Project View to the Hierarchy or Scene View in 2D mode. This will create a new Animation Clip and a Game Object with Sprite Renderer and Animator components added.
+スプライト アニメーションを作成する方法は複数あります。最も簡単な方法は 2D モードのプロジェクト ビューで選択したスプライトを回想ビューまたはシーンビューでドラッグ＆ドロップすることです。アニメーションクリップおよびスプライト レンダラとアニメータ コンポーネントが追加されたゲームオブジェクトが新規作成されます。
 
-You can also add a new Animation Clip to a Game Object with an Animation component. One Animator can contain multiple Animation Clips. See the section of the manual about the [[MecanimAnimationSystem|Mecanim animation system]] to see how to make transitions between different Animation Clips.
+アニメーション コンポーネントでゲームオブジェクトに新規のアニメーション クリップを追加できます。ひとつのアニメータには複数のアニメーション クリップを含めることが出来ます。異なるアニメーション クリップ間で遷移を作成する方法についてはマニュアルの [[MecanimAnimationSystem|メカニム アニメーション システム]] の箇所を参照して下さい。
 
-A third way to create new sprite animations is to add new Sprite Frames to an existing Animation Clip. You can drag and drop Sprites from the Project View to the expanded ``SpriteRenderer.Sprite`` property in the Dopesheet View 
+新規のスプライト アニメーションを作成する 3 つめの方法では既存のアニメーション クリップに新規のスプライト フレームを追加します。プロジェクトビューからスプライトを Dopesheet ビュー上の展開された ``SpriteRenderer.Sprite`` プロパティ上にドラッグ＆ドロップします。
 
-For further details of how to slice existing sprite sheets into single Sprites see the [[SpriteEditor|Sprite Editor]] manual page.
+既存のスプライト シートを個別のスプライトとしてスライスする方法については [[SpriteEditor|スプライト エディタ]] マニュアル ページを参照して下さい。
 
-!!Playback
+!!再生
 
-The Animation Clip can be played back at anytime by clicking the Play button in the Animation View toolbar.
+アニメーション クリップはアニメーション ビュー ツールバー上で Play ボタンをクリックしていつでも再生できます。
+
