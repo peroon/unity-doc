@@ -1,32 +1,32 @@
-!Editing Keys and Keyframes with the Dopesheet
+!ドープシートでのキーおよびキーフレームの編集を / Editing Keys and Keyframes with the Dopesheet
 
-In the Animation View, animated properties will be shown with diamond shaped $$keys$$. These are control points that specify how the property should be animated. A frame that has a key is called a keyframe.
+アニメーション ビューで、アニメーション付きのプロパティはダイヤ形状の $$Key$$ で示されます。この制御ポイントによりアニメーション付きプロパティの使用法を示します。フレーム付きのキーはキーフレームと呼ばれます。
 
-Keyframes can be dragged around with the mouse. It is also possible to select multiple keyframes at once by dragging a rectangular selection around them all.
+キーフレームはマウスによりドラッグできます。複数のキーフレームを同時選択するには、矩形の選択領域で全体に対してドラッグします。
 
-You can add a keyframe by double clicking on the empty space in the dopesheet. Alternatively, you can use the context menu or click the keyframe button which will add keyframes to the currently previewed frame on the selected properties. Keyframes can be deleted by selecting them and pressing Delete or by right-clicking on them and selecting ~~Delete Keyframe~~ from the context menu.
+Dopesheet 上のキーフレームの何もない場所をダブルクリックすることでキーフレームを追加できます。逆に、コンテキストメニューを使用するかキーフレーム ボタンをクリックして、選択されたプロパティの現在プレビューされているフレームにキーフレームが追加されます。キーフレームは削除するには、それを選択して Delete ボタンをクリックするか、右クリックしてコンテキストメニューから ~~Delete Keyframe~~ を選択します。
 
-!!Navigating the Dopesheet
+!!ドープシートを遷移する
 
-When working with the Animation View you can easily zoom in on the details of the curves you want to work with or zoom out to get the full picture.
+アニメーション ビューで作業をするとき、カーブの詳細を確認するためズームインしたり、全体像をつかむためにズームアウトできます。
 
-You can always press F to zoom to the full clip or to selected keys.
+クリップ全体あるいは選択されたキーにズームするには F キーを押します。
 
-You can zoom the Dopesheet View using the scroll-wheel of your mouse, the zoom functionality of your trackpad, or by holding Alt while right-dragging with your mouse.
-You can zoom on only the horizontal axis. You can also drag the end caps of the scrollbars to shrink or expand the area shown in the Dopesheet View.
+Dopesheet ビューでズームするにはマウスのスクロール ホイールを使用するか、トラックパッドのズームを使うか、Alt キーを押しながらマウスで右クリックしてドラッグを使います。
+水平軸でのみズームできます。スクロールバーの端をドラッグして Dopesheet ビューで表示された領域を拡大縮小できます。
 
-You can pan the Curve View by middle-dragging with your mouse or by holding Alt while left-dragging with your mouse.
+Curve ビューをパンして移動するにはマウスを中ボタンクリックしてドラッグするか、Alt キーを押しながらマウスで左クリックしてドラッグします。
 
-!!Editing Tangents
+!!接線の編集
 
-A key has two $$tangents$$ - one on the left for the ingoing slope and one on the right for the outgoing slope. The tangents control the shape of the curve between the keys. The Animation View have multiple tangent types that can be used to easily control the curve shape. The tangent types for a key can be chosen by right-clicking the key.
+キーには二つの $$tangent$$ (接線)があります。ひとつは頂点の手前の左側、もうひとつは頂点の後の右側です。接線のコントロールによりキーの間のカーブの形状を調整できます。アニメーション ビューには複数の接線の種類からカーブ形状を制御できます。キーの接線の種類はキーを右クリックすることで選択ができます。
 
 Attach:AnimEditTangent.png
 
-!!Objects with Multiple Moving Parts
+!!複数の移動パーツのあるオブジェクト
 
-You may want to animate Game Objects that have multiple moving parts, such as a gun turret with a moving barrel, or a character with many body parts. All the parts can be animated by a single Animator component on the parent.
+ゲームオブジェクトにアニメーションをつけるとき複数の移動パーツ、例えばから構成される場合があります。銃身と回転リボルバーであったり、身体の部位の多いキャラクターなどです。ひとつのアニメータコンポーネントを親オブジェクトにつけることで全てのパーツにアニメーションをつけることが出来ます。
 
-You can add animated properties for child objects from the ~~Add Curve~~ popup menu, or by changing the values from inspector while in record mode.
+子オブジェクトのアニメーション付きプロパティを追加するには ~~Add Curve~~ ポップアップメニューを使うか、録画モードにあるときにインスペクタ上で値を変更します。
 
-In the Add Curve popup, you can access the properties of a child object by using the foldout triangle next to the object's name. The properties of child objects can be animated just like those of the parent.
+Add Curve ポップアップで、子オブジェクトのプロパティにアクセスするにはオブジェクト名の隣にある折りたたみ、展開のための三角記号を使用します。子オブジェクトのプロパティは親オブジェクトのものと同様にアニメーションさせることが出来ます。
