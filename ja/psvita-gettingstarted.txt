@@ -29,3 +29,7 @@ Unity PS Vita provides a number of new scripting APIs to access PSN services, in
 * [[PSVita Profiling]]
 * [[PSVita Project Settings]]
 * [[PSVita Stripping Levels]]
+* [[PSVita Input]]
+* [[PSVita Additional Packages]]
+* [[PSVita Video Playback]]
+
