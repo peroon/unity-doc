@@ -1,30 +1,30 @@
-!Making multiple shader program variants
+!シェーダ プログラムのバリエーションを複数作成する / Making multiple shader program variants
 
-Often it's convenient to write shader code mostly once, but produce slightly different shader "variants" for it. This is commonly called "mega shaders" or "uber shaders", and is achieved by compiling the shader code multiple times, with different preprocessor directives for each case.
+シェーダを書いたうえで、僅かに違いをもたせたバリエーションを作成すると便利な場面があります。一般に "メガシェーダ" または "万能型 (uber) シェーダ" と呼ばれ、シェーダ コードをケースごとに異なるプリプロセッサ デリバティブにより複数回コンパイルすることで実現します。
 
-In Unity this can be achieved by adding a ``#pragma multi_compile`` directive to a [[SL-ShaderPrograms | shader snippet]]. At runtime, appropriate shader variant is picked up from Material keywords (Material.EnableKeyword and DisableKeyword) or global shader keywords (Shader.EnableKeyword and DisableKeyword).
+Unity では ``#pragma multi_compile`` ディレクティブを [[SL-ShaderPrograms | シェーダのスニペット]] に追加します。実行時に適切なシェーダのバリエーションが Material キーワード（Material.EnableKeyword および DisableKeyword）またはグローバル シェーダ キーワード (Shader.EnableKeyword および DisableKeyword) から選ばれます。
 
 
-!! How multi_compile works
+!! マルチコンパイルの仕組み (multi_compile )
 
-A directive like:
+次のようなディレクティブ：
 
   #pragma multi_compile FANCY_STUFF_OFF FANCY_STUFF_ON
 
-Will produce two shader variants, one with ``FANCY_STUFF_OFF`` defined, and another with ``FANCY_STUFF_ON``. At runtime, based on Material or global shader keywords, one of them will be picked up. If neither of these two keywords are enabled, then the first one ("off") will be used.
+により二つのシェーダのバリエーションが生成され、片方は ``FANCY_STUFF_OFF`` が定義され、もう一方は ``FANCY_STUFF_ON`` が定義されます。実行時に Material キーワードまたは グローバル シェーダ キーワードのどちらかが選ばれます。もし二つのキーワード両方が無効の場合、最初の方（"off"） が使用されます。
 
-There can be more than two keywords on a multi_compile line, for example this will produce four shader variants:
+multi_compile には二つ以上のキーワード記述できる。例えば次のサンプルにより 4 つのシェーダ バリエーションが生成されます：
 
   #pragma multi_compile SIMPLE_SHADING BETTER_SHADING GOOD_SHADING BESTEST_EVER_SHADING
 
 
-!! Combining several multi_compile lines
+!! 複数の multi_compile の組み合わせ
 
-Several multi_compile lines can be provided, and the resulting shader will be compiled for all possible combinations of the lines:
+複数の multi_compile 行を提供すると結果として、可能性がある全ての組み合わせがコンパイルされます：
 
   #pragma multi_compile A B C
   #pragma multi_compile D E
 
-This would produce three variants for first line, and two for the second line, or in total six shader variants (A+D, B+D, C+D, A+E, B+E, C+E). 
+最初の行で 3 つのバリエーションが生成され、二つめの行で 2 つ、合計で 6 つのシェーダ バリエーションが出来ます (A+D, B+D, C+D, A+E, B+E, C+E)。
 
-It's easiest to think of each multi_compile line as controlling a single shader "feature". Keep in mind that the total number of shader variants grows really fast this way, e.g. ten multi_compile "features" with two options each produces 1024 shader variants in total!
+各々の multi_compile 行がひとつのシェーダ "機能" を制御すると考えると分かりやすいです。シェーダのバリエーションは急速に増大するため、例えば 10 行の multi_compile "機能" で各々 2 つのオプションがあると 1024 個ものシェーダ バリエーションが出来てしまうので注意です！
