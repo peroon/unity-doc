@@ -1,3 +1,5 @@
+!パーティクルシステム 概要 / Particle Systems Overview
+
 注意：これは新パーティクルシステム（Shuriken）についてのドキュメントです。旧パーティクルシステムについては [[comp-ParticlesLegacy|Legacy Particle System]] を参照して下さい。
 
 (:include class-ParticleSystem:)
