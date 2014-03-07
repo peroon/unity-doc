@@ -1,25 +1,25 @@
-!Off-mesh Links
+!オフメッシュ リンク / Off-mesh Links
  
-In general, the walkable floor area of a game world will not be limited to just a single mesh. For design purposes, it is often easier to break a floor surface up into a number of separate sections even if the floor is continuous. Also, you may want to allow a character to walk between two points on a playing area but only by passing through a "bottleneck" feature (eg, crossing a river only at a narrow bridge). For these and other purposes, Unity allows you to connect two navmeshes together using $$off-mesh links$$.
+ 一般的にマップ上の移動可能なエリアは単独メッシュに限定されません。設計するうえで、フロア全体が連続でも、あえて複数のセクションに分割するほうが簡単です。さらにプレイ エリアの二点間を歩行させつつ "限定ポイント" を通過させたい場合があります（例．狭い橋で川を渡らせる）。Unity では二つのナビメッシュをつなげる $$Off-mesh Link$$ を用意しています。
 
-An off-mesh link has two end points, one on each of the two meshes that are to be connected. When a agent needs to cross between two linked navmeshes, it will head for the endpoint of the nearest link between the two. It will then traverse the link to the endpoint on the other navmesh. Its journey then continues to the destination as normal. By default, off-mesh links are traversed automatically but you can also enable your script to detect when an agent reaches a link and optionally deny it passage. This can be useful for simulating something like a locked door which can be passed but only when the character has the right key.
+オフメッシュ リンク には端の地点が二つあり、メッシュを各々につなげます。エージェントが二つのナビメッシュを渡るとき二つのうち最も近いリンクへ向かいます。次にリンクを横切って、もう一方のメッシュへ渡ります。その後は通常どおりに目的地点へ向かいます。デフォルトではオフメッシュ リンクは自動的に横切りますが、スクリプトの中でエージェントがリンクへ到達したときに渡ることを止める選択肢も持たせられます。施錠されたドアの正しい鍵を所持している場合のみに通過させる場合などに便利です。
 
 
-!!Adding Off-mesh Links During Baking
+!!ベイクでのオフメッシュ リンク追加
 
-Links can easily be added automatically during the mesh baking process. To enable this, you should first select ''Off Mesh Link Generation'' for all required navmesh objects in the ''Object'' tab of the Navigation window:-
+リンクはメッシュをベイクする時も簡単に追加できます。それには Navigation ウィンドウの ''Object'' タブから必要な全てのナビメッシュ オブジェクトで ''Off Mesh Link Generation'' を選択します:-
 
 Attach:NavWindowObjPanelOffMesh.png
 
-If you then switch to the ''Baking'' tab, you will see a section entitled ''Generated Off Mesh Links''. The ''Drop Height'' and ''Jump Distance'' properties represent the maximum vertical and horzontal distance that can be bridged by a link between the two meshes. When you click the ''Bake'' button, you should see in the Scene view that all meshes within the allowed drop height and jump distance are connected by arched black lines. These lines represent the links between the meshes. A navmesh agent on one mesh will now be able to reach a target point on a separate mesh by following any available link between the two.
+''Baking'' タブに切り替えると ''Generated Off Mesh Links'' セクションがあります。''Drop Height'' と ''Jump Distance'' プロパティは二つのメッシュをつなげられる最大の落差と幅を示します。''Bake'' をクリックするとシーンビューで全てのメッシュでの Drop Height と Jump Distance は黒い線で示す弧で接続されます。これがメッシュ間のリンクです。これで片方のメッシュのナビメッシュ エージェントから、利用可能なリンクを通って、もう一方のメッシュの目的地点へと到達できます。
 
 Attach:NavMeshWithLinkLines.png
 
-Note that you can restrict link generation so that links can only be crossed in one direction but not the reverse. If you have the ''Off Mesh Link Generation'' option set for mesh A (in the Navigation window's Object panel) but not for mesh B then links going from A to B will be generated but links going from B to A will not. This is useful for simulating something like a high ledge where the character can fall off but then can't climb back up again.
+リンクに制限を追加して一方通行に出来ます。''Off Mesh Link Generation'' （Navigation ウィンドウの Object パネル）でメッシュ A はセットしてメッシュ B はセットしない場合、リンクは A から B へ移動できますが、B から A は移動できません。例えば崖から落ちることは出来ても登ることは出来ない場面で役立ちます。
 
 
-!!Adding Off-mesh Links Manually
+!!手動でのオフメッシュ リンク追加
 
-In some cases, two navmeshes should be connected wherever their edges overlap. This typically happens when the two meshes represent a single surface that includes a step or gap. Sometimes though, links can be positioned specifically to enable a situation in the game. For example, a single link can be placed to represent a doorway, bridge or other narrow point of contact between two separate sections of the playing area. Furthermore, it will often help with pathfinding performance on a large game world if that world is broken down into separate navmeshes with only a few limited points of contact between them. The automatic link generation won't be able to places links judiciously like this but you can add your own links between meshes manually using the [[class-OffMeshLink|Off Mesh Link component]].
+二つのメッシュが重なる部分のすべてでつなげたい場合があります。良くあるケースは二つのメッシュが階段や穴があるフロアです。ゲームでの制約上リンクを配置したい場面もあります。例えば二つのプレイ エリアを通路や橋でつなげる場合です。広大なマップでの経路探索のパフォーマンスを向上させるためにナビメッシュをつなげる箇所を限定する場合もあります。これらを自動的なリンク生成で適切に配置するのは難しいですが、 [[class-OffMeshLink|Off Mesh Link コンポーネント]] により手動でメッシュの調整ができます。
 
-An Off Mesh Link component can be added to any available object (menu: ^^Component > Navigation > Off Mesh Link^^). Full details are given on the component reference page but the main properties are ''Start'' and ''End''; these specify object Transforms that mark the start and end positions of the link and it is often convenient to add the Off Mesh Link component to one of these objects. The anchor points of these marker objects need to be placed quite close to the surface of the navmesh for the link to be enabled. When the endpoints are correctly placed, you will see the link line appear in the Scene view as long as the Navigation window is selected at the time.
+オフメッシュ リンク コンポーネントは任意のオブジェクトに追加できます (メニュー: ^^Component > Navigation > Off Mesh Link^^)。詳細はコンポーネント リファレンスに記載されてますが、主なプロパティは ''Start'' と ''End'' です。これらでリンクの開始と終了の位置をトランスフォームのオブジェクトで指定しますが、このオブジェクトの一つにオフメッシュ リンク コンポーネントを追加すると便利です。正しく動作させるためには、これらマーカーとなるオブジェクトのアンカー地点はナビメッシュの表面近くに配置する必要があります。端の地点を正しく配置できると、Navigation ウィンドウが表示されている状態では常にシーンビュー上でリンクの線が表示されます。

@@ -1,22 +1,23 @@
-!Enabling a Character to Navigate
+!キャラクターのナビゲーション有効化 / Enabling a Character to Navigate
 
-Once the navmesh is set up, the characters need to be equipped to use it. The $$Nav Mesh Agent$$ component handles both the pathfinding and the movement control of a character. In your scripts, navigation can be as simple as setting the desired destination point - the Nav Mesh Agent can handle everything from there on.
+ナビメッシュをセットアップし他とはキャラクターが使用できる準備をする必要があります。$$Nav Mesh Agent$$ コンポーネントは経路探索およびキャラクターの制御の両方をハンドリングします。スクリプトでナビゲーションを目的地点の設定と同じくらい簡単に記述するのみです。ナビメッシュ エージェントが自動的にその後の処理をハンドリングします。
 
-You can add a Nav Mesh Agent component either from a script or from the editor (menu: ^^Component > Navigation > Nav Mesh Agent^^). The component has a number of properties that are explained fully in the [[class-NavMeshAgent|Nav Mesh Agent component reference page]], but the default values usually work well as a base for experimentation.
 
-In your script, you will need to get a reference to the NavMeshAgent component since there is no property to access it directly:-
+ナビメッシュ エージェント コンポーネントの追加はスクリプトまたはエディタから行ないます。(メニュー: ^^Component > Navigation > Nav Mesh Agent^^)。コンポーネントの様々なプロパティは  [[class-NavMeshAgent|Nav Mesh Agent コンポーネントのリファレンス]] で詳細に説明がありますが、試す際にはデフォルト値のままで十分です。
+
+スクリプトでは、直接にアクセスするプロパティはないため NavMeshAgent コンポーネントへの参照を取得します:-
 
 [@var agent: NavMeshAgent = GetComponent.<NavMeshAgent>();@]
 
-Then, to set the character in motion, you just need a single call to @@SetDestination@@:-
+次に、キャラクターを動作させるため @@SetDestination@@ を一回呼び出しをします:-
 
 [@agent.SetDestination(targetPoint);@]
 
-The target point is specified as a point in world space; the navigation system will find the closest point on the navmesh automatically, so it doesn't matter if the target point is not precisely on the mesh surface.
+目的地点はワールド座標で指定します。ナビゲーションシステム は自動的にナビメッシュにもっとも近い地点を見つけるため、ターゲット地点が正確にメッシュ表面になくとも問題ありません。
 
-Naturally, the navigation system can't handle every aspect of the game logic, so you need to have some method of choosing the appropriate destination point in the first place. This task depends heavily on the nature of the gameplay but some common situations include
+当然ナビゲーション システムによりゲームロジックの全てをハンドリングできないので、初めに目的地点を適切に選ぶ方法が必要です。これはゲームの特性に強く依存し、良くある方法は次のとおりです。
 
-* Moving an NPC to a player's position to start an attack;
-* Sending a character to a preset target marked by an empty GameObject (eg, an exit from a building or the location of a treasure);
-* Moving to a map location clicked with the mouse.
+* NPC キャラクターをプレイヤーの位置に移動すると攻撃を開始
+* キャラクターを事前配置した空のゲームオブジェクトで示すターゲットへ向かわせる（例．ビル出口や宝箱の場所）
+* マウスによりマップ地点へ移動
 
