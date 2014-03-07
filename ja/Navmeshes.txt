@@ -1,20 +1,20 @@
-!Navigation Meshes
+!ナビゲーション メッシュ / Navigation Meshes
 
-A pathfinding system needs a way to represent which parts of the game world can be reached by a character and also a way to determine the possible routes between any two points and choose the best. A mesh (similar to the ones used for 3D graphics) is a good solution to both problems. The reachable area is defined by the polygons of the mesh, while the possible paths through the mesh are conveniently broken down into hops between adjacent polygons. In theory, the same mesh that is used for the floor graphics can also be used for navigation. In practice, the graphical mesh is usually too detailed and consequently inefficient for navigation. For this and other reasons, an AI system usually supplements the floor mesh with a simpler, invisible mesh known as a $$navigation mesh$$ (or "navmesh" for short). Fortunately, there are techniques to generate an efficient navmesh automatically from a graphical floor mesh and a few numeric parameters. The process of computing a navmesh in this way is known as $$baking$$.
+経路探索システムではゲーム マップ上でキャラクターが移動できる範囲を表現する方法と、二点間を移動できる経路から最適経路を判断する方法が必要です。両方の問題に対する解決策がメッシュ（3D グラフィックスで使用されるものに相当）です。移動できる範囲はメッシュのポリゴンにより定義され、メッシュを通過できる経路は隣接するポリゴン間の移動に適切に分割できます。理論上はフロアのグラフィックスに使用されるメッシュをナビゲーションにも使用できます。実践的にはグラフィカルなメッシュは詳細すぎて非効率でありナビゲーション向きではありません。こういった理由などから AI システムはフロアメッシュに対してよりシンプルで透明な $$Navigation Mesh$$ (略してナビメッシュ) を提供します。幸いにグラフィカルなフロアメッシュといくつかの数値パラメータから効果的なナビメッシュを生成するテクニックがあります。ナビメッシュを計算から生成するこのような手法は $$Baking$$ といいます。
 
-In Unity, navmesh generation is handled from the ~~Navigation window~~ (menu: ^^Window > Navigation^^). If you select the ~~Object~~ tab in the window, you will see something like the following:-
+Unity ではナビメッシュ生成は ~~Navigation ウィンドウ~~ で行ないます (メニューから: ^^Window > Navigation^^)。ウィンドウの ~~Object~~ タブを選択すると、次のように表示されます:-
 
 Attach:NavWindowObjectPanel.png
 
-The ''Scene Filter'' options simply restrict the selection of objects shown in the Scene view and Hierarchy panel. The other options apply to the selected scene object(s); broadly, they allow you to include or exclude an object within the walkable area of the navmesh. You should mark objects to be included in the navmesh as ''Navigation Static''. You can then set the ''Navigation Layer'' to ''Default'' if you want the area to be walkable or to ''Not Walkable'' otherwise. Typically, the walkable areas correspond to floors, ramps and bridges in the game world, while non-walkable areas correspond to walls and other impassable obstacles.
+''Scene Filter'' オプションにより、シーンビューおよび階層パネルで表示されるオブジェクト選択を制限します。他のオプションは選択されたシーンオブジェクトに適用されます。大まかにいうと、ナビメッシュの移動可能なエリアでオブジェクトを含めたり外したりできます。ナビメッシュに含めるオブジェクトを ''Navigation Static'' に設定すべきです。エリアを移動可能とする場合は  ''Navigation Layer'' を ''Default'' に設定して、そうでない場合は ''Not Walkable'' に設定すべきです。一般的には移動可能なエリアはゲームの中のフロアや傾斜面、橋に相当し、移動可能でないエリアは壁や通過できない障害物に相当します。
 
-The ''Bake'' button gives you further options for navmesh generation on a separate panel:-
+''Bake'' ボタンによりナビメッシュを生成するための追加オプションを別パネルに表示します:-
 
 Attach:NavWindowBakePanel.png
 
-Of particular note are the ''General'' settings. The ''Radius'' determines how close a navigating character can get to a wall and consequently the width of the narrowest gap between two walls that can it can squeeze through. The ''Height'' refers to the height of the "ceiling" above the navmesh surface - an area may not be reachable simply because there is not enough headroom for the character. The ''Max Slope'' parameter sets the threshold of steepness where a ramp becomes a wall while the ''Step Height'' is the maximum height of bump or step in the floor surface that is ignored by the character (any step greater than this height results in a disconnected walkable area rather than a continuation of the same area).
+特に注意が必要なのは ''General'' 設定です。''Radius'' によりキャラクターが壁までどれぐらい近づけるか決定し、結果的にはキャラクターがどれぐらい狭い幅までは、壁の間を通過できるかを表します。''Height'' によりナビメッシュの表面から天井までの高さを表し、キャラクターの背の高さによっては通過できないことを示します。''Max Slope'' パラメータにより傾斜面を壁としてみなさない限界の勾配を表し、''Step Height'' はフロア面の凹凸のうち無視できる最大の高さを示します（この値より大きい場合は、移動可能なエリアが分断されます）。
 
-With these parameters set, you can click the ''Bake'' button to compute the navmesh. The baking usually takes place very quickly and the resulting navmesh will be shown in the Scene as an overlay on the underlying level geometry. You may need a few attempts based on what you see in the scene before you get the settings for the navmesh just right.
+これらのパラメータを設定して、 ''Bake'' ボタンをクリックするとナビメッシュが算出されます。一般的にベイクは短時間で終わり、出力結果のナビメッシュはシーン上でレベルに重ねられたオブジェクトとして表示されます。シーン上で何回か調整することで希望どおりのナビメッシュにしく場合があります。
 
 Attach:NavMeshBaked.png
 
