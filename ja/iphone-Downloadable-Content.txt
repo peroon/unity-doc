@@ -7,79 +7,137 @@ Appleの "StoreKit" ドキュメントにより四つの __製品__ を"アプ�
 * 機能
 * サービス
 * 購読
-本項では最初のケースのみをカバーしていてダウンロード可能なコンテンツの考え方に、フォーカスします。
-[[ScriptRef:AssetBundle.html | AssetBundle]] はダウンロード可能なコンテンツとして使用することを推奨しますが、二つのシナリオを見ていきます:
-* アセットバンドルをiOSで使用するためにどのようにしてエクスポートするか
-* iOSからどのようにしてダウンロードしてキャッシュするか
 
-アセットバンドルは Unity Pro のみの機能であることに留意して下さい。iOS （Basic）アドオンのユーザはゲームコードの中でAsset Bundle を使用することが出来ません。
+本項では最初のケースのみをカバーしていてダウンロード可能なコンテンツの考え方に、フォーカスします。 [[ScriptRef:AssetBundle.html | AssetBundle]] は Unity でダウンロード可能なコンテンツとして使用することを推奨するものですが、ここでアセットバンドルの作成と実行時の使用方法の両方をここではカバーします。
 
-!! iOSで使用するためにエクスポートする
- ダウンロード可能コンテンツのためにプロジェクトを分けることは良いアイデアでメインアプリケーションと後からダウンロードするコンテンツを適切に分けられます。
+__注意:__ アセットバンドルは Unity Pro のみの機能であることに留意して下さい。iOS （Basic）アドオンのユーザはゲームコードの中でAsset Bundle を使用することが出来ません。
 
-注意: ダウンロード可能コンテンツに含まれるゲーム スクリプトはメインの実行ファイルはメインの実行ファイルにも含まれる必要があります。（iOS では全てのゲームスクリプトは事前コンパイラ（AOT コンパイラ）により ARM アセンブルにコンパイルされ XCode プロジェクトに含まれるためです。）
+!! iOSで使用するためにアセットをエクスポート
+ ダウンロード可能コンテンツのためにプロジェクトを分けることは良いアイデアでメインアプリケーションと後からダウンロードするコンテンツを適切に分けられます。しかしオブジェクトにより参照される全ての ''スクリプト'' はメインのメインの実行ファイルにも含まれる必要があります。アセットバンドルを作成するのに使用したプロジェクトには iOS をビルドターゲットにする必要があります。これはアセットバンドル ファイルのコンテンツが iOS と他のプラットフォームで互換性がないためです。
 
-# プロジェクトビューで ``Editor`` フォルダを作成します。
-#  ``ExportBundle.js`` スクリプトを作成して次のコードを含めます。inside:\\
+アセットバンドルはエディタスクリプトを使用して作成します。次に簡単なサンプルを示します:-
 [@
+// C#
+using UnityEngine;
+using UnityEditor;
+
+
+public class ExportBundle : MonoBehaviour {
+	[MenuItem ("Assets/Build AssetBundle From Selection - Track dependencies")]
+	static void DoExport() {
+		string str = EditorUtility.SaveFilePanel("Save Bundle...", Application.dataPath, Selection.activeObject.name, "assetbundle");
+		if (str.Length != 0) {
+			BuildPipeline.BuildAssetBundle(Selection.activeObject, Selection.objects, str, BuildAssetBundleOptions.CompleteAssets, BuildTarget.iPhone);
+		}
+	}
+}
+
+
+
+// JavaScript
 @MenuItem ("Assets/Build AssetBundle From Selection - Track dependencies")
 static function ExportBundle(){
         
-        var str : String = EditorUtility.SaveFilePanel("バンドルを保存します...", Application.dataPath, Selection.activeObject.name, "assetbundle");
+        var str : String = EditorUtility.SaveFilePanel("Save Bundle...", Application.dataPath, Selection.activeObject.name, "assetbundle");
         if (str.Length != 0){
              BuildPipeline.BuildAssetBundle(Selection.activeObject, Selection.objects, str, BuildAssetBundleOptions.CompleteAssets, BuildTarget.iPhone);
         }
 }
 @]
-# ダウンロード可能とするオブジェクトをプレハブとして設計します
-# エクスポートが必要なプレハブを選択してマウス右クリック ``ExportBundle.js``\\
-Attach:iPhoneAssetBundleExport.png\
-\
-最初の二つのステップが正しく手順どおりであると、'Build AssetBundle From Selection - Track dependencies'' コンテキストメニューは見られます。
 
-# アセットが使用する全てを含めたい場合は選択します。
-# 保存ダイアログが表示されろので、希望するアセットバンドルのファイルめいを入力します。__.assetbundle__ 拡張子が自動的に付加されます。Unity iOSのランタイムは同じバージョンのUnityエディタでビルドされたアセットバンドルのみ許可します。詳細については [[ScriptRef:BuildPipeline.BuildAssetBundle.html | BuildPipeline.BuildAssetBundle]] を参照下さい。
+このコードは ExportBundle という名前のファイルに保存し Editor という名前のフォルダの配下に置く必要があります（既にプロジェクトにない場合は新規作成します）。このスクリプトによりエディタの Assets メニューで "Build AssetBundle From Selection - Track dependencies" というメニューアイテムを追加します。
+
+バンドルに含めたいコンテンツはプレハブの形式で準備する必要があります。プロジェクト ビューからプレハブを選択してエディタの Assets メニューから ''Assets > Build AssetBundle From Selection - Track dependencies'' と選択します（すなわち、ExportBundle により追加されたメニューアイテム）。このコマンドにより保存ダイアログが表示されアセットバンドル ファイルの名前と場所を選択します。
+
 
 !! iOSでアセットをダウンロードする
-# [[ScriptRef:WWW-assetBundle.html|WWW クラス]] の使用およびメインアセットをインスタンス化により、アセットバンドルをダウンロードおよびロード出来ます。アセットバンドルをダウンロードする際に推奨する方法は [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload]] メソッドです。次のコードサンプルにより実現方法を示します:\\
+
+__注意:__ Apple 社はデータを書き込んで良い場所を変更するかもしれません。常に最新の Apple ドキュメントから自身のアプリケーションが適合していることを確認して下さい。次のアドバイスは 2013 年初めまでは問題ありませんでした。
+
+[[ScriptRef:WWW-assetBundle.html|WWW クラス]] を使用してアセットバンドルをダウンロード出来ます。送信が完了すると格納されていたアセットへアクセス出来るようになります。アセットバンドルをダウンロードする際に推奨する方法は [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload]] メソッドです。次のコードサンプルにより実現方法を示します:-
 [@
-	var download : WWW;
+// C#
+IEnumerator GetAssetBundle() {
+	WWW download;
 	
+	string url = "http://somehost/somepath/someassetbundle.assetbundle";
+	
+	download = WWW.LoadFromCacheOrDownload(url, 0);
+	
+	yield return download;
+	
+	AssetBundle assetBundle = download.assetBundle;
+	
+	if (assetBundle != null) {
+		//  代わりにアセット名でロード出来ます (assetBundle.Load("アセット名"))
+		Alternatively you can also load an asset by name (assetBundle.Load("my asset name"))
+		Object go = assetBundle.mainAsset;
+			
+		if (go != null)
+			Instantiate(go);
+		else
+			Debug.Log("リソースのロードに失敗しました。");	
+	} else {
+		Debug.Log("リソースのロードに失敗しました。");	
+	}
+}
+
+
+// JavaScript
+function GetAssetBundle() {
+	var download : WWW;
+
 	var url = "http://somehost/somepath/someassetbundle.assetbundle";
 	
-	download = WWW.LoadFromCacheOrDownload (url, 0);
+	var download = WWW.LoadFromCacheOrDownload (url, 0);
 	
 	yield download;
 	
-	assetBundle = download.assetBundle;
-
+	var assetBundle = download.assetBundle;
+	
 	if (assetBundle != null) {
-		// 他の方法として名前によりアセットをロード出来ます
-(assetBundle.Load("my asset name"))
+		//  代わりにアセット名でロード出来ます (assetBundle.Load("アセット名"))
 		var go : Object = assetBundle.mainAsset;
 			
 		if (go != null)
-			instanced = Instantiate(go);
+			Instantiate(go);
 		else
-			Debug.Log("リソースをロード出来ませんでした");	
+			Debug.Log("リソースのロードに失敗しました。");	
 	} else {
-		Debug.Log("リソースをロード出来ませんでした");	
+		Debug.Log("リソースのロードに失敗しました。");	
 	}
-@]\\
-ダウンロードされたアセットバンドル ファイルは iOS アプリケーション Sandbox の @@Library@@ フォルダに格納されていてファイルに ''No Backup'' フラグが有効化されています。 これが意味することは OS はこれらのファイルを誤って削除せず、これらのファイルは iCloud にバックアップされないということです。 [[ScriptRef:Caching-maximumAvailableDiskSpace.html|キャッシュ サイズ のリミット]] を低く抑えることで、アプリがデバイスのディスクスペースの全てを確保してしまうことを防止すべきです。
-# もしより細かいところまでキャッシュファイルを制御しないといけない場合、 WWW ダウンロードを [@ new WWW(url) @] 経由で使用して、.NET ファイル API を使用してダウンロードされたファイルをディスク上で格納することが出来ます。必要なファイルを [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]]  (OS によりクリーンされる Library/Caches) フォルダまたは [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (OS によりクリーンされない Documentsフォルダ) に保存することが出来ます。これらのファイルの ''No Backup'' フラグを [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]] 経由で有効化すべきであり、 iCloud にバックアップされることを防止すべきです。
-
-
-->__注意:__ このフラグをセットしないことで App Store 提出時にアプリ審査がリジェクトされるかもしれません。これらのファイルを将来的に再利用するために [[ScriptRef:WWW.html|WWW クラス]] および @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@ 経由でロードして下さい。このアセットバンドルをキャッシュする手法は推奨ではなく [[ScriptRef:WWW.LoadFromCacheOrDownload.html|LoadFromCacheOrDownload]] を使用してバンドルを格納することをお勧めします。\\
-キャッシングのコードでのサンプルは:\\
-	// コードはiPhoneでのキャッシュとして設計されていて、エディタ実行時はcachedAssetBundleパスは異なるものにする必要があります。
-	// Library/Cachesフォルダへのパス取得については上記の短いコードで確認出来ます
-	private var cachedAssetBundle : String = "Documents フォルダへのパス" + "/savedassetbundle.assetbundle"; 
-	private var cachedAssetBundle : String = Application.temporaryCachePath + "/savedassetbundle.assetbundle";
-	var cache = new System.IO.FileStream(cachedAssetBundle, System.IO.FileMode.Create);
-	cache.Write(download.bytes, 0, download.bytes.Length);
-	cache.Close();
-        iPhone.SetNoBackupFlag(cachedAssetBundle);
-	Debug.Log("Cache saved: " + cachedAssetBundle);
+}
 @]
-->__注意:__ Documentsフォルダからファイル読込みのテストはファイル共有を行えば出来ます。@@Info.plist@@ で @@UIFileSharingEnabled@@ をtrue にすることでiTunesからDocumentsフォルダにアクセス出来ます。Documents のコンテンツは iCloud にキャッシュされるため、出荷タイトルにおいてアセットバンドルを格納すべき場所ではありません。Apple iOS ドキュメントの中の [[http://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html | File System Basics]] を参照して下さい。
+ダウンロードされたアセットバンドル ファイルは iOS アプリケーション Sandbox の @@Library@@ フォルダに格納されていてファイルに ''No Backup'' フラグが有効化されています。 これが意味することは OS はこれらのファイルを誤って削除せず、これらのファイルは iCloud にバックアップされないということです。 [[ScriptRef:Caching-maximumAvailableDiskSpace.html|キャッシュ サイズ のリミット]] を低く抑えることで、アプリがデバイスのディスクスペースの全てを確保してしまうことを防止すべきです。
+
+もしアセットバンドル ファイルの格納場所まで正確に選択する必要がある場合、標準の WWW ダウンロードを使用して（すなわち LoadFromCacheOrDownload の代わりに今ストラクタを使用）、次に.NET ファイル API を使用してダウンロードされたファイルをディスクに保存できます。必要なファイルを [[ScriptRef:Application-temporaryCachePath.html|Application.temporaryCachePath]]  (OS により定期的にクリーンされる ''Library/Caches'' に格納) フォルダまたは [[ScriptRef:Application-persistentDataPath.html|Application.persistentDataPath]] (OS によりクリーンされない ''Documents'' フォルダに格納) に保存することが出来ます。これらのファイルの ''No Backup'' フラグを [[ScriptRef:iPhone.SetNoBackupFlag.html|iPhone.SetNoBackupFlag]] 経由で有効化すべきであり、 iCloud にバックアップされることを防止すべきです。
+
+->__注意:__  ''No Backup'' フラグをセットしないと App Store 提出時にアプリ審査がリジェクトされるかもしれません。
+
+保存したファイルにアクセスするには WWW オブジェクトを @@file:///pathtoyourapplication/Library/savedassetbundle.assetbundle@@ という URL 形式で作成します:-
+
+[@
+// C#
+string cachedAssetBundle = Application.temporaryCachePath + "/savedassetbundle.assetbundle"; 
+System.IO.FileStream cache = new System.IO.FileStream(cachedAssetBundle, System.IO.FileMode.Create);
+cache.Write(download.bytes, 0, download.bytes.Length);
+cache.Close();
+
+iPhone.SetNoBackupFlag(cachedAssetBundle);
+
+Debug.Log("Cache saved: " + cachedAssetBundle);
+
+
+// JavaScript
+private var cachedAssetBundle : String = Application.temporaryCachePath + "/savedassetbundle.assetbundle"; 
+var cache = new System.IO.FileStream(cachedAssetBundle, System.IO.FileMode.Create);
+cache.Write(download.bytes, 0, download.bytes.Length);
+cache.Close();
+
+iPhone.SetNoBackupFlag(cachedAssetBundle);
+
+Debug.Log("Cache saved: " + cachedAssetBundle);
+@]
+
+
+->__注意:__ Documentsフォルダからファイル読込みのテストをする際は ''file sharing'' を有効化します (@@Info.plist@@ で @@UIFileSharingEnabled@@ をtrue にすることで iTunes から Documents フォルダにアクセス出来ます)。Documents のコンテンツは iCloud にキャッシュされるため、出荷バージョンにおいてアセットバンドルを格納すべき場所ではありません。詳細については Apple iOS ドキュメントの中の [[http://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGUide/FileSystemOverview/FileSystemOverview.html | File System Basics]] を参照して下さい。
