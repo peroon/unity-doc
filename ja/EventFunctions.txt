@@ -1,50 +1,50 @@
-!Event Functions
+!イベント関数 / Event Functions
 
-A script in Unity is not like the traditional idea of a program where the code runs continuously in a loop until it completes its task. Instead, Unity passes control to a script intermittently by calling certain functions that are declared within it. Once a function has finished executing, control is passed back to Unity. These functions are known as event functions since they are activated by Unity in response to events that occur during gameplay. Unity uses a naming scheme to identify which function to call for a particular event. For example, you will already have seen the Update function (called before a frame update occurs) and the Start function (called just before the object's first frame update). Many more event functions are available in Unity; the full list can be found in the script reference page for the MonoBehaviour class along with details of their usage. The following are some of the most common and important events.
+Unity のスクリプトは、伝統的なプログラムのようにタスクが完了するまでコードがループ実行を続けるプログラムとは概念が違います。Unity の場合はスクリプトに制御を特定の関数を呼び出すことで制御を渡します。関数の実行が完了すると Unity に制御が戻ります。これらの関数はイベント関数と呼ばれ、ゲーム中に発生するイベントに対応して Unity により起動されます。Unity のネーミング スキームにより特定のイベントで呼び出す関数を識別します。例えばUpdate 関数（フレーム更新前に呼び出し）および Start 関数（オブジェクトの最初のフレーム更新の直前に呼び出し）は既にみてきました。さらに多くのイベント関数がUnity には用意されています。全ての一覧は MonoBehaviour クラスのスクリプト リファレンスページで使用方法の詳細とともに見つけることが出来ます。次に挙げるのが最も良く使われて重要なイベントです。
 
 
-!!Regular Update Events
+!!定期の Update イベント
 
-A game is rather like an animation where the animation frames are generated on the fly. A key concept in games programming is that of making changes to position, state and behavior of objects in the game just before each frame is rendered. The [[ScriptRef:MonoBehaviour.Update.html|Update]] function is the main place for this kind of code in Unity. Update is called before the frame is rendered and also before animations are calculated.
+ゲームはアニメーションに近く、アニメーションフレームは実行時に生成されます。ゲーム プログラミングでの重要な概念はゲーム中の位置、状態、オブジェクトの動作を各フレームがレンダリングされる前に変更を加えることです。この種のコードを書くべき主な場所は [[ScriptRef:MonoBehaviour.Update.html|Update]] 関数の中です。Update はフレームのレンダリング前、さらにはアニメーションが計算される前に呼び出しされます。
 
 [@void Update() {
 	float distance = speed * Time.deltaTime * Input.GetAxis("Horizontal");
 	transform.Translate(Vector3.right * speed);
 }@]
 
-The physics engine also updates in discrete time steps in a similar way to the frame rendering. A separate event function called [[ScriptRef:MonoBehaviour.FixedUpdate.html|FixedUpdate]] is called just before each physics update. Since the physics updates and frame updates do not occur with the same frequency, you will get more accurate results from physics code if you place it in the FixedUpdate function rather than Update.
+物理エンジンもフレーム レンダリングと同様に、離散的な時間間隔で更新を行ないます。物理挙動の更新の直前に別のイベント関数である [[ScriptRef:MonoBehaviour.FixedUpdate.html|FixedUpdate]] が呼び出しされます。物理挙動の更新やフレーム更新は同じ間隔では発生しないので物理挙動は Update 関数ではなく FixedUpdate 関数に配置することでより正確な結果が得られます。
 	
 [@void FixedUpdate() {
 	Vector3 force = transform.forward * driveForce * Input.GetAxis("Vertical");
 	rigidbody.AddForce(force);
 }@]
 
-It is also useful sometimes to be able to make additional changes at a point after the Update and FixedUpdate functions have been called for all objects in the scene and after all animations have been calculated. An example is where a camera should remain trained on a target object; the adjustment to the camera's orientation must be made after the target object has moved. Another example is where the script code should override the effect of an animation (say, to make the character's head look towards a target object in the scene). The [[ScriptRef:MonoBehaviour.LateUpdate.html|LateUpdate]] function can be used for these kinds of situations.
+さらに Update と FixedUpdate がシーン上の全てのオブジェクトに対して呼び出しされて、全てのアニメーションが計算された後のタイミングで追加変更を加えると便利です。例えばカメラがターゲット オブジェクトにフォーカスを当て続ける場合など、カメラの向きはターゲットオブジェクトが移動された後に調整する必要があります。別の例としてはスクリプトのコードがアニメーション効果を上書きできる場合です（キャラクターがシーン上でターゲットオブジェクトへ向かせる、等）。これらの場面で [[ScriptRef:MonoBehaviour.LateUpdate.html|LateUpdate]] が使用できます。
 
 [@void LateUpdate() {
 	Camera.main.transform.LookAt(target.transform);
 }@]
 
 
-!!Initialization Events
+!!初期化イベント
 
-It is often useful to be able to call initialization code in advance of any updates that occur during gameplay. The [[MonoBehaviour.Start.html|Start]] function is called before the first frame or physics update on an object. The [[ScriptRef:MonoBehaviour.Awake.html|Awake]] function is called for each object in the scene at the time when the scene loads. Note that although the various objects' Start and Awake functions are called in arbitrary order, all the Awakes will have finished before the first Start is called. This means that code in a Start function can make use of other initializations previously carried out in the Awake phase.
+初期化コードをゲーム中の更新より前に呼び出しできると便利です。 [[MonoBehaviour.Start.html|Start]] 関数はオブジェクトの最初のフレームまたは物理挙動の更新の前に呼び出しされます。 [[ScriptRef:MonoBehaviour.Awake.html|Awake]] 関数はシーン上の各オブジェクトでシーンのロード時に呼び出しされます。様々なオブジェクトの Start と Awake 関数は任意の順番で呼び出しされますが、全ての Awake 関数は最初の Start 呼び出しより前には完了します。つまり Start 関数のコードは Awake フェーズで行なわれた初期化の結果を活用することが可能です。
 
 
-!!GUI events
+!!GUI イベント
 
-Unity has a system for rendering GUI controls over the main action in the scene and responding to clicks on these controls. This code is handled somewhat differently from the normal frame update and so it should be placed in the [[ScriptRef:MonoBehaviour.OnGUI.html|OnGUI]] function, which will be called periodically.
-
+Unity ではシーン上の主なアクションの上に GUI コントロールをレンダリングするシステムを持っていて、コントロールに対するクリックに反応します。このコードは通常のフレーム更新とは別にハンドリングされるため、定期的に呼び出しされる [[ScriptRef:MonoBehaviour.OnGUI.html|OnGUI]] 関数に配置されるべきです。
+Unity has a system for rendering GUI controls over the main action in the scene and responding to clicks on these controls. This code is handled 
 [@void OnGUI() {
-	GUI.Label(labelRect, "Game Over");
+	GUI.Label(labelRect, "ゲームオーバー");
 }@]
 
-You can also detect mouse events that occur over a GameObject as it appears in the scene. This can be used for targetting weapons or displaying information about the character currently under the mouse pointer. A set of OnMouseXXX event functions (eg, [[ScriptRef:MonoBehaviour.OnMouseOver.html|OnMouseOver]], [[ScriptRef:MonoBehaviour.OnMouseOver.html|OnMouseDown]]) is available to allow a script to react to user actions with the mouse. For example, if the mouse button is pressed while the pointer is over a particular object then an OnMouseDown function in that object's script will be called if it exists.
+さらにシーン上でゲームオブジェクトに対して行なわれるマウス イベントを検知できます。これは武器で狙いを定めたりキャラクターに関する情報を現在のマウス位置の下に表示するのに使用できます。複数の OnMouseXXX イベント関数（例． [[ScriptRef:MonoBehaviour.OnMouseOver.html|OnMouseOver]] , [[ScriptRef:MonoBehaviour.OnMouseOver.html|OnMouseDown]] ）によりスクリプトがユーザのマウス操作に対して反応できます。例えば、特定オブジェクト上にあるときにもしマウスボタンが押下されるとオブジェクトのスクリプトで OnMouseDown イベントが記載されてれば呼び出しされます。
 
 
-!!Physics events
+!!物理挙動イベント
 
-The physics engine will report collisions against an object by calling event functions on that object's script. The [[ScriptRef:MonoBehaviour.OnCollisionEnter.html|OnCollisionEnter]], [[ScriptRef:MonoBehaviour.OnCollisionStay.html|OnCollisionStay]] and [[ScriptRef:MonoBehaviour.OnCollisionExit.html|OnCollisionExit]] functions will be called as contact is made, held and broken. The corresponding [[ScriptRef:MonoBehaviour.OnTriggerEnter.html|OnTriggerEnter]], [[ScriptRef:MonoBehaviour.OnTriggerStay.html|OnTriggerStay]] and [[ScriptRef:MonoBehaviour.OnTriggerExit.html|OnTriggerExit]] functions will be called when the object's collider is configured as a Trigger (ie, a collider that simply detects when something enters it rather than reacting physically). These functions may be called several times in succession if more than one contact is detected during the physics update and so a parameter is passed to the function giving details of the collision (position, identity of the incoming object, etc).
+物理エンジンはオブジェクトの衝突を検知してオブジェクトのスクリプト上のイベント関数を呼び出しします。 [[ScriptRef:MonoBehaviour.OnCollisionEnter.html|OnCollisionEnter]] , [[ScriptRef:MonoBehaviour.OnCollisionStay.html|OnCollisionStay]] , [[ScriptRef:MonoBehaviour.OnCollisionExit.html|OnCollisionExit]] 関数は衝突の発生直後、衝突の途中、衝突が終了した後に呼び出しされます。オブジェクトのコライダーがトリガーとして設定された（すなわちオブジェクトが物理的に衝突するのでなく、何かが圏内に入ったときに検知するコライダーである）場合に [[ScriptRef:MonoBehaviour.OnTriggerEnter.html|OnTriggerEnter]] , [[ScriptRef:MonoBehaviour.OnTriggerStay.html|OnTriggerStay]] , [[ScriptRef:MonoBehaviour.OnTriggerExit.html|OnTriggerExit]] が同様に、各々呼び出しされます。これらの関数は物理挙動の際にひとつ以上の衝突が検知された場合、連続して複数回呼び出しされる場合があります。このため関数に対して衝突の詳細に関するパラメータが渡されます（位置、衝突の他方のオブジェクトの情報、等）。
 
 [@void OnCollisionEnter(otherObj: Collision) {
 	if (otherObj.tag == "Arrow") {
