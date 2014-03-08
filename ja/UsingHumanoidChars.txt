@@ -1,32 +1,32 @@
-!Using Humanoid Characters
+!ヒューマノイド キャラクターの使用 / Using Humanoid Characters
 
-In order to take full advantage of Mecanim's humanoid animation system and retargeting, you need to have a $$rigged$$ and $$skinned$$ humanoid type mesh.
+メカニムのヒューマノイド アニメーション システムおよびリターゲティングを有効活用するには $$Rig$$ および $$Skin$$ 付きのヒューマノイド型のメッシュの準備が必要です。
 
-#A character $$model$$ is generally made up of polygons in a 3D package or converted to polygon or triangulated mesh, from a more complex mesh type before export.
+#キャラクター $$Model$$ は 3D パッケージのポリゴンから構成されるか、エクスポート前により複雑なメッシュからポリゴンまたは三角メッシュに変換されています。
 
-#A $$joint hierarchy$$ or $$skeleton$$ which defines the bones inside the mesh and their movement in relation to one another, must be created to control the movement of the character. The process for creating the joint hierarchy is known as $$rigging$$.
+# キャラクターの動作を制御するにはメッシュ中のボーンおよび相互の相対的な動作を定義する $$Joint Hierarchy$$ または $$Skeleton$$ を作成する必要があります。Joint Hierarchy（ジョイント階層）を作成するプロセスが $$Rigging$$ （リギング）と呼ばれます。
 
-#The mesh or ''skin'' must then be connected to the joint hierarchy in order to define which parts of the character mesh move when a given joint is animated. The process of connecting the skeleton to the mesh is known as $$skinning$$.
+#メッシュまたは ''スキン'' はジョイント階層とつなげて、ジョイントがアニメーションそたときに動くキャラクターのメッシュ箇所を定義します。メッシュをスケルトンにつなげるプロセスが $$Skinning$$ （スキニング）と呼ばれます。
 
 ->Attach:Char200.png
-->   Stages for preparing a character (modeling, rigging, and skinning)
+->   キャラクター準備のステップ（モデリング、リギング、スキニング）
 
-!!How to obtain humanoid models
+!!ヒューマノイド モデルの取得方法
 
-There are three main ways to obtain humanoid models for with the Mecanim Animation system:
+メカニム アニメーション システムのヒューマノイド モデルを取得する方法が主に三つあります：
 
-#Use a procedural character system or character generator such as ''Poser'', ''Makehuman'' or [[http://www.mixamo.com/|''Mixamo'']]. Some of these systems will rig and skin your mesh (eg, Mixamo) while others will not. Furthermore, these methods may require that you reduce the number of polygons in your original mesh to make it suitable for use in Unity.
+# ''Poser'', ''Makehuman'' または [[http://www.mixamo.com/|''Mixamo'']] といったプロシージャルなキャラクター システムやキャラクター生成ツールを使用する方法。これらシステムのいくつかはメッシュのリギングとスキニングをしますが（例．Mixamo）、他はそこまでしません。これらの手法で Unity で十分動かすために元のメッシュのポリゴン数を減らさないといけない場合があります。
 
-#Purchase demo examples and character content from the [[http://unity3d.com/unity/asset-store/| Unity Asset Store]].
+# [[http://unity3d.com/unity/asset-store/| Unity アセットストア]] からサンプルやキャラクター コンテンツを購入する方法
 
-#Also, you can of course [[Preparingacharacterfromscratch|prepare your own character]] from scratch.
+# ゼロから [[Preparingacharacterfromscratch|自分でキャラクターを準備する]] 方法
 
 
-!!Export & Verify
+!!エクスポートおよび確認
 
-Unity imports a number of different generic and native 3D file formats. The format we recommend for exporting and verifying your model is FBX 2012 since it will allow you to:
+Unity は一般的な 3D 形式およびアプリケーション特有の 3D 形式に対応しています。モデルをエクスポートおよび確認するための形式で推奨するのは FBX 2012 です。その理由は次の機能のためです：
 
-* Export the mesh with the skeleton hierarchy, normals, textures and animation 
-* Re-import into your 3D package to verify your animated model has exported as you expected
-* Export animations without meshes
+* メッシュをスケルトン階層、法線、テクスチャ、アニメーション付きでエクスポート
+* アニメーション付きモデルが期待どおりか確認するため 3D パッケージへと再インポート
+* メッシュなしでアニメーションをエクスポート
 

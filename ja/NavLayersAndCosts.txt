@@ -1,27 +1,26 @@
-!Navigation Layers and Costs
+!ナビゲーション レイヤーおよびコスト
 
-To create the appearance of "intelligent" agents, the pathfinding system is designed to search for the optimal path from the starting point to the destination. As a general rule the shortest path is considered optimal, but there are many situations in real life where the calculation is not quite so simple. For example, the shortest route between two points might be covered in thick snow and so it could be quicker to walk along a cleared footpath even if the journey was longer. There may be concerns other than time too. At night, you might prefer to avoid walking down a dark alleyway and take a longer but well-lit route for safety. You can understand both these situations by noting that each step along a path has a certain $$cost$$ associated with it. The cost could represent the difficulty of the terrain, risk or many other factors you might bear in mind when planning a route. The optimal route is therefore the one with the lowest overall cost and this will not always be the shortest.
+"知性" あるエージェントを再現するため、経路探索システムは開始地点から目的地点までの最適経路を見つけるように設計されています。通常は最短経路が最適経路となりますが、現実世界でも単純でないケースがあります。例えば二つの地点間の最短経路が厚い雪で覆われていて、たとえ距離は長くても雪のない経路の方が早いかもしれません。また時間以外の要素もあります。夜は暗い通りではなくて少し遠くとも明るい経路を安全面で選ぶでしょう。それぞれの経路には $$Cost$$ （コスト）がある、と解釈することで整理できます。コストは地形の難易度やリスク、その他に考えられる要素を表現します。最適経路はコストが総合的にもっとも低いものであり、最短であるとは限りません。
 
-In Unity, each navmesh section can be set up with a cost value through the use of $$Navmesh Layers$$. If you select the ''Layers'' tab of the Navigation window, you will see a list of thirty-two available layers, three of which are "built-in" layers reserved by Unity. When you open a foldout for one of the User Layers, you will see that you can assign it with a name and a cost value.
+Unity では $$Navmesh Layer$$ を通してそれぞれのナビメッシュの箇所にコストを割り当てます。もし Navigation ウィンドウの ''Layers''タブを選択すると 32 種類の利用可能なレイヤーが表示され、そのうち 3 つは Unity によりビルトインで予約されています。ユーザ レイヤーのどれかを展開すると名前およびコストの値を割り当て出来ます。
 
 Attach:NavWindowLayerCost.png
 
-If you now go to the ''Object'' tab, and look on the ''Navigation Layer'' popup, you can see any user layers you have assigned on the menu. By choosing a layer for a navmesh object, you are also assigning the cost for each unit of distance an agent travels over it. This enables a level designer to divide a scene up into separate navmeshes representing differing traversal costs.
+''Object'' タブへ移動して ''Navigation Layer'' ポップアップをみると、メニューに割り当てされた任意のユーザ レイヤーをみることが出来ます。ナビメッシュ オブジェクトからレイヤーを選択するとエージェントが移動する距離にもコストを割り当てます。これによりレベルデザイナーがシーンを複数のナビメッシュに分割して異なる通過コストを表現できます。
 
 Attach:NavMeshObjPanelLayerMenu.png
 
 
-!!Tips and Use Cases for Costs
+!!コストの使用例や Tips
 
-An important thing to bear in mind when using costs is that a long journey over low-cost ground can be more expensive than a short journey over high-cost ground. Sometimes this will give plausible behaviour, for example when a character risks a shortcut down a dark alleyway rather than a very long round trip. However, the behaviour might sometimes be "rational" but unrealistic. A car can be made to favour roads by assigning them a low cost, but it should never normally drive through somebody's garden just to avoid a hairpin bend. Careful choice and testing of costs is sometimes necessary and it might be easier to redesign a level slightly rather than juggle with a complex setup of different navmesh costs.
+コストを使用するときに意識すべきことは通過コストが低い長い距離のほうが、通過コストの高い短い距離よりも優先される場合があることです。思わぬ結果につながる場合があり、キャラクターが暗い通りを少し遠くて明るい経路より優先してしまうかもしれません。しかし動作は "合理的" であっても現実的でない場合もあるでしょう。道路の通過コストを下げることで車が優先して選択させることが出来ますが、ヘアピンカーブをさけるために家の敷地を通るのはおかしいでしょう。コストを慎重に設定してテストすることが必要な場合がありレベルを設計しなおすたほうが複雑にナビメッシュのコストで混乱するほうが良い場合もあります。
 
-In some situations, most of the ground will be "normal" but there might be some areas that are advantageous to cross. For example, it might be preferable to take a moving walkway or a slide rather than walk the same distance. It is fine to set the cost less than the default value of one for cases like this but you should not attempt to use negative costs to indicate advantages. Since the agent is trying to find the lowest-cost path, he might spend a long time wandering aimlessly around an area of negative cost given that each step actually reduces the cost of the path overall. If you want your game to have mostly normal areas but occasionally have advantageous ground then the best solution is to use a cost greater than one for the "normal" layer and a lower cost for the "advantage" layer.
+状況によってはマップの大部分が "普通" で、いくつかのエリアを通過すると有利な場面があります。例えば、動く歩道または斜面を使用するほうが同じ距離を歩くより優先する場合があります。コストをより低く設定するのでも問題ありませんが、負の値を使用すべきではありません。エージェントは最も低いコストの経路を探索するため、負の値があるとそのエリアを通過するたびにコストが減少するため彷徨うかもしれません。もしゲームの大部分が普通のマップで僅かに有利なマップを用意したい場合には普通のレイヤーを 1 より大きい値を使用して "有利な" レイヤーに低い値を使用すべきです。
 
-The cost of a path is a very abstract concept and could involve many different factors but some possible use cases include:-
+経路のコストは曖昧な概念であり、要素は様々あるかもしれませんが、使用例としては次のような場合があります:-
 
-* __Difficulty or desirability of terrain:__ A character will favour a route over easier ground but might make a quick detour to avoid a long round trip. For example, you would usually step around a small puddle but you might risk a bit of wading if the puddle covers the footpath and the alternative route is much longer.
-* __Risk:__ It might be in the nature of your game that thieves lurk in dark alleyways and snakes live in long grass. An intelligent character would usually avoid places like this.
-* __Visibility:__ Characters escaping from prison would want to stay away from CCTV cameras and guards' patrol routes.
-* __Exposure:__ An attack force would tend to keep close to walls, cars and other large and substantial objects, breaking cover only when necessary.
-* __Damage:__ fire, electrified floors and pools of acid should normally be avoided but they may need to be braved if they are blocking the only escape route.
-
+* __地形マップの難易度や有利さ:__ キャラクターはより簡単なマップを優先しますが、大回りせずに回避するかもしれません。例えば小さな池は避けますが、経路が最短であり他の経路が相当に長い場合はリスクをとって通過するかもしれません。
+* __リスク:__ 盗賊が暗い通り道にいたり丈のある草地は蛇がいるかもしれません。知性あるキャラクターは回避するはずです。
+* __発見しやすさ:__ 脱獄するキャラクターは監視カメラをさけて監視員のパトロールを避けた経路を選ぶでしょう。
+* __安全性:__ 攻撃部隊は壁、車、大きな物体に近い位置で隠れて、必要なときだけ姿を見せるでしょう。
+* __ダメージ:__ 火、電気、硫酸がフロアにある場合は通常さけるべきですが、唯一の脱出経路の場合は通過するでしょう。
