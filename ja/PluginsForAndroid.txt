@@ -65,18 +65,18 @@ C/C++からJavaを使い始めるために必要なことはこれで全部で�
 !!! ヘルパークラスを利用してJavaプラグインを使用する
 $$AndroidJNIHelper$$ や $$AndroidJNI$$ を使えば、比較的簡単にJNIを使用することができます。 
 
-また、$$AndroidJavaObject$$ や $$AndroidJavaClass$$ は、多くのタスクを自動化し、高速なJavaの呼び出しを行うためにキャッシュを使用します。
- $$AndroidJavaObject$$ や $$AndroidJavaClass$$ は $$AndroidJNI$$ や $$AndroidJNIHelper$$ を組み合わせて構築されていますが、ロジックの多くは（自動で処理を行うために）独自の権利を要求します。これらのクラスも静的なメンバにアクセスする際は'static' バージョンを使用します。
-（原文：The combination of $$AndroidJavaObject$$ and $$AndroidJavaClass$$ builds on top of $$AndroidJNI$$ and $$AndroidJNIHelper$$, but also has a lot of logic in its own right (to handle the automation). These classes also come in a 'static' version to access static members of Java classes. ）
+また、$$AndroidJavaObject$$ や $$AndroidJavaClass$$ は、多くのタスクを自動化し、高速なJavaの呼び出しを行うためにキャッシュを使用します。 $$AndroidJavaObject$$ や $$AndroidJavaClass$$ は $$AndroidJNI$$ や $$AndroidJNIHelper$$ を組み合わせて構築されていますが、ロジックの多くは（自動で処理を行うために）独自の権利を要求します。これらのクラスも静的なメンバにアクセスする際は'static' バージョンを使用します。
 
 $$AndroidJNI$$ で直接クラスやメソッドを利用するか, $$AndroidJNI$$ と一緒に $$AndroidJNIHelper$$ を使用するか、便利で自動化する $$AndroidJavaObject/AndroidJavaClass$$ を使用するか、用途にあったものを選択して下さい。
 
 [[ScriptRef:AndroidJNI.html | UnityEngine.AndroidJNI]] は（上記の）C言語からJNIを参照するためのラッパーです。このクラスに含まれているメソッドは全てのJavaネイティブインターフェースに対応するstaticなメソッドを持っています。 [[ScriptRef:AndroidJNIHelper.html | UnityEngine.AndroidJNIHelper]] は次のレベルで使用されたヘルパー関数を提供していますが、しかし特殊なケースに対応するためいくつかの関数はpuhlicメソッドとして公開しています。
 
- [[ScriptRef:AndroidJavaObject.html | UnityEngine.AndroidJavaObject]] や [[ScriptRef:AndroidJavaClass.html | UnityEngine.AndroidJavaClass]] のインスタンスはJava側のjava.lang.Class（またはそのサブクラス）のインスタンスに対応しています。これらは基本的に３つの相互作用（interaction）を提供します。
-** 関数を呼ぶ（Call of Method）
-** 変数の値を取得する
-** 変数の値を登録する
+ [[ScriptRef:AndroidJavaObject.html | UnityEngine.AndroidJavaObject]] や [[ScriptRef:AndroidJavaClass.html | UnityEngine.AndroidJavaClass]] のインスタンスはJava側のjava.lang.Class（またはそのサブクラス）のインスタンスに対応しています。これらは基本的に３つの機能を提供します。
+
+* 関数の呼び出し
+* 変数の値を Get
+* 変数の値を Set
+
 
  $$Call$$ は大きく2つのカテゴリに分けることができます： 'void' メソッドを $$Call$$ する場合と、 $$Call$$ が値を返すタイプの場合です。void以外の型を返すメソッドの戻り値の型はジェネリックで表現しています。 $$Get$$ や $$Set$$ は常にジェネリックで変数の型を表します。
 
