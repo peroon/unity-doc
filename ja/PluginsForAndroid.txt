@@ -94,11 +94,12 @@ $$AndroidJNI$$ で直接クラスやメソッドを利用するか, $$AndroidJNI
  // jni.CallIntMethod(objectID, methodID);
 @]
 
-ここでは、 [[http://developer.android.com/reference/java/lang/String.html | java.lang.String]] でインスタンスを作る際に、設定した [[http://developer.android.com/reference/java/lang/String.html#String(java.lang.StringBuilder)|string]] を使って初期化し、 [[http://developer.android.com/reference/java/lang/String.html#hashCode() | hash value]] の文字列を受けとる例を示します。
+ここでは、 [[http://developer.android.com/reference/java/lang/String.html | java.lang.String]] でインスタンスを作る際に、設定した [[http://developer.android.com/reference/java/lang/String.html#String(java.lang.StringBuilder)|string]] を使って初期化し、 [[http://developer.android.com/reference/java/lang/String.html#hashCode() | hash value]] の文字列を受けとる例を
+示します。
 
 $$AndroidJavaObject$$ のコンストラクタの最初の引数は、生成するインスタンスのクラス名を設定しています。クラス名以降の任意のパラメータは、コンストラクタの呼び出しに使用します。この場合、引数として文字 "some_string" を渡しています。次はhashCode()は、 $$Call$$ 時に'int' を返すので、ジェネリックに型を設定しています。
 
-ドット表記法を使用してネストされたJavaクラスをインスタンス化することはできないことに注意してください。インナークラスは $ セパレーターを使用してください。それはドットとスラッシュフォーマットで動作するはずです。そして $$android.view.ViewGroup$LayoutParams$$ もしくは $$ViewGroup$$ クラスと $$LayoutParams$$ クラスはネストされているので、 $$android/view/ViewGroup$LayoutParams$$ を使用することができます。 
+__注意:__ ドット表記法を使用してネストされたJavaクラスをインスタンス化することはできないことに注意してください。インナークラスは $ セパレーターを使用してください。それはドットとスラッシュフォーマットで動作するはずです。そして $$android.view.ViewGroup$LayoutParams$$ もしくは $$ViewGroup$$ クラスと $$LayoutParams$$ クラスはネストされているので、 $$android/view/ViewGroup$LayoutParams$$ を使用することができます。 
 
 !!! 例２
 このプラグインサンプルは、現在のアプリケーションのキャッシュディレクトリを取得する方法を示します。この方法はプラグイン無しでC#から使用することが出来ます。:-
@@ -146,7 +147,7 @@ public class NewBehaviourScript : MonoBehaviour {
 } 
 @]
 
-Javaクラスの $$com.unity3d.player.UnityPlayer$$ にはiOSのネイティブサイドにある [[Main.Plugins#iPhonePlugins | UnitySendMessage]] に相当する $$UnitySendMessage$$ があります。これはJavaからスクリプトコードにデータを渡すために使用することができます。
+Javaクラスの $$com.unity3d.player.UnityPlayer$$ には iOS のネイティブサイドにある [[Main.Plugins#iPhonePlugins | UnitySendMessage]] に相当する $$UnitySendMessage$$ があります。これはJavaからスクリプトコードにデータを渡すために使用することができます。
 
 この例では、Java側でメッセージを中継スクリプトから直接呼び出しを行なっています。native/Unityコードの "Main Camera" オブジェクトにメッセージにコールバックし、 そのオブジェクトが持っている "JavaMessage" メソッドを呼び出します。
 
@@ -259,7 +260,9 @@ UnityPlayerNativeActivityは、UnityPlayerActivityのサブクラスではなく
 !!! ネイティブプラグインのサンプル
 ネイティブプラグインの簡単な例は、 [[Attach:AndroidNativePlugin.zip | ここ]] を参照してください。
 
-このサンプルでは、C言語のコードをUnity Androidアプリケーションから呼び出す方法についてです。パッケージにはネイティブプラグインが計算した２つの値の合計を表示するシーンが含まれています。プラグインをコンパイルするには [[http://developer.android.com/sdk/ndk/index.html|Android NDK]] が必要なことに注意してください。
+このサンプルでは、C言語のコードをUnity Androidアプリケーションから呼び出す方法についてです。
+パッケージにはネイティブプラグインが計算した２つの値の合計を表示するシーンが含まれています。
+プラグインをコンパイルするには [[http://developer.android.com/sdk/ndk/index.html|Android NDK]] が必要なことに注意してください。
 
 !!! Java プラグインのサンプル
 Javaコードの使用例は [[Attach:AndroidJavaPlugin.zip | ここ]] を参照してください。
