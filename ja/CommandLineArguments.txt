@@ -162,7 +162,7 @@ appCallbacks.Initialize*() 関数の前に呼び出しする必要がありま�
 
 :``-force-gfx-direct``: シングルスレッド レンダリングを強制。
 
-:``-force-d3d11-no-singlethreaded``: DirectX 11.0 をD3D11_CREATE_DEVICE_SINGLETHREADED フラグなしで作成するように強制。
+:``-force-d3d11-no-singlethreaded``: DirectX 11.0 を D3D11_CREATE_DEVICE_SINGLETHREADED フラグなしで作成するように強制。
 
 !!!! DirectX 機能レベル
 (詳細については [[http://msdn.microsoft.com/en-us/library/windows/desktop/ff476876(v=vs.85).aspx]] を参照)
