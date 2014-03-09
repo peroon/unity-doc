@@ -17,8 +17,6 @@
 
 すべての関数を宣言する必要はありません。 ライティング モデルは、ビュー方向を使用するか、しないかのいずれかです。 同様に、ライティング モデルが遅延ライティングで機能しない場合、@@_PrePass@@ 関数を宣言せず、それを使用するすべてのシェーダは、フォワード レンダリングに対してのみコンパイルを行います。
 
-
->>u42<<
 !! ライトマップのデコード
 
 ライトマップのデコードは Forward および Deferred Lighting のライティング関数と同様にしてカスタマイズが出来ます。自身のライティングモデルがビュー方向依存であるかどうかによって以下のいずれかの関数を使用して下さい。標準的な Unity ライトマップ テクスチャ データ (@@color@@, @@totalColor@@, @@indirectOnlyColor@@, および @@scale@@ での引数で渡される) をデコードするには、ビルトインの $$DecodeLightmap$$ 関数を使用して下さい。
@@ -46,8 +44,6 @@ __方向性の__ ライトマップのデコードをカスタマイズする関
 # @@half4 Lighting__Name___DirLightmap (SurfaceOutput s, fixed4 color, fixed4 scale, half3 viewDir, bool surfFuncWritesNormal, out half3 specColor);@@
   これはビュー方向依存であるライトモデルで使用されます
 
-
->><<
 !! 例
 
 __[[SL-SurfaceShaderLightingExamples |サーフェイスシェーダの例]]__
