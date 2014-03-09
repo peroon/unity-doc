@@ -31,10 +31,12 @@
 !! シャドウ
 !!! シャドウが全く見えない
 
-* シャドウは $$Unity Pro$$ のみの機能であるため、 Unity Pro がない場合はシャドウが得られません。当然、より簡単な [[class-Projector | Projector]] を使ったシャドウであれば可能です。
+
+* Unity の無料版ではひとつの方向性ライトでのリアルタイム シャドウ（ハード シャドウ）をサポートします。Unity でサポートする他の全てのシャドウ機能は Unity Pro のみの機能です。当然、より簡単な [[class-Projector | Projector]] を使ったシャドウは以前として可能です。
+
 * シャドウは特定のグラフィックス ハードウェアでのみサポートされています。詳細については [[Shadows]] を参照下さい。
 * シャドウが完全に無効化されていないか [[class-QualitySettings | Quality Settings]] を確認して下さい。
-* __シャドウは現在AndroidおよびiOSモバイルプラットフォームではサポートされていません。 __
+* Android および iOS シャドウは次の制約があります : ソフト シャドウは利用できず、フォワード レンダリング パスで一つの方向性ライトでしかシャドウを投影できません。ディファード レンダリング パスではシャドウを投影できるライトの数に制限はありません。
 
 !!! オブジェクトの一部でシャドウ 投影しない／されない
 
@@ -314,7 +316,7 @@ Could not create the Java virtual machine.
 @Settings->Developer Options->Don't keep activities@@ が電話上で有効化されてないことを確認します。ビデオプレーヤーはそのものがアクティビティであり、したがって、通常のゲームアクティビティは、ビデオプレーヤーが有効であると破棄されます。
 
 !! スリープ ボタンを押したときにゲームが終了する
-@@AndroidManifest.xml@@ で @@<activity>@@ タグを変更して @@<android:configChanges>@@ を含むようにします。詳細は [[http://developer.android.com/guide/topics/manifest/activity-element.html#config | ここ]] を参照下さい
+@@AndroidManifest.xml@@ で @@activity@@ タグを変更して @@<android:configChanges>@@ を含むようにします。詳細は [[http://developer.android.com/guide/topics/manifest/activity-element.html#config | ここ]] を参照下さい
 
 サンプルのアクティビティ タグは次のようなものです:-
 
