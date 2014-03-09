@@ -2,55 +2,54 @@
 
 !! 新しいTerrain（地形）の作成
 
-新しい$$Terrain$$はメニューで^^Terrain->Create Terrain^^を選択して作成することが出来ます。これでTerrainが$$Project$$および$$Hierarchy Views$$に追加されます。
+新しい $$Terrain$$ はメニューで ^^GameObject->Create Other->Terrain^^ を選択して作成することが出来ます。これで地形が $$Project$$ および $$Hierarchy Views$$ に追加されます。
 
 Attach:CreateTerrainMenu.png
 
-$$Scene View$$におけるTerrainは次のように表示されます。
+$$Scene View$$における Terrain は次のように表示されます。
 
 Attach:NewTerrain_SceneView.png\\
-''Scene Viewでの新しいTerrain''
+''Scene Viewでの新しい Terrain''
 
-別の大きさのTerrainを欲しい場合はメニューで^^Terrain->Set Resolution^^を選択します。Terrainの大きさに関して、このダイアログで変更できる設定は複数あります：\\
+別の大きさの Terrain にしたい場合はインスペクタ上の Terrain から Options ボタン Attach:TerrainOptions.png をクリックします。地形の大きさに関して、このダイアログで変更できる設定は複数あります：\\
 \\
 Attach:TerrainResolutionDialog.png\\
 ''Terrainの解像度設定''\\
 \\
 上図のとおり、変更できる値がいくつかあります。\\
 それらの値は:
-* Terrain Width: ユニット単位でのTerrainの幅
-* Terrain Height: ユニット単位でのTerrainの高さ
-* Terrain Length: ユニット単位でのTerrainの奥行き
-* HeightMap Resolution: 選択した TerrainのHeightMap解像度
-* Detail Resolution: Grass（草）や詳細Meshを含むマップ。パフォーマンス理由（ドローコール節約）で値は低いほうが良い。
-* Control Texture Resolution: Terrainい描画する異なるテクスチャをレイヤー化するSplat Mapの解像度
-* Base Texture Resolution: 各々の距離で使用されるSplat Mapを複合したマップの解像度
+* Terrain Width: 地形の幅
+* Terrain Height: 地形の高さ
+* Terrain Length: 地形の奥行き
+* HeightMap Resolution: 選択した地形の等高マップの解像度
+* Detail Resolution: Grass（草）や詳細メッシュを含むマップ。パフォーマンス理由（ドローコール節約）で値は低いほうが良い。
+* Control Texture Resolution: 地形に描画する異なるテクスチャをレイヤー化する Splat マップの解像度
+* Base Texture Resolution: 各々の距離で使用されるSplat マップを複合したマップの解像度
 
-!! Terrainでのナビゲーション
+!! 地形での移動
 
-Terrainは他のゲームオブジェクトとは若干違う働きをします。$$Brushes$$を使用してTerrainをペイントして微調整できます。Terrainを再配置したい場合、$$Inspector$$で`Transform Position``の値を変更できます。これにより、Terrainを移動できますが、回転や拡大は出来ません。
+地形は他のゲームオブジェクトと違う操作をします。 $$Brushes$$ を使用して地形をペイントで微調整します。地形を再配置したい場合、$$Inspector$$で ``Transform Position`` の値を変更できます。これにより地形を移動できますが、回転や拡大は出来ません。
 
-HierarchyでTerrainを選択している間、「F」キーによりTerrain上をナビゲートすることが出来ます。「F」キーを押すと、マウスがどこにあったとしてもシーンビューの真ん中に配置されます。これにより、領域をタッチして別の領域へズームし、別のものを変更することが出来ます。「F」キーを押下しててマウスがTerrainの上を移動してない場合、Terrainはシーンビューでセンタリングされます。
+階層ビューで地形を選択している間、「F」キーにより地形上を移動することが出来ます。「F」キーを押すと、マウスがどこにあったとしてもシーンビューの真ん中に配置されます。これにより、領域をタッチして別の領域へズームし、別のものを変更することが出来ます。「F」キーを押下しててマウスが地形の上を移動してない場合、地形はシーンビューでセンタリングされます。
 
-!! Terrainの編集
+!! 地形の編集
 
-Terrainを選択した状態で$$Inspector$$をみると、新しくなって素晴らしくなったTerrain編集ツールを見ることが出来ます。
+Terrainを選択した状態で$$Inspector$$をみると、新たに便利になった地形編集ツールを見ることが出来ます。
 
 Attach:TerrainEditingTools.png\\
-''Inspector上のTerrain編集ツール''
+''Inspector上の地形編集ツール''
 
-各々の四角形ボタンは別の機能を持ったTerrainツールです。高さを変更したり、Splat Mapをペイントし、木や岩のような詳細をアタッチする、ということをツールで出来ます。特定のツールを使用するにはクリックします。そうするとツールの短い説明がツールボタンの下に表示されます。
+各々の四角形ボタンは別の機能を持った地形編集ツールです。高さを変更したり、Splat マップをペイントし、木や岩のような詳細をアタッチする、ということをツールで出来ます。特定のツールを使用するにはクリックします。そうするとツールの短い説明がツールボタンの下に表示されます。
 
-ほとんどのツールはブラシの用途です。複数の異なったブラシがブラシを使用する全てのツールで表示されています。ブラシを使用するにはクリックします。現在選択されているブラシはTerrainの上にマウスオーバーすると指定した大きさでプレビュー表示します。
+ほとんどのツールはブラシの用途です。複数の異なったブラシがブラシを使用する全てのツールで表示されています。ブラシを使用するにはクリックします。現在選択されているブラシは地形の上にマウスオーバーすると指定した大きさでプレビュー表示します。
 
-$$Scene View$$ではこれらのボタン全てを使ってTerrainに直接ペイントできます。単にツールと使用したブラシを選んで、Terrainの上でクリックした後にドラッグしてリアルタイム編集できます。Height、Texture、Decorationをペイントするためには$$Hierarchy View$$でTerrainを選択状態としている必要があります。
+$$Scene View$$ ではこれらのボタン全てを使って地形に直接ペイントできます。単にツールと使用したブラシを選んで、地形の上でクリックした後にドラッグしてリアルタイム編集できます。Height、Texture、Decorationをペイントするためには $$Hierarchy View$$ で地形を選択状態としている必要があります。
 
-__注意:__ ブラシを選択したらシーンビューでTerrainの上でマウスオーバーして「^^F^^」キーを押します。これによりシーンビューがセンタリングされ、``Brush Size``の距離に自動ズームします。Terrainを作成しているときにナビゲーションするにはこれがもっとも早くかつ簡単な方法です。
+__注意:__ ブラシを選択したらシーンビューで地形の上でマウスオーバーして ^^F^^ キーを押します。これによりシーンビューがセンタリングされ、``Brush Size``の距離に自動ズームします。地形を作成しているときにナビゲーションするにはこれがもっとも早くかつ簡単な方法です。
 
-!!! Terrainキーボードショートカット
+!!! 地形 キーボードショートカット
 
-Terrain Inspectorが有効のとき、早く編集するには次のキーボードショートカットがあります。（全てUnity Preferencesでカスタマイズできます）:
-* Shift+Q、Shift+Yで有効なTerrainツールを選択します。
+インスペクタ上の Terrain が有効のとき、早く編集するには次のキーボードショートカットがあります。（全てUnity Preferencesでカスタマイズできます）:
+* Shift+Q、Shift+Yで有効な地形編集ツールを選択します。
 * コンマ(,)およびピリオド(.)でアクティブなブラシを切り替えます。
 * Shift+コンマ (<) and Shift+ピリオド (>)で有効なツリー/テクスチャ/詳細オブジェクトを切り替えます。
-
