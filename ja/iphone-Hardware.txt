@@ -2,10 +2,8 @@
 
 !! ハードウェアモデル
 
-様々な世代のデバイスにおける利用可能なiOSデバイスを次の表でまとめています。
+様々な世代のデバイスにおける利用可能なiOSデバイスを次のリストでまとめています。
 
-(:table width=100%:)
-(:cellnr:)
 
 !!![[http://en.wikipedia.org/wiki/IPhone#Model_comparison | iPhone モデル]] 
 
@@ -13,17 +11,14 @@
 !!! オリジナル iPhone
 * 画面: 320x480 ピクセル、 LCD 163ppi
 * ARM11, 412 Mhz CPU
-
-* PowerVR MBX Lite 3D グラフィックス プロセッサ
-** 遅い
+* PowerVR MBX Lite 3D グラフィックス プロセッサ（遅い）
 * 128MBのメモリ容量
 * 2 メガピクセル カメラ
 
 !!! iPhone 3G
 * 画面: 320x480 ピクセル、 LCD 163ppi
 * ARM11, 412 Mhz CPU
-* PowerVR MBX Lite 3D グラフィックス プロセッサ
-** 遅い
+* PowerVR MBX Lite 3D グラフィックス プロセッサ（遅い）
 * 128MBのメモリ容量
 * 2 メガピクセル カメラ
 * GPS 対応
@@ -31,15 +26,15 @@
 Attach:skiSafari.jpg\\
 iPhone 3G: 固定関数グラフィックス（高度なシェーダなし）、非常に遅いCPUおよびGPU。
 
-(:cellnr:)
+
 
 !!! iPhone 3GS
 * 画面: 320x480 ピクセル、 LCD 163ppi
 * ARM Cortex A8, 600 MHz CPU
 * PowerVR SGX535 グラフィックス プロセッサ
-** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
    Attach:Bar1.png
-** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
    Attach:Bar2.png
 * 256MBのメモリ容量
 * ビデオキャプチャ機能つきの 3 メガピクセル カメラ
@@ -52,33 +47,29 @@ iPhone 3GS: シェーダ対応したハードウェア、 ピクセル ライテ
 
 !!! iPhone 4
 * 画面: 960x640 ピクセル、 LCD 326 ppi, 800:1 コントラスト比。
-* Apple A4 
-** 1Ghz ARM Cortex-A8 CPU
-** PowerVR SGX535 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* Apple A4 1Ghz ARM Cortex-A8 CPU
+* PowerVR SGX535 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar3.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar4.png
 * 512MBのメモリ容量
-* カメラ
-** 後面 5.0 メガピクセル 裏面照射型CMOS イメージセンサー 720p HD video 30 fps および LED フラッシュ
-** 全面 0.3 メガピクセル（VGA） ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
+* 後面 5.0 メガピクセル 裏面照射型CMOS イメージセンサー 720p HD video 30 fps および LED フラッシュ
+* 全面 0.3 メガピクセル（VGA） ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
 * GPS 対応
 * コンパスに対応
 
 !!! iPhone 4S
 * 画面: 960x640 ピクセル、 LCD 326 ppi, 800:1 コントラスト比。
-* Apple A5
-** デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
-** デュアルコア PowerVR SGX543MP2 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* Apple A5 デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
+* デュアルコア PowerVR SGX543MP2 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar5.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar6.png
 * 512MBのメモリ容量
-* カメラ
-** 後面 8.0 メガピクセル 裏面照射型CMOS イメージセンサー  1080p HD video  30 fps , 顔検出および手ぶれ補正
-** 全面 0.3 メガピクセル（VGA） ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
+* 後面 8.0 メガピクセル 裏面照射型CMOS イメージセンサー  1080p HD video  30 fps , 顔検出および手ぶれ補正
+* 全面 0.3 メガピクセル（VGA） ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
 * GPS 対応
 * コンパスに対応
 
@@ -87,30 +78,27 @@ iPhone 4S は 新しい A5 チップにより、複雑なシェーダをスク�
 
 !!! iPhone 5
 * 画面: 1136x640 ピクセル, LCD at 326 ppi.
-* Apple A6
-** デュアルコア 1.3Ghz Apple デザイン ARMv7s CPU
-** トリプルコア PowerVR SGX543MP3 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* Apple A6 デュアルコア 1.3Ghz Apple デザイン ARMv7s CPU
+* トリプルコア PowerVR SGX543MP3 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar5.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して:
+* ロー シェーダ パフォーマンス、 iPad3と比較して:
     Attach:Bar6.png
 * 1GB メモリ
-* カメラ
-** 後面 8.0 メガピクセル 赤外線フィルタ, 裏面照射型センサーによりビデオ撮影時も利用可能
-** 前面 0.3 メガピクセル (VGA) ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
+* 後面 8.0 メガピクセル 赤外線フィルタ, 裏面照射型センサーによりビデオ撮影時も利用可能
+* 前面 0.3 メガピクセル (VGA) ジオタグつき、タップフォーカス機能、および 480p SD ビデオ 30 fps
 * GPS 対応
 * コンパスに対応
 
 
 !!![[http://en.wikipedia.org/wiki/IPod_Touch#Specifications| iPod Touch モデル]] 
 
-(:cellnr:)
+
 
 !!! 第 1 世代 iPod Touch
 * 画面: 320x480 ピクセル、 LCD 163ppi
 * ARM11, 412 Mhz CPU
-* PowerVR MBX Lite 3D グラフィックス プロセッサ
-** 遅い
+* PowerVR MBX Lite 3D グラフィックス プロセッサ（遅い）
 * 128MBのメモリ容量
 
 Attach:tripletown.jpg\\
@@ -119,12 +107,9 @@ iPod Touch: 固定関数グラフィックス（高度なシェーダなし）�
 !!! 第 2 世代iPod Touch
 * 画面: 320x480 ピクセル、 LCD 163ppi
 * ARM11, 533 Mhz CPU
-* PowerVR MBX Lite 3D グラフィックス プロセッサ
-** 遅い
+* PowerVR MBX Lite 3D グラフィックス プロセッサ（遅い）
 * 128MBのメモリ容量
 * スピーカー および マイク
-
-(:cellnr:)
 
 
 
@@ -141,18 +126,17 @@ Attach:csrRacing.jpg\\
 !!! 第 5 世代 iPod Touch
 * iPhone 4S と同等レベル
 
-(:cellnr:)
+
 
 !!![[http://en.wikipedia.org/wiki/IPad#Technical_specifications | iPad モデル]] 
 
 !!! iPad
 * 画面: 1024x768 ピクセル、 LCD 132 ppi, LEDバックライト
-* Apple A4 
-** 1Ghz MHz ARM Cortex-A8 CPU
-** PowerVR SGX535 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* Apple A4 1Ghz MHz ARM Cortex-A8 CPU
+* PowerVR SGX535 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar7.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar8.png
 * Wifi + Blueooth + (3G セルラー HSDPA, 3G バージョンでの 2G セルラー EDGE)
 * 加速度計、環境ライティングセンサー、磁力計（デジタルコンパス向け）
@@ -162,15 +146,14 @@ Attach:airmail.jpg\\
 iPad: 第 4 世代iPod Touch および iPhone 4 と同様
 
 
-(:cellnr:)
+
 !!! iPad 2
 * 画面: 1024x768 ピクセル、 LCD 132 ppi, LEDバックライト
-* Apple A5
-** デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
-** デュアルコア PowerVR SGX543MP2 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* Apple A5 デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
+* デュアルコア PowerVR SGX543MP2 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar9.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar10.png
 * 前述と同様
 
@@ -178,35 +161,32 @@ Attach:deadtrigger.jpg\\
 iPad2: A5 では、シェーダが十分にシンプルなものであればフルクリーン バンプマップが実現出来ます。しかし、ゲームが重要なオブジェクトでのみバンプマップされていることでベストのパフォーマンスを発揮する傾向があります。フルスクリーンのイメージエフェクトはまだ手が届かないところです。スクリプト最適化の重要性はやや劣ります。
 
 
-(:cellnr:)
 
-!!! iPad 3 (第 3 世代)
+!!! iPad (第 3 世代)
 * 画面: 2048 x 1536 ピクセル、 LCD 264 ppi, LEDバックライト
 * Apple A5X
-** デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
-** Quad-Core PowerVR SGX543MP4 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* デュアルコア 1Ghz ARM Cortex-A9 MPCore CPU
+* Quad-Core PowerVR SGX543MP4 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar11.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar12.png
 
 Attach:bladeslinger.jpg\\
 iPad 3 では Reflective Water および フルスクリーンのイメージエフェクトといったRender-To-Texture エフェクトを実現できます。しかし、シェーダ最適化は依然として決定的に重要です。もしゲームがデバイスをハードウェア性能の限界まで使用していない場合、スクリプトおよびゲームプレイの最適化はこの世代のデバイスにおいて、 PC デバイス同様に時間の無駄です。
 
-(:cellnr:)
 
-!!! iPad (4rd generation)
+
+!!! iPad (第 4 世代)
 * 画面: 2048x1536 ピクセル, LCD 264 ppi,バックライト
-* Apple A6X
-** デュアルコア 1.4Ghz ARM Cortex-A9 MPCore CPU
-** クワッドコア PowerVR SGX554MP4 GPU
-*** ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
+* Apple A6X デュアルコア 1.4Ghz ARM Cortex-A9 MPCore CPU
+* クワッドコア PowerVR SGX554MP4 GPU
+* ネイティブ解像度でのシェーダ パフォーマンス、 iPad2 と比較して: 
     Attach:Bar11.png
-*** ロー シェーダ パフォーマンス、 iPad3と比較して: 
+* ロー シェーダ パフォーマンス、 iPad3と比較して: 
     Attach:Bar12.png
 
 
-(:tableend:)
 
 !! グラフィックス プロセッシング ユニット および 隠面消去
 iPhone/iPad グラフィックス プロセッシング ユニット (GPU) はタイルベースのデファードレンダラです。デスクトップコンピュータの多くのGPUと比較して iPhone/iPad GPU はシーンで、イメージをレンダリングするために必要なプロセッシング作業を最小化することにフォーカスしています。これにより、表示ピクセルのみがプロセッシング対象となります。
