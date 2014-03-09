@@ -21,7 +21,7 @@ Attach:Inspector-ParticleAnimator.png\\
 
 !! 詳細
 
-パーティクルアニメータにより、パーティクルシステムを動的にすることができます。  パーティクルの色の変更や、力や回転の適用、放出終了時に破壊するよう選択することができます。  パーティクルシステムの詳細については、[[class-MeshParticleEmitter|Mesh Particle Emitters]]、[[class-EllipsoidParticleEmitter|Ellipsoid Particle Emitters]] および [[class-ParticleRenderer|Particle Renderers]] を参照してください。
+パーティクルアニメータにより、パーティクルシステムを動的にすることができます。  パーティクルの色の変更や、力や回転の適用、放出終了時に破壊するよう選択することができます。  パーティクルシステムの詳細については、 [[class-MeshParticleEmitter|Mesh Particle Emitters]] 、 [[class-EllipsoidParticleEmitter|Ellipsoid Particle Emitters]] および [[class-ParticleRenderer|Particle Renderers]] を参照してください。
 
 
 !!! 色のアニメート化
