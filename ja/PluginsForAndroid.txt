@@ -20,11 +20,18 @@ Androidのプラグインをビルドするには、まずは [[http://developer
 private static extern float FooPluginFunction (); @]
 
  ``PluginName`` にはプレフィックスの ('lib') や ('.so') 拡張子を含めないでください。
-ネイティブプラグインは実際のデバイス展開時にのみ呼び出すことができるので、全てのネイティブプラグインはC#コードレイヤーでメソッドをラップすることをお勧めします。このコードは  [[ScriptRef:Application-platform.html | Application.platform]] でどのデバイス上で動作しているか確認し、動作中の時のみネイティブプラグインを呼び出し、エディタで動作しているときはダミーの値を返すことができます。または [[http://docwiki.unity3d.com/index.php?n=Main.PlatformDependentCompilation | platform defines]] を使用しコンパイルを制御することもできます。
+ネイティブプラグインは実際のデバイス展開時にのみ呼び出すことができるので、全てのネイティブプラグインはC#コードレイヤーでメソッドをラップすることをお勧めします。このコードは  [[ScriptRef:Application-platform.html | Application.platform]] でどのデバイス上で動作しているか確認し、動作中の時のみネイティブプラグインを呼び出し、エディタで動作しているときはダミーの値を返すことができます。または [[http://docwiki.unity3d.com/index.php?n=Main.PlatformDependentCompilation | プラットフォーム定義]] を使用しコンパイルを制御することもできます。
+
+!!Android ライブラリ プロジェクト
+
+事前コンパイルした Android ライブラリ プロジェクトを ^^Assets->Plugins->Android^^ フォルダにドロップ出来ます。事前コンパイルとは全ての ''.java'' ファイルはプロジェクトの ''bin/'' または ''libs/'' フォルダのいずれかの jar ファイルでコンパイルしている必要があります。
+
+詳細については [[http://developer.android.com/tools/projects/index.html#LibraryProjects | Android ライブラリ プロジェクト]] を参照して下さい。
 
 !! プラグインの配置
 
-クロスプラットフォームで配置する場合、サポートする各プラットフォームのプラグイン（AndroidならばlibPlugin.so、MacであればPlugin.bundle、WindowsであればPlugin.dll）を含めておけば、Unityがターゲットのプラットフォームに対応したプラグインを自動的にピックアップし、ビルド時に含めます。
+クロスプラットフォームで配置する場合、サポートする各プラットフォームのプラグイン（AndroidならばlibPlugin.so、MacであればPlugin.bundle、WindowsであればPlugin.dll）を含めておく必要があります。
+Unity がターゲットのプラットフォームに対応したプラグインを自動的にピックアップし、ビルド時に含めます。
 
 !! Javaのプラグインを利用する
 
