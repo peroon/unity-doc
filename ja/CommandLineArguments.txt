@@ -19,34 +19,45 @@ MacOSでTerminalからUnityを起動するには次の通りに入力します:-
 上で述べた通り、エディタに加えてビルド するゲームもスタートアップの時に追加のコマンドおよび情報をオプションとして提供出来ます。これは次のコマンドライン引数を使用して行います:-
 
 :``-batchmode``:バッチモードでUnityを実行。これは常に他のコマンドライン引数との組み合わせで使用すべきでポップアップウィンドウが表示され人の手が介在する必要がありません。もし例外エラーがスクリプトコード実行時に発生するか、アセットサーバの更新が失敗するか、またはその他の処理が失敗した場合にUnityは直ちに戻り値 1  で終了します。バッチモードではUnityは最小限のログ出力をコンソールに送信することに留意して下さい。しかし [[Log Files]]  には完全なログ情報が含まれます。 プロジェクトをバッチモードでプロジェクトを開くときにエディタも同じプロジェクトを開くことはサポートされていないことに留意して下さい。Unity のインスタンスは同時にひとつしか実行することが出来ません。
-  
 
 
-:``-quit``:他のコマンド実行の終了後にUnityエディタを終了します。これによりエラーメッセージが隠される場合があることに留意して下さい。
+:``-quit``:他のコマンド実行の終了後にUnityエディタを終了します。これによりエラーメッセージが隠される場合があることに留意して下さい（Editor.log ファイルには記録されます）。
 
-:``-buildWindowsPlayer <pathname>``:スタンドアローンWindowsプレイヤーをビルド（例えば、, -buildWindowsPlayer path/to/your/build.exe）。
+:``-force-opengl (Windows のみ)``: Direct3Dが利用可能であったとしても強制的にレンダリングでOpenGLを使用するようにします。通常Direct3Dが使用されますが、Direct3D 9.0cが利用可能でない場合OpenGLが使用されます。
 
-:``-buildOSXPlayer <pathname>``:スタンドアローン Mac OSX player をビルド（例えば, -buildOSXPlayer path/to/your/build.app）。
+:``-force-d3d9 (Windows のみ)``: 強制的にレンダリングでDirect3D 9を使用します。これはデフォルト値のため、渡す意味がありません。
 
-:``-buildLinux32Player <pathname>``:スタンドアローン Linux player をビルド（例えば, -buildLinux32Player path/to/your/build).
+:``-force-d3d11 (Windows のみ)``: 強制的にレンダリングでDirect3D 11を使用します。
 
-:``-buildLinux64Player <pathname>``:スタンドアロー ン64ビットLinux player をビルド（例えば, -buildLinux64Player path/to/your/build)。
+:``-buildWindowsPlayer &lt;pathname&gt;``:スタンドアローン Windows プレイヤーをビルド（例えば, -buildWindowsPlayer path/to/your/build.exe）。
 
-:``-importPackage <pathname>``:特定の [[HOWTO-exportpackage | パッケージ]] をインポート。インポートダイアログは表示されません。
+:``-buildOSXPlayer &lt;pathname&gt;``:スタンドアローン Mac OSX player をビルド（例えば, -buildOSXPlayer path/to/your/build.app）。
 
-:``-createProject <pathname>``:特定のパスに空のプロジェクトを作成。
+:``-buildLinux32Player &lt;pathname&gt;``:スタンドアローン Linux player をビルド（例えば, -buildLinux32Player path/to/your/build).
 
-:``-projectPath <pathname>``:特定のパスでプロジェクトを開く。
+:``-buildLinux64Player &lt;pathname&gt;``:スタンドアロー ン64ビットLinux player をビルド（例えば, -buildLinux64Player path/to/your/build)。
 
-:``-logFile <pathname>``:エディタまたはWindowsスタンドアローンのログファイルが書き込みされる場所を指定。
+:``-buildWebPlayer &lt;pathname&gt;``:ウェブプレイヤーをビルド (例えば, -buildWebPlayer path/to/your/build).
 
-:``-assetServerUpdate <IP[[=:=]port] projectName ユーザ名 パスワード [r <revision>]>``:強制的に ''IP:port'' で指定された [[AssetServer | Asset Server]] の中のプロジェクト更新を行なう。ポート情報は任意であり、ない場合は標準のポート (10733)を使用。このコマンドは ''-projectPath'' 引数と組み合わせて正しいプロジェクトで作業していることを保証したうえで使用することを推奨します。もしプロジェクト名がない場合、Unityで最も最近開かれたファイルが使用されます。もし ''-projectPath'' にプロジェクトが存在しない場合、プロジェクトが新たに作成されます。
+:``-buildWebPlayerStreamed &lt;pathname&gt;``:ストリーミング ウェブプレイヤーをビルド (例えば, -buildWebPlayerStreamed path/to/your/build).
 
-:``-exportPackage <exportAssetPath1 exportAssetPath2 ExportAssetPath3 exportFileName>``:特定のパス（または複数のパス）にエクスポート。  ``exportAssetPath`` はUnityプロジェクトからエクスポートするフォルダ（Unityプロジェクトのルートディレクトリに対する相対パス指定）であり、``exportFileName`` はパッケージの名前です。現在、このオプションはフォルダ全体の単位でしかエクスポート出来ません。通常このコマンドは ``-projectPath`` 引数を使って使用する必要があります。
+:``-buildTarget &lt;name&gt;``:プロジェクトのロード前にアクティブなビルドターゲットを選択可能にします。
+
+:``-importPackage &lt;pathname&gt;``:特定の [[HOWTO-exportpackage | パッケージ]] をインポート。インポートダイアログは表示されません。
+
+:``-createProject &lt;pathname&gt;``:特定のパスに空のプロジェクトを作成。
+
+:``-projectPath &lt;pathname&gt;``:特定のパスでプロジェクトを開く。
+
+:``-logFile &lt;pathname&gt;``:エディタまたは Windows / Linux スタンドアローンのログファイルが書き込みされる場所を指定。
+
+:``-assetServerUpdate &lt;IP[[=:=]port] projectName ユーザ名 パスワード [r <revision>]&gt;``:強制的に ''IP:port'' で指定された [[AssetServer | Asset Server]] の中のプロジェクト更新を行なう。ポート情報は任意であり、ない場合は標準のポート (10733)を使用。このコマンドは ''-projectPath'' 引数と組み合わせて正しいプロジェクトで作業していることを保証したうえで使用することを推奨します。もしプロジェクト名がない場合、Unityで最も最近開かれたファイルが使用されます。もし ''-projectPath'' にプロジェクトが存在しない場合、プロジェクトが新たに作成されます。
+
+:``-exportPackage  &lt;exportAssetPath1 exportAssetPath2 ExportAssetPath3 exportFileName&gt;``:特定のパス（または複数のパス）にエクスポート。  ``exportAssetPath`` はUnityプロジェクトからエクスポートするフォルダ（Unityプロジェクトのルートディレクトリに対する相対パス指定）であり、``exportFileName`` はパッケージの名前です。現在、このオプションはフォルダ全体の単位でしかエクスポート出来ません。通常このコマンドは ``-projectPath`` 引数を使って使用する必要があります。
 
 :``-nographics (Windows および Linux のみ)``:バッチモードで実行するとき、グラフィックス デバイスは一切初期化しないで下さい。これにより自動化されたワークフローをGPUがないマシンで実行出来るようになります（自動化されたワークフローは、ウィンドウにフォーカスがあるときのみ機能し、そうでない場合はシミュレートされた入力コマンドを送信出来ません）。このオプションで生成されたスタンドアローン プレイヤーはグラフィックス機能がつきません。
 
-:``-executeMethod <ClassName.MethodName>``: このstaticメソッドをUnityのスタート直後に実行、すなわちプロジェクトが開かれて、オプションにあたるasset server更新が行われた直後です。これにより継続的インテグレーション、ユニットテストの実施、ビルド作成、データ準備等々に使用出来ます。もしコマンドライン処理のエラー結果がほしい場合は、例外を投げてUnityが戻り値 1 で終了するか、  [[ScriptRef:EditorApplication.Exit.html | EditorApplication.Exit]] をコールしてゼロ以外の戻り値のコードとします。もし引数を渡したい場合コマンドラインに追加してSystem.Environment.GetCommandLineArgs を使用して取得します。
+:``-executeMethod &lt;ClassName.MethodName&gt;``: このstaticメソッドをUnityのスタート直後に実行、すなわちプロジェクトが開かれて、オプションにあたるasset server更新が行われた直後です。これにより継続的インテグレーション、ユニットテストの実施、ビルド作成、データ準備等々に使用出来ます。もしコマンドライン処理のエラー結果がほしい場合は、例外を投げてUnityが戻り値 1 で終了するか、  [[ScriptRef:EditorApplication.Exit.html | EditorApplication.Exit]] をコールしてゼロ以外の戻り値のコードとします。もし引数を渡したい場合コマンドラインに追加してSystem.Environment.GetCommandLineArgs を使用して取得します。
 
 @@-executeMethod@@ を使用するためには __Editorフォルダにスクリプトがありクラスにstatic関数が存在する必要があります__ 。
 
@@ -96,21 +107,21 @@ Unityでビルドしたスタンドアローン プレイヤーはコマンド�
 
 :``-batchmode``:ゲームを "headless" モードで実行します。ゲームは何も表示せず、ユーザ入力を受付しません。これは[[NetworkReferenceGuide | ネットワーク ゲーム]] でのサーバ実行に最も便利です。
 
-:``-force-opengl (Windows only)``: Direct3Dが利用可能であったとしても強制的にレンダリングでOpenGLを使用するようにします。通常Direct3Dが使用されますが、Direct3D 9.0cが利用可能でない場合OpenGLが使用されます。
+:``-force-opengl (Windows のみ)``: Direct3Dが利用可能であったとしても強制的にレンダリングでOpenGLを使用するようにします。通常Direct3Dが使用されますが、Direct3D 9.0cが利用可能でない場合OpenGLが使用されます。
 
-:``-force-d3d9 (Windows only)``: 強制的にレンダリングでDirect3D 9を使用します。これはデフォルト値のため、渡す意味がありません。
+:``-force-d3d9 (Windows のみ)``: 強制的にレンダリングでDirect3D 9を使用します。これはデフォルト値のため、渡す意味がありません。
 
-:``-force-d3d11 (Windows only)``: 強制的にレンダリングでDirect3D 11を使用します。
+:``-force-d3d11 (Windows のみ)``: 強制的にレンダリングでDirect3D 11を使用します。
 
-:``-single-instance (Linux & Windows only)``:同時に実行出来るゲームのインスタンスはひとつのみとします。もし他のインスタンスが既に実行されている場合に、 @@-single-instance@@ を使用して再度起動すると既存のものにフォーカスがあたるのみです。
+:``-single-instance (Linux & Windows のみ)``:同時に実行出来るゲームのインスタンスはひとつのみとします。もし他のインスタンスが既に実行されている場合に、 @@-single-instance@@ を使用して再度起動すると既存のものにフォーカスがあたるのみです。
 
-:``-nolog (Windows only)``:ログ出力しない。通常は @@output_log.txt@@ が ゲーム実行可能ファイルの隣、すなわち[[ScriptRef:Debug.Log.html | Debug.Log]] が出力される @@*_Data@@ フォルダに書き込まれます。
+:``-nolog (Linux & Windows のみ)``:ログ出力しない。通常は @@output_log.txt@@ が ゲーム実行可能ファイルの隣、すなわち[[ScriptRef:Debug.Log.html | Debug.Log]] が出力される @@*_Data@@ フォルダに書き込まれます。
 
-:``-force-d3d9-ref (Windows only)``:強制的にDirect3Dの "Reference" ソフトウェア レンダラで実行します。正しく動作するためには [[http://msdn.microsoft.com/en-us/directx/default.aspx | DirectX SDK]] がインストールされている必要があります。自動的なテスト スイートで、グラフィックス カードにどれが使用されていてもレンダリングが同一であるようにする場合、最も役立ちます。
+:``-force-d3d9-ref (Windows のみ)``:強制的にDirect3Dの "Reference" ソフトウェア レンダラで実行します。正しく動作するためには [[http://msdn.microsoft.com/en-us/directx/default.aspx | DirectX SDK]] がインストールされている必要があります。自動的なテスト スイートで、グラフィックス カードにどれが使用されていてもレンダリングが同一であるようにする場合、最も役立ちます。
 
-:``-adapter N (Windows only)``:別のディスプレイでフルスクリーン実行することを許容し、ここで N はディスプレイ番号を指します。
+:``-adapter N (Windows のみ)``:別のディスプレイでフルスクリーン実行することを許容し、ここで N はディスプレイ番号を指します。多くの場合アダプターとビデオカードは 1:1 の関係です。マルチヘッド対応のカードの場合（ひとつのカードから複数モニターを操作）、各々の "ヘッド" はアダプター自身の場合があります。
 
-:``-popupwindow (Windows only)``: ウィンドウは（フレームなしの）ポップアップウィンドウとして作成されます。
+:``-popupwindow (Windows のみ)``: ウィンドウは（フレームなしの）ポップアップウィンドウとして作成されます。
 
 :``-screen-width (Linux および Windows のみ)``:デフォルトのスクリーン幅を上書きします。サポートされている解像度の整数である必要があります。
 
@@ -136,34 +147,34 @@ __Windows:__\\
 @@[=UnitySetup.exe /S /D=E:\Development\Unity=]@@
 
 ##WindowsStore##
-!! Windows Store : Command line arguments
+!! Windows ストア : コマンドライン引数
 
-Windows Store Apps don't accept command line arguments by default, so to pass them you have to call a special function from App.xaml.cs/cpp or App.cs/cpp. For ex., appCallbacks.AddCommandLineArg("-nolog");
-You have to call it before appCallbacks.Initialize*() function.
-
-
-!!!Command Line Arguments
+Windows ストア アプリはデフォルトでコマンドライン引数を受付しないため、渡すためには App.xaml.cs/cpp または App.cs/cpp から特別な関数を呼び出しする必要があります。例えば, appCallbacks.AddCommandLineArg("-nolog");
+appCallbacks.Initialize*() 関数の前に呼び出しする必要があります。
 
 
-:``-nolog``: Don't produce UnityPlayer.log.
+!!!コマンドライン引数
 
-:``-force-driver-type-warp``: Force DirectX 11.0 WARP device (More info [[http://msdn.microsoft.com/en-us/library/gg615082.aspx]])
 
-:``-force-gfx-direct``: Force single threaded rendering.
+:``-nolog``: UnityPlayer.log を生成しない。
 
-:``-force-d3d11-no-singlethreaded``: Force DirectX 11.0 to be created without D3D11_CREATE_DEVICE_SINGLETHREADED flag.
+:``-force-driver-type-warp``: DirectX 11.0 WARP を強制（詳細については [[http://msdn.microsoft.com/en-us/library/gg615082.aspx]] ）。
 
-!!!! DirectX feature levels
-(More info [[http://msdn.microsoft.com/en-us/library/windows/desktop/ff476876(v=vs.85).aspx]])
+:``-force-gfx-direct``: シングルスレッド レンダリングを強制。
 
-:``-force-feature-level-9-1``: Force DirectX 11.0 feature level 9.1.
+:``-force-d3d11-no-singlethreaded``: DirectX 11.0 をD3D11_CREATE_DEVICE_SINGLETHREADED フラグなしで作成するように強制。
 
-:``-force-feature-level-9-2``: Force DirectX 11.0 feature level 9.2.
+!!!! DirectX 機能レベル
+(詳細については [[http://msdn.microsoft.com/en-us/library/windows/desktop/ff476876(v=vs.85).aspx]] を参照)
 
-:``-force-feature-level-9-3``: Force DirectX 11.0 feature level 9.3.
+:``-force-feature-level-9-1``: DirectX 11.0 機能レベル 9.1 を強制
 
-:``-force-feature-level-10-0``: Force DirectX 11.0 feature level 10.0.
+:``-force-feature-level-9-2``: DirectX 11.0 機能レベル 9.2 を強制
 
-:``-force-feature-level-10-1``: Force DirectX 11.0 feature level 10.1.
+:``-force-feature-level-9-3``: DirectX 11.0 機能レベル 9.3 を強制
 
-:``-force-feature-level-11-0``: Force DirectX 11.0 feature level 11.0.
+:``-force-feature-level-10-0``: DirectX 11.0 機能レベル 10.0 を強制
+
+:``-force-feature-level-10-1``: DirectX 11.0 機能レベル 10.1 を強制
+
+:``-force-feature-level-11-0``: DirectX 11.0 機能レベル 11.0 を強制
