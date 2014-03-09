@@ -10,12 +10,12 @@ Express エディションは無料で、 http://www.microsoft.com/express/vcsha
 Professional エディションは無料はありませんが、詳細を http://www.microsoft.com/visualstudio/en-us/products/professional/default.mspx から得られます。
 
 Unity の VisualStudio 統合には、次の 2 つのコンポーネントがあります。\\
-1) Unity での VisualStudio プロジェクト　ファイルの作成と維持。 __Express と Profesional の両方。__\\
+1) Unity での VisualStudio プロジェクト ファイルの作成と維持。 __Express と Profesional の両方。__\\
 2) スクリプトをダブルクリック時または Unity でのエラー発生時に Unity は自動的に VisualStudio を開く。 __Professional のみ。__
 
 
 !!Visual Studio Express を入手しました。どう使えばよいでしょうか?
-* Unity でメニューから ^^Assets->Sync VisualStudio Project^^ を選択します。
+* Unity でメニューから ^^Assets->Sync MonoDevelop Project^^ を選択します。
 * Unity プロジェクトで、新規作成された .sln ファイルを見つけます (Assets フォルダからのフォルダ)。
 * Visual Studio Express でそのファイルを開きます。
 * すべてのスクリプト ファイルを編集できるので、Unity に戻って使用します。
@@ -23,7 +23,7 @@ Unity の VisualStudio 統合には、次の 2 つのコンポーネントがあ
 
 !!Visual Studio Professional を入手しました。どう使えばよいでしょうか?
 * Unity で、Edit->Preferences に移動し、Visual Studio が希望の外部エディタとして選択されているかを確認します。
-* プロジェクトで、C#　ファイルをダブルクリックします。 Visual Studio が自動的にそのファイルを開きます。 
+* プロジェクトで、C# ファイルをダブルクリックします。 Visual Studio が自動的にそのファイルを開きます。 
 * そのファイルを編集できるので、Unity に戻ります。
 
 
@@ -35,5 +35,4 @@ Unity の VisualStudio 統合には、次の 2 つのコンポーネントがあ
 
 * Unity は自動的に Visual Studio .sln および .csproj ファイルを作成および維持します。 誰が Unity 内でファイルを追加、名前変更、移動、削除を行なっても、Unity は .sln および .csproj ファイルを生成します。 Visual Studio からのソリューションにもファイルを追加できます。 Unity はこれらの新しいファイルをインポートし、次に Unity がプロジェクト ファイルを再度作成すると、この新しいファイルを含めて、プロジェクト ファイルを作成します。
 
-* Unity は、AssetServer アップデートまたは SVN アップデート後には、Visual Studio プロジェクト ファイルを生成しません。 メニューを通じて、Unity に Visual Studio プロジェクト ファイルを生成するよう手動で指示できます。 ^^Assets->Sync VisualStudio Project^^
-
+* Unity は、AssetServer アップデートまたは SVN アップデート後には、Visual Studio プロジェクト ファイルを生成しません。 メニューを通じて、Unity に Visual Studio プロジェクト ファイルを生成するよう手動で指示できます。 ^^Assets->Sync MonoDevelop Project^^
