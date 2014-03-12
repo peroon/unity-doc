@@ -132,11 +132,11 @@ Attach:DLLScreenshot.png\\
 # DLL のデバッグシンボルを準備します:
 
 **MonoDevelop:
-*** ビルドされたファイル <project folder>/bin/Debug/DLLTest.dll.mdb を Assets フォルダにコピーします (すなわち Assets/Plugins/)
+*** ビルドされたファイル &lt;project folder&gt;/bin/Debug/DLLTest.dll.mdb を Assets フォルダにコピーします (すなわち Assets/Plugins/)
 
 **Visual Studio:
-### <Program Files>\Unity\Editor\Data\Mono\lib\mono\2.0\pdb2mdb.exe をコマンドプロンプトで実行し、 <project folder>\bin\Debug\DLLTest.pdb を引数として渡します
-### 変換されたファイル <project folder>\bin\Debug\DLLTest.dll.mdb を Assets フォルダにコピーします (すなわち Assets\Plugins\)
+### &lt;Program Files&gt;\Unity\Editor\Data\Mono\lib\mono\2.0\pdb2mdb.exe をコマンドプロンプトで実行し、 <project folder>\bin\Debug\DLLTest.pdb を引数として渡します
+### 変換されたファイル &lt;project folder&gt;\bin\Debug\DLLTest.dll.mdb を Assets フォルダにコピーします (すなわち Assets\Plugins\)
 
 # "Test" スクリプトを MonoDevelop で開き、 Tools メニュー（Windows）または MonoDevelop-Unity メニュー (MacOS)からUnity デバッガを有効化します:
 
