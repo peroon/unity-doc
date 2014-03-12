@@ -1,6 +1,6 @@
-!Coroutines
+!コルーチン / Coroutines
 
-When you call a function, it runs to completion before returning. This effectively means that any action taking place in a function must happen within a single frame update; a function call can't be used to contain a procedural animation or a sequence of events over time. As an example, consider the task of gradually reducing an object's alpha (opacity) value until it becomes completely invisible.
+関数を呼び出すと戻り値を返す前に実行完了されます。すなわち関数で行なわれるアクションはひとつのフレームで行なわれるということを意味し、関数呼び出しをはプロシージャル アニメーションを含めたり、時間の経過を伴う一連のイベントには使用できません。例えば、オブジェクトのアルファ（透明度）が完全に透明になるまで徐々に減少し続ける場面を想定したとします。
 
 [@void Fade() {
 	for (float f = 1f; f >= 0; f -= 0.1f) {
@@ -10,11 +10,11 @@ When you call a function, it runs to completion before returning. This effective
 	}
 }@]
 
-As it stands, the Fade function will not have the effect you might expect. In order for the fading to be visible, the alpha must be reduced over a sequence of frames to show the intermediate values being rendered. However, the function will execute in its entirety within a single frame update. The intermediate values will never be seen and the object will disappear instantly.
+上記のままでは、 Fade 関数が望むような効果が得られません。Fade が視覚的に分かるようにするためには、アルファは数フレームに渡り、レンダリングされる中間的な値に変化したうえで、減少していく必要があります。しかし、上記の関数は一つのフレームでのみ実行されます。中間的な値は視覚的に分からず、オブジェクトは瞬間的に透明になります。
 
-It is possible to handle situations like this by adding code to the Update function that executes the fade on a frame-by-frame basis. However, it is often more convenient to use a coroutine for this kind of task.
+Update 関数にコードを追加することでも、フレーム毎にフェードすることは可能です。しかし、このようなタスクでは通常コルーチンを使用すると便利です。
 
-A coroutine is like a function that has the ability to pause execution and return control to Unity but then to continue where it left off on the following frame. In C#, a coroutine is declared like this:-
+コルーチンとは実行を停止して Unity へ制御を戻し、但し続行するときは停止したところから次のフレームで実行を継続することが出来る関数です。 C# でコルーチンは次のように宣言します:-
 
 [@IEnumerator Fade() {
 	for (float f = 1f; f >= 0; f -= 0.1f) {
@@ -25,15 +25,14 @@ A coroutine is like a function that has the ability to pause execution and retur
 	}
 }@]
 
-It is essentially a function declared with a return type of IEnumerator and with the yield return statement included somewhere in the body. The yield return line is the point at which execution will pause and be resumed the following frame. To set a coroutine running, you need to use the [[ScriptRef:MonoBehaviour.StartCoroutine.html|StartCoroutine]] function:-
+要するに、これは IEnumerator 型を戻り値として yield return ステートメントをボディ部分に含める、という関数の宣言です。yield return 行が 実行を停止して次のフレームから実行を継続する場所です。コルーチンを実行するには [[ScriptRef:MonoBehaviour.StartCoroutine.html|StartCoroutine]] 関数を使用します。
 
 [@void Update() {
 	if (Input.GetKeyDown("f")) {
 		StartCoroutine("Fade");
 	}
 }@]
-
-In UnityScript, things are slightly simpler. Any function that includes the yield statement is understood to be a coroutine and the IEnumerator return type need not be explicitly declared:-
+UnityScript ではもう少し簡単です。yield ステートメントを含む関数はすべてコルーチンとして解釈され IEnumerator 戻り型は明示的に宣言する必要がありません:-
 
 [@function Fade() {
 	for (var f = 1.0; f >= 0; f -= 0.1) {
@@ -44,7 +43,7 @@ In UnityScript, things are slightly simpler. Any function that includes the yiel
 	}
 }@]
 
-Also, a coroutine can be started in UnityScript by calling it as if it were a normal function:-
+さらに UnityScript でコルーチンを開始する場合、通常の関数と同様に呼び出しします:-
 
 [@function Update() {
 	if (Input.GetKeyDown("f")) {
@@ -52,9 +51,9 @@ Also, a coroutine can be started in UnityScript by calling it as if it were a no
 	}
 }@]
 
-You will notice that the loop counter in the Fade function maintains its correct value over the lifetime of the coroutine. In fact any variable or parameter will be correctly preserved between yields.
+Fade 関数のループ カウンタはコルーチンのライフサイクルを通じて正しい値を保持します。 yield の最中に任意の変数またはパラメータは正しく保持されます。
 
-By default, a coroutine is resumed on the frame after it yields but it is also possible to introduce a time delay using [[ScriptRef:WaitForSeconds.html|WaitForSeconds]]:-
+デフォルトでコルーチンは yield した直後のフレームで再開しますが、遅延してから再開させるには [[ScriptRef:WaitForSeconds.html|WaitForSeconds]] 関数を使用します:-
 
 [@IEnumerator Fade() {
 	for (float f = 1f; f >= 0; f -= 0.1f) {
@@ -65,7 +64,7 @@ By default, a coroutine is resumed on the frame after it yields but it is also p
 	}
 }@]
 
-...on in UnityScript
+...UnityScript では
 
 [@function Fade() {
 	for (var f = 1.0; f >= 0; f -= 0.1) {
@@ -76,7 +75,8 @@ By default, a coroutine is resumed on the frame after it yields but it is also p
 	}
 }@]
 
-This can be used as a way to spread an effect over a period time but it is also a useful optimization. Many tasks in a game need to be carried out periodically and the most obvious way to do this is to include them in the Update function. However, this function will typically be called many times per second. When a task doesn't need to be repeated quite so frequently, you can put it in a coroutine to get an update regularly but not every single frame. An example of this might be an alarm that warns the player if an enemy is nearby. The code might look something like this:-
+
+この方法でエフェクトを一定の時間範囲で広げられますが、最適化の方法としても便利です。ゲーム中のタスクは定期的に行なう必要があり、単純な方法は Update 関数で行なうことです。しかしこの関数は一秒間に何度も呼び出しされます。タスクがそれほど頻繁に繰り返す必要がない場合、コルーチンに入れることで毎フレーム実行することなく定期的に更新することができます。ひとつの例は敵が近くにいることをプレイヤーに知らせるアラームです。コードは次のようなものです:-
 
 [@function ProximityCheck() {
 	for (int i = 0; i < enemies.Length; i++) {
@@ -88,7 +88,7 @@ This can be used as a way to spread an effect over a period time but it is also 
 	return false;
 }@]
 
-If there are a lot of enemies then calling this function every frame might introduce a significant overhead. However, you could use a coroutine to call it every tenth of a second:-
+敵が数多くいる場合にこの関数を毎フレーム呼び出しすることで顕著なオーバーヘッドを生じさせるかもしれません。しかし、コルーチンを使用して 1/10 秒おきに呼び出しさせることが出来ます:-
 
 [@IEnumerator DoCheck() {
 	for(;;) {
@@ -97,4 +97,4 @@ If there are a lot of enemies then calling this function every frame might intro
 	}
 }@]
 
-This would greatly reduce the number of checks carried out without any noticeable effect on gameplay.
+これによりゲームに悪影響を与えずにチェック回数を飛躍的に減少させられます。
