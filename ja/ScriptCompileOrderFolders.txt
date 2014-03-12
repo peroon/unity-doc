@@ -1,22 +1,22 @@
-!Special Folders and Script Compilation Order
+!特殊フォルダおよびスクリプト コンパイル順序 / Special Folders and Script Compilation Order
 
-For the most part, you can choose any names you like for the folders in your project but Unity reserves some names to indicate that the contents have a special purpose. Some of these folders have an effect on the order of script compilation. Essentially, there are four separate phases of script compilation and the phase where a script will be compiled is determined by its parent folder.
+プロジェクトのフォルダ名はほとんど自由に決められますが、Unity が特殊な目的をもったコンテンツに対して予約しているフォルダ名もあります。スクリプト コンパイル順序に影響するフォルダもあります。要するにスクリプト コンパイル順序 には四つの別のフェーズがありスクリプトがコンパイルされる場所はその親フォルダに依存します。
 
-This is significant in cases where a script must refer to classes defined in other scripts. The basic rule is that anything that will be compiled in a phase ''after'' the current one cannot be referenced. Anything that is compiled in the current phase or an earlier phase is fully available.
+スクリプトが他のスクリプトで定義されたクラスを参照しないといけない場面では特に重要です。基本的なルールは現在のフェーズの ''後に'' コンパイルされる場合は参照できません。現在のフェーズ、またはそれより前のフェーズでコンパイルされた場合は完全に参照できます。
 
-Another situation occurs when a script written in one language must refer to a class defined in another language (say, a UnityScript file that declares variables of a class defined in a C# script). The rule here is that the class being referenced must have been compiled in a ''earlier'' phase.
+ひとつの言語で書かれたスクリプトが別の言語で書かれたクラスを参照するときに同様の状況が発生します（例えば UnityScript ファイルが C# スクリプトで定義されたクラスの変数を宣言するとしましょう）。前提条件となるのは、参照されるクラスが ''前の''フェーズでコンパイルされていることです。
 
-The phases of compilation are as follows:-
+コンパイルのフェーズは次の通りです:-
 
-__Phase 1:__ Runtime scripts in folders called __Standard Assets__, __Pro Standard Assets__ and __Plugins__.
+__フェーズ 1:__ __Standard Assets__, __Pro Standard Assets__, __Plugins__ フォルダにあるランタイム スクリプトを実行
 
-__Phase 2:__ Editor scripts in folders called __Standard Assets/Editor__, __Pro Standard Assets/Editor__ and __Plugins/Editor__.
+__フェーズ 2:__ __Standard Assets/Editor__, __Pro Standard Assets/Editor__, __Plugins/Editor__ フォルダにあるエディタ スクリプトを実行
 
-__Phase 3:__ All other scripts that are not inside a folder called __Editor__.
+__フェーズ 3:__ __Editor__ フォルダにないスクリプトを実行
 
-__Phase 4:__ All remaining scripts (ie, the ones that ''are'' inside a folder called __Editor__).
+__フェーズ 4:__ 残り全てのスクリプトを実行（すなわち __Editor__ フォルダにあるスクリプト)
 
 
-Additionally, any script inside a folder called __WebPlayerTemplates__ at the top level of the Assets folder will not be compiled at all. This behaviour is slightly different from the other special folder names which also work within sub-folders (eg, Scripts/Editor works as an editor script folder but Scripts/WebPlayerTemplates does not prevent compilation).
+さらに Assets フォルダの上位にある __WebPlayerTemplates__ にある全てのスクリプトは一切コンパイルされません。また他の特殊フォルダと違っていて、サブフォルダ内で同じ動作をしません（例． Scripts/Editor はエディタフォルダとして動作するが、 Scripts/WebPlayerTemplates フォルダはコンパイルされる）。
 
-A common example is where a UnityScript file needs to reference a class defined in a C# file. You can achieve this by placing the C# file inside a Plugins folder and the UnityScript file in a non-special folder. If you don't do this, you will get an error saying the C# class cannot be found.
+よくある事例は UnityScript ファイルが C# ファイルで定義されたクラスを参照する必要がある場合です。 C# ファイルを Plugins フォルダに配置して、 UnityScript を特殊でないフォルダに入れることで実現できます。そうしない場合、 C# クラスが見つけられないというエラーが出ます。
