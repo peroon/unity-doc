@@ -1,10 +1,10 @@
-!Namespaces
+!名前空間 / Namespaces
 
-As projects become larger and the number of scripts increases, the likelihood of having clashes between script class names grows ever greater. This is especially true when several programmers are working on different aspects of the game separately and will eventually combine their efforts in one project. For example, one programmer may be writing the code to control the main player character while another writes the equivalent code for the enemy. Both programmers may choose to call their main script class ''Controller'', but this will cause a clash when their projects are combined.
+プロジェクトが大きくなり、スクリプト数が増えるにつれてスクリプト クラス名が衝突する可能性が増大します。これはゲームの異なるパーツを別々に作業し、最終的に同じプロジェクトに統合する場合に当てはまります。例えば一人のプログラマがメインプレイヤーの制御コードを作成し、もう一人が敵キャラクターの制御コードを作成したとします。二人ともメインのスクリプトクラスを ''Controller'' と命名してプロジェクト統合したときに名前が衝突します。
 
-To some extent, this problem can be avoided by adopting a naming convention or by renaming classes whenever a clash is discovered (eg, the classes above could be given names like ''PlayerController'' and ''EnemyController''). However, this is troublesome when there are several classes with clashing names or when variables are declared using those names - each mention of the old class name must be replaced for the code to compile.
+ある一定の範囲までは、ネーミング ルールを導入したり、衝突する都度に名前変更することで問題は避けられます（例．先の例ならばクラスは ''PlayerController'' および ''EnemyController'' という名前をつける、等）。しかし衝突するクラスが複数あったり、変数がその名前をつけて宣言されている場合は面倒です。各々のクラス名の使用箇所をひとつひとつ変更しないとコンパイルができません。
 
-The C# language offers a feature called __namespaces__ that solves this problem in a robust way. A namespace is simply a collection of classes that are referred to using a chosen prefix on the class name. In the example below, the classes ''Controller1'' and ''Controller2'' are members of a namespace called ''Enemy'':-
+C# 言語には __Namespace__ (名前空間)と呼ばれる機能を提供していて、堅牢な方法でこの問題が解決できます。名前空間はクラス名にプレフィックスをつけて使用されるクラスの集合です。以下のサンプルでは ''Controller1'' と ''Controller2'' は ''Enemy''と呼ばれる名前空間のメンバーです:-
 
 [@namespace Enemy {
 	public class Controller1 : MonoBehaviour {
@@ -16,10 +16,10 @@ The C# language offers a feature called __namespaces__ that solves this problem 
 	}
 }@]
 
-In code, these classes are referred to as [@Enemy.Controller1@] and [@Enemy.Controller2@], respectively. This is better than renaming the classes insofar as the namespace declaration can be bracketed around existing class declarations (ie, it is not necessary to change the names of all the classes individually). Furthermore, you can use multiple bracketed namespace sections around classes wherever they occur, even if those classes are in different source files.
+コードの中で、これらのクラスは各々 [@Enemy.Controller1@] と [@Enemy.Controller2@] との名前で使用されてます。これは名前空間の宣言は既存クラスの宣言の周りにブラケットをつけることが出来るため、クラスの名前変更をするより良い方法です（すなわち、個別のクラスの名前を全て変更する必要がないため）。さらに異なるソース ファイルにあったとしても複数のブラケットの付いた名前空間をいつでもつけることが出来ます。
 
-You can avoid having to type the namespace prefix repeatedly by adding a __using__ directive at the top of the file.
+名前空間のプレフィックスを繰り返し入力することを避けるにはファイルの先頭で __using__ を追加します。
 
 [@using Enemy;@]
 
-This line indicates that where the class names ''Controller1'' and ''Controller2'' are found, they should be taken to mean ''Enemy.Controller1'' and ''Enemy.Controller2'', respectively. If the script also needs to refer to classes with the same name from a different namespace (one called ''Player'', say), then the prefix can still be used. If two namespaces that contain clashing class names are imported with using directives at the same time, the compiler will report an error.
+この行により ''Controller1'' と ''Controller2'' が見つかったところでは、各々 ''Enemy.Controller1'' と ''Enemy.Controller2''にと解釈されます。もしスクリプトが別の名前空間から同じ名前のクラスを参照する必要がある場合（例えば ''Player''）もプレフィックスを使い続けることができます。ただし、衝突するクラス名を含む二つの名前空間が using ディレクティブを使用して同時にインポートされた場合はコンパイラでエラーが発生します。
