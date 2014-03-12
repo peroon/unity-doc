@@ -1,11 +1,11 @@
-!How to deliver an application to the Apple Mac Store.
+!Apple Mac ストアへのアプリケーション提出方法 / How to deliver an application to the Apple Mac Store.
 
 Attach:AppleMacStore.jpg
 
-#Make sure you have the correct provisioning profiles installed in Organiser.\\
- Also check provisioning profile in System Preferences -> Profiles.
-#Create high res iconset.\\
- Make a folder named UnityPlayer.iconset (or whatever your info.plist is setup to show) with the following image names inside. Make sure the folder has the @@.iconset@@ extension.\\
+#正しいプロビジョニング プロファイルがオーガナイザーにインストールされていることを確認。\\
+ System Preferences -> Profiles からもプロビジョニング プロファイルを確認して下さい。
+#高解像度のアイコンセットを作成\\
+ UnityPlayer.iconset （あるいは info.plist での表示設定）という名前のフォルダを作成し、次の画像名を含めます。フォルダ名には @@.iconset@@ 拡張子をつけて下さい。\\
 [@
  icon_16x16.png
  icon_16x16@2x.png
@@ -17,13 +17,13 @@ Attach:AppleMacStore.jpg
  icon_256x256@2x.png
  icon_512x512.png
  icon_512x512@2x.png@]\
- Make sure that the @2x images are sized 2X the image the name says. So @@512x512@2x@@ is actually a 1024x1024 image with 144 dpi.\\
- From terminal navigate to the directory where the .iconset directory is located and perform the following command:\\
+ @2x と名前がついた画像は書かれている大きさの 2 倍のサイズであることを確認します。つまり @@512x512@2x@@ の場合、 1024x1024 画像で 144 dpi です。\\
+ ターミナルから、 .iconset ディレクトリが配置されているディレクトリに移動して次のコマンドを実行します:\\
 [@
  iconutil -c icns UnityPlayer.iconset
 @]
-#Create an @@info.plist@@ and an @@GAMENAME.entitlements@@ file. The easiest way to do this is by using [[http://jemast.com/unity/entitlements.php]] to generate them for you. You can also extract the info.plist from the Unity generated .app and modify that one.\\
- The most basic @@GAMENAME.entitlements@@ looks like this, it will make sure your app runs in the Apple sandbox. This one has no iCloud support:\\
+#@@info.plist@@ および @@GAMENAME.entitlements@@ ファイルを作成します。もっとも簡単方法は [[http://jemast.com/unity/entitlements.php]] を使用して代わりに生成します。Unity で生成された .app から info.plist を抽出して修正する方法もあります。\\
+ 基本的な @@GAMENAME.entitlements@@ は次の通りに表示され、Apple サンドボックスでアプリを実行できるようにします。iCloud 対応はしていません。:\\
 [@
  <?xml version="1.0" encoding="UTF-8"?>
  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -33,7 +33,7 @@ Attach:AppleMacStore.jpg
  </dict>
  </plist>
 @]
-#Fix Macbook Pro Retina fullscreen problems (see [[http://forum.unity3d.com/threads/145534-Mountain-Lion-MacBook-Pro-Retina-gt-problem-for-Unity-games]]) by adding something like this. It only needs to be called once! It will create a flicker since it goes out and in fullscreen.\\
+#Macbook Pro Retina の全画面に関する問題を修正する( [[http://forum.unity3d.com/threads/145534-Mountain-Lion-MacBook-Pro-Retina-gt-problem-for-Unity-games]] を参照) には次のコードを追加します。呼び出しは一回のみで問題ありません。全画面を行き来するためちらつきが発生します。
 [@
   if (Screen.fullScreen)
   {
@@ -50,24 +50,24 @@ Attach:AppleMacStore.jpg
       }
   }
 @]
-#Enable UseMacAppStoreValidation toggle in the PlayerSettings
-#Run Unity and build the .app
-#Replace the iconset.icns with the created on in Step 2 by right clicking the .app and Show Contents
-#(Optional)  Replace the UnityPlayerIcon in the .app with your own
-#Replace the info.plist in the .app with the modified one from Step 2.
-#Fix read permissions on all the content in the .app.\\
- In the Terminal type: \\
+#PlayerSettings で UseMacAppStoreValidation を有効化
+#Unity を実行し .app をビルド
+#iconset.icns をステップ 2 で作成した分で置き換えるため .app を右クリックして Show Contents を選択
+#(オプション) .app にある UnityPlayerIcon を自身のもので置き換え
+#.app の info.plist をステップ 2 で修正したものと置き換え
+#.app の全てのコンテンツの読み取りパーミッションを修正\\
+ ターミナル上で次のとおりに入力: \\
 [@
  chmod -R a+xr "/path/to/GAMENAME.app"
 @]
-#Sign the .App with the created entitlements from Step 3.\\
- In the Terminal type: \\
+#.App をステップ 3 で作成した Entitlments で署名します。\\
+ ターミナル上で次のとおりに入力: \\
 [@
  codesign -f -s '3rd Party Mac Developer Application: DEVELOPER NAME' --entitlements "GAMENAME.entitlements" "/AppPath/GAMENAME.app"
 @]
-#Build the installer/pkg.\\
- In the Terminal type: \\
+#インストーラ/パッケージをビルド\\
+ ターミナル上で次のとおりに入力: \\
 [@
  productbuild --component GAMENAME.app /Applications --sign "3rd Party Mac Developer Installer: DEVELOPER NAME" GAMENAME.pkg
 @]
-#Submit using the ApplicationLoader! Make sure your ''application_id'' in iTunesConnect is in the ''waiting for upload'' state.
+#Application Loader を使用して送信します。iTunesConnect の ''application_id'' が ''waiting for upload'' 状態であることを確認します。
