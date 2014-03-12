@@ -6,7 +6,7 @@ Unity 4 により DirectX 11 グラフィックス API 、すなわち期待の�
 
 ゲームおよびエディタでのビルドのためにDirectX 11 を有効化するためには、 [[class-PlayerSettings40 | Player Settings]] で "Use DX11" オプションをセットします。機能を有効にするたｍには、Unity エディタを再起動する必要があります。
 
-DirectX 11 は Windows Vista 以降が必要であり、少なくととも DirectX レベルのGPU (望ましくは DirectX 11レベル)が最低限必要です。DirectX 11 モードで実行されているとき、Unityエディタのウィンドウ タイトル名の最後に "<DX11>" が付加されます。
+DirectX 11 は Windows Vista 以降が必要であり、少なくととも DirectX レベルのGPU (望ましくは DirectX 11レベル)が最低限必要です。DirectX 11 モードで実行されているとき、Unityエディタのウィンドウ タイトル名の最後に "&lt;DX11&gt;" が付加されます。
 
 
 
