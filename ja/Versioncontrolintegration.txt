@@ -1,83 +1,85 @@
-!Version control integration (Team license only)
+!バージョン管理ツールとの連係（チームライセンスのみ） / Version control integration (Team license only)
 
-Unity supports version control integration with [[http://www.perforce.com/product/components/perforce_visual_client | Perforce]].
+Unity は [[http://www.perforce.com/product/components/perforce_visual_client | Perforce]] のバージョン管理ツールとの連係に対応しています。
 
-To start working with Perforce in Unity, do the following:
 
-#Setup or sync a workspace on your computer using a standard Perforce client such as '''perforce p4v'''. Refer to [[http://www.perforce.com/perforce/doc.current/manuals/p4v-gs/01_p4v-gs.html | perforce documentation]] to learn how to do this.
-#Copy an existing project into the workspace or start Unity and create a new project in the workspace.
-#Open the project and go to the ^^Edit->Project Settings->Editor^^ menu.
-#Choose your ^^Mode^^ according to the version control system that you chose.
- Attach:EditorVersionControlSettings.png
-#Fill out your version control settings, such as username / password / server / workspace.
-#Keep ^^Automatic add^^ checked if you want your files to be automatically added to version control when they're added to the project (or the folder on disk). Otherwise you will have to add new files manually. 
-#Offline mode checkbox should be left off. Only use this if you know [[http://www.perforce.com/perforce/doc.current/manuals/p4v/Offline.html | how to work offline in Perforce without a Sandbox]].
-#You should select ''Force Text'' as ^^Asset Serialization Mode^^, so you can compare and merge files visually.
-#Click connect and verify that "Connected" is displayed above the connect button after a short while.
-#Use your standard perforce client (p4v) to make sure that all files in the Assets and ProjectSettings folders (including files ending with ''.meta'') are added to Perforce.
+Unity で Perforce を使用するには次の手順が必要です:
 
-At this point you should be able to do most of the important version control operations directly on the assets in the project view, instead of going through the version control client. 
+#自身のコンピュータ上でワークスペースをセットアップまたは同期するには perforce p4v のような 標準の Perforce クライアントを使用します。これを行う方法については [[http://www.perforce.com/perforce/doc.current/manuals/p4v-gs/01_p4v-gs.html |Perforce ドキュメント]] を参照してください。
+#既存のプロジェクトをワークスペース上にコピーするか、Unity を起動してワークスペース上に新規プロジェクトを作成する
+#プロジェクトを開きメニューから Edit ->Project Setting->Editor に移動する
+#選択したバージョン管理システムに合わせて Mode を選びます。
+#バージョン管理システム設定であるユーザ名、パスワード、サーバ、ワークスペースを入力します。
+#プロジェクト (あるいはディスク上のフォルダ) にファイルを追加した時にバージョン管理システムの対象に追加するには Automatic Add をチェックしたままにします。そうでなければ新規のファイルを手動で追加します。
+#オフラインモードのチェックボックスは外したままにする必要があります。 [[http://www.perforce.com/perforce/doc.current/manuals/p4v/Offline.html | Perforce でサンドボックスなしにオフライン作業をする方法]] を知っている場合にかぎり使用して下さい。 
+#^^Asset Serialization Mode^^ として ''Force Text'' を選択して、ファイルを視覚的に比較およびマージできるようにします。
+#Connect をクリックして、しばらくしてから connect ボタンの上に Connected が表示されていることを確認します。
+#標準の Perforce クライアント (p4v) を使用して Assets および ProjectSettings フォルダのファイル (.meta 拡張子で終わるファイルを含めて) が Perforce に追加されたことを確認して下さい。
+
+この時点でバージョン管理ツールの操作はバージョン管理クライアントを使用せずにプロジェクトビューから直接ひととおりカバーしています。
 
 [[Attach:Source control menu.png | Attach:Source control menu.png]]
 
-You should also be able to see the status that each asset has. An asset can be:
-* Unversioned (not in version control at all)
-* Deleted (pending for deletion in version control)
-* Added (pending for add in version control)
-* Checked out locally
-* Checked out by another user
-* Available in a later version (someone else has checked in a newer version)
-* Locked (by me) - cannot be modified by other users
-* Locked (by another user) - cannot be modified by me.
+アセットのステータスも確認できます。種類としては:
+* Unversioned (バージョン管理の対象外)
+* Deleted (バージョン管理での削除待ち)
+* Added (バージョン管理での追加待ち)
+* Checked out locally (ローカルでチェックアウト)
+* Checked out by another user (別のユーザーによりチェックアウト)
+* Available in a later version (誰かが新たなバージョンをチェックイン中)
+* Locked (自身により) - 他のユーザーにより修正できない
+* Locked (別人により) - 自身により修正できない
 
-You can overview the files in your changelist from the ``Version Control Window`` (^^Window->Version Control^^). It is shown here docked next to Inspector in the editor:
+Version Control Window (メニューから Window -> Version Control) の変更リストからファイル一覧を確認できます。エディタのインスペクタにドッキングされてここに表示されます:
 
 Attach:VersionControlWindowOutgoingChanges.png
 
-By right clicking assets or changelists in this window you perform operations on them. To move assets between changelists just drag the assets from one changelist to the header of the target changelist.
+変更リストでアセットを右クリックすることで操作できます。変更リストの間でアセットを移動するには一つの変更リストからターゲットの変更リストのヘッダーにドラッグします。
 
-Things to note:
-* You will not be able to edit assets until they're marked as ''Checked out'' in version control (unless you have ^^Work offline^^ checked).
-* When saving changes to a .scene file it will automatically be checked out.
-* Project Settings inspectors have a '''checkout''' button in the bottom that allow you to checkout settings.
+注意すべきこと:
+* バージョン管理で Checked out としてマーキングされるまでアセットを変更できません（Work offline チェックするまで）。
+* .scene ファイルに変更を保存するとき自動的にチェックアウトされます。
+* Project Settings のインスペクタ上でチェックアウト設定を変更できる '''checkout''' ボタンがあります。
 
-!!Icons
+!!アイコン
 
-The following icons are displayed in Unity editor to visualize version control status for files/assets:
+ファイルやアセットのバージョン管理ステータスは次のように表示されます:
 
-||�border=0
-|| Attach:VersionControl_P4_AddedLocal.png ||File added locally ||
-|| Attach:VersionControl_P4_AddedRemote.png ||File added to version control by another user ||
-|| Attach:VersionControl_P4_CheckOutLocal.png ||File is checked out by you�||
-|| Attach:VersionControl_P4_CheckOutRemote.png ||File is checked out by another user ||
-|| Attach:VersionControl_P4_Conflicted.png ||There has been a conflict merging this file. Needs to be resolved ||
-|| Attach:VersionControl_P4_DeletedLocal.png ||File has been deleted by you ||
-|| Attach:VersionControl_P4_DeletedRemote.png ||File has been deleted by another user ||
-|| Attach:VersionControl_P4_Local.png ||File is not yet under version control ||
-|| Attach:VersionControl_P4_LockedLocal.png ||File is locked by you ||
-|| Attach:VersionControl_P4_LockedRemote.png ||File is locked by another user ||
-|| Attach:VersionControl_P4_OutOfSync.png ||Another user has checked in a new version of this file. Use "Apply Incoming Changes" to get latest version ||
+||border=0
+|| Attach:VersionControl_P4_AddedLocal.png ||ローカルに追加されたファイル
+||
+|| Attach:VersionControl_P4_AddedRemote.png ||別人によりバージョン管理に追加されたファイル ||
+|| Attach:VersionControl_P4_CheckOutLocal.png ||自身によりチェックアウトされたファイル||
+|| Attach:VersionControl_P4_CheckOutRemote.png ||別人によりチェックアウトされたファイル ||
+|| Attach:VersionControl_P4_Conflicted.png ||ファイルのマージにコンフリクトがあり解決しないといけない ||
+|| Attach:VersionControl_P4_DeletedLocal.png ||自身で削除したファイル ||
+|| Attach:VersionControl_P4_DeletedRemote.png ||別人により削除したファイル ||
+|| Attach:VersionControl_P4_Local.png ||バージョン管理対象外のファイル ||
+|| Attach:VersionControl_P4_LockedLocal.png ||別人によりロックされたファイル ||
+|| Attach:VersionControl_P4_LockedRemote.png ||別人によりロックされたファイル ||
+|| Attach:VersionControl_P4_OutOfSync.png ||別人によりこのファイルの新規のバージョンがちぇっックインされた。最新バージョンを取得するには Apply Incoming Changes を使用する ||
 
-!!Automatic revert of unchanged files on submit
+!!変更されてないファイルの自動的な取り消し
 
-When working with assets, Unity automatically checks out both the asset file as well as the associated .meta file. In most situations however, the .meta file is not modified, which might cause some extra work e.g. when merging branches at a later point. It's possible to configure Perforce to revert unchanged files on submit, which is done in P4V by selecting ^^Connection->Edit Current Workspace...^^, viewing the ^^Advanced^^ tab and setting the value of ''On submit'' to ^^Revert unchanged files^^: 
+アセットで作業をする際、Unity は多くの場合に自動的にアセットファイルと紐付けされた .meta ファイルの両方をチェックアウトします。しかし .meta ファイルは修正されないことで追加作業が必要となるかもしれません（例えば後でブランチをマージしたい場合など）。Perforce 設定を変更して反映時にファイルを取り消すことができます。これは P4V により Connection -> Edit Current Workspace... を選ぶことで実現します。Advanced タブを参照して Revert unchanged files を On submit にセットします:
 
 Attach:VersionControl_P4V_RevertUnchangedFilesSetting.png
 
-!!Offline Mode
+!!オフラインモード
 
-Unity supports working in offline mode, e.g. to continue working without a network connection to your version control repository. Please refer to [[http://answers.perforce.com/articles/KB_Article/Working-Disconnected-From-The-Perforce-Server | Perforce documentation]] for further information on working in offline mode for Perforce.
+Unity はオフラインモードに対応していて、例えばネットワーク接続なしにバージョン管理を出来ます。Perforce でのオフラインモードを作業する際の詳細については [[http://answers.perforce.com/articles/KB_Article/Working-Disconnected-From-The-Perforce-Server | Perforce ドキュメント]] を参照して下さい。
  
-*Select ^^Work offline^^ from Version Control Settings if you want to be able to work disconnected from version control.
+*バージョン管理設定で ^^Work offline^^ を選択するとバージョン管理なしに作業できます。
 
-!!Troubleshooting
+!!トラブルシューティング
 
-If Unity for some reason cannot commit your changes to Perforce, e.g. if server is down, license issues etc., your changes will be stored in a separate changeset. If the console doesn't list any info about the issue you can use the P4V client for Perforce to submit this changeset to see the exact error message.
+もし Unity が何らかの理由により Perforce に変更をコミットできない場合（例えばサーバーダウン、ライセンス不足、等）、変更は別のチェンジセットに格納されます。もしコンソールにエラーが表示されない場合 Perforce の P4V クライアントを使用してチェンジセットを提出してエラーメッセージが参照できます。
 
-!!Working with the Asset Server
+!!アセットサーバでの作業
 
-For work with the Asset Server (Unity's internal Version Control System) refer to the [[Asset Server|Asset Server documentation]].
+アセットサーバでの作業
+アセットサーバ（Unity の内部バージョン管理システム）で作業をするには [[Asset Server|Asset Server documentation]] を参照します。
 
-!!Working with other version control systems 
+!!他のバージョン管理システムでの作業
 
-In order to work with a version control system unsupported by Unity, select ^^MetaData^^ as the ^^Mode^^ for Version Control in the [[class-EditorManager|Editor Settings]]. This allows you to manage the source assets and metadata for those assets with a version control system of your choice. For more on this, see the documentation for [[ExternalVersionControlSystemSupport|External Version Control Systems]]
+Unity が対応していない他のバージョン管理システムで作業するには [[class-EditorManager|エディタ設定]] の Version Control の ^^Mode^^ として ^^MetaData^^ を選択します。これにより選択したバージョン管理システムアセットのソースアセットとメタデータを管理できます。詳細については [[ExternalVersionControlSystemSupport|外部のバージョン管理システム]] のドキュメントを参照して下さい。
