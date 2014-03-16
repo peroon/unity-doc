@@ -5,7 +5,7 @@ $$Physic Material$$ を使用して、衝突するオブジェクトの摩擦や
 物理特性マテリアルを作成するには、メニューバーから ^^Assets->Create->Physic Material^^  を選択します。  次に、シーン内の $$Collider$$ にプロジェクト ビューから物理特性マテリアルをドラッグします。
 
 Attach:Inspector-PhysicMaterial.png\\
-''物理特性マテリアル $$Inspector$$'''
+''インスペクタ上の物理特性マテリアル''
 
 
 !! プロパティ
