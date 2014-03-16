@@ -3,7 +3,7 @@
 $$Ellipsoid Particle Emitter$$ は、球体内にパーティクルを発生させます。 下の''Ellipsoid''プロパティを使用して、球体を拡大縮小および延長させます。
 
 Attach:Inspector-EllipsoidEmitter.png\\
-''楕円パーティクル エミッタ $$Inspector$$''
+''インスペクタ上の楕円パーティクル エミッタ''
 
 
 !! プロパティ
@@ -26,10 +26,10 @@ Attach:Inspector-EllipsoidEmitter.png\\
 「Min Emitter Range」は、パーティクルを発生させることができる楕円内の深さを決定します。  0 に設定すると、楕円の中心から最外部の範囲の任意の場所にパーティクルを発生させることができます。  1 に設定すると、楕円の最外部の範囲にパーティクルの場所を限定できます。
 
 Attach:EmitterRange0.png\\
-「Min Emitter Range が 0 の場合」
+''Min Emitter Range が 0 の場合''
 
 Attach:EmitterRange1.png\\
-「Min Emitter Range が 1 の場合」
+''Min Emitter Range が 1 の場合''
 
 !! ヒント
 
