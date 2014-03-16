@@ -49,7 +49,7 @@ Attach:TerrainGuide-TreeBrushSize.png\\
 ''異なるブラシは、異なるエリアサイズをカバーします''
 
 Attach:TerrainGuide-TreeSpacing.png\\
-''``Tree Spacing``を調整し、Treeを描画する時の、密度を調整します。''
+''Tree Spacing を調整し、Treeを描画する時の、密度を調整します。''
 
 
 !! Treeの編集
@@ -58,7 +58,7 @@ Attach:TerrainGuide-TreeSpacing.png\\
 
 !! 大量に配置する場合
 
-Treeを描画して配置するのではなく、森全体を生成したい場合は、^^Terrain->Mass Place Trees^^を使用します。$$Mass Place Trees$$ダイアログが表示されます。配置したいTreeの数を設定すると、すぐにそれらが配置されます。Terrainに追加されたTree全てが、大量の配置に使用されます。
+Treeを描画して配置するのではなく、森全体を生成したい場合は、^^Mass Place Trees^^ ボタンをクリックします。$$Mass Place Trees$$ダイアログが表示されます。配置したいTreeの数を設定すると、すぐにそれらが配置されます。Terrainに追加されたTree全てが、大量の配置に使用されます。
 
 Attach:TerrainGuide-MassPlacedTrees.png\\
 ''10,000本のTreeを一度に配置''
