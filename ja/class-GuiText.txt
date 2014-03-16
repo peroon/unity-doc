@@ -3,7 +3,7 @@
 $$GUI Text$$ は、インポートした任意のフォントのテキストをスクリーン座標の形式で指定して描画します。
 
 Attach:Inspector-GUIText.png\\
-''$$Inspector$$ 上の GUI テキスト'''
+''インスペクタ上の GUI テキスト'''
 
 __注意__: Unity 2.0 は、GUI スクリプティング システムである $$UnityGUI$$ を採用しています。  GUI テキストの代わりに、UnityGUI でユーザー インタフェース要素を作成したい場合もあるでしょう。UnityGUI を使用するうえでの詳細は  [[GUI Scripting Guide]] を参照して下さい。
 
