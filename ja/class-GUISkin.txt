@@ -3,7 +3,7 @@
 $$GUISkins$$ は、GUI に適用できる $$GUIStyles$$ です。  $$Control$$ はその種類によって、型の定義が異なります。  スキンは、単独の制御の代わりに、UI 全体にスタイルを適用させることをができます。
 
 Attach:Inspector-GUISkin.png\\
-''$$Inspector$$ で確認される GUI スキン''
+''インスペクタ上の GUI スキン''
 
 GUI スキンを作成するには、メニューバーから ^^Assets->Create->GUI Skin^^  を選択します。
 
