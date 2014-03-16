@@ -71,7 +71,7 @@ Attach:MovieTextureAudio.png\\
 >>ios<<
 Movie Texturesは、iOS上ではサポートされません。代わりに、[[ScriptRef:Handheld.PlayFullScreenMovie.html|Handheld.PlayFullScreenMovie]] を使用してフルスクリーン ストリーミング再生が提供される。
 
-!!!プロジェクト ディレクトリのStreamingAssetsフォルダ内にビデオを格納する必要があります。
+!!!プロジェクトの ''Assets'' ファルダ 配下にある ''StreamingAssets'' フォルダ内にビデオを格納する必要があります。
 
 
 iOSデバイス上で正しく再生できるファイルタイプはUnityのiOSでサポートされるため、（__.mov__, __.mp4__, __.mpv__, and __.3gp__ ）の拡張子や、次の圧縮規格はサポートされます：
@@ -96,8 +96,7 @@ iOSデバイス上で正しく再生できるファイルタイプはUnityのiOS
 >>android<<
 Movie Texturesは、Android上ではサポートされません。代わりに、[[ScriptRef:Handheld.PlayFullScreenMovie.html|Handheld.PlayFullScreenMovie]] を使用してフルスクリーン　ストリーミング再生が提供される。
 
-!!!プロジェクト　ディレクトリのStreamingAssetsフォルダ内にビデオを格納する必要があります。
-
+!!!プロジェクトの ''Assets'' ファルダ 配下にある ''StreamingAssets'' フォルダ内にビデオを格納する必要があります。
 
 Androidデバイス上で正しく再生できるファイルタイプはUnityのAndroidでサポートされるため、（__.mp4__, and __.3gp__ ）の拡張子や、次の圧縮規格はサポートされます：
 * H.263
