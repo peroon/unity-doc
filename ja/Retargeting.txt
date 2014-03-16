@@ -32,7 +32,7 @@
 * 元のモデルを無効化します。
 * 希望するモデルをゲームオブジェクトの別の子オブジェクトとしてドラッグ＆ドロップします。
 
-->Attach:MecanimRetargetingOtherModel.png
+Attach:MecanimRetargetingOtherModel.png
 
 * 新しいモデルのアニメータ コントローラ プロパティが同じコントローラアセットを参照していることを確認します
 ->Attach:MecanimRetargetingOtherModelCorrectController.png
