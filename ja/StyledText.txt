@@ -129,3 +129,13 @@ __quad__
 	<quad material=1 size=20 x=0.1 y=0.1 width=0.5 height=0.5 />
 
 これにより、レンダラのマテリアル配列の位置のマテリアルを選択し、画像の高さを 20 ピクセルにセットします。画像の四角形領域は x 、y 、 幅、および高さの値で始まり、拡大縮小されていないテクスチャの幅および高さに対する比率として指定されます。
+
+!!エディタ GUI
+
+リッチテキストはエディタ GUI システムではデフォルトで無効化されてますが、カスタムの GUIStyle を使用して明示的に有効化できます。 @@richText@@ プロパティを true にして 関連する GUI 関数に style を渡します:-
+
+[@
+GUIStyle style = new GUIStyle ();
+style.richText = true;
+GUILayout.Label("<size=30>Some <color=yellow>RICH</color> text</size>",style);
+@]
