@@ -17,9 +17,6 @@ Attach:MovieTextureInInspector.png\\
 Unity上でビデオファイルから生成したMovie Textures
 
 ||PROPS
-||``Aniso Level`` ||急な角度から眺めたときのTexture品質を向上させます。床や地面のTextureに良い。||
-||``Filter Mode`` ||Textureが3Dへの変換によりストレッチされたときのフィルタ処理を選択 ||
-||``Loop`` ||オンの時、ムービー再生終了後にループ ||
 ||``Quality`` ||Ogg Theoraビデオファイルの圧縮。より高い値により、品質がより高い一方でファイルサイズは大きくなる。||
 
 
@@ -50,6 +47,8 @@ function Update () {
 	}
 }
 @]
+
+__注意:__ もしコードの中で $$#pragma strict$$ を有効化している場合、どこかで $$MovieTexture$$ オブジェクトを宣言する必要があり、 $$renderer.material.mainTexture$$ で初期化する必要があります。次に $$MovieTexture$$ オブジェクトについて $$isPlaying$$ , $$Play()$$ , $$Stop()$$ の呼び出しをすべきです。
 
 Movie Texturesを再生する方法の詳細については、[[ScriptRef:MovieTexture.html | Movie Textures スクリプトリファレンス]] を参照してください。
 
