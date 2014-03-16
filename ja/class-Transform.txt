@@ -3,7 +3,7 @@
 $$Transform$$ $$Component$$は、シーン内のすべてのオブジェクトの実際の「Position」、「Rotation」および「Scale」を決定します。 オブジェクトはそれぞれトランスフォームを持ちます。
 
 Attach:Inspector-Transform.png\\
-「$$Inspector$$ 表示・編集可能なトランスフォーム コンポーネント」
+''トランスフォーム コンポーネント は シーンビューおよびインスペクタで 編集できる''
 
 
 !!プロパティ
