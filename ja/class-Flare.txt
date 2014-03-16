@@ -13,7 +13,7 @@ Attach:FlareInspector.png\\
 
 ||PROPS
 ||``Elements`` ||フレア内に含まれたフレア画像の数。 ||
-||>>>``Image Index`` |この要素に対して、''Flare Texture''から使用されるフレア画像。  詳細については、下の[[#FlareTextures | Flare Textures]] を参照してください。 ||
+||>>>``Image Index`` |この要素に対して、''Flare Texture''から使用されるフレア画像。  詳細については、以降の ''フレア テクスチャ'' セクションを参照してください。 ||
 ||>>>``Position`` ||画面中央を通る含まんでいる GameObject の位置からくる線にそった要素のオフセット。 0 = GameObject position, 1 = screen center. ||
 ||>>>``Size`` ||要素のサイズ。 ||
 ||>>>``Color`` ||要素の色。 ||
@@ -75,4 +75,6 @@ Attach:FlaresLayout5.png
 !! ヒント
 * 異なる多くのフレアを使用する場合、すべての要素を含む 1 つの''フレア テクスチャ''を使用すると、最高のレンダリング パフォーマンスが得られます。
 * レンズ フレアは、$$Collider$$ にブロックされます。  フレア GameObject とカメラ間のコライダが $$Mesh Renderer$$ を持たない場合でも、コライダはフレアを非表示にします。
+>>u43<<
 * フレアで使用されるシェーダをオーバーライドするには [[http://unity3d.com/support/resources/assets/built-in-shaders|ビルトイン シェーダ]] の Internal-Flare.shader のシェーダを "Assets" フォルダ配下の "Resources" フォルダにコピーします。
+>><<
