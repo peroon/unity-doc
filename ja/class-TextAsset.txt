@@ -15,7 +15,7 @@ $$Text Asset$$ は、インポートされたテキスト ファイルのため�
 >><<
 
 Attach:TextAssetInspector.png\\
-''テキスト アセット $$Inspector$$''
+''インスペクタ上のテキスト アセット''
 
 
 !! プロパティ

@@ -2,7 +2,7 @@
 $$Spring Joint$$ は、2 つの $$Rigidbody$$ をグループ化し、スプリングで連結されているかのように動くよう制約します。
 
 Attach:Inspector-SpringJoint.png\\
-''スプリング ジョイント $$Inspector$$''
+''インスペクタ上のスプリング ジョイント''
 
 !!プロパティ
 

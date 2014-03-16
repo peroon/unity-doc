@@ -3,7 +3,7 @@
 $$Text Mesh$$ は、テキスト文字列を表示する 3D物体です。
 
 Attach:Inspector-TextMesh.png\\
-''テキスト メッシュ $$Inspector$$'''
+''インスペクタ上のテキスト メッシュ''
 
 ^^GameObject->Create Other->3D Text^^ から新しいテキスト メッシュを作成できます。
 
