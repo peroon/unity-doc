@@ -59,7 +59,7 @@ Movie Texturesを再生する方法の詳細については、[[ScriptRef:MovieT
 Movie Texturesをインポートすると、映像とともにオーディオトラックもインポートされます。オーディオは、Movie Texturesの$$AudioClip$$を子オブジェクトとして表示されます。
 
 Attach:MovieTextureAudio.png\\
-ビデオのオーディオトラックは $$Project View$$ にて Movie Textures の子オブジェクトとして表示されます
+ビデオのオーディオトラックは Project View にて Movie Textures の子オブジェクトとして表示されます
 
 このオーディオを再生するには、他のオーディオクリップのように、ゲームオブジェクトにアタッチする必要があります。 Project View から、シーンビューか階層ビューの任意のゲームオブジェクトへドラッグします。
 
