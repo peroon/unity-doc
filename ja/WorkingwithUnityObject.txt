@@ -27,7 +27,7 @@ Webページ上に存在する各Unityコンテンツに対してunityObject2の
 *** ``disableContextMenu`` - 右クリックやControlクリックした時のUnity Web Playerのコンテキストメニューを表示するかどうかを制御することができます。 trueにすることでコンテキストメニューは表示されず、ゲーム内で右クリックを使用することが可能になります。コンテキストメニューを有効にするにはこのパラメータを含めないようにして下さい
 *** ``disableExternalCall`` - Unity Web PlayerとブラウザベースのJavascriptとの通信を許可するかどうかを設定します。 trueにするとブラウザとの通信を防ぐのでJavascriptの実行やコンテントを呼び出すことはできません。デフォルトはfalseです。
 *** ``disableFullscreen`` - Unity Web Playerのフルスクリーンを許可するかを設定します。trueに設定するとフルスクリーンにすることは出来ず、コンテキストメニューからも"Go Fullscreen"からフルスクリーンにすることはできません。デフォルトはfalseです。
-** ``attributes`` - デフォルトは{}。 ObjectにAttributeを含ませるリストです。 これは ``<object>`` や ``<embed>`` タグの為にブラウザごとにつけることができます。
+** ``attributes`` - デフォルトは{}。 ObjectにAttributeを含ませるリストです。 これは ``&lt;object&gt;`` や ``&lt;embed&gt;	`` タグの為にブラウザごとにつけることができます。
 ** ``debugLevel`` - デフォルトは0。ブラウザコンソールに進捗状況を確認することが出来るようにログを出力するかどうかを有効/無効にします。これは開発の際に便利です。有効にするには0より大きな値を設定します。
 
 ''注意'':
