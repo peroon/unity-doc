@@ -20,10 +20,10 @@ Attach:Inspector-MaterialSimple.png\\
 
 !!! シェーダの選択
 
-マテリアル作成後は、まずどのシェーダを使用するかを決めます。  ドロップダウンの''Shader''メニューから選択します。
+マテリアル作成後は、まずどのシェーダを使用するかを決めます。  ドロップダウンの ''Shader''メニューから選択します。
 
 Attach:Material-ShaderMenu.png
-''''Shader''ドロップダウン メニュー''
+''シェーダのドロップダウン メニュー''
 
 プロジェクトの Assets フォルダにあるシェーダか、または組み込みのシェーダを選択できます。 自身でシェーダを作成することもできます。  組み込みシェーダの使用の詳細については、[[Built-in Shader Guide]] を参照してください。  シェーダの作成の詳細については、マニュアルの [[Shaders]] および [[SL-Reference | ShaderLab Reference]] を参照してください。
 
@@ -54,7 +54,7 @@ Attach:Inspector-MaterialBumpSpec.png\\
 ''Offset''と''Tiling''プロパティを変更することで、テクスチャの貼り付けを変更できます。
 
 Attach:Material-Placement.png\\
-''''Tiling''プロパティを変更することで、このテクスチャには 2x2 倍のタイルが貼られます''
+''Tiling プロパティを変更することで、このテクスチャには 2x2 倍のタイルが貼られます''
 
 ||PROPS
 ||``Offset`` ||テクスチャをスライドします。 ||

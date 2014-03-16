@@ -3,7 +3,7 @@
 $$Network View$$ は、Unity でマルチプレイヤーのネットワーク ゲームを作成するための入り口です。  使いやすく、強力です。  このため、ネットワーク ビューで作業を開始する前に、ネットワークに関する基本的な原理を理解しておくことをお勧めします。   [[Network Reference Guide]] で基本的な原理を学ぶことができます。
 
 Attach:Inspector-NetworkView.png\\
-''ネットワーク ビュー $$Inspector$$''
+''インスペクタ上のネットワーク ビュー''
 
 $$State Synchronization$$ または $$Remote Procedure Calls$$を含むネットワーク機能を使用するには、$$GameObject$$ にネットワーク ビューを追加させる必要があります。
 
