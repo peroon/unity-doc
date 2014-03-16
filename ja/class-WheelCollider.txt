@@ -35,7 +35,7 @@ Attach:Inspector-WheelCollider2.png\\
 Attach:WheelsSetup.png\\
 ''ホイール コライダは、表示されているホイール モデルから切り離されます''
 
-If you want to update the position of graphical wheel representations according to the suspension position you can use the example in the Scripting Reference: [[ScriptRef:WheelCollider.GetGroundHit.html | WheelCollider.GetGroundHit]] . Note that WheelCollider's gizmo's position is not updated in playmode:
+もしサスペンション位置にもとづきホイールのグラフィックス位置を更新したい場合、スクリプトリファレンスの [[ScriptRef:WheelCollider.GetGroundHit.html | WheelCollider.GetGroundHit]] のサンプルが活用できます。ホイールコライダのギズモのグラフィックスは再生中は更新されないことに留意して下さい:
 
 Attach:WheelColliderGizmo.png\\
 ''Position of WheelCollider Gizmo in runtime using a suspension distance of 0.15''

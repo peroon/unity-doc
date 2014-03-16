@@ -3,7 +3,7 @@
 $$Trail Renderer$$ は、オブジェクトが動くに連れ、シーン内のオブジェクトの後ろにトレイルを作成するのに使用します。
 
 Attach:Inspector-TrailRenderer.png\\
-''トレイル レンダラ $$Inspector$$''
+''インスペクタ上のトレイル レンダラ''
 
 
 !! プロパティ
