@@ -5,7 +5,7 @@ $$Line Renderer$$ は、3D 空間における 2 つ以上の点の配列を取�
 ライン レンダラは、1 ピクセルの細い線はレンダリングしません。 幅があり、テクスチャを貼れるビルボード線をレンダリングします。 [[class-TrailRenderer|Trail Renderer]] と同じ線レンダリング用のアルゴリズムを使用します。
 
 Attach:Inspector-LineRenderer.png\\
-''ライン レンダラ $$Inspector$$''
+''インスペクタ上のライン レンダラ''
 
 !! プロパティ
 

@@ -48,7 +48,6 @@ Attach:BuiltinShaders.png\\
 * __Toon__: カートゥーン（漫画）風のレンダリング。
 
 さらに、これらのシェーダのいくつかはモバイルデバイスで使用できる特殊バージョンをもっています。
-Also, some of these shaders have special versions for use with mobile devices. 
 
 
 !! シェーダ技術詳細
