@@ -1,6 +1,6 @@
 ! トランスフォーム / Transform
 
-$$Transform$$ $$Component$$は、シーン内のすべてのオブジェクトの実際の「Position」、「Rotation」および「Scale」を決定します。 オブジェクトはそれぞれトランスフォームを持ちます。
+$$Transform$$ コンポーネントは、シーン内のすべてのオブジェクトの実際の「Position」、「Rotation」および「Scale」を決定します。 オブジェクトはそれぞれトランスフォームを持ちます。
 
 Attach:Inspector-Transform.png\\
 ''トランスフォーム コンポーネント は シーンビューおよびインスペクタで 編集できる''
@@ -39,7 +39,7 @@ Attach:TransformGizmo35.png\\
 Attach:TransformExample3.png\\
 「個々の軸をクリックすると、選択されます」
 
-[[#Parenting]]
+
 !!! 親子関係
 
 親子関係は、Unity を使用する際に理解する必要のある最も重要なコンセプトのひとつです。 GameObject が別の GameObject の $$Parent$$（親）の場合、$$Child$$（子）GameObject は、親とまったく同じように移動、回転、縮小拡大します。  体に付いている腕のように、体を回転させると、体に付いているため、腕も動きます。 どのオブジェクトにも複数の子がありますが、親は 1 つだけです。
