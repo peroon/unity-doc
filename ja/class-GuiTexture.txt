@@ -3,7 +3,7 @@
 $$GUI Texture$$ は、2D での平坦画像として表示されます。 特に、ユーザー インターフェースの要素、ボタンまたはデコレーション向けです。  その配置や拡大縮小はX および Y 軸に沿って実行され、$$World Coordinates$$ よりも、$$Screen Coordinates$$ で測定されます。
 
 Attach:Inspector-GUITexture.png\\
-''GUI テクスチャ $$Inspector$$''
+''インスペクタ上の GUI テクスチャ''
 
 __注意__: Unity 2.0 から、GUI スクリプティング システムである $$UnityGUI$$ を導入しています。  GUI テクスチャの代わりに、UnityGUI でユーザー インタフェース要素を作成したい場合もあるでしょう。  [[GUI Scripting Guide]] のUnityGUI の使用法について続きを読んでください。
 
