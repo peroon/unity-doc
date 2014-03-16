@@ -3,7 +3,7 @@
 $$GUI Style$$ は、$$UnityGUI$$ で使用するためのカスタムの属性の集合です。  1 つのGUI スタイルは、UnityGUI $$Control$$ の外観を定義します。
 
 Attach:GuiStyleInspector.png\\
-''$$Inspector$$ での GUI スタイル」
+''インスペクタ上の GUI スタイル」
 
 スタイルを複数の制御に追加したい場合、GUI スタイルの代わりに、[[class-GUISkin | GUI Skin]] を使用します。  UnityGUI の詳細については、[[GUI Scripting Guide]] を参照してください。
 
