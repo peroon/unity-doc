@@ -11,7 +11,7 @@ Attach:Editor-InspectorDragDrop.png
 インスペクターに表示されているコンポーネント名の横にクエスチョンマークがついていますが、これをクリックすると関係するコンポーネントリファレンスページが開きます。 [[Components|Component Reference]] はUnityに含まれるあらゆるコンポーネントの完全かつ詳細なガイドとなっておりますので、是非参照してください。
 
 Attach:componentsmenu.png\\
-'' ^^Component^^ メニューから様々なコンポーネントを追加する ''
+'' コンポーネント メニューから様々なコンポーネントを追加する ''
 
 小型ギアのアイコン（もしくはコンポーネント名を右クリック）で、特定コンポーネントに関するコンテキストメニューをポップアップすることができます。
 
@@ -20,7 +20,7 @@ Attach:Inspector-contextmenu.png
 インスペクターは、選択中のアセットファイルのインポート設定も表示することができます。
 
 Attach:Inspector-ImportSettings.png\\
-'' ^^Apply^^ ボタンをクリックすることでアセットをインポートし直します ''
+'' Apply ボタンをクリックすることでアセットをインポートし直します ''
 
 Attach:Inspector-Layers_Tags.png
 
