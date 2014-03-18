@@ -1,4 +1,4 @@
-!エフェクト / Effects
+!視覚エフェクト リファレンス / Visual Effects Reference
 
 エフェクトは視覚効果に関連するコンポーネントが含まれます。
 
