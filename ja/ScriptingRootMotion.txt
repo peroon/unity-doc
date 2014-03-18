@@ -25,7 +25,9 @@ Attach:MecanimRootMotionController.png
 * ``RootMotionController`` をアニメータの``Controller`` プロパティ上にドラッグします。
 * このときに再生すると、"Dude" はその場で走る動作をします。
 
-* 最後に、モーションを制御するためには、@@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ コールバックを実装するスクリプト(RootMotionScript.cs)を作成する必要があります。
+最後に、モーションを制御するためには、@@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ コールバックを実装するスクリプト(RootMotionScript.cs)を作成する必要があります:-
+
+
 [@
 using UnityEngine;
 using System.Collections;
@@ -47,9 +49,12 @@ public class RootMotionScript : MonoBehaviour {
 	}
 }
 @]
-* RootMotionScript.csを"Dude" にアタッチします
-* アニメータコンポーネントは @@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ があるスクリプトを検知して、``Apply Root Motion`` プロパティに ''Handled by Script'' と表示されます。
+
+
+"Dude" オブジェクトに RootMotionScript.cs をアタッチします。これによりアニメータ コンポーネントはスクリプトに @@[[ScriptRef:MonoBehavior.OnAnimatorMove|OnAnimatorMove]]@@ 関数があることが検知され、 ``Apply Root Motion`` プロパティに ''Handled by Script'' が表示されます。
+
 Attach:MecanimRootMotionDude.png
-* これでキャラクターが指定した速度で移動することが見えます。
+
+
 
 ([[MecanimAnimationSystem|メカニム入門]] に戻る)
