@@ -47,7 +47,11 @@ IEnumerator Start () {
     byte[] decryptedData = YourDecryptionMethod(encryptedData);
 
     // バイト配列からアセットバンドルを作成
-    AssetBundle bundle = AssetBundle.CreateFromMemory(decryptedData);
+
+    AssetBundleCreateRequest acr = AssetBundle.CreateFromMemory(decryptedData);
+    yield return acr;
+
+    AssetBundle bundle = acr.assetBundle;
 
     // これでアセットバンドルを使用することが出来ます。アセットバンドルはキャッシュされません
 }@]
@@ -75,10 +79,10 @@ IEnumerator Start () {
     byte[] decryptedData = YourDecryptionMethod(encryptedData);
 
     // バイト配列からアセットバンドルを作成
-    AssetBundle bundle = AssetBundle.CreateFromMemory(decryptedData);
+    AssetBundleCreateRequest acr = AssetBundle.CreateFromMemory(decryptedData);
+    yield return acr;
+
+    AssetBundle bundle = acr.assetBundle;
 
     // これでアセットバンドルを使用することが出来ます。ラッピングするアセットバンドルはキャッシュされます。
 }@]
-
-
-[[AssetBundlesIntro|アセットバンドル入門]] に戻る
