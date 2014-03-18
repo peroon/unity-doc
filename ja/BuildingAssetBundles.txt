@@ -29,7 +29,7 @@ Attach:AssetBundleMenuOptions.png
 
 プロジェクトのキューブのプレハブを右クリックして ^^Build AssetBundle From Selection - Track dependencies^^ を選択します。
 
-こうすると、バンドルアセットを保存するウィンドウが表示されます。もし "AssetBundles" という新規のフォルダを作成して、キューブを ``Cube.unity3d``として保存すると、プロジェクトウィンドウは次のようになります。
+こうすると、バンドルされたアセットを保存するウィンドウが表示されます。もし "AssetBundles" という新規のフォルダを作成して、キューブを ``Cube.unity3d``として保存すると、プロジェクトウィンドウは次のようになります。
 
 Attach:AssetBundlesCube.png
 
