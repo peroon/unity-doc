@@ -38,8 +38,9 @@ Kinematic Rigidbodyは他のRigidbodyと衝突した際に[[RigidbodySleeping | 
 
 $$Static Collider$$ はコライダはあるけれどRigidbodyはないゲームオブジェクトです。Static Colliderは同じ場所を保ち不動である階段の物体などで使用されます。すでに存在するグラフィックスのメッシュに$$Mesh Collider$$ を追加（あるいはもっと良い方法として^^Import Settings^^ のGenerate Colliders のチェックボックスを有効化）するか、他のコライダのタイプを使用することが出来ます。
 
-物理挙動により影響される (Kinematic でない) コライダは有効化/無効化あるいは変換すべきではありません。Static Colliderの変更はPhysXでの内部計算のやり直しを発生させ、それが高価であるために大きなパフォーマンス低下につながります。ひどい場合にはコライダが仕様が未定義の状態になり、物理計算に不具合を生じさせるかもしれません（例えば変更された Static Collider に対する Raycast によりそれを検知できなかったり、逆に空間上のランダムな地点で検知してしまったりします）。さらにStatic Collider にもとづいて他の Rigidbody をウェイクアップさせる動作は仕様が未定義であり、Static Collider を移動することでそれにタッチした Rigidbody に摩擦が加わりません。これらの理由のため、 Rigidbody であるコライダのみ変更対象とすべきであり、 ''isKinmatic'' は true をセットして他のコライダが物理挙動により影響を受けないようにすべきです。
- 
+リジッドボディのなあい Static Collider は有効化/無効化あるいは変更すべきではありません。Static Colliderの変更はPhysXでの内部計算のやり直しを発生させ、それが高価であるために大きなパフォーマンス低下につながります。ひどい場合にはコライダが仕様が未定義の状態になり、物理計算に不具合を生じさせるかもしれません（例えば変更された Static Collider に対する Raycast によりそれを検知できなかったり、逆に空間上のランダムな地点で検知してしまったりします）。さらにStatic Collider にもとづいて他の Rigidbody をウェイクアップさせる動作は仕様が未定義であり、Static Collider を移動することでそれにタッチした Rigidbody に摩擦が加わりません。これらの理由のため、 Rigidbody であるコライダのみ変更対象とすべきであり、 ''isKinmatic'' は true をセットして他のコライダが物理挙動により影響を受けないようにすべきです。
+
+
 !!! Character Controller
 ヒューマノイド型キャラクター作成する場合、[[class-CharacterController|Character Controller]] を使用すべきです。これはアクションゲーム（Third Person Platformer）のメインキャラかもしれないし、FPSの狙撃手や敵キャラかもしれません。
 
