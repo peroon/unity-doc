@@ -5,7 +5,7 @@ Unityのパーティクルシステムの重要な機能は、個別パーティ
 複雑なパーティクルエフェクトを管理するためには、Unityはパーティクルエディタを提供していて、 [[ParticleSystemInspector|Inspector]] 上で ^^Open Editor^^ を押下することでアクセスすることが出来ます。
 
 Attach:ShurikenParticleEditor.png
-''$$Particle System Editor$$ の概要""
+''Particle System Editor の概要""
 
 このエディタにより ^^Show: All^^ と ^^Show: Selected^^ 間でトグルすることが出来ます。^^Show: All^^ の場合パーティクルエフェクトの全体をレンダリングします。^^Show: Selected^^ の場合は選択されたパーティクルシステムのみレンダリングします。選択されたものは、パーティクルエディタで青い枠により、ハイライトされ、 Hierarchy ビューでも青で表示されます。 Hierarchy ビューおよびパーティクルエディタにて、パーティクルシステムの左上角のアイコンをクリックすることで、選択範囲は変更することが出来ます。複数選択をするためには、 Windows では Ctrl + クリックを用いて、MacではCommand + クリックをします。
 
@@ -13,4 +13,5 @@ Attach:ShurikenParticleEditor.png
 
 
 Attach:ShurikenOverviewHierarchy.png
-''同一階層のパーティクルシステムは同じパーティクルエフェクトの一部として考えられています。この階層において、 前述のエフェクトを前述のエフェクトのためのセットアップ'' を示しています。 ''
+
+''同一階層のパーティクルシステムは同じパーティクルエフェクトの一部として考えられています。この階層において、 前述のエフェクトを前述のエフェクトのためのセットアップ'' を示しています。''

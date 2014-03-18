@@ -1,7 +1,10 @@
-!パーティクルシステム 概要 / Particle Systems Overview
+!パーティクルシステム / Particle Systems
 
-注意：これは新パーティクルシステム（Shuriken）についてのドキュメントです。旧パーティクルシステムについては [[comp-ParticlesLegacy|Legacy Particle System]] を参照して下さい。
+Unity のパーティクルシステムは煙、蒸気、炎などの環境エフェクトに使用できます。
 
-(:include class-ParticleSystem:)
+Attach:ShurikenFrontPageFlare.png
+
+Unity のパーティクルシステムは $$Shuriken$$ と呼ばれます。このセクションでは Shuriken のエフェクトをゲームを洗練する方法を説明します。
+
 
 (:tocportion:)
