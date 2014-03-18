@@ -14,7 +14,7 @@ public class CustomMaterialInspector : MaterialEditor {
 		base.OnInspectorGUI ();
 	}
 }
-(:codeend:)
+@]
 
 カスタム エディタを定義した全てのシェーダ(__CustomEditor "CustomMaterialInspector"__) はエディタを上でリストされているのを見つけて、紐づくコードを実行します。
 
@@ -22,7 +22,7 @@ public class CustomMaterialInspector : MaterialEditor {
 シェーダが二つのモードで動作するような状況があると仮定します。標準の拡散ライティングでレンダリングするか、ソース テクスチャの赤コンポーネントのみをレンダリングするとします。これはシェーダのマルチコンパイルにより実現できます。
 
 (:code:)
-Shader "Custom/Redify" {
+[@Shader "Custom/Redify" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 	}
@@ -54,11 +54,11 @@ Shader "Custom/Redify" {
 	FallBack "Diffuse"
 	CustomEditor "CustomMaterialInspector"
 }
-(:codeend:)
+@]
 
 見て分かるようにシェーダは二つのキーワードが設定で利用可能です: REDIFY_ON および REDIFY_OFF です。これらはマテリアル ベースに変更するにはマテリアルの shaderKeywords プロパティを使用出来ます。以下でこれを行うエディタを示します。
 
-(:code:)
+[@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -92,13 +92,13 @@ public class CustomMaterialInspector : MaterialEditor {
 		}
 	}
 }
-(:codeend:)
+@]
 
 
 !! デフォルトのマテリアル エディタが動作する方法
 デフォルトの Unity エディタはシェーダに存在する全てのプロパティをマテリアル エディタにレンダリングします。以下のカスタムマテリアル エディタは Unity マテリアルエディタと同様の動作をします。手動でデフォルトのフィールドをレンダリングしたい場合は次のサンプルを使用します。
 
-(:code:)
+[@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
