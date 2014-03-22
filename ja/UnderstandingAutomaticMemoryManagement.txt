@@ -32,24 +32,25 @@ function ConcatExample(intArray: int[]) {
 	}
 	
 	return line;
-}(:codeend:)
+}
+@]
 
 ここで鍵となるポイントは、新しい部分が文字列の正しいところにひとつひとつ追加されないということです。実際にループするたびに行われることは、line 変数の前回の中身が消滅します - もとの部分に新しい部分を加えたまったく新しい文字列が格納されます。文字列は 1 づつ値が増加されるため、消費されるヒープの量もまた増加し、この関数がコールされるたびに数百バイトの空きヒープ領域を容易に占有します。もし多くの文字列を連結するとき、 Mono ライブラリの [[http://msdn.microsoft.com/en-gb/library/system.text.stringbuilder.aspx|System.Text.StringBuilder]] クラスを使用したより良い例があります。
 
 しかし、繰り返しの連結ですら、頻繁にコールされないかぎりそこまでの問題を引き起こしませんが、Unityでその頻繁となりうる要因は暗黙的にはフレーム更新です。次のような場合です:-
 
-(:code:)
+[@
 var scoreBoard: GUIText;
 var score: int;
 
 function Update() {
 	var scoreText: String = "Score: " + score.ToString();
 	scoreBoard.text = scoreText;
-}(:codeend:)
-
+}
+@]
 ...このコードで各々の Update がコールされるたびに新しい文字列が割り当てされ、新しいガーベージがつねに生成されます。そのほとんどはスコアが変更されたときのみテキストを更新することで節約できます:-
 
-(:code:)
+[@
 var scoreBoard: GUIText;
 var scoreText: String;
 var score: int;
@@ -61,12 +62,13 @@ function Update() {
 		scoreBoard.text = scoreText;
 		oldScore = score;
 	}
-}(:codeend:)
+}
+@]
 
 
 もうひとつの潜在的な問題は関数が配列の値を戻すときに発生します:-
 
-(:code:)
+[@
 function RandomList(numElements: int) {
 	var result = new float[numElements];
 	
@@ -75,7 +77,8 @@ function RandomList(numElements: int) {
 	}
 	
 	return result;
-}(:codeend:)
+}
+@]
 
 この種の関数のは、値で埋められた新しい配列を作成するときに、非常にエレガントで便利です。しかし、繰り返しコールされると、真新しいメモリが毎回割り当てられます。配列は非常に大きくなりえるため、空きヒープ領域があっという間に使い切られることがあり、結果的に頻繁にガーベージコレクションが行われます。この問題を回避する方法は配列が参照型であることを活用することです。関数に引数として渡される配列はその関数の中で更新することが出来て、結果は関数が戻った後も残ります。前述のような関数は、多くの場合に次のような関数で置き換え出来ます:-
 
@@ -84,7 +87,8 @@ function RandomList(arrayToFill: float[]) {
 	for (i = 0; i < arrayToFill.Length; i++) {
 		arrayToFill[i] = Random.value;
 	}
-}(:codeend:)
+}
+@]
 
 これにより単に既存の配列の中身を新しい値で置き換えます。これにより初期割り当てがコールする元のコードの中で行われることが必要となるにも関わらず（ややエレガントでなくみえますが）、関数はコールされるときに新しいガーベージを生成することはなくなります。
 
@@ -121,13 +125,13 @@ function Start() {
         tmp = null;
 }
 
-(:codeend:)
+@]
 
 十分に大きなヒープにより、コレクションを伴うようなポーズの間に、完全に埋まることはすべきでありません。もしポーズが生じる場合は、コレクションを明示的に要求します:-
 
-(:code:)
-[[http://msdn.microsoft.com/en-gb/library/xe0c2357.aspx|System.GC.Collect]]();
-(:codeend:)
+[@
+System.GC.Collect();
+@]
 
 繰り返しとなりますが、このアプローチをとるときは注意すべきであり、プロファイラ統計をチェックして、思い込みでなく本当に効果が得られていることをきちんと確認すべきです。
 
