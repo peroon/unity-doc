@@ -1,6 +1,6 @@
 ! メッシュ コライダ
 
-$$Mesh Collider$$ は[[class-Mesh|メッシュアセット]] を取り、そのメッシュに基づいてコライダを構築します。複雑なメッシュの場合、プリミティブを使用した衝突検出するよりも遥かに正確です。``Convex``がオンとなっているMesh Colliderは、他のMesh Colliderと衝突することができます。
+$$Mesh Collider$$ は [[class-Mesh|メッシュのアセット]] からそのメッシュにもとづくコライダを生成します。複雑なメッシュの場合、プリミティブを使用した衝突検出するよりも遥かに正確です。``Convex`` がオンとなっているMesh Colliderは、他のMesh Colliderと衝突することができます。
 
 Attach:Inspector-MeshCollider.png\\
 階段状の物体で使用される'Mesh Collider
@@ -11,13 +11,13 @@ Attach:Inspector-MeshCollider.png\\
 ||PROPS
 (:include comp-ColliderProps:)
 ||``Mesh`` ||衝突判定に使用するメッシュ（への参照）。||
-||``Smooth Sphere Collisions`` ||オンのとき、衝突メッシュの法線を滑らかにする。球が滑らかな表面（例　ある地形上を滑らかに移動させるため、地形のエッジを立てずにを転がす。）の上を転がす場合、有効にすべきです。||
+||``Smooth Sphere Collisions`` ||オンのとき、衝突メッシュの法線を滑らかにする。球が滑らかな表面（例 ある地形上を滑らかに移動させるため、地形のエッジを立てずにを転がす。）の上を転がす場合、有効にすべきです。||
 ||``Convex`` ||オンにした場合、MeshColliderは他のMeshColliderと衝突します。ConvexオンのMeshColliderは三角形面数の上限255に制限されています。||
 
 
 !!詳細
 
-MeshColliderの衝突判定は形状をゲームオブジェクトにアタッチされた[[class-Mesh|Mesh]] から構築されており、アタッチされた[[class-Transform|Transform]] のプロパティを読み込んでPositionとScaleを正しく設定します。
+MeshColliderの衝突判定では、ゲームオブジェクトにアタッチされた [[class-Mesh|メッシュ]] から形状を生成し、アタッチされた [[class-Transform|Transform]] のプロパティから位置と大きさを正確に反映します。
 
 衝突メッシュは、バックフェースカリングを使用しています。オブジェクトが表示上バックフェースカリングされたメッシュと衝突した場合、物理的に衝突することもありません。
 
@@ -28,8 +28,8 @@ MeshColliderを使用した場合、いくつかの制限があります。通�
 
 !! ヒント
 
-* ``Convex``がオンとなっていない限り、Mesh Colliderは、他のMesh Colliderと互いに衝突することができません。したがって、背景における物体のような背景のオブジェクトにも有用である。
+* ``Convex``がオンとなっていない限り、Mesh Colliderは、他のMesh Colliderと互いに衝突することができません。したがって、背景の物体のような背景のオブジェクトにも有用です。
 * ConvexオンのMeshColliderは三角形面数の上限255です。
-* 物理挙動のあるオブジェクトにおいて、プリミティブなコライダのほうがより計算コストがかからない。
-* $$GameObject$$にMesh Colliderをアタッチした場合、ゲームオブジェクトのレンダリングに使用されているメッシュがMeshプロパティにデフォルト設定される。異なるメッシュを割り当てれば、変更することができます。
+* 物理挙動のあるオブジェクトにおいて、プリミティブなコライダのほうがより計算コストがかかりません。
+* $$GameObject$$にMesh Colliderをアタッチした場合、ゲームオブジェクトのレンダリングに使用されているメッシュがMeshプロパティにデフォルト設定されます。異なるメッシュを割り当てれば、変更することができます。
 (:include comp-ColliderHints:)
