@@ -14,7 +14,7 @@ Asset ServerはMac OS X 10.4 以降, Windows XP, Windows Vista および様々�
 
 Asset Server により任意の数の $$User$$ が $$Project$$ に接続出来ます。管理者はサーバに最初にクライアントとして接続して、新しいプロジェクトやユーザを作成する必要があります。
 
-管理者ツール にアクセスふるには Unity を起動し、^^Window->Asset Server^^ を選択し、 ^^Administration^^ ボタンをクリックします。
+管理者ツール にアクセスするには Unity を起動し、^^Window->Asset Server^^ を選択し、 ^^Administration^^ ボタンをクリックします。
 
 Attach:AssetServer-AdministrateDialog.png\\
 ''$$Administration$$ タブ''
@@ -48,7 +48,7 @@ Unity Asset Server はTCP ポート番号 $$10733$$ を使用します。ファ�
 
 !! 上級者向け
 
-Asset Server は PostgreSQL の修正バージョンで作成されています。SQL データベースを直接アクセスするには SQL および Unix/Linux コマンドラインに関するかなりの技術的な知識ご求められます。ユーザ自身で使用するかどうか判断することを推奨します。
+Asset Server は PostgreSQL の修正バージョンで作成されています。SQL データベースを直接アクセスするには SQL および Unix/Linux コマンドラインに関するかなりの技術的な知識が求められます。ユーザ自身で使用するかどうか判断することを推奨します。
 
 !!! バックアップの取得
 
