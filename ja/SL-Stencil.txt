@@ -1,50 +1,50 @@
-! ShaderLab syntax: Stencil
+! ShaderLab文法：ステンシル / ShaderLab syntax: Stencil
 
-The stencil buffer can be used as a general purpose per pixel mask for saving or discarding pixels.
+ステンシル バッファの主な使用方法はピクセル マスクごとにピクセルの保存または破棄することです。
 
-The stencil buffer is usually an 8 bit integer per pixel. The value can be written to, increment or decremented. Subsequent draw calls can test against the value, to decide if a pixel should be discarded before running the pixel shader.
+ステンシル バッファは通常ピクセル毎の 8 ビット整数です。値は書き込み、増減ともに可能です。後続のドローコールを値に対してテストし、ピクセルシェーダを実行する前にピクセルが破棄されるべきか判断できます。
 
-!! Syntax
+!! 文法
 
-:Ref ''referenceValue'': The value to be compared against (if Comp is anything else than ''always'') and/or the value to be written to the buffer (if  either Pass, Fail or ZFail is set to replace). 0-255 integer.
-:ReadMask ''readMask'': An 8 bit mask as an 0-255 integer, used when comparing the reference value with the contents of the buffer (''referenceValue'' & ''readMask'') ''comparisonFunction'' (''stencilBufferValue'' & ''readMask''). Default: ''255''.
-:WriteMask ''writeMask'': An 8 bit mask as an 0-255 integer, used when writing to the buffer. Default: ''255''.
-:Comp ''comparisonFunction'': The function used to compare the reference value to the current contents of the buffer. Default: ''always''.
-:Pass ''stencilOperation'': What to do with the contents of the buffer if the stencil test (and the depth test) passes. Default: ''keep''.
-:Fail ''stencilOperation'': What to do with the contents of the buffer if the stencil test fails. Default: ''keep''.
-:ZFail ''stencilOperation'': What to do with the contents of the buffer if the stencil test passes, but the depth test fails. Default: ''keep''.
+:Ref ''referenceValue'': 比較対象の値（Comp が ''always'' 以外の場合）かつ/またはバッファに書き込む値（Pass, Fail, ZFail のいずれかの場合置き換えられる）。0 - 255 の範囲の整数。
+:ReadMask ''readMask'': 0 - 255 の範囲の整数で 8 ビットマスク、バッファのコンテンツで参照値を比較するのに用いられる（''referenceValue'' および ''readMask''） ''comparisonFunction'' (''stencilBufferValue'' および ''readMask''). デフォルト値: ''255''.
+:WriteMask ''writeMask'': バッファ書き込みに使用される 0 - 255 の範囲の整数で 8 ビットマスク。デフォルト値: ''255''.
+:Comp ''comparisonFunction'': バッファの現在のコンテンツを参照値と比較するために使用する関数。デフォルト値: ''always''
+:Pass ''stencilOperation'': ステンシル テスト（およびデプス テスト）が成功した後のバッファ コンテンツの扱い。デフォルト: ''keep''
+:Fail ''stencilOperation'': ステンシル テストが失敗した後のバッファ コンテンツの扱い。デフォルト: ''keep''
+:ZFail ''stencilOperation'': ステンシル テストが成功したがデプス テストが失敗した後のバッファ コンテンツの扱い。デフォルト: ''keep''
 
-Comp, Pass, Fail and ZFail will be applied to the front-facing geometry, unless ''Cull Front'' is specified, in which case it's back-facing geometry. You can also explicitly specify the two-sided stencil state by defining CompFront, PassFront, FailFront, ZFailFront (for front-facing geometry), and CompBack, PassBack, FailBack, ZFailBack (for back-facing geometry).
+''Cull Front'' が指定されてないかぎり Comp, Pass, Fail, ZFail は前面にある物体に適用され、指定されている場合はバックフェースの物体です。明示的に二面のステンシル状態を指定するには CompFront, PassFront, FailFront, ZFailFront (フロント フェースの物体), CompBack, PassBack, FailBack, ZFailBack (バックフェースの物体)とします。
 
-!!!Comparison Function
-Comparison function is one of the following:
-||__Greater__ ||Only render pixels whose reference value is greater than the value in the buffer.||
-||__GEqual__ ||Only render pixels whose reference value is greater than or equal to the value in the buffer.||
-||__Less__ ||Only render pixels whose reference value is less than the value in the buffer.||
-||__LEqual__ ||Only render pixels whose reference value is less than or equal to the value in the buffer.||
-||__Equal__ ||Only render pixels whose reference value equals the value in the buffer.||
-||__NotEqual__ ||Only render pixels whose reference value differs from the value in the buffer.||
-||__Always__ ||Make the stencil test always pass.||
-||__Never__ ||Make the stencil test always fail.||
+!!!比較の関数
+比較の関数は次のいずれかを使用できます：
+||__Greater__ ||参照値がバッファ値より大きい参照値のピクセルのみレンダリング||
+||__GEqual__ ||参照値がバッファ値と等しいまたは大きい参照値のピクセルのみレンダリング||
+||__Less__ ||参照値がバッファ値より小さい参照値のピクセルのみレンダリング||
+||__LEqual__ ||参照値がバッファ値と等しいまたは小さい参照値のピクセルのみレンダリング||
+||__Equal__ ||参照値がバッファ値と等しい参照値のピクセルのみレンダリング||
+||__NotEqual__ ||参照値がバッファ値と等しくない参照値のピクセルのみレンダリング||
+||__Always__ ||常にステンシル テストは成功||
+||__Never__ ||常にステンシル テストは失敗||
 
-!!!Stencil Operation
-Stencil operation is one of the following:
-||__Keep__ ||Keep the current contents of the buffer.||
-||__Zero__ ||Write 0 into the buffer.||
-||__Replace__ ||Write the reference value into the buffer.||
-||__IncrSat__ ||Increment the current value in the buffer. If the value is 255 already, it stays at 255.||
-||__DecrSat__ ||Decrement the current value in the buffer. If the value is 0 already, it stays at 0.||
-||__Invert__ ||Negate all the bits.||
-||__IncrWrap__ ||Increment the current value in the buffer. If the value is 255 already, it becomes 0.||
-||__DecrWrap__ ||Decrement the current value in the buffer. If the value is 0 already, it becomes 255.||
+!!!ステンシル処理
+ステンシル処理は次のいずれかを使用できます：
+||__Keep__ ||バッファの現在コンテンツを保持します||
+||__Zero__ ||バッファにゼロを書き込みます||
+||__Replace__ ||参照値をバッファに書き込みます||
+||__IncrSat__ ||バッファの現在値を増分させる。値がすでに 255 の場合は維持する||
+||__DecrSat__ ||バッファの現在値を減分させる。値がすでに 0 の場合は維持する
+||__Invert__ ||すべてのビットを無効にする||
+||__IncrWrap__ ||バッファの現在値を増分する。値がすでに 255 の場合は 0 にする||
+||__DecrWrap__ ||バッファの現在値を減分する。値がすでに 0 の場合は 255 にする||
 
-!! Deferred rendering path
-Stencil functionality for objects rendered in the deferred rendering path is somewhat limited, as during the base pass and lighting pass the stencil buffer is used for other purposes. During those two stages stencil state defined in the shader will be ignored and only taken into account during the final pass. Because of that it's not possible to mask out these objects based on a stencil test, but they can still modify the buffer contents, to be used by objects rendered later in the frame. Objects rendered in the forward rendering path following the deferred path (e.g. transparent objects or objects without a surface shader) will set their stencil state normally again.
+!! ディファード レンダリング パス
+ディファード レンダリング パスにおいて、レンダリングされたオブジェクトのステンシル機能は、他の目的でステンシル バッファがベース パスおよびライティングパスの際において、限定されています。これらの二つのステージにおいてシェーダのステンシル状態はは無視され、最終パスにおいてのみ考慮されます。このためこれらのオブジェクトをステンシル テストにもとづきオブジェクトをマスキングして外すことはできませんが、それでもバッファコンテンツを修正して、後続のフレームでオブジェクトにより使用できます。ディファード レンダリング パスの後にフォワード レンダリング パスでレンダリングされるオブジェクト（例．透明オブジェクトまたはサーフェイスシェーダのないオブジェクト）は再度、通常どおりにステンシル状態をセットします。
 
-The deferred rendering path uses the three highest bits of the stencil buffer, plus up to four more highest bits - depending on how many light mask layers are used in the scene. It is possible to operate within the range of the "clean" bits using the stencil read and write masks, or you can force the camera to clean the stencil buffer after the lighting pass using Camera.clearStencilAfterLightingPass.
+ディファード レンダリング パスは、シーンで使用されているライトマスク レイヤーの数にもとづき、ステンシルバッファのもっとも高い 3 つのビットを使用し、最大で 4 つのもっとも高いビットを使用します。ステンシルの読み取りおよび書き込みマスクを使用して"クリーンな" ビットの範囲で処理するか、カメラが強制的にライティングパスの後にステンシル バッファをクリーンするように Camera.clearStencilAfterLightingPass を使用できます。
 
-!! Example
-The first example shader will write the value 2 wherever the depth test passes (the stencil test is set to always pass), and will decrement (and wrap) the current value to 255 if the depth test fails (assuming we're starting off with a clear stencil buffer).
+!! サンプル
+最初のシェーダのサンプルでは、デプス テストの結果に関わらず 2 という値を書き込み（ステンシル テストは必ず成功する設定）、デプス テストが失敗した場合に現在の値を 255 に減分（および折り返し）します（ただし、ステンシル バッファがクリアされた状態で開始している前提）。
 
 [@Shader "Red" {
 	SubShader {
@@ -80,7 +80,7 @@ The first example shader will write the value 2 wherever the depth test passes (
 }
 @]
 
-Second shader will pass only for the pixels for which the first (red) shader passed, since it's checking for equality with value 2. It will also decrement the value in the buffer wherever it fails the stencil test.
+ふたつめのシェーダは、 2 の値と等しいかチェックしているため、最初（赤）のシェーダが成功したピクセルのみで成功します。またステンシル テストが失敗したところではバッファの値を減分します。
 
 [@Shader "Green" {
 	SubShader {
@@ -117,7 +117,7 @@ Second shader will pass only for the pixels for which the first (red) shader pas
 }
 @]
 
-The third shader will only pass wherever the stencil value was decremented twice, so for pixels, which failed the depth test in the first (red) shader and also failed the stencil test in the second (green) shader.
+三つめのシェーダはステンシル値が二回減分されたところのみ成功となり、ピクセルにおいては、最初（赤）のシェーダで失敗して二つめ（緑）のシェーダのステンシルテストも失敗した場合です。
 
 [@Shader "Blue" {
 	SubShader {
@@ -151,11 +151,11 @@ The third shader will only pass wherever the stencil value was decremented twice
 }
 @]
 
-The result:
+結果:
 Attach:StencilExample.png
 
 
-Another example of a more directed effect. The sphere is first rendered with this shader to mark-up the proper regions in the stencil buffer:
+もうひとつのエフェクトのサンプル。球体は最初にこのシェーダでレンダリングされてステンシル バッファの正しい領域をマークします：
 
 [@Shader "HolePrepare" {
 	SubShader {
@@ -207,7 +207,7 @@ Another example of a more directed effect. The sphere is first rendered with thi
 }
 @]
 
-And then rendered once more as a fairly standard surface shader, with the exception of front face culling, disabled depth test and stencil test discarding previously marked pixels:
+標準的なサーフェイスシェーダとして、さらにもう一回レンダリングされます。例外はピクセル毎にフロント フェース カリングの場合と、デプステストとステンシルを無効化してマーキングした場合です：
 
 [@Shader "Hole" {
 	Properties {
@@ -240,5 +240,5 @@ And then rendered once more as a fairly standard surface shader, with the except
 }
 @]
 
-The result:
+結果:
 Attach:StencilExample2.png
