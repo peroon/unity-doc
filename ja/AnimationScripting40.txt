@@ -6,15 +6,6 @@ Unityのアニメーションシステムにより綺麗にアニメーション
 
 プリセットされたアニメーションの [[http://unity3d.com/support/resources/example-projects/|デモサンプル]] をダウンロードできます。このページで基礎を学んだあとは [[ScriptRef:Animation.html|アニメーション スクリプトインタフェース]] を参照下さい。
 
-このページは次のセクションを含みます:-
-
-*[[#AnimBlend | アニメーション ブレンディング]]
-*[[#AnimLayers | アニメーション レイヤー]]
-*[[#AnimMixing | アニメーション ミキシング]]
-*[[#Additive | 追加アニメーション]]
-*[[#Procedural | プロシージャル アニメーション]]
-*[[#Playback | アニメーション プレイバックおよびサンプリング]]
-
 
 [[#AnimBlend]]
 
