@@ -188,6 +188,17 @@ This is "the structure" of the docs. Simply a nested bulleted list; to make a pa
 *** [[PSVita Additional Packages]]
 *** [[PSVita Video Playback]]
 >><<
+>>ps4<<
+** [[ps4-gettingstarted]]
+*** [[PS4 Setup]]
+*** [[PS4 Project Structure]]
+*** [[PS4 Building & Running]]
+*** [[PS4 Profiling]]
+*** [[PS4 Project Settings]]
+*** [[PS4 Input]]
+*** [[PS4 Additional Packages]]
+*** [[PS4 Video Playback]] 
+>><<
 ** [[nacl-gettingstarted]]
 ** [[flash-gettingstarted]]
 *** [[flash-setup]]

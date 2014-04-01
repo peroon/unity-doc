@@ -1,0 +1,26 @@
+! PS4: Additional Packages
+The PS4 Unity extension comes with a number of packages which can be installed from the asset menu, there are two groups of packages.
+ 
+!! PS4 Plugins
+ 
+Each plugin package provides a native plugin, a managed assembly, and an example project demonstrating the plugins use.
+ 
+*NP Toolkit
+**Provides APIs for connecting with and using Playstation(R)Network features and awarding trophies
+ 
+*Camera And Tracking
+**Demonstrates how to use the PS4's cameras in your application.
+
+
+!! PS4 Samples
+ 
+The sample packages provide example code demonstrating PS4 features that are built into the main Unity runtime.
+
+*Input and Motion
+**Demonstrates how to use the input and motion features of the PS4, for example front and back touch, gyroscope, buttons, etc.
+ 
+*Video
+**Demonstrates how to implement video playback in a PS4 application.
+
+Note that many of these packages include readme files that are essential reading!
+

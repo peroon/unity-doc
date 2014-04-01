@@ -1,0 +1,32 @@
+! Playstation 4: Getting Started
+
+
+!!!Developing for PS4
+To develop for the PS4 you must be a Sony registered developer and own the appropriate hardware. See the PS4 Setup or PS4 Setup for Source Licensees page depending on your license for a seat setup checklist.
+
+!!!Build Information
+The required SDK version is specified in the release notes of each respective PS4 Add-on/Unity build.
+
+!!!Access PS4 Unique Functionality
+Unity PS4 provides a number of new scripting APIs to access PSN services, input, native video support and much more. See the UnityEngine.PS4 namespace in the scripting API.
+
+!!!How Unity PS4 differs from Desktop Unity
+* Strongly Typed JavaScript
+** Dynamic typing in JavaScript is always turned off in Unity PS4. This is the same as adding #pragma strict to your scripts, but it is done by default instead. This greatly improves performance. When you launch an existing Unity Project, you will receive compiler errors if you are using dynamic typing. You can easily fix them by either using static typing for the variables that are causing errors or taking advantage of type interface
+* Ahead-Of-Time compilation
+** Scripts are AOT compiled into a static library which is subsequently linked with the Unity Run-Time to produce the player. Due to platform limitations, JITing is not supported. This means that reflection cannot be used
+* Limited memory
+** The console has a total of 8GB of Unified Memory. The Unity Player and AOT'd Script Assemblies will take away from the main memory, also the PS4 system software uses some of this memory and will leave you with 5GB. It is important to note that development consoles have 5.7GB of memory so fitting in memory on a development console is no guarantee that your application will work on a retail console.
+* Video formats
+** Unity supports the MPEG-4 AVC/H.264 standard format. For more information see the documentation at https://ps4.scedev.net/docs/ps4-en,Video_Data_Encoding-Tutorial-orbis/
+
+!!!Further reading:
+* [[PS4 Setup]]
+* [[PS4 Project Structure]]
+* [[PS4 Building & Running]]
+* [[PS4 Profiling]]
+* [[PS4 Project Settings]]
+* [[PS4 Input]]
+* [[PS4 Additional Packages]]
+* [[PS4 Video Playback]]
+

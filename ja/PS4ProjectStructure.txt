@@ -1,0 +1,20 @@
+! PS4: Project Structure
+
+!!Special directories
+* /path/to/project/Assets/StreamingAssets : for assets that Unity should not process. Will be packaged as Media/StreamingAssets/*
+** Videos
+** Asset bundles
+** Custom assets
+* /path/to/project/Assets/Plugins/PS4/ : for native plugins. *.sprx and *_stub.a. Will be packaged as Media/Plugins/*
+
+!!Runtime paths:
+The PS4 Dev Kit will mount the game folder depending on the Build Type:
+
+'''PC Hosted'''
+* Game folder mounted on the development machine at host:/ This location can be viewed in the Neighborhood for Playstation(R)4
+
+'''Package'''
+* Game folder mounted on the device at app0:/gameName
+
+
+More information on Mount Points can be found at https://ps4.scedev.net/docs/ps4-en,Application_Requirements_File_Organization-orbis,About_This_Document/1/
