@@ -8,9 +8,13 @@ iOS プロジェクトをビルドする前に ^^Player Settings^^ で ^^Bundle 
 
 !! Classes フォルダ
 
-Unity ランタイム および Objective-C を統合するコードがここに格納されます。格納されるファイルである @@main.mm@@ および @@AppController.mm@@ がアプリケーションのエントリ ポイントです。さらに @@iPhone_Profiler.h@@ ファイルにより内部プロファイルを有効にする条件のコンパイラを定義します。このフォルダは頻繁に変更しないコードのためのフォルダであり、カスタムクラスをここに配置できます。append モードが選択されたとき、ビルド間でのこのフォルダに対する変更は保存されますが、この関数は複数のビルドターゲットはサポートせず、@@Libraries@@ フォルダの構造を固定する必要があります。
+Unity ランタイム および Objective-C を統合するコードがここに格納されます。格納されるファイルである @@main.mm@@ および @@UnityAppController.mm/h@@ がアプリケーションのエントリ ポイントであり、カスタムの AppDelegate を UnityAppController から派生して作成できます。もし @@AppController.h@@ を含んだプラグインがある場合は代わりに @@UnityAppController.h@@ を include します。もし @@AppController.mm/h@@ が Plugins/iOS フォルダにある場合はマージしてリネームできます。
 
-内部プロファイルは速く、干渉せず、また基本的な情報をフィードしてくれます。どのサブシステムがフレーム時間を多く消費しちえるか、.NET ヒープサイズ、ガーベージコレクション (GC) イベントの回数/長さなどの情報がフィードされます。詳細については [[iphone-InternalProfiler | ビルトイン プロファイラ]] を参照して下さい。
+内部プロファイルは速く、干渉せず、また基本的な情報をフィードしてくれます。
+* どのサブシステムがもっともフレーム時間を消費するか
+* .NET ヒープ サイズ
+* ガーベージ コレクション イベントの回数/長さ
+詳細については [[iphone-InternalProfiler | ビルトイン プロファイラ]] を参照してください。
 
 !! Data フォルダ
 
@@ -26,11 +30,11 @@ Unity ランタイム および Objective-C を統合するコードがここに
 
 !! グラフィック ファイル
 
-These are icons and splash screens (@@png@@ files). These files are automatically managed by Unity. You can setup them in ^^Player Settings^^.
+アイコンおよびスプラッシュ スクリーン（@@png@@ ファイル）です。これらのファイルは自動的に Unity で管理されます。 ^^Player Settings^^ からセットアップします。
 
 !! プロパティ リスト ファイル
 
-@@info.plist@@ は Unity の ^^Player Settings^^ を介して管理されます。Unity 4.1 よりこのファイルが上書きされるかわりに、更新されます。本当に必要なときを除いて修正すべきではありません。
+@@info.plist@@ は Unity の ^^Player Settings^^ を介して管理されます。このファイルはプレイヤーをビルドするとき、上書きされずに更新されます。本当に必要なときを除いて修正すべきではありません。
 
 !! その他のファイル
 
