@@ -54,8 +54,9 @@ Attach:BuildSettings.png\\
 
 スクリプトを作成し、次のコードをコピー＆ペーストします:
 
-JavaScript サンプル:
+
 [@
+// JavaScript サンプル
 function Awake() {
   #if UNITY_EDITOR
     Debug.Log("Unity エディタ");
@@ -75,9 +76,9 @@ function Awake() {
 }
 @]
 
-C# サンプル:
 
 [@
+//C# サンプル
 using UnityEngine;
 using System.Collections;
 
@@ -103,9 +104,10 @@ public class PlatformDefines : MonoBehaviour {
   }			   
 }
 @]
-Boo サンプル:
+
 
 [@
+// Boo サンプル
 import UnityEngine
 
 class PlatformDefines (MonoBehaviour): 
@@ -124,17 +126,21 @@ class PlatformDefines (MonoBehaviour):
 			Debug.Log("iPhoneではありません")
 
 @]
+
+
 次に、どのプラットフォームを選択したかによって、再生したときにいずれかのメッセージが Unity コンソール に出力されます。
 
 基本的な ''#if'' コンパイラ ディレクティブに加えて、C# および JavaScript のどちらでも次のとおりにテストできます:-
 
-[@#if UNITY_EDITOR
+[@
+#if UNITY_EDITOR
     Debug.Log("Unity エディタ");
 #elif UNITY_IPHONE
     Debug.Log("Unity iPhone");
 #else
     Debug.Log("その他のプラットフォーム");
-#endif@]
+#endif
+@]
 
 しかし、Boo は現在 ''ifdef'' ディレクティブのみサポートします。
 
