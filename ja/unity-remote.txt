@@ -1,7 +1,6 @@
 ! Unity Remote
 
 Unity RemoteはUnityプロジェクトでiOSデバイスをリモコンとして使用出来るアプリケーションです。これは開発において便利で、エディタ上でプロジェクトをリモコンでテストするほうが変更毎に毎回ビルドしてデプロイするより早いためです。
-is an application that allows you to use your iOS device as a remote control for your project in Unity. This is useful during development since it is much quicker to test your project in the editor with remote control than to build and deploy it to the device after each change.
 
 !! どこでUnity Remoteを入手するか
 Unity RemoteはAppStoreから無料でダウンロード出来ます。もし自身でリモコン アプリケーションをビルドしてデプロイしたい場合はソースがUnityウェブサイトの [[http://unity3d.com/support/resources/unity-extensions/unity-remote| ここ]] にあります。
@@ -14,7 +13,7 @@ Unity RemoteはAppStoreから無料でダウンロード出来ます。もし自
 
 一回Unity Remoteをインストールした後、Wi-Fi 経由で開発マシンと同じネットワークに接続されているか、そうでなければマシンに直接USBで接続されていることを確認して下さい。コンピュータ上でUnityiPhone/iPad 上でUnity Remoteを起動して表示されるリストから自身のコンピュータを選択します。これでエディタ上で実行モードに入ったときにゲームを開発およびテストする際にデバイスをリモコンとして動作します。アプリケーションの入ったデバイスはワイヤレスで使用が可能であり、デバイスの画面に低解像度のバージョンが表示されます。
 
-__注意:__ Unity iOS エディタはデバイスのハードウェアを完全にエミュレート出来ないため本物のデバイスと同じ動作 (グラフィック パフォーマンス、タッチ レスポンス、サウンド再生、その他) は得られない場合があります。 editor cannot emulate the device's hardware perfectly, so you may not get the exact behavior (graphics performance, touch responsiveness, sounds playback, etc) that you would on a real device.
+__注意:__ Unity iOS エディタはデバイスのハードウェアを完全にエミュレート出来ないため本物のデバイスと同じ動作 (グラフィック パフォーマンス、タッチ レスポンス、サウンド再生、その他) は得られない場合があります。 
 
 !! Xcode がUnity Remoteをデバイスにデプロイする際に変なエラーが出ます。どうすれば良いか。
 これはUnity Remoteプロジェクトのデフォルトの識別子がプロビジョニング プロファイルと互換性がないことを示しています。この識別子はXCodeプロジェクトにて手動で変更する必要があります。識別子はプロビジョニング プロファイルと一致する必要があります。
