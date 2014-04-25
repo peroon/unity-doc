@@ -5,7 +5,8 @@
 
 Unity は 3 つのプログラミング言語をネイティブ対応しています：
 
-* __C#__ (シーシャープと発音), Java や C++ に相当する、業界標準の言語* __UnityScript__, JavaScript をもとにモデル化された Unity 独自設計の言語
+* __C#__ (シーシャープと発音), Java や C++ に相当する、業界標準の言語
+* __UnityScript__, JavaScript をもとにモデル化された Unity 独自設計の言語
 * __Boo__, Python に近い文法の .NET 言語
 
 さらに互換 DLL コンパイルが出来る .NET 言語も使用できます。詳細は [[UsingDLL|このページ]] を参照して下さい。
